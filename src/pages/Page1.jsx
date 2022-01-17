@@ -2,6 +2,15 @@ import React, { createElement } from 'react'
 import Table from '../components/Table'
 import PruebaComponent from '../components/PruebaComponent'
 import {DownOutlined} from '@ant-design/icons'
+import FloatInput from '../components/FloatInput'
+import { Form } from "antd";
+
+const validator = {
+    require: {
+      required: true,
+      message: "Required"
+    }
+  };
 
 function Page1() {
     const columns = [
@@ -39,6 +48,20 @@ function Page1() {
     ]
     return (
         <div>
+            <Form
+                size="large"
+                name="user_login"
+                className="login-form"
+                layout="vertical"
+            >
+                <Form.Item name="email" rules={[validator.require]} hasFeedback>
+                <FloatInput
+                    label="Email"
+                    placeholder="Email here please"
+                    name="email"
+                />
+                </Form.Item>
+            </Form>
             <Table component={PruebaComponent} columns={columns} data={data} />
         </div>
     )
