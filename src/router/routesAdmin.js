@@ -11,6 +11,12 @@ const routes = [
         icon: 'BoxPlotOutlined',
         page: 'Page1'
     },
+    {
+        path: "/gestionAprobaciones",
+        name: "Gestion de Aprobaciones",
+        icon: 'FileAddOutlined',
+        page: 'GestionAprobaciones'
+    },
 
 ];
 
