@@ -1,7 +1,7 @@
 import React from 'react'
 import DataTable from 'react-data-table-component';
 import './index.less';
-
+import PruebaComponent from '../PruebaComponent'
 
 const Table = ({
     className,
@@ -24,7 +24,7 @@ const Table = ({
             highlightOnHover
             onSelectedRowsChange={handleChange}
             expandableRows
-            expandableRowsComponent={ <Component /> }
+            expandableRowsComponent={ () => <PruebaComponent /> }
             expandableRowsHideExpander
             expandOnRowClicked
         />
