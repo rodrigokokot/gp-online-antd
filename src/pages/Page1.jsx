@@ -4,6 +4,8 @@ import PruebaComponent from '../components/PruebaComponent'
 import {DownOutlined} from '@ant-design/icons'
 import FloatInput from '../components/FloatInput'
 import { Form } from "antd";
+import ReactCountryFlagsCurrencySelect from 'react-country-flag-currency-picker'
+import DateRangePicker from '../components/DateRangePicker'
 
 const validator = {
     require: {
@@ -48,6 +50,12 @@ function Page1() {
     ]
     return (
         <div>
+
+            {/* <ReactCountryFlagsCurrencySelect
+                searchable={true}
+                searchPlaceholder="Search for a country" /> */}
+
+            <DateRangePicker />
             <Form
                 size="large"
                 name="user_login"
