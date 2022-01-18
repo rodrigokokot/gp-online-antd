@@ -3,6 +3,7 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { DateRangePicker, DateRange } from 'react-date-range';
 import { addDays } from 'date-fns';
+import * as locales from 'react-date-range/dist/locale';
 
 
 function DateRangeComponent() {
@@ -23,12 +24,14 @@ function DateRangeComponent() {
       //   direction="horizontal"
       // />
       <DateRange
-        editableDateInputs={true}
+        editableDateInputs={false}
         onChange={item => setState([item.selection])}
         moveRangeOnFirstSelection={false}
         ranges={state}
+        rangeColors={['#0DD8B0']}
         months={2}
         direction="horizontal"
+        locale={locales['es']}
       />
     )
 }

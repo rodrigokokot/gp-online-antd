@@ -55,7 +55,9 @@ function Page1() {
                 searchable={true}
                 searchPlaceholder="Search for a country" /> */}
 
-            <DateRangePicker />
+            <div  style={{ marginBottom: '25px' }}>
+                <DateRangePicker />
+            </div>
             <Form
                 size="large"
                 name="user_login"
