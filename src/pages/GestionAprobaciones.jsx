@@ -1,12 +1,23 @@
-import React, { createElement } from "react";
-import PruebaComponent from "../components/PruebaComponent";
-import { DownOutlined } from "@ant-design/icons";
-import ReactDOM from "react-dom";
-import { AutoComplete, Button, Table } from "antd";
+import React, { useState } from "react";
+import { Button, Table, Card, Modal } from "antd";
 
 function GestionAprobaciones() {
   const columns = [
-    { title: "ID", dataIndex: "id", key: "id",width:100 },
+    {
+      title: "ID",
+      dataIndex: "id",
+      key: "id",
+      width: 100,
+      filters: [
+        {
+          text: "24123",
+          value: "24123",
+        },
+      ],
+      filterMode: "tree",
+      filterSearch: true,
+      onFilter: (value, record) => record.id.includes(value),
+    },
     { title: "Tipo Novedad", dataIndex: "tipoNovedad", key: "tipoNovedad" },
     { title: "Fecha", dataIndex: "fecha", key: "fecha" },
     { title: "Usuario", dataIndex: "Usuario", key: "Usuario" },
@@ -44,15 +55,14 @@ function GestionAprobaciones() {
       key: 1,
       id: 24123,
       tipoNovedad: "Cambio de estado de targeta",
-      fecha: '32/3/18 23:34',
+      fecha: "32/3/18 23:34",
       Usuario: "Maria Laura",
-      Comentario:
-        "My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.",
+      Comentario: "-",
       Cuenta: "23521",
       Marca: "mastercard",
-      Producto:'Targeta Grupar',
-      Sucursal:'Cordoba',
-      Cliente:'Candela',
+      Producto: "Targeta Grupar",
+      Sucursal: "Cordoba",
+      Cliente: "Candela",
     },
     {
       key: 2,
@@ -60,28 +70,47 @@ function GestionAprobaciones() {
       tipoNovedad: "John Brown",
       fecha: 32,
       Usuario: "New York No. 1 Lake Park",
-      Comentario:
-        "My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.",
+      Comentario: "-",
       Cuenta: "aaasdasdasd",
       Marca: "mastercard",
     },
-    
   ];
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [confirmLoading, setConfirmLoading] = React.useState(false); //para hacerlo asincrono
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  function onChange(pagination, filters, sorter, extra) {
+    console.log("params", pagination, filters, sorter, extra);
+  }
+
   return (
     <Table
       columns={columns}
       expandable={{
         expandedRowRender: (record) => (
-          <label >
+          <Card>
             <h2>Informacion de la novedad</h2>
             <div
               style={{
                 display: "flex",
-                justifyContent: "space-evenly",
+                justifyContent: "left",
+                gap: "10% 10%",
                 flexDirection: "row",
               }}
             >
-              <div style={{marginLeft:'-25%'}}>
+              <div>
                 <p>
                   ID de la transaccion:<h5>{record.key}</h5>
                 </p>
@@ -117,11 +146,12 @@ function GestionAprobaciones() {
             <div
               style={{
                 display: "flex",
-                justifyContent: "space-evenly",
+                justifyContent: "left",
+                gap: "10% 10%",
                 flexDirection: "row",
               }}
             >
-              <div style={{marginLeft:'-42%'}}>
+              <div>
                 <p>
                   Emisor:<h5>{record.key}</h5>
                 </p>
@@ -153,15 +183,23 @@ function GestionAprobaciones() {
                 </p>
               </div>
             </div>
+
             <div>
-              <Button type="primary" color="#69E2B7">
+              <Button type="primary" onClick={showModal}>
                 Aplicar confirmacion
               </Button>
+              <Modal
+                title="¿Estás seguro que deseas aplicar esta confimación?"
+                visible={isModalVisible}
+                onOk={handleOk}
+                onCancel={handleCancel}
+              ></Modal>
               <Button>Cancelar confirmacion</Button>
             </div>
-          </label>
+          </Card>
         ),
       }}
+      onChange={onChange}
       dataSource={data}
     />
   );

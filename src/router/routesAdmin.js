@@ -1,5 +1,18 @@
 const routes = [
     {
+        path: "/gestionAprobaciones",
+        name: "Gestion de Aprobaciones",
+        options:["Novedades por confirmar","Ajustes por Confirmar"],
+        icon: 'HomeOutlined',
+        page: 'GestionAprobaciones'
+    },
+    {
+        path: "/parametrosPrincipales",
+        name: "Parametros principales",
+        icon: "ReconciliationOutlined",
+        page: 'ParametrosPrincipales'
+    },
+    {
         path: "/home",
         name: "Inicio",
         icon: 'UserOutlined',
@@ -11,13 +24,8 @@ const routes = [
         icon: 'BoxPlotOutlined',
         page: 'Page1'
     },
-    {
-        path: "/gestionAprobaciones",
-        name: "Gestion de Aprobaciones",
-        icon: 'FileAddOutlined',
-        page: 'GestionAprobaciones'
-    },
+
 
 ];
 
-  export default routes
+export default routes
