@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Card, Button, Row, Col, TimePicker, Radio, Modal } from 'antd';
+import Icon, { HomeOutlined }  from '@ant-design/icons';
 import DateRangeComponent from '../../molecules/DateRangePicker';
 import eoLocale from 'date-fns/locale/es'
 import {format} from 'date-fns'
-// import {  } from "../../../assets/svg/icons";
+import {Calendar} from '../../../assets/svg/icons/calendar';
 import './index.less'
 
 function DateRangeFilter() {
@@ -22,7 +23,7 @@ function DateRangeFilter() {
 
     return (
         <>
-            <Button type="primary" onClick={() => setIsModalVisible(true)}>
+            <Button className="btn-date-range" type="text" icon={<Icon component={Calendar} />} onClick={() => setIsModalVisible(true)}>
                 Por fechas
             </Button>
             <Modal className="search-date-range" closable={false} visible={isModalVisible} footer={null} onCancel={() => setIsModalVisible(false)} width={1000}>
