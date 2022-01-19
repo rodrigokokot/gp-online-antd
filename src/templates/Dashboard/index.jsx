@@ -45,7 +45,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
         <Layout className="site-layout">
           <PageHeader title={itemSelected.name}>
             <PageHeader>
-              {itemSelected.options.map((option,index)=>{return(<Button key={index}>{option}</Button>)})}
+              {itemSelected.options?.map((option,index)=>{return(<Button key={index}>{option}</Button>)})}
             </PageHeader>
           </PageHeader>
           <Content
