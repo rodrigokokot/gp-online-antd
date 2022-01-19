@@ -52,7 +52,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               margin: "24px 16px",
               padding: 24,
               minHeight: 280,
-              backgroundColor: 'secondary'
+              backgroundColor: '#F9F9F9'
             }}
           >
             <Route {...rest} render={props => (
