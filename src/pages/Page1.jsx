@@ -1,9 +1,9 @@
-import React from 'react'
-// import Table from '../components/Table'
-// import PruebaComponent from '../components/PruebaComponent'
+import React, { useState } from 'react'
+import Table from '../components/organisms/Table'
+import PruebaComponent from '../components/molecules/PruebaComponent'
 import {DownOutlined} from '@ant-design/icons'
-// import FloatInput from '../components/FloatInput'
-import { Form } from "antd";
+import FloatInput from '../components/molecules/FloatInput'
+import { Form, Modal, Button, Row, Col, Card } from "antd";
 // import DateRangePicker from '../components/molecules/DateRangePicker'
 import DateRangeFilter from '../components/organisms/DateRangeFilter'
 
@@ -15,6 +15,7 @@ const validator = {
   };
 
 function Page1() {
+
     const columns = [
         {
             name: 'Title',
@@ -49,8 +50,10 @@ function Page1() {
         },
     ]
     return (
-        <div>
+        <>
+
             <DateRangeFilter />
+
             {/* <ReactCountryFlagsCurrencySelect
                 searchable={true}
                 searchPlaceholder="Search for a country" /> */}
@@ -58,22 +61,24 @@ function Page1() {
             {/* <div  style={{ marginBottom: '25px' }}>
                 <DateRangePicker />
             </div> */}
-            {/* <Form
-                size="large"
-                name="user_login"
-                className="login-form"
-                layout="vertical"
-            >
-                <Form.Item name="email" rules={[validator.require]} hasFeedback>
-                <FloatInput
-                    label="Email"
-                    placeholder="Email here please"
-                    name="email"
-                />
-                </Form.Item>
-            </Form> */}
-            {/* <Table component={PruebaComponent} columns={columns} data={data} /> */}
-        </div>
+            <Card style={{marginTop:'50px', marginBottom: '50px'}}>
+                <Form
+                    size="large"
+                    name="user_login"
+                    className="login-form"
+                    layout="vertical"
+                >
+                    <Form.Item name="email" rules={[validator.require]} hasFeedback>
+                    <FloatInput
+                        label="Email"
+                        placeholder="Email here please"
+                        name="email"
+                    />
+                    </Form.Item>
+                </Form>
+            </Card>
+            <Table component={PruebaComponent} columns={columns} data={data} />
+        </>
     )
 }
 
