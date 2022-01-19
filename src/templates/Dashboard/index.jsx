@@ -42,7 +42,7 @@ export default function DashboardTemplate({component: Component, ...rest}) {
               padding: '24px 16px',
               padding: 24,
               minHeight: 280,
-              backgroundColor: '#F9F9F9'
+              backgroundColor: 'secondary'
             }}
           >
             <Route {...rest} render={props => (

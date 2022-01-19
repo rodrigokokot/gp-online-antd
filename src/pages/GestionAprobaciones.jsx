@@ -1,5 +1,5 @@
 import React, { createElement } from "react";
-import PruebaComponent from "../components/PruebaComponent";
+// import PruebaComponent from "../components/PruebaComponent";
 import { DownOutlined } from "@ant-design/icons";
 import ReactDOM from "react-dom";
 import { AutoComplete, Button, Table } from "antd";

@@ -1,7 +1,7 @@
 import React from 'react'
 import DataTable from 'react-data-table-component';
 import './index.less';
-import PruebaComponent from '../PruebaComponent'
+import PruebaComponent from '../../molecules/PruebaComponent'
 
 const Table = ({
     className,
