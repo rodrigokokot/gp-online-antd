@@ -1,7 +1,18 @@
-import React, { createElement } from 'react'
-import Table from '../components/Table'
-import PruebaComponent from '../components/PruebaComponent'
+import React from 'react'
+// import Table from '../components/Table'
+// import PruebaComponent from '../components/PruebaComponent'
 import {DownOutlined} from '@ant-design/icons'
+// import FloatInput from '../components/FloatInput'
+import { Form } from "antd";
+// import DateRangePicker from '../components/molecules/DateRangePicker'
+import DateRangeFilter from '../components/organisms/DateRangeFilter'
+
+const validator = {
+    require: {
+      required: true,
+      message: "Required"
+    }
+  };
 
 function Page1() {
     const columns = [
@@ -39,7 +50,29 @@ function Page1() {
     ]
     return (
         <div>
-            <Table component={PruebaComponent} columns={columns} data={data} />
+            <DateRangeFilter />
+            {/* <ReactCountryFlagsCurrencySelect
+                searchable={true}
+                searchPlaceholder="Search for a country" /> */}
+
+            {/* <div  style={{ marginBottom: '25px' }}>
+                <DateRangePicker />
+            </div> */}
+            {/* <Form
+                size="large"
+                name="user_login"
+                className="login-form"
+                layout="vertical"
+            >
+                <Form.Item name="email" rules={[validator.require]} hasFeedback>
+                <FloatInput
+                    label="Email"
+                    placeholder="Email here please"
+                    name="email"
+                />
+                </Form.Item>
+            </Form> */}
+            {/* <Table component={PruebaComponent} columns={columns} data={data} /> */}
         </div>
     )
 }

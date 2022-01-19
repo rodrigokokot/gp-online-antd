@@ -2,7 +2,6 @@ const routes = [
     {
         path: "/gestionAprobaciones",
         name: "Gestion de Aprobaciones",
-        options:["Novedades por confirmar","Ajustes por Confirmar"],
         icon: 'HomeOutlined',
         page: 'GestionAprobaciones'
     },

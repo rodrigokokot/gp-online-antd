@@ -1,6 +1,6 @@
 import { createElement, lazy, Suspense, useEffect, useState } from "react";
 import { Link, Route } from "react-router-dom";
-import { Button, Layout, Menu, PageHeader } from "antd";
+import { Button, Layout, Menu, PageHeader, Skeleton } from "antd";
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
@@ -17,9 +17,10 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
         title="GP"
         style={{ backgroundColor: "#1F263D" }}
         extra={<Button>Log out</Button>}
+        avatar={{ src: 'https://avatars1.githubusercontent.com/u/8186664?s=460&v=4' ,}}
       />
       <Layout>
-        <Sider trigger={null} collapsible collapsed={collapsed}>
+        <Sider trigger={null} collapsible collapsed={collapsed} color="#FFFFF">
           <div id="sidebar" className="logo">
             {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: "trigger",
@@ -29,7 +30,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               },
             })}
           </div>
-          <Menu theme="dark" mode="inline">
+          <Menu mode="inline">
             {routes.map((route, index) => {
               const icons = require(`@ant-design/icons`);
               const Component = icons[route.icon];
@@ -44,9 +45,6 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
 
         <Layout className="site-layout">
           <PageHeader title={itemSelected.name}>
-            <PageHeader>
-              {itemSelected.options?.map((option,index)=>{return(<Button key={index}>{option}</Button>)})}
-            </PageHeader>
           </PageHeader>
           <Content
             className=""
@@ -54,16 +52,16 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               margin: "24px 16px",
               padding: 24,
               minHeight: 280,
+              backgroundColor: 'secondary'
             }}
           >
-            <Route
-              {...rest}
-              render={(props) => (
-                <Suspense fallback={"Cargando..."}>
-                  <Component {...props}>{props.children}</Component>
-                </Suspense>
-              )}
-            />
+            <Route {...rest} render={props => (
+              <Suspense fallback={ <Skeleton active/> }>
+                <Component {...props} >
+                  {props.children}
+                </Component>
+              </Suspense>
+            )} />
           </Content>
         </Layout>
       </Layout>
