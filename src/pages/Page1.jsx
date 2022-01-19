@@ -3,6 +3,7 @@ import Table from '../components/organisms/Table'
 import PruebaComponent from '../components/molecules/PruebaComponent'
 import {DownOutlined} from '@ant-design/icons'
 import FloatInput from '../components/molecules/FloatInput'
+import FloatSelected from '../components/molecules/FloatSelected'
 import { Form, Modal, Button, Row, Col, Card } from "antd";
 // import DateRangePicker from '../components/molecules/DateRangePicker'
 import DateRangeFilter from '../components/organisms/DateRangeFilter'
@@ -74,6 +75,35 @@ function Page1() {
                         placeholder="Email here please"
                         name="email"
                     />
+                    </Form.Item>
+                    <Form.Item name="algo" rules={[validator.require]} hasFeedback>
+                        <FloatSelected
+                            label="Email"
+                            placeholder="Email here please"
+                            name="email"
+                            options={ [
+                                {
+                                    title: "",
+                                    value: "",
+                                    disabled: false
+                                },
+                                {
+                                    title: "Title 1",
+                                    value: "title1",
+                                    disabled: false
+                                },
+                                {
+                                    title: "Title 2",
+                                    value: "title2",
+                                    disabled: false
+                                },
+                                {
+                                    title: "Title 3",
+                                    value: "title3",
+                                    disabled: true
+                                },
+                            ] }
+                        />
                     </Form.Item>
                 </Form>
             </Card>
