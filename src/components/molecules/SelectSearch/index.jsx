@@ -20,8 +20,10 @@ function SelectSearch (props)  {
   
   const {texto}=props; const {Setear}=props;
   function onChange(value) {
-    console.log("selected"+value)
-    Setear(value)
+    console.log("selected "+value)
+    const idd = texto.findIndex(e => e.title === value) 
+    console.log("idd "+ idd)
+    Setear(idd)
   }
 
   return <Select 
@@ -36,7 +38,7 @@ function SelectSearch (props)  {
               filterOption={(input, option) =>  option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0 || option.props.value.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
           >   
-              {texto.map((p,i) => <Option key={p.title} value={i} >{p.title}</Option>)}
+              {texto.map((p,j) => <Option key={p.title} value={p.title} >{p.title}</Option>)}
           </Select> 
 };
 

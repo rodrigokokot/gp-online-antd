@@ -6,15 +6,15 @@ import Ayuda2 from '../components/molecules/TextoHelp';
 
 const { SubMenu } = Menu;
 const texto = [
-    {
+    { "id": 1,
       "title": '¿Cómo realizar un Ajuste de socios?',
       "descripcion": 'alguna descripcion ajuste de socio'
     },
-    {
+    { "id": 2,
       "title": '¿Cómo realizar una Autorización?',
-      "descripcion": 'alguna descripcion autorización'
+      "descripcion": 'alguna descripcion autorización alguna descripcion autorización alguna descripcion autorización alguna descripcion autorización alguna descripcion autorización alguna descripcion autorizaciónalguna descripcion autorizaciónalguna descripcion autorizaciónalguna descripcion autorizaciónalguna descripcion autorizaciónalguna descripcion autorizaciónalguna descripcion autorizaciónalguna descripcion autorización alguna descripcion autorización alguna descripcion autorizaciónalguna descripcion autorizaciónalguna descripcion autorizaciónalguna descripcion autorización'
     },
-    {
+    { "id": 3,
       "title": '¿Cómo exportar un movimiento IPM?',
       "descripcion": 'alguna descripcion ipm'
     },
@@ -35,8 +35,8 @@ function Ayuda() {
                         <Col style={{marginTop:126}} >
                                 <ImageHelp/>
                         </Col>
-                        <Col  style={{width: 780, height:680 , marginTop:126}} >
-                            <Ayuda2 texto={texto[idtitulo]}/>
+                        <Col   style={{marginTop:126}}>
+                        <Card hoverable style={{width: 780, height:'flex', borderRadius: "10px"}}><Ayuda2 texto={texto[idtitulo]}/> </Card>
                         </Col>
                   </Row>
              || 
