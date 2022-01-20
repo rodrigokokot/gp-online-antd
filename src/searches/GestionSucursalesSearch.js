@@ -1,5 +1,4 @@
 import React from "react";
-import { Select } from "antd";
 import FloatInput from "../components/molecules/FloatInput/index";
 import FloatSelected from "../components/molecules/FloatSelected/index";
 
@@ -16,7 +15,7 @@ export const GestionSucursalesSearch = () => {
     },
 
     {
-      name: "Código Postal",
+      name: "CódigoPostal",
       input: <FloatInput placeholder="Código Postal" label="Código Postal" />,
     },
 
@@ -28,17 +27,17 @@ export const GestionSucursalesSearch = () => {
           label="Provincia"
           options={[
             {
-              title: "sanjuan",
+              title: "San Juan",
               value: "San Juan",
               disabled: false,
             },
             {
-              title: "mendoza",
+              title: "Mendoza",
               value: "Mendoza",
               disabled: false,
             },
             {
-              title: "sanluis",
+              title: "San Luis",
               value: "San Luis",
               disabled: false,
             },
@@ -55,19 +54,19 @@ export const GestionSucursalesSearch = () => {
           label="Estado"
           options={[
             {
-              title: "activo",
+              title: "Activo",
               value: "Activo",
               disabled: false,
             },
 
             {
-              title: "suspendido",
+              title: "Suspendido",
               value: "Suspendido",
               disabled: false,
             },
 
             {
-              title: "cancelado",
+              title: "Cancelado",
               value: "Cancelado",
               disabled: false,
             },

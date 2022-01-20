@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Table from '../components/organisms/Table'
-import PruebaComponent from '../components/molecules/PruebaComponent'
+import DeploymentConfirmation from '../components/molecules/DeploymentConfirmation'
 import {DownOutlined} from '@ant-design/icons'
 import FloatInput from '../components/molecules/FloatInput'
 import FloatSelected from '../components/molecules/FloatSelected'
@@ -145,7 +145,7 @@ function Page1() {
                     </Form.Item>
                 </Form>
             </Card>
-            <Table component={PruebaComponent} columns={columns} data={data} />
+            <Table component={DeploymentConfirmation} columns={columns} data={data} />
         </>
     )
 }

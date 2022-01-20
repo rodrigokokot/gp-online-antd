@@ -1,14 +1,14 @@
 import React from "react";
 import { Form, Col} from "antd";
 import {SearchForm} from '../../molecules/SearchForm/index'
-import { GestionSucursalesSearch } from "../../../searches/GestionSucursalesSearch";
 
-export const AdvancedSearchForm = () => {
+
+export const AdvancedSearchForm = ({array}) => {
 
   const children = [];
 
   const getFields = () => {
-    GestionSucursalesSearch().map((item) => {
+    array.map((item) => {
       children.push(
         <Col key={item.name}>
           <Form.Item name={item.name}>{item.input}</Form.Item>
@@ -22,6 +22,7 @@ export const AdvancedSearchForm = () => {
   return (
     <>
       <SearchForm array={getFields()} />
+
     </>
   );
 };
