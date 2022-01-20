@@ -5,21 +5,25 @@ import FloatSelected from "../components/molecules/FloatSelected/index";
 export const GestionSucursalesSearch = () => {
   const array = [
     {
+      index: 'descripcion',
       name: "Descripción",
       input: <FloatInput placeholder="Descripción" label="Descripcion" />,
     },
 
     {
+      index: 'codigo',
       name: "Código",
       input: <FloatInput placeholder="Código" label="Código" />,
     },
 
     {
-      name: "CódigoPostal",
+      index: 'cp',
+      name: "Código Postal",
       input: <FloatInput placeholder="Código Postal" label="Código Postal" />,
     },
 
     {
+      index: 'provincia',
       name: "Provincia",
       input: (
         <FloatSelected
@@ -47,6 +51,7 @@ export const GestionSucursalesSearch = () => {
     },
 
     {
+      index: 'estado',
       name: "Estado",
       input: (
         <FloatSelected

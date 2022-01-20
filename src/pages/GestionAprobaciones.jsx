@@ -222,6 +222,8 @@ function GestionAprobaciones() {
             </div>
           </div>
           <DateRangeFilter></DateRangeFilter>
+          {console.log(columns)}
+          {console.log(data)}
           <Table
             component={DeploymentConfirmation}
             columns={columns}

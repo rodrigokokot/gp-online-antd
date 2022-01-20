@@ -1,6 +1,7 @@
 import React from 'react'
 import DataTable from 'react-data-table-component';
 import './index.less';
+import FilterComponent from '../../molecules/FilterComponent';
 
 const Table = ({
     className,
@@ -30,15 +31,9 @@ const Table = ({
             highlightOnHover
             selectableRows={props.selectable}
             onSelectedRowsChange={handleChange}
-<<<<<<< HEAD
             expandableRows
-            expandableRowsComponent={ () => <PruebaComponent /> }
+            expandableRowsComponent={ () => <FilterComponent />}
             // expandableRowsHideExpander
-=======
-            expandableRows={props.expandible}
-            expandableRowsComponent={ () => <Component /> }
-            expandableRowsHideExpander
->>>>>>> c6fd865d4af042585dd3adf2b75dd018caaddaf5
             expandOnRowClicked
         />
     )

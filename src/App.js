@@ -20,7 +20,6 @@ function App() {
   return (
     <Router>
       {/* <Suspense fallback={ "Cargando..." }> */}
-<<<<<<< HEAD
         <Switch>
           <Route exact path="/"><Redirect to="/login" /></Route>
           <LoginTemplate exact path="/login" component={Login} />
@@ -29,10 +28,6 @@ function App() {
           <DashboardTemplate exact path="/home" component={ lazy(() => import('./pages/Home'))}  />
           <DashboardTemplate exact path="/gestionAprobaciones" component={ lazy(() => import('./pages/GestionAprobaciones'))}  />
           {/* { routes.map((route, index) => <DashboardTemplate exact path={route.path} component={route.page} key={index} /> ) } */}
-=======
-      <Switch>
-        <LoginTemplate exact path="/login" component={Login} />
->>>>>>> c6fd865d4af042585dd3adf2b75dd018caaddaf5
 
         <Route exact path="/"><Redirect to="/login"></Redirect></Route>
         <DashboardTemplate exact path="/home" component={lazy(() => import('./pages/Home'))} />

@@ -7,32 +7,44 @@ import { Card } from "antd";
 function PageFacu() {
   
   
-  const columns = () => {
-    const column = [];
-    const array = GestionSucursalesSearch();
+  // const columns = () => {
+  //   const column = [];
+  //   const array = GestionSucursalesSearch();
+  //   array.map((item) => {
+      
+  //     column.push({
+  //       name: item.name,
+  //       selector: (item) => item.index,
+  //       sortable:true,
+  //     });
+  //   });
 
-    array.map((item) => {
-      column.push({
-        title: item.name,
-        dataIndex: item.name,
-        key: item.name,
-        width: 100,
-      });
-    });
+  //   return column
+  // };
 
-    return column
-  };
+  const column = [
+    {
+      name: "Descripcion",
+      selector: (item) => item.descripcion,
+      sortable: true,
+    },
+    {
+      name: "Codigo",
+      selector: (item) => item.codigo,
+      sortable: true,
+    },
+  ];
 
 
   const data = [
     {
-      key:1,
-      Descripción: 'Tarjetas',
-      Código: '666',
-      CódigoPostal: '5425',
-      Provincia: 'San Juan',
-      Estado: 'Suspendido',
-    }
+      // id: 1,
+      descripcion: 'Tarjetas',
+      codigo: '666',
+      cp: '5425',
+      provincia: 'San Juan',
+      estado: 'Suspendido',
+    },
   ]
 
   return (
@@ -43,7 +55,8 @@ function PageFacu() {
 
       <Card style={{ marginTop: "50px", marginBottom: "50px" }}>
         {console.log(data)}
-        <Table columns={columns()} dataSource={data}  />
+        {console.log(column)}
+        <Table columns={column} data={data} expandible={false}  />
       </Card>
     </div>
   );
