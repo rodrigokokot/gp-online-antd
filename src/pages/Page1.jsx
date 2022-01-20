@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Table from '../components/organisms/Table'
-import PruebaComponent from '../components/molecules/PruebaComponent'
+import DeploymentConfirmation from '../components/molecules/DeploymentConfirmation'
 import {DownOutlined} from '@ant-design/icons'
 import FloatInput from '../components/molecules/FloatInput'
 import FloatSelected from '../components/molecules/FloatSelected'
@@ -70,11 +70,49 @@ function Page1() {
                     layout="vertical"
                 >
                     <Form.Item name="email" rules={[validator.require]} hasFeedback>
-                    <FloatInput
-                        label="Email"
-                        placeholder="Email here please"
-                        name="email"
-                    />
+                        <FloatInput
+                            label="Email"
+                            placeholder="Email here please"
+                            name="email"
+                        />
+                    </Form.Item>
+                    <Form.Item name="email" rules={[validator.require]} hasFeedback>
+                        <FloatInput
+                            label="Email"
+                            placeholder="Email here please"
+                            name="email"
+                            outline
+                        />
+                    </Form.Item>
+                    <Form.Item name="algo" rules={[validator.require]} hasFeedback>
+                        <FloatSelected
+                            label="Email"
+                            placeholder="Email here please"
+                            name="email"
+                            outline
+                            options={ [
+                                {
+                                    title: "",
+                                    value: "",
+                                    disabled: false
+                                },
+                                {
+                                    title: "Title 1",
+                                    value: "title1",
+                                    disabled: false
+                                },
+                                {
+                                    title: "Title 2",
+                                    value: "title2",
+                                    disabled: false
+                                },
+                                {
+                                    title: "Title 3",
+                                    value: "title3",
+                                    disabled: true
+                                },
+                            ] }
+                        />
                     </Form.Item>
                     <Form.Item name="algo" rules={[validator.require]} hasFeedback>
                         <FloatSelected
@@ -107,7 +145,7 @@ function Page1() {
                     </Form.Item>
                 </Form>
             </Card>
-            <Table component={PruebaComponent} columns={columns} data={data} />
+            <Table component={DeploymentConfirmation} columns={columns} data={data} />
         </>
     )
 }

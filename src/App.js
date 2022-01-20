@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-ro
 import routes from "./router/routesAdmin";
 import './App.less';
 
+//components
+
 // templates
 import LoginTemplate from './templates/Login';
 import DashboardTemplate from './templates/Dashboard';
@@ -10,6 +12,7 @@ import DashboardTemplate from './templates/Dashboard';
 
 // pages
 import Login from './pages/Login'
+
 //const NotFound404 = lazy(() => import('./components/pages/NotFound404'));
 
 

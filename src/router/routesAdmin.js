@@ -1,5 +1,17 @@
 const routes = [
     {
+        path: "/gestionAprobaciones",
+        name: "Gestion de Aprobaciones",
+        icon: 'HomeOutlined',
+        page: 'GestionAprobaciones'
+    },
+    {
+        path: "/parametrosPrincipales",
+        name: "Parametros principales",
+        icon: "ReconciliationOutlined",
+        page: 'ParametrosPrincipales'
+    },
+    {
         path: "/home",
         name: "Inicio",
         icon: 'UserOutlined',
@@ -12,12 +24,6 @@ const routes = [
         page: 'Page1'
     },
     {
-        path: "/gestionAprobaciones",
-        name: "Gestion de Aprobaciones",
-        icon: 'FileAddOutlined',
-        page: 'GestionAprobaciones'
-    },
-    {
         path: "/ayuda",
         name: "Ayuda",
         icon: 'QuestionCircleOutlined',
@@ -27,4 +33,4 @@ const routes = [
 
 ];
 
-  export default routes
+export default routes

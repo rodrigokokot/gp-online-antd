@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Input } from "antd";
-
+import PropTypes from 'prop-types'
 import "./index.less";
 
-const FloatInput = (props) => {
+const FloatInput = ({outline, ...props}) => {
   const [focus, setFocus] = useState(false);
   let { label, value, placeholder, type, required } = props;
 
@@ -21,12 +21,20 @@ const FloatInput = (props) => {
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
     >
-      <Input onChange={props.onChange} type={type} defaultValue={value} className="input-bottom" />
+      <Input onChange={props.onChange} type={type} defaultValue={value} className={ !outline? "input-bottom" : '' } />
       <label className={labelClass}>
         {isOccupied ? label : placeholder} {requiredMark}
       </label>
     </div>
   );
 };
+
+FloatInput.propTypes = {
+  outline: PropTypes.bool
+}
+
+FloatInput.defaultProps = {
+  outline: false
+}
 
 export default FloatInput;
