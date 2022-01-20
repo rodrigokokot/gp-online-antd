@@ -1,27 +1,11 @@
 import React, { useState } from "react";
 import { Card, Button, Row, Col, Modal } from "antd";
-import eoLocale from "date-fns/locale/es";
-import { format } from "date-fns";
 import FilterComponent from "../../molecules/FilterComponent";
 
 function Filter() {
-  const [startDate, setStartDate] = useState(null);
-  const [endtDate, setEndtDate] = useState(null);
-  const [searchType, setSearchType] = React.useState(2);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const dateSelected = (data) => {
-    setStartDate(
-      format(new Date(data[0].startDate), "dd 'de' MMMM yyyy", {
-        locale: eoLocale,
-      })
-    );
-    setEndtDate(
-      format(new Date(data[0].endDate), "dd 'de' MMMM yyyy", {
-        locale: eoLocale,
-      })
-    );
-  };
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+ 
   return (
     <div style={{ float: "right" }}>
       <Button
