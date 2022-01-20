@@ -9,25 +9,40 @@ import {
 } from "../../../Mocks/GestionAprobaciones";
 
 const TableFilters = ({ columns, data, expandible, selectable, filtros }) => {
-  const [message, setMessage] = React.useState("holis");
   const [filterText, setFilterText] = React.useState("");
-  const filteredItems = data;
-//   const filteredItems = data.filter(
-//     (item) =>
-//       item.user && item.user.toLowerCase().includes(filterText.toLowerCase())
-//     // ||  item.branch && item.branch.toLowerCase().includes(filterText.toLowerCase())
-//   );
+  const [filteredData, setfilteredData] = React.useState(data);
+
+  function handleCallback(childData, clear) {
+    console.log("arreglo posta:", childData);
+    // console.log(data);
+    if (!clear) {
+      setfilteredData(
+        filteredData.filter(
+          (item) =>
+            item.product &&
+            item.product
+              .toLowerCase()
+              .includes(childData[4][0][0].toLowerCase())
+          // ||  item.branch && item.branch.toLowerCase().includes(filterText.toLowerCase())
+        )
+      );
+      console.log(filteredData);
+      // setChildData(childData);
+    }else{
+        setfilteredData(data);
+    }
+  }
 
   return (
     <>
       <div style={{ justifyContent: "right" }}>
         <DateRangeFilter></DateRangeFilter>
-        <Filter filtros={filtros} message={message}></Filter>
+        <Filter filtros={filtros} parentCallback={handleCallback}></Filter>
       </div>
 
       <Table
         columns={columns}
-        data={filteredItems}
+        data={filteredData}
         expandible={expandible}
         component={DeploymentConfirmation}
         selectable={selectable}

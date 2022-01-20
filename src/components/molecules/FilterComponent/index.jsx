@@ -17,8 +17,11 @@ function FilterComponent({options,parentCallback,index}) {
   }
 
   function onChange(value) {
-    // console.log(value);
-    parentCallback(value,index);
+    if (value === []) {
+      parentCallback(null,index);
+    }else{
+      parentCallback(value,index);
+    }
   }
 
   return (

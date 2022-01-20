@@ -1,18 +1,26 @@
 import React, { useState } from "react";
-import { Card, Button, Row, Col, Modal } from "antd";
+import { Card, Button, Row, Col, Modal, Empty } from "antd";
 import FilterComponent from "../../molecules/FilterComponent";
 import Icon, { HomeOutlined } from "@ant-design/icons";
 import { FilterIcon } from "../../../assets/svg/icons/filter";
 
-function Filter({ filtros, message }) {
+function Filter({ filtros, parentCallback }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  
-  let array = [null,null,null,null,null];
+  let clearInput = false;
 
-  function handleCallback(childData,index) {
+  let array = [];
+
+  function handleCallback(childData, index) {
     array[index] = childData;
-    console.log('returned from child:',array);
-    // setChildData(childData);
+  }
+
+  function filterConfirm() {
+    parentCallback(array,false);
+  }
+
+  function filterClean(){
+    array = [];
+    parentCallback(array,true);
   }
 
   return (
@@ -34,36 +42,42 @@ function Filter({ filtros, message }) {
         width={1000}
       >
         <Row gutter={20}>
-          <Col className="gutter-row" span={16}>
-            <Card
-              style={{
-                height: "400px",
-                width: "1000px",
-                left: "0px",
-                top: "40px",
-              }}
-            >
+          <Card
+            style={{
+              height: "400px",
+              width: "1000px",
+              left: "0px",
+              top: "0px",
+            }}
+          >
+            <Col className="gutter-row" span={16}>
               {filtros?.map((filtro, index) => (
                 <>
                   <p>{filtro.title}</p>
                   <FilterComponent
                     key={index}
                     options={filtro.options}
-                    message={message}
                     parentCallback={handleCallback}
                     index={index}
                   ></FilterComponent>
                 </>
               ))}
-            </Card>
-          </Col>
-          <Col>
-          <Button type="primary" style={{justifySelf:"right"}}>Confirmar</Button>
-          </Col>
+              <Button
+                type="primary"
+                style={{ justifySelf: "right" }}
+                onClick={filterConfirm}
+              >
+                Confirmar
+              </Button>
+              <Button
+                style={{ justifySelf: "right" }}
+                onClick={filterClean}
+              >
+                Limpiar filtros
+              </Button>
+            </Col>
+          </Card>
         </Row>
-        
-          
-        
       </Modal>
     </>
   );
