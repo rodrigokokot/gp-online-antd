@@ -2,49 +2,11 @@ import React from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { Cascader, Divider } from "antd";
+import { useState } from "react/cjs/react.development";
 
-function FilterComponent() {
-  const options = [
-    {
-      label: "Emisor",
-      value: "emisor",
-      children: [
-        {
-          label: "Laura",
-          value: "laura",
-        },
-        {
-          label: "Pedro",
-          value: "pedro",
-        },
-      ],
-    },
-    {
-      label: "Bamboo",
-      value: "bamboo",
-      children: [
-        {
-          label: "Little",
-          value: "little",
-          children: [
-            {
-              label: "Toy Fish",
-              value: "fish",
-            },
-            {
-              label: "Toy Cards",
-              value: "cards",
-            },
-            {
-              label: "Toy Bird",
-              value: "bird",
-            },
-          ],
-        },
-      ],
-    },
-  ];
-
+function FilterComponent({options,parentCallback,index}) {
+  
+  const [filters,setFilters] = useState([])
   function dropdownRender(menus) {
     return (
       <div>
@@ -55,71 +17,20 @@ function FilterComponent() {
   }
 
   function onChange(value) {
-    console.log(value);
+    // console.log(value);
+    parentCallback(value,index);
   }
 
   return (
     <>
-      <div>
-        
-      </div>
-      <div>
-        <div>
-          <p>Emisor</p>
-          <Cascader
-            style={{ width: 500 }}
-            options={options}
-            onChange={onChange}
-            multiple
-            dropdownRender={dropdownRender}
-            maxTagCount="responsive"
-          />
-        </div>
-        <div>
-          <p>Marca</p>
-          <Cascader
-            style={{ width: 500 }}
-            options={options}
-            onChange={onChange}
-            multiple
-            dropdownRender={dropdownRender}
-            maxTagCount="responsive"
-          />
-        </div>
-        <div>
-          <p>Reseptor</p>
-          <Cascader
-            style={{ width: 500 }}
-            options={options}
-            onChange={onChange}
-            multiple
-            dropdownRender={dropdownRender}
-            maxTagCount="responsive"
-          />
-        </div>
-        <div>
-          <p>Sucursal</p>
-          <Cascader
-            style={{ width: 500 }}
-            options={options}
-            onChange={onChange}
-            multiple
-            dropdownRender={dropdownRender}
-            maxTagCount="responsive"
-          />
-        </div>
-        <div>
-          <p>Producto</p>
-          <Cascader
-            style={{ width: 500 }}
-            options={options}
-            onChange={onChange}
-            multiple
-            dropdownRender={dropdownRender}
-            maxTagCount="responsive"
-          />
-        </div>
-      </div>
+      <Cascader
+        style={{ width: 500 }}
+        options={options}
+        onChange={onChange}
+        multiple
+        dropdownRender={dropdownRender}
+        maxTagCount="responsive"
+      />
     </>
   );
 }

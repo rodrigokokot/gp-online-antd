@@ -1,4 +1,5 @@
 import { DownOutlined } from "@ant-design/icons";
+
 const columnsNovelty = [
     {
       name: "ID",
@@ -205,4 +206,72 @@ const columnsNovelty = [
     },
   ];
 
-export {dataNovelty,dataSettings,columnsSettins,columnsNovelty};
+  const filtros = [
+    {
+      title: "Emision",
+      options: [
+        {
+          label: "Laura",
+          value: "laura",
+        },
+        {
+          label: "Pedro",
+          value: "pedro",
+        },
+      ],
+    },
+    {
+      title: "Marca",
+      options: [
+        {
+          label: "Juan",
+          value: "juan",
+        },
+        {
+          label: "juana",
+          value: "juana",
+        },
+      ],
+    },
+    {
+      title: "Transaccion",
+      options: [
+        {
+          label: "Juan",
+          value: "juan",
+        },
+        {
+          label: "juana",
+          value: "juana",
+        },
+      ],
+    },
+    {
+      title: "Sucursal",
+      options: [
+        {
+          label: "Juan",
+          value: "juan",
+        },
+        {
+          label: "juana",
+          value: "juana",
+        },
+      ],
+    },
+    {
+      title: "Producto",
+      options: [
+        {
+          label: "Juan",
+          value: "juan",
+        },
+        {
+          label: "juana",
+          value: "juana",
+        },
+      ],
+    },
+  ];
+
+export {dataNovelty,dataSettings,columnsSettins,columnsNovelty,filtros};
