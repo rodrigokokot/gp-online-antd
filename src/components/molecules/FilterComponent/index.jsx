@@ -60,23 +60,65 @@ function FilterComponent() {
 
   return (
     <>
-      <div style={{ flex:1, flexDirection: "row",justifyContent:"space-between" }}>
-        <p>Emisor</p>
-        <p>Marca</p>
-        <a>Reseptor</a>
-        <a>Sucursal</a>
-        <a>Producto</a>
-      </div>
-
       <div>
-        <Cascader
-          style={{ width: 500 }}
-          options={options}
-          onChange={onChange}
-          // multiple
-          dropdownRender={dropdownRender}
-          maxTagCount="responsive"
-        />
+        
+      </div>
+      <div>
+        <div>
+          <p>Emisor</p>
+          <Cascader
+            style={{ width: 500 }}
+            options={options}
+            onChange={onChange}
+            multiple
+            dropdownRender={dropdownRender}
+            maxTagCount="responsive"
+          />
+        </div>
+        <div>
+          <p>Marca</p>
+          <Cascader
+            style={{ width: 500 }}
+            options={options}
+            onChange={onChange}
+            multiple
+            dropdownRender={dropdownRender}
+            maxTagCount="responsive"
+          />
+        </div>
+        <div>
+          <p>Reseptor</p>
+          <Cascader
+            style={{ width: 500 }}
+            options={options}
+            onChange={onChange}
+            multiple
+            dropdownRender={dropdownRender}
+            maxTagCount="responsive"
+          />
+        </div>
+        <div>
+          <p>Sucursal</p>
+          <Cascader
+            style={{ width: 500 }}
+            options={options}
+            onChange={onChange}
+            multiple
+            dropdownRender={dropdownRender}
+            maxTagCount="responsive"
+          />
+        </div>
+        <div>
+          <p>Producto</p>
+          <Cascader
+            style={{ width: 500 }}
+            options={options}
+            onChange={onChange}
+            multiple
+            dropdownRender={dropdownRender}
+            maxTagCount="responsive"
+          />
+        </div>
       </div>
     </>
   );
