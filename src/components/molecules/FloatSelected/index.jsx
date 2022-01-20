@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Input, Select } from "antd";
+import { Select } from "antd";
+import PropTypes from 'prop-types'
 
 import "./index.less";
 
-const FloatSelected = ({options, ...props}) => {
+const FloatSelected = ({options, outline, ...props}) => {
   const [focus, setFocus] = useState(false);
   let { label, value, placeholder, type, required } = props;
 
@@ -21,8 +22,7 @@ const FloatSelected = ({options, ...props}) => {
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
     >
-      {/* <Input onChange={props.onChange} type={type} defaultValue={value} className="input-bottom" /> */}
-      <Select onChange={props.onChange} className="select-bottom">
+      <Select onChange={props.onChange} className={ !outline? "select-bottom" : '' } >
         {
           options && options.map((opt, index) => <Select.Option value={opt.value} disabled={opt.disabled} key={index}>{opt.title}</Select.Option>)
         }
@@ -33,5 +33,15 @@ const FloatSelected = ({options, ...props}) => {
     </div>
   );
 };
+
+FloatSelected.propTypes = {
+  options: PropTypes.array,
+  outline: PropTypes.bool
+}
+
+FloatSelected.defaultProps = {
+  options: [],
+  outline: false
+}
 
 export default FloatSelected;

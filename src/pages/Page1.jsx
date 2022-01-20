@@ -70,11 +70,49 @@ function Page1() {
                     layout="vertical"
                 >
                     <Form.Item name="email" rules={[validator.require]} hasFeedback>
-                    <FloatInput
-                        label="Email"
-                        placeholder="Email here please"
-                        name="email"
-                    />
+                        <FloatInput
+                            label="Email"
+                            placeholder="Email here please"
+                            name="email"
+                        />
+                    </Form.Item>
+                    <Form.Item name="email" rules={[validator.require]} hasFeedback>
+                        <FloatInput
+                            label="Email"
+                            placeholder="Email here please"
+                            name="email"
+                            outline
+                        />
+                    </Form.Item>
+                    <Form.Item name="algo" rules={[validator.require]} hasFeedback>
+                        <FloatSelected
+                            label="Email"
+                            placeholder="Email here please"
+                            name="email"
+                            outline
+                            options={ [
+                                {
+                                    title: "",
+                                    value: "",
+                                    disabled: false
+                                },
+                                {
+                                    title: "Title 1",
+                                    value: "title1",
+                                    disabled: false
+                                },
+                                {
+                                    title: "Title 2",
+                                    value: "title2",
+                                    disabled: false
+                                },
+                                {
+                                    title: "Title 3",
+                                    value: "title3",
+                                    disabled: true
+                                },
+                            ] }
+                        />
                     </Form.Item>
                     <Form.Item name="algo" rules={[validator.require]} hasFeedback>
                         <FloatSelected

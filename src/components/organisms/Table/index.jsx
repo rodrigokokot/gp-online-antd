@@ -25,7 +25,7 @@ const Table = ({
             onSelectedRowsChange={handleChange}
             expandableRows
             expandableRowsComponent={ () => <PruebaComponent /> }
-            expandableRowsHideExpander
+            // expandableRowsHideExpander
             expandOnRowClicked
         />
     )
