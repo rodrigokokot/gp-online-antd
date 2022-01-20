@@ -22,7 +22,7 @@ function SelectSearch (props)  {
   }
 
   return <Select 
-              showSearch style={{width: 754}} 
+              showSearch style={{width: 550}} 
               placeholder="Buscar por palabra clave"
               optionFilterProp="children"
               suffixIcon={<SearchOutlined />} 
