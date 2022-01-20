@@ -30,21 +30,6 @@ const Table = ({
     console.log("Selected Rows: ", state.selectedRows);
   };
 
-  const FilterInput = () => {
-    return (
-      <>
-        <Input
-          id="search"
-          type="text"
-          placeholder="Filter By Name"
-          aria-label="Search Input"
-          value={filterText}
-        />
-        <Button type="button">X</Button>
-      </>
-    );
-  };
-
   return (
     <DataTable
       columns={columns}
@@ -58,10 +43,7 @@ const Table = ({
       expandableRowsComponent={() => <Component />}
       expandableRowsHideExpander
       expandOnRowClicked
-      //
-      subHeader
-      subHeaderComponent={FilterInput}
-      persistTableHead
+
     />
   );
 };
