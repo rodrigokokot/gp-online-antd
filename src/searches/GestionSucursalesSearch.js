@@ -27,6 +27,7 @@ export const GestionSucursalesSearch = () => {
       name: "Provincia",
       input: (
         <FloatSelected
+          width= {150}
           placeholder="Provincia"
           label="Provincia"
           options={[
@@ -55,8 +56,10 @@ export const GestionSucursalesSearch = () => {
       name: "Estado",
       input: (
         <FloatSelected
+          width= {150}
           placeholder="Estado"
           label="Estado"
+          
           options={[
             {
               title: "Activo",

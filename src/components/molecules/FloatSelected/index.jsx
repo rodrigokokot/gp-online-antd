@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import "./index.less";
 
-const FloatSelected = ({options, outline, ...props}) => {
+const FloatSelected = ({options, outline, width, ...props}) => {
   const [focus, setFocus] = useState(false);
   let { label, value, placeholder, type, required } = props;
 
@@ -22,7 +22,7 @@ const FloatSelected = ({options, outline, ...props}) => {
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
     >
-      <Select onChange={props.onChange} className={ !outline? "select-bottom" : '' } >
+      <Select style={{width: width}} onChange={props.onChange} className={ !outline? "select-bottom" : '' } >
         {
           options && options.map((opt, index) => <Select.Option value={opt.value} disabled={opt.disabled} key={index}>{opt.title}</Select.Option>)
         }
