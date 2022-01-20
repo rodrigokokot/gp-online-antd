@@ -11,11 +11,12 @@ import {
 const TableFilters = ({ columns, data, expandible, selectable, filtros }) => {
   const [message, setMessage] = React.useState("holis");
   const [filterText, setFilterText] = React.useState("");
-  const filteredItems = data.filter(
-    // (item) =>
-    //   item.user && item.user.toLowerCase().includes(filterText.toLowerCase())
-    // ||  item.branch && item.branch.toLowerCase().includes(filterText.toLowerCase())
-  );
+  const filteredItems = data;
+//   const filteredItems = data.filter(
+//     (item) =>
+//       item.user && item.user.toLowerCase().includes(filterText.toLowerCase())
+//     // ||  item.branch && item.branch.toLowerCase().includes(filterText.toLowerCase())
+//   );
 
   return (
     <>
