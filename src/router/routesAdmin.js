@@ -17,6 +17,13 @@ const routes = [
         icon: 'FileAddOutlined',
         page: 'GestionAprobaciones'
     },
+    {
+        path: "/ayuda",
+        name: "Ayuda",
+        icon: 'QuestionCircleOutlined',
+        page: 'Ayuda'
+    },
+
 
 ];
 
