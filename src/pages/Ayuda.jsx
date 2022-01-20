@@ -24,12 +24,11 @@ function Ayuda() {
     const [idtitulo, setTitulo] = useState('');
 
     function Setear (e){ 
-        console.log("desde setear"+e)
         setFlag(true)
         setTitulo(e);
     }
-    return (
-        <>
+  return (
+    <>
       { flag 
              &&   <Row style={{width: 1259, height: 680, backgroundColor: 'white'}}>
                         <Col style={{marginTop:126}} >
@@ -60,8 +59,8 @@ function Ayuda() {
                         </Col>
                   </Row>
       } 
-      </>
-    )
+    </>
+  )
 }
 
 export default Ayuda;

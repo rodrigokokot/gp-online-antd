@@ -1,4 +1,4 @@
-import React ,{useState}from 'react';
+import React from 'react';
 import { Select} from 'antd';
 import { SearchOutlined  } from '@ant-design/icons';
 
@@ -6,23 +6,18 @@ const { Option } = Select;
 
 
 function onSearch(val) {
-  console.log('search:', val);
 }
 function onBlur() {
-  console.log('blur');
 }
 
 function onFocus() {
-  console.log('focus');
 }
 
 function SelectSearch (props)  {
   
   const {texto}=props; const {Setear}=props;
   function onChange(value) {
-    console.log("selected "+value)
     const idd = texto.findIndex(e => e.title === value) 
-    console.log("idd "+ idd)
     Setear(idd)
   }
 
@@ -43,15 +38,3 @@ function SelectSearch (props)  {
 };
 
 export default SelectSearch;
-
-/*<Select style={{width: 754}} showSearch 
-            suffixIcon={<SearchOutlined />} 
-            placeholder="Buscar por palabra clave"
-            name='texto' id='selTexto'  onClick={handlerCargarDescrip}
-         >  
-           {
-             texto.map((item,i)=>( 
-                <Option key={texto.title} value={i}>{item.title}</Option>
-             ) ) 
-           }
-         </Select> */
