@@ -8,10 +8,10 @@ export const AdvancedSearchForm = () => {
   const children = [];
 
   const getFields = () => {
-    GestionSucursalesSearch().map((item, i) => {
+    GestionSucursalesSearch().map((item) => {
       children.push(
-        <Col key={i}>
-          <Form.Item name={i}>{item}</Form.Item>
+        <Col key={item.name}>
+          <Form.Item name={item.name}>{item.input}</Form.Item>
         </Col>
       );
     });

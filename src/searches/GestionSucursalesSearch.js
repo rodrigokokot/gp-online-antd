@@ -1,29 +1,80 @@
-import React from 'react'
-import {Select} from 'antd'
-import FloatInput from '../components/molecules/FloatInput/index';
-
-
+import React from "react";
+import { Select } from "antd";
+import FloatInput from "../components/molecules/FloatInput/index";
+import FloatSelected from "../components/molecules/FloatSelected/index";
 
 export const GestionSucursalesSearch = () => {
-   const {Option} = Select;
-   const array = [
-    <FloatInput placeholder="Descripción"  label='Descripcion' />,
-    
-    <FloatInput placeholder="Código" label='Código' />,
-    
-    <FloatInput placeholder="Código Postal" label='Código Postal' />,
+  const array = [
+    {
+      name: "Descripción",
+      input: <FloatInput placeholder="Descripción" label="Descripcion" />,
+    },
 
-    <Select placeholder="Provincia" label='Provincia'>
-      <Option value="San Juan">San Juan</Option>
-      <Option value="Mendoza">Mendoza</Option>
-      <Option value="San Luis">San Luis</Option>
-    </Select>,
+    {
+      name: "Código",
+      input: <FloatInput placeholder="Código" label="Código" />,
+    },
 
-    <Select placeholder="Estado" label='Estado'>
-      <Option value="Activo">Activo</Option>
-      <Option value="Suspendido">Suspendido</Option>
-      <Option value="Cancelado">Cancelado</Option>
-    </Select>,
+    {
+      name: "Código Postal",
+      input: <FloatInput placeholder="Código Postal" label="Código Postal" />,
+    },
+
+    {
+      name: "Provincia",
+      input: (
+        <FloatSelected
+          placeholder="Provincia"
+          label="Provincia"
+          options={[
+            {
+              title: "sanjuan",
+              value: "San Juan",
+              disabled: false,
+            },
+            {
+              title: "mendoza",
+              value: "Mendoza",
+              disabled: false,
+            },
+            {
+              title: "sanluis",
+              value: "San Luis",
+              disabled: false,
+            },
+          ]}
+        />
+      ),
+    },
+
+    {
+      name: "Estado",
+      input: (
+        <FloatSelected
+          placeholder="Estado"
+          label="Estado"
+          options={[
+            {
+              title: "activo",
+              value: "Activo",
+              disabled: false,
+            },
+
+            {
+              title: "suspendido",
+              value: "Suspendido",
+              disabled: false,
+            },
+
+            {
+              title: "cancelado",
+              value: "Cancelado",
+              disabled: false,
+            },
+          ]}
+        />
+      ),
+    },
   ];
-    return array
-}
+  return array;
+};
