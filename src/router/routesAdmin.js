@@ -29,6 +29,12 @@ const routes = [
         icon: 'QuestionCircleOutlined',
         page: 'Ayuda'
     },
+    {
+        path: "/pageFacu",
+        name: "Página Facu",
+        icon: 'BoxPlotOutlined',
+        page: 'PageFacu'
+    },
 
 
 ];
