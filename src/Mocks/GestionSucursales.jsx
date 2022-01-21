@@ -1,38 +1,88 @@
-const gestionSucursalesData = [
-  {
-    id: 1,
-    descripcion: "tarjeta",
-    codigo: "666",
-    cp: "5425",
-    provincia: "San Juan",
-    estado: "Suspendido",
-  },
-  {
-    id: 2,
-    descripcion: "debito",
-    codigo: "999",
-    cp: "5400",
-    provincia: "San Luis",
-    estado: "Activo",
-  },
-];
+import { DownOutlined } from "@ant-design/icons";
+const columnsGestionSucursales = [
+    {
+      name: "ID",
+      selector: (row) => row.id,
+      sortable: true,
+    },
+    {
+      name: "Estado",
+      selector: (row) => row.estado,
+      sortable: true,
+    },
+    {
+      name: "Descripcion",
+      selector: (row) => row.descripcion,
+      sortable: true,
+    },
+    {
+      name: "Codigo",
+      selector: (row) => row.codigo,
+      sortable: true,
+    }
+  ];
+  
+  const dataGestionSucursales = [
+    {
+      id: 23,
+      estado: "Activo",
+      descripcion: "buen dia",
+      codigo: 999,
 
-const gestionSucursalesColumns = [
-  {
-    name: "Codigo",
-    selecor: (row) => row.codigo,
-    sortable: true,
-  },
-  {
-    name: "Descripción",
-    selector: (row) => row.descripcion,
-    sortable: false,
-  },
-  {
-    name: "Estado",
-    selecor: (row) => row.estado,
-    sortable: true,
-  },
-];
 
-export { gestionSucursalesData, gestionSucursalesColumns };
+
+
+       branch: "Cordoba",
+
+    },
+    {
+      id: 32,
+      estado: "Activo",
+      descripcion: "buen dia",
+      codigo: 999,
+
+
+
+
+       branch: "Cordoba",
+    },
+    {
+      id: 34,
+      estado: "Activo",
+      descripcion: "buen dia",
+      codigo: 999,
+
+
+
+
+       branch: "Cordoba",
+    },
+    {
+      id: 54,
+      estado: "Activo",
+      descripcion: "buen dia",
+      codigo: 999,
+
+
+
+
+       branch: "Cordoba",
+
+    },
+    {
+      id: 25,
+      estado: "Activo",
+      descripcion: "buen dia",
+      codigo: 999,
+
+
+
+
+       branch: "Cordoba",
+
+    },
+  ];
+  
+
+
+export {dataGestionSucursales,columnsGestionSucursales};

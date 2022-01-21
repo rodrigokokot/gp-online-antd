@@ -24,17 +24,18 @@ const routes = [
         page: 'Page1'
     },
     {
-        path: "/gestionAprobaciones",
-        name: "Gestion de Aprobaciones",
-        icon: 'FileAddOutlined',
-        page: 'GestionAprobaciones'
+        path: "/ayuda",
+        name: "Ayuda",
+        icon: 'QuestionCircleOutlined',
+        page: 'Ayuda'
     },
     {
-        path: "/pageFacu",
-        name: "Página Facu",
+        path: "/gestionSucursales",
+        name: "Gestión de Sucursales",
         icon: 'BoxPlotOutlined',
-        page: 'PageFacu'
-    },
+        page: 'GestionSucursales',
+    }
+
 
 ];
 

@@ -3,10 +3,15 @@ import React from "react";
 import { AdvancedSearchForm } from "../components/organisms/AdvancedSearchForm/index";
 import { GestionSucursalesSearch } from "../searches/GestionSucursalesSearch";
 import { Card } from "antd";
-import {gestionSucursalesData, gestionSucursalesColumns} from "../Mocks/GestionSucursales";
+import {columnsGestionSucursales, dataGestionSucursales} from "../Mocks/GestionSucursales";
+import {dataNovelty, columnsNovelty} from "../Mocks/GestionAprobaciones";
 
 function PageFacu() {
   
+
+
+
+
   return (
     <div>
 
@@ -16,7 +21,7 @@ function PageFacu() {
 
       <Card style={{ marginTop: "50px", marginBottom: "50px" }}>
 
-        <Table columns={gestionSucursalesColumns} data={gestionSucursalesData} expandible={false}  />
+        <Table columns={columnsGestionSucursales} data={dataGestionSucursales} expandible={true}/>
       </Card>
     </div>
   );
