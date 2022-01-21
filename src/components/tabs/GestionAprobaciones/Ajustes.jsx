@@ -8,10 +8,21 @@ import {
   dataSettings,
   columnsSettins,
   filtros,
+  columnsNovelty,
 } from "../../../Mocks/GestionAprobaciones";
 import TableFilters from "../../templates/TableFilters";
 
 const Ajustes = () => {
+  let childResponse = null;
+
+  function handleCallback(value){
+    childResponse = value.selectedRows;
+  }
+
+  function ShowValues(){
+    console.log('request:',childResponse)
+  }
+  
   return (
     <>
       <h2 style={{ color: "#AB218E" }}>Informacion de la cuenta</h2>
@@ -55,15 +66,15 @@ const Ajustes = () => {
         </div>
       </div>
 
-      <TableFilters
-        columns={columnsSettins}
+      <Table
         data={dataSettings}
-        selectable={true}
+        columns={columnsNovelty}
         expandible={false}
-        filtros={filtros}
-      ></TableFilters>
+        selectable={true}
+        parentCallback={handleCallback}
+      />
 
-      <Button type="primary">Aplicar Confirmación</Button>
+      <Button type="primary" onClick={ShowValues}>Aplicar Confirmación</Button>
     </>
   );
 };

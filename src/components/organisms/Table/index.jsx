@@ -8,6 +8,7 @@ const Table = ({
   component: Component,
   columns,
   data,
+  parentCallback,
   ...props
 }) => {
   const paginationComponentOptions = {
@@ -18,7 +19,8 @@ const Table = ({
   };
 
   const handleChange = (state) => {
-    console.log("Selected Rows: ", state.selectedRows);
+    parentCallback(state);
+    // console.log("Selected Rows: ", state.selectedRows);
   };
 
   return (
