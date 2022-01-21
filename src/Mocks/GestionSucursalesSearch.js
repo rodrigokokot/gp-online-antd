@@ -1,12 +1,18 @@
 import React from "react";
 import FloatInput from "../components/molecules/FloatInput/index";
 import FloatSelected from "../components/molecules/FloatSelected/index";
+import DateRangeFilter from "../components/organisms/DateRangeFilter";
 
 const GestionSucursalesSearch = [
     {
       index: 'descripcion',
       name: "Descripción",
       input: <FloatInput placeholder="Descripción" label="Descripcion" />,
+    },
+    {
+      index: 'fecha',
+      name: "fecha",
+      input: <DateRangeFilter />,
     },
 
     {

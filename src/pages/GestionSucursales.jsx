@@ -1,6 +1,6 @@
 import Table from "../components/organisms/Table/index";
 import React from "react";
-import  SearchForm  from "../components/organisms/AdvancedSearchForm/index";
+import  SearchForm  from "../components/organisms/SearchForm/index";
 import { GestionSucursalesSearch } from "../Mocks/GestionSucursalesSearch";
 import { Card } from "antd";
 import {columnsGestionSucursales, dataGestionSucursales} from "../Mocks/GestionSucursales";
