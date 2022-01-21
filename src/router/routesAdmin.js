@@ -23,6 +23,18 @@ const routes = [
         icon: 'BoxPlotOutlined',
         page: 'Page1'
     },
+    {
+        path: "/ayuda",
+        name: "Ayuda",
+        icon: 'QuestionCircleOutlined',
+        page: 'Ayuda'
+    },
+    {
+        path: "/gestionSucursales",
+        name: "Gestión de Sucursales",
+        icon: 'BoxPlotOutlined',
+        page: 'GestionSucursales',
+    }
 
 
 ];
