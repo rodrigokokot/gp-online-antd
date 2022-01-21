@@ -22,7 +22,7 @@ const FloatSelected = ({options, outline, width, ...props}) => {
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
     >
-      <Select style={{width: width}} onChange={props.onChange} className={ !outline? "select-bottom" : '' } >
+      <Select style={{width: width }} onChange={props.onChange} className={ !outline? "select-bottom" : '' } >
         {
           options && options.map((opt, index) => <Select.Option value={opt.value} disabled={opt.disabled} key={index}>{opt.title}</Select.Option>)
         }

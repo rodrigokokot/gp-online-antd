@@ -17,23 +17,21 @@ const onFinish = (values) => {
 const getFields = () => {
   const fields = [];
   console.log(array);
-  
+
   array.map((item) => {
     fields.push(
       <Col
         key={item.index}
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          flexBasis: "auto",
-        }}
       >
-        <Form.Item name={item.index}>{item.input}</Form.Item>
+      <Form.Item
+        name={item.index}
+
+      >
+        {item.input}
+      </Form.Item>
       </Col>
     );
   });
-  console.log(fields);
   return fields;
 };
 
@@ -49,7 +47,7 @@ const getFields = () => {
             onFinish={onFinish}
             size="large"
           >
-            <Row gutter={24} style={{ marginTop: 20 }}>{getFields()}</Row>
+            <Row gutter={24} style={{ marginTop: 20}}>{getFields()}</Row>
 
             <Row style={{ marginTop: 40 }}>
               <Col span={24} style={{ textAlign: "left" }}>
