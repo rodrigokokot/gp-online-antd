@@ -1,27 +1,74 @@
-import React from "react";
-import { Form, Col} from "antd";
-import {SearchForm} from '../../molecules/SearchForm/index'
-import { GestionSucursalesSearch } from "../../../searches/GestionSucursalesSearch";
+import React, {useState} from "react";
+import { Form, Col, Row, Button, Collapse} from "antd";
+import './index.less';
 
-export const AdvancedSearchForm = () => {
 
-  const children = [];
+const SearchForm = ({array}) => {
 
-  const getFields = () => {
-    GestionSucursalesSearch().map((item) => {
-      children.push(
-        <Col key={item.name}>
-          <Form.Item name={item.name}>{item.input}</Form.Item>
-        </Col>
-      );
-    });
+const [form] = Form.useForm();
+const { Panel } = Collapse;
+const [open, setOpen] = useState(["1"]);
 
-    return children;
-  };
+const onFinish = (values) => {
+  console.log("Received values of form: ", values);
+  setOpen([""]);
+};
+
+const getFields = () => {
+  const fields = [];
+  console.log(array);
+
+  array.map((item) => {
+    fields.push(
+      <Col
+        key={item.index}
+      >
+      <Form.Item
+        name={item.index}
+
+      >
+        {item.input}
+      </Form.Item>
+      </Col>
+    );
+  });
+  return fields;
+};
+
 
   return (
     <>
-      <SearchForm array={getFields()} />
+      <Collapse expandIconPosition="right" activeKey={open} onChange={setOpen}>
+        <Panel key="1">
+          <Form
+            form={form}
+            name="advanced_search"
+            className="ant-advanced-search-form"
+            onFinish={onFinish}
+            size="large"
+          >
+            <Row gutter={24} style={{ marginTop: 20}}>{getFields()}</Row>
+
+            <Row style={{ marginTop: 40 }}>
+              <Col span={24} style={{ textAlign: "left" }}>
+                <Button type="primary" htmlType="submit">
+                  Search
+                </Button>
+                <Button
+                  style={{ margin: "0 8px" }}
+                  onClick={() => {
+                    form.resetFields();
+                  }}
+                >
+                  Clear
+                </Button>
+              </Col>
+            </Row>
+          </Form>
+        </Panel>
+      </Collapse>
     </>
   );
 };
+
+export default SearchForm;

@@ -30,11 +30,11 @@ const routes = [
         page: 'Ayuda'
     },
     {
-        path: "/pageFacu",
-        name: "Página Facu",
+        path: "/gestionSucursales",
+        name: "Gestión de Sucursales",
         icon: 'BoxPlotOutlined',
-        page: 'PageFacu'
-    },
+        page: 'GestionSucursales',
+    }
 
 
 ];

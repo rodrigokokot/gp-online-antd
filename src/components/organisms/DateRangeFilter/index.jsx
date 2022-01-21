@@ -26,7 +26,7 @@ function DateRangeFilter() {
   };
 
   return (
-    <>
+    <div>
       <Button
         className="btn-date-range"
         type="text"
@@ -115,7 +115,7 @@ function DateRangeFilter() {
           </Col>
         </Row>
       </Modal>
-    </>
+    </div>
   );
 }
 
