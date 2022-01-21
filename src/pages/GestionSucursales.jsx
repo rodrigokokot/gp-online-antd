@@ -4,9 +4,8 @@ import { AdvancedSearchForm } from "../components/organisms/AdvancedSearchForm/i
 import { GestionSucursalesSearch } from "../searches/GestionSucursalesSearch";
 import { Card } from "antd";
 import {columnsGestionSucursales, dataGestionSucursales} from "../Mocks/GestionSucursales";
-import {dataNovelty, columnsNovelty} from "../Mocks/GestionAprobaciones";
 
-function PageFacu() {
+function GestionSucursales() {
   
 
 
@@ -27,4 +26,4 @@ function PageFacu() {
   );
 }
 
-export default PageFacu;
+export default GestionSucursales;

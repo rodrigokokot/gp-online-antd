@@ -33,7 +33,7 @@ const Table = ({
   return (
     <DataTable
       columns={columns}
-      data={filteredItems}
+      data={data}
       pagination
       paginationComponentOptions={paginationComponentOptions}
       highlightOnHover

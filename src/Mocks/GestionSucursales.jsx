@@ -28,34 +28,18 @@ const columnsGestionSucursales = [
       estado: "Activo",
       descripcion: "buen dia",
       codigo: 999,
-
-
-
-
-       branch: "Cordoba",
-
     },
     {
       id: 32,
       estado: "Activo",
       descripcion: "buen dia",
       codigo: 999,
-
-
-
-
-       branch: "Cordoba",
     },
     {
       id: 34,
       estado: "Activo",
       descripcion: "buen dia",
       codigo: 999,
-
-
-
-
-       branch: "Cordoba",
     },
     {
       id: 54,
@@ -66,7 +50,6 @@ const columnsGestionSucursales = [
 
 
 
-       branch: "Cordoba",
 
     },
     {
@@ -78,7 +61,6 @@ const columnsGestionSucursales = [
 
 
 
-       branch: "Cordoba",
 
     },
   ];
