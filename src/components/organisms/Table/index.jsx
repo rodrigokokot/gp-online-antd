@@ -17,15 +17,6 @@ const Table = ({
     selectAllRowsItemText: "Todos",
   };
 
-  const [filterText, setFilterText] = React.useState("");
-  const filteredItems = data.filter(
-    (item) => 
-        (
-            item.user && item.user.toLowerCase().includes(filterText.toLowerCase()) || 
-            item.branch && item.branch.toLowerCase().includes(filterText.toLowerCase())
-        )   
-  );
-
   const handleChange = (state) => {
     console.log("Selected Rows: ", state.selectedRows);
   };
@@ -33,7 +24,7 @@ const Table = ({
   return (
     <DataTable
       columns={columns}
-      data={filteredItems}
+      data={data}
       pagination
       paginationComponentOptions={paginationComponentOptions}
       highlightOnHover
@@ -43,7 +34,6 @@ const Table = ({
       expandableRowsComponent={() => <Component />}
       expandableRowsHideExpander
       expandOnRowClicked
-
     />
   );
 };

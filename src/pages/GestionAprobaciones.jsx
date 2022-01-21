@@ -5,7 +5,6 @@ import Ajustes from "../components/tabs/GestionAprobaciones/Ajustes";
 import Novedades from "../components/tabs/GestionAprobaciones/Novedades";
 
 function GestionAprobaciones() {
-  const { Meta } = Card;
   const { TabPane } = Tabs;
 
   return (

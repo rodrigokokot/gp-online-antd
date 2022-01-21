@@ -1,10 +1,15 @@
 import React from "react";
 import Filter from "../../organisms/Filter";
-import Table from '../../organisms/Table'
-import DateRangeFilter from '../../organisms/DateRangeFilter'
+import Table from "../../organisms/Table";
+import DateRangeFilter from "../../organisms/DateRangeFilter";
 import { Button } from "antd";
 import DeploymentConfirmation from "../../molecules/DeploymentConfirmation";
-import { dataSettings,columnsSettins } from "../../../Mocks/GestionAprobaciones";
+import {
+  dataSettings,
+  columnsSettins,
+  filtros,
+} from "../../../Mocks/GestionAprobaciones";
+import TableFilters from "../../templates/TableFilters";
 
 const Ajustes = () => {
   return (
@@ -49,15 +54,15 @@ const Ajustes = () => {
           </h3>
         </div>
       </div>
-      <Filter></Filter>
-      <DateRangeFilter></DateRangeFilter>
-      <Table
-        component={DeploymentConfirmation}
+
+      <TableFilters
         columns={columnsSettins}
         data={dataSettings}
-        // expandible={true}
         selectable={true}
-      />
+        expandible={false}
+        filtros={filtros}
+      ></TableFilters>
+
       <Button type="primary">Aplicar Confirmación</Button>
     </>
   );
