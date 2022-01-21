@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Table from '../components/organisms/Table'
 import DeploymentConfirmation from '../components/molecules/DeploymentConfirmation'
-import {DownOutlined} from '@ant-design/icons'
+import Icon, {DownOutlined} from '@ant-design/icons'
 import FloatInput from '../components/molecules/FloatInput'
 import FloatSelected from '../components/molecules/FloatSelected'
-import { Form, Modal, Button, Row, Col, Card } from "antd";
-// import DateRangePicker from '../components/molecules/DateRangePicker'
+import { Form, Card } from "antd";
 import DateRangeFilter from '../components/organisms/DateRangeFilter'
+import {HelpImg} from '../assets/img'
+import InlineSVG from 'svg-inline-react';
 
 const validator = {
     require: {
@@ -146,6 +147,8 @@ function Page1() {
                 </Form>
             </Card>
             <Table component={DeploymentConfirmation} columns={columns} data={data} />
+
+            <InlineSVG src={HelpImg} />
         </>
     )
 }

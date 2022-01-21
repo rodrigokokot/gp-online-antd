@@ -1,0 +1,1 @@
+export { HelpImg } from './help'
