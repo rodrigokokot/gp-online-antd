@@ -6,15 +6,18 @@ import { Card } from "antd";
 import {columnsGestionSucursales, dataGestionSucursales} from "../Mocks/GestionSucursales";
 
 function GestionSucursales() {
-  
+
+  const handleCallback = (values) =>{
+    console.log(`from parent: ${values}`);
+  }
+
   return (
     <div>
 
-      <Card style={{ marginTop: "15px", marginBottom: "15px" }}>
-        <SearchForm array={GestionSucursalesSearch} />
-      </Card>
 
-      <Card style={{ marginTop: "50px", marginBottom: "50px" }}>
+        <SearchForm parentCallback={handleCallback} array={GestionSucursalesSearch} />
+
+      <Card style={{ marginTop: "10px", marginBottom: "50px" }}>
 
         <Table columns={columnsGestionSucursales} data={dataGestionSucursales} expandible={true}/>
       </Card>

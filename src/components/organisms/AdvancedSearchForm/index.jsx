@@ -3,20 +3,19 @@ import { Form, Col, Row, Button, Collapse} from "antd";
 import './index.less';
 
 
-const SearchForm = ({array}) => {
+const SearchForm = ({array, parentCallback}) => {
 
 const [form] = Form.useForm();
 const { Panel } = Collapse;
 const [open, setOpen] = useState(["1"]);
 
 const onFinish = (values) => {
-  console.log("Received values of form: ", values);
+  parentCallback(values);
   setOpen([""]);
 };
 
 const getFields = () => {
   const fields = [];
-  console.log(array);
 
   array.map((item) => {
     fields.push(
@@ -25,7 +24,6 @@ const getFields = () => {
       >
       <Form.Item
         name={item.index}
-
       >
         {item.input}
       </Form.Item>
