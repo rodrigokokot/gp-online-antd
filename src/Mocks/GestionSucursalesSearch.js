@@ -2,8 +2,7 @@ import React from "react";
 import FloatInput from "../components/molecules/FloatInput/index";
 import FloatSelected from "../components/molecules/FloatSelected/index";
 
-export const GestionSucursalesSearch = () => {
-  const array = [
+const GestionSucursalesSearch = [
     {
       index: 'descripcion',
       name: "Descripción",
@@ -27,7 +26,6 @@ export const GestionSucursalesSearch = () => {
       name: "Provincia",
       input: (
         <FloatSelected
-          width= {150}
           placeholder="Provincia"
           label="Provincia"
           options={[
@@ -56,7 +54,6 @@ export const GestionSucursalesSearch = () => {
       name: "Estado",
       input: (
         <FloatSelected
-          width= {150}
           placeholder="Estado"
           label="Estado"
           
@@ -83,5 +80,5 @@ export const GestionSucursalesSearch = () => {
       ),
     },
   ];
-  return array;
-};
+
+  export {GestionSucursalesSearch}
