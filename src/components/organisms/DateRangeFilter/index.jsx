@@ -4,7 +4,7 @@ import Icon, { HomeOutlined } from "@ant-design/icons";
 import DateRangeComponent from "../../molecules/DateRangePicker";
 import eoLocale from "date-fns/locale/es";
 import { format } from "date-fns";
-import { Calendar } from "../../../assets/svg/icons/calendar";
+import { CalendarIcon } from "../../../assets/svg/icons/calendar";
 import "./index.less";
 
 function DateRangeFilter() {
@@ -30,7 +30,7 @@ function DateRangeFilter() {
       <Button
         className="btn-date-range"
         type="text"
-        icon={<Icon component={Calendar} />}
+        icon={<Icon component={CalendarIcon} />}
         onClick={() => setIsModalVisible(true)}
       >
         Por fechas
