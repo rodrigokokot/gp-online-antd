@@ -25,8 +25,6 @@ const Table = ({
   };
 
   return (
-    <>
-    {
       data.length === 0? <ResultSearch result={false} />
       :
       <DataTable
@@ -43,8 +41,6 @@ const Table = ({
         expandOnRowClicked
       />
 
-    }
-    </>
   );
 };
 
