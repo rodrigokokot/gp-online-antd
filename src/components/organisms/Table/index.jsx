@@ -8,6 +8,7 @@ const Table = ({
   component: Component,
   columns,
   data,
+  parentCallback,
   ...props
 }) => {
   const paginationComponentOptions = {
@@ -17,17 +18,9 @@ const Table = ({
     selectAllRowsItemText: "Todos",
   };
 
-  const [filterText, setFilterText] = React.useState("");
-  const filteredItems = data.filter(
-    (item) => 
-        (
-            item.user && item.user.toLowerCase().includes(filterText.toLowerCase()) || 
-            item.branch && item.branch.toLowerCase().includes(filterText.toLowerCase())
-        )   
-  );
-
   const handleChange = (state) => {
-    console.log("Selected Rows: ", state.selectedRows);
+    parentCallback(state);
+    // console.log("Selected Rows: ", state.selectedRows);
   };
 
   return (
@@ -43,7 +36,6 @@ const Table = ({
       expandableRowsComponent={() => <Component />}
       expandableRowsHideExpander
       expandOnRowClicked
-
     />
   );
 };

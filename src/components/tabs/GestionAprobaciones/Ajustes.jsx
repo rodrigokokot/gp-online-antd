@@ -1,12 +1,28 @@
 import React from "react";
 import Filter from "../../organisms/Filter";
-import Table from '../../organisms/Table'
-import DateRangeFilter from '../../organisms/DateRangeFilter'
+import Table from "../../organisms/Table";
+import DateRangeFilter from "../../organisms/DateRangeFilter";
 import { Button } from "antd";
 import DeploymentConfirmation from "../../molecules/DeploymentConfirmation";
-import { dataSettings,columnsSettins } from "../../../Mocks/GestionAprobaciones";
+import {
+  dataSettings,
+  columnsSettins,
+  filtros,
+  columnsNovelty,
+} from "../../../Mocks/GestionAprobaciones";
+import TableFilters from "../../templates/TableFilters";
 
 const Ajustes = () => {
+  let childResponse = null;
+
+  function handleCallback(value){
+    childResponse = value.selectedRows;
+  }
+
+  function ShowValues(){
+    console.log('request:',childResponse)
+  }
+  
   return (
     <>
       <h2 style={{ color: "#AB218E" }}>Informacion de la cuenta</h2>
@@ -49,16 +65,16 @@ const Ajustes = () => {
           </h3>
         </div>
       </div>
-      <Filter></Filter>
-      <DateRangeFilter></DateRangeFilter>
+
       <Table
-        component={DeploymentConfirmation}
-        columns={columnsSettins}
         data={dataSettings}
-        // expandible={true}
+        columns={columnsNovelty}
+        expandible={false}
         selectable={true}
+        parentCallback={handleCallback}
       />
-      <Button type="primary">Aplicar Confirmación</Button>
+
+      <Button type="primary" onClick={ShowValues}>Aplicar Confirmación</Button>
     </>
   );
 };

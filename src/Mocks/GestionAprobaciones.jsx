@@ -1,4 +1,5 @@
 import { DownOutlined } from "@ant-design/icons";
+
 const columnsNovelty = [
     {
       name: "ID",
@@ -66,8 +67,8 @@ const columnsNovelty = [
       user: "Carlos, lucia",
       comment: "-",
       acount: "334252",
-      brand: "Tareta Grupar",
-      product: "Tareta Grupar",
+      brand: "Tarjeta Individual",
+      product: "Tarjeta Individual",
       branch: "Cordoba",
       client: "Candela, Olga Miriam del Valle",
     },
@@ -78,8 +79,8 @@ const columnsNovelty = [
       user: "Pedro, lucia",
       comment: "-",
       acount: "334252",
-      brand: "Tareta Grupar",
-      product: "Tareta Grupar",
+      brand: "Tarjeta Grupar",
+      product: "Tarjeta Grupar",
       branch: "San Juan",
       client: "Candela, Olga Miriam del Valle",
     },
@@ -90,8 +91,8 @@ const columnsNovelty = [
       user: "Juana, lucia",
       comment: "-",
       acount: "334252",
-      brand: "Tareta Grupar",
-      product: "Tareta Grupar",
+      brand: "Tarjeta Individual",
+      product: "Tarjeta Individual",
       branch: "jachal",
       client: "Candela, Olga Miriam del Valle",
     },
@@ -102,8 +103,8 @@ const columnsNovelty = [
       user: "Maria, lucia",
       comment: "-",
       acount: "334252",
-      brand: "Tareta Grupar",
-      product: "Tareta Grupar",
+      brand: "Tarjeta Individual",
+      product: "Tarjeta Individual",
       branch: "Cordoba",
       client: "Candela, Olga Miriam del Valle",
     },
@@ -114,8 +115,8 @@ const columnsNovelty = [
       user: "Juanita, lucia",
       comment: "-",
       acount: "334252",
-      brand: "Tareta Grupar",
-      product: "Tareta Grupar",
+      brand: "Tarjeta Grupar",
+      product: "Tarjeta Grupar",
       branch: "Cordoba",
       client: "Candela, Olga Miriam del Valle",
     },
@@ -205,4 +206,72 @@ const columnsNovelty = [
     },
   ];
 
-export {dataNovelty,dataSettings,columnsSettins,columnsNovelty};
+  const filtros = [
+    {
+      title: "Emision",
+      options: [
+        {
+          label: "Laura",
+          value: "laura",
+        },
+        {
+          label: "Pedro",
+          value: "pedro",
+        },
+      ],
+    },
+    {
+      title: "Marca",
+      options: [
+        {
+          label: "Juan",
+          value: "juan",
+        },
+        {
+          label: "juana",
+          value: "juana",
+        },
+      ],
+    },
+    {
+      title: "Transaccion",
+      options: [
+        {
+          label: "Juan",
+          value: "juan",
+        },
+        {
+          label: "juana",
+          value: "juana",
+        },
+      ],
+    },
+    {
+      title: "Sucursal",
+      options: [
+        {
+          label: "Juan",
+          value: "juan",
+        },
+        {
+          label: "juana",
+          value: "juana",
+        },
+      ],
+    },
+    {
+      title: "Producto",
+      options: [
+        {
+          label: "Tarjeta Grupar",
+          value: "Tarjeta Grupar",
+        },
+        {
+          label: "Tarjeta Individual",
+          value: "Tarjeta Individual",
+        },
+      ],
+    },
+  ];
+
+export {dataNovelty,dataSettings,columnsSettins,columnsNovelty,filtros};

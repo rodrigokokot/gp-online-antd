@@ -27,6 +27,7 @@ function App() {
           <DashboardTemplate exact path="/home" component={ lazy(() => import('./pages/Home'))}  />
           <DashboardTemplate exact path="/gestionAprobaciones" component={ lazy(() => import('./pages/GestionAprobaciones'))}  />
           <DashboardTemplate exact path="/ayuda" component={ lazy(() => import('./pages/Ayuda'))}  />
+          <DashboardTemplate exact path="/gestionSucursales" component={ lazy(() => import('./pages/GestionSucursales'))}  />
           {/* { routes.map((route, index) => <DashboardTemplate exact path={route.path} component={route.page} key={index} /> ) } */}
 
         </Switch>

@@ -5,12 +5,11 @@ import Ajustes from "../components/tabs/GestionAprobaciones/Ajustes";
 import Novedades from "../components/tabs/GestionAprobaciones/Novedades";
 
 function GestionAprobaciones() {
-  const { Meta } = Card;
   const { TabPane } = Tabs;
 
   return (
     <>
-      <Tabs defaultActiveKey="1" style={{ color: "#C1C5C8" }}>
+      <Tabs defaultActiveKey="1" style={{ color: "#C1C5C8"}}>
         {/* Pantalla 1 */}
         <TabPane tab="Novedades por confirmar" key="1">
           <Novedades/>

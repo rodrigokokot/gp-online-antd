@@ -29,6 +29,12 @@ const routes = [
         icon: 'QuestionCircleOutlined',
         page: 'Ayuda'
     },
+    {
+        path: "/gestionSucursales",
+        name: "Gestión de Sucursales",
+        icon: 'BoxPlotOutlined',
+        page: 'GestionSucursales',
+    }
 
 
 ];
