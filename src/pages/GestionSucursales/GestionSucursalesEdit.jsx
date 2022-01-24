@@ -13,6 +13,8 @@ const GestionSucursalesEdit = () => {
       console.log(values)
       console.log({type});
   }
+
+  
   
   
   return (
