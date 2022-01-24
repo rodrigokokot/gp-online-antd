@@ -1,28 +1,22 @@
 import React from "react";
-import Filter from "../../organisms/Filter";
 import Table from "../../organisms/Table";
-import DateRangeFilter from "../../organisms/DateRangeFilter";
 import { Button } from "antd";
-import DeploymentConfirmation from "../../molecules/DeploymentConfirmation";
 import {
   dataSettings,
-  columnsSettins,
-  filtros,
   columnsNovelty,
 } from "../../../Mocks/GestionAprobaciones";
-import TableFilters from "../../templates/TableFilters";
 
 const Ajustes = () => {
   let childResponse = null;
 
-  function handleCallback(value){
+  function handleCallback(value) {
     childResponse = value.selectedRows;
   }
 
-  function ShowValues(){
-    console.log('request:',childResponse)
+  function ShowValues() {
+    console.log('request:', childResponse)
   }
-  
+
   return (
     <>
       <h2 style={{ color: "#AB218E" }}>Informacion de la cuenta</h2>
