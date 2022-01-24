@@ -13,6 +13,8 @@ const SearchForm = ({ array, parentCallback }) => {
   const [open, setOpen] = useState(["1"]);
 
   const onFinish = (values) => {
+    
+    console.log(values);
     parentCallback(values);
     // console.log("Received values of form: ", values);
     setOpen([""]);

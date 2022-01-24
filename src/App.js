@@ -15,9 +15,15 @@ import Login from './pages/Login'
 
 //const NotFound404 = lazy(() => import('./components/pages/NotFound404'));
 
+// id from url
+
 
 function App() {
+  // id from url
+  
   return (
+    
+
     <Router>
       {/* <Suspense fallback={ "Cargando..." }> */}
         <Switch>
@@ -27,7 +33,8 @@ function App() {
           <DashboardTemplate exact path="/home" component={ lazy(() => import('./pages/Home'))}  />
           <DashboardTemplate exact path="/gestionAprobaciones" component={ lazy(() => import('./pages/GestionAprobaciones'))}  />
           <DashboardTemplate exact path="/ayuda" component={ lazy(() => import('./pages/Ayuda'))}  />
-          <DashboardTemplate exact path="/gestionSucursales" component={ lazy(() => import('./pages/GestionSucursales'))}  />
+          <DashboardTemplate exact path="/gestionSucursales" component={ lazy(() => import('./pages/GestionSucursales/GestionSucursales'))}  />
+          <DashboardTemplate exact path="/gestionSucursales/:type" component={ lazy(() => import('./pages/GestionSucursales/GestionSucursalesEdit'))}  />
           {/* { routes.map((route, index) => <DashboardTemplate exact path={route.path} component={route.page} key={index} /> ) } */}
 
         </Switch>
