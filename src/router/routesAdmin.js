@@ -26,7 +26,7 @@ const routes = [
         subItems: [
             {
                 path: "/usuarios/gestionDeUsuarios",
-                name: "Gestion de usuarios",
+                name: "Gestión de usuarios",
                 icon: 'BoxPlotOutlined',
                 page: 'GestionSucursales',
             },
@@ -63,7 +63,7 @@ const routes = [
         page: 'ParametrosPrincipales',
         subItems: [
             {
-                path: "emision/movimientos",
+                path: "/emision/movimientos",
                 name: "Movimientos",
                 page: 'GestionSucursales',
             },

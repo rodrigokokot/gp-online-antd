@@ -25,15 +25,23 @@ function App() {
         <LoginTemplate exact path="/login" component={Login} />
 
         <DashboardTemplate exact path="/gestionAprobaciones" component={lazy(() => import('./pages/GestionAprobaciones'))} />
-        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales" component={lazy(() => import('./pages/ParametrosPrincipales'))} />
+
+        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales" component={lazy(() => import('./pages/GestionSucursales'))} />
+        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/editarSucursal" component={lazy(() => import('./pages/GestionSucursales'))} />
+
         <DashboardTemplate exact path="/usuarios/gestionDeUsuarios" component={lazy(() => import('./pages/Usuarios'))} />
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/Usuarios'))} />
+
         <DashboardTemplate exact path="/movimientos/IPM" component={lazy(() => import('./pages/Movimientos'))} />
         <DashboardTemplate exact path="/movimientos/CTF" component={lazy(() => import('./pages/Movimientos'))} />
+
         <DashboardTemplate exact path="/emision/movimientos" component={lazy(() => import('./pages/Emision'))} />
         <DashboardTemplate exact path="/emision/socios" component={lazy(() => import('./pages/Emision'))} />
+
         <DashboardTemplate exact path="/parametria" component={lazy(() => import('./pages/Parametria'))} />
+
         <DashboardTemplate exact path="/adquirencia" component={lazy(() => import('./pages/Adquirencia'))} />
+
         <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda'))} />
 
 
