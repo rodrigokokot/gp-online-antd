@@ -1,7 +1,4 @@
 import React from "react";
-import Filter from "../../organisms/Filter";
-import Table from "../../organisms/Table";
-import DateRangeFilter from "../../organisms/DateRangeFilter";
 import Meta from "antd/lib/card/Meta";
 import { AutoComplete, Card } from "antd";
 import {
@@ -9,11 +6,22 @@ import {
   columnsNovelty,
 } from "../../../Mocks/GestionAprobaciones";
 import { filtros } from "../../../Mocks/GestionAprobaciones";
-import Icon, { HomeOutlined } from "@ant-design/icons";
+import Icon from "@ant-design/icons";
 import { Notification } from "../../../assets/svg/icons/notification";
 import TableFilters from "../../templates/TableFilters";
+import Table from "../../organisms/Table";
+import DeploymentConfirmation from "../../molecules/DeploymentConfirmation";
+import DateRangeFilter from "../../organisms/DateRangeFilter";
+import SearchForm from "../../organisms/SearchForm";
+import { GestionSucursalesSearch } from "../../../Mocks/GestionSucursalesSearch";
 
 function Novedades() {
+
+  function handleCallback(value){
+    console.log('from parent',value)
+    // responseChild = value;
+  }
+  
   return (
     <>
       <Card
@@ -31,13 +39,15 @@ function Novedades() {
           description="Desplegá cada fila para poder operar las confirmaciones."
         />
       </Card>
-      <TableFilters
+      <DateRangeFilter></DateRangeFilter>
+      <SearchForm array={GestionSucursalesSearch} parentCallback={handleCallback}></SearchForm>
+      <Table
+        component={DeploymentConfirmation}
         data={dataNovelty}
         columns={columnsNovelty}
         expandible={true}
         selectable={false}
-        filtros={filtros}
-      ></TableFilters>
+      />
     </>
   );
 }

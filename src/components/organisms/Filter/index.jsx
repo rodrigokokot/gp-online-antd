@@ -8,7 +8,7 @@ function Filter({ filtros, parentCallback }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   let clearInput = false;
 
-  let array = [];
+  let array = [[],[],[],[],[]];
 
   function handleCallback(childData, index) {
     array[index] = childData;
@@ -19,7 +19,7 @@ function Filter({ filtros, parentCallback }) {
   }
 
   function filterClean(){
-    array = [];
+    array = [[],[],[],[],[]];
     parentCallback(array,true);
   }
 

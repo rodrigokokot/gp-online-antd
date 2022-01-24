@@ -9,7 +9,7 @@ function GestionAprobaciones() {
 
   return (
     <>
-      <Tabs defaultActiveKey="1" style={{ color: "#C1C5C8" }}>
+      <Tabs defaultActiveKey="1" style={{ color: "#C1C5C8"}}>
         {/* Pantalla 1 */}
         <TabPane tab="Novedades por confirmar" key="1">
           <Novedades/>

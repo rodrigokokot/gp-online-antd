@@ -27,25 +27,25 @@ const columnsGestionSucursales = [
       id: 23,
       estado: "Activo",
       descripcion: "buen dia",
-      codigo: 999,
+      codigo: 111,
     },
     {
       id: 32,
       estado: "Activo",
-      descripcion: "buen dia",
-      codigo: 999,
+      descripcion: "buenas noches",
+      codigo: 222,
     },
     {
       id: 34,
-      estado: "Activo",
-      descripcion: "buen dia",
-      codigo: 999,
+      estado: "Cancelado",
+      descripcion: "buenas noches",
+      codigo: 333,
     },
     {
       id: 54,
-      estado: "Activo",
+      estado: "Suspendido",
       descripcion: "buen dia",
-      codigo: 999,
+      codigo: 444,
 
 
 
@@ -54,7 +54,7 @@ const columnsGestionSucursales = [
     },
     {
       id: 25,
-      estado: "Activo",
+      estado: "Suspendido",
       descripcion: "buen dia",
       codigo: 999,
 

@@ -2,12 +2,14 @@ import React from "react";
 import FloatInput from "../components/molecules/FloatInput/index";
 import FloatSelected from "../components/molecules/FloatSelected/index";
 
+
 const GestionSucursalesSearch = [
     {
       index: 'descripcion',
       name: "Descripción",
       input: <FloatInput placeholder="Descripción" label="Descripcion" />,
     },
+
 
     {
       index: 'codigo',
