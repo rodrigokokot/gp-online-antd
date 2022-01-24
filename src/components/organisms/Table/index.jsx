@@ -27,10 +27,9 @@ const Table = ({
   return (
     <>
     {
-      data.length === 0 && <ResultSearch result={false} />
-    }
-    {
-      data.length > 0 && <DataTable
+      data.length === 0? <ResultSearch result={false} />
+      :
+      <DataTable
         columns={columns}
         data={data}
         pagination
