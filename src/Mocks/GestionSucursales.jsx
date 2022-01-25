@@ -1,6 +1,7 @@
 import { DownOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 const columnsGestionSucursales = [
+
   {
     name: "Descripcion",
     selector: (row) => row.descripcion,
@@ -64,5 +65,6 @@ const dataGestionSucursales = [
     option:<Link>Editar</Link>
   },
 ];
+  
 
-export { dataGestionSucursales, columnsGestionSucursales };
+export {dataGestionSucursales,columnsGestionSucursales};

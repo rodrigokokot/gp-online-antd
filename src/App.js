@@ -26,9 +26,25 @@ function App() {
 
     <Router>
       {/* <Suspense fallback={ "Cargando..." }> */}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <Switch>
+          <Route exact path="/"><Redirect to="/login" /></Route>
+          <LoginTemplate exact path="/login" component={Login} />
+          <DashboardTemplate exact path="/page1" component={ lazy(() => import('./pages/Page1'))}  />
+          <DashboardTemplate exact path="/home" component={ lazy(() => import('./pages/Home'))}  />
+          <DashboardTemplate exact path="/gestionAprobaciones" component={ lazy(() => import('./pages/GestionAprobaciones'))}  />
+          <DashboardTemplate exact path="/ayuda" component={ lazy(() => import('./pages/Ayuda'))}  />
+          <DashboardTemplate exact path="/gestionSucursales" component={ lazy(() => import('./pages/GestionSucursales/GestionSucursales'))}  />
+          <DashboardTemplate exact path="/gestionSucursales/:type" component={ lazy(() => import('./pages/GestionSucursales/GestionSucursalesEdit'))}  />
+          {/* { routes.map((route, index) => <DashboardTemplate exact path={route.path} component={route.page} key={index} /> ) } */}
+=======
+>>>>>>> 091052f7ee838eed8f757d918f6499eda556662d
       <Switch>
         <Route exact path="/"><Redirect to="/login" /></Route>
         <LoginTemplate exact path="/login" component={Login} />
+>>>>>>> 0a588ca84d16218261d746c2de04537e6840179f
 
         <DashboardTemplate exact path="/gestionAprobaciones" component={lazy(() => import('./pages/GestionAprobaciones'))} />
 
