@@ -63,7 +63,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
         </Sider>
 
         <Layout className="site-layout">
-          <PageHeader style={{ borderBottom: '2px solid currentColor' }}
+          <PageHeader 
             title={<h2>{itemSelected.name}</h2>}
             extra={"Norma Cardozo"}
           ></PageHeader>
