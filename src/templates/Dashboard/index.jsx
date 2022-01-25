@@ -5,6 +5,10 @@ import Icon, { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
 import { GradientIcon, LogoIcon, UserIcon } from "../../assets/svg/icons";
+<<<<<<< HEAD
+=======
+import SubMenu from "antd/lib/menu/SubMenu";
+>>>>>>> 0a588ca84d16218261d746c2de04537e6840179f
 
 const { Header, Sider, Content } = Layout;
 
@@ -14,6 +18,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
   const icons = require(`@ant-design/icons`);
   return (
     <>
+<<<<<<< HEAD
       {/* <PageHeader
         title="GP"
         style={{ backgroundColor: "#1F263D" }}
@@ -36,6 +41,8 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           </>
         }
       /> */}
+=======
+>>>>>>> 0a588ca84d16218261d746c2de04537e6840179f
       <Header className="header">
         <div className="container-logo">
           <Link to="/home" className="logo">
@@ -61,12 +68,24 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
             {routes.map((route, index) => {
               const Component = icons[route.icon];
               return (
-                <Menu.Item icon={<Component />} key={index}>
-                  <Link to={route.path} onClick={() => setItemSelected(route)}>
-                    {route.name}
-                  </Link>
-                </Menu.Item>
-              );
+                route.subItems !== undefined
+                  ? <SubMenu icon={<Component />} key={index} title={route.name}>
+                    {route.subItems.map((item) => {
+                      return (
+                        <Menu.Item>
+                          <Link to={item.path} onClick={()=>setItemSelected(item)}>
+                            {item.name}
+                          </Link>
+                        </Menu.Item>
+                      )
+                    })}
+                  </SubMenu>
+                  : <Menu.Item icon={<Component />}>
+                    <Link style={{ width: "flex" }} to={route.path} onClick={()=>setItemSelected(route)}>
+                      {route.name}
+                    </Link>
+                  </Menu.Item>
+              )
             })}
           </Menu>
         </Sider>
