@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import { EditForm } from "../components/organisms/EditForm/EditForm";
+import { Form, Input } from "antd";
 
-function Login() {
-    return (
-        <div>
-            Adquirencia
-        </div>
-    )
+function Adquirencia() {
+
+  return (
+    <div>
+
+    </div>
+  );
 }
 
-export default Login
+export default Adquirencia;

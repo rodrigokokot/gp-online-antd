@@ -7,7 +7,7 @@ import {
   CollapseOpen,
 } from "../../../assets/svg/icons/collapse";
 
-const SearchForm = ({ array, parentCallback }) => {
+const SearchForm = ({ array, parentCallback, title }) => {
   const [form] = Form.useForm();
   const { Panel } = Collapse;
   const [open, setOpen] = useState(["1"]);
@@ -43,7 +43,8 @@ const SearchForm = ({ array, parentCallback }) => {
           <Icon component={isActive ? CollapseClose : CollapseOpen} />
         )}
       >
-        <Panel key="1">
+        <Panel key="1" header={title}>
+          {console.log(title)}
           <Form
             form={form}
             name="advanced_search"
