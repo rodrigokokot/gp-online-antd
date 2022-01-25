@@ -5,10 +5,8 @@ import {
   dataNovelty,
   columnsNovelty,
 } from "../../../Mocks/GestionAprobaciones";
-import { filtros } from "../../../Mocks/GestionAprobaciones";
 import Icon from "@ant-design/icons";
 import { Notification } from "../../../assets/svg/icons/notification";
-import TableFilters from "../../templates/TableFilters";
 import Table from "../../organisms/Table";
 import DeploymentConfirmation from "../../molecules/DeploymentConfirmation";
 import DateRangeFilter from "../../organisms/DateRangeFilter";
@@ -17,11 +15,11 @@ import { GestionSucursalesSearch } from "../../../Mocks/GestionSucursalesSearch"
 
 function Novedades() {
 
-  function handleCallback(value){
-    console.log('from parent',value)
+  function handleCallback(value) {
+    console.log('from parent', value)
     // responseChild = value;
   }
-  
+
   return (
     <>
       <Card
