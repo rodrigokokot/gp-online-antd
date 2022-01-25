@@ -9,17 +9,22 @@ import {
 } from "../Mocks/GestionSucursales";
 
 function GestionSucursales() {
+  const handleCallback = (values) => {
+    console.log(`from parent: ${values}`);
+  };
+
   return (
     <div>
-      <Card style={{ marginTop: "15px", marginBottom: "15px" }}>
-        <SearchForm array={GestionSucursalesSearch} />
-      </Card>
+      <SearchForm
+        parentCallback={handleCallback}
+        array={GestionSucursalesSearch}
+      />
 
-      <Card style={{ marginTop: "50px", marginBottom: "50px" }}>
+      <Card style={{ marginTop: "10px", marginBottom: "50px" }}>
         <Table
           columns={columnsGestionSucursales}
           data={dataGestionSucursales}
-          expandible={false}
+          expandible={true}
         />
       </Card>
     </div>
