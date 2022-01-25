@@ -45,7 +45,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                     {route.subItems.map((item) => {
                       return (
                         <Menu.Item>
-                          <Link to={item.path} onClick={()=>setItemSelected(item)}>
+                          <Link to={item.path} onClick={() => setItemSelected(item)}>
                             {item.name}
                           </Link>
                         </Menu.Item>
@@ -53,7 +53,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                     })}
                   </SubMenu>
                   : <Menu.Item icon={<Component />}>
-                    <Link style={{ width: "flex" }} to={route.path} onClick={()=>setItemSelected(route)}>
+                    <Link style={{ width: "flex" }} to={route.path} onClick={() => setItemSelected(route)}>
                       {route.name}
                     </Link>
                   </Menu.Item>
@@ -63,37 +63,8 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
         </Sider>
 
         <Layout className="site-layout">
-          <Header className="sub-header">
-            <div className="logo-empesa">
-                
-              
-                  {/* <Select
-                    style={{ width: 240 }}
-                    placeholder="custom dropdown render"
-
-                  >
-                      <Select.Option value="1" key={1}>
-                        <div className="demo-option-label-item">
-                          <span role="img" aria-label="China">
-                            <IconComponent icon="spin" />
-                          </span>
-                        </div>
-                      </Select.Option>
-                      <Select.Option value="2" key={2}>
-                        <div className="demo-option-label-item">
-                          <span role="img" aria-label="China">
-                          </span>
-                        </div>
-                      </Select.Option>
-
-                  </Select> */}
-            </div>
-            {/* <div className="container-user">
-              <Icon component={UserIcon} />
-            </div> */}
-          </Header>
-          <PageHeader
-            title={itemSelected.name}
+          <PageHeader 
+            title={<h2>{itemSelected.name}</h2>}
             extra={"Norma Cardozo"}
           ></PageHeader>
           <Content
