@@ -6,7 +6,7 @@ import FloatInput from '../components/molecules/FloatInput'
 import FloatSelected from '../components/molecules/FloatSelected'
 import { Form, Card, Switch } from "antd";
 import DateRangeFilter from '../components/organisms/DateRangeFilter'
-import {HelpImg} from '../assets/svg/img'
+import {HelpImg, LoginImg} from '../assets/svg/img'
 import InlineSVG from 'svg-inline-react';
 import ResultSearch from '../components/molecules/ResultSearch'
 
@@ -389,7 +389,7 @@ function Page1() {
             <Switch onChange={() => setNoResult(!noResult)} />
             <Table component={DeploymentConfirmation} columns={columns} data={ noResult? data : [] } />
 
-            <InlineSVG src={HelpImg} />
+            <InlineSVG src={LoginImg} />
         </>
     )
 }

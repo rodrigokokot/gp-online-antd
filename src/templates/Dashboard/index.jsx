@@ -1,10 +1,15 @@
 import { createElement, lazy, Suspense, useEffect, useState } from "react";
 import { Link, Route } from "react-router-dom";
-import { Avatar, Button, Layout, Menu, PageHeader, Skeleton } from "antd";
+import { Select, Layout, Menu, PageHeader, Skeleton, Divider, Input } from "antd";
 import Icon, { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
 import { GradientIcon, LogoIcon, UserIcon } from "../../assets/svg/icons";
+import entitiesArray from "../../assets/svg/entidades/entitiesArray";
+import InlineSVG from 'svg-inline-react';
+// import IconComponent from "../../components/molecules/IconComponent";
+import { Uala } from "../../assets/svg/entidades/Uala";
+import { Pago24Entity } from "../../assets/svg/entidades/Pago24";
 
 const { Header, Sider, Content } = Layout;
 
@@ -72,6 +77,35 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
         </Sider>
 
         <Layout className="site-layout">
+          <Header className="sub-header">
+            <div className="logo-empesa">
+                
+              
+                  {/* <Select
+                    style={{ width: 240 }}
+                    placeholder="custom dropdown render"
+
+                  >
+                      <Select.Option value="1" key={1}>
+                        <div className="demo-option-label-item">
+                          <span role="img" aria-label="China">
+                            <IconComponent icon="spin" />
+                          </span>
+                        </div>
+                      </Select.Option>
+                      <Select.Option value="2" key={2}>
+                        <div className="demo-option-label-item">
+                          <span role="img" aria-label="China">
+                          </span>
+                        </div>
+                      </Select.Option>
+
+                  </Select> */}
+            </div>
+            {/* <div className="container-user">
+              <Icon component={UserIcon} />
+            </div> */}
+          </Header>
           <PageHeader
             title={itemSelected.name}
             extra={"Norma Cardozo"}
@@ -82,7 +116,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               margin: "24px 16px",
               padding: 24,
               minHeight: 280,
-              backgroundColor: "#F9F9F9",
+              backgroundColor: "#E5E5E5",
             }}
           >
             <Route
