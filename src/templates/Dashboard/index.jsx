@@ -45,7 +45,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                     {route.subItems.map((item) => {
                       return (
                         <Menu.Item>
-                          <Link to={item.path} onClick={()=>setItemSelected(item)}>
+                          <Link to={item.path} onClick={() => setItemSelected(item)}>
                             {item.name}
                           </Link>
                         </Menu.Item>
@@ -53,7 +53,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                     })}
                   </SubMenu>
                   : <Menu.Item icon={<Component />}>
-                    <Link style={{ width: "flex" }} to={route.path} onClick={()=>setItemSelected(route)}>
+                    <Link style={{ width: "flex" }} to={route.path} onClick={() => setItemSelected(route)}>
                       {route.name}
                     </Link>
                   </Menu.Item>
@@ -63,8 +63,8 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
         </Sider>
 
         <Layout className="site-layout">
-          <PageHeader
-            title={itemSelected.name}
+          <PageHeader style={{ borderBottom: '2px solid currentColor' }}
+            title={<h2>{itemSelected.name}</h2>}
             extra={"Norma Cardozo"}
           ></PageHeader>
           <Content
