@@ -5,7 +5,6 @@ import Icon, { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
 import { GradientIcon, LogoIcon, UserIcon } from "../../assets/svg/icons";
-import SubMenu from "antd/lib/menu/SubMenu";
 
 const { Header, Sider, Content } = Layout;
 
@@ -41,7 +40,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               const Component = icons[route.icon];
               return (
                 route.subItems !== undefined
-                  ? <SubMenu icon={<Component />} key={index} title={route.name}>
+                  ? <Menu.SubMenu icon={<Component />} key={index} title={route.name}>
                     {route.subItems.map((item) => {
                       return (
                         <Menu.Item>
@@ -51,7 +50,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                         </Menu.Item>
                       )
                     })}
-                  </SubMenu>
+                  </Menu.SubMenu>
                   : <Menu.Item icon={<Component />}>
                     <Link style={{ width: "flex" }} to={route.path} onClick={() => setItemSelected(route)}>
                       {route.name}
