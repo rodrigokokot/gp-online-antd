@@ -1,25 +1,23 @@
-import React from "react";
-import { Form, Row, Col, Switch, Card } from "antd";
+import React from 'react';
+import Edit from '../../components/organisms/Edit';
+import { Form, Row, Col, Card } from "antd";
 import FloatInput from "../../components/molecules/FloatInput/index";
 import FloatSelect from "../../components/molecules/FloatSelected/index";
-import Edit from "../../components/organisms/Edit/index"
 
-function EditarSucursal() {
-
-
-
-
-  const handleCallback = (values) => {
-    console.log(values);
-  };
-
-  const FormularioEdicion = () =>{
-    
-    return (  
-    <>
+function NuevaSucursal() {
+ 
+    const FormularioNueva = () =>{
+        <>
     <Card>
     <h3>Datos Principales</h3>
 
+      <Form.Item
+        name="codigo"
+        rules={[{ required: true, message: "Ingrese código" }]}
+      >
+        <FloatInput label="Codigo" placeholder="Código"></FloatInput>
+      </Form.Item>
+    )
 
     <Form.Item
       name="descripcion"
@@ -28,13 +26,6 @@ function EditarSucursal() {
       <FloatInput label="Descripcion" placeholder="Descripcion" />
     </Form.Item>
 
-
-      <>
-        <p>Estado de la Sucursal</p>
-        <Form.Item name="estado" rules={[{ required: true }]}>
-          <Switch unCheckedChildren="Inactivo" checkedChildren="Activo" />
-        </Form.Item>
-      </>
     </Card>
 
       <Card>
@@ -147,13 +138,11 @@ function EditarSucursal() {
       </Col>
     </Row>
     </Card>
-    </>);
-  }
-
-  return (
-  <>
-  <Edit component={FormularioEdicion}/>
-  </>);
+    </>
+    }
+ 
+ 
+    return <Edit component={FormularioNueva}/>;
 }
 
-export default EditarSucursal;
+export default NuevaSucursal;

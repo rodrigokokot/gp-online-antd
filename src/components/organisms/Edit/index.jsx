@@ -34,6 +34,7 @@ const Edit = ({ component: Component }) => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
+        size='large'
       >
         {<Component></Component>}
       </Form>

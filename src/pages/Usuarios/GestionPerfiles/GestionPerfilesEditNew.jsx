@@ -1,7 +1,15 @@
 import React from 'react';
+import Edit from '../../../components/organisms/Edit/index'
+
 
 function GestionPerfilesEditNew() {
-  return <h3>Editar Perfil</h3>
-}
+  return (
+  <>
+  <Edit />
+
+    
+
+  </>
+  )}
 
 export default GestionPerfilesEditNew;
