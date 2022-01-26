@@ -1,6 +1,5 @@
-import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
-import routes from "./router/routesAdmin";
+import React, { lazy } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import './App.less';
 
 //components
@@ -31,12 +30,12 @@ function App() {
 
         <DashboardTemplate exact path="/gestionAprobaciones" component={lazy(() => import('./pages/GestionAprobaciones'))} />
 
-        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales" component={lazy(() => import('./pages/GestionSucursales/GestionSucursalesSearch'))} />
-        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/editarSucursal/:id" component={lazy(() => import('./pages/GestionSucursales/GestionSucursalesEditNew'))} />
+        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales" component={lazy(() => import('./pages/ParametrosPrincipales/GestionSucursales'))} />
+        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/editar/:id" component={lazy(() => import('./pages/ParametrosPrincipales/EditarSucursal'))} />
 
         <DashboardTemplate exact path="/usuarios/gestionDeUsuarios" component={lazy(() => import('./pages/Usuarios'))} />
-        <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/GestionPerfiles/GestionPerfilesSearch'))} />
-        <DashboardTemplate exact path="/usuarios/gestionDePerfiles/editar/:id" component={lazy(() => import('./pages/GestionPerfiles/GestionPerfilesEditNew'))} />
+        <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesSearch'))} />
+        <DashboardTemplate exact path="/usuarios/gestionDePerfiles/editar/:id" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesEditNew'))} />
 
         <DashboardTemplate exact path="/movimientos/IPM" component={lazy(() => import('./pages/MovimientosIPM'))} />
         <DashboardTemplate exact path="/movimientos/IPM/detalles/:id" component={lazy(() => import('./pages/MovimientosIPM/DetalleMovimientoIPM'))} />

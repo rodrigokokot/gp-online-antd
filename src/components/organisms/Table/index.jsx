@@ -28,6 +28,7 @@ const Table = ({
       data.length === 0? <ResultSearch result={false} />
       :
       <DataTable
+        title={props.title}
         columns={columns}
         data={data}
         pagination
@@ -39,6 +40,7 @@ const Table = ({
         expandableRowsComponent={() => <Component />}
         expandableRowsHideExpander
         expandOnRowClicked
+        actions={props.actions}     //export
       />
 
   );
