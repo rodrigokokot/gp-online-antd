@@ -27,6 +27,7 @@ function Novedades() {
           width: AutoComplete,
           marginTop: 16,
           borderLeftColor: "#69E2B7",
+          backgroundColor: "#0000000A",
           borderLeftWidth: 7,
         }}
         bordered={true}

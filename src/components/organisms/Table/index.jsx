@@ -1,7 +1,8 @@
-import { Button, Input } from "antd";
 import React from "react";
 import DataTable from "react-data-table-component";
 import "./index.less";
+import PropTypes from 'prop-types'
+import ResultSearch from "../../molecules/ResultSearch";
 
 const Table = ({
   className,
@@ -24,20 +25,37 @@ const Table = ({
   };
 
   return (
-    <DataTable
-      columns={columns}
-      data={data}
-      pagination
-      paginationComponentOptions={paginationComponentOptions}
-      highlightOnHover
-      selectableRows={props.selectable}
-      onSelectedRowsChange={handleChange}
-      expandableRows={props.expandible}
-      expandableRowsComponent={() => <Component />}
-      expandableRowsHideExpander
-      expandOnRowClicked
-    />
+      data.length === 0? <ResultSearch result={false} />
+      :
+      <DataTable
+        columns={columns}
+        data={data}
+        pagination
+        paginationComponentOptions={paginationComponentOptions}
+        highlightOnHover
+        selectableRows={props.selectable}
+        onSelectedRowsChange={handleChange}
+        expandableRows={props.expandible}
+        expandableRowsComponent={() => <Component />}
+        expandableRowsHideExpander
+        expandOnRowClicked
+      />
+
   );
 };
 
 export default Table;
+
+Table.prototype ={
+  className: PropTypes.string,
+  Component: PropTypes.func,
+  columns: PropTypes.array,
+  data: PropTypes.array,
+  parentCallback: PropTypes.func,
+}
+
+Table.defaultProps = {
+  className: '',
+  columns: [],
+  data: [],
+}

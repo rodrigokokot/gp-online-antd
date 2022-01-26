@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Table from '../components/organisms/Table'
 import DeploymentConfirmation from '../components/molecules/DeploymentConfirmation'
 import Icon, {DownOutlined} from '@ant-design/icons'
 import FloatInput from '../components/molecules/FloatInput'
 import FloatSelected from '../components/molecules/FloatSelected'
-import { Form, Card } from "antd";
+import { Form, Card, Switch } from "antd";
 import DateRangeFilter from '../components/organisms/DateRangeFilter'
-import {HelpImg} from '../assets/img'
+import {HelpImg, LoginImg} from '../assets/svg/img'
 import InlineSVG from 'svg-inline-react';
+import ResultSearch from '../components/molecules/ResultSearch'
 
 const validator = {
     require: {
@@ -286,10 +287,13 @@ function Page1() {
             year: '1984',
         },
     ]
+
+    const [noResult, setNoResult] = useState(false);
+
     return (
         <>
-
-            <DateRangeFilter />
+            <ResultSearch />
+            {/* <DateRangeFilter /> */}
 
             {/* <ReactCountryFlagsCurrencySelect
                 searchable={true}
@@ -298,7 +302,7 @@ function Page1() {
             {/* <div  style={{ marginBottom: '25px' }}>
                 <DateRangePicker />
             </div> */}
-            <Card style={{marginTop:'50px', marginBottom: '50px'}}>
+            {/* <Card style={{marginTop:'50px', marginBottom: '50px'}}>
                 <Form
                     size="large"
                     name="user_login"
@@ -381,9 +385,11 @@ function Page1() {
                     </Form.Item>
                 </Form>
             </Card>
-            <Table component={DeploymentConfirmation} columns={columns} data={data} />
 
-            <InlineSVG src={HelpImg} />
+            <Switch onChange={() => setNoResult(!noResult)} />
+            <Table component={DeploymentConfirmation} columns={columns} data={ noResult? data : [] } />
+
+            <InlineSVG src={LoginImg} /> */}
         </>
     )
 }

@@ -1,11 +1,11 @@
 import { createElement, lazy, Suspense, useEffect, useState } from "react";
 import { Link, Route } from "react-router-dom";
-import { Avatar, Button, Layout, Menu, PageHeader, Skeleton } from "antd";
+import { Select, Layout, Menu, PageHeader, Skeleton, Popover } from "antd";
 import Icon, { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
 import { GradientIcon, LogoIcon, UserIcon } from "../../assets/svg/icons";
-import SubMenu from "antd/lib/menu/SubMenu";
+import Profile from "../../components/molecules/Prefile";
 
 const { Header, Sider, Content } = Layout;
 
@@ -22,7 +22,9 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           </Link>
         </div>
         <div className="container-user">
-          <Icon component={UserIcon} />
+          <Popover placement="bottom" content={Profile} trigger="click">
+            <Icon component={UserIcon} />
+        </Popover>
         </div>
         <Icon className="linear-gradient" component={GradientIcon}></Icon>
       </Header>
@@ -41,19 +43,19 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               const Component = icons[route.icon];
               return (
                 route.subItems !== undefined
-                  ? <SubMenu icon={<Component />} key={index} title={route.name}>
+                  ? <Menu.SubMenu icon={<Component />} key={index} title={route.name}>
                     {route.subItems.map((item) => {
                       return (
                         <Menu.Item>
-                          <Link to={item.path} onClick={()=>setItemSelected(item)}>
+                          <Link to={item.path} onClick={() => setItemSelected(item)}>
                             {item.name}
                           </Link>
                         </Menu.Item>
                       )
                     })}
-                  </SubMenu>
+                  </Menu.SubMenu>
                   : <Menu.Item icon={<Component />}>
-                    <Link style={{ width: "flex" }} to={route.path} onClick={()=>setItemSelected(route)}>
+                    <Link style={{ width: "flex" }} to={route.path} onClick={() => setItemSelected(route)}>
                       {route.name}
                     </Link>
                   </Menu.Item>
@@ -63,8 +65,15 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
         </Sider>
 
         <Layout className="site-layout">
-          <PageHeader
-            title={itemSelected.name}
+          <Header className="sub-header">
+            <div className="container-logo">
+            </div>
+            <div className="container-user">
+              {/* <Icon component={UserIcon} /> */}
+            </div>
+          </Header>
+          <PageHeader 
+            title={<h2>{itemSelected.name}</h2>}
             extra={"Norma Cardozo"}
           ></PageHeader>
           <Content
@@ -73,7 +82,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               margin: "24px 16px",
               padding: 24,
               minHeight: 280,
-              backgroundColor: "#F9F9F9",
+              backgroundColor: "#E5E5E5",
             }}
           >
             <Route

@@ -20,9 +20,8 @@ import Login from './pages/Login'
 
 function App() {
   // id from url
-  
+
   return (
-    
 
     <Router>
       {/* <Suspense fallback={ "Cargando..." }> */}
@@ -39,7 +38,11 @@ function App() {
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/GestionPerfiles/GestionPerfilesSearch'))} />
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles/editar/:id" component={lazy(() => import('./pages/GestionPerfiles/GestionPerfilesEditNew'))} />
 
-        <DashboardTemplate exact path="/movimientos/IPM" component={lazy(() => import('./pages/Movimientos'))} />
+        <DashboardTemplate exact path="/movimientos/IPM" component={lazy(() => import('./pages/MovimientosIPM'))} />
+        <DashboardTemplate exact path="/movimientos/IPM/detalles/:id" component={lazy(() => import('./pages/MovimientosIPM/DetalleMovimientoIPM'))} />
+        <DashboardTemplate exact path="/movimientos/IPM/detalles/:id/:registro" component={lazy(() => import('./pages/MovimientosIPM/DetalleRegistroIPM'))} />
+
+
         <DashboardTemplate exact path="/movimientos/CTF" component={lazy(() => import('./pages/Movimientos'))} />
 
         <DashboardTemplate exact path="/emision/movimientos" component={lazy(() => import('./pages/Emision'))} />
@@ -51,6 +54,8 @@ function App() {
 
         <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda'))} />
 
+
+        <DashboardTemplate exact path="/rodrigo" component={lazy(() => import('./pages/Page1'))} />
 
         {/* { routes.map((route, index) => <DashboardTemplate exact path={route.path} component={route.page} key={index} /> ) } */}
 
