@@ -32,8 +32,8 @@ function App() {
 
         <DashboardTemplate exact path="/gestionAprobaciones" component={lazy(() => import('./pages/GestionAprobaciones'))} />
 
-        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales" component={lazy(() => import('./pages/GestionSucursales'))} />
-        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/editarSucursal" component={lazy(() => import('./pages/GestionSucursales'))} />
+        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales" component={lazy(() => import('./pages/GestionSucursales/GestionSucursalesSearch'))} />
+        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/editarSucursal/:id" component={lazy(() => import('./pages/GestionSucursales/GestionSucursalesEditNew'))} />
 
         <DashboardTemplate exact path="/usuarios/gestionDeUsuarios" component={lazy(() => import('./pages/Usuarios'))} />
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/Usuarios'))} />

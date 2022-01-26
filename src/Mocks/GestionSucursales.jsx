@@ -20,7 +20,7 @@ const columnsGestionSucursales = [
     name: " ",
 		button: true,
 		cell: row => (
-			<Link to={`/parametrosPrincipales/gestionSucursales/editarSucursal/${row.codigo}`} style={{textDecoration:"underline"}} target="_blank" rel="noopener noreferrer">
+			<Link to={`/parametrosPrincipales/gestionSucursales/editarSucursal/${row.codigo}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
 				Editar
 			</Link>
 		),

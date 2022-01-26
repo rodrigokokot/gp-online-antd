@@ -11,7 +11,7 @@ import Table from "../../organisms/Table";
 import DeploymentConfirmation from "../../molecules/DeploymentConfirmation";
 import DateRangeFilter from "../../organisms/DateRangeFilter";
 import SearchForm from "../../organisms/SearchForm";
-import { GestionSucursalesSearch } from "../../../Mocks/GestionSucursalesSearch";
+import { GestionSucursalesSearchMock } from "../../../Mocks/GestionSucursalesSearchMock";
 
 function Novedades() {
 
@@ -38,7 +38,7 @@ function Novedades() {
         />
       </Card>
       <DateRangeFilter></DateRangeFilter>
-      <SearchForm array={GestionSucursalesSearch} parentCallback={handleCallback}></SearchForm>
+      <SearchForm array={GestionSucursalesSearchMock} parentCallback={handleCallback}></SearchForm>
       <Table
         component={DeploymentConfirmation}
         data={dataNovelty}

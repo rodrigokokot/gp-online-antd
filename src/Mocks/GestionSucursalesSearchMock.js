@@ -3,7 +3,7 @@ import FloatInput from "../components/molecules/FloatInput/index";
 import FloatSelected from "../components/molecules/FloatSelected/index";
 
 
-const GestionSucursalesSearch = [
+const GestionSucursalesSearchMock = [
     {
       index: 'descripcion',
       name: "Descripción",
@@ -84,4 +84,4 @@ const GestionSucursalesSearch = [
     },
   ];
 
-  export {GestionSucursalesSearch}
+  export {GestionSucursalesSearchMock}
