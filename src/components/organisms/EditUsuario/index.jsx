@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Tabs} from "antd";
+import { Tabs} from "antd";
 import Contraseña from "../../tabs/GestionUsuarios/Contraseña";
 import DatosGenerales from "../../tabs/GestionUsuarios/DatosGenerales";
 

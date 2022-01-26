@@ -3,9 +3,8 @@ import { Switch,Radio,Form,Typography,Button} from 'antd';
 
 import {useHistory, useParams} from 'react-router-dom'
 import FloatInput from '../../molecules/FloatInput';
-import Contraseña from './Contraseña'
-
-const { Title } = Typography
+const { Group } = Radio;
+const { Title } = Typography;
 const DatosGenerales = () => {
     const [form] = Form.useForm();
     const history = useHistory();
@@ -16,10 +15,10 @@ const DatosGenerales = () => {
         console.log({type});
     }
     
-    const [value1, setValue1] = React.useState(1);
-    const onChange1 = e => {
+    const [value, setValue] = React.useState(1);
+    const onChange = e => {
     console.log('radio checked 1', e.target.value);
-    setValue1(e.target.value);
+    setValue(e.target.value);
     console.log('radio luego checked 1', e.target.value);
     };
 
@@ -44,7 +43,8 @@ const DatosGenerales = () => {
                   className="ant-advanced-search-form"
                   onFinish={onFinish} 
                   size="large"
-        >   {type==='new' ?         
+        >   
+        {/*{type==='new' ?         
         <Form.Item name='codigo'>
             <FloatInput label='Codigo' placeholder='Código'></FloatInput>
        </Form.Item> : <></>}
@@ -53,7 +53,7 @@ const DatosGenerales = () => {
         <Form.Item name='estado'>         
                     <Switch unCheckedChildren="Inactivo" checkedChildren="Activo" />                
         </Form.Item>
-        </> : <></>}
+        </> : <></>}*/}
             
             <Title level={2}>Perfil</Title>
             <Form.Item style={{marginTop: 32}}> 
@@ -65,7 +65,7 @@ const DatosGenerales = () => {
 
         <Form.Item name='perfil'>
             <h1>Perfil</h1>
-            <Radio.Group onChange={onChange1} value={value1}>
+            <Group onChange={onChange} value={value} defaultValue={1}>
                 <Radio  value={1}>Prueba QA</Radio> 
                 <Radio style={{marginLeft: 137}} value={5}>TotalCoin - Consultas</Radio><br />
                 <Radio style={{marginTop: 14}}value={2}>Nueva prueba perfil QA</Radio>
@@ -74,7 +74,7 @@ const DatosGenerales = () => {
                 <Radio style={{marginLeft: 162,marginTop: 14}} value={7}>Perfil CX</Radio><br />
                 <Radio style={{marginTop: 14}} value={4}>Prueba perfil Admin</Radio> 
                 <Radio style={{marginLeft: 83,marginTop: 14}} value={8}>TotalCoin - Admin</Radio>
-            </Radio.Group>
+            </Group>
         </Form.Item>
 
         <Title level={2}>Datos Principales</Title>
@@ -117,9 +117,8 @@ const DatosGenerales = () => {
             </Radio.Group>
         </Form.Item>
 
-        <Form.Item><Contraseña /></Form.Item>
         <Button type='primary' htmlType='submit'>
-            {type==='new' ? 'Crear Usuario' : 'Guardar Cambios'}
+            {/*type==='new' ? 'Crear Usuario' : 'Guardar Cambios'*/}Guardar
         </Button>
         
         <Button onClick={() => history.goBack()}>
