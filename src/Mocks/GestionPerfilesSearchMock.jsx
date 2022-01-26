@@ -37,9 +37,28 @@ const columnsGestionPerfiles =[
         name: '',
         button: true,
         cell: row =>(
-            <Link to={`/usuarios/gestionDePerfiles/edit/${row.id}`} />
+            <Link to={`/usuarios/gestionDePerfiles/editar/${row.id}`} style={{textDecoration:"underline"}} rel="noopener noreferrer" > Editar </Link>
         )
     }
 ]
 
-export {GestionPerfilesSearchMock}
+////////MOCK PARA LA DATA DE LA TABLA
+const dataGestionPerfiles = [
+    {
+        id: '001',
+        tipo: 'Admin',
+        nombre: 'Juan',
+        apellido: 'Carlos',
+        option:<Link>Editar</Link>
+    },
+    {
+        id: '002',
+        tipo: 'User',
+        nombre: 'Facu',
+        apellido: 'Flores',
+        option:<Link>Editar</Link>
+    }
+]
+
+
+export {GestionPerfilesSearchMock, columnsGestionPerfiles, dataGestionPerfiles}
