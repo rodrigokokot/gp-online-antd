@@ -1,10 +1,11 @@
 import { createElement, lazy, Suspense, useEffect, useState } from "react";
 import { Link, Route } from "react-router-dom";
-import { Select, Layout, Menu, PageHeader, Skeleton, Divider, Input } from "antd";
+import { Select, Layout, Menu, PageHeader, Skeleton, Popover } from "antd";
 import Icon, { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
 import { GradientIcon, LogoIcon, UserIcon } from "../../assets/svg/icons";
+import Profile from "../../components/molecules/Prefile";
 
 const { Header, Sider, Content } = Layout;
 
@@ -21,7 +22,9 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           </Link>
         </div>
         <div className="container-user">
-          <Icon component={UserIcon} />
+          <Popover placement="bottom" content={Profile} trigger="click">
+            <Icon component={UserIcon} />
+        </Popover>
         </div>
         <Icon className="linear-gradient" component={GradientIcon}></Icon>
       </Header>
@@ -62,6 +65,13 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
         </Sider>
 
         <Layout className="site-layout">
+          <Header className="sub-header">
+            <div className="container-logo">
+            </div>
+            <div className="container-user">
+              {/* <Icon component={UserIcon} /> */}
+            </div>
+          </Header>
           <PageHeader 
             title={<h2>{itemSelected.name}</h2>}
             extra={"Norma Cardozo"}

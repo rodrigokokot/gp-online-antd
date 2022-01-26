@@ -293,7 +293,7 @@ function Page1() {
     return (
         <>
             <ResultSearch />
-            <DateRangeFilter />
+            {/* <DateRangeFilter /> */}
 
             {/* <ReactCountryFlagsCurrencySelect
                 searchable={true}
@@ -302,7 +302,7 @@ function Page1() {
             {/* <div  style={{ marginBottom: '25px' }}>
                 <DateRangePicker />
             </div> */}
-            <Card style={{marginTop:'50px', marginBottom: '50px'}}>
+            {/* <Card style={{marginTop:'50px', marginBottom: '50px'}}>
                 <Form
                     size="large"
                     name="user_login"
@@ -389,7 +389,7 @@ function Page1() {
             <Switch onChange={() => setNoResult(!noResult)} />
             <Table component={DeploymentConfirmation} columns={columns} data={ noResult? data : [] } />
 
-            <InlineSVG src={LoginImg} />
+            <InlineSVG src={LoginImg} /> */}
         </>
     )
 }
