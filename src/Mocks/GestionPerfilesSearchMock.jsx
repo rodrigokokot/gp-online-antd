@@ -1,5 +1,8 @@
 import FloatInput from '../components/molecules/FloatInput/index'
+import {Link} from 'react-router-dom'
 
+
+/////////MOCK PARA LOS INPUTS DEL SEARCH////////
 const GestionPerfilesSearchMock = [
     {
         name: 'Tipo de Perfil',
@@ -22,5 +25,21 @@ const GestionPerfilesSearchMock = [
         input: <FloatInput placeholder='N° de documento' label='N° de documento' />
     }
 ];
+
+////////MOCK PARA LAS COLUMNAS DE LA TABLA/////
+const columnsGestionPerfiles =[
+    {
+        name: 'Tipo de Perfil',
+        selector: (row) => row.tipo,
+        sortable: true
+    },
+    {
+        name: '',
+        button: true,
+        cell: row =>(
+            <Link to={`/usuarios/gestionDePerfiles/edit/${row.id}`} />
+        )
+    }
+]
 
 export {GestionPerfilesSearchMock}

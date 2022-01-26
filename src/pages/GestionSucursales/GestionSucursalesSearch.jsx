@@ -51,14 +51,13 @@ function GestionSucursales() {
             title="Busqueda de Sucursal"
           />
 
-          <Card style={{ marginTop: "10px", marginBottom: "50px" }}>
+
             <Table
               columns={columnsGestionSucursales}
               data={data}
               expandible={false}
               editable={true}
             />
-          </Card>
         </>
   );
 }
