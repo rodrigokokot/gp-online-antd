@@ -5,14 +5,7 @@ import Icon, { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
 import { GradientIcon, LogoIcon, UserIcon } from "../../assets/svg/icons";
-<<<<<<< HEAD
 import SubMenu from "antd/lib/menu/SubMenu";
-=======
-<<<<<<< HEAD
-=======
-import SubMenu from "antd/lib/menu/SubMenu";
->>>>>>> 0a588ca84d16218261d746c2de04537e6840179f
->>>>>>> 091052f7ee838eed8f757d918f6499eda556662d
 
 const { Header, Sider, Content } = Layout;
 
@@ -22,9 +15,6 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
   const icons = require(`@ant-design/icons`);
   return (
     <>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
       {/* <PageHeader
         title="GP"
         style={{ backgroundColor: "#1F263D" }}
@@ -47,9 +37,6 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           </>
         }
       /> */}
-=======
->>>>>>> 0a588ca84d16218261d746c2de04537e6840179f
->>>>>>> 091052f7ee838eed8f757d918f6499eda556662d
       <Header className="header">
         <div className="container-logo">
           <Link to="/home" className="logo">

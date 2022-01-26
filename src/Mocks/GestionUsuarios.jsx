@@ -30,7 +30,7 @@ const columnsGestionUsuarios = [
     name: " ",
 		button: true,
 		cell: row => ( 
-            <Link to={`/usuarios/gestionUsuarios/editarUsuario/${row.codigo}`} style={{textDecoration:"underline"}} target="_blank" rel="noopener noreferrer">
+            <Link to={`/usuarios/gestionUsuarios/editarUsuario/${row.Usuario}`} style={{textDecoration:"underline"}} target="_blank" rel="noopener noreferrer">
               Editar
             </Link>
 		),
