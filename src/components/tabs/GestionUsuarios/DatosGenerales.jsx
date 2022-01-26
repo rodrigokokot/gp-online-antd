@@ -17,21 +17,18 @@ const DatosGenerales = () => {
     
     const [value, setValue] = React.useState(1);
     const onChange = e => {
-    console.log('radio checked 1', e.target.value);
     setValue(e.target.value);
     console.log('radio luego checked 1', e.target.value);
     };
 
     const [value2, setValue2] = React.useState(1);
     const onChange2 = e => {
-    console.log('radio checked 2', e.target.value);
     setValue2(e.target.value);
     console.log('radio luego checked 2', e.target.value);
     };
 
     const [value3, setValue3] = React.useState(1);
     const onChange3 = e => {
-    console.log('radio checked 3', e.target.value);
     setValue3(e.target.value);
     console.log('radio luego checked 3', e.target.value);
     };
@@ -63,8 +60,8 @@ const DatosGenerales = () => {
                 </div>
             </Form.Item>
 
+            <Title level={5}>Perfil</Title>
         <Form.Item name='perfil'>
-            <h1>Perfil</h1>
             <Group onChange={onChange} value={value} defaultValue={1}>
                 <Radio  value={1}>Prueba QA</Radio> 
                 <Radio style={{marginLeft: 137}} value={5}>TotalCoin - Consultas</Radio><br />
@@ -86,10 +83,9 @@ const DatosGenerales = () => {
         <Form.Item name='apellido'>
              <FloatInput label='Apellido' placeholder='Apellido'></FloatInput>
         </Form.Item>
-        
+        <Title level={5}>Tipo de Documento</Title>
         <Form.Item name='tipodocumento'>
-             <h1>Tipo de documento</h1>
-            <Radio.Group onChange={onChange2} value={value2}>
+            <Radio.Group onChange={onChange2} value={value2} defaultValue={1}>
                 <Radio  value={1}>DNI</Radio> 
                 <Radio style={{marginLeft: 137}} value={5}>LIBRETA CIVICA</Radio>
                 <Radio style={{marginLeft: 201,marginTop: 14}}value={2}>CUIL</Radio>
@@ -107,16 +103,14 @@ const DatosGenerales = () => {
         <Form.Item name='email'>
              <FloatInput label='E-mail' placeholder='Email'></FloatInput>
         </Form.Item>
-
+        <Title level={5}>Estado</Title>
         <Form.Item name='estado'>
-            <h1>Estado</h1>
-            <Radio.Group onChange={onChange3} value={value3}>
+            <Radio.Group onChange={onChange3} value={value3} defaultValue={1}>
                 <Radio  value={1}>Habilitado</Radio> <br />
                 <Radio style={{marginTop: 14}}value={2}>Deshabilitado</Radio><br />
                 <Radio style={{marginTop: 14}}value={3}>Baja</Radio><br />
             </Radio.Group>
         </Form.Item>
-
         <Button type='primary' htmlType='submit'>
             {/*type==='new' ? 'Crear Usuario' : 'Guardar Cambios'*/}Guardar
         </Button>
