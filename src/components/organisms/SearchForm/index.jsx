@@ -33,7 +33,7 @@ const SearchForm = ({ array, parentCallback, title }) => {
   };
 
   return (
-    <Card>
+    <>
     
       <Collapse
         expandIconPosition="right"
@@ -73,9 +73,11 @@ const SearchForm = ({ array, parentCallback, title }) => {
               </Col>
             </Row>
           </Form>
+
         </Panel>
+        
       </Collapse>
-    </Card>
+    </>
   );
 };
 
