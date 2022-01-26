@@ -66,7 +66,3 @@ const dataGestionSucursales = [
 ];
 
 export { dataGestionSucursales, columnsGestionSucursales };
-<<<<<<< HEAD
-
-=======
->>>>>>> f47921e33757ce6057a47a65ada63ef634cfa442

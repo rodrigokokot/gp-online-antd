@@ -9,6 +9,8 @@ import {
 } from "../../Mocks/GestionUsuarios";
 import { useHistory } from "react-router-dom";
 import FloatInput from '../../components/molecules/FloatInput/index'
+import Editnew from "../../components/organisms/EditUsuario";
+import EditUsuario from "../../components/organisms/EditUsuario";
 
 function UsuarioGes() {
     const [flag, setFlag] = useState(false);
@@ -78,35 +80,32 @@ function UsuarioGes() {
     return (
         <>
       { flag 
-             &&     <Form
-                        form={form}
-                        name="advanced_search"
-                        className="ant-advanced-search-form"
-                        onFinish={onFinish}
-                        size="large"
-                    >
-                       
-                    </Form>
+             &&    <>
+             <Col style={{ textAlign: "right", marginBottom: "25px" }}>
+             <Button type="primary" size="small" onClick={setUsuarioNuevo}>
+                 Nueva Usuario
+             </Button>
+             </Col>
+ 
+             <SearchForm
+             array={GestionUsuariosSearch}
+             parentCallback={handleCallback}
+             />
+ 
+             <Card style={{ marginTop: "10px", marginBottom: "50px" }}>
+                 <Table
+                     columns={columnsGestionUsuarios}
+                     data={data}
+                     expandible={true}
+                 />
+             </Card>
+
+         </> 
              || 
                 <>
-                    <Col style={{ textAlign: "right", marginBottom: "25px" }}>
-                    <Button type="primary" size="small" onClick={setUsuarioNuevo}>
-                        Nueva Usuario
-                    </Button>
-                    </Col>
-        
-                    <SearchForm
-                    array={GestionUsuariosSearch}
-                    parentCallback={handleCallback}
-                    />
-        
-                    <Card style={{ marginTop: "10px", marginBottom: "50px" }}>
-                        <Table
-                            columns={columnsGestionUsuarios}
-                            data={data}
-                            expandible={true}
-                        />
-                    </Card>
+                {/*Para modo editcion*/}
+                    <EditUsuario/>
+
                 </>
       }
       </>
@@ -115,6 +114,15 @@ function UsuarioGes() {
 
 export default UsuarioGes
 /*DENTRO DE && FORM 
+<Form
+                        form={form}
+                        name="advanced_search"
+                        className="ant-advanced-search-form"
+                        onFinish={onFinish}
+                        size="large"
+                    >
+                       
+                    </Form>
  <h3>Datos Principales</h3>
             
                         {!editflag && 
