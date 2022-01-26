@@ -38,7 +38,7 @@ const EditarSucursal = () => {
 
   return (
     <>
-      <Edit component={EditeTemplate}></Edit>
+      <Edit component={EditeTemplate} ></Edit>
     </>
   );
 };
