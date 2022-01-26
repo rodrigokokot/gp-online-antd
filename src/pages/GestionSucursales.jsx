@@ -1,14 +1,15 @@
-import Table from "../../components/organisms/Table/index";
+import Table from "../components/organisms/Table/index";
 import React, { useState } from "react";
-import SearchForm from "../../components/organisms/SearchForm/index";
-import { GestionSucursalesSearch } from "../../Mocks/GestionSucursalesSearch";
+import SearchForm from "../components/organisms/SearchForm/index";
+import { GestionSucursalesSearch } from "../Mocks/GestionSucursalesSearch";
 import { Card, Button, Col, Switch, Form, Row, Modal} from "antd";
 import {
   columnsGestionSucursales,
   dataGestionSucursales,
-} from "../../Mocks/GestionSucursales";
+} from "../Mocks/GestionSucursales";
 import { useHistory } from "react-router-dom";
-import FloatInput from '../../components/molecules/FloatInput/index'
+import FloatInput from '../components/molecules/FloatInput/index'
+import FloatSelect from '../components/molecules/FloatSelected/index'
 
 
 function GestionSucursales() {
@@ -21,8 +22,12 @@ function GestionSucursales() {
   const [isModalVisible, setIsModalVisible] = useState(false); 
 
   
-  const onFinish = () => {
+  const setModalVisible = () => {
     setIsModalVisible(true);
+  };
+
+  const onFinish = (values) =>{
+    console.log(values)
   };
 
   const handleOk = () => {
@@ -88,6 +93,7 @@ function GestionSucursales() {
       {flag && 
         <Form
           form={form}
+          id='advanced_search'
           name="advanced_search"
           className="ant-advanced-search-form"
           onFinish={onFinish}
@@ -96,19 +102,19 @@ function GestionSucursales() {
           <h3>Datos Principales</h3>
 
           {!editflag && 
-            <Form.Item name="codigo">
+            <Form.Item name="codigo" rules={[{required:true, message:'Ingrese código'}]}>
               <FloatInput label="Codigo" placeholder="Código"></FloatInput>
             </Form.Item>
           }
 
-          <Form.Item name="descripcion">
+          <Form.Item name="descripcion" rules={[{required:true, message:'Ingrese descripción'}]}>
             <FloatInput label="Descripcion" placeholder="Descripcion" />
           </Form.Item>
 
           {editflag &&
             <>
               <p>Estado de la Sucursal</p>
-              <Form.Item name="estado">
+              <Form.Item name="estado" rules={[{required:true}]}>
                 <Switch unCheckedChildren="Inactivo" checkedChildren="Activo" />
               </Form.Item>
             </>
@@ -118,13 +124,13 @@ function GestionSucursales() {
 
           <Row gutter={24}>
             <Col>
-              <Form.Item name="calle">
+              <Form.Item name="calle" rules={[{required:true, message:'Ingrese calle'}]}>
                 <FloatInput label="Calle" placeholder="Calle"></FloatInput>
               </Form.Item>
             </Col>
 
             <Col>
-              <Form.Item name="num">
+              <Form.Item name="num" rules={[{required:true, message:'Ingrese número'}]}>
                 <FloatInput label="Número" placeholder="Número"></FloatInput>
               </Form.Item>
             </Col>
@@ -144,29 +150,63 @@ function GestionSucursales() {
 
           <Row>
             <Col>
-              <Form.Item name="localidad">
-                <FloatInput
+              <Form.Item  name="localidad" rules={[{required:true, message:'Ingrese localidad'}]}>
+                <FloatSelect
                   label="Localidad"
                   placeholder="Localidad"
-                ></FloatInput>
+                  options={[
+                    {
+                      title: "San Juan",
+                      value: "San Juan",
+                      disabled: false,
+                    },
+                    {
+                      title: "Mendoza",
+                      value: "Mendoza",
+                      disabled: false,
+                    },
+                    {
+                      title: "San Luis",
+                      value: "San Luis",
+                      disabled: false,
+                    },
+                  ]}
+                ></FloatSelect>
               </Form.Item>
             </Col>
           </Row>
 
           <Row>
             <Col>
-              <Form.Item name="provincia">
-                <FloatInput
+              <Form.Item name="provincia" rules={[{required:true, message:'Ingrese provincia'}]}>
+                <FloatSelect
                   label="Provincia"
                   placeholder="Provincia"
-                ></FloatInput>
+                  options={[
+                    {
+                      title: "San Juan",
+                      value: "San Juan",
+                      disabled: false,
+                    },
+                    {
+                      title: "Mendoza",
+                      value: "Mendoza",
+                      disabled: false,
+                    },
+                    {
+                      title: "San Luis",
+                      value: "San Luis",
+                      disabled: false,
+                    },
+                  ]}
+                ></FloatSelect>
               </Form.Item>
             </Col>
           </Row>
 
           <Row>
             <Col>
-              <Form.Item name="telefono">
+              <Form.Item name="telefono" rules={[{required:true, message:'Ingrese teléfono'}]}>
                 <FloatInput
                   label="Telefono"
                   placeholder="Telefono"
@@ -177,7 +217,7 @@ function GestionSucursales() {
 
 
 
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" onClick={setModalVisible}>
             {editflag ? "Guardar Cambios" : "Crear Sucursal"}
           </Button>
 
@@ -191,7 +231,7 @@ function GestionSucursales() {
         onOk={handleOk}
         onCancel={handleCancel}
         footer={[
-          <Button key='submit' type="primary" onClick={handleOk}>
+          <Button form='advanced_search' key='submit' type="primary" htmlType="submit" onClick={handleOk}>
               Aplicar Confirmacion
           </Button>,
           <Button key='back' onClick={handleCancel}>
@@ -212,14 +252,16 @@ function GestionSucursales() {
 
           <SearchForm
             array={GestionSucursalesSearch}
-            parentCallback={handleCallback}
+            parentCallback={handleCallback} 
+            title="Busqueda de Sucursal"
           />
 
           <Card style={{ marginTop: "10px", marginBottom: "50px" }}>
             <Table
               columns={columnsGestionSucursales}
               data={data}
-              expandible={true}
+              expandible={false}
+              editable={true}
             />
           </Card>
         </>
