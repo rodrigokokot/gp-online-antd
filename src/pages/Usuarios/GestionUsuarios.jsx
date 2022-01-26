@@ -9,8 +9,8 @@ import {
 } from "../../Mocks/GestionUsuarios";
 import { useHistory } from "react-router-dom";
 import FloatInput from '../../components/molecules/FloatInput/index'
-import Editnew from "../../components/organisms/EditUsuario";
-import EditUsuario from "../../components/organisms/EditUsuario";
+import EditUsuario from "./GestionUsuariosEdit";
+import FormUsuNew from "./FormUsuNew";
 
 function UsuarioGes() {
     const [flag, setFlag] = useState(false);
@@ -79,34 +79,38 @@ function UsuarioGes() {
   };
     return (
         <>
-      { flag 
-             &&    <>
-             <Col style={{ textAlign: "right", marginBottom: "25px" }}>
-             <Button type="primary" size="small" onClick={setUsuarioNuevo}>
-                 Nueva Usuario
-             </Button>
-             </Col>
- 
-             <SearchForm
-             array={GestionUsuariosSearch}
-             parentCallback={handleCallback}
-             />
- 
-             <Card style={{ marginTop: "10px", marginBottom: "50px" }}>
-                 <Table
-                     columns={columnsGestionUsuarios}
-                     data={data}
-                     expandible={true}
-                 />
-             </Card>
+      { (flag 
+             &&  <>
 
-         </> 
-             || 
-                <>
-                {/*Para modo editcion*/}
-                    <EditUsuario/>
+                    <Col style={{ textAlign: "right", marginBottom: "25px" }}>
+                    <Button type="primary" size="small" onClick={setUsuarioNuevo}>
+                        Nueva Usuario
+                    </Button>
+                    </Col>
+        
+                    <SearchForm
+                    array={GestionUsuariosSearch}
+                    parentCallback={handleCallback}
+                    />
+        
+                    <Card style={{ marginTop: "10px", marginBottom: "50px" }}>
+                        <Table
+                            columns={columnsGestionUsuarios}
+                            data={data}
+                            expandible={true}
+                        />
+                    </Card>
 
-                </>
+                  </> 
+      )
+             ||   <>
+
+                    {/*Para modo editcion*/}
+                        <EditUsuario/>
+                    {/*Para modo crear nuevo*/}
+                      {/*<FormUsuNew/>*/}
+
+                  </>
       }
       </>
     )
