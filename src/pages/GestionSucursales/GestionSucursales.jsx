@@ -1,15 +1,15 @@
-import Table from "../components/organisms/Table/index";
+import Table from "../../components/organisms/Table/index";
 import React, { useState } from "react";
-import SearchForm from "../components/organisms/SearchForm/index";
-import { GestionSucursalesSearch } from "../Mocks/GestionSucursalesSearch";
+import SearchForm from "../../components/organisms/SearchForm/index";
+import { GestionSucursalesSearch } from "../../Mocks/GestionSucursalesSearch";
 import { Card, Button, Col, Switch, Form, Row, Modal} from "antd";
 import {
   columnsGestionSucursales,
   dataGestionSucursales,
-} from "../Mocks/GestionSucursales";
+} from "../../Mocks/GestionSucursales";
 import { useHistory } from "react-router-dom";
-import FloatInput from '../components/molecules/FloatInput/index'
-import FloatSelect from '../components/molecules/FloatSelected/index'
+import FloatInput from '../../components/molecules/FloatInput/index'
+import FloatSelect from '../../components/molecules/FloatSelected/index'
 
 
 function GestionSucursales() {

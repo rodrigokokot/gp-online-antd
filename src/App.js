@@ -20,9 +20,8 @@ import Login from './pages/Login'
 
 function App() {
   // id from url
-  
+
   return (
-    
 
     <Router>
       {/* <Suspense fallback={ "Cargando..." }> */}
