@@ -10,16 +10,12 @@ const Export = () => {
     setVisible(false);
   }
 
-  function selectOption(e) {
-    setOptionSelected(e.target.value);
-  }
-
   const onFinish = (values) => {
     console.log("Success:", values);
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    console.log("Failed:", errorInfo.values);
   };
 
   return (
@@ -36,7 +32,7 @@ const Export = () => {
         visible={visible}
         title="Exportar"
         onCancel={onCancel}
-        onOk={(e) => console.log(e)}
+        onOk={(e) => console.log(e.values)}
         footer={[]}
       >
         <Form
@@ -47,12 +43,13 @@ const Export = () => {
           <Form.Item
             label="Nombre"
             name="nombre"
+            rules={[{required:true }]}
           >
-            <FloatInput></FloatInput>
+            <FloatInput value='Débito/Prueba/sistema' placeholder="Nombre del archivo"></FloatInput>
           </Form.Item>
 
-          <Form.Item name="option" label="Tipo">
-            <Radio.Group defaultValue="pdf" buttonStyle="solid">
+          <Form.Item name="option" label="Tipo" rules={[{required:true }]}>
+            <Radio.Group buttonStyle="solid">
               <Radio.Button value="pdf">PDF</Radio.Button>
               <Radio.Button value="xlsx">XLSX</Radio.Button>
               <Radio.Button value="docx">DOCX</Radio.Button>
