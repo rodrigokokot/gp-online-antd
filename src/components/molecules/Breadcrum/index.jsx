@@ -10,10 +10,6 @@ const BreadcrumComponent = ({props}) => {
 
   return (
     arrayLocation.length > 2 &&  <Breadcrumb separator=">">
-        {/* <Breadcrumb.Item>Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="">Application Center</Breadcrumb.Item>
-        <Breadcrumb.Item href="">Application List</Breadcrumb.Item>
-        <Breadcrumb.Item>An Application</Breadcrumb.Item> */}
       {
         arrayLocation.map(( element, index ) =>
           element.length > 0 &&  <Breadcrumb.Item href="" key={index}>{ (element.charAt(0).toUpperCase() + element.slice(1) ).split(/(?=[A-Z])/).join(' ')}</Breadcrumb.Item>
