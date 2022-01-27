@@ -9,6 +9,7 @@ import DateRangeFilter from '../components/organisms/DateRangeFilter'
 import {HelpImg, LoginImg} from '../assets/svg/img'
 import InlineSVG from 'svg-inline-react';
 import ResultSearch from '../components/molecules/ResultSearch'
+import BreadComponent from '../components/molecules/Breadcrum'
 
 const validator = {
     require: {
@@ -292,6 +293,7 @@ function Page1() {
 
     return (
         <>
+            <BreadComponent />
             <ResultSearch />
             {/* <DateRangeFilter /> */}
 
