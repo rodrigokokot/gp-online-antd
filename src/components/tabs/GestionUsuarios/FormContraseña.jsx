@@ -21,7 +21,7 @@ const Contraseña = () => {
                 <Card>
                         <Title level={2}>Contraseña</Title>
                                 
-                        <Form.Item name='password'>
+                        <Form.Item name='password' style={{ width: 414 }}>
                             <FloatInput type="password" label='Ingresa tu contraseña para generar cambios' placeholder='Contraseña'></FloatInput>
                             </Form.Item>
                         </Card>

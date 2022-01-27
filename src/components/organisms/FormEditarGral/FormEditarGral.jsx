@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Radio,Form,Typography,Card} from 'antd';
+import { Radio,Form,Typography,Card, Row, Col} from 'antd';
 import FloatInput from '../../molecules/FloatInput';
+import FloatSelect from "../../components/molecules/FloatSelected/index";
 const { Group } = Radio;
 const { Title } = Typography;
 
-const FormEditarGral = (props) => {
+const FormEditarGral = () => {
     const [form] = Form.useForm();
-    const {usuario}=props.usuario;
     const onFinish = (values) =>{
         console.log("finish",values)
     }
@@ -20,11 +20,6 @@ const FormEditarGral = (props) => {
     const onChange2 = e => {
     setValue2(e.target.value);
     };
-
-    const [value3, setValue3] = React.useState("");
-    const onChange3 = e => {
-    setValue3(e.target.value);
-    };
     
   return (<> 
     <Form 
@@ -35,15 +30,10 @@ const FormEditarGral = (props) => {
                   size="large"
         >    
         <Card>  
-            <Title level={2}>Perfil</Title>
-            
-            <Title level={5}>Usuario</Title> 
-            <Form.Item name='usuario'> 
-                <Title level={3}>{usuario}</Title>  
-            </Form.Item>
+            <Title level={2}>Titulo</Title>
 
-            <Title level={5}>Perfil</Title>
-            <Form.Item name='perfil'>
+            <Title level={5}>Radio group</Title>
+            <Form.Item name='name de los radio'>
                 <Group onChange={onChange} value={value}>
                     <Radio  value={"Prueba QA"}>Prueba QA</Radio> 
                     <Radio  value={"TotalCoin - Consultas"} style={{marginLeft: 139}} >TotalCoin - Consultas</Radio><br />
@@ -56,44 +46,114 @@ const FormEditarGral = (props) => {
                 </Group>
             </Form.Item>
         </Card>  
+         
         <Card>
-        <Title level={2}>Datos Principales</Title>
             
-        <Form.Item name='nombre'>
-             <FloatInput type="text" label='Nombre' placeholder='Nombre'></FloatInput>
-        </Form.Item>
-        
-        <Form.Item name='apellido'>
-             <FloatInput type="text" label='Apellido' placeholder='Apellido'></FloatInput>
-        </Form.Item>
-        <Title level={5}>Tipo de Documento</Title>
-        <Form.Item name='tipodocumento'>
-            <Radio.Group onChange={onChange2} value={value2}>
-                <Radio  value={"DNI"}>DNI</Radio> 
-                <Radio  value={"LIBRETA CIVICA"} style={{marginLeft: 139}} >LIBRETA CIVICA</Radio>
-                <Radio  value={"CUIL"} style={{marginLeft: 200,marginTop: 14}}>CUIL</Radio>
-                <Radio  value={"CI"} style={{marginLeft: 150,marginTop: 14}} >CI</Radio><br />
-                <Radio  value={"CUIT"} style={{marginTop: 14}}>CUIT</Radio>
-                <Radio  value={"LIBRETA DE ENROLAMIENTO"} style={{marginLeft: 133,marginTop: 14}} >LIBRETA DE ENROLAMIENTO</Radio>
-                <Radio  value={"PASAPORTE"} style={{marginLeft: 119,marginTop: 14}} >PASAPORTE</Radio> 
-            </Radio.Group>
-        </Form.Item>
+            {/* Titulo de componente para card*/}
+            <Title level={2}>Otro Titulo Card </Title>
+            
+            {/* titulo para los Radio */}
+            <Title level={5}>otro radio</Title>
 
-        <Form.Item name='documento'>
-             <FloatInput type="number" label='N° de Documento' placeholder='N° de Documento'></FloatInput>
-        </Form.Item>
+            {/* Radio para seleccionar entre opciones */}
+            <Form.Item name='name otro radio'>
+                <Radio.Group onChange={onChange2} value={value2}>
+                    <Radio  value={"DNI"}>DNI</Radio> 
+                    <Radio  value={"LIBRETA CIVICA"} style={{marginLeft: 139}} >LIBRETA CIVICA</Radio>
+                    <Radio  value={"CUIL"} style={{marginLeft: 200,marginTop: 14}}>CUIL</Radio>
+                    <Radio  value={"CI"} style={{marginLeft: 150,marginTop: 14}} >CI</Radio><br />
+                    <Radio  value={"CUIT"} style={{marginTop: 14}}>CUIT</Radio>
+                    <Radio  value={"LIBRETA DE ENROLAMIENTO"} style={{marginLeft: 133,marginTop: 14}} >LIBRETA DE ENROLAMIENTO</Radio>
+                    <Radio  value={"PASAPORTE"} style={{marginLeft: 119,marginTop: 14}} >PASAPORTE</Radio> 
+                </Radio.Group>
+            </Form.Item>
 
-        <Form.Item name='email'>
-             <FloatInput type="email" label='E-mail' placeholder='Email'></FloatInput>
-        </Form.Item>
-        <Title level={5}>Estado</Title>
-        <Form.Item name='estado'>
-            <Radio.Group onChange={onChange3} value={value3}>
-                <Radio  value={"Habilitado"}>Habilitado</Radio> <br />
-                <Radio  value={"Deshabilitado"} style={{marginTop: 14}}>Deshabilitado</Radio><br />
-                <Radio  value={"Baja"} style={{marginTop: 14}}>Baja</Radio><br />
-            </Radio.Group>
-        </Form.Item>
+            {/* Input tipo numerico*/}
+            <Form.Item style={{ width: 414 }} name='documento'>
+                <FloatInput type="number" label='N° de Documento' placeholder='N° de Documento'></FloatInput>
+            </Form.Item>
+
+            {/* Input tipo correo*/}
+            <Form.Item style={{ width: 414 }} name='email'>
+                <FloatInput type="email" label='E-mail' placeholder='Email'></FloatInput>
+            </Form.Item>
+
+            {/* Input tipo texto */}
+            <Form.Item style={{ width: 414 }} name='nombre'>
+                <FloatInput type="text" label='Nombre' placeholder='Nombre'></FloatInput>
+            </Form.Item>
+
+            {/* Input dato requerido */}
+            <Form.Item
+            name="telefono" type="number"
+            rules={[{ required: true, message: "Ingrese teléfono" }]}
+            >
+            <FloatInput label="Telefono" placeholder="Telefono"></FloatInput>
+            </Form.Item>
+
+            
+            {/* Para select */}
+            <Form.Item
+                name="provincia"
+                rules={[{ required: true, message: "Ingrese provincia" }]}
+            >
+                    <FloatSelect
+                        width={205}
+                        label="Provincia"
+                        placeholder="Provincia"
+                        options={[
+                        {
+                            title: "San Juan",
+                            value: "San Juan",
+                            disabled: false,
+                        },
+                        {
+                            title: "Mendoza",
+                            value: "Mendoza",
+                            disabled: false,
+                        },
+                        {
+                            title: "San Luis",
+                            value: "San Luis",
+                            disabled: false,
+                        },
+                        ]}
+                    ></FloatSelect>
+            </Form.Item>
+
+            {/* Input en columna */}
+            <Row gutter={24}>
+                <Col>
+                    <Form.Item
+                    name="calle"
+                    rules={[{ required: true, message: "Ingrese calle" }]}
+                    >
+                    <FloatInput label="Calle" placeholder="Calle"></FloatInput>
+                    </Form.Item>
+                </Col>
+
+                <Col>
+                    <Form.Item
+                    name="num"
+                    rules={[{ required: true, message: "Ingrese número" }]}
+                    >
+                    <FloatInput label="Número" placeholder="Número"></FloatInput>
+                    </Form.Item>
+                </Col>
+
+                <Col>
+                    <Form.Item name="piso">
+                    <FloatInput label="Piso" placeholder="Piso"></FloatInput>
+                    </Form.Item>
+                </Col>
+
+                <Col>
+                    <Form.Item name="piso">
+                    <FloatInput label="Depto" placeholder="Depto"></FloatInput>
+                    </Form.Item>
+                </Col>
+            </Row>
+
         </Card>
       </Form>
   </>)

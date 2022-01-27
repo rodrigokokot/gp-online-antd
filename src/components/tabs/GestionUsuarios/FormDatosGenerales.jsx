@@ -64,11 +64,11 @@ const DatosGenerales = (props) => {
         <Card>
         <Title level={2}>Datos Principales</Title>
             
-        <Form.Item name='nombre'>
+        <Form.Item style={{ width: 414 }} name='nombre'>
              <FloatInput type="text" label='Nombre' placeholder='Nombre'></FloatInput>
         </Form.Item>
         
-        <Form.Item name='apellido'>
+        <Form.Item style={{ width: 414 }} name='apellido'>
              <FloatInput type="text" label='Apellido' placeholder='Apellido'></FloatInput>
         </Form.Item>
         <Title level={5}>Tipo de Documento</Title>
@@ -84,11 +84,11 @@ const DatosGenerales = (props) => {
             </Radio.Group>
         </Form.Item>
 
-        <Form.Item name='documento'>
+        <Form.Item style={{ width: 414 }} name='documento'>
              <FloatInput type="number" label='N° de Documento' placeholder='N° de Documento'></FloatInput>
         </Form.Item>
 
-        <Form.Item name='email'>
+        <Form.Item style={{ width: 414 }} name='email'>
              <FloatInput type="email" label='E-mail' placeholder='Email'></FloatInput>
         </Form.Item>
         <Title level={5}>Estado</Title>
