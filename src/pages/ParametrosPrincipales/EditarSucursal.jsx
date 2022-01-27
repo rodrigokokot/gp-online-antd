@@ -151,10 +151,9 @@ function EditarSucursal() {
   }
 
   return (
-    <>
-      <Edit component={EditeTemplate} ></Edit>
-    </>
-  );
-};
+  <>
+  <Edit component={FormularioEdicion}/>
+  </>);
+}
 
 export default EditarSucursal;
