@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Col, Row, Button, Collapse,Card } from "antd";
+import { Form, Col, Row, Button, Collapse } from "antd";
 import "./index.less";
 import Icon from "@ant-design/icons";
 import {
@@ -34,7 +34,6 @@ const SearchForm = ({ array, parentCallback, title }) => {
 
   return (
     <>
-    
       <Collapse
         expandIconPosition="right"
         bordered={false}

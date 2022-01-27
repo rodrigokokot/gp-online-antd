@@ -34,7 +34,7 @@ const routes = [
                 path: "/usuarios/gestionDePerfiles",
                 name: "Gestión de Perfiles",
                 icon: 'BoxPlotOutlined',
-                page: 'GestionPerfiles',
+                page: 'GestionSucursales',
             },
         ]
     },
