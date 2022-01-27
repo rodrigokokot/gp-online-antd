@@ -32,11 +32,10 @@ function App() {
 
         <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales" component={lazy(() => import('./pages/ParametrosPrincipales/GestionSucursales'))} />
         <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/editar/:codigo" component={lazy(() => import('./pages/ParametrosPrincipales/EditarSucursal'))} />
-        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/nueva" component={lazy(() => import('./pages/ParametrosPrincipales/NuevaSucursal'))} />
-
+        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/crear" component={lazy(() => import('./pages/ParametrosPrincipales/EditarSucursal'))} />
         
         <DashboardTemplate exact path="/usuarios/gestionUsuarios" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/GestionUsuarios'))} />
-        <DashboardTemplate exact path="/usuarios/gestionUsuarios/nuevo" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/FormUsuNew'))} />
+        <DashboardTemplate exact path="/usuarios/gestionUsuarios/crear" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/FormUsuNew'))} />
         <DashboardTemplate exact path="/usuarios/gestionUsuarios/editar/:id" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/GestionUsuariosEdit'))} />
         
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesSearch'))} />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Meta from "antd/lib/card/Meta";
 import { AutoComplete, Card } from "antd";
 import {
@@ -14,32 +14,42 @@ import SearchForm from "../../organisms/SearchForm";
 import { GestionSucursalesSearch } from "../../../Mocks/GestionSucursalesSearch";
 
 function Novedades() {
-
+  const [notification, setNotification] = useState(false);
   function handleCallback(value) {
-    console.log('from parent', value)
+    console.log("from parent", value);
     // responseChild = value;
   }
 
   return (
     <>
-      <Card
-        style={{
-          width: AutoComplete,
-          marginTop: 16,
-          borderLeftColor: "#69E2B7",
-          backgroundColor: "#0000000A",
-          borderLeftWidth: 7,
-        }}
-        bordered={true}
-      >
-        <Meta
-          avatar={<Icon component={Notification}></Icon>}
-          title="Tenés 25 pedidos de aprobación"
-          description="Desplegá cada fila para poder operar las confirmaciones."
-        />
-      </Card>
-      <DateRangeFilter></DateRangeFilter>
-      <SearchForm array={GestionSucursalesSearch} parentCallback={handleCallback}></SearchForm>
+      {notification ? (
+        <>
+          <Card
+            style={{
+              width: AutoComplete,
+              marginTop: 16,
+              borderLeftColor: "#69E2B7",
+              backgroundColor: "#0000000A",
+              borderLeftWidth: 7,
+            }}
+            bordered={true}
+          >
+            <Meta
+              avatar={<Icon component={Notification}></Icon>}
+              title="Tenés 25 pedidos de aprobación"
+              description="Desplegá cada fila para poder operar las confirmaciones."
+            />
+          </Card>
+          <br></br>
+        </>
+      ) : null}
+
+      <SearchForm
+        title={"Busqueda de aprobaciones"}
+        array={GestionSucursalesSearch}
+        parentCallback={handleCallback}
+      ></SearchForm>
+      <br></br>
       <Table
         component={DeploymentConfirmation}
         data={dataNovelty}
