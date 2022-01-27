@@ -31,20 +31,10 @@ function App() {
         <DashboardTemplate exact path="/gestionAprobaciones" component={lazy(() => import('./pages/GestionAprobaciones'))} />
 
         <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales" component={lazy(() => import('./pages/ParametrosPrincipales/GestionSucursales'))} />
-<<<<<<< HEAD
-        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/editar/:id" component={lazy(() => import('./pages/ParametrosPrincipales/EditarSucursal'))} />
-        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/nueva" component={lazy(() => import('./pages/ParametrosPrincipales/NuevaSucursal'))} />
-
-        <DashboardTemplate exact path="/usuarios/gestionDeUsuarios" component={lazy(() => import('./pages/Usuarios'))} />
-        <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesSearch'))} />
-        <DashboardTemplate exact path="/usuarios/gestionDePerfiles/editar/:id" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesEdit'))} />
-        <DashboardTemplate exact path="/usuarios/gestionDePerfiles/nueva" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesNew'))} />
-=======
         <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/editar/:codigo" component={lazy(() => import('./pages/ParametrosPrincipales/EditarSucursal'))} />
 
         <DashboardTemplate exact path="/usuarios/gestionDeUsuarios" component={lazy(() => import('./pages/Usuarios/GestionUsuarios'))} />
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/Usuarios'))} />
->>>>>>> 114bc77fe9d58c00e3c70641a43e04346c9ecc4f
 
         <DashboardTemplate exact path="/movimientos/IPM" component={lazy(() => import('./pages/MovimientosIPM'))} />
         <DashboardTemplate exact path="/movimientos/IPM/detalles/:id" component={lazy(() => import('./pages/MovimientosIPM/DetalleMovimientoIPM'))} />
