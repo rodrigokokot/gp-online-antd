@@ -2,7 +2,8 @@ import React from "react";
 import { Form, Row, Col, Switch, Card } from "antd";
 import FloatInput from "../../components/molecules/FloatInput/index";
 import FloatSelect from "../../components/molecules/FloatSelected/index";
-import Edit from "../../components/organisms/Edit/index"
+import Edit from "../../components/organisms/Edit/index";
+import PurpleTitle from "../../components/molecules/PurpleTitle";
 
 function EditarSucursal() {
 
@@ -18,16 +19,16 @@ function EditarSucursal() {
     return (  
     <>
     <Card>
-    <h3>Datos Principales</h3>
+    <PurpleTitle text="Datos Principales" />
 
-
+      <Col span={8}>
     <Form.Item
       name="descripcion"
       rules={[{ required: true, message: "Ingrese descripción" }]}
     >
       <FloatInput label="Descripcion" placeholder="Descripcion" />
     </Form.Item>
-
+      </Col>
 
       <>
         <p>Estado de la Sucursal</p>
@@ -38,10 +39,10 @@ function EditarSucursal() {
     </Card>
 
       <Card>
-    <h3>Domicilio</h3>
+    <PurpleTitle text="Domicilio"/>
 
     <Row gutter={24}>
-      <Col>
+      <Col span={6}>
         <Form.Item
           name="calle"
           rules={[{ required: true, message: "Ingrese calle" }]}
@@ -50,7 +51,7 @@ function EditarSucursal() {
         </Form.Item>
       </Col>
 
-      <Col>
+      <Col span={2}>
         <Form.Item
           name="num"
           rules={[{ required: true, message: "Ingrese número" }]}
@@ -59,13 +60,13 @@ function EditarSucursal() {
         </Form.Item>
       </Col>
 
-      <Col>
+      <Col span={2}>
         <Form.Item name="piso">
           <FloatInput label="Piso" placeholder="Piso"></FloatInput>
         </Form.Item>
       </Col>
 
-      <Col>
+      <Col span={2}>
         <Form.Item name="piso">
           <FloatInput label="Depto" placeholder="Depto"></FloatInput>
         </Form.Item>
@@ -73,13 +74,12 @@ function EditarSucursal() {
     </Row>
 
     <Row>
-      <Col>
+      <Col span={8}>
         <Form.Item
           name="localidad"
           rules={[{ required: true, message: "Ingrese localidad" }]}
         >
           <FloatSelect
-            width={205}
             label="Localidad"
             placeholder="Localidad"
             options={[
@@ -105,13 +105,12 @@ function EditarSucursal() {
     </Row>
 
     <Row>
-      <Col>
+      <Col span={8}>
         <Form.Item
           name="provincia"
           rules={[{ required: true, message: "Ingrese provincia" }]}
         >
           <FloatSelect
-            width={205}
             label="Provincia"
             placeholder="Provincia"
             options={[
@@ -137,7 +136,7 @@ function EditarSucursal() {
     </Row>
 
     <Row>
-      <Col>
+      <Col span={8}>
         <Form.Item
           name="telefono"
           rules={[{ required: true, message: "Ingrese teléfono" }]}

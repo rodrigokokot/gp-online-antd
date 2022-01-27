@@ -38,7 +38,7 @@ function GestionSucursales() {
   return (
         <>
           <Col style={{ textAlign: "right", marginBottom: "25px" }}>
-            <Link to="/parametrosPrincipales/gestionSucursales/nueva">
+            <Link to="/parametrosPrincipales/gestionSucursales/nuevo">
               <Button type="primary" size="small">
                 Nueva Sucursal
               </Button>
