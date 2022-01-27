@@ -36,7 +36,8 @@ function App() {
 
         <DashboardTemplate exact path="/usuarios/gestionDeUsuarios" component={lazy(() => import('./pages/Usuarios'))} />
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesSearch'))} />
-        <DashboardTemplate exact path="/usuarios/gestionDePerfiles/editar/:id" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesEditNew'))} />
+        <DashboardTemplate exact path="/usuarios/gestionDePerfiles/editar/:id" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesEdit'))} />
+        <DashboardTemplate exact path="/usuarios/gestionDePerfiles/nueva" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesNew'))} />
 
         <DashboardTemplate exact path="/movimientos/IPM" component={lazy(() => import('./pages/MovimientosIPM'))} />
         <DashboardTemplate exact path="/movimientos/IPM/detalles/:id" component={lazy(() => import('./pages/MovimientosIPM/DetalleMovimientoIPM'))} />
