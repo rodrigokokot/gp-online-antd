@@ -44,7 +44,7 @@ const SearchForm = ({ array, parentCallback, title }) => {
           <Icon component={isActive ? CollapseClose : CollapseOpen} />
         )}
       >
-        <Panel key="1" header={title}>
+        <Panel key="1" header={title} style={{background: "#ffffff"}}>
           {console.log(title)}
           <Form
             form={form}
