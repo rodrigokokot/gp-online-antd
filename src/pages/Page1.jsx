@@ -293,14 +293,9 @@ function Page1() {
 
     return (
         <>
-<<<<<<< HEAD
-            <ResultSearch />
-            <DateRangeFilter />
-=======
             <BreadComponent />
             <ResultSearch />
             {/* <DateRangeFilter /> */}
->>>>>>> ayuda-emi
 
             {/* <ReactCountryFlagsCurrencySelect
                 searchable={true}
@@ -396,11 +391,7 @@ function Page1() {
             <Switch onChange={() => setNoResult(!noResult)} />
             <Table component={DeploymentConfirmation} columns={columns} data={ noResult? data : [] } />
 
-<<<<<<< HEAD
-            <InlineSVG src={LoginImg} />
-=======
             <InlineSVG src={LoginImg} /> */}
->>>>>>> ayuda-emi
         </>
     )
 }
