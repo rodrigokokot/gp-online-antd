@@ -44,7 +44,7 @@ export default function GestionPerfilesNew() {
 
           <Row>
             <Col span={12}>
-              <Form.Item>
+              <Form.Item name="nombre" rules={[{required: true, message: "Ingrese nombre"}]}>
                 <FloatInput
                   placeholder="Nombre del Nuevo perfil"
                   label="Nombre del Nuevo perfil"
@@ -55,7 +55,7 @@ export default function GestionPerfilesNew() {
 
           <Row>
             <Col span={12}>
-              <Form.Item>
+              <Form.Item name="descripcion" rules={[{required: true, message:"Ingrese descripción"}]}>
                 <FloatInput
                   placeholder="Descripción del perfil"
                   label="Descripción del perfil"
