@@ -43,12 +43,15 @@ function App() {
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles/editar/:id" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesEdit'))} />
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles/nueva" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesNew'))} />
 
-        <DashboardTemplate exact path="/movimientos/IPM" component={lazy(() => import('./pages/MovimientosIPM'))} />
-        <DashboardTemplate exact path="/movimientos/IPM/detalles/:id" component={lazy(() => import('./pages/MovimientosIPM/DetalleMovimientoIPM'))} />
-        <DashboardTemplate exact path="/movimientos/IPM/detalles/:id/:registro" component={lazy(() => import('./pages/MovimientosIPM/DetalleRegistroIPM'))} />
+        <DashboardTemplate exact path="/movimientos/IPM" component={lazy(() => import('./pages/Movimientos/MovimientosIPM'))} />
+        <DashboardTemplate exact path="/movimientos/IPM/detalles/:id" component={lazy(() => import('./pages/Movimientos/MovimientosIPM/DetalleMovimientoIPM'))} />
+        <DashboardTemplate exact path="/movimientos/IPM/detalles/:id/:registro" component={lazy(() => import('./pages/Movimientos/MovimientosIPM/DetalleRegistroIPM'))} />
 
 
-        <DashboardTemplate exact path="/movimientos/CTF" component={lazy(() => import('./pages/Movimientos'))} />
+        
+        <DashboardTemplate exact path="/movimientos/CTF" component={lazy(() => import('./pages/Movimientos/MovimientosCTF'))} />
+        <DashboardTemplate exact path="/movimientos/CTF/detalles/" component={lazy(() => import('./pages/Movimientos/MovimientosCTF/DetalleMovimientoCTF'))} />
+        <DashboardTemplate exact path="/movimientos/CTF/detalles/:id" component={lazy(() => import('./pages/Movimientos/MovimientosCTF/DetalleRegistroCTF'))} />
 
         <DashboardTemplate exact path="/emision/movimientos" component={lazy(() => import('./pages/Emision'))} />
         <DashboardTemplate exact path="/emision/socios" component={lazy(() => import('./pages/Emision'))} />

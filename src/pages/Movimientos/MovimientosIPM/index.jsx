@@ -1,12 +1,12 @@
 import React from "react";
-import Searchform from "../../components/organisms/SearchForm";
-import { MovimientosIPMSearch } from "../../Mocks/MovimientosIPMSearch";
-import Table from "../../components/organisms/Table";
+import Searchform from "../../../components/organisms/SearchForm";
+import { MovimientosIPMSearch } from "../../../Mocks/MovimientosIPMSearch";
+import Table from "../../../components/organisms/Table";
 import {
   columnsMovimientosIPM,
   dataMovimientosIPM,
-} from "../../Mocks/MovimientosIPM";
-import DateRangeFilter from "../../components/organisms/DateRangeFilter";
+} from "../../../Mocks/MovimientosIPM";
+import DateRangeFilter from "../../../components/organisms/DateRangeFilter";
 
 function MovimientosIPM() {
   return (

@@ -1,11 +1,11 @@
 import { Button } from "antd";
 import React from "react";
 import { useParams } from "react-router-dom";
-import Table from "../../components/organisms/Table";
+import Table from "../../../components/organisms/Table";
 import {
   columnsDetalleRegistroIPM,
   dataDetalleRegistroIPM,
-} from "../../Mocks/DetalleRegistroIPM";
+} from "../../../Mocks/DetalleRegistroIPM";
 
 function DetalleMovimientoIPM() {
   const { registro, id } = useParams();
