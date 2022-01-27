@@ -1,33 +1,23 @@
-import { createElement, lazy, Suspense, useEffect, useState } from "react";
+import { createElement, Suspense, useState } from "react";
 import { Link, Route } from "react-router-dom";
-import { Select, Layout, Menu, PageHeader, Skeleton, Popover } from "antd";
-import Icon, { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import { Layout, Menu, Skeleton } from "antd";
+import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
-import { GradientIcon, LogoIcon, UserIcon } from "../../assets/svg/icons";
-import Profile from "../../components/molecules/Prefile";
+import HeaderLayout from "../../components/organisms/Layout/Header";
+import SubHeaderLayout from "../../components/organisms/Layout/SubHeader";
+import PageHeaderLayout from "../../components/organisms/Layout/PageHeader";
 
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 
 export default function DashboardTemplate({ component: Component, ...rest }) {
   const [collapsed, setCollapsed] = useState(false);
-  const [itemSelected, setItemSelected] = useState(routes[0]);
   const icons = require(`@ant-design/icons`);
+  const [itemSelected, setItemSelected] = useState(routes[0]);
+
   return (
     <>
-      <Header className="header">
-        <div className="container-logo">
-          <Link to="/home" className="logo">
-            <Icon component={LogoIcon} />
-          </Link>
-        </div>
-        <div className="container-user">
-          <Popover placement="bottom" content={Profile} trigger="click">
-            <Icon component={UserIcon} />
-        </Popover>
-        </div>
-        <Icon className="linear-gradient" component={GradientIcon}></Icon>
-      </Header>
+      <HeaderLayout />
       <Layout>
         <Sider trigger={null} collapsible collapsed={collapsed} style={{ backgroundColor: "#fff" }}>
           <div id="sidebar" className="logo">
@@ -44,9 +34,9 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               return (
                 route.subItems !== undefined
                   ? <Menu.SubMenu icon={<Component />} key={index} title={route.name}>
-                    {route.subItems.map((item) => {
+                    {route.subItems.map((item, index2) => {
                       return (
-                        <Menu.Item>
+                        <Menu.Item key={`${index}.${index2}`}>
                           <Link to={item.path} onClick={() => setItemSelected(item)}>
                             {item.name}
                           </Link>
@@ -65,17 +55,8 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
         </Sider>
 
         <Layout className="site-layout">
-          <Header className="sub-header">
-            <div className="container-logo">
-            </div>
-            <div className="container-user">
-              {/* <Icon component={UserIcon} /> */}
-            </div>
-          </Header>
-          <PageHeader 
-            title={<h2>{itemSelected.name}</h2>}
-            extra={"Norma Cardozo"}
-          ></PageHeader>
+          <SubHeaderLayout />
+          <PageHeaderLayout title={itemSelected.name} />
           <Content
             className=""
             style={{
