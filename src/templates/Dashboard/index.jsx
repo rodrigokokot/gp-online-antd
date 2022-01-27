@@ -1,7 +1,7 @@
 import { createElement, Suspense, useState } from "react";
 import { Link, Route } from "react-router-dom";
 import { Layout, Menu, Skeleton } from "antd";
-import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import { MenuUnfoldOutlined, MenuFoldOutlined, QuestionCircleOutlined } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
 import HeaderLayout from "../../components/organisms/Layout/Header";
