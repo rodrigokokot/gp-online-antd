@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image, Layout, Select, Typography } from "antd";
+import { Image, Layout, Select, Typography,Button } from "antd";
 import './index.less'
 
 const arrayLogos = [
@@ -50,19 +50,10 @@ const SubHeaderLayout = ({props}) => {
                 </Select.Option>
               ))
             }
-            {/* <Select.Option value="jack">
-              <Image
-                style={{ verticalAlign: 'middle' }}
-                preview={false}
-                width={40}
-                src={ require('../../../../assets/png/entidades/Uala.png') }
-              />
-              <Typography.Text style={{ marginLeft: '10px' }}>Uala</Typography.Text>
-            </Select.Option> */}
           </Select>
         </div>
-        <div className="container-user">
-        {/* <Icon component={UserIcon} /> */}
+        <div className="container-btn">
+          <Button type="primary" size='small' style={{ height: '32px', width: '166px' }}>Nueva cuenta</Button>
         </div>
     </Layout.Header>
 
