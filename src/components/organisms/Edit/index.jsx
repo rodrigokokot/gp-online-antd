@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Form, Button, Modal } from "antd";
 
-const Edit = ({ component: Component }) => {
+const Edit = ({ component: Component, key }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-
+  console.log("key",key);
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -27,7 +27,7 @@ const Edit = ({ component: Component }) => {
   return (
     <>
       <Form
-        id="myForm"
+        id={ key !== undefined ? key : "myForm" }
         name="basic"
         initialValues={{ remember: true }}
         onFinish={onFinish}
@@ -43,7 +43,7 @@ const Edit = ({ component: Component }) => {
         onOk={handleOk}
         onCancel={handleCancel}
         footer={[
-          <Button form="myForm" type="primary" htmlType="submit" onClick={handleOk}>Si, generar cambios</Button>,
+          <Button form={ key !== undefined ? key : "myForm" } type="primary" htmlType="submit" onClick={handleOk}>Si, generar cambios</Button>,
           <Button onClick={handleCancel}>Cancelar</Button>
         ]}
       >

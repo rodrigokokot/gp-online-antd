@@ -6,7 +6,7 @@ import {
   columnsDetalleRegistroIPM,
   dataDetalleRegistroIPM,
 } from "../../../Mocks/DetalleRegistroIPM";
-import Export from "../../components/organisms/Export";
+import Export from "../../../components/organisms/Export";
 
 function DetalleMovimientoIPM() {
   const { registro, id } = useParams();

@@ -1,9 +1,15 @@
+import React from "react";
+import {Col,Button} from "antd"; 
+import Table from "../../../components/organisms/Table";
+import SearchForm from "../../../components/organisms/SearchForm"
+import { Link } from "react-router-dom";
+import {GestionPerfilesSearchMock,dataGestionPerfiles,columnsGestionPerfiles} from "../../../Mocks/GestionPerfilesSearchMock"
 
 function GestionPerfilesBusqueda() {
   const handleCallback = (values) =>{
       console.log(values);
   }
-  
+
   
   return(
   

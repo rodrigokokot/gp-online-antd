@@ -18,7 +18,7 @@ function EditUsuario() {
 
         {/* Pantalla 2 */}
         <TabPane tab="Contraseña" key="2">
-              <Edit component={FormContraseña}></Edit> 
+              <Edit key={"2"} component={FormContraseña}></Edit> 
         </TabPane>
       </Tabs>
     </>
