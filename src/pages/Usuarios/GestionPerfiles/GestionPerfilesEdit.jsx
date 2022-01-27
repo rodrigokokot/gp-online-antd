@@ -2,37 +2,62 @@ import React from "react";
 import Edit from "../../../components/organisms/Edit/index";
 import Table from "../../../components/organisms/Table/index";
 import FloatInput from "../../../components/molecules/FloatInput";
+import PurpleTitle from "../../../components/molecules/PurpleTitle";
 import { Card, Row, Tabs, Col, Form} from "antd";
-import Title from "antd/lib/skeleton/Title";
 
 function GestionPerfilesEdit() {
+  
+  const columnsFormulario = [
+    {
+      name:"Nombre",
+      selector: (row) => row.nombre,
+      sortable: true,
+    },
+    {
+      name:"Descripcion",
+      selector: (row) => row.descripcion,
+      sortable: false,
+    },
+  ]
+
+  const dataFormulario = [
+    {
+      id: "1",
+      nombre: "Rol de prueba",
+      descripcion: "Lectura de modelos transaccion GlobalOnline"
+    }
+  ]
+  
+  
+  
+  
   const FormularioPerfil = () => {
     return (
       <>
         <Card>
           <Row>
             <Col>
-              <h1>Perfil</h1>
+              <PurpleTitle text="Perfil"/>
             </Col>
           </Row>
 
           <Row>
             <Col span={12}>
               <p>Nombre</p>
-              <h3>...algún Nombre</h3>
+              <h1>...algún Nombre</h1>
             </Col>
 
             <Col span={12}>
               <p>Descripción del perfil</p>
-              <h3>...alguna descripción</h3>
+              <h1>...alguna descripción</h1>
             </Col>
           </Row>
         </Card>
 
         <Card>
-          <Title>Tipos de Operaciones</Title>
+          <PurpleTitle text="Tipos de Operaciones" />
           <Form.Item name="tabla">
-            <Table />
+            <Table selectable={true} data={dataFormulario} columns={columnsFormulario}/>
           </Form.Item>
         </Card>
       </>
@@ -45,12 +70,12 @@ function GestionPerfilesEdit() {
         <Card>
           <Row>
             <Col>
-              <h1>Contraseña</h1>
+              <PurpleTitle text="Contraseña" />
             </Col>
           </Row>
 
           <Row>
-            <Col>
+            <Col span={8}>
              <p>Ingresá tu contraseña para generar cambios</p>
             </Col>
           </Row>
