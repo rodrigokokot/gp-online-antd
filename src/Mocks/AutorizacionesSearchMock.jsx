@@ -1,6 +1,9 @@
 import React from 'react';
+import {DatePicker} from 'antd'
 import FloatInput from '../components/molecules/FloatInput';
 import FloatSelected from '../components/molecules/FloatSelected';
+
+const {RangePicker} = DatePicker;
 
 const AutorizacionesSearchArray = [
     {
@@ -61,7 +64,7 @@ const AutorizacionesSearchArray = [
             {
                 title:"ArchivoMar",
                 value:"ArchivoMar",
-                disabled:fale,
+                disabled:false,
             }
         ]} />
     },
@@ -86,7 +89,54 @@ const AutorizacionesSearchArray = [
                 disabled: false
             }
         ]} />
+    },
+    {
+        name: "Estado",
+        index: "estado",
+        input: <FloatSelected label="Estado" placeholder="Estado" mode="tags" options={[
+            {
+                title:"Aprobada",
+                value:"Aprobada",
+                disabled: false,
+            },
+            {
+                title:"Rechazada",
+                value:"Rechazada",
+                disabled: false,
+            },
+            {
+                title:"Anulada",
+                value:"Anulada",
+                disabled:false,
+            },
+            {
+                title:"Sin autorizacióin emisor",
+                value:"Sin autorización emisor",
+                disabled:false,
+            }
+        ]} />
+    },
+    {
+        name: "Fecha Rel. Desde/Hasta",
+        index: "rangefecharel",
+        input: <RangePicker placeholder={["Fecha Rel. Desde","Fecha Red. Hasta"]}/>
+    },
+    {
+        name: "Cuotas",
+        index: "cuotas",
+        input: <FloatSelected placeholder="Cuotas" label="Cuotas" options={[
+            {
+                title:"1",
+                value:"1",
+                disabled:false,
+            },
+            {
+                title:"3",
+                value:"3",
+                disabled: false,
+            }
+        ]}/>
     }
-
-
 ]
+
+export {AutorizacionesSearchArray}
