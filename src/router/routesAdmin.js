@@ -32,9 +32,9 @@ const routes = [
             },
             {
                 path: "/usuarios/gestionDePerfiles",
-                name: "Gestión de Sucursales",
+                name: "Gestión de Perfiles",
                 icon: 'BoxPlotOutlined',
-                page: 'GestionSucursales',
+                page: 'GestionPerfiles',
             },
         ]
     },
