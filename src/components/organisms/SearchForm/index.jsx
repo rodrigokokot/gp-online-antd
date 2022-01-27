@@ -7,7 +7,7 @@ import {
   CollapseOpen,
 } from "../../../assets/svg/icons/collapse";
 
-const SearchForm = ({ array, parentCallback }) => {
+const SearchForm = ({ array, parentCallback, title }) => {
   const [form] = Form.useForm();
   const { Panel } = Collapse;
   const [open, setOpen] = useState(["1"]);
@@ -33,8 +33,7 @@ const SearchForm = ({ array, parentCallback }) => {
   };
 
   return (
-    <>
-      <Collapse
+      <Collapse style={{ backgroundColor:'white' }}
         expandIconPosition="right"
         bordered={false}
         activeKey={open}
@@ -43,8 +42,9 @@ const SearchForm = ({ array, parentCallback }) => {
           <Icon component={isActive ? CollapseClose : CollapseOpen} />
         )}
       >
-        <Panel key="1">
-          <Form
+        <Panel key="1" header={title}>
+          {console.log(title)}
+          <Form style={{ backgroundColor:'white' }}
             form={form}
             name="advanced_search"
             className="ant-advanced-search-form"
@@ -71,9 +71,10 @@ const SearchForm = ({ array, parentCallback }) => {
               </Col>
             </Row>
           </Form>
+
         </Panel>
+        
       </Collapse>
-    </>
   );
 };
 

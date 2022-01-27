@@ -9,6 +9,7 @@ import DateRangeFilter from '../components/organisms/DateRangeFilter'
 import {HelpImg, LoginImg} from '../assets/svg/img'
 import InlineSVG from 'svg-inline-react';
 import ResultSearch from '../components/molecules/ResultSearch'
+import BreadComponent from '../components/molecules/Breadcrum'
 
 const validator = {
     require: {
@@ -292,8 +293,14 @@ function Page1() {
 
     return (
         <>
+<<<<<<< HEAD
             <ResultSearch />
             <DateRangeFilter />
+=======
+            <BreadComponent />
+            <ResultSearch />
+            {/* <DateRangeFilter /> */}
+>>>>>>> ayuda-emi
 
             {/* <ReactCountryFlagsCurrencySelect
                 searchable={true}
@@ -302,7 +309,7 @@ function Page1() {
             {/* <div  style={{ marginBottom: '25px' }}>
                 <DateRangePicker />
             </div> */}
-            <Card style={{marginTop:'50px', marginBottom: '50px'}}>
+            {/* <Card style={{marginTop:'50px', marginBottom: '50px'}}>
                 <Form
                     size="large"
                     name="user_login"
@@ -389,7 +396,11 @@ function Page1() {
             <Switch onChange={() => setNoResult(!noResult)} />
             <Table component={DeploymentConfirmation} columns={columns} data={ noResult? data : [] } />
 
+<<<<<<< HEAD
             <InlineSVG src={LoginImg} />
+=======
+            <InlineSVG src={LoginImg} /> */}
+>>>>>>> ayuda-emi
         </>
     )
 }
