@@ -2,13 +2,12 @@ import Table from "../../components/organisms/Table/index";
 import React, { useState } from "react";
 import SearchForm from "../../components/organisms/SearchForm/index";
 import { GestionSucursalesSearchMock } from "../../Mocks/GestionSucursalesSearchMock";
-import { Button, Col} from "antd";
+import { Button, Col } from "antd";
 import {
   columnsGestionSucursales,
   dataGestionSucursales,
 } from "../../Mocks/GestionSucursales";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 function GestionSucursales() {
   const [data, setData] = useState("");
@@ -36,29 +35,28 @@ function GestionSucursales() {
   };
 
   return (
-        <>
-          <Col style={{ textAlign: "right", marginBottom: "25px" }}>
-            <Link to="/parametrosPrincipales/gestionSucursales/nueva">
-              <Button type="primary" size="small">
-                Nueva Sucursal
-              </Button>
-            </Link>
-          </Col>
+    <>
+      <Col style={{ textAlign: "right", marginBottom: "25px" }}>
+        <Link to="/parametrosPrincipales/gestionSucursales/crear">
+          <Button type="primary" size="small">
+            Nueva Sucursal
+          </Button>
+        </Link>
+      </Col>
 
-          <SearchForm
-            array={GestionSucursalesSearchMock}
-            parentCallback={handleCallback}
-            title="Busqueda de Sucursal"
-          />
-
-
-            <Table
-              columns={columnsGestionSucursales}
-              data={data}
-              expandible={false}
-              editable={true}
-            />
-        </>
+      <SearchForm
+        array={GestionSucursalesSearchMock}
+        parentCallback={handleCallback}
+        title="Busqueda de Sucursal"
+      />
+      <br></br>
+      <Table
+        columns={columnsGestionSucursales}
+        data={data}
+        expandible={false}
+        editable={true}
+      />
+    </>
   );
 }
 

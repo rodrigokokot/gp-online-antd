@@ -6,13 +6,12 @@ import {
   columnsMovimientosIPM,
   dataMovimientosIPM,
 } from "../../Mocks/MovimientosIPM";
-import DateRangeFilter from "../../components/organisms/DateRangeFilter";
 
 function MovimientosIPM() {
   return (
-    <>
-      <DateRangeFilter></DateRangeFilter>
-      <Searchform array={MovimientosIPMSearch}></Searchform>
+    <>  
+      <Searchform array={MovimientosIPMSearch} title={"Búsqueda de archivos IPM"}></Searchform>
+      <br></br>
       <Table data={dataMovimientosIPM} columns={columnsMovimientosIPM}></Table>
     </>
   );

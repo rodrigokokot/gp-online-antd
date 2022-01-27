@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Form, Input, Button, Checkbox, Radio, Modal } from "antd";
-import FloatInput from "../../molecules/FloatInput";
+import { Form, Button, Modal } from "antd";
 
 const Edit = ({ component: Component }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);

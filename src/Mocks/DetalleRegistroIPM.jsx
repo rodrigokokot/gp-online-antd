@@ -1,5 +1,3 @@
-import { DownOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
 const columnsDetalleRegistroIPM = [
   {
     name: "Campo / PDS",
@@ -15,27 +13,27 @@ const columnsDetalleRegistroIPM = [
 
 const dataDetalleRegistroIPM = [
   {
-    campo: 'MTI - Message Type Identifier',
+    campo: "MTI - Message Type Identifier",
+    valor: 1231,
+  },
+  {
+    campo: "MTI - Message Type Identifier",
+    valor: 1231,
+  },
+  {
+    campo: "MTI - Message Type Identifier",
     valor: "1231",
   },
   {
-    campo: 'MTI - Message Type Identifier',
+    campo: "MTI - Message Type Identifier",
     valor: "1231",
   },
   {
-    campo: 'MTI - Message Type Identifier',
+    campo: "MTI - Message Type Identifier",
     valor: "1231",
   },
   {
-    campo: 'MTI - Message Type Identifier',
-    valor: "1231",
-  },
-  {
-    campo: 'MTI - Message Type Identifier',
-    valor: "1231",
-  },
-  {
-    campo: 'MTI - Message Type Identifier',
+    campo: "MTI - Message Type Identifier",
     valor: "1231",
   },
 ];

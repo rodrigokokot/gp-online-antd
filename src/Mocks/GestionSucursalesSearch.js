@@ -1,6 +1,7 @@
 import React from "react";
 import FloatInput from "../components/molecules/FloatInput/index";
 import FloatSelected from "../components/molecules/FloatSelected/index";
+import DateRangeFilter from "../components/organisms/DateRangeFilter";
 
 
 const GestionSucursalesSearch = [
@@ -81,6 +82,11 @@ const GestionSucursalesSearch = [
           ]}
         />
       ),
+    },
+    {
+      index: 'fecha',
+      name: "Por fecha",
+      input: <DateRangeFilter></DateRangeFilter>,
     },
   ];
 
