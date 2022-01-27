@@ -25,14 +25,14 @@ const routes = [
         page: 'Usuarios',
         subItems: [
             {
-                path: "/usuarios/gestionDeUsuarios",
+                path: "/usuarios/gestionUsuarios",
                 name: "Gestión de usuarios",
                 icon: 'BoxPlotOutlined',
-                page: 'GestionSucursales',
+                page: 'GestionUsuarios',
             },
             {
                 path: "/usuarios/gestionDePerfiles",
-                name: "Gestión de Sucursales",
+                name: "Gestión de Perfiles",
                 icon: 'BoxPlotOutlined',
                 page: 'GestionSucursales',
             },
@@ -86,12 +86,12 @@ const routes = [
         icon: "PieChartOutlined",
         page: 'ParametrosPrincipales',
     },
-    {
-        path: "/ayuda",
-        name: "Ayuda",
-        icon: 'QuestionCircleOutlined',
-        page: 'Ayuda'
-    },
+    // {
+    //     path: "/ayuda",
+    //     name: "Ayuda",
+    //     icon: 'QuestionCircleOutlined',
+    //     page: 'Ayuda'
+    // },
 
 ];
 

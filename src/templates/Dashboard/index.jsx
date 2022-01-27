@@ -1,31 +1,24 @@
-import { createElement, lazy, Suspense, useEffect, useState } from "react";
+import { createElement, Suspense, useState } from "react";
 import { Link, Route } from "react-router-dom";
-import { Avatar, Button, Layout, Menu, PageHeader, Skeleton } from "antd";
-import Icon, { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import { Layout, Menu, Skeleton } from "antd";
+import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
-import { GradientIcon, LogoIcon, UserIcon } from "../../assets/svg/icons";
-import SubMenu from "antd/lib/menu/SubMenu";
+import HeaderLayout from "../../components/organisms/Layout/Header";
+import SubHeaderLayout from "../../components/organisms/Layout/SubHeader";
+import PageHeaderLayout from "../../components/organisms/Layout/PageHeader";
+import { QuestionCircleOutlined } from '@ant-design/icons';
 
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 
 export default function DashboardTemplate({ component: Component, ...rest }) {
   const [collapsed, setCollapsed] = useState(false);
-  const [itemSelected, setItemSelected] = useState(routes[0]);
   const icons = require(`@ant-design/icons`);
+  const [itemSelected, setItemSelected] = useState(routes[0]);
+
   return (
     <>
-      <Header className="header">
-        <div className="container-logo">
-          <Link to="/home" className="logo">
-            <Icon component={LogoIcon} />
-          </Link>
-        </div>
-        <div className="container-user">
-          <Icon component={UserIcon} />
-        </div>
-        <Icon className="linear-gradient" component={GradientIcon}></Icon>
-      </Header>
+      <HeaderLayout />
       <Layout>
         <Sider trigger={null} collapsible collapsed={collapsed} style={{ backgroundColor: "#fff" }}>
           <div id="sidebar" className="logo">
@@ -41,39 +34,44 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               const Component = icons[route.icon];
               return (
                 route.subItems !== undefined
-                  ? <SubMenu icon={<Component />} key={index} title={route.name}>
-                    {route.subItems.map((item) => {
+                  ? <Menu.SubMenu icon={<Component />} key={index} title={route.name}>
+                    {route.subItems.map((item, index2) => {
                       return (
-                        <Menu.Item>
-                          <Link to={item.path} onClick={()=>setItemSelected(item)}>
+                        <Menu.Item key={`${index}.${index2}`}>
+                          <Link to={item.path} onClick={() => setItemSelected(item)}>
                             {item.name}
                           </Link>
                         </Menu.Item>
                       )
                     })}
-                  </SubMenu>
+                  </Menu.SubMenu>
                   : <Menu.Item icon={<Component />}>
-                    <Link style={{ width: "flex" }} to={route.path} onClick={()=>setItemSelected(route)}>
+                    <Link style={{ width: "flex" }} to={route.path} onClick={() => setItemSelected(route)}>
                       {route.name}
                     </Link>
                   </Menu.Item>
               )
             })}
           </Menu>
+          <Menu mode="inline">
+            <Menu.Item icon={<QuestionCircleOutlined />}>
+              <Link style={{ width: "flex" }} to="/ayuda" onClick={() => setItemSelected("/ayuda")}>
+                Ayuda
+              </Link>
+            </Menu.Item>
+          </Menu>
         </Sider>
 
         <Layout className="site-layout">
-          <PageHeader
-            title={itemSelected.name}
-            extra={"Norma Cardozo"}
-          ></PageHeader>
+          <SubHeaderLayout />
+          <PageHeaderLayout title={itemSelected.name} />
           <Content
             className=""
             style={{
               margin: "24px 16px",
               padding: 24,
               minHeight: 280,
-              backgroundColor: "#F9F9F9",
+              backgroundColor: "#E5E5E5",
             }}
           >
             <Route
