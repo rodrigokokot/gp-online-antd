@@ -25,10 +25,10 @@ const routes = [
         page: 'Usuarios',
         subItems: [
             {
-                path: "/usuarios/gestionDeUsuarios",
+                path: "/usuarios/gestionUsuarios",
                 name: "Gestión de usuarios",
                 icon: 'BoxPlotOutlined',
-                page: 'GestionSucursales',
+                page: 'GestionUsuarios',
             },
             {
                 path: "/usuarios/gestionDePerfiles",

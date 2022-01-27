@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs} from "antd";
-import FormContraseña from "../../components/tabs/GestionUsuarios/FormContraseña";
-import FormDatosGenerales from "../../components/tabs/GestionUsuarios/FormDatosGenerales";
+import FormContraseña from "../../../components/tabs/GestionUsuarios/FormContraseña";
+import FormDatosGenerales from "../../../components/tabs/GestionUsuarios/FormDatosGenerales";
 
 function EditUsuario() {
   const { TabPane } = Tabs;

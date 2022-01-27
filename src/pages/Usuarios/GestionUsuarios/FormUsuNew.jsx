@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Radio,Form,Typography,Button, Card} from 'antd';
 
 import {useHistory} from 'react-router-dom'
-import FloatInput from '../../components/molecules/FloatInput';
+import FloatInput from '../../../components/molecules/FloatInput';
 const { Group } = Radio;
 const { Title } = Typography;
 const FormUsuNew = () => {

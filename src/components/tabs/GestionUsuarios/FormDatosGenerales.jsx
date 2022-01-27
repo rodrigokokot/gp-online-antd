@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import { Radio,Form,Typography,Button, Card} from 'antd';
 
-import {useHistory, useParams} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import FloatInput from '../../molecules/FloatInput';
 const { Group } = Radio;
 const { Title } = Typography;
 const DatosGenerales = (props) => {
     const [form] = Form.useForm();
     const history = useHistory();
-    const {type}= useParams();
     const {usuario}=props.usuario;
     const onFinish = (values) =>{
         console.log("finish",values)
-        console.log({type});
     }
     
     const [value, setValue] = useState("");
@@ -103,7 +101,7 @@ const DatosGenerales = (props) => {
         </Form.Item>
         </Card>
         <Button type='primary' htmlType='submit'>
-            {/*type==='new' ? 'Crear Usuario' : 'Guardar Cambios'*/}Guardar
+            Guardar 
         </Button>
         
         <Button onClick={() => history.goBack()}>

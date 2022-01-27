@@ -33,9 +33,7 @@ const SearchForm = ({ array, parentCallback, title }) => {
   };
 
   return (
-    <>
-    
-      <Collapse
+      <Collapse style={{ backgroundColor:'white' }}
         expandIconPosition="right"
         bordered={false}
         activeKey={open}
@@ -46,7 +44,7 @@ const SearchForm = ({ array, parentCallback, title }) => {
       >
         <Panel key="1" header={title}>
           {console.log(title)}
-          <Form
+          <Form style={{ backgroundColor:'white' }}
             form={form}
             name="advanced_search"
             className="ant-advanced-search-form"
@@ -77,7 +75,6 @@ const SearchForm = ({ array, parentCallback, title }) => {
         </Panel>
         
       </Collapse>
-    </>
   );
 };
 
