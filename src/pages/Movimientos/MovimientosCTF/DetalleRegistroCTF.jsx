@@ -5,6 +5,7 @@ import {
   columnsRegistroCTF,
   dataRegistroCTF 
 } from "../../../Mocks/DetalleRegistroCTF";
+import Export from "../../../components/organisms/Export";
 
 function DetalleRegistroCTF() {
    
@@ -13,7 +14,7 @@ function DetalleRegistroCTF() {
     <> 
         <h2> {id}</h2> 
         {/*FALTA AGREGAR BOTTON DE EXPORTAR  */}
-        <Table data={dataRegistroCTF} columns={columnsRegistroCTF}></Table>
+        <Table data={dataRegistroCTF} columns={columnsRegistroCTF} actions={<Export />}></Table>
     </>
   );
 }

@@ -1,15 +1,20 @@
-import React ,{useState} from "react";
+import React, { useState } from "react";
+import Export from "../../../components/organisms/Export";
 import Table from "../../../components/organisms/Table";
 import {
-  dataDetallesCTF, columnsDetallesCTF
+  dataDetallesCTF,
+  columnsDetallesCTF,
 } from "../../../Mocks/DetalleMovimientoCTF";
 
 function DetalleMovimientosCTF() {
-   
   return (
-    <> 
-        {/*FALTA AGREGAR BOTTON DE EXPORTAR  */}
-        <Table data={dataDetallesCTF} columns={columnsDetallesCTF}></Table>
+    <>
+      {/*FALTA AGREGAR BOTTON DE EXPORTAR  */}
+      <Table
+        data={dataDetallesCTF}
+        columns={columnsDetallesCTF}
+        actions={<Export />}
+      ></Table>
     </>
   );
 }
