@@ -14,11 +14,11 @@ const columnsDetalleRegistroIPM = [
 const dataDetalleRegistroIPM = [
   {
     campo: "MTI - Message Type Identifier",
-    valor: 1231,
+    valor: "1231",
   },
   {
     campo: "MTI - Message Type Identifier",
-    valor: 1231,
+    valor: "1231",
   },
   {
     campo: "MTI - Message Type Identifier",

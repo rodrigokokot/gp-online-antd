@@ -52,6 +52,13 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               )
             })}
           </Menu>
+          <Menu mode="inline" className="menu-help">
+            <Menu.Item icon={<QuestionCircleOutlined />}>
+              <Link style={{ width: "flex" }} to="/ayuda" onClick={() => setItemSelected("/ayuda")}>
+                Ayuda
+              </Link>
+            </Menu.Item>
+          </Menu>
         </Sider>
 
         <Layout className="site-layout">

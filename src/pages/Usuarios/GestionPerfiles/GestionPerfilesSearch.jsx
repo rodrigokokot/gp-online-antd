@@ -9,7 +9,6 @@ function GestionPerfilesBusqueda() {
   const handleCallback = (values) =>{
       console.log(values);
   }
-
   
   return(
   

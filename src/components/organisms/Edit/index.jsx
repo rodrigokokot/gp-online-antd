@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Form, Button, Modal } from "antd";
+import { Form, Input, Button, Checkbox, Radio, Modal } from "antd";
+import FloatInput from "../../molecules/FloatInput";
 
-const Edit = ({ component: Component, key }) => {
+const Edit = ({ component: Component }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  console.log("key",key);
+
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -27,7 +28,7 @@ const Edit = ({ component: Component, key }) => {
   return (
     <>
       <Form
-        id={ key !== undefined ? key : "myForm" }
+        id="myForm"
         name="basic"
         initialValues={{ remember: true }}
         onFinish={onFinish}
@@ -43,7 +44,7 @@ const Edit = ({ component: Component, key }) => {
         onOk={handleOk}
         onCancel={handleCancel}
         footer={[
-          <Button form={ key !== undefined ? key : "myForm" } type="primary" htmlType="submit" onClick={handleOk}>Si, generar cambios</Button>,
+          <Button form="myForm" type="primary" htmlType="submit" onClick={handleOk}>Si, generar cambios</Button>,
           <Button onClick={handleCancel}>Cancelar</Button>
         ]}
       >

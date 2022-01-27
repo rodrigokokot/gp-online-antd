@@ -1,4 +1,4 @@
-export const LoginImg = () => (
+export const LoginImg =
     `<svg width="469" height="731" viewBox="0 0 469 731" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <rect width="469" height="731" fill="url(#pattern0)"/>
     <defs>
@@ -9,4 +9,3 @@ export const LoginImg = () => (
     </defs>
     </svg>
     `
-)

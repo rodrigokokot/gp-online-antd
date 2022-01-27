@@ -86,12 +86,12 @@ const routes = [
         icon: "PieChartOutlined",
         page: 'ParametrosPrincipales',
     },
-    {
-        path: "/ayuda",
-        name: "Ayuda",
-        icon: 'QuestionCircleOutlined',
-        page: 'Ayuda'
-    },
+    // {
+    //     path: "/ayuda",
+    //     name: "Ayuda",
+    //     icon: 'QuestionCircleOutlined',
+    //     page: 'Ayuda'
+    // },
 
 ];
 
