@@ -49,8 +49,11 @@ function App() {
 
         <DashboardTemplate exact path="/movimientos/CTF" component={lazy(() => import('./pages/Movimientos'))} />
 
-        <DashboardTemplate exact path="/emision/movimientos" component={lazy(() => import('./pages/Emision'))} />
-        <DashboardTemplate exact path="/emision/socios" component={lazy(() => import('./pages/Emision'))} />
+        <DashboardTemplate exact path="/emision/movimientos/autorizaciones" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesSearch'))} />
+        <DashboardTemplate exact path="/emision/movimientos/autorizaciones/nuevo" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesNew'))} />
+        <DashboardTemplate exact path="/emision/movimientos/autorizaciones/editar/:id" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesEdit'))} />
+        <DashboardTemplate exact path="/emision/movimientos" component={lazy(() => import('./pages/Emision/Emision'))} />
+        <DashboardTemplate exact path="/emision/socios" component={lazy(() => import('./pages/Emision/Emision'))} />
 
         <DashboardTemplate exact path="/parametria" component={lazy(() => import('./pages/Parametria'))} />
 

@@ -1,0 +1,24 @@
+import React from 'react';
+import {Link} from 'react-router-dom';
+import {Col, Button} from 'antd';
+import SearchForm from '../../../../components/organisms/SearchForm/index'
+import Table from '../../../../components/organisms/Table/index'
+
+
+export default function AutorizacionesSearch() {
+  return (
+    <>
+      <Col style={{ textAlign: "right", marginBottom: "25px" }}>
+        <Link to="/emision/movimientos/autorizaciones/nuevo">
+          <Button type="primary" size="small">
+            Nueva Autorización
+          </Button>
+        </Link>
+      </Col>
+
+        <SearchForm />
+        <Table />
+      
+    </>
+  );
+}
