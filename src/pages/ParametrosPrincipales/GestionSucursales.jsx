@@ -35,28 +35,29 @@ function GestionSucursales() {
   };
 
   return (
-    <>
-      <Col style={{ textAlign: "right", marginBottom: "25px" }}>
-        <Link to="/parametrosPrincipales/gestionSucursales/crear">
-          <Button type="primary" size="small">
-            Nueva Sucursal
-          </Button>
-        </Link>
-      </Col>
+        <>
+          <Col style={{ textAlign: "right", marginBottom: "25px" }}>
+            <Link to="/parametrosPrincipales/gestionSucursales/nuevo">
+              <Button type="primary" size="small">
+                Nueva Sucursal
+              </Button>
+            </Link>
+          </Col>
 
-      <SearchForm
-        array={GestionSucursalesSearchMock}
-        parentCallback={handleCallback}
-        title="Busqueda de Sucursal"
-      />
-      <br></br>
-      <Table
-        columns={columnsGestionSucursales}
-        data={data}
-        expandible={false}
-        editable={true}
-      />
-    </>
+          <SearchForm
+            array={GestionSucursalesSearchMock}
+            parentCallback={handleCallback}
+            title="Busqueda de Sucursal"
+          />
+
+
+            <Table
+              columns={columnsGestionSucursales}
+              data={data}
+              expandible={false}
+              editable={true}
+            />
+        </>
   );
 }
 

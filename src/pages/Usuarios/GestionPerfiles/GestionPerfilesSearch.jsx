@@ -15,7 +15,7 @@ function GestionPerfilesBusqueda() {
   <div>
           <Col style={{ textAlign: "right", marginBottom: "25px" }}>
             
-            <Link to="/usuarios/gestionDePerfiles/crear"> 
+            <Link to="/usuarios/gestionDePerfiles/nuevo"> 
             <Button type="primary" size="small">
               Nuevo Perfil
             </Button>

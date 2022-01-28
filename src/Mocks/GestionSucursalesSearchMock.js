@@ -30,7 +30,6 @@ const GestionSucursalesSearchMock = [
         <FloatSelected
           placeholder="Provincia"
           label="Provincia"
-          width={200}
           options={[
             {
               title: "San Juan",
@@ -59,7 +58,6 @@ const GestionSucursalesSearchMock = [
         <FloatSelected
           placeholder="Estado"
           label="Estado"
-          width={200}
           options={[
             {
               title: "Activo",
