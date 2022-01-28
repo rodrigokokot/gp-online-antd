@@ -72,7 +72,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
 
         <Layout className="site-layout" style={{ marginLeft: 200 }} >
           <SubHeaderLayout />
-          <PageHeaderLayout title={itemSelected.name} />
+          <PageHeaderLayout title={itemSelected.name} style={{ marginTop: '12%' }} />
           <Content
             className=""
             style={{
