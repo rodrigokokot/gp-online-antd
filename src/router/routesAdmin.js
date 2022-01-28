@@ -25,16 +25,16 @@ const routes = [
         page: 'Usuarios',
         subItems: [
             {
-                path: "/usuarios/gestionDeUsuarios",
+                path: "/usuarios/gestionUsuarios",
                 name: "Gestión de usuarios",
                 icon: 'BoxPlotOutlined',
-                page: 'GestionSucursales',
+                page: 'GestionUsuarios',
             },
             {
                 path: "/usuarios/gestionDePerfiles",
-                name: "Gestión de Sucursales",
+                name: "Gestión de Perfiles",
                 icon: 'BoxPlotOutlined',
-                page: 'GestionSucursales',
+                page: 'GestionPerfiles',
             },
         ]
     },
@@ -58,7 +58,7 @@ const routes = [
     },
     {
         path: "/emision",
-        name: "Emision",
+        name: "Emisión",
         icon: "UserSwitchOutlined",
         page: 'ParametrosPrincipales',
         subItems: [

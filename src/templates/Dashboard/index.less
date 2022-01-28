@@ -5,50 +5,51 @@
     cursor: pointer;
     transition: color 0.3s;
     // color: #fff;
+}
+
+.header {
+  background-color: #1F263D;
+  max-height: 48px;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .container-logo {
+    padding-left: 1.39%;
   }
 
-  .header {
-    background-color: #1F263D;
-    max-height: 48px;
-    padding: 0;
-    position: relative;
-    display: flex;
-    align-items: center;
+  .logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-    .container-logo {
-      padding-left: 1.39%;
-    }
+  .container-user {
+    position: absolute;
+    top: -2%;
+    right: 1%;
+  }
 
-    .logo {
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .container-user {
+  .linear-gradient {
       position: absolute;
-      top: -2%;
-      right: 1%;
+      bottom: 0;
+      width: 100%;
     }
-
-    .linear-gradient {
-       position: absolute;
-       bottom: 0;
-       width: 100%;
-     }
-  }
-
-
-  // #sidebar .logo {
-  //   height: 32px;
-  //   margin: 16px;
-  //   // color: #fff;
-  // }
-
-  .site-layout .site-layout-background {
+}
+.site-layout{
+  .site-layout-background {
     background: #fff;
   }
+}
 
-  .ant-layout {
-    min-height: 100vh;
-  }
+.ant-layout {
+min-height: 100vh;
+background: #E5E5E5;
+
+}
+
+.ant-popover-content {
+width: 320px;
+height :538px;
+}
