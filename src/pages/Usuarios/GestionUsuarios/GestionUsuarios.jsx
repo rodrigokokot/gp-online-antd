@@ -3,7 +3,7 @@ import SearchForm from '../../../components/organisms/SearchForm/index'
 import Table from '../../../components/organisms/Table/index'
 import {Link} from 'react-router-dom'
 import {GestionUsuariosSearch, dataGestionUsuarios, columnsGestionUsuarios} from '../../../Mocks/GestionUsuariosSearchMock'
-import {Col, Button, Card} from 'antd'
+import {Col, Button} from 'antd'
 
 function GestionUsuario() {
   const [data, setData] = useState("");

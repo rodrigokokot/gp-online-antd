@@ -36,7 +36,7 @@ function App() {
         
         <DashboardTemplate exact path="/usuarios/gestionUsuarios" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/GestionUsuarios'))} />
         <DashboardTemplate exact path="/usuarios/gestionUsuarios/crear" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/FormUsuNew'))} />
-        <DashboardTemplate exact path="/usuarios/gestionUsuarios/editar/:id" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/GestionUsuariosEdit'))} />
+        <DashboardTemplate exact path="/usuarios/gestionUsuarios/editar/:usuario" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/GestionUsuariosEdit'))} />
         
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesSearch'))} />
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles/editar/:id" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesEdit'))} />

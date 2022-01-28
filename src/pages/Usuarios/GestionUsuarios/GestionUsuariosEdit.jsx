@@ -2,11 +2,10 @@ import React from "react";
 import { Tabs} from "antd";
 import FormContraseña from "../../../components/tabs/GestionUsuarios/FormContraseña";
 import FormDatosGenerales from "../../../components/tabs/GestionUsuarios/FormDatosGenerales";
-import Edit from "../../../components/organisms/Edit";
+import Edit from "../../../components/organisms/Edit"; 
 
 function EditUsuario() {
   const { TabPane } = Tabs;
-  const usuario="PedroPz";
   return (
     <>
       <Tabs defaultActiveKey="1" style={{ color: "#C1C5C8"}}>

@@ -5,13 +5,14 @@ import Table from "../../../components/organisms/Table";
 import {
   columnsMovimientosIPM,
   dataMovimientosIPM,
-} from "../../../Mocks/MovimientosIPM"; 
+} from "../../../Mocks/MovimientosIPM";
+import DateRangeFilter from "../../../components/organisms/DateRangeFilter";
 
 function MovimientosIPM() {
   return (
-    <>  
-      <Searchform array={MovimientosIPMSearch} title={"Búsqueda de archivos IPM"}></Searchform>
-      <br></br>
+    <>
+      <DateRangeFilter></DateRangeFilter>
+      <Searchform array={MovimientosIPMSearch}></Searchform>
       <Table data={dataMovimientosIPM} columns={columnsMovimientosIPM}></Table>
     </>
   );
