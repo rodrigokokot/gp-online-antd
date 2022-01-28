@@ -3,13 +3,17 @@ import Edit from "../../components/organisms/Edit";
 import { Form, Row, Col, Card } from "antd";
 import FloatInput from "../../components/molecules/FloatInput/index";
 import FloatSelect from "../../components/molecules/FloatSelected/index";
+import PurpleTitle from "../../components/molecules/PurpleTitle";
 
 function NuevaSucursal() {
   const FormularioNueva = () => {
     return (
       <>
         <Card>
-          <h3>Datos Principales</h3>
+          <PurpleTitle text="Datos Principales"/>
+          <Col span={8}>
+          
+
           <Form.Item
             name="codigo"
             rules={[{ required: true, message: "Ingrese código" }]}
@@ -23,13 +27,14 @@ function NuevaSucursal() {
           >
             <FloatInput label="Descripcion" placeholder="Descripcion" />
           </Form.Item>
+          </Col>
         </Card>
 
         <Card>
-          <h3>Domicilio</h3>
+          <PurpleTitle text="Domicilio" />
 
           <Row gutter={24}>
-            <Col>
+            <Col span={6}>
               <Form.Item
                 name="calle"
                 rules={[{ required: true, message: "Ingrese calle" }]}
@@ -38,7 +43,7 @@ function NuevaSucursal() {
               </Form.Item>
             </Col>
 
-            <Col>
+            <Col span={2}>
               <Form.Item
                 name="num"
                 rules={[{ required: true, message: "Ingrese número" }]}
@@ -47,13 +52,13 @@ function NuevaSucursal() {
               </Form.Item>
             </Col>
 
-            <Col>
+            <Col span={2}>
               <Form.Item name="piso">
                 <FloatInput label="Piso" placeholder="Piso"></FloatInput>
               </Form.Item>
             </Col>
 
-            <Col>
+            <Col span={2}>
               <Form.Item name="piso">
                 <FloatInput label="Depto" placeholder="Depto"></FloatInput>
               </Form.Item>
@@ -61,13 +66,12 @@ function NuevaSucursal() {
           </Row>
 
           <Row>
-            <Col>
+            <Col span={8}>
               <Form.Item
                 name="localidad"
                 rules={[{ required: true, message: "Ingrese localidad" }]}
               >
                 <FloatSelect
-                  width={205}
                   label="Localidad"
                   placeholder="Localidad"
                   options={[
@@ -93,13 +97,12 @@ function NuevaSucursal() {
           </Row>
 
           <Row>
-            <Col>
+            <Col span={8}>
               <Form.Item
                 name="provincia"
                 rules={[{ required: true, message: "Ingrese provincia" }]}
               >
                 <FloatSelect
-                  width={205}
                   label="Provincia"
                   placeholder="Provincia"
                   options={[
@@ -125,7 +128,7 @@ function NuevaSucursal() {
           </Row>
 
           <Row>
-            <Col>
+            <Col span={8}>
               <Form.Item
                 name="telefono"
                 rules={[{ required: true, message: "Ingrese teléfono" }]}

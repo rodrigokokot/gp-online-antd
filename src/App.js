@@ -32,28 +32,31 @@ function App() {
 
         <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales" component={lazy(() => import('./pages/ParametrosPrincipales/GestionSucursales'))} />
         <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/editar/:codigo" component={lazy(() => import('./pages/ParametrosPrincipales/EditarSucursal'))} />
-        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/crear" component={lazy(() => import('./pages/ParametrosPrincipales/NuevaSucursal'))} />
-        
+        <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/nuevo" component={lazy(() => import('./pages/ParametrosPrincipales/NuevaSucursal'))} />
+
         <DashboardTemplate exact path="/usuarios/gestionUsuarios" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/GestionUsuarios'))} />
         <DashboardTemplate exact path="/usuarios/gestionUsuarios/crear" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/FormUsuNew'))} />
         <DashboardTemplate exact path="/usuarios/gestionUsuarios/editar/:id" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/GestionUsuariosEdit'))} />
-        
+
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesSearch'))} />
         <DashboardTemplate exact path="/usuarios/gestionDePerfiles/editar/:id" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesEdit'))} />
-        <DashboardTemplate exact path="/usuarios/gestionDePerfiles/nueva" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesNew'))} />
+        <DashboardTemplate exact path="/usuarios/gestionDePerfiles/nuevo" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesNew'))} />
 
         <DashboardTemplate exact path="/movimientos/IPM" component={lazy(() => import('./pages/Movimientos/MovimientosIPM'))} />
         <DashboardTemplate exact path="/movimientos/IPM/detalles/:id" component={lazy(() => import('./pages/Movimientos/MovimientosIPM/DetalleMovimientoIPM'))} />
         <DashboardTemplate exact path="/movimientos/IPM/detalles/:id/:registro" component={lazy(() => import('./pages/Movimientos/MovimientosIPM/DetalleRegistroIPM'))} />
 
 
-        
+
         <DashboardTemplate exact path="/movimientos/CTF" component={lazy(() => import('./pages/Movimientos/MovimientosCTF'))} />
         <DashboardTemplate exact path="/movimientos/CTF/detalles/" component={lazy(() => import('./pages/Movimientos/MovimientosCTF/DetalleMovimientoCTF'))} />
         <DashboardTemplate exact path="/movimientos/CTF/detalles/:id" component={lazy(() => import('./pages/Movimientos/MovimientosCTF/DetalleRegistroCTF'))} />
 
-        <DashboardTemplate exact path="/emision/movimientos" component={lazy(() => import('./pages/Emision'))} />
-        <DashboardTemplate exact path="/emision/socios" component={lazy(() => import('./pages/Emision'))} />
+        <DashboardTemplate exact path="/emision/movimientos/autorizaciones" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesSearch'))} />
+        <DashboardTemplate exact path="/emision/movimientos/autorizaciones/nuevo" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesNew'))} />
+        <DashboardTemplate exact path="/emision/movimientos/autorizaciones/editar/:id" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesEdit'))} />
+        <DashboardTemplate exact path="/emision/movimientos" component={lazy(() => import('./pages/Emision/Emision'))} />
+        <DashboardTemplate exact path="/emision/socios" component={lazy(() => import('./pages/Emision/Emision'))} />
 
         <DashboardTemplate exact path="/parametria" component={lazy(() => import('./pages/Parametria'))} />
 

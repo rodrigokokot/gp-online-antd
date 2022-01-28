@@ -8,5 +8,4 @@ export const VerticalGradientIcon = () => (
             </linearGradient>
         </defs>
     </svg>
-
 )
