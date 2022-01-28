@@ -7,6 +7,7 @@ import routes from "../../router/routesAdmin";
 import HeaderLayout from "../../components/organisms/Layout/Header";
 import SubHeaderLayout from "../../components/organisms/Layout/SubHeader";
 import PageHeaderLayout from "../../components/organisms/Layout/PageHeader";
+import { QuestionCircleOutlined } from '@ant-design/icons';
 
 const { Sider, Content } = Layout;
 
@@ -51,6 +52,13 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                   </Menu.Item>
               )
             })}
+          </Menu>
+          <Menu mode="inline" className="menu-help">
+            <Menu.Item icon={<QuestionCircleOutlined />}>
+              <Link style={{ width: "flex" }} to="/ayuda" onClick={() => setItemSelected("/ayuda")}>
+                Ayuda
+              </Link>
+            </Menu.Item>
           </Menu>
         </Sider>
 
