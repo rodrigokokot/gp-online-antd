@@ -16,7 +16,7 @@ const Login = () => {
 
     return (
         <Layout style={{ background: '#fff'}}>
-            <Row >
+            <Row style={{ height: '100vh' }}>
                 <Col lg={{ span: 12}}>
                     <Icon component={LogoGreenIcon} style={{ position: 'absolute', left: '4.31%', right: '93.94%', top: '6.64%', bottom: '89.63%' }} />
                     <Form
@@ -93,7 +93,9 @@ const Login = () => {
                 </Col>
                 {/* <Col lg={{ span: 6, offset: 4 }}>
                 </Col> */}
-                <Icon component={VerticalGradientIcon} style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
+                <Icon component={VerticalGradientIcon}
+                // style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
+                />
                 <Col style={{ display: 'flex', margin: 'auto', flexDirection: 'column', marginTop: '6%' }}>
                     <Icon component={LogoNombreIcon} />
                     <InlineSVG src={LoginImg} />
