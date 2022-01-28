@@ -11,19 +11,16 @@ const DatosGenerales = () => {
   const [value, setValue] = useState("");
   const onChange = (e) => {
     setValue(e.target.value);
-    console.log("radio checked Perfil", e.target.value);
   };
 
   const [value2, setValue2] = useState("");
   const onChange2 = (e) => {
     setValue2(e.target.value);
-    console.log("radio checked Documento", e.target.value);
   };
 
   const [value3, setValue3] = useState("");
   const onChange3 = (e) => {
     setValue3(e.target.value);
-    console.log("radio checked Estado", e.target.value);
   };
 
   return (

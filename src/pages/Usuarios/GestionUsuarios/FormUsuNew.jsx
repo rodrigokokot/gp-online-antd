@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
-import { Radio,Form,Typography,Button, Card} from 'antd';
-
-import {useHistory} from 'react-router-dom'
+import { Radio,Form,Typography, Card} from 'antd';
 import FloatInput from '../../../components/molecules/FloatInput';
 const { Group } = Radio;
 const { Title } = Typography;
 const FormUsuNew = () => {
-    const [form] = Form.useForm();
-    const history = useHistory();
-    const onFinish = (values) =>{
-        console.log("Nuevo usuario",values)
-    }
     
     const [value, setValue] = useState("");
     const onChange = e => {
@@ -27,14 +20,7 @@ const FormUsuNew = () => {
     setValue3(e.target.value);
     };
     
-  return (<> 
-    <Form 
-                  form={form}
-                  name="advanced_search"
-                  className="ant-advanced-search-form"
-                  onFinish={onFinish} 
-                  size="large"
-        >    
+  return (<>  
         
         <Card>
         <Title level={2}>Datos Principales</Title>
@@ -97,15 +83,6 @@ const FormUsuNew = () => {
                 </Group>
             </Form.Item>
         </Card>  
-
-        <Button type='primary' htmlType='submit'>
-          Crear Usuario
-        </Button>
-        
-        <Button onClick={() => history.goBack()}>
-            Cancelar
-        </Button>
-      </Form>
   </>)
 };
 

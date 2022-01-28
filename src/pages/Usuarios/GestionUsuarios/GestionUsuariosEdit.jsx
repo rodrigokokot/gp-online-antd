@@ -9,13 +9,11 @@ function EditUsuario() {
   return (
     <>
       <Tabs defaultActiveKey="1" style={{ color: "#C1C5C8"}}>
-        {/* Pantalla 1 */}
+        
         <TabPane tab="Datos Generales" key="1">
-             {/*Enviar Formulario DatosGenerales al componente de facundo o marx*/}
              <Edit component={FormDatosGenerales}></Edit> 
         </TabPane>
 
-        {/* Pantalla 2 */}
         <TabPane tab="Contraseña" key="2">
               <Edit key={"2"} component={FormContraseña}></Edit> 
         </TabPane>
