@@ -8,7 +8,7 @@ import Profile from '../../../molecules/Profile';
 
 const HeaderLayout = ({props}) => {
   return (
-    <Layout.Header className="header">
+    <Layout.Header className="header"  style={{ position: 'fixed', zIndex: 1, width: '100%' }} >
         <div className="container-logo">
         <Link to="/home" className="logo">
             <Icon component={LogoIcon} />

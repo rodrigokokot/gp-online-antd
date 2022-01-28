@@ -1,6 +1,6 @@
 import { createElement, Suspense, useState } from "react";
 import { Link, Route } from "react-router-dom";
-import { Layout, Menu, Skeleton } from "antd";
+import { Layout, Menu, Skeleton, Typography } from "antd";
 import { MenuUnfoldOutlined, MenuFoldOutlined, QuestionCircleOutlined } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
@@ -19,7 +19,12 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
     <>
       <HeaderLayout />
       <Layout>
-        <Sider trigger={null} collapsible collapsed={collapsed} style={{ backgroundColor: "#fff" }}>
+        <Sider trigger={null} collapsible collapsed={collapsed} style={{ backgroundColor: "#fff", overflow: 'auto',
+        // height: '94,9vh',
+        position: 'fixed',
+        left: 0,
+        top: '48px',
+        bottom: 0, }}>
           <div id="sidebar" className="logo">
             {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: "trigger",
@@ -38,7 +43,9 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                       return (
                         <Menu.Item key={`${index}.${index2}`}>
                           <Link to={item.path} onClick={() => setItemSelected(item)}>
-                            {item.name}
+                            <Typography.Text>
+                              {item.name}
+                            </Typography.Text>
                           </Link>
                         </Menu.Item>
                       )
@@ -46,7 +53,9 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                   </Menu.SubMenu>
                   : <Menu.Item icon={<Component />}>
                     <Link style={{ width: "flex" }} to={route.path} onClick={() => setItemSelected(route)}>
-                      {route.name}
+                      <Typography.Text>
+                        {route.name}
+                      </Typography.Text>
                     </Link>
                   </Menu.Item>
               )
@@ -61,7 +70,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           </Menu>
         </Sider>
 
-        <Layout className="site-layout">
+        <Layout className="site-layout" style={{ marginLeft: 200 }} >
           <SubHeaderLayout />
           <PageHeaderLayout title={itemSelected.name} />
           <Content
