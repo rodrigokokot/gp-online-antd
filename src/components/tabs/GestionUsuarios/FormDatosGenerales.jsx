@@ -1,29 +1,26 @@
 import React, { useState } from "react";
-import { Radio, Form, Typography, Button, Card } from "antd";
-
-import { useHistory } from "react-router-dom";
+import { Radio, Form, Typography,Card } from "antd";
 import FloatInput from "../../molecules/FloatInput";
+import { useParams } from "react-router-dom";
 const { Group } = Radio;
 const { Title } = Typography;
 
 const DatosGenerales = () => {
-
+  
+  const { usuario } = useParams();
   const [value, setValue] = useState("");
   const onChange = (e) => {
     setValue(e.target.value);
-    console.log("radio checked Perfil", e.target.value);
   };
 
   const [value2, setValue2] = useState("");
   const onChange2 = (e) => {
     setValue2(e.target.value);
-    console.log("radio checked Documento", e.target.value);
   };
 
   const [value3, setValue3] = useState("");
   const onChange3 = (e) => {
     setValue3(e.target.value);
-    console.log("radio checked Estado", e.target.value);
   };
 
   return (
@@ -33,7 +30,7 @@ const DatosGenerales = () => {
 
         <Title level={5}>Usuario</Title>
         <Form.Item name="usuario">
-          <Title level={3}> nombre del usuario</Title>
+          <Title level={3}>{usuario}</Title>
         </Form.Item>
 
         <Title level={5}>Perfil</Title>
