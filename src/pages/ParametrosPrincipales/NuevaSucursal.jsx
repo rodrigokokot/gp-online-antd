@@ -3,14 +3,13 @@ import Edit from "../../components/organisms/Edit";
 import { Form, Row, Col, Card } from "antd";
 import FloatInput from "../../components/molecules/FloatInput/index";
 import FloatSelect from "../../components/molecules/FloatSelected/index";
-import PurpleTitle from "../../components/molecules/PurpleTitle";
 
 function NuevaSucursal() {
   const FormularioNueva = () => {
     return (
       <>
         <Card>
-          <PurpleTitle text="Datos Principales"/>
+        <h1 className="purple-title">Datos Principales</h1>
           <Col span={8}>
           
 
@@ -31,7 +30,7 @@ function NuevaSucursal() {
         </Card>
 
         <Card>
-          <PurpleTitle text="Domicilio" />
+        <h1 className="purple-title">Domicilio</h1>
 
           <Row gutter={24}>
             <Col span={6}>

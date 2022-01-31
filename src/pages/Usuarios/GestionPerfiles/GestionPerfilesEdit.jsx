@@ -2,7 +2,6 @@ import React from "react";
 import Edit from "../../../components/organisms/Edit/index";
 import Table from "../../../components/organisms/Table/index";
 import FloatInput from "../../../components/molecules/FloatInput";
-import PurpleTitle from "../../../components/molecules/PurpleTitle";
 import { Card, Row, Tabs, Col, Form} from "antd";
 
 function GestionPerfilesEdit() {
@@ -37,7 +36,7 @@ function GestionPerfilesEdit() {
         <Card>
           <Row>
             <Col>
-              <PurpleTitle text="Perfil"/>
+            <h1 className="purple-title">Perfil</h1>
             </Col>
           </Row>
 
@@ -55,7 +54,7 @@ function GestionPerfilesEdit() {
         </Card>
 
         <Card>
-          <PurpleTitle text="Tipos de Operaciones" />
+        <h1 className="purple-title">Tipos de operaciones</h1>
           <Form.Item name="tabla">
             <Table selectable={true} data={dataFormulario} columns={columnsFormulario}/>
           </Form.Item>
@@ -70,7 +69,7 @@ function GestionPerfilesEdit() {
         <Card>
           <Row>
             <Col>
-              <PurpleTitle text="Contraseña" />
+            <h1 className="purple-title">Contraseña</h1>
             </Col>
           </Row>
 

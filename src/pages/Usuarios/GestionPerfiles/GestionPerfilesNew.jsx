@@ -3,7 +3,6 @@ import Edit from "../../../components/organisms/Edit/index";
 import Table from "../../../components/organisms/Table/index";
 import FloatInput from "../../../components/molecules/FloatInput";
 import { Card, Row, Col, Form } from "antd";
-import PurpleTitle from "../../../components/molecules/PurpleTitle";
 
 
 export default function GestionPerfilesNew() {
@@ -38,7 +37,7 @@ export default function GestionPerfilesNew() {
         <Card>
           <Row>
             <Col>
-              <PurpleTitle text="Datos Principales" />
+            <h1 className="purple-title">Datos Principales</h1>
             </Col>
           </Row>
 
@@ -66,7 +65,7 @@ export default function GestionPerfilesNew() {
         </Card>
 
         <Card>
-            <PurpleTitle text="Tipos de Operaciones" />
+        <h1 className="purple-title">Tipos de operaciones</h1>
 
           <Table selectable={true} data={dataFormulario} columns={columnsFormulario}/>
         </Card>
