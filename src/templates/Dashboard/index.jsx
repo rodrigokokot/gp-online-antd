@@ -11,20 +11,23 @@ import PageHeaderLayout from "../../components/organisms/Layout/PageHeader";
 const { Sider, Content } = Layout;
 
 export default function DashboardTemplate({ component: Component, ...rest }) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const icons = require(`@ant-design/icons`);
   const [itemSelected, setItemSelected] = useState(routes[0]);
 
   return (
     <>
       <HeaderLayout />
-      <Layout>
+      <Layout style={{position:'relative'}}>
         <Sider trigger={null} collapsible collapsed={collapsed} style={{ backgroundColor: "#fff", overflow: 'auto',
-        // height: '94,9vh',
-        position: 'fixed',
-        left: 0,
-        top: '48px',
-        bottom: 0, }}>
+          // height: '94,9vh',
+          position: 'fixed',
+          left: 0,
+          top: '48px',
+          bottom: 0,
+          // transition: 'margin-left 0.5s ease-in-out 0s',
+          zIndex: '10000'
+        }}>
           <div id="sidebar" className="logo">
             {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: "trigger",
@@ -42,7 +45,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                     {route.subItems.map((item, index2) => {
                       return (
                         <Menu.Item key={`${index}.${index2}`}>
-                          <Link to={item.path} onClick={() => setItemSelected(item)}>
+                          <Link to={item.path} onClick={() => {setItemSelected(item); setCollapsed(true) }}>
                             <Typography.Text>
                               {item.name}
                             </Typography.Text>
@@ -52,7 +55,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                     })}
                   </Menu.SubMenu>
                   : <Menu.Item icon={<Component />}>
-                    <Link to={route.path} onClick={() => setItemSelected(route)}>
+                    <Link to={route.path} onClick={() => {setItemSelected(route); setCollapsed(true)}}>
                       <Typography.Text>
                         {route.name}
                       </Typography.Text>
@@ -63,35 +66,47 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           </Menu>
           <Menu mode="inline" className="menu-help">
             <Menu.Item icon={<QuestionCircleOutlined />}>
-              <Link to="/ayuda" onClick={() => setItemSelected("/ayuda")}>
+              <Link to="/ayuda" onClick={() => {setItemSelected("/ayuda"); setCollapsed(true)}}>
                 Ayuda
               </Link>
             </Menu.Item>
           </Menu>
         </Sider>
+            <Layout className="site-layout" style={{ marginLeft: '80px' }} >
+              <SubHeaderLayout />
+              <PageHeaderLayout title={itemSelected.name} style={{ marginTop: '12%' }} />
+              <Content
+                className=""
+                style={{
+                  margin: "24px 16px",
+                  padding: 24,
+                  minHeight: 280,
+                  backgroundColor: "#E5E5E5",
+                }}
+              >
+                <Route
+                  {...rest}
+                  render={(props) => (
+                    <Suspense fallback={<Skeleton active />}>
+                      <Component {...props}>{props.children}</Component>
+                    </Suspense>
+                  )}
+                />
+              </Content>
+            </Layout>
 
-        <Layout className="site-layout" style={{ marginLeft: 200 }} >
-          <SubHeaderLayout />
-          <PageHeaderLayout title={itemSelected.name} style={{ marginTop: '12%' }} />
-          <Content
-            className=""
-            style={{
-              margin: "24px 16px",
-              padding: 24,
-              minHeight: 280,
-              backgroundColor: "#E5E5E5",
-            }}
-          >
-            <Route
-              {...rest}
-              render={(props) => (
-                <Suspense fallback={<Skeleton active />}>
-                  <Component {...props}>{props.children}</Component>
-                </Suspense>
-              )}
-            />
-          </Content>
-        </Layout>
+            {
+              !collapsed && <div style={{
+                    background: 'rgba(0,0,0,.3)',
+                    height: '70px',
+                    left: '50%',
+                    position: 'absolute',
+                    top: '49%',
+                    transform:' translate(-50%, -50%)',
+                    width: '100vw',
+                    height: '100vh',
+              }}></div>
+            }
       </Layout>
     </>
   );

@@ -7,7 +7,7 @@ const arrayLogos = [
   {
     img: 'Uala',
     name: 'Uala',
-    title: 'Uala'
+    title: 'Ualá'
   },
   {
     img: 'Banco de Cordoba',
@@ -30,7 +30,7 @@ const SubHeaderLayout = ({props}) => {
   return (
     <Layout.Header className="sub-header"  style={{ position: 'fixed', zIndex: 1, width: '100%', top: '48px' }}>
         <div className="container-logo">
-          <Select defaultValue="" bordered={false}>
+          <Select defaultValue="" bordered={false} style={{ width: 190 }}>
             <Select.Option value="">
               <Typography.Text>Selecciona una entidad</Typography.Text>
             </Select.Option>
