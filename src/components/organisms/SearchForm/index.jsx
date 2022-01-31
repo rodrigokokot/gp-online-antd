@@ -24,7 +24,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
     const fields = [];
     array.map((item) => {
       fields.push(
-        <Col key={item.index} span={span}>
+        <Col key={item.index} a={span}>
           <Form.Item name={item.index}>{item.input}</Form.Item>
         </Col>
       );
@@ -56,7 +56,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
             </Row>
 
             <Row style={{ marginTop: 40 }}>
-              <Col span={24} style={{ textAlign: "left" }}>
+              <Col a={24} style={{ textAlign: "left" }}>
                 <Button type="primary" htmlType="submit">
                   Search
                 </Button>
