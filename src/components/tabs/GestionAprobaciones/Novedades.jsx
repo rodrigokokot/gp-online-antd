@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Meta from "antd/lib/card/Meta";
 import { AutoComplete, Card } from "antd";
 import {
@@ -14,9 +14,9 @@ import SearchForm from "../../organisms/SearchForm";
 import { GestionSucursalesSearchMock } from "../../../Mocks/GestionSucursalesSearchMock";
 
 function Novedades() {
-
+  const [notification, setNotification] = useState(false);
   function handleCallback(value) {
-    console.log('from parent', value)
+    console.log("from parent", value);
     // responseChild = value;
   }
 

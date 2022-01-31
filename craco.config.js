@@ -18,4 +18,10 @@ module.exports = {
       },
     },
   ],
+  loaders: [
+    {
+      test: /\.svg$/,
+      loader: 'raw-loader'
+    }
+  ]
 };

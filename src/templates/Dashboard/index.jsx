@@ -1,13 +1,12 @@
 import { createElement, Suspense, useState } from "react";
 import { Link, Route } from "react-router-dom";
-import { Layout, Menu, Skeleton } from "antd";
-import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import { Layout, Menu, Skeleton, Typography } from "antd";
+import { MenuUnfoldOutlined, MenuFoldOutlined, QuestionCircleOutlined } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
 import HeaderLayout from "../../components/organisms/Layout/Header";
 import SubHeaderLayout from "../../components/organisms/Layout/SubHeader";
 import PageHeaderLayout from "../../components/organisms/Layout/PageHeader";
-import { QuestionCircleOutlined } from '@ant-design/icons';
 
 const { Sider, Content } = Layout;
 
@@ -20,7 +19,12 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
     <>
       <HeaderLayout />
       <Layout>
-        <Sider trigger={null} collapsible collapsed={collapsed} style={{ backgroundColor: "#fff" }}>
+        <Sider trigger={null} collapsible collapsed={collapsed} style={{ backgroundColor: "#fff", overflow: 'auto',
+        // height: '94,9vh',
+        position: 'fixed',
+        left: 0,
+        top: '48px',
+        bottom: 0, }}>
           <div id="sidebar" className="logo">
             {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: "trigger",
@@ -39,15 +43,19 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                       return (
                         <Menu.Item key={`${index}.${index2}`}>
                           <Link to={item.path} onClick={() => setItemSelected(item)}>
-                            {item.name}
+                            <Typography.Text>
+                              {item.name}
+                            </Typography.Text>
                           </Link>
                         </Menu.Item>
                       )
                     })}
                   </Menu.SubMenu>
                   : <Menu.Item icon={<Component />}>
-                    <Link style={{ width: "flex" }} to={route.path} onClick={() => setItemSelected(route)}>
-                      {route.name}
+                    <Link to={route.path} onClick={() => setItemSelected(route)}>
+                      <Typography.Text>
+                        {route.name}
+                      </Typography.Text>
                     </Link>
                   </Menu.Item>
               )
@@ -55,16 +63,16 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           </Menu>
           <Menu mode="inline" className="menu-help">
             <Menu.Item icon={<QuestionCircleOutlined />}>
-              <Link style={{ width: "flex" }} to="/ayuda" onClick={() => setItemSelected("/ayuda")}>
+              <Link to="/ayuda" onClick={() => setItemSelected("/ayuda")}>
                 Ayuda
               </Link>
             </Menu.Item>
           </Menu>
         </Sider>
 
-        <Layout className="site-layout">
+        <Layout className="site-layout" style={{ marginLeft: 200 }} >
           <SubHeaderLayout />
-          <PageHeaderLayout title={itemSelected.name} />
+          <PageHeaderLayout title={itemSelected.name} style={{ marginTop: '12%' }} />
           <Content
             className=""
             style={{

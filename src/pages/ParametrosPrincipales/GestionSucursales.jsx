@@ -2,13 +2,12 @@ import Table from "../../components/organisms/Table/index";
 import React, { useState } from "react";
 import SearchForm from "../../components/organisms/SearchForm/index";
 import { GestionSucursalesSearchMock } from "../../Mocks/GestionSucursalesSearchMock";
-import { Button, Col} from "antd";
+import { Button, Col } from "antd";
 import {
   columnsGestionSucursales,
   dataGestionSucursales,
 } from "../../Mocks/GestionSucursales";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 function GestionSucursales() {
   const [data, setData] = useState("");

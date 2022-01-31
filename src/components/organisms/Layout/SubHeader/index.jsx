@@ -28,7 +28,7 @@ const arrayLogos = [
 
 const SubHeaderLayout = ({props}) => {
   return (
-    <Layout.Header className="sub-header">
+    <Layout.Header className="sub-header"  style={{ position: 'fixed', zIndex: 1, width: '100%', top: '48px' }}>
         <div className="container-logo">
           <Select defaultValue="" bordered={false}>
             <Select.Option value="">
@@ -52,9 +52,9 @@ const SubHeaderLayout = ({props}) => {
             }
           </Select>
         </div>
-        <div className="container-btn">
+        {/* <div className="container-btn">
           <Button type="primary" size='small' style={{ height: '32px', width: '166px' }}>Nueva cuenta</Button>
-        </div>
+        </div> */}
     </Layout.Header>
 
   );
