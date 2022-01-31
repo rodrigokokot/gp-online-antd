@@ -52,7 +52,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                     })}
                   </Menu.SubMenu>
                   : <Menu.Item icon={<Component />}>
-                    <Link style={{ width: "flex" }} to={route.path} onClick={() => setItemSelected(route)}>
+                    <Link to={route.path} onClick={() => setItemSelected(route)}>
                       <Typography.Text>
                         {route.name}
                       </Typography.Text>
@@ -63,7 +63,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           </Menu>
           <Menu mode="inline" className="menu-help">
             <Menu.Item icon={<QuestionCircleOutlined />}>
-              <Link style={{ width: "flex" }} to="/ayuda" onClick={() => setItemSelected("/ayuda")}>
+              <Link to="/ayuda" onClick={() => setItemSelected("/ayuda")}>
                 Ayuda
               </Link>
             </Menu.Item>
@@ -72,7 +72,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
 
         <Layout className="site-layout" style={{ marginLeft: 200 }} >
           <SubHeaderLayout />
-          <PageHeaderLayout title={itemSelected.name} />
+          <PageHeaderLayout title={itemSelected.name} style={{ marginTop: '12%' }} />
           <Content
             className=""
             style={{
