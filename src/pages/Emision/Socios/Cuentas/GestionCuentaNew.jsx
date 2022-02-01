@@ -20,8 +20,8 @@ const GestionCuentaNew = () => {
     //para bloquear input y cambiar valor de entradas
     const [disabled,setDisabled]=useState(true);
     const [valor,setValor]=useState(undefined);//VER NO Elimina valor asignado luego de deshabilitar el checkbox
-    function onChangeActivar(){
-        setDisabled(!disabled); setValor(undefined);
+    function onChangeActivar(e){
+        setDisabled(!disabled); setValor(undefined);console.log(e.target.value);
         }
 
     return (<>  
@@ -367,7 +367,7 @@ const GestionCuentaNew = () => {
         <Title level={2}>Domicilio Legal</Title>
  
         <Title level={5}>Por defecto, el domicilio de correspondencia es el mismo que el domicilio legal</Title>
-        <Checkbox onChange={onChangeActivar}>
+        <Checkbox onChange={e=>onChangeActivar(e)}>
         <Title level={5}>Ingresar un domicilio de correspondencia diferente</Title></Checkbox>
             <Form.Item 
                 name="calle"
