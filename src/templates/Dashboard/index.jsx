@@ -7,6 +7,7 @@ import routes from "../../router/routesAdmin";
 import HeaderLayout from "../../components/organisms/Layout/Header";
 import SubHeaderLayout from "../../components/organisms/Layout/SubHeader";
 import PageHeaderLayout from "../../components/organisms/Layout/PageHeader";
+import BackDrop from "../../components/molecules/BackDrop";
 
 const { Sider, Content } = Layout;
 
@@ -20,13 +21,11 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
       <HeaderLayout />
       <Layout style={{position:'relative'}}>
         <Sider trigger={null} collapsible collapsed={collapsed} style={{ backgroundColor: "#fff", overflow: 'auto',
-          // height: '94,9vh',
           position: 'fixed',
           left: 0,
           top: '48px',
           bottom: 0,
-          // transition: 'margin-left 0.5s ease-in-out 0s',
-          zIndex: '10000'
+          zIndex: '10000',
         }}>
           <div id="sidebar" className="logo">
             {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
@@ -94,18 +93,9 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                 />
               </Content>
             </Layout>
-
+            {/* BACKDROP */}
             {
-              !collapsed && <div style={{
-                    background: 'rgba(0,0,0,.3)',
-                    height: '70px',
-                    left: '50%',
-                    position: 'absolute',
-                    top: '49%',
-                    transform:' translate(-50%, -50%)',
-                    width: '100vw',
-                    height: '100vh',
-              }}></div>
+              !collapsed && <BackDrop />
             }
       </Layout>
     </>
