@@ -1,7 +1,11 @@
 import { createElement, Suspense, useState } from "react";
 import { Link, Route } from "react-router-dom";
 import { Layout, Menu, Skeleton, Typography } from "antd";
-import { MenuUnfoldOutlined, MenuFoldOutlined, QuestionCircleOutlined } from "@ant-design/icons";
+import {
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+  QuestionCircleOutlined,
+} from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
 import HeaderLayout from "../../components/organisms/Layout/Header";
@@ -19,14 +23,21 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
   return (
     <>
       <HeaderLayout />
-      <Layout style={{position:'relative'}}>
-        <Sider trigger={null} collapsible collapsed={collapsed} style={{ backgroundColor: "#fff", overflow: 'auto',
-          position: 'fixed',
-          left: 0,
-          top: '48px',
-          bottom: 0,
-          zIndex: '10000',
-        }}>
+      <Layout style={{ position: "relative" }}>
+        <Sider
+          trigger={null}
+          collapsible
+          collapsed={collapsed}
+          style={{
+            backgroundColor: "#fff",
+            overflow: "auto",
+            position: "fixed",
+            left: 0,
+            top: "48px",
+            bottom: 0,
+            zIndex: "10000",
+          }}
+        >
           <div id="sidebar" className="logo">
             {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: "trigger",
@@ -38,65 +49,108 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           <Menu mode="inline">
             {routes.map((route, index) => {
               const Component = icons[route.icon];
-              return (
-                route.subItems !== undefined
-                  ? <Menu.SubMenu icon={<Component />} key={index} title={route.name}>
-                    {route.subItems.map((item, index2) => {
-                      return (
-                        <Menu.Item key={`${index}.${index2}`}>
-                          <Link to={item.path} onClick={() => {setItemSelected(item); setCollapsed(true) }}>
-                            <Typography.Text>
-                              {item.name}
-                            </Typography.Text>
-                          </Link>
-                        </Menu.Item>
-                      )
-                    })}
-                  </Menu.SubMenu>
-                  : <Menu.Item icon={<Component />}>
-                    <Link to={route.path} onClick={() => {setItemSelected(route); setCollapsed(true)}}>
-                      <Typography.Text>
-                        {route.name}
-                      </Typography.Text>
-                    </Link>
-                  </Menu.Item>
-              )
+              return route.subItems !== undefined ? (
+                <Menu.SubMenu
+                  icon={<Component />}
+                  key={`${index}`}
+                  title={route.name}
+                >
+                  {route.subItems.map((item, index2) => {
+                    return item.subItems !== undefined ? (
+                      <Menu.SubMenu
+                        icon={<Component />}
+                        key={`${index}.${index2}`}
+                        title={item.name}
+                      >
+                        {item.subItems.map((subItem, index3) => {
+                          return (
+                            <Menu.Item key={`${index}.${index2}.${index3}`}>
+                              <Link
+                                to={subItem.path}
+                                onClick={() => {
+                                  setItemSelected(subItem);
+                                  setCollapsed(true);
+                                }}
+                              >
+                                <Typography.Text>
+                                  {subItem.name}
+                                </Typography.Text>
+                              </Link>
+                            </Menu.Item>
+                          );
+                        })}
+                      </Menu.SubMenu>
+                    ) : (
+                      <Menu.Item key={`${index}.${index2}`}>
+                        <Link
+                          to={item.path}
+                          onClick={() => {
+                            setItemSelected(item);
+                            setCollapsed(true);
+                          }}
+                        >
+                          <Typography.Text>{item.name}</Typography.Text>
+                        </Link>
+                      </Menu.Item>
+                    );
+                  })}
+                </Menu.SubMenu>
+              ) : (
+                <Menu.Item icon={<Component />} key={`${index}`}>
+                  <Link
+                    to={route.path}
+                    onClick={() => {
+                      setItemSelected(route);
+                      setCollapsed(true);
+                    }}
+                  >
+                    <Typography.Text>{route.name}</Typography.Text>
+                  </Link>
+                </Menu.Item>
+              );
             })}
           </Menu>
           <Menu mode="inline" className="menu-help">
             <Menu.Item icon={<QuestionCircleOutlined />}>
-              <Link to="/ayuda" onClick={() => {setItemSelected("/ayuda"); setCollapsed(true)}}>
+              <Link
+                to="/ayuda"
+                onClick={() => {
+                  setItemSelected("/ayuda");
+                  setCollapsed(true);
+                }}
+              >
                 Ayuda
               </Link>
             </Menu.Item>
           </Menu>
         </Sider>
-            <Layout className="site-layout" style={{ marginLeft: '80px' }} >
-              <SubHeaderLayout />
-              <PageHeaderLayout title={itemSelected.name} style={{ marginTop: '12%' }} />
-              <Content
-                className=""
-                style={{
-                  margin: "24px 16px",
-                  padding: 24,
-                  minHeight: 280,
-                  backgroundColor: "#E5E5E5",
-                }}
-              >
-                <Route
-                  {...rest}
-                  render={(props) => (
-                    <Suspense fallback={<Skeleton active />}>
-                      <Component {...props}>{props.children}</Component>
-                    </Suspense>
-                  )}
-                />
-              </Content>
-            </Layout>
-            {/* BACKDROP */}
-            {
-              !collapsed && <BackDrop />
-            }
+        <Layout className="site-layout" style={{ marginLeft: "80px" }}>
+          <SubHeaderLayout />
+          <PageHeaderLayout
+            title={itemSelected.name}
+            style={{ marginTop: "12%" }}
+          />
+          <Content
+            className=""
+            style={{
+              margin: "24px 16px",
+              padding: 24,
+              minHeight: 280,
+              backgroundColor: "#E5E5E5",
+            }}
+          >
+            <Route
+              {...rest}
+              render={(props) => (
+                <Suspense fallback={<Skeleton active />}>
+                  <Component {...props}>{props.children}</Component>
+                </Suspense>
+              )}
+            />
+          </Content>
+        </Layout>
+        {/* BACKDROP */}
+        {!collapsed && <BackDrop />}
       </Layout>
     </>
   );
