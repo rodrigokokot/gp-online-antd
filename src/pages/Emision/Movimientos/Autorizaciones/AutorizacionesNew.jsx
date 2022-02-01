@@ -1,6 +1,7 @@
 import { Card, Form, Radio, Row, Col, DatePicker, Input } from "antd";
 import React from "react";
 import FloatInput from "../../../../components/molecules/FloatInput";
+import FloatSelected from "../../../../components/molecules/FloatSelected";
 import Edit from "../../../../components/organisms/Edit";
 
 export default function AutorizacionesNew() {
@@ -59,15 +60,15 @@ export default function AutorizacionesNew() {
               />
             </Form.Item>
 
-            <Form.Item>
+            <Form.Item name="marca">
               <FloatInput placeholder="Marca" label="Marca" />
             </Form.Item>
 
-            <Form.Item>
+            <Form.Item name="emisor">
               <FloatInput placeholder="Emisor" label="Emisor" />
             </Form.Item>
 
-            <Form.Item>
+            <Form.Item name="producto">
               <FloatInput
                 placeholder="Tipo de Producto"
                 label="Tipo de Producto"
@@ -81,7 +82,7 @@ export default function AutorizacionesNew() {
 
           <Row gutter={48}>
             <Col span={6}>
-              <Form.Item>
+              <Form.Item name="origen">
                 <FloatInput
                   placeholder="Fecha de Origen"
                   label="Fecha de Origen"
@@ -92,7 +93,7 @@ export default function AutorizacionesNew() {
 
           <Row gutter={48}>
             <Col span={6}>
-              <Form.Item>
+              <Form.Item name="importe">
                 <FloatInput placeholder="Importe" label="Importe" />
               </Form.Item>
             </Col>
@@ -100,13 +101,24 @@ export default function AutorizacionesNew() {
 
           <Row gutter={48}>
             <Col span={6}>
-              <Form.Item>
-                <FloatInput placeholder="Moneda" label="Moneda" />
+              <Form.Item name="moneda">
+                <FloatSelected label="Moneda" placeholder="Moneda" options={[
+                    {
+                        title:"Euro",
+                        value:"Euro",
+                        disabled: false,
+                    },
+                    {
+                        title:"USD",
+                        value:"USD",
+                        disabled:false
+                    }
+                ]}/>
               </Form.Item>
             </Col>
 
             <Col span={6}>
-              <Form.Item>
+              <Form.Item name="proceso">
                 <DatePicker placeholder="Fecha de Proceso" />
               </Form.Item>
             </Col>
@@ -114,13 +126,13 @@ export default function AutorizacionesNew() {
 
           <Row gutter={48}>
             <Col span={6}>
-              <Form.Item>
+              <Form.Item name="plan">
                 <FloatInput placeholder="Plan" label="Plan" />
               </Form.Item>
             </Col>
 
             <Col span={6}>
-              <Form.Item>
+              <Form.Item name="relacion">
                 <FloatInput placeholder="Relación" label="Relación" />
               </Form.Item>
             </Col>
@@ -128,13 +140,13 @@ export default function AutorizacionesNew() {
 
           <Row gutter={48}>
             <Col span={6}>
-              <Form.Item>
+              <Form.Item name="cuotas">
                 <FloatInput placeholder="Cuotas" label="Cuotas" />
               </Form.Item>
             </Col>
 
             <Col span={6}>
-              <Form.Item>
+              <Form.Item name="origen">
                 <FloatInput placeholder="Origen" label="Origen" />
               </Form.Item>
             </Col>
@@ -142,7 +154,7 @@ export default function AutorizacionesNew() {
 
           <Row gutter={48}>
             <Col span={6}>
-              <Form.Item>
+              <Form.Item name="autorizacion">
                 <FloatInput
                   placeholder="Código de autorización"
                   label="Código de autorización"
@@ -151,7 +163,7 @@ export default function AutorizacionesNew() {
             </Col>
 
             <Col span={6}>
-              <Form.Item>
+              <Form.Item name="modo">
                 <FloatInput
                   placeholder="Modo de entrada"
                   label="Modo de entrada"
@@ -163,22 +175,22 @@ export default function AutorizacionesNew() {
 
             <Row gutter={48}>
                 <Col span={6}>
-                          <Form.Item>
+                          <Form.Item name="comercio">
             <FloatInput placeholder="Comercio" label="Comercio" />
           </Form.Item>
                 </Col>
 
                 <Col span={6}>
-                    <Form.Item>
+                    <Form.Item name="terminal">
                         <FloatInput placeholder="Terminal" label="Terminal" />
                     </Form.Item>
                 </Col>
             </Row>
 
             <Col span={24}>
-            <Form.Item name="tipodoc">
+            <Form.Item name="estado">
               <Row>
-                <p>Tipo de documento</p>
+                <p>Estado</p>
               </Row>
 
               <Radio.Group name="radiogroup" defaultValue={1}>
