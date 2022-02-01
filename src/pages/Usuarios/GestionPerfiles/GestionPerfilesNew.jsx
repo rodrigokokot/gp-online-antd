@@ -3,7 +3,6 @@ import Edit from "../../../components/organisms/Edit/index";
 import Table from "../../../components/organisms/Table/index";
 import FloatInput from "../../../components/molecules/FloatInput";
 import { Card, Row, Col, Form } from "antd";
-import PurpleTitle from "../../../components/molecules/PurpleTitle";
 
 
 export default function GestionPerfilesNew() {
@@ -38,12 +37,12 @@ export default function GestionPerfilesNew() {
         <Card>
           <Row>
             <Col>
-              <PurpleTitle text="Datos Principales" />
+            <h1 className="purple-title">Datos Principales</h1>
             </Col>
           </Row>
 
           <Row>
-            <Col span={12}>
+            <Col a={12}>
               <Form.Item name="nombre" rules={[{required: true, message: "Ingrese nombre"}]}>
                 <FloatInput
                   placeholder="Nombre del Nuevo perfil"
@@ -54,7 +53,7 @@ export default function GestionPerfilesNew() {
           </Row>
 
           <Row>
-            <Col span={12}>
+            <Col a={12}>
               <Form.Item name="descripcion" rules={[{required: true, message:"Ingrese descripción"}]}>
                 <FloatInput
                   placeholder="Descripción del perfil"
@@ -66,7 +65,7 @@ export default function GestionPerfilesNew() {
         </Card>
 
         <Card>
-            <PurpleTitle text="Tipos de Operaciones" />
+        <h1 className="purple-title">Tipos de operaciones</h1>
 
           <Table selectable={true} data={dataFormulario} columns={columnsFormulario}/>
         </Card>

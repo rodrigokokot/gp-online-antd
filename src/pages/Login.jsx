@@ -23,11 +23,11 @@ const Login = () => {
                         name="login"
                         labelCol={{
                             offset: 4,
-                            span: 10,
+                            a: 10,
                         }}
                         wrapperCol={{
                             offset: 4,
-                            span: 16,
+                            a: 16,
                         }}
                         // initialValues={{
                         //     remember: true,
@@ -73,7 +73,7 @@ const Login = () => {
                             valuePropName="checked"
                             wrapperCol={{
                             offset: 8,
-                            span: 16,
+                            a: 16,
                             }}
                         >
                             <Checkbox>Recuérdame</Checkbox>
@@ -82,7 +82,7 @@ const Login = () => {
                         <Form.Item
                             wrapperCol={{
                             offset: 8,
-                            span: 16,
+                            a: 16,
                             }}
                         >
                             <Button type="primary" htmlType="submit" disabled>
