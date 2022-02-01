@@ -41,12 +41,12 @@ function GestionPerfilesEdit() {
           </Row>
 
           <Row>
-            <Col a={12}>
+            <Col span={12}>
               <p>Nombre</p>
               <h1>...algún Nombre</h1>
             </Col>
 
-            <Col a={12}>
+            <Col span={12}>
               <p>Descripción del perfil</p>
               <h1>...alguna descripción</h1>
             </Col>
@@ -74,7 +74,7 @@ function GestionPerfilesEdit() {
           </Row>
 
           <Row>
-            <Col a={8}>
+            <Col span={8}>
              <p>Ingresá tu contraseña para generar cambios</p>
             </Col>
           </Row>
