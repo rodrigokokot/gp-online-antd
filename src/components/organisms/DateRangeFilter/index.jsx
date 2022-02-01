@@ -44,7 +44,7 @@ function DateRangeFilter() {
         width={1000}
       >
         <Row gutter={20}>
-          <Col className="gutter-row" span={16}>
+          <Col className="gutter-row" a={16}>
             <Card
               style={{
                 width: "635px",
@@ -83,7 +83,7 @@ function DateRangeFilter() {
               </Button>
             </Card>
           </Col>
-          <Col className="gutter-row" span={4}>
+          <Col className="gutter-row" a={4}>
             <Card
               style={{
                 width: "260px",
