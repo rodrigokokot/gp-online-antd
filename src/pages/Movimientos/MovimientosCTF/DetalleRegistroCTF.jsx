@@ -1,4 +1,4 @@
-import React ,{useState} from "react";
+import React  from "react";
 import Table from "../../../components/organisms/Table";
 import { useParams } from "react-router-dom";
 import {
@@ -13,7 +13,6 @@ function DetalleRegistroCTF() {
   return (
     <> 
         <h2> {id}</h2> 
-        {/*FALTA AGREGAR BOTTON DE EXPORTAR  */}
         <Table data={dataRegistroCTF} columns={columnsRegistroCTF} actions={<Export />}></Table>
     </>
   );

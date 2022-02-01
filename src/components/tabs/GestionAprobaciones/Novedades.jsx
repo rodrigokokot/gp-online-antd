@@ -38,8 +38,9 @@ function Novedades() {
           description="Desplegá cada fila para poder operar las confirmaciones."
         />
       </Card>
-      <DateRangeFilter></DateRangeFilter>
-      <SearchForm array={GestionSucursalesSearchMock} parentCallback={handleCallback}></SearchForm>
+      <br />
+      <SearchForm title="Busqueda de aprobaciones" array={GestionSucursalesSearchMock} parentCallback={handleCallback}></SearchForm>
+      <br />
       <Table
         component={DeploymentConfirmation}
         data={dataNovelty}

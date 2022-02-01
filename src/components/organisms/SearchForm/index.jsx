@@ -15,8 +15,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
   const onFinish = (values) => {
     
     console.log(values);
-    parentCallback(values);
-    // console.log("Received values of form: ", values);
+    parentCallback(values); 
     setOpen([""]);
   };
 
@@ -42,8 +41,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
           <Icon component={isActive ? CollapseClose : CollapseOpen} />
         )}
       >
-        <Panel key="1" header={title} style={{background: "#ffffff"}}>
-          {console.log(title)}
+        <Panel key="1" header={title} style={{background: "#ffffff"}}> 
           <Form style={{ backgroundColor:'white' }}
             form={form}
             name="advanced_search"

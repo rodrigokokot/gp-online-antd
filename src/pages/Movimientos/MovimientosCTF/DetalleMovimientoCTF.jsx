@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Export from "../../../components/organisms/Export";
 import Table from "../../../components/organisms/Table";
 import {
@@ -8,8 +8,7 @@ import {
 
 function DetalleMovimientosCTF() {
   return (
-    <>
-      {/*FALTA AGREGAR BOTTON DE EXPORTAR  */}
+    <> 
       <Table
         data={dataDetallesCTF}
         columns={columnsDetallesCTF}

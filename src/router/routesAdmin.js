@@ -72,6 +72,11 @@ const routes = [
                 name: "Socios",
                 page: 'GestionSucursales',
             },
+            {
+                path: "/emision/consumos",
+                name: "Consumos",
+                page: 'GestionSucursales',
+            },
         ]
     },
     {

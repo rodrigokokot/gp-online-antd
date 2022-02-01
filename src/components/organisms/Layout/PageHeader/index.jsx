@@ -17,7 +17,7 @@ const PageHeaderLayout = ({title , ...props}) => {
                     </Typography.Title>
 
                 </Col>
-                <Col a={5} offset={7} style={{display: 'flex', flexDirection:'column'}}>
+                <Col a={5} style={{display: 'flex', flexDirection:'column', right: '3%', position: 'absolute'}}>
                     <Typography.Text strong style={{ marginTop: '20px', marginLeft: 'auto' }} >
                         {userName}
                     </Typography.Text>
