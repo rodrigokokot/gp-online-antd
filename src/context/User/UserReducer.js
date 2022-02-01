@@ -7,7 +7,7 @@ export default (state, action) => {
         case GET_USER:
             return {
                 ...state,
-                users: payload
+                user: payload
             }
         case GET_PROFILE:
             return {
