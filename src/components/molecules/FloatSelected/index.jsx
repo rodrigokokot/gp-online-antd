@@ -24,7 +24,7 @@ const FloatSelected = ({options, outline, width, mode, ...props}) => {
     >
       <Select mode={mode} maxTagCount='responsive' style={{width: width}} onChange={props.onChange} className={ !outline? "select-bottom" : '' } >
         {
-          options && options.map((opt, index) => <Select.Option value={opt.value} disabled={opt.disabled} key={index}>{opt.title}</Select.Option>)
+          options && options.map((opt, index) => <Select.Option value={opt.value} disabled={opt.disabled} key={index}>{opt.icon}{opt.title}</Select.Option>)
         }
       </Select>
       <label className={labelClass}>
