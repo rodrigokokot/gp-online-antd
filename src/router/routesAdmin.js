@@ -1,95 +1,92 @@
 const routes = [
     {
-        path: "/gestionAprobaciones",
         name: "Gestion de Aprobaciones",
         icon: 'HomeOutlined',
-        page: 'GestionAprobaciones'
+        path: "/gestionAprobaciones",
     },
     {
-        path: "/parametrosPrincipales",
         name: "Parametros principales",
         icon: "FileDoneOutlined",
-        page: 'ParametrosPrincipales',
         subItems: [
             {
                 path: "/parametrosPrincipales/gestionSucursales",
                 name: "Gestión de Sucursales",
-                page: 'GestionSucursales',
             },
         ]
     },
     {
-        path: "/usuarios",
         name: "Usuarios",
         icon: "UserOutlined",
-        page: 'Usuarios',
         subItems: [
             {
-                path: "/usuarios/gestionUsuarios",
                 name: "Gestión de usuarios",
-                icon: 'BoxPlotOutlined',
-                page: 'GestionUsuarios',
+                path: "/usuarios/gestionUsuarios",
+
             },
             {
-                path: "/usuarios/gestionDePerfiles",
                 name: "Gestión de Perfiles",
-                icon: 'BoxPlotOutlined',
-                page: 'GestionPerfiles',
+                path: "/usuarios/gestionDePerfiles",
+
             },
         ]
     },
     {
-        path: "/movimientos",
+        // path: "/movimientos",
         name: "Movimientos",
         icon: "SwapOutlined",
-        page: 'Movimientos',
         subItems: [
             {
-                path: "/movimientos/IPM",
                 name: "IPM",
-                page: 'GestionSucursales',
+                path: "/movimientos/IPM",
             },
             {
-                path: "/movimientos/CTF",
                 name: "CTF",
-                page: 'GestionSucursales',
+                path: "/movimientos/CTF",
             },
         ]
     },
     {
-        path: "/emision",
         name: "Emisión",
         icon: "UserSwitchOutlined",
-        page: 'ParametrosPrincipales',
         subItems: [
             {
-                path: "/emision/movimientos",
                 name: "Movimientos",
-                page: 'GestionSucursales',
+                subItems: [
+                    {
+                        name: "Autorizaciones",
+                        path: "/emision/movimientos/autorizaciones",
+                    },
+                    {
+                        name: "Consumos",
+                        path: "/emision/movimientos/consumos",
+                    },
+                ]
             },
             {
-                path: "/emision/socios",
                 name: "Socios",
-                page: 'GestionSucursales',
+                subItems: [
+                    {
+                        name: "Cuentas",
+                        path: "/emision/socios/cuentas",
+                    },
+                    {
+                        name: "Movimiento de cuentas",
+                        path: "/emision/socios/movimientoCuentas",
+                    },
+                ]
             },
-            {
-                path: "/emision/consumos",
-                name: "Consumos",
-                page: 'GestionSucursales',
-            },
+
         ]
     },
     {
-        path: "/parametria",
         name: "Parametria",
+        path: "/parametria",
         icon: "BarChartOutlined",
-        page: 'Parametria',
     },
     {
-        path: "/adquirencia",
         name: "Adquirencia",
+        path: "/adquirencia",
         icon: "PieChartOutlined",
-        page: 'ParametrosPrincipales',
     },
     // {
     //     path: "/ayuda",
