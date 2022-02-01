@@ -23,7 +23,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
     const fields = [];
     array.map((item) => {
       fields.push(
-        <Col key={item.index} a={span}>
+        <Col key={item.index} span={span}>
           <Form.Item name={item.index}>{item.input}</Form.Item>
         </Col>
       );
