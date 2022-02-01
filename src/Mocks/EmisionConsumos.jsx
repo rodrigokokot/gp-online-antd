@@ -49,7 +49,7 @@ const columnsEmisionConsumos = [
     button: true,
     cell: (row) => (
       <Link
-        to={`/emision/consumos/consultaDeConsumos/${row.id}`}
+        to={`/emision/movimientos/consumos/consultaDeConsumo/${row.id}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >
