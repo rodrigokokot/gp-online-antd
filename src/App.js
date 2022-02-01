@@ -56,7 +56,7 @@ function App() {
         <DashboardTemplate exact path="/emision/movimientos" component={lazy(() => import('./pages/Emision/Emision'))} />
         
         <DashboardTemplate exact path="/emision/socios/cuentas" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentas'))} />
-        <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/editar/:id" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
+        <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/editar/:idcuenta" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
         <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/nueva" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaNew'))} />
 
 

@@ -73,6 +73,7 @@ const DatosGenerales = () => {
           </Group>
         </Form.Item>
       </Card>
+        <br></br>
       <Card>
         <Title level={2}>Datos Principales</Title>
 
@@ -152,7 +153,8 @@ const DatosGenerales = () => {
             <br />
           </Radio.Group>
         </Form.Item>
-      </Card>
+      </Card>   
+        <br></br>
     </>
   );
 };
