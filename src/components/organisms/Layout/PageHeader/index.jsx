@@ -11,13 +11,13 @@ const PageHeaderLayout = ({title , ...props}) => {
         <PageHeader>
             <BreadcrumComponent />
             <Row>
-                <Col a={12}>
+                <Col span={12}>
                     <Typography.Title size={2} >
                         {title}
                     </Typography.Title>
 
                 </Col>
-                <Col a={5} style={{display: 'flex', flexDirection:'column', right: '3%', position: 'absolute'}}>
+                <Col span={5} style={{display: 'flex', flexDirection:'column', right: '3%', position: 'absolute'}}>
                     <Typography.Text strong style={{ marginTop: '20px', marginLeft: 'auto' }} >
                         {userName}
                     </Typography.Text>

@@ -8,69 +8,76 @@ function NuevaSucursal() {
   const FormularioNueva = () => {
     return (
       <>
-        <Card>
+        <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
         <h1 className="purple-title">Datos Principales</h1>
-          <Col a={8}>
-          
+          <Col span={8}>
+
 
           <Form.Item
             name="codigo"
             rules={[{ required: true, message: "Ingrese código" }]}
           >
-            <FloatInput label="Codigo" placeholder="Código"></FloatInput>
+            <FloatInput outline label="Codigo" placeholder="Código"></FloatInput>
           </Form.Item>
-          
+
           <Form.Item
             name="descripcion"
             rules={[{ required: true, message: "Ingrese descripción" }]}
           >
-            <FloatInput label="Descripcion" placeholder="Descripcion" />
+            <FloatInput outline label="Descripcion" placeholder="Descripcion" />
           </Form.Item>
           </Col>
         </Card>
 
-        <Card>
+        <Card style={{ borderRadius: '16px' }}>
         <h1 className="purple-title">Domicilio</h1>
 
           <Row gutter={24}>
-            <Col a={6}>
+            <Col span={6}>
               <Form.Item
                 name="calle"
                 rules={[{ required: true, message: "Ingrese calle" }]}
               >
-                <FloatInput label="Calle" placeholder="Calle"></FloatInput>
+                <FloatInput outline label="Calle" placeholder="Calle"></FloatInput>
               </Form.Item>
             </Col>
 
-            <Col a={2}>
+            <Col span={3}>
               <Form.Item
                 name="num"
                 rules={[{ required: true, message: "Ingrese número" }]}
               >
-                <FloatInput label="Número" placeholder="Número"></FloatInput>
+                <FloatInput outline label="Número" placeholder="Número"></FloatInput>
               </Form.Item>
             </Col>
 
-            <Col a={2}>
+            <Col span={2}>
               <Form.Item name="piso">
-                <FloatInput label="Piso" placeholder="Piso"></FloatInput>
+                <FloatInput outline label="Piso" placeholder="Piso"></FloatInput>
               </Form.Item>
             </Col>
 
-            <Col a={2}>
+            <Col span={2}>
               <Form.Item name="piso">
-                <FloatInput label="Depto" placeholder="Depto"></FloatInput>
+                <FloatInput outline label="Depto" placeholder="Depto"></FloatInput>
+              </Form.Item>
+            </Col>
+
+            <Col span={2}>
+              <Form.Item name="cp">
+                <FloatInput outline label="CP" placeholder="CP"></FloatInput>
               </Form.Item>
             </Col>
           </Row>
 
           <Row>
-            <Col a={8}>
+            <Col span={8}>
               <Form.Item
                 name="localidad"
                 rules={[{ required: true, message: "Ingrese localidad" }]}
               >
                 <FloatSelect
+                  outline
                   label="Localidad"
                   placeholder="Localidad"
                   options={[
@@ -96,12 +103,13 @@ function NuevaSucursal() {
           </Row>
 
           <Row>
-            <Col a={8}>
+            <Col span={8}>
               <Form.Item
                 name="provincia"
                 rules={[{ required: true, message: "Ingrese provincia" }]}
               >
                 <FloatSelect
+                  outline
                   label="Provincia"
                   placeholder="Provincia"
                   options={[
@@ -127,12 +135,13 @@ function NuevaSucursal() {
           </Row>
 
           <Row>
-            <Col a={8}>
+            <Col span={8}>
               <Form.Item
                 name="telefono"
                 rules={[{ required: true, message: "Ingrese teléfono" }]}
               >
                 <FloatInput
+                  outline
                   label="Telefono"
                   placeholder="Telefono"
                 ></FloatInput>

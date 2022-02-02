@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Table from '../components/organisms/Table'
 import DeploymentConfirmation from '../components/molecules/DeploymentConfirmation'
 import Icon, {DownOutlined} from '@ant-design/icons'
@@ -10,6 +10,7 @@ import {HelpImg, LoginImg} from '../assets/svg/img'
 import InlineSVG from 'svg-inline-react';
 import ResultSearch from '../components/molecules/ResultSearch'
 import BreadComponent from '../components/molecules/Breadcrum'
+import { useAuth } from '../context/authContext'
 
 const validator = {
     require: {
@@ -19,6 +20,9 @@ const validator = {
   };
 
 function Page1() {
+
+    const authContext = useAuth()
+    console.log(authContext);
 
     const columns = [
         {
