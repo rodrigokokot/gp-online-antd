@@ -9,7 +9,7 @@ import {
 function DetalleMovimientosCTF() {
   return (
     <>
-      <Export />
+      <Export dataExport={dataDetallesCTF}/>
       <Table data={dataDetallesCTF} columns={columnsDetallesCTF}></Table>
     </>
   );

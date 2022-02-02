@@ -12,7 +12,7 @@ function DetalleRegistroCTF() {
   return (
     <>
       <h2> {id}</h2>
-      <Export />
+      <Export dataExport={dataRegistroCTF} />
       <Table data={dataRegistroCTF} columns={columnsRegistroCTF}></Table>
     </>
   );

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Button, Modal, Form, Radio, Col } from "antd";
 import FloatInput from "../../molecules/FloatInput";
-import { dataDetalleRegistroIPM } from "../../../Mocks/DetalleRegistroIPM";
 
 import * as FileSaver from "file-saver";
 import * as XLSX from "xlsx";
 
-const Export = () => {
+const Export = ({dataExport}) => {
   const [visible, setVisible] = useState(false);
 
   const fileType =
@@ -23,7 +22,7 @@ const Export = () => {
         console.log("exportar pdf");
         break;
       case "xlsx":
-        const ws = XLSX.utils.json_to_sheet(dataDetalleRegistroIPM);
+        const ws = XLSX.utils.json_to_sheet(dataExport);
         const wb = { Sheets: { data: ws }, SheetNames: ["data"] };
         const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
         const data = new Blob([excelBuffer], { type: fileType });
