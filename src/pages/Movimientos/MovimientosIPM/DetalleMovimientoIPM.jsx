@@ -12,12 +12,6 @@ function DetalleMovimientoIPM() {
     console.log(value)
   }
 
-  // useEffect(() => {
-  //   getUser(id);
-    
-  // });
-  
-  //LOS DATOS DE LA TABLA TIENEN QUE SER DEL USUARIO SELECCIONADO
   return (
     <>
       <h2>Id file {id}</h2>
