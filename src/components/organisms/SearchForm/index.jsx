@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Col, Row, Button, Collapse } from "antd";
+import { Form, Col, Row, Button, Collapse, Typography } from "antd";
 import "./index.less";
 import Icon from "@ant-design/icons";
 import {
@@ -32,16 +32,19 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
   };
 
   return (
-      <Collapse style={{ backgroundColor:'white' }}
+      <Collapse style={{ backgroundColor:'white', borderRadius: '0.5em' }}
         expandIconPosition="right"
         bordered={false}
         activeKey={open}
         onChange={setOpen}
         expandIcon={({ isActive }) => (
-          <Icon component={isActive ? CollapseClose : CollapseOpen} />
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <Typography.Text>{isActive? "Colapsar búsqueda" : "Refinar búsqueda"}</Typography.Text>
+            <Icon component={isActive ? CollapseClose : CollapseOpen} />
+          </div>
         )}
       >
-        <Panel key="1" header={title} style={{background: "#ffffff"}}> 
+        <Panel key="1" header={<Typography.Title level={5} style={{ color: '#AB218E' }} >{title}</Typography.Title>} >
           <Form style={{ backgroundColor:'white' }}
             form={form}
             name="advanced_search"
@@ -56,22 +59,23 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
             <Row style={{ marginTop: 40 }}>
               <Col span={24} style={{ textAlign: "left" }}>
                 <Button type="primary" htmlType="submit">
-                  Search
+                  Buscar
                 </Button>
                 <Button
+                  type="text"
                   style={{ margin: "0 8px" }}
                   onClick={() => {
                     form.resetFields();
                   }}
                 >
-                  Clear
+                  Restablecer
                 </Button>
               </Col>
             </Row>
           </Form>
 
         </Panel>
-        
+
       </Collapse>
   );
 };

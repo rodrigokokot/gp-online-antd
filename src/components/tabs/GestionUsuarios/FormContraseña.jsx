@@ -6,7 +6,7 @@ const { Title } = Typography;
 
 const Contraseña = () => {
 
-  return (<> 
+  return (<>
       <Card>
         <Title level={2}>Contraseña</Title>
         <Col span={6}>
@@ -27,6 +27,7 @@ const Contraseña = () => {
                     ]}
         >
           <FloatInput
+            outline
             type="password"
             label="Ingresa tu contraseña para generar cambios"
             placeholder="Contraseña"

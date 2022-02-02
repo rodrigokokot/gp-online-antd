@@ -1,6 +1,6 @@
 const routes = [
     {
-        name: "Gestion de Aprobaciones",
+        name: "Gestión de Aprobaciones",
         icon: 'HomeOutlined',
         path: "/gestionAprobaciones",
     },

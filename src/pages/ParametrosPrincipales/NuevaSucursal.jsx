@@ -1,6 +1,6 @@
 import React from "react";
 import Edit from "../../components/organisms/Edit";
-import { Form, Row, Col, Card } from "antd";
+import { Form, Row, Col, Card, Typography } from "antd";
 import FloatInput from "../../components/molecules/FloatInput/index";
 import FloatSelect from "../../components/molecules/FloatSelected/index";
 
@@ -9,7 +9,7 @@ function NuevaSucursal() {
     return (
       <>
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-        <h1 className="purple-title">Datos Principales</h1>
+          <Typography.Title level={4} style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
           <Col span={8}>
 
 
@@ -30,7 +30,7 @@ function NuevaSucursal() {
         </Card>
 
         <Card style={{ borderRadius: '16px' }}>
-        <h1 className="purple-title">Domicilio</h1>
+        <Typography.Title level={4} style={{ color: '#ab218e' }}>Domicilio</Typography.Title>
 
           <Row gutter={24}>
             <Col span={6}>
