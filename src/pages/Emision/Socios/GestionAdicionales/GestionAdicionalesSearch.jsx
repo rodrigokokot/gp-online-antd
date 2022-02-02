@@ -61,7 +61,7 @@ export default function GestionAdicionalesSearch() {
             name:"",
             button: true,
             cell: (row) => (
-                <Link to="/emision/socios/cuentas/gestionDeAdicionales/nueva" style={{textDecoration:"underline"}} rel="noopener noreferrer" />
+                <Link to={`/emision/socios/cuentas/gestionDeAdicionales/nueva/${row.adicional}`} style={{textDecoration:"underline"}} rel="noopener noreferrer" />
             )
         }
     ]
