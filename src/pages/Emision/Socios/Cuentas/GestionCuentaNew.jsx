@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Radio,Form,Typography,Card, Row, Col,DatePicker,Checkbox} from 'antd';
+import { Radio,Form,Typography,Card, Row, Col,DatePicker,Checkbox,Button} from 'antd';
 import FloatInput from '../../../../components/molecules/FloatInput';
 import FloatSelect from "../../../../components/molecules/FloatSelected/index";
 import Edit from '../../../../components/organisms/Edit'; 
 const { Title } = Typography;
 
 const GestionCuentaNew = () => { 
-  const FormularioUsuario = () => {
+  const FormularioCuenta = () => {
     const [value, setValue] = useState("");
     const onChange = e => {
     setValue(e.target.value);
@@ -19,11 +19,28 @@ const GestionCuentaNew = () => {
     }
     //para bloquear input y cambiar valor de entradas
     const [disabled,setDisabled]=useState(true);
-    const [valor,setValor]=useState(undefined);//VER NO Elimina valor asignado luego de deshabilitar el checkbox
-    function onChangeActivar(e){
-        setDisabled(!disabled); setValor(undefined);console.log(e.target.value);
+    //VER NO Elimina valor asignado luego de deshabilitar el checkbox
+    function onChangeActivar(){
+        setDisabled(!disabled); form2.resetFields() 
         }
-
+        
+    //Botón buscar documento    
+    function handleOk(e){ 
+        console.log('buscar press',buscar); 
+    }
+    //buscador de doc llamar
+    const [buscar,setBuscar]=useState(undefined);
+    function onChangeDoc(e){
+        setBuscar(e.target.value);
+    }
+ 
+    const onFinish2 = (values) => {
+        console.log("Success:", values);
+      };
+      const onFinishFailed2 = (errorInfo) => {
+        console.log("Failed:", errorInfo);
+      };
+  const [form2] = Form.useForm();
     return (<>  
         
         <Card>
@@ -199,14 +216,17 @@ const GestionCuentaNew = () => {
                     </Row>
                 </Radio.Group>
         </Form.Item>
-        
-        <Col span={6}>                           
-            <Form.Item name='documento' 
-                rules={[{ required: true, message: "Ingrese Documento" }]}
-            >
-                <FloatInput type="number" label='N° de Documento*' placeholder='N° de Documento*'></FloatInput>
-            </Form.Item>
-        </Col> 
+       
+        <Row gutter={48}>
+          <Col span={6}>                           
+              <Form.Item name='documento' 
+                  rules={[{ required: true, message: "Ingrese Documento" }]}
+              >
+                <FloatInput onChange={onChangeDoc} type="number" label='N° de Documento*' placeholder='N° de Documento*'></FloatInput>
+              </Form.Item>
+          </Col>       
+            <Button type="primary" onClick={handleOk}>Buscar</Button> 
+        </Row>
         <Row gutter={48}>
             <Col span={6}>
                 <Form.Item name='nombre' 
@@ -233,8 +253,8 @@ const GestionCuentaNew = () => {
                                             disabled: false,
                                         },
                                         {
-                                            title: "Sexo",
-                                            value: "Sexo",
+                                            title: "Otro",
+                                            value: "Otro",
                                             disabled: false,
                                         }
                                     ]}
@@ -328,15 +348,23 @@ const GestionCuentaNew = () => {
         </Col> 
         </Card>   
         <br></br>
-        <Card >
+        <Form    form={form2}
+                  name="advanced_search"
+                  className="ant-advanced-search-form"
+                  onFinish={onFinish2} onFinishFailed={onFinishFailed2}
+                  size="large"
+        >
+            <Card >
             <Title level={2}>Domicilio Legal</Title>
-    
+                            
             <Title level={5}>Por defecto, el domicilio de correspondencia es el mismo que el domicilio legal</Title>
-            <Checkbox onChange={e=>onChangeActivar(e)}>
+            <Checkbox onChange={onChangeActivar}>
             <Title level={5}>Ingresar un domicilio de correspondencia diferente</Title></Checkbox>
+         
+          
             <Col span={6}>    
-                <Form.Item 
-                    name="calle"
+                <Form.Item
+                    name="calle" 
                     rules={[{ required: true, message: "Ingrese Calle" }]}
                 >
                     <FloatInput disabled={disabled} label="Calle*" placeholder="Calle*"></FloatInput>
@@ -346,13 +374,13 @@ const GestionCuentaNew = () => {
                 <Col span={3}>
                     <Form.Item name='numero'
                     >
-                        <FloatInput disabled={disabled} label='Numero' placeholder='Numero' ></FloatInput>
+                        <FloatInput type='number' disabled={disabled} label='Numero' placeholder='Numero' ></FloatInput>
                     </Form.Item>
                 </Col>
                 <Col span={3}>
                     <Form.Item name='piso'  
                     >
-                        <FloatInput disabled={disabled} label='Piso' placeholder='Piso'></FloatInput>
+                        <FloatInput type='number' disabled={disabled} label='Piso' placeholder='Piso'></FloatInput>
                     </Form.Item> 
                 </Col>
                 <Col span={3}>
@@ -365,7 +393,7 @@ const GestionCuentaNew = () => {
                     <Form.Item name='codpostal'
                     rules={[{ required: true, message: "Ingrese Codigo postal" }]}  
                     >
-                        <FloatInput disabled={disabled} label='Codigo postal*' placeholder='Codigo postal*'></FloatInput>
+                        <FloatInput type='number' disabled={disabled} label='Codigo postal*' placeholder='Codigo postal*'></FloatInput>
                     </Form.Item> 
                 </Col>
             </Row> 
@@ -418,8 +446,9 @@ const GestionCuentaNew = () => {
                     >
                         <FloatInput disabled={disabled} label='Referencia' placeholder='Referencia'></FloatInput>
                     </Form.Item>
-            </Col>
-        </Card>   
+            </Col> 
+            </Card>
+        </Form>   
         <br></br>
         <Card>
             <Title level={2}>Domicilio Correspondencia</Title>
@@ -442,7 +471,7 @@ const GestionCuentaNew = () => {
 
   return(
   <>
-    <Edit component={FormularioUsuario} />
+    <Edit component={FormularioCuenta} />
   </>);
 }
 export default GestionCuentaNew;

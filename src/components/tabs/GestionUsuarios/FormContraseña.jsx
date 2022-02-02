@@ -10,7 +10,22 @@ const Contraseña = () => {
       <Card>
         <Title level={2}>Contraseña</Title>
         <Col span={6}>
-        <Form.Item name="password" >
+        <Form.Item name="password" rules = {[
+                    { required: true, message: 'Ingrese Contraseña' },
+                    {
+                      validator: (_, value1) =>
+                        value1 && value1.length >= 8
+                          ? Promise.resolve()
+                          : Promise.reject(new Error('Password must be at least 8 characters')),
+                    },
+                    {
+                      validator: (_, value2) =>
+                        value2 && value2.match(/\d+/g)
+                          ? Promise.resolve()
+                          : Promise.reject(new Error('Password must have one number')),
+                    }, 
+                    ]}
+        >
           <FloatInput
             type="password"
             label="Ingresa tu contraseña para generar cambios"
