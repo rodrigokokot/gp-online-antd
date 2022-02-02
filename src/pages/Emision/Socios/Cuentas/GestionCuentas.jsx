@@ -47,8 +47,7 @@ const GestionCuentas=()=> {
           <SearchForm array={GestionCuentaSearch} parentCallback={handleCallback} title="Busqueda de Usuario" />
           <br></br>
           <Table data={data} columns={columnsGestionCuenta} expandible={false} editable={true}/>
-          
-          
+           
   </>);
 }
 export default GestionCuentas;
