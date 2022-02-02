@@ -47,17 +47,18 @@ function GestionSucursales() {
           <SearchForm
             array={GestionSucursalesSearchMock}
             parentCallback={handleCallback}
-            title="Busqueda de Sucursal"
+            title="Busqueda de Sucursales"
             span={4}
           />
 
-
+          <div style={{ marginTop: data.length == 0? '70px' : '8px' }}>
             <Table
               columns={columnsGestionSucursales}
               data={data}
               expandible={false}
               editable={true}
             />
+          </div>
         </>
   );
 }

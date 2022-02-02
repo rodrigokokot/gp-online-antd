@@ -39,7 +39,7 @@ function Novedades() {
         />
       </Card>
       <br />
-      <SearchForm title="Busqueda de aprobaciones" array={GestionSucursalesSearchMock} parentCallback={handleCallback}></SearchForm>
+      {/* <SearchForm title="Busqueda de aprobaciones" array={GestionSucursalesSearchMock} parentCallback={handleCallback}></SearchForm> */}
       <br />
       <Table
         component={DeploymentConfirmation}
