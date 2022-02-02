@@ -1,17 +1,39 @@
 import React, { useState } from "react";
-import { Button, Modal, Form, Input, Radio, Checkbox } from "antd";
+import { Button, Modal, Form, Radio } from "antd";
 import FloatInput from "../../molecules/FloatInput";
+import { dataDetalleRegistroIPM } from "../../../Mocks/DetalleRegistroIPM";
+
+import * as FileSaver from "file-saver";
+import * as XLSX from "xlsx";
 
 const Export = () => {
   const [visible, setVisible] = useState(false);
-  const [optionSelected, setOptionSelected] = useState("pdf");
+
+  const fileType =
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
+  const fileExtension = ".xlsx";
 
   function onCancel() {
     setVisible(false);
   }
 
   const onFinish = (values) => {
-    console.log("Success:", values);
+    switch (values.option) {
+      case "pdf":
+        console.log("exportar pdf");
+        break;
+      case "xlsx":
+        const ws = XLSX.utils.json_to_sheet(dataDetalleRegistroIPM);
+        const wb = { Sheets: { data: ws }, SheetNames: ["data"] };
+        const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
+        const data = new Blob([excelBuffer], { type: fileType });
+        FileSaver.saveAs(data, values.nombre + fileExtension);
+        break;
+      case "docx":
+        console.log("exportar a word");
+        break;
+    }
+    setVisible(false);
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -19,7 +41,7 @@ const Export = () => {
   };
 
   return (
-    <div>
+    <>
       <Button
         type="primary"
         onClick={() => {
@@ -40,15 +62,14 @@ const Export = () => {
           onFinishFailed={onFinishFailed}
           autoComplete="off"
         >
-          <Form.Item
-            label="Nombre"
-            name="nombre"
-            rules={[{required:true }]}
-          >
-            <FloatInput value='Débito/Prueba/sistema' placeholder="Nombre del archivo"></FloatInput>
+          <Form.Item label="Nombre" name="nombre" rules={[{ required: true }]}>
+            <FloatInput
+              value="Débito/Prueba/sistema"
+              placeholder="Nombre del archivo"
+            ></FloatInput>
           </Form.Item>
 
-          <Form.Item name="option" label="Tipo" rules={[{required:true }]}>
+          <Form.Item name="option" label="Tipo" rules={[{ required: true }]}>
             <Radio.Group buttonStyle="solid">
               <Radio.Button value="pdf">PDF</Radio.Button>
               <Radio.Button value="xlsx">XLSX</Radio.Button>
@@ -63,7 +84,7 @@ const Export = () => {
           </Form.Item>
         </Form>
       </Modal>
-    </div>
+    </>
   );
 };
 

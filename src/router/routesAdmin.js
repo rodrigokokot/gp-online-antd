@@ -71,11 +71,11 @@ const routes = [
                     },
                     {
                         name: "Movimiento de cuentas",
-                        path: "/emision/socios/movimientoCuentas",
+                        path: "/emision/socios/movimientosDeCuenta",
                     },
                     {
                         name: "Avisos de Viajes",
-                        path: "/emision/socios/avisosViajes",
+                        path: "/emision/socios/avisosDeViajes",
                     },
                 ]
             },

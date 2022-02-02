@@ -53,21 +53,22 @@ function App() {
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesSearch'))} />
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones/nuevo" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesNew'))} />
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones/ver/:id" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesView'))} />
-          <DashboardTemplate exact path="/emision/movimientos" component={lazy(() => import('./pages/Emision/Emision'))} />
 
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesSearch'))} />
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones/nuevo" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesNew'))} />
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones/editar/:id" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesEdit'))} />
 
-          <DashboardTemplate exact path="/emision/movimientos/consumos" component={lazy(() => import('./pages/Emision/Consumos'))} />
-          <DashboardTemplate exact path="/emision/movimientos/consumos/consultaDeConsumo/:id" component={lazy(() => import('./pages/Emision/Consumos/ConsultaConsumos'))} />
+          <DashboardTemplate exact path="/emision/movimientos/consumos" component={lazy(() => import('./pages/Emision/Movimientos/Consumos'))} />
+          <DashboardTemplate exact path="/emision/movimientos/consumos/consultaDeConsumo/:id" component={lazy(() => import('./pages/Emision/Movimientos/Consumos/ConsultaConsumos'))} />
 
           <DashboardTemplate exact path="/emision/socios/cuentas" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentas'))} />
           <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/editar/:idcuenta" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
           <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/nueva" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaNew'))} />
 
-          <DashboardTemplate exact path="/emision/socios/avisosViajes" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes/AvisosViajes'))} />
-          <DashboardTemplate exact path="/emision/socios/avisosViajes/editar/:id" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes/AvisosViajesEdit'))} />
+          <DashboardTemplate exact path="/emision/socios/avisosDeViajes" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes/AvisosViajes'))} />
+          <DashboardTemplate exact path="/emision/socios/avisosDeViajes/editar/:id" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes/AvisosViajesEdit'))} />
+
+          <DashboardTemplate exact path="/emision/socios/movimientosDeCuenta" component={lazy(() => import('./pages/Emision/Socios/MovimientosDeCuenta'))} />
 
           <DashboardTemplate exact path="/parametria" component={lazy(() => import('./pages/Parametria'))} />
 
