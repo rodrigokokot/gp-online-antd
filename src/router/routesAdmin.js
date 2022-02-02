@@ -73,6 +73,10 @@ const routes = [
                         name: "Movimiento de cuentas",
                         path: "/emision/socios/movimientoCuentas",
                     },
+                    {
+                        name: "Avisos de Viajes",
+                        path: "/emision/socios/avisosViajes",
+                    },
                 ]
             },
 

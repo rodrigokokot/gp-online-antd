@@ -344,7 +344,7 @@ const GestionCuentaNew = () => {
             <Title level={5}>Por defecto, el domicilio de correspondencia es el mismo que el domicilio legal</Title>
             <Checkbox  onChange={onChangeActivar}> 
             <Title level={5}>Ingresar un domicilio de correspondencia diferente</Title></Checkbox>
-          
+            
             <Col span={6}>    
                 <Form.Item 
                     name="calle" 
