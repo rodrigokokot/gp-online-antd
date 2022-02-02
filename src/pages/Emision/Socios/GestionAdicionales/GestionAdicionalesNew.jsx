@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import Edit from "../../../../components/organisms/Edit";
-import { Radio, Row, Col, Card, Button, Form, Space, Tooltip, DatePicker } from "antd";
+import { Radio, Row, Col, Card, Button, Form, Space, Tooltip, DatePicker, Checkbox } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
@@ -11,8 +11,11 @@ export default function GestionAdicionalesNew() {
     console.log(values);
   };
 
+  const [checked, setChecked] = useState(true);
+
   const SearchDNI = () => {
     const [form] = Form.useForm();
+
 
     return (
       <>
@@ -82,7 +85,12 @@ export default function GestionAdicionalesNew() {
   };
 
   const FormularioNuevo = () => {
-      return <>
+    
+    const onChange = (e) =>{
+        setChecked(e.target.checked)
+    }
+     
+     return <>
           <Card>
                 <Row gutter={[24,48]}>
                     <Col span={8}>
@@ -157,6 +165,92 @@ export default function GestionAdicionalesNew() {
                         </Form.Item>
                     </Col>
                 </Row>
+          </Card>
+
+          <Card>
+              <Space direction="vertical" size="middle">
+                <h1 className="purple-title">Domicilio</h1>
+                <Checkbox onChange={onChange} checked={checked}> Informa domicilio</Checkbox>
+
+                </Space>
+                {checked && <>
+                    <Row style={{marginTop: 24}} gutter={[24,24]}>
+                        <Col span={8}>
+                            <Form.Item name="calle" rules={[{required: true, message:"Ingrese domicilio"}]}>
+                                <FloatInput label="Calle"/>
+                            </Form.Item>                        
+                        </Col>
+                    </Row>
+                    
+                    <Row gutter={48}>
+                        <Col span={4}>
+                            <Form.Item name="numero">
+                                <FloatInput label="Número"/>
+                            </Form.Item>                        
+                        </Col>
+
+                        <Col span={4}>
+                            <Form.Item name="piso">
+                                <FloatInput label="Piso"/>
+                            </Form.Item>                        
+                        </Col>
+
+                        <Col span={4}>
+                            <Form.Item name="depto">
+                                <FloatInput label="Depto"/>
+                            </Form.Item>                        
+                        </Col>
+
+                        <Col span={4}>
+                            <Form.Item name="cp" rules={[{required:true, message:"Ingrese Código Postal"}]}>
+                                <FloatInput label="Código Postal"/>
+                            </Form.Item>                        
+                        </Col>
+                    </Row>
+
+                    <Row gutter={[24,24]}>
+                        <Col span={8}>
+                            <Form.Item name="entrec">
+                                <FloatInput label="Entre calles" />
+                            </Form.Item>
+
+
+
+                            <Form.Item name="barrio">
+                                <FloatInput label="Barrio" />
+                            </Form.Item>
+
+                            <Form.Item name="localidad" rules={[{required:true, message:"Ingrese Localidad"}]}>
+                                <FloatInput label="Localidad" />
+                            </Form.Item>
+
+                            <Form.Item name="provincia" rules={[{required:true, message:"Ingrese Provincia"}]}>
+                                <FloatSelected label="Provincia" options={[
+                                    {
+                                        title:"San Juan",
+                                        value:"San Juan",
+                                        disabled:false,
+                                    },
+                                    {
+                                        title:"Mendoza",
+                                        value:"Mendoza",
+                                        disabled:false,
+                                    },
+                                ]} />
+                            </Form.Item>
+
+                            <Form.Item name="telefono" rules={[{required:true, message:"Ingrese Teléfono"}]}>
+                                <FloatInput label="Teléfono" />
+                            </Form.Item>
+
+                            <Form.Item name="referencia">
+                                <FloatInput label="Referencia" />
+                            </Form.Item>
+                        </Col>
+                    </Row>
+                    </>
+                }
+
           </Card>
       </>
   }
