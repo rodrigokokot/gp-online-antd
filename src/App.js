@@ -1,12 +1,7 @@
 import React, { lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import './App.less';
-<<<<<<< HEAD
-import UserState from './context/User/UserState'
-
-=======
 import { AuthProvider } from './context/authContext';
->>>>>>> d611e6afcdb5c283f8274325ffcb8cde71d8bc6a
 //components
 
 // templates
@@ -70,25 +65,14 @@ function App() {
           <DashboardTemplate exact path="/emision/movimientos/consumos" component={lazy(() => import('./pages/Emision/Consumos'))} />
           <DashboardTemplate exact path="/emision/movimientos/consumos/consultaDeConsumo/:id" component={lazy(() => import('./pages/Emision/Consumos/ConsultaConsumos'))} />
 
-<<<<<<< HEAD
-          <DashboardTemplate exact path="/adquirencia" component={lazy(() => import('./pages/Adquirencia'))} />
-
-          <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda'))} />
-=======
           <DashboardTemplate exact path="/emision/socios/cuentas" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentas'))} />
           <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/editar/:id" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
           <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/nueva" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaNew'))} />
 
->>>>>>> d611e6afcdb5c283f8274325ffcb8cde71d8bc6a
 
           <DashboardTemplate exact path="/parametria" component={lazy(() => import('./pages/Parametria'))} />
 
-<<<<<<< HEAD
-          <DashboardTemplate exact path="/rodrigo" component={lazy(() => import('./pages/Page1'))} />
-        </UserState>
-=======
           <DashboardTemplate exact path="/adquirencia" component={lazy(() => import('./pages/Adquirencia'))} />
->>>>>>> d611e6afcdb5c283f8274325ffcb8cde71d8bc6a
 
           <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda'))} />
 
