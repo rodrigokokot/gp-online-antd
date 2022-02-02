@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Modal, Form, Radio } from "antd";
+import { Button, Modal, Form, Radio, Col } from "antd";
 import FloatInput from "../../molecules/FloatInput";
 import { dataDetalleRegistroIPM } from "../../../Mocks/DetalleRegistroIPM";
 
@@ -42,14 +42,16 @@ const Export = () => {
 
   return (
     <>
-      <Button
-        type="primary"
-        onClick={() => {
-          setVisible(true);
-        }}
-      >
-        Exportar
-      </Button>
+      <Col style={{ textAlign: "right", marginBottom: "25px" }}>
+        <Button
+          type="primary"
+          onClick={() => {
+            setVisible(true);
+          }}
+        >
+          Exportar
+        </Button>
+      </Col>
       <Modal
         visible={visible}
         title="Exportar"
