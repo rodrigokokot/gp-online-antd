@@ -15,10 +15,10 @@ function DetalleMovimientoIPM() {
     <>
       <h2>Id file {id} - IPM Detalle de registro procesado</h2>
       <h4>Fecha del proceso "variable date"</h4>
+      <Export/>
       <Table
         data={dataDetalleRegistroIPM}
         columns={columnsDetalleRegistroIPM}
-        actions={<Export/>}
       ></Table>
     </>
   );

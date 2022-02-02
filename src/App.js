@@ -50,10 +50,10 @@ function App() {
           <DashboardTemplate exact path="/movimientos/CTF/detalles/" component={lazy(() => import('./pages/Movimientos/MovimientosCTF/DetalleMovimientoCTF'))} />
           <DashboardTemplate exact path="/movimientos/CTF/detalles/:id" component={lazy(() => import('./pages/Movimientos/MovimientosCTF/DetalleRegistroCTF'))} />
 
-        <DashboardTemplate exact path="/emision/movimientos/autorizaciones" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesSearch'))} />
-        <DashboardTemplate exact path="/emision/movimientos/autorizaciones/nuevo" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesNew'))} />
-        <DashboardTemplate exact path="/emision/movimientos/autorizaciones/ver/:id" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesView'))} />
-        <DashboardTemplate exact path="/emision/movimientos" component={lazy(() => import('./pages/Emision/Emision'))} />
+          <DashboardTemplate exact path="/emision/movimientos/autorizaciones" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesSearch'))} />
+          <DashboardTemplate exact path="/emision/movimientos/autorizaciones/nuevo" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesNew'))} />
+          <DashboardTemplate exact path="/emision/movimientos/autorizaciones/ver/:id" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesView'))} />
+          <DashboardTemplate exact path="/emision/movimientos" component={lazy(() => import('./pages/Emision/Emision'))} />
 
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesSearch'))} />
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones/nuevo" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesNew'))} />
