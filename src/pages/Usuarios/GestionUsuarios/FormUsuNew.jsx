@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Radio,Form,Typography, Card} from 'antd';
+import Edit from "../../../components/organisms/Edit/index"; 
 import FloatInput from '../../../components/molecules/FloatInput';
 const { Group } = Radio;
 const { Title } = Typography;
@@ -19,8 +20,9 @@ const FormUsuNew = () => {
     const onChange3 = e => {
     setValue3(e.target.value);
     };
-    
-  return (<>  
+  
+  const FormularioUsuario = () => {
+    return (<>  
         
         <Card>
         <Title level={2}>Datos Principales</Title>
@@ -61,7 +63,7 @@ const FormUsuNew = () => {
             </Radio.Group>
         </Form.Item>
         </Card>
-
+        <br></br>
         <Card>  
             <Title level={2}>Perfil</Title>
             
@@ -82,8 +84,14 @@ const FormUsuNew = () => {
                     <Radio  value={"TotalCoin - Admin"} style={{marginLeft: 83,marginTop: 14}} >TotalCoin - Admin</Radio>
                 </Group>
             </Form.Item>
-        </Card>  
+        </Card>   
+        <br></br>  
   </>)
-};
+  };
 
+  return(
+  <>
+    <Edit component={FormularioUsuario} />
+  </>);
+}
 export default FormUsuNew;

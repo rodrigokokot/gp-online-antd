@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {Col, Button} from 'antd';
 import SearchForm from '../../../../components/organisms/SearchForm/index'
 import Table from '../../../../components/organisms/Table/index'
-import { AutorizacionesSearchArray } from '../../../../Mocks/AutorizacionesSearchMock';
+import { AutorizacionesSearchArray, columnsAutorizaciones, dataAutorizaciones } from '../../../../Mocks/AutorizacionesSearchMock';
 
 
 export default function AutorizacionesSearch() {
@@ -18,7 +18,7 @@ export default function AutorizacionesSearch() {
       </Col>
 
         <SearchForm array={AutorizacionesSearchArray} title="Busqueda de autorizaciones" span={6} />
-        <Table />
+        <Table data={dataAutorizaciones} columns={columnsAutorizaciones} expandible={false} editable={true} />
       
     </>
   );

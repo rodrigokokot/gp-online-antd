@@ -10,7 +10,7 @@ import {HelpImg, LoginImg} from '../assets/svg/img'
 import InlineSVG from 'svg-inline-react';
 import ResultSearch from '../components/molecules/ResultSearch'
 import BreadComponent from '../components/molecules/Breadcrum'
-import UserContext from '../context/User/UserContext'
+import { useAuth } from '../context/authContext'
 
 const validator = {
     require: {
@@ -21,12 +21,8 @@ const validator = {
 
 function Page1() {
 
-    const { user, getUser } = useContext(UserContext);
-
-    useEffect(() => {
-        getUser();
-        console.log(user);
-    }, [])
+    const authContext = useAuth()
+    console.log(authContext);
 
     const columns = [
         {

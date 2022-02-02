@@ -1,8 +1,12 @@
 import React, { lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import './App.less';
+<<<<<<< HEAD
 import UserState from './context/User/UserState'
 
+=======
+import { AuthProvider } from './context/authContext';
+>>>>>>> d611e6afcdb5c283f8274325ffcb8cde71d8bc6a
 //components
 
 // templates
@@ -22,14 +26,13 @@ function App() {
   // id from url
 
   return (
-
     <Router>
-      {/* <Suspense fallback={ "Cargando..." }> */}
       <Switch>
         <Route exact path="/"><Redirect to="/login" /></Route>
         <LoginTemplate exact path="/login" component={Login} />
-
-        <UserState>
+      </Switch>
+      <AuthProvider>
+        <Switch>
           <DashboardTemplate exact path="/gestionAprobaciones" component={lazy(() => import('./pages/GestionAprobaciones'))} />
 
           <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales" component={lazy(() => import('./pages/ParametrosPrincipales/GestionSucursales'))} />
@@ -48,36 +51,54 @@ function App() {
           <DashboardTemplate exact path="/movimientos/IPM/detalles/:id" component={lazy(() => import('./pages/Movimientos/MovimientosIPM/DetalleMovimientoIPM'))} />
           <DashboardTemplate exact path="/movimientos/IPM/detalles/:id/:registro" component={lazy(() => import('./pages/Movimientos/MovimientosIPM/DetalleRegistroIPM'))} />
 
-          <DashboardTemplate exact path="/movimientos/CTF" component={lazy(() => import('./pages/Movimientos/MovimientosCTF'))} />
-          <DashboardTemplate exact path="/movimientos/CTF/detalles/" component={lazy(() => import('./pages/Movimientos/MovimientosCTF/DetalleMovimientoCTF'))} />
-          <DashboardTemplate exact path="/movimientos/CTF/detalles/:id" component={lazy(() => import('./pages/Movimientos/MovimientosCTF/DetalleRegistroCTF'))} />
-
         <DashboardTemplate exact path="/emision/movimientos/autorizaciones" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesSearch'))} />
         <DashboardTemplate exact path="/emision/movimientos/autorizaciones/nuevo" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesNew'))} />
-        <DashboardTemplate exact path="/emision/movimientos/autorizaciones/editar/:id" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesEdit'))} />
+        <DashboardTemplate exact path="/emision/movimientos/autorizaciones/ver/:id" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesView'))} />
+        <DashboardTemplate exact path="/emision/movimientos" component={lazy(() => import('./pages/Emision/Emision'))} />
 
         <DashboardTemplate exact path="/emision/movimientos/consumos" component={lazy(() => import('./pages/Emision/Consumos'))} />
         <DashboardTemplate exact path="/emision/movimientos/consumos/consultaDeConsumo/:id" component={lazy(() => import('./pages/Emision/Consumos/ConsultaConsumos'))} />
 
+        <DashboardTemplate exact path="/emision/socios/cuentas" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentas'))} />
+        <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/editar/:idcuenta" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
+        <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/nueva" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaNew'))} />
+
+          <DashboardTemplate exact path="/emision/movimientos/autorizaciones" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesSearch'))} />
+          <DashboardTemplate exact path="/emision/movimientos/autorizaciones/nuevo" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesNew'))} />
+          <DashboardTemplate exact path="/emision/movimientos/autorizaciones/editar/:id" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesEdit'))} />
+
+          <DashboardTemplate exact path="/emision/movimientos/consumos" component={lazy(() => import('./pages/Emision/Consumos'))} />
+          <DashboardTemplate exact path="/emision/movimientos/consumos/consultaDeConsumo/:id" component={lazy(() => import('./pages/Emision/Consumos/ConsultaConsumos'))} />
+
+<<<<<<< HEAD
+          <DashboardTemplate exact path="/adquirencia" component={lazy(() => import('./pages/Adquirencia'))} />
+
+          <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda'))} />
+=======
           <DashboardTemplate exact path="/emision/socios/cuentas" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentas'))} />
           <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/editar/:id" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
           <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/nueva" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaNew'))} />
 
+>>>>>>> d611e6afcdb5c283f8274325ffcb8cde71d8bc6a
 
-        <DashboardTemplate exact path="/parametria" component={lazy(() => import('./pages/Parametria'))} />
+          <DashboardTemplate exact path="/parametria" component={lazy(() => import('./pages/Parametria'))} />
 
+<<<<<<< HEAD
+          <DashboardTemplate exact path="/rodrigo" component={lazy(() => import('./pages/Page1'))} />
+        </UserState>
+=======
           <DashboardTemplate exact path="/adquirencia" component={lazy(() => import('./pages/Adquirencia'))} />
+>>>>>>> d611e6afcdb5c283f8274325ffcb8cde71d8bc6a
 
           <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda'))} />
 
 
           <DashboardTemplate exact path="/rodrigo" component={lazy(() => import('./pages/Page1'))} />
-        </UserState>
 
-        {/* { routes.map((route, index) => <DashboardTemplate exact path={route.path} component={route.page} key={index} /> ) } */}
+          {/* { routes.map((route, index) => <DashboardTemplate exact path={route.path} component={route.page} key={index} /> ) } */}
 
-      </Switch>
-      {/* </Suspense> */}
+        </Switch>
+      </AuthProvider>
     </Router>
   );
 }

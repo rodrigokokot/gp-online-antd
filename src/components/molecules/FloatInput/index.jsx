@@ -3,7 +3,7 @@ import { Input } from "antd";
 import PropTypes from 'prop-types'
 import "./index.less";
 
-const FloatInput = ({outline, secondaryColor, ...props}) => {
+const FloatInput = ({outline, secondaryColor,disabled, ...props}) => {
   const [focus, setFocus] = useState(false);
   let { label, value, placeholder, type, required } = props;
 
@@ -37,7 +37,11 @@ const FloatInput = ({outline, secondaryColor, ...props}) => {
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
     >
-      <Input onChange={props.onChange} type={type} defaultValue={value} style={ !outline? !secondaryColor? primaryClass : secondaryClass : '' } />
+      <Input disabled={disabled} onChange={props.onChange} type={type} defaultValue={value}
+        style={
+          !outline?
+            !secondaryColor? primaryClass : secondaryClass
+          :  secondaryColor? { borderColor: '#ab218e', borderRadius: '6px', boxShadow: '#ab218e'} : {borderRadius: '6px'}  } />
       <label className={labelClass}>
         {isOccupied ? label : placeholder} {requiredMark}
       </label>
