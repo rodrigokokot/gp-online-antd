@@ -218,7 +218,6 @@ const GestionCuentaNew = () => {
                 </Form.Item>
                 <Form.Item
                 name="sexo"
-                rules={[{ required: true, message: "Ingrese sexo" }]}
                 >
                         <FloatSelect 
                                     label="Sexo"
@@ -246,7 +245,7 @@ const GestionCuentaNew = () => {
                     name="fechanacimiento"
                     rules={[{ required: true, message: "Ingrese Fecha de Nacimiento" }]}
                 >
-                    <DatePicker style={{width: '100%'}} label='Fecha de Nacimiento' placeholder='Fecha de Nacimiento' format={'DD/MM/YYYY'} onChange={onChangedate}/>
+                    <DatePicker style={{width: '100%'}} label='Fecha de Nacimiento*' placeholder='Fecha de Nacimiento*' format={'DD/MM/YYYY'} onChange={onChangedate}/>
                 </Form.Item>
                 <Form.Item 
                     name="email"
@@ -263,7 +262,6 @@ const GestionCuentaNew = () => {
                 </Form.Item>
                 <Form.Item
                 name="estadocivil"
-                rules={[{ required: true, message: "Ingrese Estado Civil" }]}
                 >
                         <FloatSelect 
                                     label="Estado civil"
@@ -337,15 +335,14 @@ const GestionCuentaNew = () => {
             <Checkbox onChange={onChangeActivar}>
             <Title level={5}>Ingresar un domicilio de correspondencia diferente</Title></Checkbox>
          
-          
-                <Col span={6}>    
-                    <Form.Item
-                        name="calle" 
-                        rules={[{ required: true, message: "Ingrese Calle" }]}
-                    >   
-                        <FloatInput disabled={disabled} label="Calle*" placeholder="Calle*"></FloatInput>
-                    </Form.Item>
-                </Col>
+            <Col span={6}>    
+                <Form.Item 
+                    name="calle" 
+                    rules={[{ required: true, message: "Ingrese Calle" }]}
+                >   
+                    <FloatInput disabled={disabled} label="Calle*" placeholder="Calle*"></FloatInput>
+                </Form.Item>
+            </Col>
             <Row gutter={16}>
                 <Col span={3}>
                     <Form.Item name='numero'
@@ -392,8 +389,8 @@ const GestionCuentaNew = () => {
                         rules={[{ required: true, message: "Ingrese provincia" }]}
                     >
                         <FloatSelect disabled={disabled}  
-                                label="Provincia"
-                                placeholder="Provincia"
+                                label="Provincia*"
+                                placeholder="Provincia*"
                                 options={[
                                 {
                                             title: "San Juan",
@@ -416,7 +413,7 @@ const GestionCuentaNew = () => {
                     <Form.Item name='telefono' 
                     rules={[{ required: true, message: "Ingrese Télefono" }]}   
                     >
-                        <FloatInput disabled={disabled} label='Télefono*' placeholder='Télefono*'></FloatInput>
+                        <FloatInput type='number' disabled={disabled} label='Télefono*' placeholder='Télefono*'></FloatInput>
                     </Form.Item>  
                     <Form.Item name='referencia'   
                     >

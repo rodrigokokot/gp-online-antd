@@ -6,7 +6,7 @@ import {GestionCuentaSearch, dataGestionCuenta, columnsGestionCuenta} from '../.
 import {Col, Button} from 'antd'
 
 /* hacer que router tengo la dir de app.js  */
-const GestionCuentas=()=> {    
+const AvisosViajes=()=> {    
   const [data, setData] = useState("");
 
   const handleCallback = (values) => {
@@ -47,7 +47,8 @@ const GestionCuentas=()=> {
           <SearchForm array={GestionCuentaSearch} parentCallback={handleCallback} title="Busqueda de Usuario" />
           <br></br>
           <Table data={data} columns={columnsGestionCuenta} expandible={false} editable={true}/>
-           
+          
+          
   </>);
 }
-export default GestionCuentas;
+export default AvisosViajes;
