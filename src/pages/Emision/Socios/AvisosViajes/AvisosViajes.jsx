@@ -1,9 +1,7 @@
 import React,{useState} from 'react';
 import SearchForm from '../../../../components/organisms/SearchForm/index'
 import Table from '../../../../components/organisms/Table/index'
-import {Link} from 'react-router-dom'
-import {GestionCuentaSearch, dataGestionCuenta, columnsGestionCuenta} from '../../../../Mocks/GestionCuentaSearchMock'
-import {Col, Button} from 'antd'
+import {AvisosViajesSearch, dataAvisosViajes, columnsAvisosViajes} from '../../../../Mocks/AvisosViajesSearchMock'
 
 /* hacer que router tengo la dir de app.js  */
 const AvisosViajes=()=> {    
@@ -17,16 +15,18 @@ const AvisosViajes=()=> {
         }
       })
     ) {
-      setData(dataGestionCuenta);
+      setData(dataAvisosViajes);
     } else {
       setData(
-        dataGestionCuenta.filter((d) => {
+        dataAvisosViajes.filter((d) => {
           return (
-            d.usuario.toString() === values.usuario.toString() ||
+            d.cuenta.toString() === values.usuario.toString() ||
             d.documento.toString() === values.documento.toString() ||
-            d.apellido.toString() === values.apellido.toString()||
-            d.nombre.toString() === values.nombre.toString()||
-            d.perfil.toString() === values.perfil.toString()
+            d.estado.toString() === values.apellido.toString()||
+            d.fdesde.toString() === values.nombre.toString()||
+            d.fhasta.toString() === values.perfil.toString()||
+            d.idviaje.toString() === values.perfil.toString()||
+            d.tdocumento.toString() === values.perfil.toString()
           );
         })
       );
@@ -35,20 +35,10 @@ const AvisosViajes=()=> {
   
   return(
   <>
-          <Col style={{ textAlign: "right", marginBottom: "25px"}}>
-            {/* width ver tamaño en Mocks*/}
-            <Link to="/emision/socios/cuentas/gestionDeCuentas/nueva"> 
-            <Button type="primary" size="small">
-              Nueva Cuenta
-            </Button>
-            </Link>
-          </Col >
           {/* width del searchfrom ver tamaño en Mocks*/}
-          <SearchForm array={GestionCuentaSearch} parentCallback={handleCallback} title="Busqueda de Usuario" />
+          <SearchForm array={AvisosViajesSearch} parentCallback={handleCallback} title="Busqueda de Usuario" />
           <br></br>
-          <Table data={data} columns={columnsGestionCuenta} expandible={false} editable={true}/>
-          
-          
+          <Table data={data} columns={columnsAvisosViajes} expandible={false} editable={true}/>
   </>);
 }
 export default AvisosViajes;
