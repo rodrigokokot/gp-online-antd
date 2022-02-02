@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Input, Button, Checkbox, Radio, Modal, Typography } from "antd";
+import { Form, Button, Modal, Typography } from "antd";
 import FloatInput from "../../molecules/FloatInput";
 
 const Edit = ({ component: Component }) => {

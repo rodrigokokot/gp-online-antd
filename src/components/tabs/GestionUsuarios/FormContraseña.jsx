@@ -6,18 +6,19 @@ const { Title } = Typography;
 
 const Contraseña = () => {
 
-  return (<> 
+  return (<>
       <Card>
         <Title level={2}>Contraseña</Title>
 
         <Form.Item name="password" style={{ width: 414 }}>
           <FloatInput
+            outline
             type="password"
             label="Ingresa tu contraseña para generar cambios"
             placeholder="Contraseña"
           ></FloatInput>
         </Form.Item>
-      </Card>   
+      </Card>
         <br></br></>
   );
 };
