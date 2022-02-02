@@ -37,7 +37,11 @@ const FloatInput = ({outline, secondaryColor,disabled, ...props}) => {
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
     >
-      <Input disabled={disabled} onChange={props.onChange} type={type} defaultValue={value} style={ !outline? !secondaryColor? primaryClass : secondaryClass : '' } />
+      <Input disabled={disabled} onChange={props.onChange} type={type} defaultValue={value}
+        style={
+          !outline?
+            !secondaryColor? primaryClass : secondaryClass
+          :  secondaryColor? { borderColor: '#ab218e', borderRadius: '6px', boxShadow: '#ab218e'} : {borderRadius: '6px'}  } />
       <label className={labelClass}>
         {isOccupied ? label : placeholder} {requiredMark}
       </label>

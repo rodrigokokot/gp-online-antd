@@ -51,10 +51,12 @@ const Edit = ({ component: Component }) => {
         <h2>Esta seguro que desea hacer cambios en esta sucursal?</h2>
       </Modal>
 
-      <Button type="primary" onClick={showModal}>
-        Guardar cambios
-      </Button>
-      <Button>Cancelar</Button>
+      <div style={{ marginTop: '36px', display: 'flex', gap: '12px' }}>
+        <Button type="primary" onClick={showModal}>
+          Guardar cambios
+        </Button>
+        <Button style={{ border: '2px solid #0DD8B0' }}>Cancelar</Button>
+      </div>
     </>
   );
 };

@@ -16,13 +16,17 @@ const FloatSelected = ({options, outline, width, mode, ...props}) => {
 
   const requiredMark = required ? <span className="text-danger">*</span> : null;
 
+  const selectOutline = outline? 'select-outline' : 'select-bottom'
+
   return (
     <div
-      className="float-label"
+      className={`float-label ${selectOutline}`}
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
     >
-      <Select mode={mode} maxTagCount='responsive' style={{width: width}} onChange={props.onChange} disabled={disabled} className={ !outline? "select-bottom" : '' } >
+      <Select mode={mode} maxTagCount='responsive' style={{width: width }} onChange={props.onChange} disabled={disabled} 
+      // className={ !outline? "select-bottom" : '' }
+       >
         {
           options && options.map((opt, index) => <Select.Option value={opt.value} disabled={opt.disabled} key={index}>{opt.icon}{opt.title}</Select.Option>)
         }
