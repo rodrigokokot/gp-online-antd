@@ -105,6 +105,10 @@ const routes = [
                 name: "Tipos de Cargos",
                 path: "/parametria/tiposDeCargos",
             },
+            {
+                name: "Cargos por Productos",
+                path: "/parametria/cargosPorProductos",
+            },
         ]
     },
     {
