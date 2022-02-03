@@ -11,11 +11,8 @@ export default function GestionAdicionalesNew() {
     console.log(values);
   };
 
-  const [checked, setChecked] = useState(true);
-
   const SearchDNI = () => {
     const [form] = Form.useForm();
-
 
     return (
       <>
@@ -85,175 +82,228 @@ export default function GestionAdicionalesNew() {
   };
 
   const FormularioNuevo = () => {
-    
-    const onChange = (e) =>{
-        setChecked(e.target.checked)
-    }
-     
-     return <>
-          <Card>
-                <Row gutter={[24,48]}>
-                    <Col span={8}>
+    const [checked, setChecked] = useState(true);
+    const [key, setKey] = useState(1);
 
-                        <Form.Item name="nombre" rules={[{required: true, message: "Ingrese Nombre"}]}>
-                            <FloatInput label="Nombre" />
-                        </Form.Item>
-                        
-                        <Form.Item name="Apellido" rules={[{required: true, message: "Ingrese Apellido"}]}>
-                            <FloatInput label="Apellido" />
-                        </Form.Item>
+    const Domicilio = () => {
+      return (
+        <div key={key}>
+          <Row style={{ marginTop: 24 }} gutter={[24, 24]}>
+            <Col span={8}>
+              <Form.Item
+                name="calle"
+                rules={[{ required: true, message: "Ingrese domicilio" }]}
+              >
+                <FloatInput label="Calle" />
+              </Form.Item>
+            </Col>
+          </Row>
 
-                        <Form.Item name="Sexo" >
-                            <FloatSelected label="Sexo" options={[
-                                {
-                                    title:"Masculino",
-                                    value:"Masculino",
-                                    disabled: false,
-                                },
-                                {
-                                    title:"Femenino",
-                                    value:"Femenino",
-                                    disabled:false,
-                                },
-                                {
-                                    title:"Otro",
-                                    value:"Otro",
-                                    disabled:false,
-                                },
-                            ]} />
-                        </Form.Item>
+          <Row gutter={48}>
+            <Col span={4}>
+              <Form.Item name="numero">
+                <FloatInput label="Número" />
+              </Form.Item>
+            </Col>
 
-                        <Form.Item name="estadocivil">
-                            <FloatSelected label="Estado Civil" options={[
-                                {
-                                    title:"Soltero/a",
-                                    value:"Soltero/a",
-                                    disabled:false,
-                                },
-                                {
-                                    title:"Casado/a",
-                                    value:"Casado/a",
-                                    disabled:false,
-                                }
-                            ]}    />
-                        </Form.Item>
+            <Col span={4}>
+              <Form.Item name="piso">
+                <FloatInput label="Piso" />
+              </Form.Item>
+            </Col>
 
-                        <Form.Item name="fecha-nac">
-                            <DatePicker placeholder="Fecha de Nacimiento" />                                
-                        </Form.Item>
+            <Col span={4}>
+              <Form.Item name="depto">
+                <FloatInput label="Depto" />
+              </Form.Item>
+            </Col>
 
-                        <Form.Item name="pais">
-                            <FloatSelected label="País de nacimiento" options={[
-                                {
-                                    title:"Argentina",
-                                    value:"Argentina",
-                                    disabled:false,
-                                },
-                            ]} />
-                        </Form.Item>
-                            
-                        <Form.Item name="email" rules={[{required:true, message:"Ingrese un email"}]}>
-                            <FloatInput label="E-mail" /> 
-                        </Form.Item>
+            <Col span={4}>
+              <Form.Item
+                name="cp"
+                rules={[{ required: true, message: "Ingrese Código Postal" }]}
+              >
+                <FloatInput label="Código Postal" />
+              </Form.Item>
+            </Col>
+          </Row>
 
-                        <Form.Item name="tributario" rules={[{required:true, message:"Ingrese Código tributario"}]}>
-                            <FloatInput label="Código tributario" />
-                        </Form.Item>
+          <Row gutter={[24, 24]}>
+            <Col span={8}>
+              <Form.Item name="entrec">
+                <FloatInput label="Entre calles" />
+              </Form.Item>
 
-                        <Form.Item name="embozado" rules={[{required:true, message:"Ingrese Nombre embozado"}]}>
-                            <FloatInput label="Nombre embozado" />
-                        </Form.Item>
-                    </Col>
-                </Row>
-          </Card>
+              <Form.Item name="barrio">
+                <FloatInput label="Barrio" />
+              </Form.Item>
 
-          <Card>
-              <Space direction="vertical" size="middle">
-                <h1 className="purple-title">Domicilio</h1>
-                <Checkbox onChange={onChange} checked={checked}> Informa domicilio</Checkbox>
+              <Form.Item
+                name="localidad"
+                rules={[{ required: true, message: "Ingrese Localidad" }]}
+              >
+                <FloatInput label="Localidad" />
+              </Form.Item>
 
-                </Space>
-                {checked && <>
-                    <Row style={{marginTop: 24}} gutter={[24,24]}>
-                        <Col span={8}>
-                            <Form.Item name="calle" rules={[{required: true, message:"Ingrese domicilio"}]}>
-                                <FloatInput label="Calle"/>
-                            </Form.Item>                        
-                        </Col>
-                    </Row>
-                    
-                    <Row gutter={48}>
-                        <Col span={4}>
-                            <Form.Item name="numero">
-                                <FloatInput label="Número"/>
-                            </Form.Item>                        
-                        </Col>
+              <Form.Item
+                name="provincia"
+                rules={[{ required: true, message: "Ingrese Provincia" }]}
+              >
+                <FloatSelected
+                  label="Provincia"
+                  options={[
+                    {
+                      title: "San Juan",
+                      value: "San Juan",
+                      disabled: false,
+                    },
+                    {
+                      title: "Mendoza",
+                      value: "Mendoza",
+                      disabled: false,
+                    },
+                  ]}
+                />
+              </Form.Item>
 
-                        <Col span={4}>
-                            <Form.Item name="piso">
-                                <FloatInput label="Piso"/>
-                            </Form.Item>                        
-                        </Col>
+              <Form.Item
+                name="telefono"
+                rules={[{ required: true, message: "Ingrese Teléfono" }]}
+              >
+                <FloatInput label="Teléfono" />
+              </Form.Item>
 
-                        <Col span={4}>
-                            <Form.Item name="depto">
-                                <FloatInput label="Depto"/>
-                            </Form.Item>                        
-                        </Col>
+              <Form.Item name="referencia">
+                <FloatInput label="Referencia" />
+              </Form.Item>
+            </Col>
+          </Row>
+        </div>
+      );
+    };
 
-                        <Col span={4}>
-                            <Form.Item name="cp" rules={[{required:true, message:"Ingrese Código Postal"}]}>
-                                <FloatInput label="Código Postal"/>
-                            </Form.Item>                        
-                        </Col>
-                    </Row>
+    const onChange = (e) => {
+      setChecked(e.target.checked);
+      setKey(key + 1);
+      console.log(key);
+    };
 
-                    <Row gutter={[24,24]}>
-                        <Col span={8}>
-                            <Form.Item name="entrec">
-                                <FloatInput label="Entre calles" />
-                            </Form.Item>
+    return (
+      <>
+        <Card>
+          <Row gutter={[24, 48]}>
+            <Col span={8}>
+              <Form.Item
+                name="nombre"
+                rules={[{ required: true, message: "Ingrese Nombre" }]}
+              >
+                <FloatInput label="Nombre" />
+              </Form.Item>
 
+              <Form.Item
+                name="Apellido"
+                rules={[{ required: true, message: "Ingrese Apellido" }]}
+              >
+                <FloatInput label="Apellido" />
+              </Form.Item>
 
+              <Form.Item name="Sexo">
+                <FloatSelected
+                  label="Sexo"
+                  options={[
+                    {
+                      title: "Masculino",
+                      value: "Masculino",
+                      disabled: false,
+                    },
+                    {
+                      title: "Femenino",
+                      value: "Femenino",
+                      disabled: false,
+                    },
+                    {
+                      title: "Otro",
+                      value: "Otro",
+                      disabled: false,
+                    },
+                  ]}
+                />
+              </Form.Item>
 
-                            <Form.Item name="barrio">
-                                <FloatInput label="Barrio" />
-                            </Form.Item>
+              <Form.Item name="estadocivil">
+                <FloatSelected
+                  label="Estado Civil"
+                  options={[
+                    {
+                      title: "Soltero/a",
+                      value: "Soltero/a",
+                      disabled: false,
+                    },
+                    {
+                      title: "Casado/a",
+                      value: "Casado/a",
+                      disabled: false,
+                    },
+                  ]}
+                />
+              </Form.Item>
 
-                            <Form.Item name="localidad" rules={[{required:true, message:"Ingrese Localidad"}]}>
-                                <FloatInput label="Localidad" />
-                            </Form.Item>
+              <Form.Item name="fecha-nac">
+                <DatePicker placeholder="Fecha de Nacimiento" />
+              </Form.Item>
 
-                            <Form.Item name="provincia" rules={[{required:true, message:"Ingrese Provincia"}]}>
-                                <FloatSelected label="Provincia" options={[
-                                    {
-                                        title:"San Juan",
-                                        value:"San Juan",
-                                        disabled:false,
-                                    },
-                                    {
-                                        title:"Mendoza",
-                                        value:"Mendoza",
-                                        disabled:false,
-                                    },
-                                ]} />
-                            </Form.Item>
+              <Form.Item name="pais">
+                <FloatSelected
+                  label="País de nacimiento"
+                  options={[
+                    {
+                      title: "Argentina",
+                      value: "Argentina",
+                      disabled: false,
+                    },
+                  ]}
+                />
+              </Form.Item>
 
-                            <Form.Item name="telefono" rules={[{required:true, message:"Ingrese Teléfono"}]}>
-                                <FloatInput label="Teléfono" />
-                            </Form.Item>
+              <Form.Item
+                name="email"
+                rules={[{ required: true, message: "Ingrese un email" }]}
+              >
+                <FloatInput label="E-mail" />
+              </Form.Item>
 
-                            <Form.Item name="referencia">
-                                <FloatInput label="Referencia" />
-                            </Form.Item>
-                        </Col>
-                    </Row>
-                    </>
-                }
+              <Form.Item
+                name="tributario"
+                rules={[
+                  { required: true, message: "Ingrese Código tributario" },
+                ]}
+              >
+                <FloatInput label="Código tributario" />
+              </Form.Item>
 
-          </Card>
+              <Form.Item
+                name="embozado"
+                rules={[{ required: true, message: "Ingrese Nombre embozado" }]}
+              >
+                <FloatInput label="Nombre embozado" />
+              </Form.Item>
+            </Col>
+          </Row>
+        </Card>
+
+        <Card key={key}>
+          <Space direction="vertical" size="middle">
+            <h1 className="purple-title">Domicilio</h1>
+            <Checkbox onChange={onChange} checked={checked}>
+              Informa domicilio
+            </Checkbox>
+          </Space>
+
+          {checked && <Domicilio key={key} />}
+        </Card>
       </>
-  }
+    );
+  };
 
   return (
     <div>

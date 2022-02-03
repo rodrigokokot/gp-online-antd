@@ -76,6 +76,10 @@ const routes = [
                     {
                         name: "Adicionales",
                         path: "/emision/socios/adicionales",
+                    },
+                    {
+                        name: "Tarjetas",
+                        path: "/emision/socios/tarjetas",
                     }
                 ]
             },
