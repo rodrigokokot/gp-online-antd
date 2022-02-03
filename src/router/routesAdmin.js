@@ -60,6 +60,14 @@ const routes = [
                         name: "Consumos",
                         path: "/emision/movimientos/consumos",
                     },
+                    {
+                        name: "Cargas",
+                        path: "/emision/movimientos/cargas",
+                    },
+                    {
+                        name: "Cargos y Ajustes",
+                        path: "/emision/movimientos/cargosAjustes",
+                    },
                 ]
             },
             {
@@ -74,13 +82,17 @@ const routes = [
                         path: "/emision/socios/movimientosDeCuenta",
                     },
                     {
+                        name: "Adicionales",
+                        path: "/emision/socios/adicionales",
+                    },
+                    {
+                        name: "Tarjetas",
+                        path: "/emision/socios/tarjetas",
+                    },
+                    {
                         name: "Avisos de Viajes",
                         path: "/emision/socios/avisosDeViajes",
                     },
-                    {
-                        name: "Adicionales",
-                        path: "/emision/socios/adicionales",
-                    }
                 ]
             },
 
