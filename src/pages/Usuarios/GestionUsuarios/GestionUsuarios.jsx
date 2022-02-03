@@ -31,23 +31,24 @@ function GestionUsuario() {
       );
     }
   };
-  
+
   return(
   <>
           <Col style={{ textAlign: "right", marginBottom: "25px"}}>
-            
-            <Link to="/usuarios/gestionUsuarios/crear"> 
+
+            <Link to="/usuarios/gestionUsuarios/crear">
             <Button type="primary" size="small">
               Nuevo Usuario
             </Button>
             </Link>
           </Col >
-          <SearchForm array={GestionUsuariosSearch} parentCallback={handleCallback} title="Busqueda de Usuario" />
-          
-          <Table data={data} columns={columnsGestionUsuarios} expandible={false} editable={true}/>
-          
+          <SearchForm array={GestionUsuariosSearch} parentCallback={handleCallback} title="Busqueda de usuarios" />
+          <div style={{ marginTop: data.length == 0? '70px' : '8px' }}>
+            <Table data={data} columns={columnsGestionUsuarios} expandible={false} editable={true}/>
+          </div>
+
   </>);
-  
+
 }
 
 export default GestionUsuario;

@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchForm from '../../../components/organisms/SearchForm'
-import Table from '../../../components/organisms/Table';
-import { columnsEmisionConsumos, dataEmisionConsumos, EmisionConsumosSearch } from '../../../Mocks/EmisionConsumos';
+import SearchForm from '../../../../components/organisms/SearchForm'
+import Table from '../../../../components/organisms/Table';
+import { columnsEmisionConsumos, dataEmisionConsumos, EmisionConsumosSearch } from '../../../../Mocks/EmisionConsumos';
 
 
 

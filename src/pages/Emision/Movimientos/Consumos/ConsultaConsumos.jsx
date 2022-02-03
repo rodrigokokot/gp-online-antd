@@ -1,11 +1,11 @@
 import { Card, Tabs } from "antd";
 import React from "react";
-import Export from "../../../components/organisms/Export";
-import ConsultasAutorizacion from "../../../components/tabs/EmisionConsumos/ConsultasAutorizacion";
-import DatosAdicionales from "../../../components/tabs/EmisionConsumos/DatosAdicionales";
-import DatosComercio from "../../../components/tabs/EmisionConsumos/DatosComercio";
-import DatosConsumo from "../../../components/tabs/EmisionConsumos/DatosConsumo";
-import DatosSocio from "../../../components/tabs/EmisionConsumos/DatosSocio";
+import Export from "../../../../components/organisms/Export";
+import ConsultasAutorizacion from "../../../../components/tabs/EmisionConsumos/ConsultasAutorizacion";
+import DatosAdicionales from "../../../../components/tabs/EmisionConsumos/DatosAdicionales";
+import DatosComercio from "../../../../components/tabs/EmisionConsumos/DatosComercio";
+import DatosConsumo from "../../../../components/tabs/EmisionConsumos/DatosConsumo";
+import DatosSocio from "../../../../components/tabs/EmisionConsumos/DatosSocio";
 
 const ConsultaConsumos = () => {
   const { TabPane } = Tabs;

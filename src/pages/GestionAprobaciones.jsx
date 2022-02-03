@@ -3,13 +3,14 @@ import { Card, Tabs } from "antd";
 
 import Ajustes from "../components/tabs/GestionAprobaciones/Ajustes";
 import Novedades from "../components/tabs/GestionAprobaciones/Novedades";
+import DateRangeFilter from "../components/organisms/DateRangeFilter";
 
 function GestionAprobaciones() {
   const { TabPane } = Tabs;
 
   return (
     <>
-      <Tabs defaultActiveKey="1" style={{ color: "#C1C5C8" }}>
+      <Tabs defaultActiveKey="1" style={{ color: "#C1C5C8" }} tabBarExtraContent={<DateRangeFilter />}>
         {/* Pantalla 1 */}
         <TabPane tab="Novedades por confirmar" key="1">
           <Novedades />

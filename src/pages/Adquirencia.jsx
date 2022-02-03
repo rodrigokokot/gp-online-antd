@@ -5,7 +5,7 @@ function Adquirencia() {
 
   return (
     <div>
-
+      Adquirencia
     </div>
   );
 }

@@ -1,25 +1,39 @@
-import { Button, Card, Modal } from "antd";
+import { Button, Card, Modal, Typography } from "antd";
 import React from "react";
 import { useState } from "react/cjs/react.development";
 
 function DeploymentConfirmation() {
-  const [isModalVisible, setIsModalVisible] = useState(false); 
+  // const [isModalVisible, setIsModalVisible] = useState(false); 
   const [permission, setPermission] = useState(true);    //permisos para aplicar confirmaciones 
 
   const showModal = () => {
-    setIsModalVisible(true);
+    // setIsModalVisible(true);
+    Modal.confirm({
+      icon: null,
+      content: <Typography.Title level={4} style={{ textAlign: 'center' }}>¿Estás seguro que deseas aplicar esta confimación?</Typography.Title>,
+      okText: "Aplicar Confirmación",
+      width: 800,
+      cancelText: "Cancelar",
+      closable: true,
+      onOk() {
+        console.log('OK');
+      },
+      onCancel() {
+        console.log('Cancel');
+      },
+    })
   };
 
-  const handleOk = () => {
-    setIsModalVisible(false);
-  };
+  // const handleOk = () => {
+  //   setIsModalVisible(false);
+  // };
 
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
+  // const handleCancel = () => {
+  //   setIsModalVisible(false);
+  // };
 
   return (
-    <Card>
+    <Card style={{ borderRadius: '0.5rem' }}>
       <h2 style={{ color: "#AB218E" }}>Informacion de la novedad</h2>
       <div
         style={{
@@ -31,32 +45,32 @@ function DeploymentConfirmation() {
       >
         <div>
           <p>
-            ID de la transaccion:<h5>213432</h5>
+            ID de la transaccion:<h5><b>213432</b></h5>
           </p>
           <p>
-            Usuario de inicio:<h5>Emilia</h5>
+            Usuario de inicio:<h5><b>Emilia</b></h5>
           </p>
           <p>
-            Usuario de finalizo:<h5>Emilia</h5>
-          </p>
-        </div>
-        <div>
-          <p>
-            Tipo de transaccion:<h5>Actualizacion de la targeta</h5>
-          </p>
-          <p>
-            Fecha de inicio:<h5>23/4/19</h5>
-          </p>
-          <p>
-            Fecha de finalizacion:<h5>-</h5>
+            Usuario de finalizo:<h5><b>Emilia</b></h5>
           </p>
         </div>
         <div>
           <p>
-            Estado de transaccion:<h5>Pendiente</h5>
+            Tipo de transaccion:<h5><b>Actualizacion de la targeta</b></h5>
           </p>
           <p>
-            Comentario:<h5>-</h5>
+            Fecha de inicio:<h5><b>23/4/19</b></h5>
+          </p>
+          <p>
+            Fecha de finalizacion:<h5><b>-</b></h5>
+          </p>
+        </div>
+        <div>
+          <p>
+            Estado de transaccion:<h5><b>Pendiente</b></h5>
+          </p>
+          <p>
+            Comentario:<h5><b>-</b></h5>
           </p>
         </div>
       </div>
@@ -72,42 +86,42 @@ function DeploymentConfirmation() {
       >
         <div>
           <p>
-            Emisor:<h5>pedro</h5>
+            Emisor:<h5><b>pedro</b></h5>
           </p>
           <p>
-            Documento:<h5>Pendiente</h5>
+            Documento:<h5><b>Pendiente</b></h5>
           </p>
           <p>
-            Marca:<h5>23/4/19</h5>
+            Marca:<h5><b>23/4/19</b></h5>
           </p>
           <p>
-            Datos de transaccion:<h5>Emilia</h5>
+            Datos de transaccion:<h5><b>Emilia</b></h5>
           </p>
         </div>
         <div>
           <p>
-            Sucursal:<h5>Actualizacion de la targeta</h5>
+            Sucursal:<h5><b>Actualizacion de la targeta</b></h5>
           </p>
 
           <p>
-            Cliente:<h5>Emilia</h5>
+            Cliente:<h5><b>Emilia</b></h5>
           </p>
 
           <p>
-            Cuenta:<h5>-</h5>
+            Cuenta:<h5><b>-</b></h5>
           </p>
 
           <p>
-            Producto:<h5>-</h5>
+            Producto:<h5><b>-</b></h5>
           </p>
         </div>
       </div>
       {permission ? (           //permisos para aplicar confirmaciones 
-        <div>
+        <div style={{ marginTop: '36px', display: 'flex', gap: '12px' }}>
           <Button type="primary" onClick={showModal}>
             Aplicar confirmacion
           </Button>
-          <Modal
+          {/* <Modal
             title="¿Estás seguro que deseas aplicar esta confimación?"
             centered
             visible={isModalVisible}
@@ -117,12 +131,12 @@ function DeploymentConfirmation() {
               <Button key="submit" type="primary" onClick={handleOk}>
                 Aplicar Confirmacion
               </Button>,
-              <Button key="back" onClick={handleCancel}>
+              <Button key="back" onClick={handleCancel} style={{ border: '2px solid #0DD8B0' }}>
                 Cancelar
               </Button>,
             ]}
-          ></Modal>
-          <Button>Cancelar confirmacion</Button>
+          ></Modal> */}
+          <Button style={{ border: '2px solid #0DD8B0' }}>Cancelar confirmacion</Button>
         </div>
       ) : null}
     </Card>

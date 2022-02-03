@@ -1,6 +1,6 @@
 const routes = [
     {
-        name: "Gestion de Aprobaciones",
+        name: "Gestión de Aprobaciones",
         icon: 'HomeOutlined',
         path: "/gestionAprobaciones",
     },
@@ -31,7 +31,6 @@ const routes = [
         ]
     },
     {
-        // path: "/movimientos",
         name: "Movimientos",
         icon: "SwapOutlined",
         subItems: [
@@ -60,6 +59,14 @@ const routes = [
                         name: "Consumos",
                         path: "/emision/movimientos/consumos",
                     },
+                    {
+                        name: "Cargas",
+                        path: "/emision/movimientos/cargas",
+                    },
+                    {
+                        name: "Cargos y Ajustes",
+                        path: "/emision/movimientos/cargosAjustes",
+                    },
                 ]
             },
             {
@@ -71,7 +78,7 @@ const routes = [
                     },
                     {
                         name: "Movimiento de cuentas",
-                        path: "/emision/socios/movimientoCuentas",
+                        path: "/emision/socios/movimientosDeCuenta",
                     },
                     {
                         name: "Adicionales",
@@ -80,7 +87,11 @@ const routes = [
                     {
                         name: "Tarjetas",
                         path: "/emision/socios/tarjetas",
-                    }
+                    },
+                    {
+                        name: "Avisos de Viajes",
+                        path: "/emision/socios/avisosDeViajes",
+                    },
                 ]
             },
 

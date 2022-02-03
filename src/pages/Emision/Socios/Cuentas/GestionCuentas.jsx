@@ -22,11 +22,14 @@ const GestionCuentas=()=> {
       setData(
         dataGestionCuenta.filter((d) => {
           return (
-            d.usuario.toString() === values.usuario.toString() ||
-            d.documento.toString() === values.documento.toString() ||
-            d.apellido.toString() === values.apellido.toString()||
+            d.estado.toString() === values.estado.toString() ||
+            d.gpafinidad.toString() === values.gpafinidad.toString() ||
+            d.idcuenta.toString() === values.idcuenta.toString()||
             d.nombre.toString() === values.nombre.toString()||
-            d.perfil.toString() === values.perfil.toString()
+            d.producto.toString() === values.producto.toString()||
+            d.tarjeta.toString() === values.tarjeta.toString()||
+            d.cexterna.toString() === values.cexterna.toString()||
+            d.dni.toString() === values.dni.toString()
           );
         })
       );
@@ -47,8 +50,7 @@ const GestionCuentas=()=> {
           <SearchForm array={GestionCuentaSearch} parentCallback={handleCallback} title="Busqueda de Usuario" />
           <br></br>
           <Table data={data} columns={columnsGestionCuenta} expandible={false} editable={true}/>
-          
-          
+           
   </>);
 }
 export default GestionCuentas;

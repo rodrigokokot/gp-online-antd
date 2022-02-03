@@ -8,12 +8,9 @@ import {
 
 function DetalleMovimientosCTF() {
   return (
-    <> 
-      <Table
-        data={dataDetallesCTF}
-        columns={columnsDetallesCTF}
-        actions={<Export />}
-      ></Table>
+    <>
+      <Export dataExport={dataDetallesCTF}/>
+      <Table data={dataDetallesCTF} columns={columnsDetallesCTF}></Table>
     </>
   );
 }
