@@ -83,11 +83,10 @@ export default function GestionAdicionalesNew() {
 
   const FormularioNuevo = () => {
     const [checked, setChecked] = useState(true);
-    const [key, setKey] = useState(1);
 
     const Domicilio = () => {
       return (
-        <div key={key}>
+        <div>
           <Row style={{ marginTop: 24 }} gutter={[24, 24]}>
             <Col span={8}>
               <Form.Item
@@ -184,8 +183,6 @@ export default function GestionAdicionalesNew() {
 
     const onChange = (e) => {
       setChecked(e.target.checked);
-      setKey(key + 1);
-      console.log(key);
     };
 
     return (
@@ -291,7 +288,7 @@ export default function GestionAdicionalesNew() {
           </Row>
         </Card>
 
-        <Card key={key}>
+        <Card>
           <Space direction="vertical" size="middle">
             <h1 className="purple-title">Domicilio</h1>
             <Checkbox onChange={onChange} checked={checked}>
@@ -299,7 +296,7 @@ export default function GestionAdicionalesNew() {
             </Checkbox>
           </Space>
 
-          {checked && <Domicilio key={key} />}
+          {checked && <Domicilio />}
         </Card>
       </>
     );
