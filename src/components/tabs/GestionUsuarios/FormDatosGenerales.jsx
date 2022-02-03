@@ -3,10 +3,10 @@ import { Radio, Form, Typography,Card ,Col,Row} from "antd";
 import FloatInput from "../../molecules/FloatInput";
 import { useParams } from "react-router-dom";
 const { Group } = Radio;
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 const DatosGenerales = () => {
-  
+
   const { usuario } = useParams();
   const [value, setValue] = useState("");
   const onChange = (e) => {
@@ -25,8 +25,8 @@ const DatosGenerales = () => {
 
   return (
     <>
-      <Card>
-        <Title level={2}>Perfil</Title>
+      <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
+        <Title level={4}  style={{ color: '#ab218e' }}>Perfil</Title>
 
         <Title level={5}>Usuario</Title>
           <Form.Item name="usuario">
@@ -37,10 +37,10 @@ const DatosGenerales = () => {
                 <Radio.Group onChange={onChange} value={value}>
                     <Row >
                         <Col span={5}>
-                            <Radio style={{ marginTop: 10 }} value={"Prueba QA"}>Prueba QA</Radio> 
+                            <Radio style={{ marginTop: 10 }} value={"Prueba QA"}>Prueba QA</Radio>
                             <Radio style={{ marginTop: 10 }} value={"Nueva prueba perfil QA"}>Nueva prueba perfil QA</Radio>
                             <Radio style={{ marginTop: 10 }} value={"Prueba"} >Prueba</Radio>
-                            <Radio style={{ marginTop: 10 }} value={"Prueba perfil Admin"} >Prueba perfil Admin</Radio> 
+                            <Radio style={{ marginTop: 10 }} value={"Prueba perfil Admin"} >Prueba perfil Admin</Radio>
                         </Col>
                         <Col span={4}>
                             <Radio style={{ marginTop: 10 }} value={"TotalCoin - Consultas"}>TotalCoin - Consultas</Radio>
@@ -52,25 +52,24 @@ const DatosGenerales = () => {
                 </Radio.Group>
             </Form.Item>
       </Card>
-        <br></br>
-      <Card>
-        <Title level={2}>Datos Principales</Title>
+      <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
+        <Title level={4}  style={{ color: '#ab218e' }}>Datos Principales</Title>
 
-        <Col span={6}>   
-        <Form.Item name='nombre'>
-             <FloatInput type="text" label='Nombre' placeholder='Nombre'></FloatInput>
-        </Form.Item>
-        
-        <Form.Item name='apellido'>
-             <FloatInput type="text" label='Apellido' placeholder='Apellido'></FloatInput>
-        </Form.Item>
+        <Col span={6}>
+          <Form.Item name='nombre'>
+              <FloatInput outline type="text" label='Nombre' placeholder='Nombre'></FloatInput>
+          </Form.Item>
+
+          <Form.Item name='apellido'>
+              <FloatInput outline type="text" label='Apellido' placeholder='Apellido'></FloatInput>
+          </Form.Item>
         </Col>
-        <Title level={5}>Tipo de Documento</Title>
-        <Form.Item name='tipodocumento'> 
+        <Text>Tipo de Documento</Text>
+        <Form.Item name='tipodocumento'>
                 <Radio.Group onChange={onChange2} value={value2}>
                     <Row justify="space-between">
                     <Col span={4}>
-                        <Radio style={{ marginTop: 10 }} value={"DNI"}>DNI</Radio> 
+                        <Radio style={{ marginTop: 10 }} value={"DNI"}>DNI</Radio>
                         <Radio style={{ marginTop: 10 }} value={"CUIT"}>CUIT</Radio>
                     </Col>
                     <Col span={8}>
@@ -78,8 +77,8 @@ const DatosGenerales = () => {
                         <Radio style={{ marginTop: 10 }} value={"LIBRETA DE ENROLAMIENTO"}>LIBRETA DE ENROLAMIENTO</Radio>
                     </Col>
                     <Col span={4}>
-                        <Radio style={{ marginTop: 10 }} value={"CUIL"}>CUIL</Radio> 
-                        <Radio style={{ marginTop: 10 }} value={"PASAPORTE"} >PASAPORTE</Radio> 
+                        <Radio style={{ marginTop: 10 }} value={"CUIL"}>CUIL</Radio>
+                        <Radio style={{ marginTop: 10 }} value={"PASAPORTE"} >PASAPORTE</Radio>
                     </Col>
                     <Col span={4}>
                         <Radio style={{ marginTop: 10 }} value={"CI"}>CI</Radio>
@@ -89,14 +88,14 @@ const DatosGenerales = () => {
         </Form.Item>
         <Col span={6}>
             <Form.Item name='documento'>
-                <FloatInput type="number" label='N° de Documento' placeholder='N° de Documento'></FloatInput>
+                <FloatInput outline type="number" label='N° de Documento' placeholder='N° de Documento'></FloatInput>
             </Form.Item>
 
             <Form.Item name='email'>
-                <FloatInput type="email" label='E-mail' placeholder='Email'></FloatInput>
+                <FloatInput outline type="email" label='E-mail' placeholder='Email'></FloatInput>
             </Form.Item>
         </Col>
-        <Title level={5}>Estado</Title>
+        <Text>Estado</Text>
         <Form.Item name='estado'>
             <Radio.Group onChange={onChange3} value={value3}>
                 <Radio  value={"Habilitado"}>Habilitado</Radio> <br />
@@ -104,8 +103,7 @@ const DatosGenerales = () => {
                 <Radio  value={"Baja"} style={{marginTop: 14}}>Baja</Radio><br />
             </Radio.Group>
         </Form.Item>
-      </Card>   
-        <br></br>
+      </Card>
     </>
   );
 };
