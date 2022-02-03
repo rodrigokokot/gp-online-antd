@@ -11,21 +11,19 @@ function NuevaSucursal() {
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
           <Typography.Title level={4} style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
           <Col span={8}>
+            <Form.Item
+              name="codigo"
+              rules={[{ required: true, message: "Ingrese código" }]}
+            >
+              <FloatInput outline label="Codigo" placeholder="Código"></FloatInput>
+            </Form.Item>
 
-
-          <Form.Item
-            name="codigo"
-            rules={[{ required: true, message: "Ingrese código" }]}
-          >
-            <FloatInput outline label="Codigo" placeholder="Código"></FloatInput>
-          </Form.Item>
-
-          <Form.Item
-            name="descripcion"
-            rules={[{ required: true, message: "Ingrese descripción" }]}
-          >
-            <FloatInput outline label="Descripcion" placeholder="Descripcion" />
-          </Form.Item>
+            <Form.Item
+              name="descripcion"
+              rules={[{ required: true, message: "Ingrese descripción" }]}
+            >
+              <FloatInput outline label="Descripcion" placeholder="Descripcion" />
+            </Form.Item>
           </Col>
         </Card>
 

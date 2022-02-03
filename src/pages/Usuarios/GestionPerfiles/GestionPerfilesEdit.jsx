@@ -2,10 +2,10 @@ import React from "react";
 import Edit from "../../../components/organisms/Edit/index";
 import Table from "../../../components/organisms/Table/index";
 import FloatInput from "../../../components/molecules/FloatInput";
-import { Card, Row, Tabs, Col, Form} from "antd";
+import { Card, Row, Tabs, Col, Form, Typography} from "antd";
 
 function GestionPerfilesEdit() {
-  
+
   const columnsFormulario = [
     {
       name:"Nombre",
@@ -26,17 +26,14 @@ function GestionPerfilesEdit() {
       descripcion: "Lectura de modelos transaccion GlobalOnline"
     }
   ]
-  
-  
-  
-  
+
   const FormularioPerfil = () => {
     return (
       <>
-        <Card>
+        <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
           <Row>
             <Col>
-            <h1 className="purple-title">Perfil</h1>
+              <Typography.Title level={4}  style={{ color: '#ab218e' }}>Perfil</Typography.Title>
             </Col>
           </Row>
 
@@ -53,12 +50,12 @@ function GestionPerfilesEdit() {
           </Row>
         </Card>
 
-        <Card>
-        <h1 className="purple-title">Tipos de operaciones</h1>
-          <Form.Item name="tabla">
-            <Table selectable={true} data={dataFormulario} columns={columnsFormulario}/>
-          </Form.Item>
+        <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
+          <Typography.Title level={4}  style={{ color: '#ab218e' }}>Tipo de operaciones</Typography.Title>
         </Card>
+        <Form.Item name="tabla">
+          <Table selectable={true} data={dataFormulario} columns={columnsFormulario}/>
+        </Form.Item>
       </>
     );
   };
@@ -66,26 +63,20 @@ function GestionPerfilesEdit() {
   const FormularioContraseña = () => {
     return (
       <>
-        <Card>
+        <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
           <Row>
             <Col>
-            <h1 className="purple-title">Contraseña</h1>
+              <Typography.Title level={4}  style={{ color: '#ab218e' }}>Contraseña</Typography.Title>
             </Col>
           </Row>
 
           <Row>
             <Col span={8}>
-             <p>Ingresá tu contraseña para generar cambios</p>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col>
               <Form.Item name="contraseña" rules={[{required: true, message:"Ingrese una contraseña"}]}>
                 <FloatInput
-                  placeholder="Contraseña nueva"
+                  outline
                   label="Contraseña nueva"
+                  placeholder="Ingresá tu contraseña para generar cambios"
                 />
               </Form.Item>
             </Col>
@@ -102,12 +93,12 @@ function GestionPerfilesEdit() {
         {/* Pantalla de Edición de Perfil */}
 
         <TabPane tab="Datos generales" key="1">
-          <Edit component={FormularioPerfil} />
+          <Edit component={FormularioPerfil}  textBtnSave="Crear perfil" textModalConfirm="¿Estas seguro de crear este perfil?" textBtnModalConfirm="Si, crear" />
         </TabPane>
 
         {/* Pantalla de Edicion de Contraseña */}
         <TabPane tab="Contraseña" key="2">
-          <Edit component={FormularioContraseña} />
+          <Edit component={FormularioContraseña}  textBtnSave="Blanquear contraseña" textModalConfirm="¿Estas seguro de Blanquear la contraseña?" textBtnModalConfirm="Si, guardar" />
         </TabPane>
       </Tabs>
     </>
