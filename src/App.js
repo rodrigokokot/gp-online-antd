@@ -57,7 +57,7 @@ function App() {
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones/nuevo" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesNew'))} />
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones/ver/:id" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesView'))} />
 
-          <DashboardTemplate exact path="/emision/movimientos/cargosAjustes " component={lazy(() => import('./pages/Emision/Movimientos/CargosAjustes'))} />
+          <DashboardTemplate exact path="/emision/movimientos/cargosAjustes" component={lazy(() => import('./pages/Emision/Movimientos/CargosAjustes'))} />
 
           <DashboardTemplate exact path="/emision/movimientos/cargas" component={lazy(() => import('./pages/Emision/Movimientos/Cargas'))} />
 
@@ -77,6 +77,7 @@ function App() {
           <DashboardTemplate exact path="/emision/socios/adicionales/nueva/:id" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales/GestionAdicionalesNew'))} />
 
           <DashboardTemplate exact path="/emision/socios/tarjetas" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasSearch'))} />
+          <DashboardTemplate exact path="/emision/socios/tarjetas/ver/:id" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasView'))} />
 
           {/* Parametria */}
           <DashboardTemplate exact path="/parametria" component={lazy(() => import('./pages/Parametria'))} />

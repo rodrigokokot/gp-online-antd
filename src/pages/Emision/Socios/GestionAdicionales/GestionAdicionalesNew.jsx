@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import Edit from "../../../../components/organisms/Edit";
 import { Radio, Row, Col, Card, Button, Form, Space, Tooltip, DatePicker, Checkbox } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
@@ -7,6 +7,7 @@ import FloatSelected from "../../../../components/molecules/FloatSelected";
 import './index.less'
 
 export default function GestionAdicionalesNew() {
+  
   const onFinish = (values) => {
     console.log(values);
   };
@@ -93,26 +94,26 @@ export default function GestionAdicionalesNew() {
                 name="calle"
                 rules={[{ required: true, message: "Ingrese domicilio" }]}
               >
-                <FloatInput label="Calle" />
+                <FloatInput label="Calle"/>
               </Form.Item>
             </Col>
           </Row>
 
           <Row gutter={48}>
             <Col span={4}>
-              <Form.Item name="numero">
+              <Form.Item name="numero" className="reset">
                 <FloatInput label="Número" />
               </Form.Item>
             </Col>
 
             <Col span={4}>
-              <Form.Item name="piso">
+              <Form.Item name="piso" className="reset">
                 <FloatInput label="Piso" />
               </Form.Item>
             </Col>
 
             <Col span={4}>
-              <Form.Item name="depto">
+              <Form.Item name="depto" className="reset">
                 <FloatInput label="Depto" />
               </Form.Item>
             </Col>
@@ -121,6 +122,7 @@ export default function GestionAdicionalesNew() {
               <Form.Item
                 name="cp"
                 rules={[{ required: true, message: "Ingrese Código Postal" }]}
+                className="reset"
               >
                 <FloatInput label="Código Postal" />
               </Form.Item>
