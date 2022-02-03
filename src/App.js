@@ -63,7 +63,7 @@ function App() {
           <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/nueva" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaNew'))} />
 
           <DashboardTemplate exact path="/emision/socios/avisosViajes" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes/AvisosViajes'))} />
-          <DashboardTemplate exact path="/emision/socios/avisosViajes/editar/:id" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes/AvisosViajesEdit'))} />
+          <DashboardTemplate exact path="/emision/socios/avisosViajes/editar/:idviaje" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes/AvisosViajesEdit'))} />
 
           <DashboardTemplate exact path="/emision/socios/adicionales" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales/GestionAdicionalesSearch'))} />
           <DashboardTemplate exact path="/emision/socios/adicionales/nueva/:id" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales/GestionAdicionalesNew'))} />

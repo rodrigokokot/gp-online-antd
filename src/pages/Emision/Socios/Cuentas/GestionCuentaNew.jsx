@@ -19,9 +19,9 @@ const GestionCuentaNew = () => {
     setValuedate(dateString);  
     }
     //para deshabilitar input
-    const [disabled,setDisabled]=useState(true);
-    function onChangeActivar(){
-        setDisabled(!disabled);
+    const [checked,setChecked]=useState(false);
+    const onChangeCheck = (e) =>{
+        setChecked(e.target.checked)
     }
         
     //Button buscar documento    
@@ -342,63 +342,63 @@ const GestionCuentaNew = () => {
             <Title level={2}>Domicilio Legal</Title>
                             
             <Title level={5}>Por defecto, el domicilio de correspondencia es el mismo que el domicilio legal</Title>
-            <Checkbox  onChange={onChangeActivar}> 
+            <Checkbox  onChange={onChangeCheck} checked={checked}> 
             <Title level={5}>Ingresar un domicilio de correspondencia diferente</Title></Checkbox>
-            
+        { checked && <>
             <Col span={6}>    
                 <Form.Item 
                     name="calle" 
                     rules={[{ required: true, message: "Ingrese Calle" }]}
                 >
-                    <FloatInput  disabled={disabled} label="Calle*" placeholder="Calle*"></FloatInput>
+                    <FloatInput label="Calle*" placeholder="Calle*"></FloatInput>
                 </Form.Item>
             </Col>
             <Row gutter={16}>
                 <Col span={3}>
                     <Form.Item name='numero'
                     >
-                        <FloatInput type='number' disabled={disabled} label='Numero' placeholder='Numero' ></FloatInput>
+                        <FloatInput type='number' label='Numero' placeholder='Numero' ></FloatInput>
                     </Form.Item>
                 </Col>
                 <Col span={3}>
                     <Form.Item name='piso'  
                     >
-                        <FloatInput type='number' disabled={disabled} label='Piso' placeholder='Piso'></FloatInput>
+                        <FloatInput type='number' label='Piso' placeholder='Piso'></FloatInput>
                     </Form.Item> 
                 </Col>
                 <Col span={3}>
                     <Form.Item name='depto'  
                     >
-                        <FloatInput disabled={disabled} label='Depto' placeholder='Depto'></FloatInput>
+                        <FloatInput label='Depto' placeholder='Depto'></FloatInput>
                     </Form.Item> 
                 </Col>
                 <Col span={3}>
                     <Form.Item name='codpostal'
                     rules={[{ required: true, message: "Ingrese Codigo postal" }]}  
                     >
-                        <FloatInput type='number' disabled={disabled} label='Codigo postal*' placeholder='Codigo postal*'></FloatInput>
+                        <FloatInput type='number' label='Codigo postal*' placeholder='Codigo postal*'></FloatInput>
                     </Form.Item> 
                 </Col>
             </Row> 
             <Col span={6}>
                     <Form.Item name='entrecalle'  
                     >
-                        <FloatInput disabled={disabled} label='Entre Calles' placeholder='Entre Calles'></FloatInput>
+                        <FloatInput label='Entre Calles' placeholder='Entre Calles'></FloatInput>
                     </Form.Item> 
                     <Form.Item name='barrio'  
                     >
-                        <FloatInput disabled={disabled} label='Barrio' placeholder='Barrio'></FloatInput>
+                        <FloatInput label='Barrio' placeholder='Barrio'></FloatInput>
                     </Form.Item> 
                     <Form.Item name='localidad' 
                     rules={[{ required: true, message: "Ingrese Localidad" }]}   
                     >
-                        <FloatInput disabled={disabled} label='Localidad*' placeholder='Localidad*'></FloatInput>
+                        <FloatInput label='Localidad*' placeholder='Localidad*'></FloatInput>
                     </Form.Item> 
                     <Form.Item
-                        name="provincia" disabled={disabled} 
+                        name="provincia" 
                         rules={[{ required: true, message: "Ingrese provincia" }]}
                     >
-                        <FloatSelect disabled={disabled}  
+                        <FloatSelect   
                                 label="Provincia*"
                                 placeholder="Provincia*"
                                 options={[
@@ -423,13 +423,13 @@ const GestionCuentaNew = () => {
                     <Form.Item name='telefono' 
                     rules={[{ required: true, message: "Ingrese Télefono" }]}   
                     >
-                        <FloatInput type='number' disabled={disabled} label='Télefono*' placeholder='Télefono*'></FloatInput>
+                        <FloatInput type='number' label='Télefono*' placeholder='Télefono*'></FloatInput>
                     </Form.Item>  
                     <Form.Item name='referencia'   
                     >
-                        <FloatInput disabled={disabled} label='Referencia' placeholder='Referencia'></FloatInput>
+                        <FloatInput label='Referencia' placeholder='Referencia'></FloatInput>
                     </Form.Item>
-            </Col> 
+            </Col> </>}
         </Card>
         <br></br>
         <Card>
