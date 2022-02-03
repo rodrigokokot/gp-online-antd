@@ -5,6 +5,10 @@ import FloatSelected from "../../../../components/molecules/FloatSelected";
 import Form from "antd/lib/form/Form";
 
 export default function TarjetasView() {
+  const generaReimpresion = (e) =>{
+    console.log(e.target.value);
+  }
+  
   const FormularioEdit = () => {
     return (
       <>
@@ -58,9 +62,27 @@ export default function TarjetasView() {
           </Row>
 
           <Row>
-              <Form.Item name="estado" rules={[{required:true, message:"Ingrese Estado"}]}>
-                <FloatSelected label="Estado" />
+            <Col span={6}>
+                          <Form.Item name="estado" rules={[{required:true, message:"Ingrese Estado"}]}>
+                <FloatSelected label="Estado" options={[
+                  {
+                    title:"Habilitada",
+                    value:"Habilitada",
+                    disabled:false,
+                  },
+                  {
+                    title:"Inhabilitada",
+                    value:"Inhabilitada",
+                    disabled:false,
+                  },
+                ]} />
               </Form.Item>
+            </Col>
+
+            <Col span={6}>
+                <Checkbox onChange={generaReimpresion}>Genera reimpresión</Checkbox>
+            </Col>
+
               
           </Row>
         </Card>
