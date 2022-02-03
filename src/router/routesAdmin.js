@@ -99,8 +99,13 @@ const routes = [
     },
     {
         name: "Parametria",
-        path: "/parametria",
         icon: "BarChartOutlined",
+        subItems: [
+            {
+                name: "Tipos de Cargos",
+                path: "/parametria/tiposDeCargos",
+            },
+        ]
     },
     {
         name: "Adquirencia",
