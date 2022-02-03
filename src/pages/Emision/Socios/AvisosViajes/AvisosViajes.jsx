@@ -44,7 +44,7 @@ const columnsAvisosViajes = [
     button: true,
     cell: (row) => (
       <Link
-        to={`/emision/socios/avisosViajes/editar/${row.idviaje}`}
+        to={`/emision/socios/avisosDeViajes/editar/${row.idviaje}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >
