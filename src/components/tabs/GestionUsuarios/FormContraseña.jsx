@@ -1,7 +1,6 @@
 import React from "react";
-import { Form, Typography, Card ,Col} from "antd";
-
-import FloatInput from "../../molecules/FloatInput";
+import { Form, Typography, Card ,Col,Input} from "antd";
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';  
 const { Title } = Typography;
 
 const Contraseña = () => {
@@ -26,12 +25,12 @@ const Contraseña = () => {
               },
             ]}
           >
-            <FloatInput
+            <Input.Password 
               outline
               type="password"
               label="Ingresa tu contraseña para generar cambios"
-              placeholder="Contraseña"
-            ></FloatInput>
+              placeholder="Contraseña" iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+            ></Input.Password>
           </Form.Item>
         </Col>
       </Card>
