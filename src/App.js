@@ -76,6 +76,8 @@ function App() {
           <DashboardTemplate exact path="/emision/socios/adicionales" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales/GestionAdicionalesSearch'))} />
           <DashboardTemplate exact path="/emision/socios/adicionales/nueva/:id" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales/GestionAdicionalesNew'))} />
 
+          <DashboardTemplate exact path="/emision/socios/tarjetas" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasSearch'))} />
+
           {/* Parametria */}
           <DashboardTemplate exact path="/parametria" component={lazy(() => import('./pages/Parametria'))} />
 

@@ -31,7 +31,6 @@ const routes = [
         ]
     },
     {
-        // path: "/movimientos",
         name: "Movimientos",
         icon: "SwapOutlined",
         subItems: [
