@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { Form, Button, Modal, Typography } from "antd";
-import FloatInput from "../../molecules/FloatInput";
+import PropTypes from 'prop-types'
 
-const Edit = ({ component: Component }) => {
+const Edit = ({ component: Component, textBtnSave, textModalConfirm, textBtnModalConfirm }) => {
   // const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = () => {
     // setIsModalVisible(true);
     Modal.confirm({
       icon: null,
-      content: <Typography.Title level={4} style={{ textAlign: 'center' }}>¿Estás seguro que deseas generar estos cambios a esta sucursal?</Typography.Title>,
-      okText: "Si, generar cambios",
+      content: <Typography.Title level={4} style={{ textAlign: 'center' }}>{textModalConfirm}</Typography.Title>,
+      okText: textBtnModalConfirm,
+      okButtonProps: { form:"myForm", type:"primary", htmlType:"submit" } ,
       width: 800,
       cancelText: "Cancelar",
       closable: true,
@@ -54,7 +55,7 @@ const Edit = ({ component: Component }) => {
         <Form.Item>
           <div  style={{ marginTop: '36px', display: 'flex', gap: '12px' }}>
             <Button type="primary" onClick={showModal}>
-              Guardar cambios
+              {textBtnSave}
             </Button>
             <Button style={{ border: '2px solid #0DD8B0' }}>Cancelar</Button>
           </div>
@@ -76,5 +77,17 @@ const Edit = ({ component: Component }) => {
     </>
   );
 };
+
+Edit.propTypes = {
+  textBtnSave: PropTypes.string,
+  textModalConfirm: PropTypes.string,
+  textBtnModalConfirm: PropTypes.string
+}
+
+Edit.defaultProps = {
+  textBtnSave: "Guardar cambios",
+  textModalConfirm: "¿Estas seguro de guardar los cambios?",
+  textBtnModalConfirm: "Si, generar cambios"
+}
 
 export default Edit;
