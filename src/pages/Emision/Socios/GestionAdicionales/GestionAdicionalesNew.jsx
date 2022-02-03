@@ -139,7 +139,7 @@ export default function GestionAdicionalesNew() {
                         </Form.Item>
 
                         <Form.Item name="fecha-nac">
-                            <DatePicker label="Fecha de Nacimiento" />                                
+                            <DatePicker placeholder="Fecha de Nacimiento" />                                
                         </Form.Item>
 
                         <Form.Item name="pais">
