@@ -93,14 +93,18 @@ const routes = [
                         path: "/emision/socios/avisosDeViajes",
                     },
                 ]
-            },
-
+            }, 
         ]
     },
     {
-        name: "Parametria",
-        path: "/parametria",
+        name: "Parametría", 
         icon: "BarChartOutlined",
+        subItems:[ 
+            {
+                name: "Modificar Límite de Tarjetas Adicionales",
+                path: "/parametria/modificarLimite",
+            },
+        ]
     },
     {
         name: "Adquirencia",

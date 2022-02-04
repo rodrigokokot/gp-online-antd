@@ -77,10 +77,11 @@ function App() {
           <DashboardTemplate exact path="/emision/socios/adicionales/nueva/:id" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales/GestionAdicionalesNew'))} />
 
           <DashboardTemplate exact path="/emision/socios/tarjetas" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasSearch'))} />
-
           {/* Parametria */}
           <DashboardTemplate exact path="/parametria" component={lazy(() => import('./pages/Parametria'))} />
-
+          <DashboardTemplate exact path="/parametria/modificarLimite" component={lazy(() => import('./pages/Parametria/ModificarLimite'))} />
+          <DashboardTemplate exact path="/parametria/modificarLimite/editar/:cuenta" component={lazy(() => import('./pages/Parametria/ModificarLimite/ModificarLimite'))} />
+          
           <DashboardTemplate exact path="/adquirencia" component={lazy(() => import('./pages/Adquirencia'))} />
 
           <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda'))} />
