@@ -2,11 +2,11 @@ import React from "react";
 import Edit from "../../../components/organisms/Edit/index";
 import Table from "../../../components/organisms/Table/index";
 import FloatInput from "../../../components/molecules/FloatInput";
-import { Card, Row, Col, Form } from "antd";
+import { Card, Row, Col, Form, Typography } from "antd";
 
 
 export default function GestionPerfilesNew() {
-  
+
   const columnsFormulario = [
     {
       name:"Nombre",
@@ -27,24 +27,18 @@ export default function GestionPerfilesNew() {
       descripcion: "Lectura de modelos transaccion GlobalOnline"
     }
   ]
-  
-  
-  
-  
+
   const FormularioPerfil = () => {
     return (
       <>
-        <Card>
-          <Row>
-            <Col>
-            <h1 className="purple-title">Datos Principales</h1>
-            </Col>
-          </Row>
+        <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
+          <Typography.Title level={4} style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
 
           <Row>
-            <Col span={12}>
+            <Col span={8}>
               <Form.Item name="nombre" rules={[{required: true, message: "Ingrese nombre"}]}>
                 <FloatInput
+                  outline
                   placeholder="Nombre del Nuevo perfil"
                   label="Nombre del Nuevo perfil"
                 />
@@ -53,9 +47,10 @@ export default function GestionPerfilesNew() {
           </Row>
 
           <Row>
-            <Col span={12}>
+            <Col span={8}>
               <Form.Item name="descripcion" rules={[{required: true, message:"Ingrese descripción"}]}>
                 <FloatInput
+                  outline
                   placeholder="Descripción del perfil"
                   label="Descripción del perfil"
                 />
@@ -64,17 +59,16 @@ export default function GestionPerfilesNew() {
           </Row>
         </Card>
 
-        <Card>
-        <h1 className="purple-title">Tipos de operaciones</h1>
-
-          <Table selectable={true} data={dataFormulario} columns={columnsFormulario}/>
+        <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
+          <Typography.Title level={4} style={{ color: '#ab218e' }}>Tipos de operaciones</Typography.Title>
         </Card>
+        <Table selectable={true} data={dataFormulario} columns={columnsFormulario}/>
       </>
     );
   };
 
   return(
   <>
-    <Edit component={FormularioPerfil} />
+    <Edit component={FormularioPerfil}  textBtnSave="Crear perfil" textModalConfirm="¿Estas seguro de crear este perfil?" textBtnModalConfirm="Si, crear"/>
   </>);
 }
