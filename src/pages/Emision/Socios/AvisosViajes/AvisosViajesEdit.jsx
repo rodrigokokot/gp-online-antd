@@ -27,14 +27,14 @@ const AvisosViajesEdit = () => {
         <Col span={12}>
         <Form.Item name='fecha'
         >
-        <RangePicker style={{width: '100%', borderTop: 0,borderLeft: 0,borderRight: 0 }} onChange={onChange1} placeholder={[fecha[0],fecha[1]]} format={[dateFormat,dateFormat]} />
+        <RangePicker style={{width: '100%', borderRadius:6 }} onChange={onChange1} placeholder={[fecha[0],fecha[1]]} format={[dateFormat,dateFormat]} />
         </Form.Item>
         </Col></Row>
         <Row gutter={48}>
             <Col span={6}>
                 <Form.Item name="pais"
                         >
-                        <FloatSelect 
+                        <FloatSelect outline
                                         label="Pais"
                                         placeholder="País"
                                         options={[
@@ -59,7 +59,7 @@ const AvisosViajesEdit = () => {
                 </Col>
                 <Col span={6}>
                 <Form.Item name='estado'>
-                    <FloatSelect 
+                    <FloatSelect outline
                                     label="Estado"
                                     placeholder="Estado"
                                     options={[

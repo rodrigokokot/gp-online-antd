@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import { Card, Row,Col ,InputNumber,Input, Comment,Form} from "antd";
+import { Card, Row,Col ,InputNumber,Input,Form} from "antd";
 import Title from "antd/lib/typography/Title";  
 import Edit from "../../../components/organisms/Edit"; 
 const { TextArea } = Input;
 
 const ModificarLimite= () => {
 const FormularioLimite= () => {
-  const [value, setValue] = useState('0');
-  console.log('import ',value); 
- 
-  const [valor, setvalor] = useState(''); 
-
+  const [value, setValue] = useState('0'); 
   return (<>
     <Card>
       <h2 style={{ color: "#AB218E" }}>Informacion de la cuenta</h2>
@@ -100,17 +96,19 @@ const FormularioLimite= () => {
             margin: "1em 0",
             padding: 0, }}  >
         </div>
-        <Col span={5}><h4>Importe global del adicional</h4> 
-        </Col> 
-        <Col span={5}> 
-        <Form.Item name='numerooo'  
+         
+        <Col span={8}> <h4>Importe global del adicional</h4> 
+        <Form.Item name='importe'  
               >
-                 <InputNumber value={value} onChange={setValue} />
+                 <InputNumber style={{width:'100%', borderRadius:6}} value={value} onChange={setValue} />
          </Form.Item> 
         </Col> 
-        <Col span={3}>   
-           
-        </Col> 
+        <Col span={18}>  <h4>Comentarios</h4>  
+        <Form.Item name='comentario' >
+            <TextArea style={{width:'100%', height:145, borderRadius:6}} maxLength={2200}  
+            /> 
+        </Form.Item>
+        </Col>  
     </Card> <br></br>
   </>      
   );
