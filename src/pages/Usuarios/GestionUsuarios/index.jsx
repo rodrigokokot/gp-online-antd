@@ -13,7 +13,7 @@ function GestionUsuario() {
       Object.values(values).every((value) => {
         if (value === "" || value === undefined) {
           return true;
-        }
+        }else{ return false;}
       })
     ) {
       setData(dataGestionUsuarios);
@@ -43,7 +43,7 @@ function GestionUsuario() {
             </Link>
           </Col >
           <SearchForm span={5} array={GestionUsuariosSearch} parentCallback={handleCallback} title="Busqueda de usuarios" />
-          <div style={{ marginTop: data.length == 0? '70px' : '8px' }}>
+          <div style={{ marginTop: data.length === 0? '70px' : '8px' }}>
             <Table data={data} columns={columnsGestionUsuarios} expandible={false} editable={true}/>
           </div>
 
