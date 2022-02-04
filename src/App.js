@@ -84,6 +84,11 @@ function App() {
           <DashboardTemplate exact path="/emision/socios/adicionales/nueva/:id" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales/GestionAdicionalesNew'))} />
 
           <DashboardTemplate exact path="/emision/socios/tarjetas" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasSearch'))} />
+          <DashboardTemplate exact path="/emision/socios/tarjetas/ver/:id" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasView'))} />
+
+          <DashboardTemplate exact path="/emision/socios/plasticos" component={lazy(() => import('./pages/Emision/Socios/Plasticos/Plasticos'))} />
+
+          
           {/* Parametria */}
           <DashboardTemplate exact path="/parametria/modificarLimite" component={lazy(() => import('./pages/Parametria/ModificarLimite'))} />
           <DashboardTemplate exact path="/parametria/modificarLimite/editar/:cuenta" component={lazy(() => import('./pages/Parametria/ModificarLimite/ModificarLimite'))} />
