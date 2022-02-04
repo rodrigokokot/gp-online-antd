@@ -53,17 +53,24 @@ function App() {
           <DashboardTemplate exact path="/movimientos/CTF/detalles/:id" component={lazy(() => import('./pages/Movimientos/MovimientosCTF/DetalleRegistroCTF'))} />
 
           {/* Emision */}
+                        {/* Movimientos */}
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesSearch'))} />
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones/nuevo" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesNew'))} />
           <DashboardTemplate exact path="/emision/movimientos/autorizaciones/ver/:id" component={lazy(() => import('./pages/Emision/Movimientos/Autorizaciones/AutorizacionesView'))} />
-
-          <DashboardTemplate exact path="/emision/movimientos/cargosAjustes" component={lazy(() => import('./pages/Emision/Movimientos/CargosAjustes'))} />
 
           <DashboardTemplate exact path="/emision/movimientos/cargas" component={lazy(() => import('./pages/Emision/Movimientos/Cargas'))} />
 
           <DashboardTemplate exact path="/emision/movimientos/consumos" component={lazy(() => import('./pages/Emision/Movimientos/Consumos'))} />
           <DashboardTemplate exact path="/emision/movimientos/consumos/consultaDeConsumo/:id" component={lazy(() => import('./pages/Emision/Movimientos/Consumos/ConsultaConsumos'))} />
+                        
+                        {/* Cargos y Ajustes */}
+          <DashboardTemplate exact path="/emision/cargosAjustes/cambioDeEstado" component={lazy(() => import('./pages/Emision/CargosAjustes/CambioDeEstado'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/consultaDeLiquidaciones" component={lazy(() => import('./pages/Emision/CargosAjustes/ConsultaDeLiquidaciones'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/publicacionEnBoletin" component={lazy(() => import('./pages/Emision/CargosAjustes/PublicacionEnBoletin'))} />
 
+                        {/* Socios */}
           <DashboardTemplate exact path="/emision/socios/cuentas" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentas'))} />
           <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/editar/:idcuenta" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
           <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/nueva" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaNew'))} />

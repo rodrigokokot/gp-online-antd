@@ -63,9 +63,34 @@ const routes = [
                         name: "Cargas",
                         path: "/emision/movimientos/cargas",
                     },
+                ]
+            },
+            {
+                name: "Cargos y ajustes",
+                subItems: [
                     {
-                        name: "Cargos y Ajustes",
-                        path: "/emision/movimientos/cargosAjustes",
+                        name: "Cambio de estado",
+                        path: "/emision/cargosAjustes/cambioDeEstado",
+                    },
+                    {
+                        name: "Cargos por Productos",
+                        path: "/emision/cargosAjustes/cargosPorProductos",
+                    },
+                    {
+                        name: "Cargos por Productos y Afinidad",
+                        path: "/emision/cargosAjustes/cargosPorProductosAfinidad",
+                    },
+                    {
+                        name: "Cargos por Productos y Movimientos",
+                        path: "/emision/cargosAjustes/cargosPorProductosMovimientos",
+                    },
+                    {
+                        name: "Consulta de liquidaciones",
+                        path: "/emision/cargosAjustes/consultaDeLiquidaciones",
+                    },
+                    {
+                        name: "Publicacion en Boletin",
+                        path: "/emision/cargosAjustes/publicacionEnBoletin",
                     },
                 ]
             },
