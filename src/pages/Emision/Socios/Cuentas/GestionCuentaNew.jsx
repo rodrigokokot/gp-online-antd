@@ -14,9 +14,9 @@ const GestionCuentaNew = () => {
     }; 
 
     //para calendario 
-    const [valuedate,setValuedate]=useState('');
+    const [valuedate,setValuedate]=useState('Fecha de Nacimiento*'); 
     function onChangedate(date, dateString){
-    setValuedate(dateString);  
+    setValuedate(dateString);  console.log("date ",dateString);
     }
     //para deshabilitar input
     const [checked,setChecked]=useState(false);
@@ -255,7 +255,7 @@ const GestionCuentaNew = () => {
                     name="fechanacimiento"
                     rules={[{ required: true, message: "Ingrese Fecha de Nacimiento" }]}
                 >
-                    <DatePicker style={{width: '100%'}} label='Fecha de Nacimiento*' placeholder='Fecha de Nacimiento*' format={'DD/MM/YYYY'} onChange={onChangedate}/>
+                    <DatePicker style={{width: '100%', borderTop: 0,borderLeft: 0,borderRight: 0 }} onChange={onChangedate} placeholder={valuedate} format={'DD/MM/YYYY'} />
                 </Form.Item>
                 <Form.Item 
                     name="email"

@@ -23,17 +23,19 @@ const AvisosViajesEdit = () => {
         <p >Número de cuenta</p>
             <Checkbox  onChange={onChangeCheck}> 
             <Title level={5}>{"Numero de la targeta"}</Title></Checkbox><br></br><br></br>
+        <Row gutter={47}>
+        <Col span={12}>
         <Form.Item name='fecha'
         >
-        <RangePicker bordered={false} onChange={onChange1} placeholder={[fecha[0],fecha[1]]} format={[dateFormat,dateFormat]} />
+        <RangePicker style={{width: '100%', borderTop: 0,borderLeft: 0,borderRight: 0 }} onChange={onChange1} placeholder={[fecha[0],fecha[1]]} format={[dateFormat,dateFormat]} />
         </Form.Item>
-
+        </Col></Row>
         <Row gutter={48}>
             <Col span={6}>
                 <Form.Item name="pais"
                         >
                         <FloatSelect 
-                                        label="País"
+                                        label="Pais"
                                         placeholder="País"
                                         options={[
                                             {
@@ -42,13 +44,13 @@ const AvisosViajesEdit = () => {
                                                 disabled: false,
                                             },
                                             {
-                                                title: "Argentina",
-                                                value: "Argentina",
+                                                title: "Chile",
+                                                value: "Chile",
                                                 disabled: false,
                                             },
                                             {
-                                                title: "Argentina",
-                                                value: "Argentina",
+                                                title: "Argentina2",
+                                                value: "Argentina2",
                                                 disabled: false,
                                             },
                                         ]}

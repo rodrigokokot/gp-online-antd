@@ -118,21 +118,16 @@ const routes = [
                         path: "/emision/socios/avisosDeViajes",
                     },
                 ]
-            },
-
+            }, 
         ]
     },
     {
-        name: "Parametria",
+        name: "Parametría", 
         icon: "BarChartOutlined",
-        subItems: [
+        subItems:[ 
             {
-                name: "Tipos de Cargos",
-                path: "/parametria/tiposDeCargos",
-            },
-            {
-                name: "Cargos por Productos",
-                path: "/parametria/cargosPorProductos",
+                name: "Modificar Límite de Tarjetas Adicionales",
+                path: "/parametria/modificarLimite",
             },
         ]
     },
