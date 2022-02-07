@@ -1,6 +1,5 @@
 import { Image, Layout, Select, Typography, Button } from "antd";
 import React from "react";
-import { MonedaBolivar, MonedaFranco, MonedaLibra } from "../../../assets/svg/icons/moenda";
 
 const monedas = [
   {
@@ -22,7 +21,6 @@ const monedas = [
 
 const SelectImg = () => {
   return (
-    <>
       <Select  bordered={false} style={{ width: 190 }} placeholder="Moneda">
         {monedas.map((logo, index) => (
           <Select.Option value={logo.name} key={index}>
@@ -40,7 +38,6 @@ const SelectImg = () => {
           </Select.Option>
         ))}
       </Select>
-    </>
   );
 };
 
