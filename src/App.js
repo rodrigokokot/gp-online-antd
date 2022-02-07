@@ -65,6 +65,11 @@ function App() {
                         
                         {/* Cargos y Ajustes */}
           <DashboardTemplate exact path="/emision/cargosAjustes/cambioDeEstado" component={lazy(() => import('./pages/Emision/CargosAjustes/CambioDeEstado'))} />
+
+          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos/editar/:id" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos/TiposDeCargosEdit'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos/crear" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos/TiposDeCargoCrear'))} />
+
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/consultaDeLiquidaciones" component={lazy(() => import('./pages/Emision/CargosAjustes/ConsultaDeLiquidaciones'))} />
