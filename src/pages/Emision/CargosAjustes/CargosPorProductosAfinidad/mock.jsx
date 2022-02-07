@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
-import SelectSearch from "../../../../components/molecules/SelectSearch";
 
 
 
+///////// MOCK SEARCH ARRAY //////////
 export const CargoPorProductosAfinidadSearchArray = [
     {
         index: "codigo",
@@ -105,3 +106,75 @@ export const CargoPorProductosAfinidadSearchArray = [
         input: <DateRangeFilter />
     }
 ]
+
+///////// MOCK COLUMNA TABLA //////////
+export const columnsCargosProductosAfinidad = [
+    {
+        name: "Producto",
+        selector: (row) => row.producto,
+        sortable: true,
+    },
+    {
+        name: "Grupo de Afinidad",
+        selector: (row) => row.afinidad,
+        sortable: true,
+    },
+    {
+        name: "Concepto",
+        selector: (row) => row.concepto,
+        sortable: true,
+    },
+    {
+        name: "Precio",
+        selector: (row) => row.precio,
+        sortable: true,
+    },
+    {
+        name: "Aplica IVA",
+        selector: (row) => row.iva,
+        sortable: true,
+    },
+    {
+        name: "Porcentaje Cargo",
+        selector: (row) => row.cargo,
+        sortable: false,
+    },
+    {
+        name: "Vigencia Desde",
+        selector: (row) => row.fechadesde,
+        sortable: true,
+    },
+    {
+        name: "Vigencia Hasta",
+        selector: (row) => row.fechahasta,
+        sortable: true,
+    },
+    {
+        name: "",
+        button: true,
+        cell: (row) =>(<Link
+            to={`/emision/cargosAjustes/cargosPorProductosAfinidad/editar/${row.producto}`}
+            style={{ textDecoration: "underline" }}
+            rel="noopener noreferrer"
+          >
+            Editar
+          </Link>
+        ),
+    },
+];
+
+////////// MOCK DATA TABLA /////////
+
+export const dataCargosProductosAfinidad = [
+    {
+        producto:"001",
+        afinidad:"GAF 999 HABILITADO",
+        concepto:"Cargo por renovación",
+        precio:"15",
+        iva: true.toString(),
+        cargo: "-",
+        fechadesde: new Date().toString(),
+        fechahasta: new Date().toString(),
+    }
+]
+
