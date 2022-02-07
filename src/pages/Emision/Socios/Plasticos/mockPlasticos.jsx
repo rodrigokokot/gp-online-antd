@@ -1,5 +1,6 @@
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
+import { Link } from "react-router-dom";
 
 
 ////////// MOCK SEARCH ARRAY //////////
@@ -92,8 +93,45 @@ const columnsPlasticos = [
     },
     {
         name:"Aplica IVA",
-        
+        selector: (row) => row.iva,
+        sortable: true,
+    },
+    {
+        name:"Débito/Crédito",
+        selector:(row) => row.debcred,
+        sortable:true,
+    },
+    {
+        name:"Móneda",
+        selector:(row) => row.moneda,
+        sortable: true,
+    },
+    {
+        name:"Estado",
+        selector: (row) => row.estado,
+        sortable:true,
+    },
+    {
+        name:"",
+        button:true,
+        cell: (row) => {
+            <Link to= {`/emision/socios/plasticos/editar/${row.codigo}`}           style={{ textDecoration: "underline" }}
+            rel="noopener noreferrer" >Editar</Link>
+        }
     }
 ]
 
-export {PlasticosSearchArray}
+const dataPlasticos = [
+    {
+        codigo:3,
+        descripcion:"Débito prueba",
+        cargo:"Sistema",
+        iva:true,
+        debcred:"Débito",
+        moneda:"Pesos",
+        habilitado:true,
+        option:<Link>Editar</Link>
+    }
+]
+
+export {PlasticosSearchArray, columnsPlasticos, dataPlasticos}

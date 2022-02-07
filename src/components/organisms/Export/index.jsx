@@ -5,7 +5,7 @@ import FloatInput from "../../molecules/FloatInput";
 import * as FileSaver from "file-saver";
 import * as XLSX from "xlsx";
 
-const Export = ({dataExport}) => {
+const Export = ({dataExport, disabled}) => {
   const [visible, setVisible] = useState(false);
 
   const fileType =
@@ -47,6 +47,7 @@ const Export = ({dataExport}) => {
           onClick={() => {
             setVisible(true);
           }}
+          disabled={disabled}
         >
           Exportar
         </Button>
