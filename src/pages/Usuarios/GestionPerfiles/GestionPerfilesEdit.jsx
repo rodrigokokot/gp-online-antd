@@ -3,6 +3,7 @@ import Edit from "../../../components/organisms/Edit/index";
 import Table from "../../../components/organisms/Table/index";
 import FloatInput from "../../../components/molecules/FloatInput";
 import { Card, Row, Tabs, Col, Form, Typography} from "antd";
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';  
 
 function GestionPerfilesEdit() {
 
@@ -72,11 +73,26 @@ function GestionPerfilesEdit() {
 
           <Row>
             <Col span={8}>
-              <Form.Item name="contraseña" rules={[{required: true, message:"Ingrese una contraseña"}]}>
+            <Form.Item name="password" rules = {[
+                { required: true, message: 'Ingrese Contraseña' },
+                {
+                  validator: (_, value1) =>
+                    value1 && value1.length >= 8
+                      ? Promise.resolve()
+                      : Promise.reject(new Error('Debe ingresar al menos 8 caracteres')),
+                },
+                {
+                  validator: (_, value2) =>
+                    value2 && value2.match(/\d+/g)
+                      ? Promise.resolve()
+                      : Promise.reject(new Error('Debe ingresar al menos un número')),
+                },
+              ]}>
                 <FloatInput
                   outline
                   label="Contraseña nueva"
                   placeholder="Ingresá tu contraseña para generar cambios"
+                  iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                 />
               </Form.Item>
             </Col>

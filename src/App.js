@@ -8,6 +8,8 @@ import { AuthProvider } from './context/authContext';
 import LoginTemplate from './templates/Login';
 import DashboardTemplate from './templates/Dashboard';
 
+// locales
+import './i18n'
 
 // pages
 import Login from './pages/Login'
