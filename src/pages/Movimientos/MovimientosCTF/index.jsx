@@ -5,7 +5,7 @@ import {
   columnsMovimientosCTF,
   dataMovimientosCTF,
   MovimientosCTFSearch
-} from "../../../Mocks/MovimientosCTF";
+} from "./mock";
 
 function MovimientosCTF() {
   const [data, setData] = useState("");
