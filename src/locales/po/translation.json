@@ -1,4 +1,4 @@
-export const PORTUGUES = {
+{
   "login": {
     "username": {
       "label": "usuário",
