@@ -24,7 +24,7 @@ const FloatSelected = ({options,showSearch, outline, width, mode, ...props}) => 
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
     >
-      <Select mode={mode} showSearch maxTagCount='responsive' style={{width: width }} onChange={props.onChange} disabled={disabled} 
+      <Select mode={mode} showSearch={showSearch} maxTagCount='responsive' style={{width: width }} onChange={props.onChange} disabled={disabled} 
       // className={ !outline? "select-bottom" : '' }
        >
         {

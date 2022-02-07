@@ -1,6 +1,7 @@
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
+import SelectSearch from "../../../../components/molecules/SelectSearch";
 
 
 
@@ -91,7 +92,7 @@ export const CargoPorProductosAfinidadSearchArray = [
     },
     {
         index: "moneda",
-        input: <FloatSelected label="Moneda" showSearch options={[
+        input: <FloatSelected label="Moneda" showSearch={true} options={[
             {
                 value:"EUR",
                 title:"EUR",
