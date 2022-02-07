@@ -95,6 +95,8 @@ function App() {
           <DashboardTemplate exact path="/parametria/modificarLimite" component={lazy(() => import('./pages/Parametria/ModificarLimite'))} />
           <DashboardTemplate exact path="/parametria/modificarLimite/editar/:cuenta" component={lazy(() => import('./pages/Parametria/ModificarLimite/ModificarLimite'))} />
           
+          <DashboardTemplate exact path="/parametria/tarjetaInstantanea" component={lazy(() => import('./pages/Parametria/TarjetaInstantanea'))} />
+
           <DashboardTemplate exact path="/adquirencia" component={lazy(() => import('./pages/Adquirencia'))} />
 
           <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda'))} />
