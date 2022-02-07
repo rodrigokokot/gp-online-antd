@@ -67,6 +67,7 @@ function App() {
           <DashboardTemplate exact path="/emision/cargosAjustes/cambioDeEstado" component={lazy(() => import('./pages/Emision/CargosAjustes/CambioDeEstado'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos/edit/:producto" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos/CPMovimientoEdit'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/consultaDeLiquidaciones" component={lazy(() => import('./pages/Emision/CargosAjustes/ConsultaDeLiquidaciones'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/publicacionEnBoletin" component={lazy(() => import('./pages/Emision/CargosAjustes/PublicacionEnBoletin'))} />
 
