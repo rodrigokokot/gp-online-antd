@@ -133,8 +133,8 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           <Content
             className=""
             style={{
-              margin: "24px 16px",
-              padding: 24,
+              margin: "0px 16px 24px 16px",
+              padding:  "0px 24px 24px 24px",
               minHeight: 280,
               backgroundColor: "#E5E5E5",
             }}

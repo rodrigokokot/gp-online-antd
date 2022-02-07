@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import FloatSelected from '../components/molecules/FloatSelected';
-import DateRangeFilter from '../components/organisms/DateRangeFilter';
-import FloatInput from "../components/molecules/FloatInput/index";
-import {DatePicker} from 'antd'
-
-const {RangePicker} = DatePicker;
+import FloatSelected from '../../../../components/molecules/FloatSelected';
+import DateRangeFilter from '../../../../components/organisms/DateRangeFilter';
+import FloatInput from "../../../../components/molecules/FloatInput/index"; 
+ 
 const columnsGestionCuenta = [
   {
     name: 'N° de cuenta',
@@ -143,7 +141,7 @@ const GestionCuentaSearch = [
 {
   name: "Producto",
   index: "producto",
-  input: <FloatSelected width={203} label="Producto" placeholder="Producto" options={[
+  input: <FloatSelected label="Producto" placeholder="Producto" options={[
       {
           title:"Producto 1",
           value:"Producto 1",
@@ -159,7 +157,7 @@ const GestionCuentaSearch = [
 {
   name: "Grupo de afinidad",
   index: "gpafinidad",
-  input: <FloatSelected width={203} label="Grupo de afinidad" placeholder="Grupo de afinidad" options={[
+  input: <FloatSelected label="Grupo de afinidad" placeholder="Grupo de afinidad" options={[
       {
           title:"Grupo 1",
           value:"Grupo 1",
@@ -185,7 +183,7 @@ const GestionCuentaSearch = [
 {
     name: "Cuotas",
     index: "cuotas",
-    input: <FloatSelected width={203} placeholder="Cuotas" label="Cuotas" options={[
+    input: <FloatSelected placeholder="Cuotas" label="Cuotas" options={[
         {
             title:"1",
             value:"1",

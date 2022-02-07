@@ -126,12 +126,16 @@ const routes = [
         ]
     },
     {
-        name: "Parametría", 
+        name: "Parametría",
         icon: "BarChartOutlined",
-        subItems:[ 
+        subItems:[
             {
                 name: "Modificar Límite de Tarjetas Adicionales",
                 path: "/parametria/modificarLimite",
+            },
+            {
+                name: "Alta de Tarjeta Instantanea",
+                path: "/parametria/tarjetaInstantanea",
             },
         ]
     },
