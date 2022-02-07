@@ -4,8 +4,13 @@ import { CalendarIcon } from "../assets/svg/icons/calendar";
 import FloatInput from "../components/molecules/FloatInput/index";
 import FloatSelected from "../components/molecules/FloatSelected";
 import DateRangeFilter from "../components/organisms/DateRangeFilter";
-import {HomeOutlined} from '@ant-design/icons'
-import { MonedaBolivar, MonedaFranco, MonedaLibra } from "../assets/svg/icons/moenda";
+import { HomeOutlined } from "@ant-design/icons";
+import {
+  MonedaBolivar,
+  MonedaFranco,
+  MonedaLibra,
+} from "../assets/svg/icons/moenda";
+import SelectImg from "../components/organisms/SelectImg.jsx";
 
 const columnsEmisionConsumos = [
   {
@@ -140,9 +145,9 @@ const EmisionConsumosSearch = [
         placeholder="Grupo Transaccion"
         label="Grupo transaccion"
         options={[
-          { title: "grupo 1", value: 1,disabled: false, },
-          { title: "grupo 2", value: 2,disabled: false, },
-          { title: "grupo 3", value: 3,disabled: false, },
+          { title: "grupo 1", value: 1, disabled: false },
+          { title: "grupo 2", value: 2, disabled: false },
+          { title: "grupo 3", value: 3, disabled: false },
         ]}
         width={200}
       ></FloatSelected>
@@ -171,9 +176,9 @@ const EmisionConsumosSearch = [
         placeholder="Liq. Socios (LS)"
         label="Liq. Socios (LS)"
         options={[
-          { title: "socio 1", value: 1,disabled: false, },
-          { title: "socio 2", value: 2,disabled: false, },
-          { title: "socio 3", value: 3,disabled: false, },
+          { title: "socio 1", value: 1, disabled: false },
+          { title: "socio 2", value: 2, disabled: false },
+          { title: "socio 3", value: 3, disabled: false },
         ]}
         width={200}
       ></FloatSelected>
@@ -187,18 +192,7 @@ const EmisionConsumosSearch = [
 
   {
     index: "moneda",
-    input: (
-      <FloatSelected
-        placeholder="Moneda"
-        label="Moneda"
-        options={[
-          { title: "Libra esterlina (£)", value: 1,disabled: false,icon:<MonedaLibra/> },
-          { title: "Bolivar fuerte (Bs)", value: 2,disabled: false,icon:<MonedaBolivar/> },
-          { title: "Franco Suizo (SFr)", value: 3,disabled: false,icon:<MonedaFranco/> },
-        ]}
-        width={200}
-      ></FloatSelected>
-    ),
+    input: <SelectImg/>
   },
 
   {
