@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import SearchForm from '../../../../components/organisms/SearchForm/index'
 import Table from '../../../../components/organisms/Table/index'
 import {Link} from 'react-router-dom'
-import {GestionCuentaSearch, dataGestionCuenta, columnsGestionCuenta} from '../../../../Mocks/GestionCuentaSearchMock'
+import {GestionCuentaSearch, dataGestionCuenta, columnsGestionCuenta} from './mock'
 import {Col, Button} from 'antd'
 
 /* hacer que router tengo la dir de app.js  */
@@ -47,7 +47,7 @@ const GestionCuentas=()=> {
             </Link>
           </Col >
           {/* width del searchfrom ver tamaño en Mocks*/}
-          <SearchForm array={GestionCuentaSearch} parentCallback={handleCallback} title="Busqueda de Usuario" />
+          <SearchForm span={4} array={GestionCuentaSearch} parentCallback={handleCallback} title="Busqueda de gestión de cuentas" />
           <br></br>
           <Table data={data} columns={columnsGestionCuenta} expandible={false} editable={true}/>
            

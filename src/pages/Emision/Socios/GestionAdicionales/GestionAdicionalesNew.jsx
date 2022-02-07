@@ -94,7 +94,7 @@ export default function GestionAdicionalesNew() {
                 name="calle"
                 rules={[{ required: true, message: "Ingrese domicilio" }]}
               >
-                <FloatInput label="Calle"/>
+                <FloatInput outline label="Calle"/>
               </Form.Item>
             </Col>
           </Row>
@@ -102,19 +102,19 @@ export default function GestionAdicionalesNew() {
           <Row gutter={48}>
             <Col span={4}>
               <Form.Item name="numero" className="reset">
-                <FloatInput label="Número" />
+                <FloatInput outline label="Número" />
               </Form.Item>
             </Col>
 
             <Col span={4}>
               <Form.Item name="piso" className="reset">
-                <FloatInput label="Piso" />
+                <FloatInput outline label="Piso" />
               </Form.Item>
             </Col>
 
             <Col span={4}>
               <Form.Item name="depto" className="reset">
-                <FloatInput label="Depto" />
+                <FloatInput outline label="Depto" />
               </Form.Item>
             </Col>
 
@@ -124,7 +124,7 @@ export default function GestionAdicionalesNew() {
                 rules={[{ required: true, message: "Ingrese Código Postal" }]}
                 className="reset"
               >
-                <FloatInput label="Código Postal" />
+                <FloatInput outline label="Código Postal" />
               </Form.Item>
             </Col>
           </Row>
@@ -132,18 +132,18 @@ export default function GestionAdicionalesNew() {
           <Row gutter={[24, 24]}>
             <Col span={8}>
               <Form.Item name="entrec">
-                <FloatInput label="Entre calles" />
+                <FloatInput outline label="Entre calles" />
               </Form.Item>
 
               <Form.Item name="barrio">
-                <FloatInput label="Barrio" />
+                <FloatInput outline label="Barrio" />
               </Form.Item>
 
               <Form.Item
                 name="localidad"
                 rules={[{ required: true, message: "Ingrese Localidad" }]}
               >
-                <FloatInput label="Localidad" />
+                <FloatInput outline label="Localidad" />
               </Form.Item>
 
               <Form.Item
@@ -151,6 +151,7 @@ export default function GestionAdicionalesNew() {
                 rules={[{ required: true, message: "Ingrese Provincia" }]}
               >
                 <FloatSelected
+                  outline
                   label="Provincia"
                   options={[
                     {
@@ -171,11 +172,11 @@ export default function GestionAdicionalesNew() {
                 name="telefono"
                 rules={[{ required: true, message: "Ingrese Teléfono" }]}
               >
-                <FloatInput label="Teléfono" />
+                <FloatInput outline label="Teléfono" />
               </Form.Item>
 
               <Form.Item name="referencia">
-                <FloatInput label="Referencia" />
+                <FloatInput outline label="Referencia" />
               </Form.Item>
             </Col>
           </Row>
@@ -196,18 +197,19 @@ export default function GestionAdicionalesNew() {
                 name="nombre"
                 rules={[{ required: true, message: "Ingrese Nombre" }]}
               >
-                <FloatInput label="Nombre" />
+                <FloatInput outline label="Nombre" />
               </Form.Item>
 
               <Form.Item
                 name="Apellido"
                 rules={[{ required: true, message: "Ingrese Apellido" }]}
               >
-                <FloatInput label="Apellido" />
+                <FloatInput outline label="Apellido" />
               </Form.Item>
 
               <Form.Item name="Sexo">
                 <FloatSelected
+                  outline
                   label="Sexo"
                   options={[
                     {
@@ -231,6 +233,7 @@ export default function GestionAdicionalesNew() {
 
               <Form.Item name="estadocivil">
                 <FloatSelected
+                  outline
                   label="Estado Civil"
                   options={[
                     {
@@ -253,6 +256,7 @@ export default function GestionAdicionalesNew() {
 
               <Form.Item name="pais">
                 <FloatSelected
+                  outline
                   label="País de nacimiento"
                   options={[
                     {
@@ -268,7 +272,7 @@ export default function GestionAdicionalesNew() {
                 name="email"
                 rules={[{ required: true, message: "Ingrese un email" }]}
               >
-                <FloatInput label="E-mail" />
+                <FloatInput outline label="E-mail" />
               </Form.Item>
 
               <Form.Item
@@ -277,14 +281,14 @@ export default function GestionAdicionalesNew() {
                   { required: true, message: "Ingrese Código tributario" },
                 ]}
               >
-                <FloatInput label="Código tributario" />
+                <FloatInput outline label="Código tributario" />
               </Form.Item>
 
               <Form.Item
                 name="embozado"
                 rules={[{ required: true, message: "Ingrese Nombre embozado" }]}
               >
-                <FloatInput label="Nombre embozado" />
+                <FloatInput outline label="Nombre embozado" />
               </Form.Item>
             </Col>
           </Row>

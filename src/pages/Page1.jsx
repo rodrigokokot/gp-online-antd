@@ -4,13 +4,14 @@ import DeploymentConfirmation from '../components/molecules/DeploymentConfirmati
 import Icon, {DownOutlined} from '@ant-design/icons'
 import FloatInput from '../components/molecules/FloatInput'
 import FloatSelected from '../components/molecules/FloatSelected'
-import { Form, Card, Switch } from "antd";
+import { Form, Card, Switch, Typography, Button } from "antd";
 import DateRangeFilter from '../components/organisms/DateRangeFilter'
 import {HelpImg, LoginImg} from '../assets/svg/img'
 import InlineSVG from 'svg-inline-react';
 import ResultSearch from '../components/molecules/ResultSearch'
 import BreadComponent from '../components/molecules/Breadcrum'
 import { useAuth } from '../context/authContext'
+import { useTranslation } from 'react-i18next';
 
 const validator = {
     require: {
@@ -20,6 +21,8 @@ const validator = {
   };
 
 function Page1() {
+
+    const { t, i18n } = useTranslation();
 
     const authContext = useAuth()
     console.log(authContext);
@@ -297,6 +300,8 @@ function Page1() {
 
     return (
         <>
+            <Typography>{t('title')}</Typography>
+            <Typography>{t('description.part1')}</Typography>
             <BreadComponent />
             <ResultSearch />
             {/* <DateRangeFilter /> */}

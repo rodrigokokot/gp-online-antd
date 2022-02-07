@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import FloatInput from "../components/molecules/FloatInput/index";
+import FloatInput from "../../../components/molecules/FloatInput/index";
 const columnsGestionUsuarios = [
   {
     name: 'Usuario',

@@ -8,6 +8,8 @@ import { AuthProvider } from './context/authContext';
 import LoginTemplate from './templates/Login';
 import DashboardTemplate from './templates/Dashboard';
 
+// locales
+import './i18n'
 
 // pages
 import Login from './pages/Login'
@@ -35,7 +37,7 @@ function App() {
           <DashboardTemplate exact path="/parametrosPrincipales/gestionSucursales/nuevo" component={lazy(() => import('./pages/ParametrosPrincipales/NuevaSucursal'))} />
           
           {/* Usuarios */}
-          <DashboardTemplate exact path="/usuarios/gestionUsuarios" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/GestionUsuarios'))} />
+          <DashboardTemplate exact path="/usuarios/gestionUsuarios" component={lazy(() => import('./pages/Usuarios/GestionUsuarios'))} />
           <DashboardTemplate exact path="/usuarios/gestionUsuarios/crear" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/FormUsuNew'))} />
           <DashboardTemplate exact path="/usuarios/gestionUsuarios/editar/:usuario" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/GestionUsuariosEdit'))} />
 
@@ -76,11 +78,11 @@ function App() {
           <DashboardTemplate exact path="/emision/cargosAjustes/publicacionEnBoletin" component={lazy(() => import('./pages/Emision/CargosAjustes/PublicacionEnBoletin'))} />
 
                         {/* Socios */}
-          <DashboardTemplate exact path="/emision/socios/cuentas" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentas'))} />
+          <DashboardTemplate exact path="/emision/socios/cuentas" component={lazy(() => import('./pages/Emision/Socios/Cuentas'))} />
           <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/editar/:idcuenta" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
           <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/nueva" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaNew'))} />
 
-          <DashboardTemplate exact path="/emision/socios/avisosDeViajes" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes/AvisosViajes'))} />
+          <DashboardTemplate exact path="/emision/socios/avisosDeViajes" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes'))} />
           <DashboardTemplate exact path="/emision/socios/avisosDeViajes/editar/:id" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes/AvisosViajesEdit'))} />
 
           <DashboardTemplate exact path="/emision/socios/movimientosDeCuenta" component={lazy(() => import('./pages/Emision/Socios/MovimientosDeCuenta'))} />
@@ -89,10 +91,17 @@ function App() {
           <DashboardTemplate exact path="/emision/socios/adicionales/nueva/:id" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales/GestionAdicionalesNew'))} />
 
           <DashboardTemplate exact path="/emision/socios/tarjetas" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasSearch'))} />
+          <DashboardTemplate exact path="/emision/socios/tarjetas/ver/:id" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasView'))} />
+
+          <DashboardTemplate exact path="/emision/socios/plasticos" component={lazy(() => import('./pages/Emision/Socios/Plasticos/Plasticos'))} />
+
+          
           {/* Parametria */}
           <DashboardTemplate exact path="/parametria/modificarLimite" component={lazy(() => import('./pages/Parametria/ModificarLimite'))} />
           <DashboardTemplate exact path="/parametria/modificarLimite/editar/:cuenta" component={lazy(() => import('./pages/Parametria/ModificarLimite/ModificarLimite'))} />
           
+          <DashboardTemplate exact path="/parametria/tarjetaInstantanea" component={lazy(() => import('./pages/Parametria/TarjetaInstantanea'))} />
+
           <DashboardTemplate exact path="/adquirencia" component={lazy(() => import('./pages/Adquirencia'))} />
 
           <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda'))} />

@@ -1,7 +1,6 @@
-import { Table } from "antd";
 import { Link } from "react-router-dom";
-import FloatInput from "../components/molecules/FloatInput/index";
-import DateRangeFilter from "../components/organisms/DateRangeFilter";
+import FloatInput from "../../../components/molecules/FloatInput/index";
+import DateRangeFilter from "../../../components/organisms/DateRangeFilter";
 const columnsMovimientosCTF = [
   {
     name: "ID Identidad",

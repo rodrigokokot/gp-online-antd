@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import SearchForm from '../../../components/organisms/SearchForm/index'
 import Table from '../../../components/organisms/Table/index'
 import {Link} from 'react-router-dom'
-import {GestionUsuariosSearch, dataGestionUsuarios, columnsGestionUsuarios} from '../../../Mocks/GestionUsuariosSearchMock'
+import {GestionUsuariosSearch, dataGestionUsuarios, columnsGestionUsuarios} from './mock'
 import {Col, Button} from 'antd'
 
 function GestionUsuario() {
@@ -13,7 +13,7 @@ function GestionUsuario() {
       Object.values(values).every((value) => {
         if (value === "" || value === undefined) {
           return true;
-        }
+        }else{ return false;}
       })
     ) {
       setData(dataGestionUsuarios);
@@ -42,8 +42,8 @@ function GestionUsuario() {
             </Button>
             </Link>
           </Col >
-          <SearchForm array={GestionUsuariosSearch} parentCallback={handleCallback} title="Busqueda de usuarios" />
-          <div style={{ marginTop: data.length == 0? '70px' : '8px' }}>
+          <SearchForm span={5} array={GestionUsuariosSearch} parentCallback={handleCallback} title="Busqueda de usuarios" />
+          <div style={{ marginTop: data.length === 0? '70px' : '8px' }}>
             <Table data={data} columns={columnsGestionUsuarios} expandible={false} editable={true}/>
           </div>
 

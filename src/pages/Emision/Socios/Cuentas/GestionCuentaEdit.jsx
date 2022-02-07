@@ -34,7 +34,7 @@ const GestionCuentaNew = () => {
                     name="sucursal"
                     rules={[{ required: true, message: "Ingrese sucursal" }]}
                     >
-                        <FloatSelect 
+                        <FloatSelect outline
                                     label="Sucursal*"
                                     placeholder="Sucursal*"
                                     options={[
@@ -60,13 +60,13 @@ const GestionCuentaNew = () => {
                     name="tipoproducto"
                     rules={[{ required: true, message: "Ingrese Tipo de Producto" }]}
                     >
-                        <FloatInput label="Tipo de Producto*" placeholder="Tipo de Producto*"></FloatInput>
+                        <FloatInput outline label="Tipo de Producto*" placeholder="Tipo de Producto*"></FloatInput>
                     </Form.Item>
                     <Form.Item
                         name="posicion"
                         rules={[{ required: true, message: "Ingrese posición" }]}
                     >
-                        <FloatSelect 
+                        <FloatSelect outline
                                     label="Posición impositiva*"
                                     placeholder="Posición impositiva*"
                                     options={[
@@ -92,7 +92,7 @@ const GestionCuentaNew = () => {
                         name="entregatarjeta"
                         rules={[{ required: true, message: "Ingrese Entrega" }]}
                     >
-                        <FloatSelect 
+                        <FloatSelect outline
                                         label="Entrega de tarjeta*"
                                         placeholder="Entrega de tarjeta*"
                                         options={[
@@ -117,7 +117,7 @@ const GestionCuentaNew = () => {
                 </Col>
                 <Col span={6}>
                     <Form.Item name='gpafinidad'>
-                    <FloatSelect 
+                    <FloatSelect outline
                                     label="Grupo de afinidad"
                                     placeholder="Grupo de afinidad"
                                     options={[
@@ -143,16 +143,16 @@ const GestionCuentaNew = () => {
                         name="producto"
                         rules={[{ required: true, message: "Ingrese Producto" }]}
                         >
-                        <FloatInput label="Producto*" placeholder="Producto*"></FloatInput>
+                        <FloatInput outline label="Producto*" placeholder="Producto*"></FloatInput>
                     </Form.Item>
                     <Form.Item  name='cuentaexterna'>
-                        <FloatInput label='Cuenta externa' placeholder='Cuenta externa'></FloatInput>
+                        <FloatInput outline label='Cuenta externa' placeholder='Cuenta externa'></FloatInput>
                     </Form.Item> 
                     <Form.Item
                     name="estado"
                     rules={[{ required: true, message: "Ingrese estado" }]}
                     >
-                    <FloatSelect 
+                    <FloatSelect outline
                                     label="Estado*"
                                     placeholder="Estado*"
                                     options={[
@@ -204,7 +204,7 @@ const GestionCuentaNew = () => {
               <Form.Item name='documento' 
                   rules={[{ required: true, message: "Ingrese Documento" }]}
               >
-                <FloatInput type="number" label='N° de Documento*' placeholder='N° de Documento*'></FloatInput>
+                <FloatInput outline type="number" label='N° de Documento*' placeholder='N° de Documento*'></FloatInput>
               </Form.Item>
           </Col>       
         </Row>
@@ -213,12 +213,12 @@ const GestionCuentaNew = () => {
                 <Form.Item name='nombre' 
                     rules={[{ required: true, message: "Ingrese Nombre" }]}
                 >
-                    <FloatInput label='Nombre*' placeholder='Nombre*'></FloatInput>
+                    <FloatInput outline label='Nombre*' placeholder='Nombre*'></FloatInput>
                 </Form.Item>
                 <Form.Item
                 name="sexo"
                 >
-                        <FloatSelect 
+                        <FloatSelect outline
                                     label="Sexo"
                                     placeholder="Sexo"
                                     options={[
@@ -244,25 +244,25 @@ const GestionCuentaNew = () => {
                     name="fechanacimiento"
                     rules={[{ required: true, message: "Ingrese Fecha de Nacimiento" }]}
                 >
-                    <DatePicker style={{width: '100%', borderTop: 0,borderLeft: 0,borderRight: 0 }} onChange={onChangedate} placeholder={valuedate} format={'DD/MM/YYYY'}/>
+                    <DatePicker style={{width: '100%' ,borderRadius:6}} onChange={onChangedate} placeholder={valuedate} format={'DD/MM/YYYY'}/>
                 </Form.Item>
                 <Form.Item 
                     name="email"
                     rules={[{ required: true, message: "Ingrese E-Mail" }]}
                     >
-                    <FloatInput type="email" label='E-mail*' placeholder='E-mail*'></FloatInput>
+                    <FloatInput outline type="email" label='E-mail*' placeholder='E-mail*'></FloatInput>
                     </Form.Item> 
             </Col>
             <Col span={6}>
                 <Form.Item name='apellido' 
                     rules={[{ required: true, message: "Ingrese Apellido" }]}
                 >
-                    <FloatInput label='Apellido*' placeholder='Apellido*'></FloatInput>
+                    <FloatInput outline label='Apellido*' placeholder='Apellido*'></FloatInput>
                 </Form.Item>
                 <Form.Item
                 name="estadocivil"
                 >
-                        <FloatSelect 
+                        <FloatSelect outline
                                     label="Estado civil"
                                     placeholder="Estado civil"
                                     options={[
@@ -288,7 +288,7 @@ const GestionCuentaNew = () => {
                     name="paisnacimiento"
                     rules={[{ required: true, message: "Ingrese País" }]}
                     >
-                    <FloatSelect 
+                    <FloatSelect outline
                                     label="País de Nacimiento*"
                                     placeholder="País de Nacimiento*"
                                     options={[
@@ -314,17 +314,18 @@ const GestionCuentaNew = () => {
                     name="codigotribtario"
                     rules={[{ required: true, message: "Ingrese Código" }]}
                 >
-                    <FloatInput type="number" label='Código tribtario*' placeholder='Código tribtario*'></FloatInput>
+                    <FloatInput outline type="number" label='Código tribtario*' placeholder='Código tribtario*'></FloatInput>
                 </Form.Item> 
             </Col>
-        </Row>              
-        <Col span={6}>
+        </Row>        
+        <Row gutter={48}>    
+        <Col span={12}>
             <Form.Item 
                 name="nombreembozado" 
             >
-                <FloatInput label='Nombre embozado' placeholder='Nombre embozado'></FloatInput>
+                <FloatInput outline label='Nombre embozado' placeholder='Nombre embozado'></FloatInput>
             </Form.Item>
-        </Col> 
+        </Col> </Row>
         </Card>   
         <br></br>
         <Card >
@@ -339,55 +340,55 @@ const GestionCuentaNew = () => {
                     name="calle" 
                     rules={[{ required: true, message: "Ingrese Calle" }]}
                 >   
-                    <FloatInput label="Calle*" placeholder="Calle*"></FloatInput>
+                    <FloatInput outline label="Calle*" placeholder="Calle*"></FloatInput>
                 </Form.Item>
             </Col>
             <Row gutter={16}>
                 <Col span={3}>
                     <Form.Item name='numero'
                     >
-                        <FloatInput type='number' label='Numero' placeholder='Numero' ></FloatInput>
+                        <FloatInput outline type='number' label='Numero' placeholder='Numero' ></FloatInput>
                     </Form.Item>
                 </Col>
                 <Col span={3}>
                     <Form.Item name='piso'  
                     >
-                        <FloatInput type='number' label='Piso' placeholder='Piso'></FloatInput>
+                        <FloatInput outline type='number' label='Piso' placeholder='Piso'></FloatInput>
                     </Form.Item> 
                 </Col>
                 <Col span={3}>
                     <Form.Item name='depto'  
                     >
-                        <FloatInput label='Depto' placeholder='Depto'></FloatInput>
+                        <FloatInput outline label='Depto' placeholder='Depto'></FloatInput>
                     </Form.Item> 
                 </Col>
                 <Col span={3}>
                     <Form.Item name='codpostal'
                     rules={[{ required: true, message: "Ingrese Codigo postal" }]}  
                     >
-                        <FloatInput type='number' label='Codigo postal*' placeholder='Codigo postal*'></FloatInput>
+                        <FloatInput outline type='number' label='Codigo postal*' placeholder='Codigo postal*'></FloatInput>
                     </Form.Item> 
                 </Col>
             </Row> 
             <Col span={6}>
                     <Form.Item name='entrecalle'  
                     >
-                        <FloatInput label='Entre Calles' placeholder='Entre Calles'></FloatInput>
+                        <FloatInput outline label='Entre Calles' placeholder='Entre Calles'></FloatInput>
                     </Form.Item> 
                     <Form.Item name='barrio'  
                     >
-                        <FloatInput label='Barrio' placeholder='Barrio'></FloatInput>
+                        <FloatInput outline label='Barrio' placeholder='Barrio'></FloatInput>
                     </Form.Item> 
                     <Form.Item name='localidad' 
                     rules={[{ required: true, message: "Ingrese Localidad" }]}   
                     >
-                        <FloatInput label='Localidad*' placeholder='Localidad*'></FloatInput>
+                        <FloatInput outline label='Localidad*' placeholder='Localidad*'></FloatInput>
                     </Form.Item> 
                     <Form.Item
                         name="provincia" 
                         rules={[{ required: true, message: "Ingrese provincia" }]}
                     >
-                        <FloatSelect 
+                        <FloatSelect outline
                                 label="Provincia*"
                                 placeholder="Provincia*"
                                 options={[
@@ -412,11 +413,11 @@ const GestionCuentaNew = () => {
                     <Form.Item name='telefono' 
                     rules={[{ required: true, message: "Ingrese Télefono" }]}   
                     >
-                        <FloatInput type='number' label='Télefono*' placeholder='Télefono*'></FloatInput>
+                        <FloatInput outline type='number' label='Télefono*' placeholder='Télefono*'></FloatInput>
                     </Form.Item>  
                     <Form.Item name='referencia'   
                     >
-                        <FloatInput label='Referencia' placeholder='Referencia'></FloatInput>
+                        <FloatInput outline label='Referencia' placeholder='Referencia'></FloatInput>
                     </Form.Item>
             </Col> </>}
             </Card>
