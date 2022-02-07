@@ -23,7 +23,7 @@ function CPMovimientoEdit() {
         // check 1 
         const [checkedList1, setCheckedList1]=useState('');
         function onChangeCheck(list){
-            setCheckedList1(list);  console.log(list); 
+            setCheckedList1(list); 
           }; 
         return (<>  
             

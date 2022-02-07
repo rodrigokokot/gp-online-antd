@@ -156,25 +156,25 @@ const columnsLimite = [
            ></FloatSelected>
          ),
       },
-        {
-          index: 'Tipo de documento',
-          name: 'tdocumento',
-          input: <FloatInput placeholder="Tipo de documento" label="Tipo de documento" />,
-        },
-        {
-            index: 'N° de documento', 
-            input: (
-             <FloatSelected
-               placeholder="N° de documento"
-               label="N° de documento"
-               options={[
-                 { title: "N° de documento 1", value: 1,disabled: false, },
-                 { title: "N° de documento 2", value: 2,disabled: false, },
-                 { title: "N° de documento 3", value: 3,disabled: false, },
-               ]} 
-             ></FloatSelected>
-           ),
-        },
+      {
+          index: 'Tipo de documento', 
+          input: (
+           <FloatSelected
+             placeholder="Tipo de documento"
+             label="Tipo de documento"
+             options={[
+               { title: "T de documento 1", value: 1,disabled: false, },
+               { title: "T de documento 2", value: 2,disabled: false, },
+               { title: "T de documento 3", value: 3,disabled: false, },
+             ]} 
+           ></FloatSelected>
+         ),
+      },
+      {
+        index: 'N° de documento',
+        name: 'ndocumento',
+        input: <FloatInput placeholder="N° de documento" label="N° de documento" />,
+      },
         {
           index: 'Razón social',
           name: 'razonsocial',
