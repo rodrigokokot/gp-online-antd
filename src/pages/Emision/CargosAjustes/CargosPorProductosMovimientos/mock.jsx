@@ -224,7 +224,7 @@ const columnsCPMovimiento = [
 
         {
           index: "moneda",
-          input: <SelectImg showSearch={true} placeholder="Buscá tipo de moneda" style={{width: 250}}/>
+          input: <SelectImg showSearch={true} placeholder="Busca tipo de moneda" style={{width: 250}}/>
         }, 
    ];
 export {dataCPMovimiento,columnsCPMovimiento,CPMovimientoSearch};

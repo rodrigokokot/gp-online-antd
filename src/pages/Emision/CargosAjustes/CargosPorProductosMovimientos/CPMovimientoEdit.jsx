@@ -36,7 +36,7 @@ function CPMovimientoEdit() {
                         >
                             <FloatSelect outline showSearch={true} suffix={<SearchOutlined />}
                                         label="Producto"
-                                        placeholder="Buscá por tipo de producto"
+                                        placeholder="Busca por tipo de producto"
                                         options={[
                                         {
                                             title: "P 1",
@@ -86,7 +86,7 @@ function CPMovimientoEdit() {
                         >
                             <FloatSelect outline showSearch={true} suffix={<SearchOutlined />}
                                         label="Tipo de Red"
-                                        placeholder="Buscá tipo de Red"
+                                        placeholder="Busca tipo de Red"
                                         options={[
                                         {
                                             title: "Red 1",
@@ -160,7 +160,7 @@ function CPMovimientoEdit() {
                 name="tipomoneda" 
             > 
                 <SelectImg suffix={<SearchOutlined />} 
-                bordered showSearch={true} placeholder="Buscá tipo de moneda" 
+                bordered showSearch={true} placeholder="Busca tipo de moneda" 
                 style={{width: '100%'}}
                 />            
             </Form.Item> 
@@ -182,7 +182,7 @@ function CPMovimientoEdit() {
                         name="conceptocargo" 
                         >
                             <FloatSelect outline showSearch={true} suffix={<SearchOutlined />} 
-                                placeholder="Buscá concepto por cargo"
+                                placeholder="Busca concepto por cargo"
                                 label="Concepto por cargo"
                                 options={[
                                 { title: "C 1", value:"C 1" ,disabled: false, },
