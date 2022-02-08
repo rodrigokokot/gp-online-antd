@@ -101,7 +101,7 @@ export default function ConsultaLiquidacionesSearch() {
                 </Row>
             </Card>
             
-            <Card>
+            <Card style={{marginBottom:"4px"}}>
                 <h1 className='purple-title' style={{marginBottom:"24px"}}>Período no liquidado</h1>
                 <Col span={8}>
                     <Row gutter={[36,36]}>
@@ -130,15 +130,11 @@ export default function ConsultaLiquidacionesSearch() {
   
   
   return <div>
-      <Space direction='vertical'>
-      
+
       <SearchCards  />
+
       <SearchForm array={ConsultaLiquidacionesSearchArray} title="Consulta de movimientos historicos" parentCallback={handleCallback} span={6} />
       <Table columns={columnsConsultaLiquidaciones} data={dataConsultaLiquidaciones} expandible={false} editable={false} />
-
-      </Space>
-
-
 
   </div>;
 }
