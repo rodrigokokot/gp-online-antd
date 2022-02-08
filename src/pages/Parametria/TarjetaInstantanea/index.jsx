@@ -4,6 +4,7 @@ import Table from '../../../components/organisms/Table';
 import FloatInput from "../../../components/molecules/FloatInput/index";
 import { Link } from 'react-router-dom';
 import FloatSelected from '../../../components/molecules/FloatSelected';
+import {Col, Button} from 'antd'
 
 const columnsTarjetaInstantanea = [
     {
@@ -192,6 +193,14 @@ const TarjetaInstantaneaSearch = [
 ];
 function TarjetaInstantanea() {
     return (<>
+          <Col style={{ textAlign: "right", marginBottom: "25px"}}>
+          <Link to="/parametria/tarjetaInstantanea/nueva">
+          <Button type="primary" size="small">
+          Nuevo tarjeta instantanea
+          </Button>
+          </Link>
+          </Col>
+
         <SearchForm title="Búsqueda de cuentas" array={TarjetaInstantaneaSearch} span={5}></SearchForm>
         <br />
         <Table data={dataTarjetaInstantanea} columns={columnsTarjetaInstantanea}></Table>
