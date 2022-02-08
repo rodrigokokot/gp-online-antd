@@ -1,19 +1,19 @@
 import React from "react";
-import SearchForm from "../../../components/organisms/SearchForm";
 import {
   columnsTiposDeCargos,
   dataTiposDeCargos,
   tiposDeCargosSearch,
 } from "./mock";
-import Table from "../../../components/organisms/Table";
 import { Button, Col } from "antd";
 import { Link } from "react-router-dom";
+import SearchForm from "../../../../components/organisms/SearchForm";
+import Table from "../../../../components/organisms/Table";
 
 function TiposDeCargos() {
   return (
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
-        <Link to="/parametria/tiposDeCargos/crear">
+        <Link to="/emision/cargosAjustes/tiposDeCargos/crear">
           <Button type="primary" size="small">
             Nuevo Tipo de Cargo
           </Button>

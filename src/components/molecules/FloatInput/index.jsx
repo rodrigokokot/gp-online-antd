@@ -41,7 +41,7 @@ const FloatInput = ({outline, secondaryColor,disabled, ...props}) => {
         style={
           !outline?
             !secondaryColor? primaryClass : secondaryClass
-          :  secondaryColor? { borderColor: '#ab218e', borderRadius: '6px', boxShadow: '#ab218e'} : {borderRadius: '6px'}  } />
+          :  secondaryColor? { borderColor: '#ab218e', borderRadius: '0.5em', boxShadow: '#ab218e'} : {borderRadius: '0.5em'}  } />
       <label className={labelClass}>
         {isOccupied ? label : placeholder} {requiredMark}
       </label>

@@ -73,6 +73,10 @@ const routes = [
                         path: "/emision/cargosAjustes/cambioDeEstado",
                     },
                     {
+                        name: "Tipos de Cargos",
+                        path: "/emision/cargosAjustes/tiposDeCargos",
+                    },
+                    {
                         name: "Cargos por Productos",
                         path: "/emision/cargosAjustes/cargosPorProductos",
                     },
@@ -117,17 +121,25 @@ const routes = [
                         name: "Avisos de Viajes",
                         path: "/emision/socios/avisosDeViajes",
                     },
+                    {
+                        name: "Plásticos",
+                        path: "/emision/socios/plasticos"
+                    }
                 ]
             }, 
         ]
     },
     {
-        name: "Parametría", 
+        name: "Parametría",
         icon: "BarChartOutlined",
-        subItems:[ 
+        subItems:[
             {
                 name: "Modificar Límite de Tarjetas Adicionales",
                 path: "/parametria/modificarLimite",
+            },
+            {
+                name: "Alta de Tarjeta Instantanea",
+                path: "/parametria/tarjetaInstantanea",
             },
         ]
     },

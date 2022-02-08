@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Radio, Form, Typography, Card, Row, Col } from "antd";
-import Edit from "../../../components/organisms/Edit/index";
-import FloatInput from "../../../components/molecules/FloatInput";
+import Edit from "../../../../components/organisms/Edit/index";
+import FloatInput from "../../../../components/molecules/FloatInput";
 const { Title } = Typography;
 const TipoDeCargoCrear = () => {
   const [value1, setValue1] = useState("");
@@ -27,6 +27,7 @@ const TipoDeCargoCrear = () => {
           <Col span={6}>
             <Form.Item name="codigo">
               <FloatInput
+                outline
                 type="text"
                 label="Codigo"
                 placeholder="Codigo"
@@ -34,6 +35,7 @@ const TipoDeCargoCrear = () => {
             </Form.Item>
             <Form.Item name="descripcion">
               <FloatInput
+                outline
                 type="text"
                 label="Descripcion"
                 placeholder="Descripcion"
@@ -41,6 +43,7 @@ const TipoDeCargoCrear = () => {
             </Form.Item>
             <Form.Item name="tipoCargo">
               <FloatInput
+                outline
                 type="text"
                 label="Tipo Cargo"
                 placeholder="Tipo Cargo"
@@ -84,6 +87,7 @@ const TipoDeCargoCrear = () => {
           </Form.Item>
           <Form.Item name="tipoMoneda">
             <FloatInput
+              outline
               type="text"
               label="tipo moneda?"
               placeholder="buscar moneda?"
