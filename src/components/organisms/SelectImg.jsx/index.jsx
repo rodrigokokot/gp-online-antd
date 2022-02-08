@@ -19,9 +19,9 @@ const monedas = [
   },
 ];
 
-const SelectImg = () => {
+const SelectImg = (props) => {
   return (
-      <Select  bordered={false} style={{ width: 190 }} placeholder="Moneda">
+      <Select bordered={props.bordered ? true : false} suffixIcon={props.suffix} style={props.style ? props.style : { width: 190 }} showSearch={props.showSearch} placeholder={props.placeholder ? props.placeholder : "Moneda"}>
         {monedas.map((logo, index) => (
           <Select.Option value={logo.name} key={index}>
             <Image

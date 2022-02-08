@@ -4,6 +4,7 @@ import FloatInput from '../../../../components/molecules/FloatInput';
 import FloatSelect from "../../../../components/molecules/FloatSelected/index";
 import Edit from '../../../../components/organisms/Edit'; 
 import { SearchOutlined } from '@ant-design/icons';
+import SelectImg from "../../../../components/organisms/SelectImg.jsx";
 const { Title } = Typography;  
 function CPMovimientoEdit() {
   
@@ -156,18 +157,12 @@ function CPMovimientoEdit() {
                 </Form.Item>
             <Col span={8}>
             <Form.Item
-                        name="tipomoneda" 
-                        >
-                            <FloatSelect outline showSearch={true} suffix={<SearchOutlined />} 
-                                placeholder="Buscá tipo de moneda"
-                                label="Buscá tipo de moneda"
-                                options={[
-                                { title: "Moneda 1", value:"Moneda 1" ,disabled: false, },
-                                { title: "Moneda 2", value:"Moneda 2" ,disabled: false, },
-                                { title: "Moneda 3", value:"Moneda 3" ,disabled: false, },
-                                ]} 
-                            >
-                            </FloatSelect> 
+                name="tipomoneda" 
+            > 
+                <SelectImg suffix={<SearchOutlined />} 
+                bordered showSearch={true} placeholder="Buscá tipo de moneda" 
+                style={{width: '100%'}}
+                />            
             </Form.Item> 
             <Row gutter={48}>
               <Col span={12}>                           

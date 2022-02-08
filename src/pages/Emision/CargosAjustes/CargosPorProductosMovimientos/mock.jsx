@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import FloatSelected from '../../../../components/molecules/FloatSelected';
 import FloatInput from "../../../../components/molecules/FloatInput/index"; 
-import DateRangeFilter from '../../../../components/organisms/DateRangeFilter';
+import DateRangeFilter from '../../../../components/organisms/DateRangeFilter'; 
+import SelectImg from "../../../../components/organisms/SelectImg.jsx";
 const columnsCPMovimiento = [
     {
       name: 'Producto',
@@ -220,19 +221,10 @@ const columnsCPMovimiento = [
           index: 'fecha',
           input: <DateRangeFilter placeholder="fecha" label="Por fecha" />,
         },<br></br>,<br></br>,<br></br>,<br></br>,
+
         {
-          index: 'Moneda',
-          input: (
-           <FloatSelected showSearch={true} width={300}
-             placeholder="Buscá tipo de moneda"
-             label="Buscá tipo de moneda"
-             options={[
-               { title: "Moneda 1", value: 1,disabled: false, },
-               { title: "Moneda 2", value: 2,disabled: false, },
-               { title: "Moneda 3", value: 3,disabled: false, },
-             ]} 
-           ></FloatSelected>
-         ),
-        },
+          index: "moneda",
+          input: <SelectImg showSearch={true} placeholder="Buscá tipo de moneda" style={{width: 250}}/>
+        }, 
    ];
 export {dataCPMovimiento,columnsCPMovimiento,CPMovimientoSearch};
