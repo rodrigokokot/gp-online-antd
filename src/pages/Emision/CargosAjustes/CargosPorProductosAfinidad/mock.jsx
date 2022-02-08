@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
+import SelectImg from "../../../../components/organisms/SelectImg.jsx";
 
 
 
@@ -93,13 +94,7 @@ export const CargoPorProductosAfinidadSearchArray = [
     },
     {
         index: "moneda",
-        input: <FloatSelected label="Moneda" showSearch={true} options={[
-            {
-                value:"EUR",
-                title:"EUR",
-                disabled:false,
-            }
-        ]} />
+        input: <SelectImg />
     },
     {
         index: "fecha",
