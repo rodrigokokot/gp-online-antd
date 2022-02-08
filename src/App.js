@@ -67,7 +67,18 @@ function App() {
                         
                         {/* Cargos y Ajustes */}
           <DashboardTemplate exact path="/emision/cargosAjustes/cambioDeEstado" component={lazy(() => import('./pages/Emision/CargosAjustes/CambioDeEstado'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/cambioDeEstado/detalle/:id" component={lazy(() => import('./pages/Emision/CargosAjustes/CambioDeEstado/CambioDeEstadoDetalle'))} />
+
+
+          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos/editar/:id" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos/TiposDeCargosEdit'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos/crear" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos/TiposDeCargoCrear'))} />
+
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos/editar/:id" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos/CargosPorProductosEditar'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos/crear" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos/CargosPorProductosCrear'))} />
+
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/consultaDeLiquidaciones" component={lazy(() => import('./pages/Emision/CargosAjustes/ConsultaDeLiquidaciones'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/publicacionEnBoletin" component={lazy(() => import('./pages/Emision/CargosAjustes/PublicacionEnBoletin'))} />

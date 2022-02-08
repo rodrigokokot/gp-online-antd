@@ -73,6 +73,10 @@ const routes = [
                         path: "/emision/cargosAjustes/cambioDeEstado",
                     },
                     {
+                        name: "Tipos de Cargos",
+                        path: "/emision/cargosAjustes/tiposDeCargos",
+                    },
+                    {
                         name: "Cargos por Productos",
                         path: "/emision/cargosAjustes/cargosPorProductos",
                     },
