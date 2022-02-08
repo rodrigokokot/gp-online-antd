@@ -1,42 +1,42 @@
 import { Link } from "react-router-dom";
-import FloatInput from "../../../components/molecules/FloatInput";
-import FloatSelected from "../../../components/molecules/FloatSelected";
-import DateRangeFilter from "../../../components/organisms/DateRangeFilter";
+import FloatInput from "../../../../components/molecules/FloatInput";
+import FloatSelected from "../../../../components/molecules/FloatSelected";
+import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 
 const columnsTiposDeCargos = [
   {
     name: "Codigo",
-    selector: (row) => row.idcuenta,
+    selector: (row) => row.codigo,
     sortable: true,
   },
   {
     name: "Descripcion",
-    selector: (row) => row.producto,
+    selector: (row) => row.descripcion,
     sortable: true,
   },
   {
     name: "Tipos Cargo",
-    selector: (row) => row.gpafinidad,
+    selector: (row) => row.tipoCargo,
     sortable: true,
   },
   {
     name: "Aplica IVA",
-    selector: (row) => row.cexterna,
+    selector: (row) => row.iva,
     sortable: true,
   },
   {
     name: "Débito/Crédito",
-    selector: (row) => row.nombre,
+    selector: (row) => row.tipoTarjeta,
     sortable: true,
   },
   {
     name: "Moneda",
-    selector: (row) => row.dni,
+    selector: (row) => row.moneda,
     sortable: true,
   },
   {
     name: "Estado",
-    selector: (row) => row.tarjeta,
+    selector: (row) => row.estado,
     sortable: true,
   },
   {
@@ -44,7 +44,7 @@ const columnsTiposDeCargos = [
     button: true,
     cell: (row) => (
       <Link
-        to={`/parametria/tiposDeCargos/editar/${row.idcuenta}`}
+        to={`/emision/cargosAjustes/tiposDeCargos/editar/${row.codigo}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >
@@ -56,58 +56,49 @@ const columnsTiposDeCargos = [
 
 const dataTiposDeCargos = [
   {
-    idcuenta: "001471107",
-    producto: "Producto Sobre Disponible",
-    gpafinidad: "Disponible",
-    cexterna: "8",
-    nombre: "Marianela Esteves",
-    dni: "DNI 24801003",
-    tarjeta: "552268XXXX",
-    estado: "activo",
+    codigo: "3",
+    descripcion: "Debito prueba",
+    tipoCargo: "sistema",
+    iva: "si",
+    tipoTarjeta: "debito",
+    moneda: "pesos",
+    estado: "habilitado",
   },
   {
-    idcuenta: "001471107",
-    producto: "Producto Sobre Disponible",
-    gpafinidad: "Disponible",
-    cexterna: "8",
-    nombre: "Marianela Esteves",
-    dni: "DNI 24801003",
-    tarjeta: "552268XXXX",
-    estado: "activo",
-    option: <Link>Editar</Link>,
+    codigo: "3",
+    descripcion: "Debito prueba",
+    tipoCargo: "sistema",
+    iva: "si",
+    tipoTarjeta: "debito",
+    moneda: "pesos",
+    estado: "habilitado",
   },
   {
-    idcuenta: "001471107",
-    producto: "Producto Sobre Disponible",
-    gpafinidad: "Disponible",
-    cexterna: "8",
-    nombre: "Marianela Esteves",
-    dni: "DNI 24801003",
-    tarjeta: "552268XXXX",
-    estado: "activo",
-    option: <Link>Editar</Link>,
+    codigo: "3",
+    descripcion: "Debito prueba",
+    tipoCargo: "sistema",
+    iva: "si",
+    tipoTarjeta: "debito",
+    moneda: "pesos",
+    estado: "habilitado",
   },
   {
-    idcuenta: "001471107",
-    producto: "Producto Sobre Disponible",
-    gpafinidad: "Disponible",
-    cexterna: "8",
-    nombre: "Marianela Esteves",
-    dni: "DNI 24801003",
-    tarjeta: "552268XXXX",
-    estado: "activo",
-    option: <Link>Editar</Link>,
+    codigo: "3",
+    descripcion: "Debito prueba",
+    tipoCargo: "sistema",
+    iva: "si",
+    tipoTarjeta: "debito",
+    moneda: "pesos",
+    estado: "habilitado",
   },
   {
-    idcuenta: "001471107",
-    producto: "Producto Sobre Disponible",
-    gpafinidad: "Disponible",
-    cexterna: "8",
-    nombre: "Marianela Esteves",
-    dni: "DNI 24801003",
-    tarjeta: "552268XXXX",
-    estado: "activo",
-    option: <Link>Editar</Link>,
+    codigo: "3",
+    descripcion: "Debito prueba",
+    tipoCargo: "sistema",
+    iva: "si",
+    tipoTarjeta: "debito",
+    moneda: "pesos",
+    estado: "habilitado",
   },
 ];
 const tiposDeCargosSearch = [
