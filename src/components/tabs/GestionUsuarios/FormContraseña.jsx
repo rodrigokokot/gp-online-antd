@@ -1,7 +1,6 @@
 import React from "react";
 import { Form, Typography, Card ,Col,Input} from "antd";
-import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import FloatInput from "../../molecules/FloatInput";
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'; 
 const { Title } = Typography;
 
 const Contraseña = () => {
@@ -11,34 +10,25 @@ const Contraseña = () => {
         <Title level={4}  style={{ color: '#ab218e' }}>Contraseña</Title>
         <Col span={6}>
           <Form.Item name="password" rules = {[
-              { required: true, message: 'Ingrese Contraseña' },
+              { required: true, message: 'Ingrese contraseña para generar cambios' },
               {
                 validator: (_, value1) =>
                   value1 && value1.length >= 8
                     ? Promise.resolve()
-                    : Promise.reject(new Error('Debe ingresar al menos 8 caracteres')),
+                    : value1.length === 0 ? Promise.reject(new Error('')) : Promise.reject(new Error('Debe ingresar al menos 8 caracteres')),
               },
               {
                 validator: (_, value2) =>
                   value2 && value2.match(/\d+/g)
                     ? Promise.resolve()
-                    : Promise.reject(new Error('Debe ingresar al menos un número')),
+                    : value2.length === 0 ? Promise.reject(new Error('')) : Promise.reject(new Error('Debe ingresar al menos un número')),
               },
             ]}
           >
-            {/* <Input.Password
-              outline
-              type="password"
-              label="Ingresa tu contraseña para generar cambios"
-              placeholder="Contraseña" iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-            ></Input.Password> */}
-            <FloatInput
-              outline
-              label="Contraseña nueva"
-              placeholder="Ingresá tu contraseña para generar cambios"
-              type="password"
-              iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-            />
+             <Input.Password 
+             style={ { borderRadius: '0.5em', boxShadow: '#ab218e'} }   
+              placeholder="Ingrese Contraseña" iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+            ></Input.Password>  
           </Form.Item>
         </Col>
       </Card>

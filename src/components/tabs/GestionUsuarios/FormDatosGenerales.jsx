@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Radio, Form, Typography,Card ,Col,Row} from "antd";
 import FloatInput from "../../molecules/FloatInput";
-import { useParams } from "react-router-dom";
-const { Group } = Radio;
+import { useParams } from "react-router-dom"; 
 const { Title, Text } = Typography;
 
 const DatosGenerales = () => {
