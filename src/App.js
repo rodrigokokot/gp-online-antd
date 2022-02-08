@@ -78,7 +78,6 @@ function App() {
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos/editar/:id" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos/CargosPorProductosEditar'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos/crear" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos/CargosPorProductosCrear'))} />
 
-          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad/CargosPorProductosAfinidadSearch'))} />          
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad/editar/:id" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad/CargosPorProdutosAfinidadEdit'))} />          
