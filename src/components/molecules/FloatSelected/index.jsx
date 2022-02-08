@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import "./index.less";
 
-const FloatSelected = ({options, outline, width, mode, ...props}) => {
+const FloatSelected = ({options,showSearch, outline, width, mode, ...props}) => {
   const [focus, setFocus] = useState(false);
   let { label, value, placeholder, type,disabled, required} = props;
 
