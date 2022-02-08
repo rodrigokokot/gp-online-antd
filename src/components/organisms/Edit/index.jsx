@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import { Form, Button, Modal, Typography } from "antd";
 import PropTypes from 'prop-types'
 
-const Edit = ({ component: Component, textBtnSave, textModalConfirm, textBtnModalConfirm }) => {
-  // const [isModalVisible, setIsModalVisible] = useState(false);
-
+const Edit = ({ component: Component,id, textBtnSave, textModalConfirm, textBtnModalConfirm }) => {
+  // const [isModalVisible, setIsModalVisible] = useState(false); 
   const showModal = () => {
     // setIsModalVisible(true);
     Modal.confirm({
       icon: null,
       content: <Typography.Title level={4} style={{ textAlign: 'center' }}>{textModalConfirm}</Typography.Title>,
       okText: textBtnModalConfirm,
-      okButtonProps: { form:"myForm", type:"primary", htmlType:"submit" } ,
+      okButtonProps: { form:(id ? id : "myForm"), type:"primary", htmlType:"submit" } ,
       width: 800,
       cancelText: "Cancelar",
       closable: true,
@@ -43,7 +42,7 @@ const Edit = ({ component: Component, textBtnSave, textModalConfirm, textBtnModa
   return (
     <>
       <Form
-        id="myForm"
+        id={id ? id : "myForm"}
         name="basic"
         initialValues={{ remember: true }}
         onFinish={onFinish}
