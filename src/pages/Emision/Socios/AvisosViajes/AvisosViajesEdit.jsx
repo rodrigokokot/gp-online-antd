@@ -90,7 +90,11 @@ const AvisosViajesEdit = () => {
 
   return(
   <>
-    <Edit component={FormularioCuenta} />
+    <Edit 
+        component={FormularioCuenta}
+        textBtnSave="Guardar"
+        textBtnModalConfirm='Si, guardar'
+        textModalConfirm='¿Desea guardar cambios en el aviso de viaje?' />
   </>);
 }
 export default AvisosViajesEdit;

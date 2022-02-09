@@ -151,7 +151,11 @@ function NuevaSucursal() {
     );
   };
 
-  return <Edit component={FormularioNueva} />;
+  return <Edit 
+          component={FormularioNueva}
+          textBtnSave="Crear sucursal"
+          textBtnModalConfirm="¿Crear esta sucursal?" 
+          textBtnModalConfirm="Si, crear"/>;
 }
 
 export default NuevaSucursal;

@@ -100,7 +100,11 @@ const TipoDeCargoCrear = () => {
 
   return (
     <>
-      <Edit component={FormularioUsuario} />
+      <Edit 
+        component={FormularioUsuario}
+        textBtnSave="Confirmar"
+        textModalConfirm="¿Confirma creación de nuevo tipo de cargo?"
+        textBtnModalConfirm="Si, crear" />
     </>
   );
 };

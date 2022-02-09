@@ -98,7 +98,10 @@ export default function TarjetasView() {
 
   return (
     <div>
-      <Edit component={FormularioEdit} />
+      <Edit component={FormularioEdit}
+      textBtnSave="Guardar"
+      textModalConfirm="¿Realizar cambios en la tarjet?"
+      textBtnModalConfirm="Si, guardar" />
     </div>
   );
 }

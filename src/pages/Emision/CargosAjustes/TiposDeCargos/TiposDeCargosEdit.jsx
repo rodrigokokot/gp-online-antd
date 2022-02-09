@@ -128,7 +128,12 @@ function TipoDeCargoEdit() {
 
   return (
     <>
-      <Edit component={FormularioTipoDeCargo}></Edit>
+      <Edit 
+        component={FormularioTipoDeCargo}
+        textBtnSave="Guardar cambios "
+        textModalConfirm="¿Realizar cambios en el tipo de cargo?"
+        textBtnModalConfirm="Si, guardar"
+      ></Edit>
     </>
   );
 }

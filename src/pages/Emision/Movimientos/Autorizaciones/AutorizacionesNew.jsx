@@ -323,7 +323,11 @@ export default function AutorizacionesNew() {
   return (
     <div>
       {" "}
-      <Edit component={FormularioNuevo} />
+      <Edit 
+        component={FormularioNuevo}
+        textBtnModalConfirm="¿Realizar cambios en la autorización?"
+        textBtnSave="Guardar cambios"
+        textModalConfirm="Si, guardar" />
     </div>
   );
 }

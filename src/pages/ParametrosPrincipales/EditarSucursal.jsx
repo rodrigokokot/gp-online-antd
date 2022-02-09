@@ -160,7 +160,11 @@ function EditarSucursal() {
 
   return (
     <>
-      <Edit component={FormularioEdicion} />
+      <Edit 
+        component={FormularioEdicion} 
+        textBtnSave="Guardar Cambios"
+        textModalConfirm="¿Estás seguro que deseas generar estos cambios a esta sucursal?"
+        textBtnModalConfirm="Si, guardar cambios" />
     </>
   );
 }

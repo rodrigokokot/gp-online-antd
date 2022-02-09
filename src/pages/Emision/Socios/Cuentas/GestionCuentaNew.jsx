@@ -454,7 +454,11 @@ const GestionCuentaNew = () => {
 
   return(
   <>
-    <Edit component={FormularioCuenta} />
+    <Edit 
+        component={FormularioCuenta}
+        textBtnModalConfirm="Si, crear"
+        textBtnSave='Crear cuenta'
+        textModalConfirm='¿Confirma creación de cuenta?' />
   </>);
 }
 export default GestionCuentaNew;

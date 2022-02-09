@@ -443,7 +443,11 @@ const GestionCuentaNew = () => {
 
   return(
   <>
-    <Edit component={FormularioCuenta} />
+    <Edit 
+        component={FormularioCuenta}
+        textBtnModalConfirm="Si, guardar"
+        textBtnSave='Guardar Cambios'
+        textBtnModalConfirm="¿Realizar cambios en la cuenta?" />
   </>);
 }
 export default GestionCuentaNew;
