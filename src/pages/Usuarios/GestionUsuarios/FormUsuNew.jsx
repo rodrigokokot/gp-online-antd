@@ -24,18 +24,21 @@ const FormUsuNew = () => {
     return (<>
 
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-            <Title level={4} style={{ color: '#ab218e' }}>Datos Principales</Title>
+        <Title level={3}  style={{ color: '#ab218e' }}>Datos Principales</Title> 
             <Col span={6}>
-                <Form.Item name='nombre'>
-                    <FloatInput outline type="text" label='Nombre' placeholder='Nombre'></FloatInput>
+                <Form.Item name='nombre'
+              rules={[{ required: true, message: "Ingrese Nombre" }]}>
+                    <FloatInput outline type="text" label='Nombre*' placeholder='Nombre*'></FloatInput>
                 </Form.Item>
 
-                <Form.Item name='apellido'>
-                    <FloatInput outline type="text" label='Apellido' placeholder='Apellido'></FloatInput>
+                <Form.Item name='apellido' 
+              rules={[{ required: true, message: "Ingrese Apellido" }]}>
+                    <FloatInput outline type="text" label='Apellido*' placeholder='Apellido*'></FloatInput>
                 </Form.Item>
             </Col>
             <Text>Tipo de Documento</Text>
-            <Form.Item name='tipodocumento'>
+            <Form.Item name='tipodocumento' 
+              rules={[{ required: true  }]}>
                     <Radio.Group onChange={onChange2} value={value2}>
                         <Row justify="space-between">
                         <Col span={4}>
@@ -57,7 +60,8 @@ const FormUsuNew = () => {
                     </Radio.Group>
             </Form.Item>
             <Col span={6}>
-                <Form.Item name='documento'>
+                <Form.Item name='documento' 
+              rules={[{ required: true, message: "Ingrese documento" }]}>
                     <FloatInput outline type="number" label='N° de Documento' placeholder='N° de Documento'></FloatInput>
                 </Form.Item>
 
@@ -75,14 +79,16 @@ const FormUsuNew = () => {
             </Form.Item>
         </Card>
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-            <Title level={4}  style={{ color: '#ab218e' }}>Perfil</Title>
+        <Title level={3}  style={{ color: '#ab218e' }}>Perfil</Title> 
             <Col span={6}>
-                <Form.Item  name='usuario'>
+                <Form.Item  name='usuario'
+              rules={[{ required: true, message: "Ingrese usuario" }]}>
                 <FloatInput outline type="text" label='Nombre de usuario' placeholder='Nombre de usuario'></FloatInput>
                 </Form.Item>
             </Col>
             <Text>Perfil</Text>
-            <Form.Item name='perfil'>
+            <Form.Item name='perfil'
+              rules={[{ required: true  }]}>
                 <Radio.Group onChange={onChange} value={value}>
                     <Row >
                         <Col span={5}>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Export from '../../../../components/organisms/Export';
 import Table from '../../../../components/organisms/Table';
 import SearchForm from '../../../../components/organisms/SearchForm';
-import {PlasticosSearchArray, dataPlasticos,columnsPlasticos} from './mockPlasticos'
+import {PlasticosSearchArray, dataPlasticos,columnsPlasticos} from './mock'
 
 
 

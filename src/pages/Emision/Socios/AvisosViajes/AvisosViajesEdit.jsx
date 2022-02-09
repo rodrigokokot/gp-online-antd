@@ -19,7 +19,7 @@ const AvisosViajesEdit = () => {
     return (<>  
         
     <Card>
-        <Title level={2}>{"Nombre Usu"}</Title>  
+        <Title level={3} style={{ color: "#AB218E" }}>{"Nombre Usu"}</Title>  
         <p >Número de cuenta</p>
             <Checkbox  onChange={onChangeCheck}> 
             <Title level={5}>{"Numero de la targeta"}</Title></Checkbox><br></br><br></br>

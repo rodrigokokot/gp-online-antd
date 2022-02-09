@@ -1,4 +1,4 @@
-import { Card, Form, Radio, Row, Col, DatePicker, Input } from "antd";
+import { Card, Form, Radio, Row, Col, DatePicker, Input,Typography } from "antd";
 import React from "react";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
@@ -9,8 +9,8 @@ export default function AutorizacionesNew() {
     return (
       <>
         <Card>
-          <h1 className="purple-title">Datos de Tarjeta</h1>
-
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Datos de Tarjeta</Typography.Title>
+          <br></br>
           <Col span={6}>
             <Form.Item
               name="tarjeta"
@@ -39,7 +39,8 @@ export default function AutorizacionesNew() {
           </Col>
 
           <Col span={12}>
-            <Form.Item name="tipodoc">
+            <Form.Item name="tipodoc"
+              rules={[{ required: true }]}>
               <Row>
                 <p>Tipo de documento</p>
               </Row>
@@ -73,7 +74,7 @@ export default function AutorizacionesNew() {
             <Form.Item
               name="doc"
               rules={[
-                { required: true, message: "Ingrese número de documento" },
+                { required: true, message: "Ingrese documento" },
               ]}
             >
               <FloatInput
@@ -109,9 +110,9 @@ export default function AutorizacionesNew() {
             </Form.Item>
           </Col>
         </Card>
-
+              <br></br>
         <Card>
-          <h1 className="purple-title">Autorización</h1>
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Autorización</Typography.Title> <br></br>
 
           <Row gutter={48}>
             <Col span={6}>
@@ -290,7 +291,8 @@ export default function AutorizacionesNew() {
           </Row>
 
           <Col span={24}>
-            <Form.Item name="estado">
+            <Form.Item name="estado"
+              rules={[{ required: true }]}>
               <Row>
                 <p>Estado</p>
               </Row>

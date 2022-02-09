@@ -34,7 +34,7 @@ function GestionPerfilesEdit() {
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
           <Row>
             <Col>
-              <Typography.Title level={4}  style={{ color: '#ab218e' }}>Perfil</Typography.Title>
+              <Typography.Title level={3}  style={{ color: '#ab218e' }}>Perfil</Typography.Title>
             </Col>
           </Row>
 
@@ -52,7 +52,7 @@ function GestionPerfilesEdit() {
         </Card>
 
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-          <Typography.Title level={4}  style={{ color: '#ab218e' }}>Tipo de operaciones</Typography.Title>
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Tipo de operaciones</Typography.Title>
         </Card>
         <Form.Item name="tabla">
           <Table selectable={true} data={dataFormulario} columns={columnsFormulario}/>
@@ -67,7 +67,7 @@ function GestionPerfilesEdit() {
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
           <Row>
             <Col>
-              <Typography.Title level={4}  style={{ color: '#ab218e' }}>Contraseña</Typography.Title>
+              <Typography.Title level={3}  style={{ color: '#ab218e' }}>Contraseña</Typography.Title>
             </Col>
           </Row>
 

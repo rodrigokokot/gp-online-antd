@@ -29,10 +29,10 @@ function CPMovimientoEdit() {
         return (<>  
             
             <Card>
-            <Title level={2}>Datos Principales</Title>
+            <Title level={3}  style={{ color: '#ab218e' }}>Datos Principales</Title><br></br>
             <Col span={8}>
                 <Form.Item
-                        name="producto" 
+                        name="producto" rules={[{ required: true, message: "Ingrese producto" }]}
                         >
                             <FloatSelect outline showSearch={true} suffix={<SearchOutlined />}
                                         label="Producto"
@@ -57,7 +57,7 @@ function CPMovimientoEdit() {
                             ></FloatSelect>
                 </Form.Item>
                 <Form.Item
-                        name="codigomov" 
+                        name="codigomov" rules={[{ required: true, message: "Ingrese codigo" }]}
                         >
                             <FloatSelect outline showSearch={true} suffix={<SearchOutlined />}
                                         label="Código de movimiento"
@@ -82,7 +82,7 @@ function CPMovimientoEdit() {
                             ></FloatSelect>
                 </Form.Item>
                 <Form.Item
-                        name="tipored" 
+                        name="tipored" rules={[{ required: true, message: "Ingrese tipo de red" }]}
                         >
                             <FloatSelect outline showSearch={true} suffix={<SearchOutlined />}
                                         label="Tipo de Red"
@@ -107,14 +107,14 @@ function CPMovimientoEdit() {
                             ></FloatSelect>
                 </Form.Item> 
                 <Title level={5}>Locación</Title>
-                <Form.Item name='locacion'> 
+                <Form.Item name='locacion'rules={[{ required: true, message: "Ingrese locación" }]}> 
                 <Checkbox.Group  onChange={onChangeCheck}>
                     <Checkbox value='Local'>Local</Checkbox>
                     <Checkbox  value='Exterior'>Exterior</Checkbox> 
                 </Checkbox.Group>
                 </Form.Item>
                 <Title level={5}>Tipo de documento</Title>
-                <Form.Item name='evento' > 
+                <Form.Item name='evento' rules={[{ required: true }]}> 
                     <Radio.Group onChange={onChange} value={value}>
                         <Row gutter={55}>
                         <Col span={7}>
@@ -129,7 +129,7 @@ function CPMovimientoEdit() {
                     </Radio.Group>
                 </Form.Item>
                 <Form.Item 
-                    name="fechadesde" 
+                    name="fechadesde" rules={[{ required: true, message: "Ingrese fecha desde" }]}
                 >
                     <DatePicker style={{width: '50%' ,borderRadius:6}} onChange={onChangedate} placeholder={valuedate} format={'DD/MM/YYYY'}/>
                 </Form.Item> 
@@ -142,7 +142,7 @@ function CPMovimientoEdit() {
                   </Form.Item>
               </Col>   
               <Col span={4}>                           
-                  <Form.Item name='precio'  
+                  <Form.Item name='precio'  rules={[{ required: true, message: "Ingrese precio" }]}
                   >
                     <FloatInput outline type="number" label='Ingresá precio' placeholder='Ingresá precio'></FloatInput>
                   </Form.Item>

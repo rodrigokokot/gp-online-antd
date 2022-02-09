@@ -7,7 +7,7 @@ const Contraseña = () => {
 
   return (<>
       <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-        <Title level={4}  style={{ color: '#ab218e' }}>Contraseña</Title>
+        <Title level={3}  style={{ color: '#ab218e' }}>Contraseña</Title>
         <Col span={6}>
           <Form.Item name="password" rules = {[
               { required: true, message: 'Ingrese contraseña para generar cambios' },

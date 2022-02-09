@@ -3,6 +3,7 @@ import {Card, Row, Col, Space} from 'antd';
 import Table from '../../../../components/organisms/Table';
 import { columnsConsultaLiquidaciones, ConsultaLiquidacionesSearchArray, dataConsultaLiquidaciones } from './mock';
 import SearchForm from '../../../../components/organisms/SearchForm';
+import Title from 'antd/lib/typography/Title';
 
 export default function ConsultaLiquidacionesSearch() {
   
@@ -14,7 +15,7 @@ export default function ConsultaLiquidacionesSearch() {
         return <>
 
             <Card>
-                <h1 className='purple-title' style={{marginBottom:"24px"}}>Pesos</h1>
+                <Title level={3}  style={{ color: '#ab218e' }}>Pesos</Title>
                 <Row gutter={[36,36]}>
                     <Col span={6}>
                         <b className='grey-text'>Saldo anterior</b>
@@ -59,7 +60,7 @@ export default function ConsultaLiquidacionesSearch() {
             </Card>
 
             <Card>
-                <h1 className='purple-title' style={{marginBottom:"24px"}}>Dolares</h1>
+                <Title level={3}  style={{ color: '#ab218e' }}>Dolares</Title>
 
                 <Row gutter={[36,36]}>
                 <Col span={6}>
@@ -102,7 +103,7 @@ export default function ConsultaLiquidacionesSearch() {
             </Card>
             
             <Card style={{marginBottom:"4px"}}>
-                <h1 className='purple-title' style={{marginBottom:"24px"}}>Período no liquidado</h1>
+                <Title level={3}  style={{ color: '#ab218e' }}>Período no liquidado</Title>
                 <Col span={8}>
                     <Row gutter={[36,36]}>
                         <Col span={12}>

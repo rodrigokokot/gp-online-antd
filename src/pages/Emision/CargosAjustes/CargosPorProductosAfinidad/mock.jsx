@@ -14,7 +14,7 @@ export const CargoPorProductosAfinidadSearchArray = [
     },
     {
         index: "descripcion",
-        input: <FloatInput label="Descripcion" />,
+        input: <FloatInput label="Descripción" />,
     },
     {
         index: "todos",
@@ -91,11 +91,11 @@ export const CargoPorProductosAfinidadSearchArray = [
                 disabled: false,
             }
         ]} />
-    },
+    }, 
     {
-        index: "moneda",
-        input: <SelectImg />
-    },
+      index: "moneda",
+      input: <SelectImg showSearch={true} placeholder="Busca tipo de moneda" style={{width: 250}}/>
+    }, 
     {
         index: "fecha",
         input: <DateRangeFilter />

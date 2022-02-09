@@ -161,7 +161,7 @@ const dataMovimientosCTF = [
 const MovimientosCTFSearch = [
     {
       index: 'id',
-      input: <FloatInput placeholder="ID file" label="ID file" />,
+      input: <FloatInput placeholder="ID File" label="ID File" />,
     },
     {
       index: 'numeroIca',
@@ -184,7 +184,7 @@ const MovimientosCTFSearch = [
     },
     {
         index: 'fecha',
-        input: <DateRangeFilter placeholder="fecha" label="Por fecha" />,
+        input: <DateRangeFilter></DateRangeFilter>,
     },
 
   ];

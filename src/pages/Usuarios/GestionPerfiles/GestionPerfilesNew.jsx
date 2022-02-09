@@ -32,7 +32,7 @@ export default function GestionPerfilesNew() {
     return (
       <>
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-          <Typography.Title level={4} style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
+          <Typography.Title level={3} style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
 
           <Row>
             <Col span={8}>
@@ -60,7 +60,7 @@ export default function GestionPerfilesNew() {
         </Card>
 
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-          <Typography.Title level={4} style={{ color: '#ab218e' }}>Tipos de operaciones</Typography.Title>
+          <Typography.Title level={3} style={{ color: '#ab218e' }}>Tipos de operaciones</Typography.Title>
         </Card>
         <Table selectable={true} data={dataFormulario} columns={columnsFormulario}/>
       </>

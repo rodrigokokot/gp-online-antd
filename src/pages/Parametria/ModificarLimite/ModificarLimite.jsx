@@ -10,7 +10,7 @@ const ModificarLimite = () => {
     return (
       <>
         <Card>
-          <h2 style={{ color: "#AB218E" }}>Informacion de la cuenta</h2>
+        <Title level={3}  style={{ color: '#ab218e' }}>Informacion de la cuenta</Title> 
           <Row gutter={[6, 24]}>
             <Col span={5}>
               <h4>N° de cuenta</h4>
@@ -41,10 +41,10 @@ const ModificarLimite = () => {
               <Title level={4}>{"Córdoba"}</Title>
             </Col>
           </Row>
-        </Card>{" "}
+        </Card> 
         <br></br>
         <Card>
-          <h2 style={{ color: "#AB218E" }}>Informacion del producto</h2>
+        <Title level={3}  style={{ color: '#ab218e' }}>Informacion del producto</Title>  
           <Row gutter={[6, 24]}>
             <Col span={5}>
               <h4>Producto</h4>
@@ -63,10 +63,10 @@ const ModificarLimite = () => {
               <Title level={4}>{"-"}</Title>
             </Col>
           </Row>
-        </Card>{" "}
+        </Card> 
         <br></br>
         <Card>
-          <h2 style={{ color: "#AB218E" }}>Informacion del titular</h2>
+        <Title level={3}  style={{ color: '#ab218e' }}>Informacion del titular</Title> 
           <Row gutter={[6, 24]}>
             <Col span={5}>
               <h4>Documento</h4>
@@ -81,10 +81,10 @@ const ModificarLimite = () => {
               <Title level={4}>{"Darma Micaela"}</Title>
             </Col>
           </Row>
-        </Card>{" "}
+        </Card> 
         <br></br>
         <Card>
-          <h2 style={{ color: "#AB218E" }}>Cambio de límite de tarjeta</h2>
+        <Title level={3}  style={{ color: '#ab218e' }}>Cambio de límite de tarjeta </Title> 
           <Row gutter={[6, 24]}>
             <Col span={5}>
               <h4>Límite global de la cuenta</h4>
@@ -122,8 +122,7 @@ const ModificarLimite = () => {
             }}
           ></div>
 
-          <Col span={8}>
-            {" "}
+          <Col span={8}> 
             <h4>Importe global del adicional</h4>
             <Form.Item name="importe">
               <InputNumber
@@ -133,8 +132,7 @@ const ModificarLimite = () => {
               />
             </Form.Item>
           </Col>
-          <Col span={18}>
-            {" "}
+          <Col span={18}> 
             <h4>Comentarios</h4>
             <Form.Item name="comentario">
               <TextArea
@@ -143,7 +141,7 @@ const ModificarLimite = () => {
               />
             </Form.Item>
           </Col>
-        </Card>{" "}
+        </Card>
         <br></br>
       </>
     );

@@ -42,7 +42,7 @@ function GestionUsuario() {
             </Button>
             </Link>
           </Col >
-          <SearchForm span={5} array={GestionUsuariosSearch} parentCallback={handleCallback} title="Busqueda de usuarios" />
+          <SearchForm span={5} array={GestionUsuariosSearch} parentCallback={handleCallback} title="Búsqueda de usuarios" />
           <div style={{ marginTop: data.length === 0? '70px' : '8px' }}>
             <Table data={data} columns={columnsGestionUsuarios} expandible={false} editable={true}/>
           </div>

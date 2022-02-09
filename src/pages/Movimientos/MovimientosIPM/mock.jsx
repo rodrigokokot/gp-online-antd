@@ -102,7 +102,7 @@ const dataDetalleMovimientosIPM = [
 const MovimientosIPMSearch = [
   {
     index: "id",
-    input: <FloatInput placeholder="ID file" label="ID file" />,
+    input: <FloatInput placeholder="ID File" label="ID File" />,
   },
   {
     index: "numeroIca",
@@ -111,12 +111,12 @@ const MovimientosIPMSearch = [
 
   {
     index: "apellido",
-    input: <FloatInput placeholder="Código" label="Código" />,
+    input: <FloatInput placeholder="Apellido" label="Apellido" />,
   },
 
   {
     index: "nombre",
-    input: <FloatInput placeholder="Código Postal" label="Código Postal" />,
+    input: <FloatInput placeholder="Nombre" label="Nombre" />,
   },
 
   {
@@ -125,7 +125,7 @@ const MovimientosIPMSearch = [
   },
 
   {
-    index: "Por fecha",
+    index: "fecha",
     input: <DateRangeFilter></DateRangeFilter> ,
   },
 ];

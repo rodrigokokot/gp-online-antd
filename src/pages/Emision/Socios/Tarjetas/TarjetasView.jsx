@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Checkbox, Row, Col, Form } from "antd";
+import { Card, Checkbox, Row, Col, Form, Typography } from "antd";
 import Edit from "../../../../components/organisms/Edit";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 
@@ -12,7 +12,7 @@ export default function TarjetasView() {
     return (
       <>
         <Card>
-          <h1 className="purple-title">Datos principales</h1>
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
 
           <Row>
             <Col span={6}>
@@ -66,9 +66,9 @@ export default function TarjetasView() {
                 name="estado"
                 rules={[{ required: true, message: "Ingrese Estado" }]}
               >
-                <FloatSelected
-                  label="Estado"
-                  placeholder="Estado"
+                <FloatSelected outline
+                  label="Estado*"
+                  placeholder="Estado*"
                   options={[
                     {
                       title: "Habilitada",

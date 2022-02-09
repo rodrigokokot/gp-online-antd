@@ -36,8 +36,8 @@ const GestionCuentaNew = () => {
     return (<>  
         
         <Card>
-        <Title level={2}>Datos Principales</Title>
-         
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}> Datos Principales</Typography.Title> <br></br>
+      
             <Row gutter={48}>
                 <Col span={6}>
                     <Form.Item
@@ -184,7 +184,7 @@ const GestionCuentaNew = () => {
         </Card>  
         <br></br>
         <Card>
-        <Title level={2}>Titular</Title>
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Titular </Typography.Title> 
         
         <Title level={5}>Tipo de documento</Title>
         <Form.Item name='tipodocumento'> 
@@ -340,7 +340,7 @@ const GestionCuentaNew = () => {
         </Card>   
         <br></br>
         <Card >
-            <Title level={2}>Domicilio Legal</Title>
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Domicilio Legal </Typography.Title>  
                             
             <Title level={5}>Por defecto, el domicilio de correspondencia es el mismo que el domicilio legal</Title>
             <Checkbox  onChange={onChangeCheck} checked={checked}> 
@@ -434,7 +434,7 @@ const GestionCuentaNew = () => {
         </Card>
         <br></br>
         <Card>
-            <Title level={2}>Domicilio Correspondencia</Title>
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Domicilio Correspondencia </Typography.Title> 
     
             <Title level={5}>Por defecto, el domicilio de correspondencia es el mismo que el domicilio legal</Title>
             <Checkbox >
@@ -442,7 +442,7 @@ const GestionCuentaNew = () => {
         </Card>   
         <br></br>
         <Card>
-            <Title level={2}>Domicilio Laboral</Title>
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Domicilio Laboral </Typography.Title> 
     
             <Title level={5}>Por defecto, el domicilio de correspondencia es el mismo que el domicilio legal</Title>
             <Checkbox >

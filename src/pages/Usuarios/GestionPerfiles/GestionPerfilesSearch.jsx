@@ -21,7 +21,7 @@ function GestionPerfilesBusqueda() {
       </Button>
       </Link>
     </Col>
-    <SearchForm array={GestionPerfilesSearchMock} parentCallback={handleCallback} title="Busqueda de Perfiles" />
+    <SearchForm span={5} array={GestionPerfilesSearchMock} parentCallback={handleCallback} title="Busqueda de Perfiles" />
     <div style={{ marginTop: dataGestionPerfiles.length === 0? '70px' : '8px' }}>
       <Table data={dataGestionPerfiles} columns={columnsGestionPerfiles} expandible={false} editable={true}/>
     </div>

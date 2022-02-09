@@ -1,7 +1,7 @@
 import React from "react";
 import SearchForm from "../../../../components/organisms/SearchForm";
 import Table from "../../../../components/organisms/Table";
-import { TarjetasSearchArray,dataTarjetas, columnsTarjetas } from "./mockTarjetas";
+import { TarjetasSearchArray,dataTarjetas, columnsTarjetas } from "./mock";
 
     const handleCallback = (values) =>{
         console.log(values);

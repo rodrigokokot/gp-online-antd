@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-import FloatInput from "../../../../components/molecules/FloatInput";
-import FloatSelected from "../../../../components/molecules/FloatSelected";
+import FloatInput from "../../../../components/molecules/FloatInput"; 
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
+import SelectImg from "../../../../components/organisms/SelectImg.jsx";
 
 const columnsTiposDeCargos = [
   {
-    name: "Codigo",
+    name: "Código",
     selector: (row) => row.codigo,
     sortable: true,
   },
   {
-    name: "Descripcion",
+    name: "Descripción",
     selector: (row) => row.descripcion,
     sortable: true,
   },
@@ -105,12 +105,12 @@ const tiposDeCargosSearch = [
   {
     name: "Codigo",
     index: "tarjeta",
-    input: <FloatInput label="Codigo" placeholder="Codigo" />,
+    input: <FloatInput label="Código" placeholder="Código" />,
   },
   {
     name: "Descripcion",
     index: "documento",
-    input: <FloatInput label="Descripcion" placeholder="Descripcion" />,
+    input: <FloatInput label="Descripción" placeholder="Descripción" />,
   },
   {
     name: "Todos",
@@ -120,12 +120,12 @@ const tiposDeCargosSearch = [
   {
     name: "Debito",
     index: "cuenta",
-    input: <FloatInput label="Debito" placeholder="Debito" />,
+    input: <FloatInput label="Débito" placeholder="Débito" />,
   },
   {
     name: "Grupo Transaccion",
     index: "cuentaexterna",
-    input: <FloatInput label="Grupo Transaccion" placeholder="Grupo Transaccion"/>,
+    input: <FloatInput label="Grupo Transacción" placeholder="Grupo Transacción"/>,
   },
   {
     name: "Comprobante",
@@ -135,7 +135,7 @@ const tiposDeCargosSearch = [
   {
     name: "Numero de cuenta",
     index: "cuenta",
-    input: <FloatInput label="Numero de cuenta" placeholder="Numero de cuenta" />,
+    input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
   },
   {
     name: "Adic",
@@ -153,26 +153,9 @@ const tiposDeCargosSearch = [
     input: <FloatInput label="Cuotas" placeholder="Cuotas" />,
   },
   {
-    name: "Moneda",
-    index: "gpafinidad",
-    input: (
-      <FloatSelected
-        width={203}
-        label="Moneda"
-        placeholder="Moneda"
-        options={[
-          {
-            title: "Libra",
-            value: "Libra",
-          },
-          {
-            title: "Peso",
-            value: "Peso",
-          },
-        ]}
-      />
-    ),
-  },
+    index: "moneda",
+    input: <SelectImg showSearch={true} placeholder="Busca tipo de moneda" style={{width: 250}}/>
+  }, 
 
   {
     index: "fecha",
