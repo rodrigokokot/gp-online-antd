@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 function GestionSucursales() {
   const [data, setData] = useState("");
 
-  const handleCallback = (values) => {
+  function handleCallback(values){
     if (
       Object.values(values).every((value) => {
         if (value === "" || value === undefined) {
