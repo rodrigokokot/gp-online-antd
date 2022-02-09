@@ -61,7 +61,11 @@ const CambioDeEstadoTarjeta = () => {
             Estado Tarjeta Original:<h5>Normal</h5>
           </h3>
         </div>
-        <Edit component={form} />
+        <Edit 
+          component={form}
+          textBtnSave="Guardar cambios"
+          textModalConfirm="¿Realizar cambios en el estado de la tarjeta?"
+          textBtnModalConfirm="Si, guardar" />
       </Card>
     </>
   );

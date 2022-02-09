@@ -200,7 +200,11 @@ function CPMovimientoEdit() {
     
       return(
       <>
-        <Edit component={FormularioCuenta} />
+        <Edit 
+            component={FormularioCuenta}
+            textBtnSave="Confirmar"
+            textModalConfirm='¿Realizar cambios en el cargo?'
+            textBtnModalConfirm='Si, guardar' />
       </>);
     
 }

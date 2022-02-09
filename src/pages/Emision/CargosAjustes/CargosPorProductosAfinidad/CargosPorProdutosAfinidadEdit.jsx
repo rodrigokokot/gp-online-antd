@@ -53,7 +53,11 @@ export default function CargosPorProdutosAfinidadEdit() {
   return (
     <div>
       {" "}
-      <Edit component={FormularioEdit} />
+      <Edit 
+        component={FormularioEdit}
+        textBtnSave="Guardar cambios"
+        textModalConfirm="¿Realizar cambios en el cargo?"
+        textBtnModalConfirm="Si, guardar" />
     </div>
   );
 }

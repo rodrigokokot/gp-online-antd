@@ -112,7 +112,11 @@ const FormUsuNew = () => {
 
   return(
   <>
-    <Edit component={FormularioUsuario} />
+    <Edit 
+        component={FormularioUsuario}
+        textBtnModalConfirm="¿Confirmar crear usuario?"
+        textBtnSave='Crear usuario'
+        textBtnModalConfirm="Si, crear" />
   </>);
 }
 export default FormUsuNew;

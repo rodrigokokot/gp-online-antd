@@ -146,6 +146,10 @@ const ModificarLimite = () => {
       </>
     );
   };
-  return <Edit component={FormularioLimite} />;
+  return <Edit 
+    component={FormularioLimite}
+    textBtnSave="Guardar"
+    textModalConfirm="¿Realizar cambios al límite?"
+    textBtnModalConfirm="Si, guardar" />;
 };
 export default ModificarLimite;

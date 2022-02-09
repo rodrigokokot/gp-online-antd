@@ -117,7 +117,7 @@ export default function AutorizacionesNew() {
           <Row gutter={48}>
             <Col span={6}>
               <Form.Item
-                name="origen"
+                name="fecha-origen"
                 rules={[{ required: true, message: "Ingrese fecha de origen" }]}
               >
                 <DatePicker style={{width: '100%'}} placeholder="Fecha de Origen*" />
@@ -324,7 +324,11 @@ export default function AutorizacionesNew() {
 
   return (
     <div> 
-      <Edit component={FormularioNuevo} />
+      <Edit 
+        component={FormularioNuevo}
+        textBtnModalConfirm="¿Realizar cambios en la autorización?"
+        textBtnSave="Guardar cambios"
+        textModalConfirm="Si, guardar" />
     </div>
   );
 }

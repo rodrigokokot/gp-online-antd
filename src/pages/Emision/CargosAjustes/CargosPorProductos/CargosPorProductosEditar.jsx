@@ -53,7 +53,7 @@ const CargosPorProductosEditar = () => {
     <Edit
       component={FormularioEditar}
       textBtnSave="Editar producto"
-      textModalConfirm="¿Estas seguro de realizar cambios en el producto?"
+      textModalConfirm="¿Realizar cambios en el producto?"
       textBtnModalConfirm="Si, guardar"
     />
   );

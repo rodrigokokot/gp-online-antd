@@ -316,7 +316,11 @@ export default function GestionAdicionalesNew() {
   return (
     <div>
       <SearchDNI />
-      <Edit component={FormularioNuevo} />
+      <Edit 
+        component={FormularioNuevo}
+        textBtnSave="Guardar"
+        textModalConfirm="¿Crear nuevo adicional?"
+        textBtnModalConfirm="Si, crear"  />
     </div>
   );
 }
