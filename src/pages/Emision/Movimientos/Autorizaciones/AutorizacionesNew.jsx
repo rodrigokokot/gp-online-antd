@@ -116,7 +116,7 @@ export default function AutorizacionesNew() {
           <Row gutter={48}>
             <Col span={6}>
               <Form.Item
-                name="origen"
+                name="fecha-origen"
                 rules={[{ required: true, message: "Ingrese fecha de origen" }]}
               >
                 <DatePicker placeholder="Fecha de Origen" />

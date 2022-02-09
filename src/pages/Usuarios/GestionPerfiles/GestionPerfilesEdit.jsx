@@ -109,7 +109,7 @@ function GestionPerfilesEdit() {
         {/* Pantalla de Edición de Perfil */}
 
         <TabPane tab="Datos generales" key="1">
-          <Edit component={FormularioPerfil}  textBtnSave="Crear perfil" textModalConfirm="¿Estas seguro de crear este perfil?" textBtnModalConfirm="Si, crear" />
+          <Edit component={FormularioPerfil}  textBtnSave="Editar perfil" textModalConfirm="¿Estas seguro de editar este perfil?" textBtnModalConfirm="Si, guardar" />
         </TabPane>
 
         {/* Pantalla de Edicion de Contraseña */}
