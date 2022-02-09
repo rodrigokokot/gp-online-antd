@@ -3,7 +3,7 @@ import {Col,Button} from "antd";
 import Table from "../../../components/organisms/Table";
 import SearchForm from "../../../components/organisms/SearchForm"
 import { Link } from "react-router-dom";
-import {GestionPerfilesSearchMock,dataGestionPerfiles,columnsGestionPerfiles} from "../../../Mocks/GestionPerfilesSearchMock"
+import {GestionPerfilesSearchMock,dataGestionPerfiles,columnsGestionPerfiles} from "./mock"
 
 function GestionPerfilesBusqueda() {
   const handleCallback = (values) =>{

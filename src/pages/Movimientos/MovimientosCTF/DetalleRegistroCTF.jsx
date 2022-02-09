@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import {
   columnsRegistroCTF,
   dataRegistroCTF,
-} from "../../../Mocks/DetalleRegistroCTF";
+} from "./mock";
 import Export from "../../../components/organisms/Export";
 
 function DetalleRegistroCTF() {

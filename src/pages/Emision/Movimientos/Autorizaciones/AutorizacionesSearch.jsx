@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {Col, Button} from 'antd';
 import SearchForm from '../../../../components/organisms/SearchForm/index'
 import Table from '../../../../components/organisms/Table/index'
-import { AutorizacionesSearchArray, columnsAutorizaciones, dataAutorizaciones } from '../../../../Mocks/AutorizacionesSearchMock';
+import { AutorizacionesSearchArray, columnsAutorizaciones, dataAutorizaciones } from './mock';
 
 
 export default function AutorizacionesSearch() {
