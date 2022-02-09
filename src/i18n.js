@@ -4,16 +4,6 @@ import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-
-import { ESPAÑOL } from "./locales/es/translation";
-import { INGLES } from "./locales/en/translation";
-import { PORTUGUES } from "./locales/po/translation";
-
-
-// don't want to use this?
-// have a look at the Quick start guide 
-// for passing in lng and translations on init
-
 i18n
   .use(Backend)
 //.use(LanguageDetector)
@@ -27,13 +17,13 @@ i18n
     },
     resources: {
       es: {
-        translation: ESPAÑOL
+        translation: require("./locales/es/translation")
       },
       en: {
-        translation: INGLES
+        translation: require("./locales/en/translation")
       },
       po: {
-        translation: PORTUGUES
+        translation: require("./locales/po/translation")
       },
     }
   });

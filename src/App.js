@@ -41,7 +41,7 @@ function App() {
           <DashboardTemplate exact path="/usuarios/gestionUsuarios/crear" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/FormUsuNew'))} />
           <DashboardTemplate exact path="/usuarios/gestionUsuarios/editar/:usuario" component={lazy(() => import('./pages/Usuarios/GestionUsuarios/GestionUsuariosEdit'))} />
 
-          <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesSearch'))} />
+          <DashboardTemplate exact path="/usuarios/gestionDePerfiles" component={lazy(() => import('./pages/Usuarios/GestionPerfiles'))} />
           <DashboardTemplate exact path="/usuarios/gestionDePerfiles/editar/:id" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesEdit'))} />
           <DashboardTemplate exact path="/usuarios/gestionDePerfiles/nuevo" component={lazy(() => import('./pages/Usuarios/GestionPerfiles/GestionPerfilesNew'))} />
 
@@ -110,6 +110,9 @@ function App() {
           <DashboardTemplate exact path="/parametria/modificarLimite/editar/:cuenta" component={lazy(() => import('./pages/Parametria/ModificarLimite/ModificarLimite'))} />
           
           <DashboardTemplate exact path="/parametria/tarjetaInstantanea" component={lazy(() => import('./pages/Parametria/TarjetaInstantanea'))} />
+          <DashboardTemplate exact path="/parametria/tarjetaInstantanea/nueva" component={lazy(() => import('./pages/Parametria/TarjetaInstantanea/TarjetaInstantaneaNew'))} />
+          <DashboardTemplate exact path="/parametria/tarjetaInstantanea/nueva2" component={lazy(() => import('./pages/Parametria/TarjetaInstantanea/TarjetaInstantaneaNew2'))} />
+          <DashboardTemplate exact path="/parametria/tarjetaInstantanea/nueva3" component={lazy(() => import('./pages/Parametria/TarjetaInstantanea/TarjetaInstantaneaNew3'))} />
 
           <DashboardTemplate exact path="/adquirencia" component={lazy(() => import('./pages/Adquirencia'))} />
 

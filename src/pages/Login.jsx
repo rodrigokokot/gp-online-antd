@@ -1,11 +1,16 @@
 import React from 'react';
-import { Form, Input, Button, Checkbox, Col, Row, Image, Layout } from 'antd';
+import { Form, Input, Button, Checkbox, Col, Row, Card, Layout, Select } from 'antd';
+import Meta from "antd/lib/card/Meta";
 import { LogoNombreIcon, LogoGreenIcon, VerticalGradientIcon  } from '../assets/svg/icons';
 import { LoginImg } from "../assets/svg/img";
 import Icon from '@ant-design/icons';
 import InlineSVG from 'svg-inline-react';
+import { NotificationError } from '../assets/svg/icons';
+import { useTranslation } from 'react-i18next';
+
 
 const Login = () => {
+    const { t,i18n } = useTranslation();
     const onFinish = (values) => {
         console.log('Success:', values);
       };
@@ -43,12 +48,12 @@ const Login = () => {
                         }}
                     >
                         <Form.Item
-                            label="Username"
+                            label={t("login.username.label")}
                             name="username"
                             rules={[
                             {
                                 required: true,
-                                message: 'Please input your username!',
+                                message: t("login.username.error"),
                             },
                             ]}
                         >
@@ -56,12 +61,12 @@ const Login = () => {
                         </Form.Item>
 
                         <Form.Item
-                            label="Password"
+                            label={t("login.password.label")}
                             name="password"
                             rules={[
                             {
                                 required: true,
-                                message: 'Please input your password!',
+                                message: t("login.password.error"),
                             },
                             ]}
                         >
@@ -76,7 +81,25 @@ const Login = () => {
                             span: 16,
                             }}
                         >
-                            <Checkbox>Recuérdame</Checkbox>
+                            <Checkbox>{t("login.rememberme")}</Checkbox>
+                        </Form.Item>
+
+                        <Form.Item>
+                            <Card
+                                style={{
+                                    marginTop: 16,
+                                    borderLeftColor: "#F23D4F",
+                                    backgroundColor: "#0000000A",
+                                    borderLeftWidth: 7,
+                                }}
+                                bordered={true}
+                            >
+                                <Meta
+                                    avatar={<Icon component={NotificationError}></Icon>}
+                                    title={t("login.errorLogin.title")}
+                                    description={t("login.errorLogin.description")}
+                                />
+                            </Card>
                         </Form.Item>
 
                         <Form.Item
@@ -85,10 +108,16 @@ const Login = () => {
                             span: 16,
                             }}
                         >
-                            <Button type="primary" htmlType="submit" disabled>
-                            Submit
+                            <Button type="primary" htmlType="submit" >
+                            {t("login.btnLogin")}
                             </Button>
                         </Form.Item>
+
+                        <Select defaultValue={'es'} style={{ width: 120, float: 'right' }} bordered={false} size='small' onChange={(value) => i18n.changeLanguage(value)}>
+                            <Select.Option value="es">Español</Select.Option>
+                            <Select.Option value="en">Inglés</Select.Option>
+                            <Select.Option value="po">Portugúes</Select.Option>
+                        </Select>
                     </Form>
                 </Col>
                 {/* <Col lg={{ span: 6, offset: 4 }}>

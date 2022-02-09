@@ -6,77 +6,80 @@ import {
   CollapseClose,
   CollapseOpen,
 } from "../../../assets/svg/icons/collapse";
+import useRangePicker from "../../../hooks/useRangePicker";
 
 const SearchForm = ({ array, parentCallback, title, span }) => {
   const [form] = Form.useForm();
   const { Panel } = Collapse;
   const [open, setOpen] = useState(["1"]);
+  const { state } = useRangePicker(); //state del rangepicker
 
   const onFinish = (values) => {
-    
     console.log(values);
-    parentCallback(values); 
-    setOpen([""]);
-  };
-
-  const getFields = () => {
-    const fields = [];
-    array.map((item) => {
-      fields.push(
-        <Col key={item.index} span={span}>
-          <Form.Item name={item.index}>{item.input}</Form.Item>
-        </Col>
-      );
-    });
-    return fields;
+    parentCallback(values);
   };
 
   return (
-      <Collapse style={{ backgroundColor:'white', borderRadius: '0.5em' }}
-        expandIconPosition="right"
-        bordered={false}
-        activeKey={open}
-        onChange={setOpen}
-        expandIcon={({ isActive }) => (
-          <div style={{ display: 'flex', gap: '8px' }}>
-            <Typography.Text>{isActive? "Colapsar búsqueda" : "Refinar búsqueda"}</Typography.Text>
-            <Icon component={isActive ? CollapseClose : CollapseOpen} />
-          </div>
-        )}
+    <Collapse
+      style={{ backgroundColor: "white", borderRadius: "0.5em" }}
+      expandIconPosition="right"
+      bordered={false}
+      activeKey={open}
+      onChange={setOpen}
+      expandIcon={({ isActive }) => (
+        <div style={{ display: "flex", gap: "8px" }}>
+          <Typography.Text>
+            {isActive ? "Colapsar búsqueda" : "Refinar búsqueda"}
+          </Typography.Text>
+          <Icon component={isActive ? CollapseClose : CollapseOpen} />
+        </div>
+      )}
+    >
+      <Panel
+        key="1"
+        header={
+          <Typography.Title level={5} style={{ color: "#AB218E" }}>
+            {title}
+          </Typography.Title>
+        }
       >
-        <Panel key="1" header={<Typography.Title level={5} style={{ color: '#AB218E' }} >{title}</Typography.Title>} >
-          <Form style={{ backgroundColor:'white' }}
-            form={form}
-            name="advanced_search"
-            className="ant-advanced-search-form"
-            onFinish={onFinish}
-            size="large"
-          >
-            <Row gutter={24} style={{ marginTop: 20 }}>
-              {getFields()}
-            </Row>
+        <Form
+          style={{ backgroundColor: "white" }}
+          form={form}
+          name="advanced_search"
+          className="ant-advanced-search-form"
+          onFinish={onFinish}
+          size="large"
+        >
+          <Row gutter={24} style={{ marginTop: 20 }}>
+            {array.map((item) => {
+              return (
+                <Col key={item.index} span={span}>
+                  <Form.Item name={item.index}>{item.input}</Form.Item>
+                </Col>
+              );
+            })}
+          </Row>
 
-            <Row style={{ marginTop: 40 }}>
-              <Col span={24} style={{ textAlign: "left" }}>
-                <Button type="primary" htmlType="submit">
-                  Buscar
-                </Button>
-                <Button
-                  type="text"
-                  style={{ margin: "0 8px" }}
-                  onClick={() => {
-                    form.resetFields();
-                  }}
-                >
-                  Restablecer
-                </Button>
-              </Col>
-            </Row>
-          </Form>
-
-        </Panel>
-
-      </Collapse>
+          <Row style={{ marginTop: 40 }}>
+            <Col span={24} style={{ textAlign: "left" }}>
+              <Button type="primary" htmlType="submit" onClick={()=>setOpen([""])}>
+                Buscar
+              </Button>
+              <Button
+                type="text"
+                style={{ margin: "0 8px" }}
+                onClick={() => {
+                  form.resetFields();
+                }}
+              >
+                Restablecer
+              </Button>
+            </Col>
+          </Row>
+        </Form>
+      </Panel>
+    </Collapse>
   );
 };
 

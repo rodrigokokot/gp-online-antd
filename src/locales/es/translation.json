@@ -1,4 +1,4 @@
-export const ESPAÑOL = {
+{
   "login": {
     "username": {
       "label": "usuario",
@@ -10,7 +10,10 @@ export const ESPAÑOL = {
     },
     "rememberme": "Recuérdame",
     "btnLogin": "Ingresar",
-    "errorLogin": ""
+    "errorLogin": {
+      "title": "Los datos ingresados son incorrectos, intenta nuevamente.",
+      "description": "Si olvidoste tu contraseña comunicae con el eqiupo de seguridad informaticapara ayudarte."
+    }
   },
     "title": "Bienvenido a react usando react-i18next",
     "description": {
