@@ -331,10 +331,10 @@ const GestionCuentaNew = () => {
         </Row>    
         <Row gutter={48}>          
         <Col span={12}>
-            <Form.Item 
-                name="nombreembozado" 
+            <Form.Item  name="nombreembozado" 
+                rules={[{ required: true, message: "Ingrese nombre embozado" }]}
             >
-                <FloatInput outline label='Nombre embozado' placeholder='Nombre embozado'></FloatInput>
+                <FloatInput outline label='Nombre embozado*' placeholder='Nombre embozado*'></FloatInput>
             </Form.Item>
         </Col> </Row> 
         </Card>   
@@ -357,8 +357,9 @@ const GestionCuentaNew = () => {
             <Row gutter={16}>
                 <Col span={3}>
                     <Form.Item name='numero'
+                    rules={[{ required: true, message: "Ingrese número" }]}
                     >
-                        <FloatInput outline type='number' label='Numero' placeholder='Numero' ></FloatInput>
+                        <FloatInput outline type='number' label='Numero*' placeholder='Numero*' ></FloatInput>
                     </Form.Item>
                 </Col>
                 <Col span={3}>

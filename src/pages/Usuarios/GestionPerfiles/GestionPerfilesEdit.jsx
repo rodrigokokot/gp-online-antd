@@ -44,7 +44,7 @@ function GestionPerfilesEdit() {
                   outline
                   defaultValue="pedroPz"
                   type="text"
-                  label="Nombre"
+                  label="Nombre*"
                 ></FloatInput>
               </Form.Item>
               <Form.Item name="descripcion" rules={[{required: true, message:"Ingrese descripción"}]}> 
@@ -52,7 +52,7 @@ function GestionPerfilesEdit() {
                   outline
                   defaultValue="Admin de GP con tareas de gestión"
                   type="text"
-                  label="Descripcion"
+                  label="Descripcion*"
                 ></FloatInput>
               </Form.Item>
             </Col>
@@ -88,7 +88,7 @@ function GestionPerfilesEdit() {
               <Form.Item
                 name="password"
                 rules={[
-                  { required: true, message: "Ingrese Contraseña" },
+                  { required: true, message: "Ingresá tu contraseña para generar cambios" },
                   {
                     validator: (_, value1) =>
                       value1 && value1.length >= 8
@@ -109,8 +109,8 @@ function GestionPerfilesEdit() {
               >
                 <FloatInput
                   outline
-                  label="Contraseña nueva"
-                  placeholder="Ingresá tu contraseña para generar cambios"
+                  label="Contraseña nueva*"
+                  placeholder="Ingrese Contraseña*"
                   iconRender={(visible) =>
                     visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
                   }

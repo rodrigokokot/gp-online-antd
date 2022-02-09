@@ -346,6 +346,7 @@ const GestionCuentaNew = () => {
             <Row gutter={16}>
                 <Col span={3}>
                     <Form.Item name='numero'
+                    rules={[{ required: true, message: "Ingrese número" }]}
                     >
                         <FloatInput outline type='number' label='Numero' placeholder='Numero' ></FloatInput>
                     </Form.Item>

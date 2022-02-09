@@ -17,7 +17,7 @@ function CPMovimientoEdit() {
         }; 
     
         //para calendario
-        const [valuedate,setValuedate]=useState('Fecha desde'); 
+        const [valuedate,setValuedate]=useState('Fecha desde*'); 
         function onChangedate(date, dateString){
         setValuedate(dateString);  console.log("date ",dateString);
         }
@@ -35,8 +35,8 @@ function CPMovimientoEdit() {
                         name="producto" rules={[{ required: true, message: "Ingrese producto" }]}
                         >
                             <FloatSelect outline showSearch={true} suffix={<SearchOutlined />}
-                                        label="Producto"
-                                        placeholder="Busca por tipo de producto"
+                                        label="Producto*"
+                                        placeholder="Busca por tipo de producto*"
                                         options={[
                                         {
                                             title: "P 1",
@@ -60,8 +60,8 @@ function CPMovimientoEdit() {
                         name="codigomov" rules={[{ required: true, message: "Ingrese codigo" }]}
                         >
                             <FloatSelect outline showSearch={true} suffix={<SearchOutlined />}
-                                        label="Código de movimiento"
-                                        placeholder="Ingresá Código de movimiento"
+                                        label="Código de movimiento*"
+                                        placeholder="Ingrese Código de movimiento*"
                                         options={[
                                         {
                                             title: "CM 1",
@@ -85,8 +85,8 @@ function CPMovimientoEdit() {
                         name="tipored" rules={[{ required: true, message: "Ingrese tipo de red" }]}
                         >
                             <FloatSelect outline showSearch={true} suffix={<SearchOutlined />}
-                                        label="Tipo de Red"
-                                        placeholder="Busca tipo de Red"
+                                        label="Tipo de Red*"
+                                        placeholder="Busca tipo de Red*"
                                         options={[
                                         {
                                             title: "Red 1",
@@ -144,7 +144,7 @@ function CPMovimientoEdit() {
               <Col span={4}>                           
                   <Form.Item name='precio'  rules={[{ required: true, message: "Ingrese precio" }]}
                   >
-                    <FloatInput outline type="number" label='Ingresá precio' placeholder='Ingresá precio'></FloatInput>
+                    <FloatInput outline type="number" label='Ingresá precio*' placeholder='Ingresá precio*'></FloatInput>
                   </Form.Item>
               </Col>      
             </Row> 
