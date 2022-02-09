@@ -12,12 +12,11 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
   const [form] = Form.useForm();
   const { Panel } = Collapse;
   const [open, setOpen] = useState(["1"]);
-  const {state} = useRangePicker();
+  const { state } = useRangePicker(); //state del rangepicker
 
   const onFinish = (values) => {
-    console.log(values,state)
+    console.log(values);
     parentCallback(values);
-    setOpen([""]);
   };
 
   return (
@@ -64,7 +63,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
 
           <Row style={{ marginTop: 40 }}>
             <Col span={24} style={{ textAlign: "left" }}>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" onClick={()=>setOpen([""])}>
                 Buscar
               </Button>
               <Button
