@@ -116,7 +116,7 @@ function App() {
 
           <DashboardTemplate exact path="/adquirencia" component={lazy(() => import('./pages/Adquirencia'))} />
 
-          <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda'))} />
+          <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda/'))} />
 
 
           <DashboardTemplate exact path="/rodrigo" component={lazy(() => import('./pages/Page1'))} />

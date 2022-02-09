@@ -39,7 +39,7 @@ function GestionPerfilesEdit() {
 
           <Row>
             <Col span={12}>
-              <Form.Item name="nombre">
+              <Form.Item name="nombre" rules={[{required: true, message: "Ingrese nombre"}]}> 
                 <FloatInput
                   outline
                   defaultValue="pedroPz"
@@ -47,7 +47,7 @@ function GestionPerfilesEdit() {
                   label="Nombre"
                 ></FloatInput>
               </Form.Item>
-              <Form.Item name="descripcion">
+              <Form.Item name="descripcion" rules={[{required: true, message:"Ingrese descripción"}]}> 
                 <FloatInput
                   outline
                   defaultValue="Admin de GP con tareas de gestión"

@@ -3,8 +3,7 @@ import React from "react";
 
 const DatosConsumo = () => {
   return (
-    <Card>
-      <h2 style={{ color: "#AB218E" }}>Informacion de la cuenta</h2>
+    <Card> 
       <div
         style={{
           display: "flex",

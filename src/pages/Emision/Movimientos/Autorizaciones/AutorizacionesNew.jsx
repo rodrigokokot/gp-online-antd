@@ -1,4 +1,4 @@
-import { Card, Form, Radio, Row, Col, DatePicker, Input,Typography } from "antd";
+import { Card, Form, Radio, Row, Col, DatePicker,Typography } from "antd";
 import React from "react";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
@@ -18,8 +18,8 @@ export default function AutorizacionesNew() {
             >
               <FloatInput
                 outline
-                placeholder="N° de Tarjeta"
-                label="N° de tarjeta"
+                placeholder="N° de Tarjeta*"
+                label="N° de tarjeta*"
               />
             </Form.Item>
 
@@ -27,14 +27,14 @@ export default function AutorizacionesNew() {
               name="nombre"
               rules={[{ required: true, message: "Ingrese nombre" }]}
             >
-              <FloatInput outline placeholder="Nombre" label="Nombre" />
+              <FloatInput outline placeholder="Nombre*" label="Nombre*" />
             </Form.Item>
 
             <Form.Item
               name="apellido"
               rules={[{ required: true, message: "Ingrese apellido" }]}
             >
-              <FloatInput outline placeholder="Apellido" label="Apellido" />
+              <FloatInput outline placeholder="Apellido*" label="Apellido*" />
             </Form.Item>
           </Col>
 
@@ -52,12 +52,12 @@ export default function AutorizacionesNew() {
                     <Radio value={5}>CUIT</Radio>
                   </Col>
 
-                  <Col span={8}>
+                  <Col span={9}>
                     <Radio value={2}>LIBRETA CIVICA</Radio>
                     <Radio value={6}>LIBRETA DE ENROLAMIENTO</Radio>
                   </Col>
 
-                  <Col span={4}>
+                  <Col span={5}>
                     <Radio value={3}>CUIL</Radio>
                     <Radio value={7}>PASAPORTE</Radio>
                   </Col>
@@ -78,8 +78,8 @@ export default function AutorizacionesNew() {
               ]}
             >
               <FloatInput
-                placeholder="N° de Documento"
-                label="N° de Documento"
+                placeholder="N° de Documento*"
+                label="N° de Documento*"
                 outline
               />
             </Form.Item>
@@ -88,14 +88,14 @@ export default function AutorizacionesNew() {
               name="marca"
               rules={[{ required: true, message: "Ingrese marca" }]}
             >
-              <FloatInput outline placeholder="Marca" label="Marca" />
+              <FloatInput outline placeholder="Marca*" label="Marca*" />
             </Form.Item>
 
             <Form.Item
               name="emisor"
               rules={[{ required: true, message: "Ingrese número de emisor" }]}
             >
-              <FloatInput outline placeholder="Emisor" label="Emisor" />
+              <FloatInput outline placeholder="Emisor*" label="Emisor*" />
             </Form.Item>
 
             <Form.Item
@@ -103,8 +103,8 @@ export default function AutorizacionesNew() {
               rules={[{ required: true, message: "Ingrese tipo de producto" }]}
             >
               <FloatInput
-                placeholder="Tipo de Producto"
-                label="Tipo de Producto"
+                placeholder="Tipo de Producto*"
+                label="Tipo de Producto*"
                 outline
               />
             </Form.Item>
@@ -120,7 +120,7 @@ export default function AutorizacionesNew() {
                 name="origen"
                 rules={[{ required: true, message: "Ingrese fecha de origen" }]}
               >
-                <DatePicker placeholder="Fecha de Origen" />
+                <DatePicker style={{width: '100%'}} placeholder="Fecha de Origen*" />
               </Form.Item>
             </Col>
           </Row>
@@ -131,7 +131,7 @@ export default function AutorizacionesNew() {
                 name="importe"
                 rules={[{ required: true, message: "Ingrese importe" }]}
               >
-                <FloatInput outline placeholder="Importe" label="Importe" />
+                <FloatInput outline placeholder="Importe*" label="Importe*" />
               </Form.Item>
             </Col>
           </Row>
@@ -144,8 +144,8 @@ export default function AutorizacionesNew() {
               >
                 <FloatSelected
                   outline
-                  label="Moneda"
-                  placeholder="Moneda"
+                  label="Moneda*"
+                  placeholder="Moneda*"
                   options={[
                     {
                       title: "Euro",
@@ -169,7 +169,7 @@ export default function AutorizacionesNew() {
                   { required: true, message: "Ingrese fecha de proceso" },
                 ]}
               >
-                <DatePicker placeholder="Fecha de Proceso" />
+                <DatePicker style={{width: '100%'}} placeholder="Fecha de Proceso*" />
               </Form.Item>
             </Col>
           </Row>
@@ -180,7 +180,7 @@ export default function AutorizacionesNew() {
                 name="plan"
                 rules={[{ required: true, message: "Ingrese plan" }]}
               >
-                <FloatInput outline placeholder="Plan" label="Plan" />
+                <FloatInput outline placeholder="Plan*" label="Plan*" />
               </Form.Item>
             </Col>
 
@@ -189,7 +189,7 @@ export default function AutorizacionesNew() {
                 name="relacion"
                 rules={[{ required: true, message: "Ingrese relación" }]}
               >
-                <FloatInput outline placeholder="Relación" label="Relación" />
+                <FloatInput outline placeholder="Relación*" label="Relación*" />
               </Form.Item>
             </Col>
           </Row>
@@ -202,8 +202,8 @@ export default function AutorizacionesNew() {
               >
                 <FloatSelected
                   outline
-                  placeholder="Cuotas"
-                  label="Cuotas"
+                  placeholder="Cuotas*"
+                  label="Cuotas*"
                   options={[
                     {
                       title: 3,
@@ -235,7 +235,7 @@ export default function AutorizacionesNew() {
                 name="origen"
                 rules={[{ required: true, message: "Ingrese origen" }]}
               >
-                <FloatInput outline placeholder="Origen" label="Origen" />
+                <FloatInput outline placeholder="Origen*" label="Origen*" />
               </Form.Item>
             </Col>
           </Row>
@@ -249,8 +249,8 @@ export default function AutorizacionesNew() {
                 ]}
               >
                 <FloatInput
-                  placeholder="Código de autorización"
-                  label="Código de autorización"
+                  placeholder="Código de autorización*"
+                  label="Código de autorización*"
                   outline
                 />
               </Form.Item>
@@ -262,8 +262,8 @@ export default function AutorizacionesNew() {
                 rules={[{ required: true, message: "Ingrese modo de entrada" }]}
               >
                 <FloatInput
-                  placeholder="Modo de entrada"
-                  label="Modo de entrada"
+                  placeholder="Modo de entrada*"
+                  label="Modo de entrada*"
                   outline
                 />
               </Form.Item>
@@ -276,7 +276,7 @@ export default function AutorizacionesNew() {
                 name="comercio"
                 rules={[{ required: true, message: "Ingrese comercio" }]}
               >
-                <FloatInput outline placeholder="Comercio" label="Comercio" />
+                <FloatInput outline placeholder="Comercio*" label="Comercio*" />
               </Form.Item>
             </Col>
 
@@ -285,7 +285,7 @@ export default function AutorizacionesNew() {
                 name="terminal"
                 rules={[{ required: true, message: "Ingrese terminal" }]}
               >
-                <FloatInput outline placeholder="Terminal" label="Terminal" />
+                <FloatInput outline placeholder="Terminal*" label="Terminal*" />
               </Form.Item>
             </Col>
           </Row>
@@ -323,8 +323,7 @@ export default function AutorizacionesNew() {
   };
 
   return (
-    <div>
-      {" "}
+    <div> 
       <Edit component={FormularioNuevo} />
     </div>
   );
