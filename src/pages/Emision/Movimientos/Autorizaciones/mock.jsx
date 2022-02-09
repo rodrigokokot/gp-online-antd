@@ -1,9 +1,9 @@
 import React from 'react';
 import {DatePicker} from 'antd'
-import FloatInput from '../components/molecules/FloatInput';
-import FloatSelected from '../components/molecules/FloatSelected';
+import FloatInput from '../../../../components/molecules/FloatInput';
+import FloatSelected from '../../../../components/molecules/FloatSelected';
 import { Link } from 'react-router-dom';
-import DateRangeFilter from '../components/organisms/DateRangeFilter';
+import DateRangeFilter from '../../../../components/organisms/DateRangeFilter';
 
 const {RangePicker} = DatePicker;
 

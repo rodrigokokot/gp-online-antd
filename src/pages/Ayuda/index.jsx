@@ -1,10 +1,10 @@
 import React ,{useState} from 'react'
 import { Menu, Card, Col, Row} from 'antd';
-import ImageHelp from '../assets/jpg/ImageHelp.js';
-import SelectSearch from '../components/molecules/SelectSearch';
-import Ayuda2 from '../components/molecules/TextoHelp';
+import ImageHelp from '../../assets/jpg/ImageHelp.js';
+import SelectSearch from '../../components/molecules/SelectSearch';
+import Ayuda2 from '../../components/molecules/TextoHelp';
 import { RightOutlined} from '@ant-design/icons';
-import  texto  from "../Mocks/Ayuda";
+import  texto  from "./mock";
 
 function Ayuda() {
     const [flag, setFlag] = useState(false);

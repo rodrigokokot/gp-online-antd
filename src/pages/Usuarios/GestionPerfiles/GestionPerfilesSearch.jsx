@@ -3,7 +3,7 @@ import {Col,Button} from "antd";
 import Table from "../../../components/organisms/Table";
 import SearchForm from "../../../components/organisms/SearchForm"
 import { Link } from "react-router-dom";
-import {GestionPerfilesSearchMock,dataGestionPerfiles,columnsGestionPerfiles} from "../../../Mocks/GestionPerfilesSearchMock"
+import {GestionPerfilesSearchMock,dataGestionPerfiles,columnsGestionPerfiles} from "./mock"
 
 function GestionPerfilesBusqueda() {
   const handleCallback = (values) =>{
@@ -22,7 +22,7 @@ function GestionPerfilesBusqueda() {
       </Link>
     </Col>
     <SearchForm array={GestionPerfilesSearchMock} parentCallback={handleCallback} title="Busqueda de Perfiles" />
-    <div style={{ marginTop: dataGestionPerfiles.length == 0? '70px' : '8px' }}>
+    <div style={{ marginTop: dataGestionPerfiles.length === 0? '70px' : '8px' }}>
       <Table data={dataGestionPerfiles} columns={columnsGestionPerfiles} expandible={false} editable={true}/>
     </div>
   </div>);

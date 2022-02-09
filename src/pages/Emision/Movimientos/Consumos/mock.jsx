@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-import { CalendarIcon } from "../assets/svg/icons/calendar";
+import { CalendarIcon } from "../../../../assets/svg/icons/calendar";
 
-import FloatInput from "../components/molecules/FloatInput/index";
-import FloatSelected from "../components/molecules/FloatSelected";
-import DateRangeFilter from "../components/organisms/DateRangeFilter";
+import FloatInput from "../../../../components/molecules/FloatInput/index";
+import FloatSelected from "../../../../components/molecules/FloatSelected";
+import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import { HomeOutlined } from "@ant-design/icons";
 import {
   MonedaBolivar,
   MonedaFranco,
   MonedaLibra,
-} from "../assets/svg/icons/moenda";
-import SelectImg from "../components/organisms/SelectImg.jsx";
+} from "../../../../assets/svg/icons/moenda";
+import SelectImg from "../../../../components/organisms/SelectImg.jsx/index.jsx";
 
 const columnsEmisionConsumos = [
   {

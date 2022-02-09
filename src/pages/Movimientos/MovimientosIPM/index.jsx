@@ -1,11 +1,10 @@
 import React from "react";
-import Searchform from "../../../components/organisms/SearchForm";
-import { MovimientosIPMSearch } from "../../../Mocks/MovimientosIPMSearch";
+import Searchform from "../../../components/organisms/SearchForm"; 
 import Table from "../../../components/organisms/Table";
 import {
   columnsMovimientosIPM,
-  dataMovimientosIPM,
-} from "../../../Mocks/MovimientosIPM"; 
+  dataMovimientosIPM,MovimientosIPMSearch
+} from "./mock"; 
 
 function MovimientosIPM() {
   return (
