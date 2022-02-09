@@ -4,7 +4,7 @@ import { Button, Card } from "antd";
 import {
   dataSettings,
   columnsNovelty,
-} from "../../../Mocks/GestionAprobaciones";
+} from "../../../pages/GestionAprobaciones/mock";
 
 const Ajustes = () => {
   let childResponse = null;

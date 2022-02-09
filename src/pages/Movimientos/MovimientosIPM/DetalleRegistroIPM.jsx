@@ -5,7 +5,7 @@ import Table from "../../../components/organisms/Table";
 import {
   columnsDetalleRegistroIPM,
   dataDetalleRegistroIPM,
-} from "../../../Mocks/DetalleRegistroIPM";
+} from "./mock";
 import Export from "../../../components/organisms/Export";
 
 function DetalleMovimientoIPM() {

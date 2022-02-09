@@ -1,9 +1,9 @@
 import React from "react";
 import { Card, Tabs } from "antd";
 
-import Ajustes from "../components/tabs/GestionAprobaciones/Ajustes";
-import Novedades from "../components/tabs/GestionAprobaciones/Novedades";
-import DateRangeFilter from "../components/organisms/DateRangeFilter";
+import Ajustes from "../../components/tabs/GestionAprobaciones/Ajustes";
+import Novedades from "../../components/tabs/GestionAprobaciones/Novedades";
+import DateRangeFilter from "../../components/organisms/DateRangeFilter";
 
 function GestionAprobaciones() {
   const { TabPane } = Tabs;

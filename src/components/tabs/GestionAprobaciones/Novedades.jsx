@@ -3,15 +3,14 @@ import Meta from "antd/lib/card/Meta";
 import { AutoComplete, Card } from "antd";
 import {
   dataNovelty,
-  columnsNovelty,
-} from "../../../Mocks/GestionAprobaciones";
+  columnsNovelty,GestionSucursalesSearchMock 
+} from "../../../pages/GestionAprobaciones/mock";
 import Icon from "@ant-design/icons";
 import { Notification } from "../../../assets/svg/icons/notification";
 import Table from "../../organisms/Table";
 import DeploymentConfirmation from "../../molecules/DeploymentConfirmation";
 import DateRangeFilter from "../../organisms/DateRangeFilter";
-import SearchForm from "../../organisms/SearchForm";
-import { GestionSucursalesSearchMock } from "../../../Mocks/GestionSucursalesSearchMock";
+import SearchForm from "../../organisms/SearchForm"; 
 
 function Novedades() {
   const [notification, setNotification] = useState(false);

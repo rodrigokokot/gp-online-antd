@@ -1,4 +1,4 @@
-import FloatInput from '../components/molecules/FloatInput/index'
+import FloatInput from '../../../components/molecules/FloatInput/index'
 import {Link} from 'react-router-dom'
 
 

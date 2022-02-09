@@ -4,7 +4,7 @@ import Table from "../../../components/organisms/Table";
 import {
   dataDetallesCTF,
   columnsDetallesCTF,
-} from "../../../Mocks/DetalleMovimientoCTF";
+} from "./mock";
 
 function DetalleMovimientosCTF() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Table from "../../../components/organisms/Table";
-import { columnsDetalleMovimientosIPM, dataDetalleMovimientosIPM } from "../../../Mocks/DetalleMovimientoIPM";
+import { columnsDetalleMovimientosIPM, dataDetalleMovimientosIPM } from "./mock";
 import {Card, Switch} from 'antd';
 
 function DetalleMovimientoIPM() {
