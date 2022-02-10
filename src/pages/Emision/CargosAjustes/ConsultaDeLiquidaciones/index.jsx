@@ -135,21 +135,21 @@ export default function ConsultaLiquidacionesSearch() {
   };
 
   return (
-    <div>
+    <>
       <SearchCards />
-
       <SearchForm
         array={ConsultaLiquidacionesSearchArray}
         title="Consulta de movimientos historicos"
         parentCallback={handleCallback}
         span={6}
       />
+      <br />
       <Table
         columns={columnsConsultaLiquidaciones}
         data={dataConsultaLiquidaciones}
         expandible={false}
         editable={false}
       />
-    </div>
+    </>
   );
 }

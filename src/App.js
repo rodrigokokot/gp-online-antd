@@ -85,9 +85,10 @@ function App() {
           <DashboardTemplate exact path="/emision/cargosAjustes/publicacionEnBoletin/consultaBoletin/:id" component={lazy(() => import('./pages/Emision/CargosAjustes/PublicacionEnBoletin/ConsultaBoletin'))} />
           
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad'))} />          
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad/nueva" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad/CargosPorProductosAfinidadNew'))} />          
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad/editar/:id" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad/CargosPorProdutosAfinidadEdit'))} />          
           
-          <DashboardTemplate exact path="/emision/cargosAjustes/consultaDeLiquidaciones" component={lazy(() => import('./pages/Emision/CargosAjustes/ConsultaDeLiquidaciones/ConsultaLiquidacionesSearch'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/consultaDeLiquidaciones" component={lazy(() => import('./pages/Emision/CargosAjustes/ConsultaDeLiquidaciones'))} />
           
 
                         {/* Socios */}
@@ -120,7 +121,7 @@ function App() {
 
           <DashboardTemplate exact path="/adquirencia" component={lazy(() => import('./pages/Adquirencia'))} />
 
-          <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda'))} />
+          <DashboardTemplate exact path="/ayuda" component={lazy(() => import('./pages/Ayuda/'))} />
 
 
           <DashboardTemplate exact path="/rodrigo" component={lazy(() => import('./pages/Page1'))} />

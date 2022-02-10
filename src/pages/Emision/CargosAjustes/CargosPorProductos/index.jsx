@@ -20,7 +20,7 @@ const CargosPorProductos = () => {
   return (
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
-        <Link to="/emision/cargosAjustes/cargosPorProductos/crear">
+        <Link to="/emision/cargosAjustes/cargosPorProductos/nueva">
           <Button type="primary" size="small">
             Nuevo Cargo
           </Button>

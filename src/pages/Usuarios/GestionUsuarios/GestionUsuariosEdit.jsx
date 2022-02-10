@@ -11,7 +11,7 @@ function EditUsuario() {
       <Tabs defaultActiveKey="1" style={{ color: "#C1C5C8"}}>
 
         <TabPane tab="Datos Generales" key="1">
-             <Edit id="datosgenerales" component={FormDatosGenerales} textBtnSave="Crear usuario" textModalConfirm="¿Estas seguro de crear este usuario?" textBtnModalConfirm="Si, crear"></Edit>
+             <Edit id="datosgenerales" component={FormDatosGenerales} textBtnSave="Editar usuario" textModalConfirm="¿Estas seguro de editar este usuario?" textBtnModalConfirm="Si, editar"></Edit>
         </TabPane>
 
         <TabPane tab="Contraseña" key="2">

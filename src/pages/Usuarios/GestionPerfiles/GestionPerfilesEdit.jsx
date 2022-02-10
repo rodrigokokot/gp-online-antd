@@ -33,38 +33,34 @@ function GestionPerfilesEdit() {
         <Card style={{ borderRadius: "16px", marginBottom: "12px" }}>
           <Row>
             <Col>
-              <Typography.Title level={4} style={{ color: "#ab218e" }}>
-                Perfil
-              </Typography.Title>
+              <Typography.Title level={3}  style={{ color: '#ab218e' }}>Perfil</Typography.Title>
             </Col>
           </Row>
 
           <Row>
             <Col span={12}>
-              <Form.Item name="nombre">
+              <Form.Item name="nombre" rules={[{required: true, message: "Ingrese nombre"}]}> 
                 <FloatInput
                   outline
                   defaultValue="pedroPz"
                   type="text"
-                  label="Nombre"
+                  label="Nombre*"
                 ></FloatInput>
               </Form.Item>
-              <Form.Item name="descripcion">
+              <Form.Item name="descripcion" rules={[{required: true, message:"Ingrese descripción"}]}> 
                 <FloatInput
                   outline
                   defaultValue="Admin de GP con tareas de gestión"
                   type="text"
-                  label="Descripcion"
+                  label="Descripcion*"
                 ></FloatInput>
               </Form.Item>
             </Col>
           </Row>
         </Card>
 
-        <Card style={{ borderRadius: "16px", marginBottom: "12px" }}>
-          <Typography.Title level={4} style={{ color: "#ab218e" }}>
-            Tipo de operaciones
-          </Typography.Title>
+        <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Tipo de operaciones</Typography.Title>
         </Card>
         <Form.Item name="tabla">
           <Table
@@ -83,9 +79,7 @@ function GestionPerfilesEdit() {
         <Card style={{ borderRadius: "16px", marginBottom: "12px" }}>
           <Row>
             <Col>
-              <Typography.Title level={4} style={{ color: "#ab218e" }}>
-                Contraseña
-              </Typography.Title>
+              <Typography.Title level={3}  style={{ color: '#ab218e' }}>Contraseña</Typography.Title>
             </Col>
           </Row>
 
@@ -94,7 +88,7 @@ function GestionPerfilesEdit() {
               <Form.Item
                 name="password"
                 rules={[
-                  { required: true, message: "Ingrese Contraseña" },
+                  { required: true, message: "Ingresá tu contraseña para generar cambios" },
                   {
                     validator: (_, value1) =>
                       value1 && value1.length >= 8
@@ -115,8 +109,8 @@ function GestionPerfilesEdit() {
               >
                 <FloatInput
                   outline
-                  label="Contraseña nueva"
-                  placeholder="Ingresá tu contraseña para generar cambios"
+                  label="Contraseña nueva*"
+                  placeholder="Ingrese Contraseña*"
                   iconRender={(visible) =>
                     visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
                   }
@@ -136,12 +130,7 @@ function GestionPerfilesEdit() {
         {/* Pantalla de Edición de Perfil */}
 
         <TabPane tab="Datos generales" key="1">
-          <Edit
-            component={FormularioPerfil}
-            textBtnSave="Crear perfil"
-            textModalConfirm="¿Estas seguro de crear este perfil?"
-            textBtnModalConfirm="Si, crear"
-          />
+          <Edit component={FormularioPerfil}  textBtnSave="Editar perfil" textModalConfirm="¿Estas seguro de editar este perfil?" textBtnModalConfirm="Si, guardar" />
         </TabPane>
 
         {/* Pantalla de Edicion de Contraseña */}

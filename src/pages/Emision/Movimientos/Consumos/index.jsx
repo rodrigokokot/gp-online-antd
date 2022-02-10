@@ -8,7 +8,7 @@ import { columnsEmisionConsumos, dataEmisionConsumos, EmisionConsumosSearch } fr
 const Consumos = () => {
   return (
         <>
-            <SearchForm title="Busqueda de consumos" array={EmisionConsumosSearch}></SearchForm>
+            <SearchForm title="Busqueda de consumos" array={EmisionConsumosSearch} span={5}></SearchForm>
             <br />
             <Table data={dataEmisionConsumos} columns={columnsEmisionConsumos}></Table>
         </>

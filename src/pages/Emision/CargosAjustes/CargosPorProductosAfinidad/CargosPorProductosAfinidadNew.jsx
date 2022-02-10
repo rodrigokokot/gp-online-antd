@@ -1,11 +1,10 @@
-import { Card, Col, Form, Input, Typography } from "antd";
 import React from "react";
+import { Card, Col, Form, Typography } from "antd";
 import FloatInput from "../../../../components/molecules/FloatInput";
-
 import Edit from "../../../../components/organisms/Edit";
 
-const CargosPorProductosEditar = () => {
-  const FormularioEditar = () => {
+export default function CargosPorProductosAfinidadNew() {
+  const FormularioNueva = () => {
     return (
       <>
         <Card style={{ borderRadius: "16px", marginBottom: "12px" }}>
@@ -37,26 +36,19 @@ const CargosPorProductosEditar = () => {
               name="Todos"
               rules={[{ required: true, message: "Ingrese todos" }]}
             >
-              <FloatInput
-                outline
-                label="Todos"
-                placeholder="Todos"
-              />
+              <FloatInput outline label="Todos" placeholder="Todos" />
             </Form.Item>
           </Col>
         </Card>
       </>
     );
   };
-
   return (
     <Edit
-      component={FormularioEditar}
-      textBtnSave="Editar producto"
-      textModalConfirm="¿Realizar cambios en el producto?"
-      textBtnModalConfirm="Si, guardar"
+      component={FormularioNueva}
+      textBtnSave="Crear cargo"
+      textModalConfirm="¿Estas seguro de crear el cargo?"
+      textBtnModalConfirm="Si, crear"
     />
   );
-};
-
-export default CargosPorProductosEditar;
+}
