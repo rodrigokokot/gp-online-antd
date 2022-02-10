@@ -73,7 +73,7 @@ const columnsLimite = [
       producto: "Tarjeta Grupar",
       adicional: "1",
       tarjeta: "6063011055857316",
-      option:<Link>Editar</Link>
+
     }, 
     {
         esucursal: 'Tarjeta Grupar - Cordoba',
@@ -85,7 +85,6 @@ const columnsLimite = [
         producto: "Tarjeta Grupar",
         adicional: "1",
         tarjeta: "6063011055857316",
-        option:<Link>Editar</Link>
       }, 
   ];
   const LimiteSearch = [

@@ -49,14 +49,14 @@ const dataGestionPerfiles = [
         tipo: 'Admin',
         nombre: 'Juan',
         apellido: 'Carlos',
-        option:<Link>Editar</Link>
+
     },
     {
         id: '002',
         tipo: 'User',
         nombre: 'Facu',
         apellido: 'Flores',
-        option:<Link>Editar</Link>
+
     }
 ]
 
