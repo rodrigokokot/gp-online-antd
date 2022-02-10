@@ -505,7 +505,7 @@ export default function TarjetaInstantaneaNew() {
 
                     <Row gutter={24}>
                         <Col span={12}>
-                            <Form.Item name="cargos">
+                            <Form.Item name="efectivo">
                                 <Checkbox>Efectivo</Checkbox>
                             </Form.Item>
                         </Col>
