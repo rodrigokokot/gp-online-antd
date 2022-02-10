@@ -98,8 +98,40 @@ const TarjetasSearchArray = [
           nombre: "Raymundo Valdez",
           documento: "DNI 24801003",
           estado: "Activo",
-          option: <Link>Ver detalle</Link>
       }
   ]
 
-export {TarjetasSearchArray,dataTarjetas,columnsTarjetas};
+
+ ////////// MOCK TARJETAS HISTORIAL //////////
+
+ ////////// MOCK TARJETAS HISTORIAL COLUMNAS //////////
+
+ const columnsTarjetasHistorial = [
+     {
+         name:"Fecha de cambio",
+         selector: (row) => row.fecha,
+         sortable: true,
+     },
+     {
+         name:"Usuario",
+         selector: (row) => row.usuario,
+         sortable: true,
+     },
+     {
+         name:"Estado",
+         selector: (row) => row.estado,
+         sortable: true,
+     },
+ ]
+
+ ///////// MOCK DATA TARJETAS HISTORIAL //////////
+
+ const dataTarjetasHistorial = [
+     {
+         fecha: new Date().toISOString().split('T')[0],
+         usuario: "ANEG",
+         estado: "Pendiente",
+     },
+ ]
+
+export {TarjetasSearchArray,dataTarjetas,columnsTarjetas, columnsTarjetasHistorial, dataTarjetasHistorial};

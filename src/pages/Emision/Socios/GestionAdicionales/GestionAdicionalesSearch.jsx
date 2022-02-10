@@ -84,7 +84,6 @@ export default function GestionAdicionalesSearch() {
       documento: "DNI 24801003",
       producto: "Producto Sobre Disponible",
       estado: "Activo",
-      option: <Link>Nuevo Adicional</Link>,
     },
   ];
 

@@ -102,6 +102,7 @@ function App() {
 
           <DashboardTemplate exact path="/emision/socios/tarjetas" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasSearch'))} />
           <DashboardTemplate exact path="/emision/socios/tarjetas/ver/:id" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasView'))} />
+          <DashboardTemplate exact path="/emision/socios/tarjetas/ver/:id/historial" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasHistory'))} />
 
           <DashboardTemplate exact path="/emision/socios/plasticos" component={lazy(() => import('./pages/Emision/Socios/Plasticos/Plasticos'))} />
 

@@ -226,7 +226,6 @@ const dataAutorizaciones = [
         auto: 339302,
         comercio: "13011602-Hidalo Liliana Beatriz",
         estado: "Aprobada",
-        option: <Link>Editar</Link>
 
     }
 ]
