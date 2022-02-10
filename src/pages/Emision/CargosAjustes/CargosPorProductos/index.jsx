@@ -1,5 +1,5 @@
 import { Button, Col } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SearchForm from "../../../../components/organisms/SearchForm";
 import Table from "../../../../components/organisms/Table";
@@ -10,6 +10,13 @@ import {
 } from "./mock";
 
 const CargosPorProductos = () => {
+  const [data, setData] = useState("");
+
+  function handleCallback(values) {
+    //lamada al servicio axios.post(values)
+    //setData(axios.response)
+    setData(dataCargosPorProductos);
+  }
   return (
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
@@ -22,10 +29,12 @@ const CargosPorProductos = () => {
       <SearchForm
         array={cargosPorProductosSearch}
         title="Búsqueda de tipos de Cargos a Socios por producto"
+        parentCallback={handleCallback}
+        span={6}
       />
       <br />
       <Table
-        data={dataCargosPorProductos}
+        data={data}
         columns={columnsCargosPorProductos}
       />
     </>

@@ -1,22 +1,21 @@
 import React  from "react";
-import { Card, Row,Col } from "antd";
-import Title from "antd/lib/typography/Title";    
+import { Card, Row,Col } from "antd";  
 
 const InfoProducto= () => { 
   return (<>
     <Card>  
             <Row gutter={[6, 24]}>
                 <Col span={5}>
-                    <h4>Producto</h4><Title level={4}>{'Tarjeta Grupar'}</Title> 
+                    <h4 className="grey-text">Producto</h4><h1 className="bold-text">{'Tarjeta Grupar'}</h1> 
                 </Col>
                 <Col span={5}>
-                    <h4>Tarjeta</h4><Title level={4}>{'6063011...'}</Title> 
+                    <h4 className="grey-text">Tarjeta</h4><h1 className="bold-text">{'6063011...'}</h1> 
                 </Col>
                 <Col span={5}>
-                    <h4>Fecha de alta</h4><Title level={4}>{'18/05/2021'}</Title>
+                    <h4 className="grey-text">Fecha de alta</h4><h1 className="bold-text">{'18/05/2021'}</h1>
                 </Col>  
                 <Col span={5}>
-                    <h4>Estado</h4><Title level={4}>{'Normal'}</Title> 
+                    <h4 className="grey-text">Estado</h4><h1 className="bold-text">{'Normal'}</h1> 
                 </Col>
             </Row>
     </Card> <br></br>
