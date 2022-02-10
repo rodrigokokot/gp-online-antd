@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchForm from "../../../../components/organisms/SearchForm";
 import Table from "../../../../components/organisms/Table";
 import { Link } from "react-router-dom";
 import { Col, Button } from "antd";
-import {dataGestionAdicionales,columnsGestionAdicionales,GestionAdicionalesSearchArray } from './mock'
+import {
+  dataGestionAdicionales,
+  columnsGestionAdicionales,
+  GestionAdicionalesSearchArray,
+} from "./mock";
 export default function GestionAdicionalesSearch() {
-  const handleCallback = (values) => {
-    console.log(values);
-  };
+  const [data, setData] = useState("");
 
+  function handleCallback(values) {
+    //lamada al servicio axios.post(values)
+    //setData(axios.response)
+    setData(dataGestionAdicionales);
+  }
 
   return (
     <div>
@@ -26,10 +33,8 @@ export default function GestionAdicionalesSearch() {
         parentCallback={handleCallback}
       />
       <Table
-        columns={columnsGestionAdicionales}
-        data={dataGestionAdicionales}
-        expandible={false}
-        editable={true}
+        columns={data}
+        data={columnsGestionAdicionales}
       />
     </div>
   );

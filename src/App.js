@@ -101,11 +101,12 @@ function App() {
 
           <DashboardTemplate exact path="/emision/socios/movimientosDeCuenta" component={lazy(() => import('./pages/Emision/Socios/MovimientosDeCuenta'))} />
 
-          <DashboardTemplate exact path="/emision/socios/adicionales" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales/GestionAdicionalesSearch'))} />
+          <DashboardTemplate exact path="/emision/socios/adicionales" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales'))} />
           <DashboardTemplate exact path="/emision/socios/adicionales/nueva/:id" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales/GestionAdicionalesNew'))} />
 
-          <DashboardTemplate exact path="/emision/socios/tarjetas" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasSearch'))} />
+          <DashboardTemplate exact path="/emision/socios/tarjetas" component={lazy(() => import('./pages/Emision/Socios/Tarjetas'))} />
           <DashboardTemplate exact path="/emision/socios/tarjetas/ver/:id" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasView'))} />
+          <DashboardTemplate exact path="/emision/socios/tarjetas/ver/:id/historial" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasHistory'))} />
 
           <DashboardTemplate exact path="/emision/socios/plasticos" component={lazy(() => import('./pages/Emision/Socios/Plasticos/Plasticos'))} />
 
