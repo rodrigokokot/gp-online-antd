@@ -4,7 +4,7 @@ import Table from '../../../components/organisms/Table';
 import FloatInput from "../../../components/molecules/FloatInput/index";
 import { Link } from 'react-router-dom';
 import FloatSelected from '../../../components/molecules/FloatSelected';
-import {Col, Button} from 'antd'
+import { Col, Button } from 'antd'
 
 const columnsTarjetaInstantanea = [
     {
@@ -129,7 +129,7 @@ const TarjetaInstantaneaSearch = [
         name: 'cuenta',
         input: <FloatInput placeholder="N° de cuenta relacionada" label="N° de cuenta relacionada" />,
     },
-     {
+    {
         index: 'Apellidos',
         name: 'apellidos',
         input: <FloatInput placeholder="Apellidos" label="Apellido" />,
@@ -193,13 +193,26 @@ const TarjetaInstantaneaSearch = [
 ];
 function TarjetaInstantanea() {
     return (<>
-          <Col style={{ textAlign: "right", marginBottom: "25px"}}>
-          <Link to="/parametria/tarjetaInstantanea/nueva">
-          <Button type="primary" size="small">
-          Nuevo tarjeta instantanea
-          </Button>
-          </Link>
-          </Col>
+        <Col style={{ textAlign: "right", marginBottom: "25px" }}>
+
+            <Link to="/parametria/tarjetaInstantanea/nueva">
+                <Button type="primary" size="small">
+                    Nuevo tarjeta instantanea
+                </Button>
+            </Link>
+
+            <Link to="/parametria/tarjetaInstantanea/nueva2">
+                <Button type="primary" size="small">
+                    Nuevo tarjeta instantanea 2
+                </Button>
+            </Link>
+
+            <Link to="/parametria/tarjetaInstantanea/nueva3">
+                <Button type="primary" size="small">
+                    Nuevo tarjeta instantanea 3
+                </Button>
+            </Link>
+        </Col>
 
         <SearchForm title="Búsqueda de cuentas" array={TarjetaInstantaneaSearch} span={5}></SearchForm>
         <br />
