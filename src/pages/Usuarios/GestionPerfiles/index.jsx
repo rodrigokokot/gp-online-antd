@@ -21,7 +21,7 @@ function GestionPerfiles() {
   return (
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
-        <Link to="/usuarios/gestionDePerfiles/nuevo">
+        <Link to="/usuarios/gestionDePerfiles/crearPerfil">
           <Button type="primary" size="small">
             Nuevo Perfil
           </Button>

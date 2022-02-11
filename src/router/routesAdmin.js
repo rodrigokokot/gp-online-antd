@@ -9,7 +9,7 @@ const routes = [
         icon: "FileDoneOutlined",
         subItems: [
             {
-                path: "/parametrosPrincipales/gestionSucursales",
+                path: "/parametrosPrincipales/gestionDeSucursales",
                 name: "Gestión de Sucursales",
             },
         ]
@@ -20,7 +20,7 @@ const routes = [
         subItems: [
             {
                 name: "Gestión de usuarios",
-                path: "/usuarios/gestionUsuarios",
+                path: "/usuarios/gestionDeUsuarios",
 
             },
             {
