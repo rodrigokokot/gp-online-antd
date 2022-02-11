@@ -2,15 +2,16 @@ import { Link } from "react-router-dom";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
+import SelectImg from "../../../../components/organisms/SelectImg.jsx";
 
 const columnsCargosPorProductos = [
   {
-    name: "Codigo",
+    name: "Código",
     selector: (row) => row.codigo,
     sortable: true,
   },
   {
-    name: "Descripcion",
+    name: "Descripción",
     selector: (row) => row.descripcion,
     sortable: true,
   },
@@ -103,14 +104,14 @@ const dataCargosPorProductos = [
 ];
 const cargosPorProductosSearch = [
   {
-    name: "Codigo",
+    name: "Código",
     index: "codigo",
-    input: <FloatInput label="Codigo" placeholder="Codigo" />,
+    input: <FloatInput label="Código" placeholder="Código" />,
   },
   {
-    name: "Descripcion",
+    name: "Descripción",
     index: "descripcion",
-    input: <FloatInput label="Descripcion" placeholder="Descripcion" />,
+    input: <FloatInput label="Descripción" placeholder="Descripción" />,
   },
   {
     name: "Todos",
@@ -118,14 +119,14 @@ const cargosPorProductosSearch = [
     input: <FloatInput label="Todos" placeholder="Todos" />,
   },
   {
-    name: "Debito",
+    name: "Débito",
     index: "debito",
-    input: <FloatInput label="Debito" placeholder="Debito" />,
+    input: <FloatInput label="Débito" placeholder="Débito" />,
   },
   {
-    name: "Grupo Transaccion",
+    name: "Grupo Transacción",
     index: "grupoTransaccion",
-    input: <FloatInput label="Grupo Transaccion" placeholder="Grupo Transaccion"/>,
+    input: <FloatInput label="Grupo Transacción" placeholder="Grupo Transacción"/>,
   },
   {
     name: "Comprobante",
@@ -133,9 +134,9 @@ const cargosPorProductosSearch = [
     input: <FloatInput label="Comprobante" placeholder="Comprobante" />,
   },
   {
-    name: "Numero de cuenta",
+    name: "N° de cuenta",
     index: "numeroCuenta",
-    input: <FloatInput label="Numero de cuenta" placeholder="Numero de cuenta" />,
+    input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
   },
   {
     name: "Adic",
@@ -159,7 +160,7 @@ const cargosPorProductosSearch = [
       <FloatSelected
         width={203}
         label="Producto"
-        placeholder="producto"
+        placeholder="Producto"
         options={[
           {
             title: "producto 1",
@@ -172,11 +173,14 @@ const cargosPorProductosSearch = [
         ]}
       />
     ),
-  },
-
+  }, 
+  {
+    index: "moneda",
+    input: <SelectImg showSearch={true} placeholder="Busca tipo de moneda" style={{width: 250}}/>
+  },  
   {
     index: "fecha",
     input: <DateRangeFilter placeholder="fecha" label="Por fecha" />,
-  },
+  }, 
 ];
 export { dataCargosPorProductos, columnsCargosPorProductos, cargosPorProductosSearch };

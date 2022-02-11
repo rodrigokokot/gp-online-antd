@@ -11,25 +11,19 @@ const ConsultaBoletin = () => {
   return (
     <>
       <Export></Export>
-      <Tabs defaultActiveKey="1" style={{ color: "#C1C5C8" }}>
-        {/* Pantalla 1 */}
+      <Tabs defaultActiveKey="1" style={{ color: "#C1C5C8" }}> 
         <TabPane tab="Información de la cuenta" key="1">
           <InfoCuenta></InfoCuenta>
-        </TabPane>
-
-        {/* Pantalla 2 */}
+        </TabPane> 
         <TabPane tab="Información del producto" key="2">
           <InfoProducto></InfoProducto>
-        </TabPane>
-
+        </TabPane> 
         <TabPane tab="Información del Titular" key="3">
           <InfoTitular></InfoTitular>
-        </TabPane>
-
+        </TabPane> 
         <TabPane tab="Datos Stand- In" key="4">
           <DatosStandIn></DatosStandIn>
-        </TabPane>
- 
+        </TabPane> 
       </Tabs>
     </>
   );

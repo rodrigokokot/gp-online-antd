@@ -15,6 +15,7 @@ function MovimientosCTF() {
     //setData(axios.response)
     setData(dataMovimientosCTF);
   }
+  
   return (
     <>
       <Searchform

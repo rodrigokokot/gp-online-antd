@@ -23,7 +23,8 @@ const FloatSelected = ({options,showSearch, outline, width, mode, ...props}) => 
       className={`float-label ${selectOutline}`}
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
-    >
+    > 
+                              {/* Modos disponibles : "tags" */}
       <Select suffixIcon={props.suffix} mode={mode} maxTagCount='responsive' style={{width: width }} onChange={props.onChange} disabled={disabled} showSearch={props.showSearch}
       // className={ !outline? "select-bottom" : '' }
        >

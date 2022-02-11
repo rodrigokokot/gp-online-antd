@@ -17,14 +17,13 @@ function EditarSucursal() {
 
       <>
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-          <Typography.Title level={4} style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
+          <Typography.Title level={3} style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
 
           <Col span={8}>
 
 
           <Form.Item
             name="descripcion"
-            rules={[{ required: true, message: "Ingrese descripción" }]}
           >
             <FloatInput outline label="Descripcion" placeholder="Descripcion" />
           </Form.Item>
@@ -47,23 +46,23 @@ function EditarSucursal() {
         </Card>
 
       <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-      <Typography.Title level={4} style={{ color: '#ab218e' }}>Domicilio</Typography.Title>
+      <Typography.Title level={3} style={{ color: '#ab218e' }}>Domicilio</Typography.Title>
         <Row gutter={24}>
           <Col span={6}>
             <Form.Item
               name="calle"
               rules={[{ required: true, message: "Ingrese calle" }]}
             >
-              <FloatInput outline label="Calle" placeholder="Calle"></FloatInput>
+              <FloatInput outline label="Calle*" placeholder="Calle*"></FloatInput>
             </Form.Item>
           </Col>
 
           <Col span={3}>
             <Form.Item
-              name="num"
+              name="numero"
               rules={[{ required: true, message: "Ingrese número" }]}
             >
-              <FloatInput outline label="Número" placeholder="Número"></FloatInput>
+              <FloatInput outline label="Número*" placeholder="Número*"></FloatInput>
             </Form.Item>
           </Col>
 
@@ -88,8 +87,8 @@ function EditarSucursal() {
             >
               <FloatSelect
                 outline
-                label="Localidad"
-                placeholder="Localidad"
+                label="Localidad*"
+                placeholder="Localidad*"
                 options={[
                   {
                     title: "San Juan",
@@ -120,8 +119,8 @@ function EditarSucursal() {
             >
               <FloatSelect
                 outline
-                label="Provincia"
-                placeholder="Provincia"
+                label="Provincia*"
+                placeholder="Provincia*"
                 options={[
                   {
                     title: "San Juan",
@@ -150,7 +149,7 @@ function EditarSucursal() {
               name="telefono"
               rules={[{ required: true, message: "Ingrese teléfono" }]}
             >
-              <FloatInput outline label="Telefono" placeholder="Telefono"></FloatInput>
+              <FloatInput outline label="Telefono*" placeholder="Telefono*"></FloatInput>
             </Form.Item>
           </Col>
         </Row>
@@ -160,7 +159,11 @@ function EditarSucursal() {
 
   return (
     <>
-      <Edit component={FormularioEdicion} />
+      <Edit 
+        component={FormularioEdicion} 
+        textBtnSave="Guardar Cambios"
+        textModalConfirm="¿Estás seguro que deseas generar estos cambios a esta sucursal?"
+        textBtnModalConfirm="Si, guardar cambios" />
     </>
   );
 }

@@ -12,12 +12,13 @@ import { Col, Button } from "antd";
 function GestionUsuario() {
   const [data, setData] = useState("");
 
+   
   function handleCallback(values) {
     //lamada al servicio axios.post(values)
     //setData(axios.response)
     setData(dataGestionUsuarios);
   }
-
+ 
   return (
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>

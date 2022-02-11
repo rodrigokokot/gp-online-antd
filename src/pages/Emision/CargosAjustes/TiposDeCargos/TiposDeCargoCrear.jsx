@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Radio, Form, Typography, Card, Row, Col } from "antd";
 import Edit from "../../../../components/organisms/Edit/index";
 import FloatInput from "../../../../components/molecules/FloatInput";
+import SelectImg from "../../../../components/organisms/SelectImg.jsx";
+import { SearchOutlined } from '@ant-design/icons';
 const { Title } = Typography;
 const TipoDeCargoCrear = () => {
   const [value1, setValue1] = useState("");
@@ -23,22 +25,14 @@ const TipoDeCargoCrear = () => {
     return (
       <>
         <Card>
-          <Title level={2}>Datos Principales</Title>
-          <Col span={6}>
-            <Form.Item name="codigo">
+          <Title level={3}  style={{ color: '#ab218e' }}>Datos Principales</Title><br></br>
+          <Row gutter={24}><Col span={6}>
+            <Form.Item name="codigo" rules={[{ required: true, message: "Ingrese código" }]}>
               <FloatInput
                 outline
                 type="text"
                 label="Codigo"
                 placeholder="Codigo"
-              ></FloatInput>
-            </Form.Item>
-            <Form.Item name="descripcion">
-              <FloatInput
-                outline
-                type="text"
-                label="Descripcion"
-                placeholder="Descripcion"
               ></FloatInput>
             </Form.Item>
             <Form.Item name="tipoCargo">
@@ -49,9 +43,20 @@ const TipoDeCargoCrear = () => {
                 placeholder="Tipo Cargo"
               ></FloatInput>
             </Form.Item>
+            </Col>
+            <Col span={6}>
+            <Form.Item name="descripcion">
+              <FloatInput
+                outline
+                type="text"
+                label="Descripcion"
+                placeholder="Descripcion"
+              ></FloatInput>
+            </Form.Item>
           </Col>
+          </Row>
           <Title level={5}>Aplica IVA</Title>
-          <Form.Item name="aplicaIva">
+          <Form.Item name="aplicaIva" rules={[{ required: true, message: "Ingrese como aplica" }]}>
             <Radio.Group onChange={onChange2} value={value2}>
               <Row justify="space-between">
                 <Radio style={{ marginTop: 10 }} value={"IVA General"}>
@@ -66,7 +71,7 @@ const TipoDeCargoCrear = () => {
               </Row>
             </Radio.Group>
           </Form.Item>
-          <Form.Item name="tipoDeTarjeta">
+          <Form.Item name="tipoDeTarjeta" rules={[{ required: true, message: "Ingrese tipo de tarjeta" }]}>
             <Radio.Group onChange={onChange1} value={value1}>
               <Row justify="space-between">
                 <Radio style={{ marginTop: 10 }} value={"Debito"}>
@@ -85,14 +90,14 @@ const TipoDeCargoCrear = () => {
               <Radio value={"Local"}>Moneda Local</Radio>
             </Radio.Group>
           </Form.Item>
-          <Form.Item name="tipoMoneda">
-            <FloatInput
-              outline
-              type="text"
-              label="tipo moneda?"
-              placeholder="buscar moneda?"
-            ></FloatInput>
-          </Form.Item>
+          <Col span={6}><Form.Item
+                name="tipomoneda" 
+            > 
+                <SelectImg suffix={<SearchOutlined />} 
+                bordered showSearch={true} placeholder="Busca tipo de moneda" 
+                style={{width: '100%'}}
+                />            
+            </Form.Item> </Col>
         </Card>
       </>
     );
@@ -100,7 +105,11 @@ const TipoDeCargoCrear = () => {
 
   return (
     <>
-      <Edit component={FormularioUsuario} />
+      <Edit 
+        component={FormularioUsuario}
+        textBtnSave="Confirmar"
+        textModalConfirm="¿Confirma creación de nuevo tipo de cargo?"
+        textBtnModalConfirm="Si, crear" />
     </>
   );
 };
