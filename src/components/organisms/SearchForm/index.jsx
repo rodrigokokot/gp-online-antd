@@ -7,15 +7,16 @@ import {
   CollapseOpen,
 } from "../../../assets/svg/icons/collapse";
 import useRangePicker from "../../../hooks/useRangePicker";
+import { useBetween } from "use-between";
 
 const SearchForm = ({ array, parentCallback, title, span }) => {
   const [form] = Form.useForm();
   const { Panel } = Collapse;
   const [open, setOpen] = useState(["1"]);
-  const { state } = useRangePicker(); //state del rangepicker
+  const { state, hours, searchType } = useBetween(useRangePicker)
 
   const onFinish = (values) => {
-    console.log(values);
+    console.log({...values, ...state[0], ...hours, searchType});
     parentCallback(values);
   };
 
