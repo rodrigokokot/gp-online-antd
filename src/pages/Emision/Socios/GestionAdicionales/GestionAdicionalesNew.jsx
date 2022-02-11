@@ -4,7 +4,6 @@ import { Radio, Row, Col, Card, Button, Form, Space, Tooltip, DatePicker, Checkb
 import { SearchOutlined } from "@ant-design/icons";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
-import Title from "antd/lib/typography/Title";
 
 export default function GestionAdicionalesNew() {
   const [value, setValue] = useState("");
