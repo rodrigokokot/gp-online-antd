@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
-import { addDays } from "date-fns";
 import * as locales from "react-date-range/dist/locale";
-import { useBetween } from "use-between";
-import useRangePicker from "../../../hooks/useRangePicker";
 import "./index.less";
 
 function DateRangeComponent({ className, dateSelected, range, ...props }) {
