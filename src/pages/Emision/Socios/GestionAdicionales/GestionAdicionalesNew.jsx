@@ -33,7 +33,7 @@ export default function GestionAdicionalesNew() {
             onFinish={onFinish}
             size="large"
           >
-              <Title level={5}>Tipo de documento</Title>
+              <Typography.Title level={5}>Tipo de documento</Typography.Title>
         <Form.Item name='tipodocumento'
                     rules={[{ required: true  }]}> 
                 <Radio.Group onChange={onChange} value={value}>
