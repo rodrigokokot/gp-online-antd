@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Card, Button, Row, Col, TimePicker, Radio, Modal } from "antd";
-import Icon, { HomeOutlined } from "@ant-design/icons";
+import Icon from "@ant-design/icons";
 import DateRangeComponent from "../../molecules/DateRangePicker";
 import eoLocale from "date-fns/locale/es";
 import { format } from "date-fns";

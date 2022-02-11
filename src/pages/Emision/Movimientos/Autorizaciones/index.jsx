@@ -20,7 +20,7 @@ export default function AutorizacionesSearch() {
   return (
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
-        <Link to="/emision/movimientos/autorizaciones/nuevo">
+        <Link to="/emision/movimientos/autorizaciones/crearAutorizacion">
           <Button type="primary" size="small">
             Nueva Autorización
           </Button>

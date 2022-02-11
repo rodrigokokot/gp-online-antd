@@ -235,7 +235,7 @@ const columnsAutorizaciones = [
     button: true,
     cell: (row) => (
       <Link
-        to={`/emision/movimientos/autorizaciones/ver/${row.auto}`}
+        to={`/emision/movimientos/autorizaciones/detalle=${row.auto}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >

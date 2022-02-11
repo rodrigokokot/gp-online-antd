@@ -41,7 +41,7 @@ const columnsDetallesCTF = [
     name: " ",
 		button: true,
 		cell: row => (
-			<Link to={`/movimientos/CTF/detalles/${row.ididentidad}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
+			<Link to={`/movimientos/CTF/detalle=${row.ididentidad}/registro=${row.idorigen}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
 				ver detalle otro
 			</Link>
 		),
@@ -117,7 +117,7 @@ const columnsMovimientosCTF = [
     name: " ",
 		button: true,
 		cell: row => (
-			<Link to={`/movimientos/CTF/detalles/`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
+			<Link to={`/movimientos/CTF/detalle=${row.ididentidad}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
 				ver detalle
 			</Link>
 		),
