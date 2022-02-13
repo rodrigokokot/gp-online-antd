@@ -1,43 +1,24 @@
-import { Card } from "antd";
+import { Card,Row,Col } from "antd";
 import React from "react";
 
 const InformacionDelProducto = () => {
   return (
     <>
       <Card>
-        <h2 style={{ color: "#AB218E" }}>Informacion de la cuenta</h2>
-        <div
-          style={{
-            flexWrap: "wrap",
-            display: "flex",
-            justifyContent: "left",
-            gap: "10% 10%",
-            flexDirection: "row",
-          }}
-        >
-          <h3>
-          Producto:<h5>Tarjeta Grupar</h5>
-          </h3>
-          <h3>
-          Tarjeta:<h5>6063010022211304</h5>
-          </h3>
-          <h3>
-          Fecha de Alta:<h5>14/11/2011</h5>
-          </h3>
-          <h3>
-          Estado:<h5>Normal</h5>
-          </h3>
-        </div>
-        <div
-          style={{
-            display: "block",
-            height: "1px",
-            border: 0,
-            borderTop: "1px solid #ccc",
-            margin: "1em 0",
-            padding: 0,
-          }}
-        ></div>
+        <Row gutter={[24, 24]}>
+          <Col span={6}>
+              <h4 className="grey-text"> Producto</h4><h1 className="bold-text">{'Tarjeta Grupar'}</h1> 
+          </Col>
+          <Col span={6}>
+              <h4 className="grey-text"> Tarjeta</h4><h1 className="bold-text">{'6063010022211304'}</h1> 
+          </Col>
+          <Col span={6}>
+              <h4 className="grey-text">Fecha de Alta </h4><h1 className="bold-text">{'14/11/2011'}</h1> 
+          </Col>  
+          <Col span={6}>
+              <h4 className="grey-text"> Estado</h4><h1 className="bold-text">{'Normal'}</h1> 
+          </Col>  
+        </Row>    
       </Card>
     </>
   );

@@ -1,26 +1,25 @@
 import React from "react";
-import { Card, Row,Col,Form} from "antd";
-import Title from "antd/lib/typography/Title";   
+import { Card, Row,Col,Form} from "antd"; 
 import FloatSelected from "../../../components/molecules/FloatSelected/index";
 
 const InfoTitular= () => {
   return (<>
     <Card> 
-      <Row gutter={[6, 24]}>
-        <Col span={5}>
-            <h4>Documento</h4><Title level={4}>{'DNI - 385000678'}</Title> 
+      <Row gutter={[24, 24]}>
+        <Col span={6}>
+            <h4 className="grey-text">Documento </h4><h1 className="bold-text">{'DNI - 385000678'}</h1> 
+        </Col> 
+        <Col span={6}>
+            <h4 className="grey-text"> Apellidos</h4><h1 className="bold-text">{'Ortiz'}</h1> 
         </Col>
-        <Col span={5}>
-            <h4>Apellidos</h4><Title level={4}>{'Ortiz'}</Title> 
-        </Col>
-        <Col span={5}>
-            <h4>Nombres</h4><Title level={4}>{'Darma Micaela'}</Title> 
+        <Col span={6}>
+            <h4 >Nombres </h4><h1 className="bold-text">{'Darma Micaela'}</h1> 
         </Col> 
       </Row><br></br>
         
-            <h4>Datos de la publicación</h4>
-            <Col span={5}>
-            <Form.Item
+            <h4 className="grey-text">Datos de la publicación</h4> 
+            <Col span={5} style={{marginTop:20}}>
+            <Form.Item 
                 name="motivopublicacion" 
             >
                 <FloatSelected 
@@ -35,7 +34,7 @@ const InfoTitular= () => {
                 </FloatSelected> 
             </Form.Item> 
         </Col> 
-    </Card> <br></br>
+    </Card> 
   </>      
 );
 }

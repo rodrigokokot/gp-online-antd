@@ -38,15 +38,13 @@ const GestionCuentas=()=> {
   
   return(
   <>
-          <Col style={{ textAlign: "right", marginBottom: "25px"}}>
-            {/* width ver tamaño en Mocks*/}
+          <Col style={{ textAlign: "right", marginBottom: "25px"}}> 
             <Link to="/emision/socios/cuentas/gestionDeCuentas/nueva"> 
             <Button type="primary" size="small">
               Nueva Cuenta
             </Button>
             </Link>
-          </Col >
-          {/* width del searchfrom ver tamaño en Mocks*/}
+          </Col > 
           <SearchForm span={4} array={GestionCuentaSearch} parentCallback={handleCallback} title="Busqueda de gestión de cuentas" />
           <br></br>
           <Table data={data} columns={columnsGestionCuenta} expandible={false} editable={true}/>
