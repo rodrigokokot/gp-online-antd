@@ -37,7 +37,7 @@ const columnsGestionPerfiles =[
         name: '',
         button: true,
         cell: row =>(
-            <Link to={`/usuarios/gestionDePerfiles/editar/${row.id}`} style={{textDecoration:"underline"}} rel="noopener noreferrer" > Editar </Link>
+            <Link to={`/usuarios/gestionDePerfiles/editarPerfil=${row.id}`} style={{textDecoration:"underline"}} rel="noopener noreferrer" > Editar </Link>
         )
     }
 ]

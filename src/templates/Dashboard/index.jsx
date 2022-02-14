@@ -28,6 +28,8 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           trigger={null}
           collapsible
           collapsed={collapsed}
+          collapsedWidth={80}
+          width={400}
           style={{
             backgroundColor: "#fff",
             overflow: "auto",
@@ -46,7 +48,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               },
             })}
           </div>
-          <Menu mode="inline">
+          <Menu mode="inline" className="menu-scroll">
             {routes.map((route, index) => {
               const Component = icons[route.icon];
               return route.subItems !== undefined ? (

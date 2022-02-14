@@ -22,7 +22,7 @@ function GestionUsuario() {
   return (
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
-        <Link to="/usuarios/gestionUsuarios/crear">
+        <Link to="/usuarios/gestionDeUsuarios/crearUsuario">
           <Button type="primary" size="small">
             Nuevo Usuario
           </Button>
