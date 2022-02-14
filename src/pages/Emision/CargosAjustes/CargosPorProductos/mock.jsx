@@ -45,7 +45,7 @@ const columnsCargosPorProductos = [
     button: true,
     cell: (row) => (
       <Link
-        to={`/emision/cargosAjustes/cargosPorProductos/editar/${row.codigo}`}
+        to={`/emision/cargosAjustes/cargosPorProductos/editarCargoPorProducto=${row.codigo}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >

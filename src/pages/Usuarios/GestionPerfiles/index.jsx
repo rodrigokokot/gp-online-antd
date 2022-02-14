@@ -31,6 +31,7 @@ function GestionPerfiles() {
         array={GestionPerfilesSearchMock}
         parentCallback={handleCallback}
         title="Busqueda de Perfiles"
+        span={6}
       />
       <br />
       <Table data={data} columns={columnsGestionPerfiles} />

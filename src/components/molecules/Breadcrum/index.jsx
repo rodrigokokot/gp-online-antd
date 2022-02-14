@@ -1,7 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Breadcrumb } from "antd";
-import { Link, useHistory, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const BreadcrumComponent = ({ props }) => {
   const location = useLocation();

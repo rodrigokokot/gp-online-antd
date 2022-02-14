@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   columnsTiposDeCargos,
   dataTiposDeCargos,
@@ -10,10 +10,17 @@ import SearchForm from "../../../../components/organisms/SearchForm";
 import Table from "../../../../components/organisms/Table";
 
 function TiposDeCargos() {
+  const [data, setData] = useState("");
+
+  function handleCallback(values) {
+    //lamada al servicio axios.post(values)
+    //setData(axios.response)
+    setData(dataTiposDeCargos);
+  }
   return (
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
-        <Link to="/emision/cargosAjustes/tiposDeCargos/crear">
+        <Link to="/emision/cargosAjustes/tiposDeCargos/crearTipoDeCargo">
           <Button type="primary" size="small">
             Nuevo Tipo de Cargo
           </Button>
@@ -22,9 +29,11 @@ function TiposDeCargos() {
       <SearchForm
         array={tiposDeCargosSearch}
         title="Búsqueda de tipos de Cargos"
+        parentCallback={handleCallback}
+        span={6}
       ></SearchForm>
       <br />
-      <Table data={dataTiposDeCargos} columns={columnsTiposDeCargos}></Table>
+      <Table data={data} columns={columnsTiposDeCargos}></Table>
     </>
   );
 }

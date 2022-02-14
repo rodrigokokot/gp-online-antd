@@ -18,7 +18,9 @@ const { Sider, Content } = Layout;
 export default function DashboardTemplate({ component: Component, ...rest }) {
   const [collapsed, setCollapsed] = useState(true);
   const icons = require(`@ant-design/icons`);
-  const [itemSelected, setItemSelected] = useState(routes[0]);
+  const key = localStorage.getItem("option");
+  console.log(key);
+  const [itemSelected, setItemSelected] = useState(JSON.parse(key));
 
   return (
     <>
@@ -46,7 +48,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               },
             })}
           </div>
-          <Menu mode="inline">
+          <Menu mode="inline" selectedKeys={itemSelected.key}>
             {routes.map((route, index) => {
               const Component = icons[route.icon];
               return route.subItems !== undefined ? (
@@ -69,6 +71,13 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                                 to={subItem.path}
                                 onClick={() => {
                                   setItemSelected(subItem);
+                                  localStorage.setItem(
+                                    "option",
+                                    JSON.stringify({
+                                      ...subItem,
+                                      key: `${index}.${index2}.${index3}`,
+                                    })
+                                  );
                                   setCollapsed(true);
                                 }}
                               >
@@ -86,6 +95,13 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                           to={item.path}
                           onClick={() => {
                             setItemSelected(item);
+                            localStorage.setItem(
+                              "option",
+                              JSON.stringify({
+                                ...item,
+                                key: `${index}.${index2}`,
+                              })
+                            );
                             setCollapsed(true);
                           }}
                         >
@@ -101,6 +117,10 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                     to={route.path}
                     onClick={() => {
                       setItemSelected(route);
+                      localStorage.setItem(
+                        "option",
+                        JSON.stringify({ ...route, key: `${index}` })
+                      );
                       setCollapsed(true);
                     }}
                   >
@@ -116,6 +136,10 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                 to="/ayuda"
                 onClick={() => {
                   setItemSelected("/ayuda");
+                  localStorage.setItem(
+                    "option",
+                    JSON.stringify({ name: "ayuda", path: "/ayuda" })
+                  );
                   setCollapsed(true);
                 }}
               >
@@ -134,7 +158,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
             className=""
             style={{
               margin: "0px 16px 24px 16px",
-              padding:  "0px 24px 24px 24px",
+              padding: "0px 24px 24px 24px",
               minHeight: 280,
               backgroundColor: "#E5E5E5",
             }}
