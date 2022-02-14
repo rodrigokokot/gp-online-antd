@@ -16,7 +16,6 @@ import {
 import { SearchOutlined } from "@ant-design/icons";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
-import Title from "antd/lib/typography/Title";
 
 export default function GestionAdicionalesNew() {
   const [value, setValue] = useState("");
@@ -48,7 +47,7 @@ export default function GestionAdicionalesNew() {
             onFinish={onFinish}
             size="large"
           >
-            <Title level={5}>Tipo de documento</Title>
+            <Typography.Title level={5}>Tipo de documento</Typography.Title>
             <Form.Item name="tipodocumento" rules={[{ required: true }]}>
               <Radio.Group onChange={onChange} value={value}>
                 <Row justify="space-between">

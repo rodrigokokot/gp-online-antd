@@ -30,6 +30,8 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           trigger={null}
           collapsible
           collapsed={collapsed}
+          collapsedWidth={80}
+          width={400}
           style={{
             backgroundColor: "#fff",
             overflow: "auto",
