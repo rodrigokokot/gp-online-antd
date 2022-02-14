@@ -1,22 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
-import { addDays } from "date-fns";
 import * as locales from "react-date-range/dist/locale";
 import "./index.less";
-import useRangePicker from "../../../hooks/useRangePicker";
 
-function DateRangeComponent({ className, dateSelected, ...props }) {
-  const { state, setStateRangePicker } = useRangePicker();
-  // useEffect(() => {
-  //   setStateRangePicker([{
-  //     startDate: new Date(),
-  //     endDate: new Date(),
-  //     // endDate: addDays(new Date(), 7),
-  //     key: "selection",
-  //   }]);
-  // }, []);
+function DateRangeComponent({ className, dateSelected, range, ...props }) {
+  const [state, setState] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      // endDate: addDays(new Date(), 7),
+      key: "selection",
+    },
+  ]);
 
   return (
     <DateRange
@@ -24,9 +21,9 @@ function DateRangeComponent({ className, dateSelected, ...props }) {
       editableDateInputs={false}
       showDateDisplay={false}
       onChange={(item) => {
-        console.log(state)
+        // console.log(state)
         dateSelected([item.selection]);
-        setStateRangePicker([item.selection]);
+        setState([item.selection]);
       }}
       moveRangeOnFirstSelection={false}
       ranges={state}

@@ -54,7 +54,7 @@ const columnsCambioDeEstado = [
     button: true,
     cell: (row) => (
       <Link
-        to={`/emision/cargosAjustes/cambioDeEstado/detalle/${row.codigo}`}
+        to={`/emision/cargosAjustes/cambioDeEstado/detalle=${row.codigo}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >

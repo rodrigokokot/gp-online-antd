@@ -1,18 +1,35 @@
-import React from 'react';
-import SearchForm from '../../../../components/organisms/SearchForm'
-import Table from '../../../../components/organisms/Table';
-import { columnsEmisionConsumos, dataEmisionConsumos, EmisionConsumosSearch } from './mock';
-
-
+import React, { useState } from "react";
+import SearchForm from "../../../../components/organisms/SearchForm";
+import Table from "../../../../components/organisms/Table";
+import {
+  columnsEmisionConsumos,
+  dataEmisionConsumos,
+  EmisionConsumosSearch,
+} from "./mock";
 
 const Consumos = () => {
+  const [data, setData] = useState("");
+
+  function handleCallback(values) {
+    //lamada al servicio axios.post(values)
+    //setData(axios.response)
+    setData(dataEmisionConsumos);
+  }
   return (
-        <>
-            <SearchForm title="Busqueda de consumos" array={EmisionConsumosSearch} span={5}></SearchForm>
-            <br />
-            <Table data={dataEmisionConsumos} columns={columnsEmisionConsumos}></Table>
-        </>
-    );
+    <>
+      <SearchForm
+        title="Busqueda de consumos"
+        array={EmisionConsumosSearch}
+        parentCallback={handleCallback}
+        span={5}
+      ></SearchForm>
+      <br />
+      <Table
+        data={data}
+        columns={columnsEmisionConsumos}
+      ></Table>
+    </>
+  );
 };
 
 export default Consumos;

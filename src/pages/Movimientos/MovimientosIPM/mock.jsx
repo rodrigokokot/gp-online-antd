@@ -46,7 +46,7 @@ const columnsDetalleMovimientosIPM = [
     name: " ",
 		button: true,
 		cell: row => (
-			<Link to={`/movimientos/IPM/detalles/${row.idFile}/${row.registros}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
+			<Link to={`/movimientos/IPM/detalle=${row.idFile}/registro=${row.registros}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
 				ver detalle Elements
 			</Link>
 		),
@@ -180,7 +180,7 @@ const columnsMovimientosIPM = [
     name: " ",
 		button: true,
 		cell: row => (
-			<Link to={`/movimientos/IPM/detalles/${row.idFile}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
+			<Link to={`/movimientos/IPM/detalle=${row.idFile}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
 				ver detalle
 			</Link>
 		),

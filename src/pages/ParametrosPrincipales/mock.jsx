@@ -102,7 +102,7 @@ const columnsGestionSucursales = [
     name: " ",
 		button: true,
 		cell: row => (
-			<Link to={`/parametrosPrincipales/gestionSucursales/editar/${row.codigo}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
+			<Link to={`/parametrosPrincipales/gestionDeSucursales/editarSucursal=${row.codigo}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
 				Editar
 			</Link>
 		),

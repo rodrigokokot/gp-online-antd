@@ -1,29 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Card, Button, Row, Col, TimePicker, Radio, Modal } from "antd";
-import Icon, { HomeOutlined } from "@ant-design/icons";
+import Icon from "@ant-design/icons";
 import DateRangeComponent from "../../molecules/DateRangePicker";
 import eoLocale from "date-fns/locale/es";
 import { format } from "date-fns";
 import { CalendarIcon } from "../../../assets/svg/icons/calendar";
 import "./index.less";
+import { useBetween } from "use-between";
+import useRangePicker from "../../../hooks/useRangePicker";
 
 function DateRangeFilter() {
   const [startDate, setStartDate] = useState(null);
-  const [endtDate, setEndtDate] = useState(null);
-  const [searchType, setSearchType] = React.useState(2);
+  const [endDate, setEndDate] = useState(null);
+  // const [searchType, setSearchType] = useState(2);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const { setStateRangePicker, setHoursRangePicker, setSearchTypeRangePicker, searchType } = useBetween(useRangePicker);
+  const [picker, setPicker] = useState(null);
+
   const dateSelected = (data) => {
-    setStartDate(
-      format(new Date(data[0].startDate), "dd 'de' MMMM yyyy", {
-        locale: eoLocale,
-      })
-    );
-    setEndtDate(
-      format(new Date(data[0].endDate), "dd 'de' MMMM yyyy", {
-        locale: eoLocale,
-      })
-    );
-  };  
+    setPicker(data);
+  };
+
+  const submitFilters =  () => {
+    setStateRangePicker(picker)
+    setHoursRangePicker({
+      startHour: format(new Date(startDate), "HH:mm:ss"),
+      endHour: format(new Date(endDate), "HH:mm:ss"),
+    })
+    setIsModalVisible(false)
+  }
+
+  const resetFilters = () => {
+    setStateRangePicker()
+    setHoursRangePicker()
+    setSearchTypeRangePicker()
+  }
 
   return (
     <div>
@@ -57,11 +68,11 @@ function DateRangeFilter() {
                 Buscar por:
                 <Radio.Group
                   style={{ marginLeft: "10px" }}
-                  onChange={(e) => setSearchType(e.target.value)}
+                  onChange={(e) => setSearchTypeRangePicker(e.target.value)}
                   value={searchType}
                 >
-                  <Radio value={1}>Fecha de presentación</Radio>
-                  <Radio value={2}>Fecha de origen</Radio>
+                  <Radio value="presentacion">Fecha de presentación</Radio>
+                  <Radio value="origen">Fecha de origen</Radio>
                 </Radio.Group>
               </p>
 
@@ -71,14 +82,14 @@ function DateRangeFilter() {
               />
 
               <p>
-                <b>Desde:</b> {startDate}
+                <b>Desde:</b> {picker? format(new Date(picker[0].startDate), "dd 'de' MMMM yyyy", { locale: eoLocale }) : ''}
               </p>
               <p>
-                <b>Hasta:</b> {endtDate}
+                <b>Hasta:</b> {picker? format(new Date(picker[0].endDate), "dd 'de' MMMM yyyy", { locale: eoLocale }) : ''}
               </p>
 
-              <Button type="primary">Aplicar</Button>
-              <Button type="text" style={{ marginLeft: "20px" }}>
+              <Button type="primary" onClick={submitFilters}>Aplicar</Button>
+              <Button type="text" style={{ marginLeft: "20px" }} onClick={resetFilters}>
                 Limpiar filtros
               </Button>
             </Card>
@@ -97,7 +108,7 @@ function DateRangeFilter() {
                   <TimePicker
                     style={{ borderRadius: "8px", height: "45px" }}
                     type="time"
-                    onChange={(value) => console.log(value)}
+                    onChange={(value) => { setStartDate(value)}}
                     placeholder="00:00:00"
                   />
                 </p>
@@ -106,7 +117,7 @@ function DateRangeFilter() {
                   <TimePicker
                     style={{ borderRadius: "8px", height: "45px" }}
                     type="time"
-                    onChange={(value) => console.log(value)}
+                    onChange={(value) => setEndDate(value)}
                     placeholder="00:00:00"
                   />
                 </p>
