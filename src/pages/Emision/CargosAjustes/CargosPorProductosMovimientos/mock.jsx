@@ -59,7 +59,7 @@ const columnsCPMovimiento = [
     button: true,
     cell: (row) => (
       <Link
-        to={`/emision/cargosAjustes/cargosPorProductosMovimientos/edit/${row.producto}`}
+        to={`/emision/cargosAjustes/cargosPorProductosMovimientos/editarCargoPorProductoYMovimiento=${row.evento}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >

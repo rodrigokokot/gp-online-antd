@@ -29,7 +29,7 @@ function GestionUsuario() {
         </Link>
       </Col>
       <SearchForm
-        span={5}
+        span={6}
         array={GestionUsuariosSearch}
         parentCallback={handleCallback}
         title="Busqueda de usuarios"

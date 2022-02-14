@@ -21,7 +21,7 @@ const Consumos = () => {
         title="Busqueda de consumos"
         array={EmisionConsumosSearch}
         parentCallback={handleCallback}
-        span={5}
+        span={6}
       ></SearchForm>
       <br />
       <Table

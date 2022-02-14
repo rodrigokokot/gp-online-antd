@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Layout, Popover } from "antd";
 import { Link } from "react-router-dom";
 import Icon from "@ant-design/icons";

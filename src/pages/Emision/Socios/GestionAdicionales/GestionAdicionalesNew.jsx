@@ -1,15 +1,27 @@
-import React, {useRef, useState} from "react";
+import React, { useState } from "react";
 import Edit from "../../../../components/organisms/Edit";
-import { Radio, Row, Col, Card, Button, Form, Space, Tooltip, DatePicker, Checkbox, Typography } from "antd";
+import {
+  Radio,
+  Row,
+  Col,
+  Card,
+  Button,
+  Form,
+  Space,
+  Tooltip,
+  DatePicker,
+  Checkbox,
+  Typography,
+} from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 
 export default function GestionAdicionalesNew() {
   const [value, setValue] = useState("");
-    const onChange = e => {
+  const onChange = (e) => {
     setValue(e.target.value);
-    }; 
+  };
 
   const onFinish = (values) => {
     console.log(values);
@@ -23,7 +35,9 @@ export default function GestionAdicionalesNew() {
         <Card>
           <Row>
             <Space direction="vertical" size="small">
-          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Datos principales</Typography.Title> 
+              <Typography.Title level={3} style={{ color: "#ab218e" }}>
+                Datos principales
+              </Typography.Title>
             </Space>
           </Row>
           <Form
@@ -33,49 +47,67 @@ export default function GestionAdicionalesNew() {
             onFinish={onFinish}
             size="large"
           >
-              <Typography.Title level={5}>Tipo de documento</Typography.Title>
-        <Form.Item name='tipodocumento'
-                    rules={[{ required: true  }]}> 
-                <Radio.Group onChange={onChange} value={value}>
-                    <Row justify="space-between">
-                    <Col span={4}>
-                        <Radio style={{ marginTop: 10 }} value={"DNI"}>DNI</Radio> 
-                        <Radio style={{ marginTop: 10 }} value={"CUIT"}>CUIT</Radio>
-                    </Col>
-                    <Col span={8}>
-                        <Radio style={{ marginTop: 10 }} value={"LIBRETA CIVICA"} >LIBRETA CIVICA</Radio>
-                        <Radio style={{ marginTop: 10 }} value={"LIBRETA DE ENROLAMIENTO"}>LIBRETA DE ENROLAMIENTO</Radio>
-                    </Col>
-                    <Col span={4}>
-                        <Radio style={{ marginTop: 10 }} value={"CUIL"}>CUIL</Radio> 
-                        <Radio style={{ marginTop: 10 }} value={"PASAPORTE"} >PASAPORTE</Radio> 
-                    </Col>
-                    <Col span={4}>
-                        <Radio style={{ marginTop: 10 }} value={"CI"}>CI</Radio>
-                    </Col>
-                    </Row>
-                </Radio.Group>
-        </Form.Item>
+            <Typography.Title level={5}>Tipo de documento</Typography.Title>
+            <Form.Item name="tipodocumento" rules={[{ required: true }]}>
+              <Radio.Group onChange={onChange} value={value}>
+                <Row justify="space-between">
+                  <Col span={4}>
+                    <Radio style={{ marginTop: 10 }} value={"DNI"}>
+                      DNI
+                    </Radio>
+                    <Radio style={{ marginTop: 10 }} value={"CUIT"}>
+                      CUIT
+                    </Radio>
+                  </Col>
+                  <Col span={8}>
+                    <Radio style={{ marginTop: 10 }} value={"LIBRETA CIVICA"}>
+                      LIBRETA CIVICA
+                    </Radio>
+                    <Radio
+                      style={{ marginTop: 10 }}
+                      value={"LIBRETA DE ENROLAMIENTO"}
+                    >
+                      LIBRETA DE ENROLAMIENTO
+                    </Radio>
+                  </Col>
+                  <Col span={4}>
+                    <Radio style={{ marginTop: 10 }} value={"CUIL"}>
+                      CUIL
+                    </Radio>
+                    <Radio style={{ marginTop: 10 }} value={"PASAPORTE"}>
+                      PASAPORTE
+                    </Radio>
+                  </Col>
+                  <Col span={4}>
+                    <Radio style={{ marginTop: 10 }} value={"CI"}>
+                      CI
+                    </Radio>
+                  </Col>
+                </Row>
+              </Radio.Group>
+            </Form.Item>
 
-              <Row gutter={48}>
-                <Col span={6}>
-                  <Form.Item name="numero"
-                    rules={[{ required: true, message: "Ingrese documento" }]}>
-                    <FloatInput label="N° de Documento*" />
-                  </Form.Item>
-                </Col>
+            <Row gutter={48}>
+              <Col span={6}>
+                <Form.Item
+                  name="numero"
+                  rules={[{ required: true, message: "Ingrese documento" }]}
+                >
+                  <FloatInput label="N° de Documento*" />
+                </Form.Item>
+              </Col>
 
-                <Col span={6}>
-                  <Tooltip title="Buscar">
-                    <Button
-                      type="primary"
-                      htmlType="submit"
-                      shape="circle"
-                      icon={<SearchOutlined />}
-                    />
-                  </Tooltip>
-                </Col>
-              </Row>
+              <Col span={6}>
+                <Tooltip title="Buscar">
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    shape="circle"
+                    icon={<SearchOutlined />}
+                  />
+                </Tooltip>
+              </Col>
+            </Row>
           </Form>
         </Card>
       </>
@@ -94,15 +126,18 @@ export default function GestionAdicionalesNew() {
                 name="calle"
                 rules={[{ required: true, message: "Ingrese calle" }]}
               >
-                <FloatInput outline label="Calle*"/>
+                <FloatInput outline label="Calle*" />
               </Form.Item>
             </Col>
           </Row>
 
           <Row gutter={48}>
             <Col span={4}>
-              <Form.Item name="numero" className="reset"
-                    rules={[{ required: true, message: "Ingrese numero" }]}>
+              <Form.Item
+                name="numero"
+                className="reset"
+                rules={[{ required: true, message: "Ingrese numero" }]}
+              >
                 <FloatInput outline label="Número*" />
               </Form.Item>
             </Col>
@@ -251,15 +286,19 @@ export default function GestionAdicionalesNew() {
                 />
               </Form.Item>
 
-              <Form.Item name="fecha-nac"
-                    rules={[{ required: true, message: "Ingrese fecha" }]}>
+              <Form.Item
+                name="fecha-nac"
+                rules={[{ required: true, message: "Ingrese fecha" }]}
+              >
                 <DatePicker placeholder="Fecha de Nacimiento*" />
               </Form.Item>
 
-              <Form.Item name="pais"
-                    rules={[{ required: true, message: "Ingrese País" }]}>
+              <Form.Item
+                name="pais"
+                rules={[{ required: true, message: "Ingrese País" }]}
+              >
                 <FloatSelected
-                  outline 
+                  outline
                   label="País de nacimiento*"
                   options={[
                     {
@@ -296,10 +335,13 @@ export default function GestionAdicionalesNew() {
             </Col>
           </Row>
         </Card>
-          <br></br>      
+        <br></br>
         <Card>
           <Space direction="vertical" size="middle">
-          <Typography.Title level={3}  style={{ color: '#ab218e' }}> Domicilio</Typography.Title>
+            <Typography.Title level={3} style={{ color: "#ab218e" }}>
+              {" "}
+              Domicilio
+            </Typography.Title>
             <Checkbox onChange={onChange} checked={checked}>
               Informa domicilio
             </Checkbox>
@@ -314,11 +356,12 @@ export default function GestionAdicionalesNew() {
   return (
     <div>
       <SearchDNI />
-      <Edit 
+      <Edit
         component={FormularioNuevo}
         textBtnSave="Guardar"
         textModalConfirm="¿Crear nuevo adicional?"
-        textBtnModalConfirm="Si, crear"  />
+        textBtnModalConfirm="Si, crear"
+      />
     </div>
   );
 }

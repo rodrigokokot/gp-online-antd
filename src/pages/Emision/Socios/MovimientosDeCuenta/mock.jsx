@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
-import FloatSelected from "../../../../components/molecules/FloatSelected";
 
 const columnsMovimientoDeCuenta = [
   {

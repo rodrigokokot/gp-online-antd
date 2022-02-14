@@ -8,26 +8,36 @@ function NuevaSucursal() {
   const FormularioNueva = () => {
     return (
       <>
-        <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-          <Typography.Title level={3} style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
+        <Card style={{ borderRadius: "16px", marginBottom: "12px" }}>
+          <Typography.Title level={3} style={{ color: "#ab218e" }}>
+            Datos Principales
+          </Typography.Title>
           <Col span={8}>
             <Form.Item
               name="codigo"
               rules={[{ required: true, message: "Ingrese código" }]}
             >
-              <FloatInput outline label="Codigo*" placeholder="Código*"></FloatInput>
+              <FloatInput
+                outline
+                label="Codigo*"
+                placeholder="Código*"
+              ></FloatInput>
             </Form.Item>
 
-            <Form.Item
-              name="descripcion"
-            >
-              <FloatInput outline label="Descripcion" placeholder="Descripcion" />
+            <Form.Item name="descripcion">
+              <FloatInput
+                outline
+                label="Descripcion"
+                placeholder="Descripcion"
+              />
             </Form.Item>
           </Col>
         </Card>
 
-        <Card style={{ borderRadius: '16px' }}>
-        <Typography.Title level={3} style={{ color: '#ab218e' }}>Domicilio</Typography.Title>
+        <Card style={{ borderRadius: "16px" }}>
+          <Typography.Title level={3} style={{ color: "#ab218e" }}>
+            Domicilio
+          </Typography.Title>
 
           <Row gutter={24}>
             <Col span={6}>
@@ -35,7 +45,11 @@ function NuevaSucursal() {
                 name="calle"
                 rules={[{ required: true, message: "Ingrese calle" }]}
               >
-                <FloatInput outline label="Calle*" placeholder="Calle*"></FloatInput>
+                <FloatInput
+                  outline
+                  label="Calle*"
+                  placeholder="Calle*"
+                ></FloatInput>
               </Form.Item>
             </Col>
 
@@ -44,25 +58,39 @@ function NuevaSucursal() {
                 name="numero"
                 rules={[{ required: true, message: "Ingrese número" }]}
               >
-                <FloatInput outline label="Número*" placeholder="Número*"></FloatInput>
+                <FloatInput
+                  outline
+                  label="Número*"
+                  placeholder="Número*"
+                ></FloatInput>
               </Form.Item>
             </Col>
 
             <Col span={2}>
               <Form.Item name="piso">
-                <FloatInput outline label="Piso" placeholder="Piso"></FloatInput>
+                <FloatInput
+                  outline
+                  label="Piso"
+                  placeholder="Piso"
+                ></FloatInput>
               </Form.Item>
             </Col>
 
             <Col span={2}>
               <Form.Item name="piso">
-                <FloatInput outline label="Depto" placeholder="Depto"></FloatInput>
+                <FloatInput
+                  outline
+                  label="Depto"
+                  placeholder="Depto"
+                ></FloatInput>
               </Form.Item>
             </Col>
 
             <Col span={2}>
-              <Form.Item name="cp"
-                rules={[{ required: true, message: "Ingrese código postal" }]}>
+              <Form.Item
+                name="cp"
+                rules={[{ required: true, message: "Ingrese código postal" }]}
+              >
                 <FloatInput outline label="CP*" placeholder="CP*"></FloatInput>
               </Form.Item>
             </Col>
@@ -134,9 +162,7 @@ function NuevaSucursal() {
 
           <Row>
             <Col span={8}>
-            <Form.Item
-                name="barrio" 
-              >
+              <Form.Item name="barrio">
                 <FloatInput
                   outline
                   label="Barrio"
@@ -160,11 +186,14 @@ function NuevaSucursal() {
     );
   };
 
-  return <Edit 
-          component={FormularioNueva}
-          textBtnSave="Crear sucursal"
-          textBtnModalConfirm="¿Crear esta sucursal?" 
-          textBtnModalConfirm="Si, crear"/>;
+  return (
+    <Edit
+      component={FormularioNueva}
+      textBtnSave="Crear sucursal"
+      textBtnModalConfirm="¿Crear esta sucursal?"
+      textBtnModalConfirm="Si, crear"
+    />
+  );
 }
 
 export default NuevaSucursal;

@@ -115,17 +115,17 @@ const cambioDeEstadoSearch = [
   {
     name: "Emisor",
     index: "emisor",
-    input: <FloatSelected width={200} label="Emisor" placeholder="Emisor" />,
+    input: <FloatSelected label="Emisor" placeholder="Emisor" />,
   },
   {
     name: "Marca",
     index: "marca",
-    input: <FloatSelected width={200} label="Marca" placeholder="Marca" />,
+    input: <FloatSelected label="Marca" placeholder="Marca" />,
   },
   {
     name: "Producto",
     index: "producto",
-    input: <FloatSelected width={200} label="Producto" placeholder="Producto" />,
+    input: <FloatSelected label="Producto" placeholder="Producto" />,
   },
   {
     name: "Nº de Tarjeta",
@@ -135,7 +135,7 @@ const cambioDeEstadoSearch = [
   {
     name: "Nº Cuenta relacionada",
     index: "cuentaexterna",
-    input: <FloatSelected width={200} label="Nº Cuenta relacionada" placeholder="Nº Cuenta relacionada"/>,
+    input: <FloatSelected label="Nº Cuenta relacionada" placeholder="Nº Cuenta relacionada"/>,
   },
   {
     name: "Apellidos",
@@ -150,12 +150,12 @@ const cambioDeEstadoSearch = [
   {
     name: "Tipo de Documento",
     index: "producto",
-    input: <FloatSelected width={200} label="Tipo de Documento" placeholder="Tipo de Documento" />,
+    input: <FloatSelected label="Tipo de Documento" placeholder="Tipo de Documento" />,
   },
   {
     name: "Nº de Documento",
     index: "cuenta",
-    input: <FloatSelected width={200} label="Nº de Documento" placeholder="Nº de Documento" />,
+    input: <FloatSelected label="Nº de Documento" placeholder="Nº de Documento" />,
   },
   {
     name: "Razón Social",
