@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Checkbox, Row, Col, Form } from "antd";
+import { Card, Checkbox, Row, Col, Form, Typography } from "antd";
 import Edit from "../../../../components/organisms/Edit";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import { Link, useParams } from "react-router-dom";
@@ -10,25 +10,24 @@ export default function TarjetasView() {
       console.log(e.target.value);
     };
 
-    const {id} = useParams();
+    const { id } = useParams();
 
     return (
       <>
         <Card>
-          <Row justify="space-between" style={{marginBottom: "36px"}}>
+          <Row justify="space-between" style={{ marginBottom: "36px" }}>
             <h1 className="purple-title">Datos principales</h1>
             <Link
               to={`${id}/historial`}
               style={{ textDecoration: "underline" }}
               rel="noopener noreferrer"
-            >Ver historial</Link>
+            >
+              Ver historial
+            </Link>
           </Row>
 
-
-
-          <Row gutter={[48,48]}>
-
-          <Col span={6}>
+          <Row gutter={[48, 48]}>
+            <Col span={6}>
               <h1 className="grey-text">N° de Tarjeta</h1>
               <h1 className="bold-text">552268XXXXXX0372</h1>
             </Col>
@@ -45,14 +44,17 @@ export default function TarjetasView() {
 
             <Col span={6}>
               <h1 className="grey-text">Vigencia desde</h1>
-              <h1 className="bold-text">{new Date().toISOString().split('T')[0]}</h1>
+              <h1 className="bold-text">
+                {new Date().toISOString().split("T")[0]}
+              </h1>
             </Col>
 
             <Col span={6}>
               <h1 className="grey-text">Vencimiento</h1>
-              <h1 className="bold-text">{new Date().toISOString().split('T')[0]}</h1>
+              <h1 className="bold-text">
+                {new Date().toISOString().split("T")[0]}
+              </h1>
             </Col>
-
 
             <Col span={6}>
               <h1 className="grey-text">Nombre embozado</h1>
@@ -77,8 +79,9 @@ export default function TarjetasView() {
                 rules={[{ required: true, message: "Ingrese Estado" }]}
               >
                 <FloatSelected
-                  label="Estado"
-                  placeholder="Estado"
+                  outline
+                  label="Estado*"
+                  placeholder="Estado*"
                   options={[
                     {
                       title: "Habilitada",
@@ -108,10 +111,12 @@ export default function TarjetasView() {
 
   return (
     <div>
-      <Edit component={FormularioEdit}
-      textBtnSave="Guardar"
-      textModalConfirm="¿Realizar cambios en la tarjet?"
-      textBtnModalConfirm="Si, guardar" />
+      <Edit
+        component={FormularioEdit}
+        textBtnSave="Guardar"
+        textModalConfirm="¿Realizar cambios en la tarjet?"
+        textBtnModalConfirm="Si, guardar"
+      />
     </div>
   );
 }

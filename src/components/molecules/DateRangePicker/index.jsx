@@ -1,36 +1,42 @@
-import React, { useState } from 'react'
-import 'react-date-range/dist/styles.css';
-import 'react-date-range/dist/theme/default.css';
-import { DateRange } from 'react-date-range';
-import { addDays } from 'date-fns';
-import * as locales from 'react-date-range/dist/locale';
-import './index.less'
+import React, { useEffect, useState } from "react";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
+import { DateRange } from "react-date-range";
+import { addDays } from "date-fns";
+import * as locales from "react-date-range/dist/locale";
+import { useBetween } from "use-between";
+import useRangePicker from "../../../hooks/useRangePicker";
+import "./index.less";
 
-function DateRangeComponent({className, dateSelected, ...props}) {
+function DateRangeComponent({ className, dateSelected, range, ...props }) {
   const [state, setState] = useState([
     {
       startDate: new Date(),
       endDate: new Date(),
       // endDate: addDays(new Date(), 7),
-      key: 'selection'
-    }
+      key: "selection",
+    },
   ]);
 
-    return (
-      <DateRange
-        className={className}
-        editableDateInputs={false}
-        showDateDisplay={false}
-        onChange={item => { dateSelected([item.selection]); setState([item.selection]) }}
-        moveRangeOnFirstSelection={false}
-        ranges={state}
-        rangeColors={['#0DD8B0']}
-        months={2}
-        direction="horizontal"
-        monthWidth={300}
-        locale={locales['es']}
-      />
-    )
+  return (
+    <DateRange
+      className={className}
+      editableDateInputs={false}
+      showDateDisplay={false}
+      onChange={(item) => {
+        // console.log(state)
+        dateSelected([item.selection]);
+        setState([item.selection]);
+      }}
+      moveRangeOnFirstSelection={false}
+      ranges={state}
+      rangeColors={["#0DD8B0"]}
+      months={2}
+      direction="horizontal"
+      monthWidth={300}
+      locale={locales["es"]}
+    />
+  );
 }
 
-export default DateRangeComponent
+export default DateRangeComponent;

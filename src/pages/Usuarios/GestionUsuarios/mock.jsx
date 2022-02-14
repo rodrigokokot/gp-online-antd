@@ -105,9 +105,9 @@ const GestionUsuariosSearch = [
      input: <FloatInput placeholder="Apellido" label="Apellido" />,
    },
    {
-     index: 'Ndocumento',
-     name: 'N° de documento',
-     input: <FloatInput placeholder='N de documento' label='N de documento' />,
+     index: 'ndocumento',
+     name: 'N de documento',
+     input: <FloatInput placeholder='N° de documento' label='N° de documento' />,
    },
 
  ];

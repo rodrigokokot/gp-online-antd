@@ -1,12 +1,17 @@
 import React, {useRef, useState} from "react";
 import Edit from "../../../../components/organisms/Edit";
-import { Radio, Row, Col, Card, Button, Form, Space, Tooltip, DatePicker, Checkbox } from "antd";
+import { Radio, Row, Col, Card, Button, Form, Space, Tooltip, DatePicker, Checkbox, Typography } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
+import Title from "antd/lib/typography/Title";
 
 export default function GestionAdicionalesNew() {
-  
+  const [value, setValue] = useState("");
+    const onChange = e => {
+    setValue(e.target.value);
+    }; 
+
   const onFinish = (values) => {
     console.log(values);
   };
@@ -19,8 +24,7 @@ export default function GestionAdicionalesNew() {
         <Card>
           <Row>
             <Space direction="vertical" size="small">
-              <h1 className="purple-title">Datos principales</h1>
-              <p>Tipo de documento</p>
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Datos principales</Typography.Title> 
             </Space>
           </Row>
           <Form
@@ -30,36 +34,35 @@ export default function GestionAdicionalesNew() {
             onFinish={onFinish}
             size="large"
           >
-            <Space direction="vertical" size={48}>
-              <Form.Item name="documento">
-                <Radio.Group name="radiogroup" defaultValue={1}>
-                  <Row gutter={[48, 48]}>
+              <Title level={5}>Tipo de documento</Title>
+        <Form.Item name='tipodocumento'
+                    rules={[{ required: true  }]}> 
+                <Radio.Group onChange={onChange} value={value}>
+                    <Row justify="space-between">
                     <Col span={4}>
-                      <Radio value={1}>DNI</Radio>
-                      <Radio value={5}>CUIT</Radio>
+                        <Radio style={{ marginTop: 10 }} value={"DNI"}>DNI</Radio> 
+                        <Radio style={{ marginTop: 10 }} value={"CUIT"}>CUIT</Radio>
                     </Col>
-
                     <Col span={8}>
-                      <Radio value={2}>LIBRETA CIVICA</Radio>
-                      <Radio value={6}>LIBRETA DE ENROLAMIENTO</Radio>
+                        <Radio style={{ marginTop: 10 }} value={"LIBRETA CIVICA"} >LIBRETA CIVICA</Radio>
+                        <Radio style={{ marginTop: 10 }} value={"LIBRETA DE ENROLAMIENTO"}>LIBRETA DE ENROLAMIENTO</Radio>
                     </Col>
-
-                    <Col span={6}>
-                      <Radio value={3}>CUIL</Radio>
-                      <Radio value={7}>PASAPORTE</Radio>
+                    <Col span={4}>
+                        <Radio style={{ marginTop: 10 }} value={"CUIL"}>CUIL</Radio> 
+                        <Radio style={{ marginTop: 10 }} value={"PASAPORTE"} >PASAPORTE</Radio> 
                     </Col>
-
-                    <Col span={6}>
-                      <Radio value={4}>CI</Radio>
+                    <Col span={4}>
+                        <Radio style={{ marginTop: 10 }} value={"CI"}>CI</Radio>
                     </Col>
-                  </Row>
+                    </Row>
                 </Radio.Group>
-              </Form.Item>
+        </Form.Item>
 
               <Row gutter={48}>
                 <Col span={6}>
-                  <Form.Item name="numero">
-                    <FloatInput label="N° de Documento" />
+                  <Form.Item name="numero"
+                    rules={[{ required: true, message: "Ingrese documento" }]}>
+                    <FloatInput label="N° de Documento*" />
                   </Form.Item>
                 </Col>
 
@@ -74,7 +77,6 @@ export default function GestionAdicionalesNew() {
                   </Tooltip>
                 </Col>
               </Row>
-            </Space>
           </Form>
         </Card>
       </>
@@ -91,17 +93,18 @@ export default function GestionAdicionalesNew() {
             <Col span={8}>
               <Form.Item
                 name="calle"
-                rules={[{ required: true, message: "Ingrese domicilio" }]}
+                rules={[{ required: true, message: "Ingrese calle" }]}
               >
-                <FloatInput outline label="Calle"/>
+                <FloatInput outline label="Calle*"/>
               </Form.Item>
             </Col>
           </Row>
 
           <Row gutter={48}>
             <Col span={4}>
-              <Form.Item name="numero" className="reset">
-                <FloatInput outline label="Número" />
+              <Form.Item name="numero" className="reset"
+                    rules={[{ required: true, message: "Ingrese numero" }]}>
+                <FloatInput outline label="Número*" />
               </Form.Item>
             </Col>
 
@@ -123,7 +126,7 @@ export default function GestionAdicionalesNew() {
                 rules={[{ required: true, message: "Ingrese Código Postal" }]}
                 className="reset"
               >
-                <FloatInput outline label="Código Postal" />
+                <FloatInput outline label="Código Postal*" />
               </Form.Item>
             </Col>
           </Row>
@@ -142,7 +145,7 @@ export default function GestionAdicionalesNew() {
                 name="localidad"
                 rules={[{ required: true, message: "Ingrese Localidad" }]}
               >
-                <FloatInput outline label="Localidad" />
+                <FloatInput outline label="Localidad*" />
               </Form.Item>
 
               <Form.Item
@@ -151,7 +154,7 @@ export default function GestionAdicionalesNew() {
               >
                 <FloatSelected
                   outline
-                  label="Provincia"
+                  label="Provincia*"
                   options={[
                     {
                       title: "San Juan",
@@ -171,7 +174,7 @@ export default function GestionAdicionalesNew() {
                 name="telefono"
                 rules={[{ required: true, message: "Ingrese Teléfono" }]}
               >
-                <FloatInput outline label="Teléfono" />
+                <FloatInput outline label="Teléfono*" />
               </Form.Item>
 
               <Form.Item name="referencia">
@@ -196,14 +199,14 @@ export default function GestionAdicionalesNew() {
                 name="nombre"
                 rules={[{ required: true, message: "Ingrese Nombre" }]}
               >
-                <FloatInput outline label="Nombre" />
+                <FloatInput outline label="Nombre*" />
               </Form.Item>
 
               <Form.Item
                 name="Apellido"
                 rules={[{ required: true, message: "Ingrese Apellido" }]}
               >
-                <FloatInput outline label="Apellido" />
+                <FloatInput outline label="Apellido*" />
               </Form.Item>
 
               <Form.Item name="Sexo">
@@ -249,14 +252,16 @@ export default function GestionAdicionalesNew() {
                 />
               </Form.Item>
 
-              <Form.Item name="fecha-nac">
-                <DatePicker placeholder="Fecha de Nacimiento" />
+              <Form.Item name="fecha-nac"
+                    rules={[{ required: true, message: "Ingrese fecha" }]}>
+                <DatePicker placeholder="Fecha de Nacimiento*" />
               </Form.Item>
 
-              <Form.Item name="pais">
+              <Form.Item name="pais"
+                    rules={[{ required: true, message: "Ingrese País" }]}>
                 <FloatSelected
-                  outline
-                  label="País de nacimiento"
+                  outline 
+                  label="País de nacimiento*"
                   options={[
                     {
                       title: "Argentina",
@@ -271,7 +276,7 @@ export default function GestionAdicionalesNew() {
                 name="email"
                 rules={[{ required: true, message: "Ingrese un email" }]}
               >
-                <FloatInput outline label="E-mail" />
+                <FloatInput outline label="E-mail*" />
               </Form.Item>
 
               <Form.Item
@@ -280,22 +285,22 @@ export default function GestionAdicionalesNew() {
                   { required: true, message: "Ingrese Código tributario" },
                 ]}
               >
-                <FloatInput outline label="Código tributario" />
+                <FloatInput outline label="Código tributario*" />
               </Form.Item>
 
               <Form.Item
                 name="embozado"
                 rules={[{ required: true, message: "Ingrese Nombre embozado" }]}
               >
-                <FloatInput outline label="Nombre embozado" />
+                <FloatInput outline label="Nombre embozado*" />
               </Form.Item>
             </Col>
           </Row>
         </Card>
-
+          <br></br>      
         <Card>
           <Space direction="vertical" size="middle">
-            <h1 className="purple-title">Domicilio</h1>
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}> Domicilio</Typography.Title>
             <Checkbox onChange={onChange} checked={checked}>
               Informa domicilio
             </Checkbox>

@@ -1,25 +1,30 @@
-import React from "react";
-import Table from "../../organisms/Table";
+import React, { useState } from "react";
+import Table from "../../../components/organisms/Table";
 import { Button, Card } from "antd";
-import {
-  dataSettings,
-  columnsNovelty,
-} from "../../../pages/GestionAprobaciones/mock";
+import SearchForm from "../../../components/organisms/SearchForm";
+import { ajustesSearch, columnsAjustes, dataAjustes, } from "../mock";
 
 const Ajustes = () => {
   let childResponse = null;
+  const [data, setData] = useState("");
 
-  function handleCallback(value) {
+  function handleCallback(values) {
+    //lamada al servicio axios.post(values)
+    //setData(axios.response)
+    setData(dataAjustes);
+  }
+
+  function selectedRows(value) {
     childResponse = value.selectedRows;
   }
 
-  function ShowValues() {
-    console.log('request:', childResponse)
+  function showValues() {
+    console.log("request:", childResponse);
   }
 
   return (
     <>
-      <Card style={{ marginBottom: '6px', borderRadius: '0.5em' }}>
+      <Card style={{ marginBottom: "6px", borderRadius: "0.5em" }}>
         <h2 style={{ color: "#AB218E" }}>Informacion de la cuenta</h2>
         <div
           style={{
@@ -61,16 +66,24 @@ const Ajustes = () => {
           </div>
         </div>
       </Card>
-
-      <Table
-        data={dataSettings}
-        columns={columnsNovelty}
-        expandible={false}
-        selectable={true}
+      <SearchForm
+        title="Busqueda de ajustes"
+        array={ajustesSearch}
+        span={6}
         parentCallback={handleCallback}
       />
-
-      <Button type="primary" onClick={ShowValues}>Aplicar Confirmación</Button>
+      <br />
+      <Table
+        data={data}
+        columns={columnsAjustes}
+        expandible={false}
+        selectable={true}
+        parentCallback={selectedRows}
+      />
+      <br />
+      <Button type="primary" onClick={showValues}>
+        Aplicar Confirmación
+      </Button>
     </>
   );
 };

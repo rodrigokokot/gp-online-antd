@@ -3,10 +3,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import Export from "../../../../components/organisms/Export";
 import Table from "../../../../components/organisms/Table";
-import {
-  columnsTarjetasHistorial,
-  dataTarjetasHistorial,
-} from "./mockTarjetas";
+import { columnsTarjetasHistorial, dataTarjetasHistorial } from "./mock";
 
 export default function TarjetasHistory() {
   const history = useHistory();
@@ -21,9 +18,10 @@ export default function TarjetasHistory() {
         expandible={false}
       />
 
-      <Button 
-      onClick={history.goBack}
-      style={{marginTop:"32px", border: '2px solid #0DD8B0'}}>
+      <Button
+        onClick={history.goBack}
+        style={{ marginTop: "32px", border: "2px solid #0DD8B0" }}
+      >
         Volver
       </Button>
     </>

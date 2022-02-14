@@ -115,7 +115,6 @@ const dataGestionSucursales = [
     estado: "Activo",
     descripcion: "Sucursal cordoba",
     codigo: '0001',
-
   },
   {
     id: 32,

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Edit from "../../../../components/organisms/Edit";
 import { Form, Typography, Card, Row, Col, Radio, Checkbox } from "antd";
 import FloatInput from "../../../../components/molecules/FloatInput";
+import SelectImg from "../../../../components/organisms/SelectImg.jsx";
+import { SearchOutlined } from '@ant-design/icons';
 const { Title } = Typography;
 
 function TipoDeCargoEdit() {
@@ -22,32 +24,23 @@ function TipoDeCargoEdit() {
     return (
       <>
         <Card>
-          <Title level={2}>Datos Principales</Title>
-          <Row>
+          <Title style={{ color: "#AB218E" }} level={3}>Datos Principales</Title><br></br>
+          <Row gutter={24}>
+          <Col span={5}>
             <Form.Item name="codigo" rules={[{ required: true, message: "Ingrese código" }]}>
               <FloatInput
                 outline
                 type="text"
-                label="Codigo"
-                placeholder="Codigo"
+                label="Código"
+                placeholder="Código"
               ></FloatInput>
-            </Form.Item>
-            <Form.Item name="anulacion" rules={[{ required: true, message: "Ingrese anulacion" }]}>
+            </Form.Item> 
+            <Form.Item name="descripcion" >
               <FloatInput
                 outline
                 type="text"
-                label="Anulacion de cargo"
-                placeholder="Anulacion de cargo"
-              ></FloatInput>
-            </Form.Item>
-          </Row>
-          <Col span={6}>
-            <Form.Item name="descripcion" rules={[{ required: true, message: "Ingrese descripcion" }]}>
-              <FloatInput
-                outline
-                type="text"
-                label="Descripcion"
-                placeholder="Descripcion"
+                label="Descripción"
+                placeholder="Descripción"
               ></FloatInput>
             </Form.Item>
             <Form.Item name="tipoCargo" rules={[{ required: true, message: "Ingrese tipo de cargo" }]}>
@@ -59,6 +52,16 @@ function TipoDeCargoEdit() {
               ></FloatInput>
             </Form.Item>
           </Col>
+            <Col span={4}><Form.Item name="anulacion" rules={[{ required: true, message: "Ingrese anulacion" }]}>
+              <FloatInput
+                outline
+                type="text"
+                label="Anulacion de cargo"
+                placeholder="Anulacion de cargo"
+              ></FloatInput>
+            </Form.Item></Col>
+          </Row>
+          
           <Title level={5}>Aplica IVA</Title>
           <Form.Item name="aplicaIva" rules={[{ required: true, message: "Ingrese como aplica" }]}>
             <Radio.Group onChange={onChange1} value={value1}>
@@ -89,11 +92,11 @@ function TipoDeCargoEdit() {
             </Radio.Group>
           </Form.Item>
           <Title level={5}>Moneda</Title>
-          <Form.Item name="moneda" rules={[{ required: true, message: "Ingrese moneda" }]}>
+          <Form.Item name="moneda">
             <Radio.Group onChange={onChange3} value={value3}>
               <Row justify="space-between">
                 <Radio style={{ marginTop: 10 }} value={"IVA General"}>
-                  Dolar
+                  Dolar U$S
                 </Radio>
                 <Radio style={{ marginTop: 10 }} value={"IVA Reducido"}>
                   Peso
@@ -101,10 +104,18 @@ function TipoDeCargoEdit() {
               </Row>
             </Radio.Group>
           </Form.Item>
-          <Title level={5}>Max. Cuotas</Title>
+          <Col span={6}><Form.Item
+                name="tipomoneda" 
+            > 
+                <SelectImg suffix={<SearchOutlined />} 
+                bordered showSearch={true} placeholder="Busca tipo de moneda" 
+                style={{width: '100%'}}
+                />            
+            </Form.Item> 
+          <Title level={5}>Max. Cuotas*</Title>
           <Form.Item name="cuotas" rules={[{ required: true, message: "Ingrese cantidad de cuotas" }]}>
             <FloatInput outline type="number"></FloatInput>
-          </Form.Item>
+          </Form.Item></Col>
           <Title level={5}>Estado</Title>
           <Form.Item name="estado" rules={[{ required: true, message: "Ingrese estado" }]}>
             <Radio.Group onChange={onChange3} value={value3}>

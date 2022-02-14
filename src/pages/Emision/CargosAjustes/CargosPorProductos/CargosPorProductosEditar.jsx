@@ -1,9 +1,8 @@
-import { Card, Col, Form, Row, Input, Table, Typography } from "antd";
+import { Card, Col, Form, Input, Typography } from "antd";
 import React from "react";
 import FloatInput from "../../../../components/molecules/FloatInput";
 
 import Edit from "../../../../components/organisms/Edit";
-const { TextArea } = Input;
 
 const CargosPorProductosEditar = () => {
   const FormularioEditar = () => {

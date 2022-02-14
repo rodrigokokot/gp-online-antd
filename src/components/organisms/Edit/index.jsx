@@ -1,35 +1,41 @@
 import React, { useState } from "react";
 import { Form, Button, Modal, Typography } from "antd";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-const Edit = ({ component: Component,id, textBtnSave, textModalConfirm, textBtnModalConfirm }) => {
-  // const [isModalVisible, setIsModalVisible] = useState(false); 
+const Edit = ({
+  component: Component,
+  id,
+  textBtnSave,
+  textModalConfirm,
+  textBtnModalConfirm,
+}) => {
+  // const [isModalVisible, setIsModalVisible] = useState(false);
   const showModal = () => {
     // setIsModalVisible(true);
     Modal.confirm({
       icon: null,
-      content: <Typography.Title level={4} style={{ textAlign: 'center' }}>{textModalConfirm}</Typography.Title>,
+      content: (
+        <Typography.Title level={4} style={{ textAlign: "center" }}>
+          {textModalConfirm}
+        </Typography.Title>
+      ),
       okText: textBtnModalConfirm,
-      okButtonProps: { form:(id ? id : "myForm"), type:"primary", htmlType:"submit" } ,
+      okButtonProps: {
+        form: id ? id : "myForm",
+        type: "primary",
+        htmlType: "submit",
+      },
       width: 800,
       cancelText: "Cancelar",
       closable: true,
       onOk() {
-        console.log('OK');
+        console.log("OK");
       },
       onCancel() {
-        console.log('Cancel');
+        console.log("Cancel");
       },
-    })
+    });
   };
-
-  // const handleOk = () => {
-  //   setIsModalVisible(false);
-  // };
-
-  // const handleCancel = () => {
-  //   setIsModalVisible(false);
-  // };
 
   const onFinish = (values) => {
     console.log("Success:", values);
@@ -48,31 +54,18 @@ const Edit = ({ component: Component,id, textBtnSave, textModalConfirm, textBtnM
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
-        size='large'
+        size="large"
       >
         {<Component></Component>}
         <Form.Item>
-          <div  style={{ marginTop: '36px', display: 'flex', gap: '12px' }}>
+          <div style={{ marginTop: "36px", display: "flex", gap: "12px" }}>
             <Button type="primary" onClick={showModal}>
               {textBtnSave}
             </Button>
-            <Button style={{ border: '2px solid #0DD8B0' }}>Cancelar</Button>
+            <Button style={{ border: "2px solid #0DD8B0" }}>Cancelar</Button>
           </div>
         </Form.Item>
       </Form>
-
-      {/* <Modal
-        visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleCancel}
-        footer={[
-          <Button form="myForm" type="primary" htmlType="submit" onClick={handleOk}>Si, generar cambios</Button>,
-          <Button onClick={handleCancel}>Cancelar</Button>
-        ]}
-      >
-        <h2>Esta seguro que desea hacer cambios en esta sucursal?</h2>
-      </Modal> */}
-
     </>
   );
 };
@@ -80,13 +73,13 @@ const Edit = ({ component: Component,id, textBtnSave, textModalConfirm, textBtnM
 Edit.propTypes = {
   textBtnSave: PropTypes.string,
   textModalConfirm: PropTypes.string,
-  textBtnModalConfirm: PropTypes.string
-}
+  textBtnModalConfirm: PropTypes.string,
+};
 
 Edit.defaultProps = {
   textBtnSave: "Guardar cambios",
   textModalConfirm: "¿Estas seguro de guardar los cambios?",
-  textBtnModalConfirm: "Si, generar cambios"
-}
+  textBtnModalConfirm: "Si, generar cambios",
+};
 
 export default Edit;

@@ -1,31 +1,30 @@
 import React from "react";
 import { Card, Row,Col } from "antd";
-import Title from "antd/lib/typography/Title";
 
 const InfoCuenta= () => {
 return(<>
     <Card>
       <Row gutter={[6, 24]}>
         <Col span={5}>
-            <h4>N° de cuenta</h4><Title level={4}>{'112233831'}</Title> 
+            <h1 className="grey-text">N° de cuenta</h1><h1 className="bold-text">{'112233831'}</h1> 
         </Col>
         <Col span={5}>
-            <h4>N° de cuenta original</h4><Title level={4}>{'N/D'}</Title> 
+            <h1 className="grey-text">N° de cuenta original</h1><h1 className="bold-text">{'N/D'}</h1> 
         </Col>
         <Col span={5}>
-            <h4>Fecha de alta</h4><Title level={4}>{'18/05/2021'}</Title>
+            <h1 className="grey-text">Fecha de alta</h1><h1 className="bold-text">{'18/05/2021'}</h1>
         </Col>
         <Col span={5}>
-            <h4>Tipo de cuenta</h4><Title level={4}>{'Personal'}</Title> 
+            <h1 className="grey-text">Tipo de cuenta</h1><h1 className="bold-text">{'Personal'}</h1> 
         </Col>
         <Col span={5}> 
-            <h4>Marca</h4><Title level={4}>{'Tarjeta Grupar'}</Title>
+            <h1 className="grey-text">Marca</h1><h1 className="bold-text">{'Tarjeta Grupar'}</h1>
         </Col>
         <Col span={5}> 
-            <h4>Emisor</h4><Title level={4}>{'Tarjeta Grupar'}</Title>
+            <h1 className="grey-text">Emisor</h1><h1 className="bold-text">{'Tarjeta Grupar'}</h1>
         </Col>
         <Col span={5}> 
-            <h4>Sucursal</h4><Title level={4}>{'Córdoba'}</Title>
+            <h1 className="grey-text">Sucursal</h1><h1 className="bold-text">{'Córdoba'}</h1>
         </Col> 
       </Row>
     </Card> <br></br> 

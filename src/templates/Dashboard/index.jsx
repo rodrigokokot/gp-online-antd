@@ -111,7 +111,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
             })}
           </Menu>
           <Menu mode="inline" className="menu-help">
-            <Menu.Item icon={<QuestionCircleOutlined />}>
+            <Menu.Item icon={<QuestionCircleOutlined />} key={"ayuda"}>
               <Link
                 to="/ayuda"
                 onClick={() => {

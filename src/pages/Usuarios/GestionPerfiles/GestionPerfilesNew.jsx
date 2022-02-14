@@ -32,15 +32,15 @@ export default function GestionPerfilesNew() {
     return (
       <>
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-          <Typography.Title level={4} style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
+          <Typography.Title level={3} style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
 
           <Row>
             <Col span={8}>
               <Form.Item name="nombre" rules={[{required: true, message: "Ingrese nombre"}]}>
                 <FloatInput
                   outline
-                  placeholder="Nombre del Nuevo perfil"
-                  label="Nombre del Nuevo perfil"
+                  placeholder="Nombre del Nuevo perfil*"
+                  label="Nombre del Nuevo perfil*"
                 />
               </Form.Item>
             </Col>
@@ -51,8 +51,8 @@ export default function GestionPerfilesNew() {
               <Form.Item name="descripcion" rules={[{required: true, message:"Ingrese descripción"}]}>
                 <FloatInput
                   outline
-                  placeholder="Descripción del perfil"
-                  label="Descripción del perfil"
+                  placeholder="Descripción del perfil*"
+                  label="Descripción del perfil*"
                 />
               </Form.Item>
             </Col>
@@ -60,7 +60,7 @@ export default function GestionPerfilesNew() {
         </Card>
 
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-          <Typography.Title level={4} style={{ color: '#ab218e' }}>Tipos de operaciones</Typography.Title>
+          <Typography.Title level={3} style={{ color: '#ab218e' }}>Tipos de operaciones</Typography.Title>
         </Card>
         <Table selectable={true} data={dataFormulario} columns={columnsFormulario}/>
       </>

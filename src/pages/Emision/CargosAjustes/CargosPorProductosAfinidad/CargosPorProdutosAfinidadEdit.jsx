@@ -1,4 +1,5 @@
 import { Card, DatePicker, Form, Row, Col, Space } from "antd";
+import Title from "antd/lib/typography/Title";
 import React from "react";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import Edit from "../../../../components/organisms/Edit";
@@ -8,38 +9,42 @@ export default function CargosPorProdutosAfinidadEdit() {
     return (
       <>
         <Card>
-          <h1 className="purple-title" style={{marginBottom:'60px'}}>Datos Principales</h1>
+          <Title level={3} style={{ color: "#ab218e" }}>
+            Datos Principales
+          </Title>
+          <br></br>
+          <Row gutter={[36, 24]}>
+            <Col span={6}>
+              <Space direction="vertical" size={16}>
+                <h4>Cóncepto por Cargo </h4>
 
-          <Row gutter={[48, 48]}>
-            <Col span={4}>
-
-                <Space direction="vertical" size={16}>
-              <b>Cóncepto por Cargo </b>
-
-              <b>Cargo por renovación </b>
-
-                </Space>
-
+                <h4>Cargo por renovación </h4>
+              </Space>
             </Col>
 
-            <Col span={6}>
-
-              <b>Precio</b>
-              <Form.Item name="precio">
-                <FloatInput outline />
+            <Col span={5}>
+              <h4>Precio</h4>
+              <Form.Item
+                name="precio"
+                rules={[{ required: true, message: "Ingrese precio" }]}
+              >
+                <FloatInput outline type="number" />
               </Form.Item>
             </Col>
 
-            <Col span={6}>
-              <b>Porcentaje Cargo</b>
+            <Col span={5}>
+              <h4>Porcentaje Cargo</h4>
               <Form.Item name="porcentaje">
-                <FloatInput outline />
+                <FloatInput outline type="number" />
               </Form.Item>
             </Col>
 
             <Col span={6}>
-              <b>Fecha Desde</b>
-              <Form.Item name="fecha">
+              <h4>Fecha Desde</h4>
+              <Form.Item
+                name="fecha"
+                rules={[{ required: true, message: "Ingrese fecha desde" }]}
+              >
                 <DatePicker placeholder="Elija Fecha" />
               </Form.Item>
             </Col>
@@ -50,13 +55,13 @@ export default function CargosPorProdutosAfinidadEdit() {
   };
 
   return (
-    <div>
-      {" "}
-      <Edit 
+    <>
+      <Edit
         component={FormularioEdit}
         textBtnSave="Guardar cambios"
         textModalConfirm="¿Realizar cambios en el cargo?"
-        textBtnModalConfirm="Si, guardar" />
-    </div>
+        textBtnModalConfirm="Si, guardar"
+      />
+    </>
   );
 }

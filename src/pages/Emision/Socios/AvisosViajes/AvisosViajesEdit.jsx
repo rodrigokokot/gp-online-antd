@@ -8,7 +8,7 @@ const { Title } = Typography;
 const AvisosViajesEdit = () => { 
   const FormularioCuenta = () => {
     const dateFormat='DD/MM/YY'
-    const [fecha,setFecha]=useState(['Fecha desde','Fecha hasta']); 
+    const [fecha,setFecha]=useState(['Fecha desde*','Fecha hasta*']); 
     //para calendario
     function onChange1(value, dateString) {
         setFecha(dateString);console.log("date ",dateString);
@@ -19,24 +19,25 @@ const AvisosViajesEdit = () => {
     return (<>  
         
     <Card>
-        <Title level={2}>{"Nombre Usu"}</Title>  
+        <Title level={3} style={{ color: "#AB218E" }}>{"Nombre Usu"}</Title>  
         <p >Número de cuenta</p>
             <Checkbox  onChange={onChangeCheck}> 
             <Title level={5}>{"Numero de la targeta"}</Title></Checkbox><br></br><br></br>
         <Row gutter={47}>
         <Col span={12}>
         <Form.Item name='fecha'
+                    rules={[{ required: true, message: "Ingrese fechas" }]}
         >
         <RangePicker style={{width: '100%', borderRadius:6 }} onChange={onChange1} placeholder={[fecha[0],fecha[1]]} format={[dateFormat,dateFormat]} />
         </Form.Item>
         </Col></Row>
         <Row gutter={48}>
             <Col span={6}>
-                <Form.Item name="pais"
+                <Form.Item name="pais" rules={[{ required: true, message: "Ingrese País" }]}
                         >
                         <FloatSelect outline
-                                        label="Pais"
-                                        placeholder="País"
+                                        label="País*"
+                                        placeholder="País*"
                                         options={[
                                             {
                                                 title: "Argentina",
@@ -58,10 +59,11 @@ const AvisosViajesEdit = () => {
                 </Form.Item> 
                 </Col>
                 <Col span={6}>
-                <Form.Item name='estado'>
+                <Form.Item name='estado'
+                    rules={[{ required: true, message: "Ingrese Estado" }]}>
                     <FloatSelect outline
-                                    label="Estado"
-                                    placeholder="Estado"
+                                    label="Estado*"
+                                    placeholder="Estado*"
                                     options={[
                                     {
                                         title: "Dada de baja",
