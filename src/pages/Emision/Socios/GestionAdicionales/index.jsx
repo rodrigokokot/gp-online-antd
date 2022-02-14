@@ -14,7 +14,7 @@ const GestionAdicionalesSearch = () => {
   function handleCallback(values) {
     //lamada al servicio axios.post(values)
     //setData(axios.response)
-    setData(dataGestionAdicionales);
+    console.log(values)
   }
 
   return (
@@ -32,7 +32,10 @@ const GestionAdicionalesSearch = () => {
         span={4}
         parentCallback={handleCallback}
       />
-      <Table columns={data} data={columnsGestionAdicionales} />
+      <Table
+        columns={dataGestionAdicionales}
+        data={columnsGestionAdicionales}
+      />
     </>
   );
 };
