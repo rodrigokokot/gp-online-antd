@@ -14,7 +14,7 @@ export default function GestionAdicionalesSearch() {
   function handleCallback(values) {
     //lamada al servicio axios.post(values)
     //setData(axios.response)
-    setData(dataGestionAdicionales);
+    console.log(values)
   }
 
   return (
@@ -33,7 +33,7 @@ export default function GestionAdicionalesSearch() {
         parentCallback={handleCallback}
       />
       <Table
-        columns={data}
+        columns={dataGestionAdicionales}
         data={columnsGestionAdicionales}
       />
     </div>
