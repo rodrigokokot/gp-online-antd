@@ -1,43 +1,35 @@
-import { Card } from "antd";
+import { Card,Row,Col } from "antd";
 import React from "react";
 
 const DatosComercio = () => {
   return (
     <Card> 
-      <div
-        style={{
-          flexWrap: "wrap",
-          display: "flex",
-          justifyContent: "left",
-          gap: "10% 10%",
-          flexDirection: "row",
-        }}
-      >
-        <h3>
-          Comercio descripcion:<h5>Consumo</h5>
-        </h3>
-        <h3>
-          N° de comercio:<h5>826178</h5>
-        </h3>
-        <h3>
-          Modo ingreso:<h5>-</h5>
-        </h3>
-        <h3>
-          Fecha informada <h5>%</h5>
-        </h3>
-        <h3>
-          MCC:<h5>826178</h5>
-        </h3>
-        <h3>
-          TCC:<h5>-</h5>
-        </h3>
-        <h3>
-          Cupon:<h5>826178</h5>
-        </h3>
-        <h3>
-          Terminal:<h5>-</h5>
-        </h3>
-      </div>
+      <Row gutter={[24, 24]}>
+        <Col span={6}>
+            <h4 className="grey-text"> Comercio descripcion</h4><h1 className="bold-text">{'-'}</h1> 
+        </Col>
+        <Col span={6}>
+                <h4 className="grey-text">N° de comercio </h4><h1 className="bold-text">{'-'}</h1> 
+        </Col>
+        <Col span={6}>
+                  <h4 className="grey-text">Modo ingreso </h4><h1 className="bold-text">{'-'}</h1> 
+        </Col>
+        <Col span={6}>
+                  <h4 className="grey-text">Fecha informada </h4><h1 className="bold-text">{'-'}</h1> 
+        </Col>  
+        <Col span={6}>
+                  <h4 className="grey-text">MCC </h4><h1 className="bold-text">{'-'}</h1> 
+        </Col> 
+        <Col span={6}>
+                  <h4 className="grey-text"> TCC</h4><h1 className="bold-text">{'-'}</h1> 
+        </Col> 
+        <Col span={6}>
+                  <h4 className="grey-text">Cupon </h4><h1 className="bold-text">{'-'}</h1> 
+        </Col>    
+        <Col span={6}>
+                  <h4 className="grey-text"> Terminal</h4><h1 className="bold-text">{'-'}</h1> 
+        </Col> 
+      </Row> 
     </Card>
   );
 };

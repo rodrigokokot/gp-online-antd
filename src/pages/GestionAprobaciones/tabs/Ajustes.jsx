@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Table from "../../../components/organisms/Table";
-import { Button, Card } from "antd";
+import { Button, Card,Col,Row } from "antd";
 import SearchForm from "../../../components/organisms/SearchForm";
 import { ajustesSearch, columnsAjustes, dataAjustes, } from "../mock";
 
@@ -25,46 +25,39 @@ const Ajustes = () => {
   return (
     <>
       <Card style={{ marginBottom: "6px", borderRadius: "0.5em" }}>
-        <h2 style={{ color: "#AB218E" }}>Informacion de la cuenta</h2>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "left",
-            gap: "10% 10%",
-            flexDirection: "row",
-          }}
-        >
-          <div>
-            <h3>
-              Nº de cuenta:<h5>213432</h5>
-            </h3>
-            <h3>
-              Nº de CTA. Original:<h5>Emilia</h5>
-            </h3>
-            <h3>
-              Fecha de Alta:<h5>Emilia</h5>
-            </h3>
-          </div>
-          <div>
-            <h3>
-              Marca:<h5>Actualizacion de la targeta</h5>
-            </h3>
-            <h3>
-              Fecha de inicio:<h5>23/4/19</h5>
-            </h3>
-            <h3>
-              Fecha de finalizacion:<h5>-</h5>
-            </h3>
-          </div>
-          <div>
-            <h3>
-              Estado de transaccion:<h5>Pendiente</h5>
-            </h3>
-            <h3>
-              Comentario:<h5>-</h5>
-            </h3>
-          </div>
-        </div>
+        <h2 style={{ color: "#AB218E" }}>Informacion de la cuenta</h2>  
+        <Row gutter={[6, 24]}>
+        <Col span={5}>
+            <h1 className="grey-text">N° de cuenta</h1><h1 className="bold-text">{'213432'}</h1> 
+        </Col>
+        <Col span={5}>
+            <h1 className="grey-text">Nº de CTA. Original</h1><h1 className="bold-text">{'Emilia'}</h1> 
+        </Col>
+        <Col span={5}>
+            <h1 className="grey-text">Fecha de alta</h1><h1 className="bold-text">{'18/05/2021'}</h1>
+        </Col>
+        <Col span={5}> 
+            <h1 className="grey-text">Marca</h1><h1 className="bold-text">{'MasterCard'}</h1>
+        </Col>
+        <Col span={5}> 
+            <h1 className="grey-text">Emisor</h1><h1 className="bold-text">{'Banco de Córdoba'}</h1>
+        </Col>
+        <Col span={5}> 
+            <h1 className="grey-text">Sucursal</h1><h1 className="bold-text">{'Córdoba'}</h1>
+        </Col> 
+      </Row> <br></br>  
+      <h2 style={{ color: "#AB218E" }}>Informacion del Titular</h2>  
+      <Row gutter={[6, 24]}>
+        <Col span={5}>
+            <h1 className="grey-text">Documento</h1><h1 className="bold-text">{'DNI-35404040'}</h1> 
+        </Col>
+        <Col span={5}>
+            <h1 className="grey-text">Apellidos</h1><h1 className="bold-text">{'Gonzalez'}</h1> 
+        </Col>
+        <Col span={5}>
+            <h1 className="grey-text">Nombres</h1><h1 className="bold-text">{'Ruben Dario'}</h1>
+        </Col>
+      </Row>   
       </Card>
       <SearchForm
         title="Busqueda de ajustes"

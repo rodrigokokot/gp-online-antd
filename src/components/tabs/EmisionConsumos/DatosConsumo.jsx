@@ -1,96 +1,77 @@
-import { Card, Divider } from "antd";
+import { Card, Divider, Row,Col } from "antd";
 import React from "react";
 
 const DatosConsumo = () => {
   return (
-    <Card> 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "left",
-          gap: "10% 10%",
-          flexDirection: "row",
-        }}
-      >
-        <div>
-          <h3>
-            Movimentos:<h5>Consumo</h5>
-          </h3>
-          <h3>
-            Autorización Emisor:<h5>826178</h5>
-          </h3>
-          <h3>
-            Importe sin descuento:<h5>-</h5>
-          </h3>
-          <h3>
-            Arancel <h5>%</h5>
-          </h3>
-        </div>
-        <div>
-          <h3>
-            Grupo de Transacción:<h5>Compras/Devolución/Contrap Mon Local</h5>
-          </h3>
-          <h3>
-            Comprobante:<h5>-</h5>
-          </h3>
-          <h3>
-            Terminal <h5>23946499</h5>
-          </h3>
-          <h3>
-            Importe Arancel <h5>0,00</h5>
-          </h3>
-        </div>
-        <div>
-          <h3>
-            Fecha/Hora:<h5>22/07/21 00:00:00</h5>
-          </h3>
-          <h3>
-            Lote:<h5>-</h5>
-          </h3>
-          <h3>
-            Fecha Cierre:<h5>-</h5>
-          </h3>
-          <h3>
-            Nº de tarjeta<h5>559997XXXXX</h5>
-          </h3>
-        </div>
-        <div>
-          <h3>
-            Cuotas:<h5>1</h5>
-          </h3>
-          <h3>
-            Caida Cuotas:<h5>No</h5>
-          </h3>
-          <h3>
-            Fecha Pago:<h5>-</h5>
-          </h3>
-          <h3>
-            Id consumo:<h5>11261</h5>
-          </h3>
-        </div>
-        <div>
-          <h3>
-            Moneda Origen:<h5>Dolar de EEUU</h5>
-          </h3>
-          <h3>
-            Importe total:<h5>381,76</h5>
-          </h3>
-          <h3>
-            Fecha Presentación:<h5>02/03/2020</h5>
-          </h3>
-        </div>
-      </div>
-      <h3>
-        Comercio
-        <h4>Spotify \C. PROLONGACION AVDA MEDI0 \Stockholm\04006 SWE</h4>
-      </h3>
+    <Card>  
+    <Row gutter={[24, 24]}>
+        <Col span={6}>
+            <h1 className="grey-text">Movimientos</h1><h1 className="bold-text">{'Consumo'}</h1> 
+        </Col>
+        <Col span={12}>
+            <h1 className="grey-text"> Grupo de Transacción</h1><h1 className="bold-text">{'Compras/Devolución/Contrap Mon Local '}</h1>
+        </Col>
+        <Col span={6}>
+            <h4 className="grey-text">Nº de tarjeta </h4><h1 className="bold-text">{'559997XXXXX'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h4 className="grey-text">Id consumo </h4><h1 className="bold-text">{'11261'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h1 className="grey-text"> Autorización Emisor</h1><h1 className="bold-text">{'14591'}</h1> 
+        </Col>
+        <Col span={6}>
+            <h1 className="grey-text">Comprobante</h1><h1 className="bold-text">{'-'}</h1>
+        </Col>
+        <Col span={6}>
+            <h4 className="grey-text">Fecha/Hora </h4><h1 className="bold-text">{'22/07/21 00:00:00'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h4 className="grey-text">Cuotas </h4><h1 className="bold-text">{'1'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h4 className="grey-text"> Moneda Origen</h4><h1 className="bold-text">{'Dolar de EEUU'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h1 className="grey-text">Importe sin descuento</h1><h1 className="bold-text">{'-'}</h1>
+        </Col>
+        <Col span={6}>
+            <h1 className="grey-text"> Terminal</h1><h1 className="bold-text">{'2398548'}</h1>
+        </Col> 
+        <Col span={6}>
+            <h4 className="grey-text">Lote </h4><h1 className="bold-text">{'-'}</h1> 
+	      </Col> 
+        <Col span={6}>
+            <h4 className="grey-text">Caida Cuotas </h4><h1 className="bold-text">{'No'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h4 className="grey-text">Importe total </h4><h1 className="bold-text">{'381,76'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h1 className="grey-text">Arancel</h1><h1 className="bold-text">{'%'}</h1> 
+        </Col>
+        <Col span={6}>
+            <h4 className="grey-text">Importe Arancel </h4><h1 className="bold-text">{'0,00'}</h1>
+        </Col>
+        <Col span={6}>
+            <h4 className="grey-text">Fecha Cierre </h4><h1 className="bold-text">{'-'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h4 className="grey-text">Fecha Pago </h4><h1 className="bold-text">{'-'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h4 className="grey-text"> Fecha Presentación</h4><h1 className="bold-text">{'02/03/2020'}</h1> 
+	      </Col>
+      </Row>   <br></br>
+            <h4 className="grey-text"> Comercio </h4><h4 className="bold-text">Spotify \C. PROLONGACION AVDA MEDI0 \Stockholm\04006 SWE</h4>
+	      
 
       <Divider style={{'background-color':'#DADADA'}}></Divider> <h2>Detalles de Cuotas</h2>
       <div
         style={{
           display: "flex",
           justifyContent: "left",
-          gap: "10% 10%",
+          gap: "10% 7%", 
           flexDirection: "row",
         }}
       >   
