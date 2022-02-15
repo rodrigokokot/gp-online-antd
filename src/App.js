@@ -71,45 +71,46 @@ function App() {
 
 
           <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos'))} />
-          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos/editarTipoDeCargo=:id" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos/TiposDeCargosEdit'))} />
-          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos/crearTipoDeCargo" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos/TiposDeCargoCrear'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos/editarCargo=:id" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos/TiposDeCargosEdit'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos/crearCargo" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos/TiposDeCargoCrear'))} />
 
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos'))} />
-          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos/editarCargoPorProducto=:id" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos/CargosPorProductosEditar'))} />
-          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos/crearCargoPorProducto" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos/CargosPorProductosCrear'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos/editarProducto:id" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos/CargosPorProductosEditar'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos/crearProducto" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos/CargosPorProductosCrear'))} />
 
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos'))} />
-          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos/editarCargoPorProductoYMovimiento=:producto" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos/CPMovimientoEdit'))} /> 
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos/editar:producto" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos/CPMovimientoEdit'))} /> 
           
           <DashboardTemplate exact path="/emision/cargosAjustes/publicacionEnBoletin" component={lazy(() => import('./pages/Emision/CargosAjustes/PublicacionEnBoletin'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/publicacionEnBoletin/detalle:id" component={lazy(() => import('./pages/Emision/CargosAjustes/PublicacionEnBoletin/ConsultaBoletin'))} />
           
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad'))} />          
-          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad/crearCargoPorProductoYAfinidad" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad/CargosPorProductosAfinidadNew'))} />          
-          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad/editarCargoPorProductoYAfinidad=:id" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad/CargosPorProdutosAfinidadEdit'))} />          
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad/crear" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad/CargosPorProductosAfinidadNew'))} />          
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad/editar:id" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad/CargosPorProdutosAfinidadEdit'))} />          
           
           <DashboardTemplate exact path="/emision/cargosAjustes/consultaDeLiquidaciones" component={lazy(() => import('./pages/Emision/CargosAjustes/ConsultaDeLiquidaciones'))} />
           
 
                         {/* Socios */}
           <DashboardTemplate exact path="/emision/socios/cuentas" component={lazy(() => import('./pages/Emision/Socios/Cuentas'))} />
-          <DashboardTemplate exact path="/emision/socios/cuentas/editarCuenta:idcuenta" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
-          <DashboardTemplate exact path="/emision/socios/cuentas/crearCuenta" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaNew'))} />
+          <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/editar:idcuenta" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
+          <DashboardTemplate exact path="/emision/socios/cuentas/gestionDeCuentas/crear" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaNew'))} />
 
           <DashboardTemplate exact path="/emision/socios/avisosDeViajes" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes'))} />
-          <DashboardTemplate exact path="/emision/socios/avisosDeViajes/editarAvisosDeViajes=:id" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes/AvisosViajesEdit'))} />
+          <DashboardTemplate exact path="/emision/socios/avisosDeViajes/editar:id" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes/AvisosViajesEdit'))} />
 
           <DashboardTemplate exact path="/emision/socios/movimientosDeCuenta" component={lazy(() => import('./pages/Emision/Socios/MovimientosDeCuenta'))} />
 
           <DashboardTemplate exact path="/emision/socios/adicionales" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales'))} />
-          <DashboardTemplate exact path="/emision/socios/adicionales/crear=:id" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales/GestionAdicionalesNew'))} />
+          <DashboardTemplate exact path="/emision/socios/adicionales/crear:id" component={lazy(() => import('./pages/Emision/Socios/GestionAdicionales/GestionAdicionalesNew'))} />
 
           <DashboardTemplate exact path="/emision/socios/tarjetas" component={lazy(() => import('./pages/Emision/Socios/Tarjetas'))} />
-          <DashboardTemplate exact path="/emision/socios/tarjetas/detalle=:id" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasView'))} />
-          <DashboardTemplate exact path="/emision/socios/tarjetas/detalle=:id/historial" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasHistory'))} />
+          <DashboardTemplate exact path="/emision/socios/tarjetas/ver:id" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasView'))} />
+          <DashboardTemplate exact path="/emision/socios/tarjetas/ver:id/historial" component={lazy(() => import('./pages/Emision/Socios/Tarjetas/TarjetasHistory'))} />
 
           <DashboardTemplate exact path="/emision/socios/plasticos" component={lazy(() => import('./pages/Emision/Socios/Plasticos'))} />
 
+          
           {/* Parametria */}
           <DashboardTemplate exact path="/parametria/modificarLimite" component={lazy(() => import('./pages/Parametria/ModificarLimite'))} />
           <DashboardTemplate exact path="/parametria/modificarLimite/editar:cuenta" component={lazy(() => import('./pages/Parametria/ModificarLimite/ModificarLimite'))} />

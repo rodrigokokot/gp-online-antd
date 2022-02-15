@@ -19,8 +19,8 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
   const [collapsed, setCollapsed] = useState(true);
   const icons = require(`@ant-design/icons`);
   const key = localStorage.getItem("option");
-  console.log(key);
-  const [itemSelected, setItemSelected] = useState(JSON.parse(key));
+  // console.log(key);
+  const [itemSelected, setItemSelected] = useState(key? JSON.parse(key) : routes[0]);
 
   return (
     <>
