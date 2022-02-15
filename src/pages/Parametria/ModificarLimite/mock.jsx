@@ -52,7 +52,7 @@ const columnsLimite = [
       button: true,
       cell: (row) => (
         <Link
-          to={`/parametria/modificarLimite/editar/${row.id}`}
+          to={`/parametria/modificarLimite/editarLimiteDeTarjetaAdicional=${row.id}`}
           style={{ textDecoration: "underline" }}
           rel="noopener noreferrer"
         >

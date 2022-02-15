@@ -69,6 +69,7 @@ background: #E5E5E5;
 
   .menu-scroll {
     overflow: auto;
+    overflow-x: hidden;
     height: 80vh;
   }
 
@@ -146,17 +147,12 @@ background: #E5E5E5;
 // SCROLLBAR
 ::-webkit-scrollbar {
   height: 12px;
-    width: 14px;
-    background: transparent;
-    z-index: 12;
-    overflow: visible;
+  width: 14px;
+  background: transparent;
+  z-index: 12;
+  overflow: visible;
 
 }
-
-// ::-webkit-scrollbar-track {
-//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-//   border-radius: 10px;
-// }
 
 ::-webkit-scrollbar-thumb {
   width: 10px;
@@ -169,4 +165,9 @@ background: #E5E5E5;
   margin: 4px;
   min-height: 32px;
   min-width: 32px;
+}
+
+// ANT PICKER
+.ant-picker {
+  border-radius: .5em;
 }

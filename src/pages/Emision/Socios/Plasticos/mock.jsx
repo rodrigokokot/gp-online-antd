@@ -135,7 +135,8 @@ const columnsPlasticos = [
         rel="noopener noreferrer"
       >
         Editar
-      </Link>),
+      </Link>
+    ),
   },
 ];
 

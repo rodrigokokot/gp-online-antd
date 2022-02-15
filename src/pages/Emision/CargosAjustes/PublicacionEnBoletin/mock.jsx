@@ -52,7 +52,7 @@ const columnsPBoletin= [
         button: true,
         cell: (row) => (
           <Link
-            to={`/emision/cargosAjustes/publicacionEnBoletin/consultaBoletin/${row.id}`}
+            to={`/emision/cargosAjustes/publicacionEnBoletin/detalle=${row.id}`}
             style={{ textDecoration: "underline" }}
             rel="noopener noreferrer"
           >

@@ -22,6 +22,7 @@ function MovimientosIPM() {
         array={MovimientosIPMSearch}
         title={"Búsqueda de archivos IPM"}
         parentCallback={handleCallback}
+        span={6}
       ></Searchform>
       <br></br>
       <Table data={data} columns={columnsMovimientosIPM}></Table>

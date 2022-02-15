@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Form, Radio, Row, Col, Checkbox, Button } from "antd";
+import { Card, Form, Radio, Row, Col, Checkbox } from "antd";
 import Edit from "../../../components/organisms/Edit/index";
 import FloatInput from '../../../components/molecules/FloatInput';
 import FloatSelected from "../../../components/molecules/FloatSelected";

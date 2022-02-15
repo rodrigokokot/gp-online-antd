@@ -74,7 +74,6 @@ import { Link } from "react-router-dom";
       documento: "DNI 24801003",
       producto: "Producto Sobre Disponible",
       estado: "Activo",
-      option: <Link>Nuevo Adicional</Link>,
     },
   ];
   

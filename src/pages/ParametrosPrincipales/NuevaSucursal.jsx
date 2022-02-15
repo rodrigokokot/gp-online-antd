@@ -144,9 +144,7 @@ function NuevaSucursal() {
 
           <Row>
             <Col span={8}>
-            <Form.Item
-                name="barrio" 
-              >
+              <Form.Item name="barrio">
                 <FloatInput
                   outline
                   label={t("gestionsucursales.new.outline.barrio.label")}

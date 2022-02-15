@@ -1,12 +1,16 @@
-import React,{useState} from 'react';
-import SearchForm from '../../../../components/organisms/SearchForm/index'
-import Table from '../../../../components/organisms/Table/index'
-import {Link} from 'react-router-dom'
-import {GestionCuentaSearch, dataGestionCuenta, columnsGestionCuenta} from './mock'
-import {Col, Button} from 'antd'
+import React, { useState } from "react";
+import SearchForm from "../../../../components/organisms/SearchForm/index";
+import Table from "../../../../components/organisms/Table/index";
+import { Link } from "react-router-dom";
+import {
+  GestionCuentaSearch,
+  dataGestionCuenta,
+  columnsGestionCuenta,
+} from "./mock";
+import { Col, Button } from "antd";
 
 /* hacer que router tengo la dir de app.js  */
-const GestionCuentas=()=> {    
+const GestionCuentas = () => {
   const [data, setData] = useState("");
 
   const handleCallback = (values) => {

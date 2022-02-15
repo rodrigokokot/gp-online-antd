@@ -18,7 +18,7 @@ export default function TarjetasView() {
           <Row justify="space-between" style={{ marginBottom: "36px" }}>
             <h1 className="purple-title">Datos principales</h1>
             <Link
-              to={`${id}/historial`}
+              to={`/emision/socios/tarjetas/detalle=:${id}/historial`}
               style={{ textDecoration: "underline" }}
               rel="noopener noreferrer"
             >
