@@ -8,12 +8,14 @@ import {
 } from "../../../assets/svg/icons/collapse";
 import useRangePicker from "../../../hooks/useRangePicker";
 import { useBetween } from "use-between";
+import {useTranslation} from "react-i18next"
 
 const SearchForm = ({ array, parentCallback, title, span }) => {
   const [form] = Form.useForm();
   const { Panel } = Collapse;
   const [open, setOpen] = useState(["1"]);
   const { state, hours, searchType } = useBetween(useRangePicker)
+  const {t} = useTranslation();
 
   const onFinish = (values) => {
     console.log({...values, ...state[0], ...hours, searchType});
@@ -65,7 +67,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
           <Row style={{ marginTop: 40 }}>
             <Col span={24} style={{ textAlign: "left" }}>
               <Button type="primary" htmlType="submit" onClick={()=>setOpen([""])}>
-                Buscar
+                {t("searchform.searchbutton")}
               </Button>
               <Button
                 type="text"
@@ -74,7 +76,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
                   form.resetFields();
                 }}
               >
-                Restablecer
+                {t("searchform.resetbutton")}
               </Button>
             </Col>
           </Row>

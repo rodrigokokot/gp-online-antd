@@ -1,5 +1,7 @@
 import { DownOutlined } from "@ant-design/icons";
 import FloatSelected from "../../components/molecules/FloatSelected";
+import {useTranslation} from 'react-i18next';
+
 
 const columnsNovedades = [
   {
@@ -207,98 +209,107 @@ const dataAjustes = [
   },
 ];
 
-const novedadesSearch = [
-  {
-    index: "emisor",
-    input: (
-      <FloatSelected
-        placeholder="Emisor"
-        label="Emisor"
-        options={[
-          { title: "emisor 1", value: "1", disabled: false },
-          { title: "emisor 2", value: "2", disabled: false },
-          { title: "emisor 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
-  {
-    index: "marca",
-    input: (
-      <FloatSelected
-        placeholder="Marca"
-        label="Marca"
-        options={[
-          { title: "marca 1", value: 1, disabled: false },
-          { title: "marca 2", value: 2, disabled: false },
-          { title: "marca 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
-  {
-    index: "transaccion",
-    input: (
-      <FloatSelected
-        placeholder="Transaccion"
-        label="Transaccion"
-        options={[
-          { title: "transaccion 1", value: 1, disabled: false },
-          { title: "transaccion 2", value: 2, disabled: false },
-          { title: "trs 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
-  {
-    index: "sucursal",
-    input: (
-      <FloatSelected
-        placeholder="Sucursal"
-        label="Sucursal"
-        options={[
-          { title: "sucu 1", value: 1, disabled: false },
-          { title: "sucu 2", value: 2, disabled: false },
-          { title: "sucu 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
-  {
-    index: "producto",
-    input: (
-      <FloatSelected
-        placeholder="Producto"
-        label="Producto"
-        options={[
-          { title: "prod 1", value: 1, disabled: false },
-          { title: "prod 2", value: 2, disabled: false },
-          { title: "prod 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
-  {
-    index: "novedades",
-    input: (
-      <FloatSelected
-        placeholder="Novedades"
-        label="Novedades"
-        options={[
-          { title: "nov 1", value: 1, disabled: false },
-          { title: "nov 2", value: 2, disabled: false },
-          { title: "nov 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
-];
+const NovedadesSearch = () => {
+  
+  const { t } = useTranslation();
+  
+  const novedadesSearch = [
+    {
+      index: "emisor",
+      input: (
+        <FloatSelected
+  
+          label={t("gestionaprobaciones.search.input1")}
+          options={[
+            { title: "emisor 1", value: "1", disabled: false },
+            { title: "emisor 2", value: "2", disabled: false },
+            { title: "emisor 3", value: 3, disabled: false },
+          ]}
+        ></FloatSelected>
+      ),
+    },
+    {
+      index: "marca",
+      input: (
+        <FloatSelected
+  
+          label={t("gestionaprobaciones.search.input2")}
+          options={[
+            { title: "marca 1", value: 1, disabled: false },
+            { title: "marca 2", value: 2, disabled: false },
+            { title: "marca 3", value: 3, disabled: false },
+          ]}
+        ></FloatSelected>
+      ),
+    },
+    {
+      index: "transaccion",
+      input: (
+        <FloatSelected
+  
+          label={t("gestionaprobaciones.search.input3")}
+          options={[
+            { title: "transaccion 1", value: 1, disabled: false },
+            { title: "transaccion 2", value: 2, disabled: false },
+            { title: "trs 3", value: 3, disabled: false },
+          ]}
+        ></FloatSelected>
+      ),
+    },
+    {
+      index: "sucursal",
+      input: (
+        <FloatSelected
+  
+          label={t("gestionaprobaciones.search.input4")}
+          options={[
+            { title: "sucu 1", value: 1, disabled: false },
+            { title: "sucu 2", value: 2, disabled: false },
+            { title: "sucu 3", value: 3, disabled: false },
+          ]}
+        ></FloatSelected>
+      ),
+    },
+    {
+      index: "producto",
+      input: (
+        <FloatSelected
+  
+          label={t("gestionaprobaciones.search.input5")}
+          options={[
+            { title: "prod 1", value: 1, disabled: false },
+            { title: "prod 2", value: 2, disabled: false },
+            { title: "prod 3", value: 3, disabled: false },
+          ]}
+        ></FloatSelected>
+      ),
+    },
+    {
+      index: "novedades",
+      input: (
+        <FloatSelected
+  
+          label={t("gestionaprobaciones.search.input6")}
+          options={[
+            { title: "nov 1", value: 1, disabled: false },
+            { title: "nov 2", value: 2, disabled: false },
+            { title: "nov 3", value: 3, disabled: false },
+          ]}
+        ></FloatSelected>
+      ),
+    },
+  ]
+  return novedadesSearch;
+}
+
+
+
 const ajustesSearch = [
   {
     index: "moneda",
     input: (
       <FloatSelected
-        placeholder="Moneda"
+
         label="Moneda"
         options={[
           { title: "mon 1", value: "1", disabled: false },
@@ -312,7 +323,7 @@ const ajustesSearch = [
     index: "conceptoAjuste",
     input: (
       <FloatSelected
-        placeholder="Concepto de ajuste"
+
         label="Concepto de ajuste"
         options={[
           { title: "marca 1", value: 1, disabled: false },
@@ -326,7 +337,7 @@ const ajustesSearch = [
     index: "comprobante",
     input: (
       <FloatSelected
-        placeholder="Comprobante"
+
         label="Comprobante"
         options={[
           { title: "transaccion 1", value: 1, disabled: false },
@@ -340,7 +351,7 @@ const ajustesSearch = [
     index: "novedadesUrgente",
     input: (
       <FloatSelected
-        placeholder="Novedades urgente"
+
         label="Novedades urgente"
         options={[
           { title: "sucu 1", value: 1, disabled: false },
@@ -357,6 +368,6 @@ export {
   dataNovedades,
   columnsAjustes,
   columnsNovedades,
-  novedadesSearch,
+  NovedadesSearch,
   ajustesSearch,
 };

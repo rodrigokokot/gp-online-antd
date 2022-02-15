@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Meta from "antd/lib/card/Meta";
 import { AutoComplete, Card } from "antd";
-import { dataNovedades, columnsNovedades, novedadesSearch } from "../mock";
+import { dataNovedades, columnsNovedades, NovedadesSearch } from "../mock";
 import Icon from "@ant-design/icons";
 import { Notification } from "../../../assets/svg/icons/notification";
 import Table from "../../../components/organisms/Table";
@@ -44,7 +44,7 @@ function Novedades() {
 
       <SearchForm
         title="Busqueda de aprobaciones"
-        array={novedadesSearch}
+        array={NovedadesSearch()}
         parentCallback={handleCallback}
         span={6}
       ></SearchForm>
