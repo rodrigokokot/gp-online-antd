@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import Meta from "antd/lib/card/Meta";
 import { AutoComplete, Card } from "antd";
-import { dataNovedades, columnsNovedades, novedadesSearch } from "../mock";
+import { dataNovedades, ColumnsNovedades, NovedadesSearch } from "../mock";
 import Icon from "@ant-design/icons";
 import { Notification } from "../../../assets/svg/icons/notification";
 import Table from "../../../components/organisms/Table";
 import DeploymentConfirmation from "../../../components/molecules/DeploymentConfirmation";
 import SearchForm from "../../../components/organisms/SearchForm";
+import { useTranslation } from "react-i18next";
 
 function Novedades() {
   const [pendientes, setPendientes] = useState(false);
   const [data, setData] = useState("");
+  const { t } = useTranslation();
 
   function handleCallback(values) {
     //lamada al servicio axios.post(values)
     //setData(axios.response)
     setData(dataNovedades);
   }
-
   return (
     <>
       {pendientes ? (
@@ -32,10 +33,11 @@ function Novedades() {
             }}
             bordered={true}
           >
+         
             <Meta
               avatar={<Icon component={Notification}></Icon>}
-              title="Tenés 25 pedidos de aprobación"
-              description="Desplegá cada fila para poder operar las confirmaciones."
+              title={t("gestionaprobaciones.tab1.deploymentconfirmation.meta.title")}
+              description={t("gestionaprobaciones.tab1.deploymentconfirmation.meta.description")}
             />
           </Card>
           <br />
@@ -43,8 +45,8 @@ function Novedades() {
       ) : null}
 
       <SearchForm
-        title="Busqueda de aprobaciones"
-        array={novedadesSearch}
+        title={t("gestionaprobaciones.tab1.search.searchtitle")}
+        array={NovedadesSearch()}
         parentCallback={handleCallback}
         span={6}
       ></SearchForm>
@@ -52,7 +54,7 @@ function Novedades() {
       <Table
         component={DeploymentConfirmation}
         data={data}
-        columns={columnsNovedades}
+        columns={ColumnsNovedades()}
         expandible={true}
         selectable={false}
       />

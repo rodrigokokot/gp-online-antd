@@ -8,8 +8,10 @@ import {
 } from "../../../assets/svg/icons/collapse";
 import useRangePicker from "../../../hooks/useRangePicker";
 import { useBetween } from "use-between";
+import { useTranslation } from "react-i18next";
 
 const SearchForm = ({ array, parentCallback, title, span }) => {
+  const { t } = useTranslation();
   const [form] = Form.useForm();
   const { Panel } = Collapse;
   const [open, setOpen] = useState(["1"]);
@@ -30,7 +32,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
       expandIcon={({ isActive }) => (
         <div style={{ display: "flex", gap: "8px" }}>
           <Typography.Text>
-            {isActive ? "Colapsar búsqueda" : "Refinar búsqueda"}
+            {isActive ? (t("searchform.searchcollapse")): (t("searchform.searchdeploy"))}
           </Typography.Text>
           <Icon component={isActive ? CollapseClose : CollapseOpen} />
         </div>
@@ -65,7 +67,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
           <Row style={{ marginTop: 40 }}>
             <Col span={24} style={{ textAlign: "left" }}>
               <Button type="primary" htmlType="submit" onClick={()=>setOpen([""])}>
-                Buscar
+              {t("searchform.searchbutton")}
               </Button>
               <Button
                 type="text"
@@ -74,7 +76,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
                   form.resetFields();
                 }}
               >
-                Restablecer
+                {t("searchform.resetbutton")}
               </Button>
             </Col>
           </Row>

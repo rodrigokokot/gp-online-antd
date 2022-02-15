@@ -3,67 +3,77 @@ import Edit from "../../components/organisms/Edit";
 import { Form, Row, Col, Card, Typography } from "antd";
 import FloatInput from "../../components/molecules/FloatInput/index";
 import FloatSelect from "../../components/molecules/FloatSelected/index";
+import { useTranslation } from 'react-i18next';
 
 function NuevaSucursal() {
+  const { t} = useTranslation();
   const FormularioNueva = () => {
     return (
       <>
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-          <Typography.Title level={3} style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
+          <Typography.Title level={3} style={{ color: '#ab218e' }}>{t("gestionsucursales.new.title1")}</Typography.Title>
           <Col span={8}>
             <Form.Item
               name="codigo"
-              rules={[{ required: true, message: "Ingrese código" }]}
+              rules={[{ required: true, message:(t("gestionsucursales.new.outline.codigo.error")) }]}
             >
-              <FloatInput outline label="Codigo*" placeholder="Código*"></FloatInput>
+              <FloatInput outline label={t("gestionsucursales.new.outline.codigo.label")} placeholder={t("gestionsucursales.new.outline.codigo.label")}></FloatInput>
             </Form.Item>
 
             <Form.Item
               name="descripcion"
             >
-              <FloatInput outline label="Descripcion" placeholder="Descripcion" />
+              <FloatInput outline label={t("gestionsucursales.new.outline.descripcion.label")} placeholder={t("gestionsucursales.new.outline.descripcion.label")}/>
             </Form.Item>
           </Col>
         </Card>
 
         <Card style={{ borderRadius: '16px' }}>
-        <Typography.Title level={3} style={{ color: '#ab218e' }}>Domicilio</Typography.Title>
+        <Typography.Title level={3} style={{ color: '#ab218e' }}>{t("gestionsucursales.new.title2")}</Typography.Title>
 
           <Row gutter={24}>
             <Col span={6}>
               <Form.Item
                 name="calle"
-                rules={[{ required: true, message: "Ingrese calle" }]}
+                rules={[{ required: true, message:(t("gestionsucursales.new.outline.calle.error")) }]}
               >
-                <FloatInput outline label="Calle*" placeholder="Calle*"></FloatInput>
+                <FloatInput outline label={t("gestionsucursales.new.outline.calle.label")}
+                 placeholder={t("gestionsucursales.new.outline.calle.label")}
+                 ></FloatInput>
               </Form.Item>
             </Col>
 
             <Col span={3}>
               <Form.Item
                 name="numero"
-                rules={[{ required: true, message: "Ingrese número" }]}
+                rules={[{ required: true, message:(t("gestionsucursales.new.outline.numero.error")) }]}
               >
-                <FloatInput outline label="Número*" placeholder="Número*"></FloatInput>
+                <FloatInput outline label={t("gestionsucursales.new.outline.numero.label")}
+                 placeholder={t("gestionsucursales.new.outline.numero.label")}
+                 ></FloatInput>
               </Form.Item>
             </Col>
 
             <Col span={2}>
               <Form.Item name="piso">
-                <FloatInput outline label="Piso" placeholder="Piso"></FloatInput>
+                <FloatInput outline label={t("gestionsucursales.new.outline.piso.label")}
+                 placeholder={t("gestionsucursales.new.outline.piso.label")}
+                 ></FloatInput>
               </Form.Item>
             </Col>
 
             <Col span={2}>
-              <Form.Item name="piso">
-                <FloatInput outline label="Depto" placeholder="Depto"></FloatInput>
+              <Form.Item name="Depto">
+                <FloatInput outline label={t("gestionsucursales.new.outline.depto.label")}
+                 placeholder={t("gestionsucursales.new.outline.depto.label")}
+                 ></FloatInput>
               </Form.Item>
             </Col>
 
             <Col span={2}>
               <Form.Item name="cp"
-                rules={[{ required: true, message: "Ingrese código postal" }]}>
-                <FloatInput outline label="CP*" placeholder="CP*"></FloatInput>
+                rules={[{ required: true, message: (t("gestionsucursales.new.outline.cp.error"))}]}>
+                <FloatInput outline label={t("gestionsucursales.new.outline.cp.label")} placeholder={t("gestionsucursales.new.outline.cp.label")}></FloatInput>
               </Form.Item>
             </Col>
           </Row>
@@ -72,12 +82,12 @@ function NuevaSucursal() {
             <Col span={8}>
               <Form.Item
                 name="localidad"
-                rules={[{ required: true, message: "Ingrese localidad" }]}
+                rules={[{ required: true, message: (t("gestionsucursales.new.outline.localidad.error")) }]}
               >
                 <FloatSelect
                   outline
-                  label="Localidad*"
-                  placeholder="Localidad*"
+                  label={t("gestionsucursales.new.outline.localidad.label")}
+                  placeholder={t("gestionsucursales.new.outline.localidad.label")}
                   options={[
                     {
                       title: "San Juan",
@@ -104,12 +114,12 @@ function NuevaSucursal() {
             <Col span={8}>
               <Form.Item
                 name="provincia"
-                rules={[{ required: true, message: "Ingrese provincia" }]}
+                rules={[{ required: true, message: (t("gestionsucursales.new.outline.provincia.error")) }]}
               >
                 <FloatSelect
                   outline
-                  label="Provincia*"
-                  placeholder="Provincia*"
+                  label={t("gestionsucursales.new.outline.provincia.label")}
+                  placeholder={t("gestionsucursales.new.outline.provincia.label")}
                   options={[
                     {
                       title: "San Juan",
@@ -139,18 +149,18 @@ function NuevaSucursal() {
               >
                 <FloatInput
                   outline
-                  label="Barrio"
-                  placeholder="Barrio"
+                  label={t("gestionsucursales.new.outline.barrio.label")}
+                  placeholder={t("gestionsucursales.new.outline.barrio.label")}
                 ></FloatInput>
               </Form.Item>
               <Form.Item
                 name="telefono"
-                rules={[{ required: true, message: "Ingrese teléfono" }]}
+                rules={[{ required: true, message: (t("gestionsucursales.new.outline.telefono.error"))}]}
               >
                 <FloatInput
                   outline
-                  label="Telefono*"
-                  placeholder="Telefono*"
+                  label={t("gestionsucursales.new.outline.telefono.label")}
+                  placeholder={t("gestionsucursales.new.outline.telefono.label")}
                 ></FloatInput>
               </Form.Item>
             </Col>
@@ -162,9 +172,9 @@ function NuevaSucursal() {
 
   return <Edit 
           component={FormularioNueva}
-          textBtnSave="Crear sucursal"
+          textBtnSave={t("gestionsucursales.new.edit.save")}
           textBtnModalConfirm="¿Crear esta sucursal?" 
-          textBtnModalConfirm="Si, crear"/>;
+          textBtnModalConfirm={t("gestionsucursales.new.edit.confirm")}/>;
 }
 
 export default NuevaSucursal;

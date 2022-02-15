@@ -8,7 +8,7 @@ import { columnsPBoletin, dataPBoletin, PBoletinSearch } from './mock';
 const PBoletin = () => {
   return (
         <>
-            <SearchForm title="Busqueda de consumos" array={PBoletinSearch} span={4} ></SearchForm>
+            <SearchForm title="Busqueda de consumos" array={PBoletinSearch} span={6} ></SearchForm>
             <br />
             <Table data={dataPBoletin} columns={columnsPBoletin}></Table>
         </>

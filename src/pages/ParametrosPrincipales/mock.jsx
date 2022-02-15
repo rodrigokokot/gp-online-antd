@@ -1,25 +1,28 @@
 import { Link } from "react-router-dom";
 import FloatInput from "../../components/molecules/FloatInput/index";
 import FloatSelected from "../../components/molecules/FloatSelected/index";
+import { useTranslation } from 'react-i18next';
 ///////MOCK PARA LOS INPUTS DEL SEARCH////////
-const GestionSucursalesSearchMock = [
+const GestionSucursalesSearchMock =()=> {
+  const { t} = useTranslation();
+  return([
   {
     index: 'descripcion',
     name: "Descripción",
-    input: <FloatInput placeholder="Descripción" label="Descripcion" />,
+    input: <FloatInput placeholder={t("gestionsucursales.search.input1")} label={t("gestionsucursales.search.input1")} />,
   },
 
 
   {
     index: 'codigo',
     name: "Código",
-    input: <FloatInput placeholder="Código" label="Código" />,
+    input: <FloatInput placeholder={t("gestionsucursales.search.input2")} label={t("gestionsucursales.search.input2")} />,
   },
 
   {
     index: 'cp',
     name: "Código Postal",
-    input: <FloatInput placeholder="Código Postal" label="Código Postal" />,
+    input: <FloatInput placeholder={t("gestionsucursales.search.input3")} label={t("gestionsucursales.search.input3")}/>,
   },
 
   {
@@ -27,8 +30,8 @@ const GestionSucursalesSearchMock = [
     name: "Provincia",
     input: (
       <FloatSelected
-        placeholder="Provincia"
-        label="Provincia"
+        placeholder={t("gestionsucursales.search.input4")}
+        label={t("gestionsucursales.search.input4")}
         options={[
           {
             title: "San Juan",
@@ -55,8 +58,8 @@ const GestionSucursalesSearchMock = [
     name: "Estado",
     input: (
       <FloatSelected
-        placeholder="Estado"
-        label="Estado"
+        placeholder={t("gestionsucursales.search.input5")}
+        label={t("gestionsucursales.search.input5")}
         options={[
           {
             title: "Activo",
@@ -79,22 +82,25 @@ const GestionSucursalesSearchMock = [
       />
     ),
   },
-];
+])
+}
 
-const columnsGestionSucursales = [
+const ColumnsGestionSucursales =()=> {
+  const { t} = useTranslation();
+  return([
   
   {
-    name: "Codigo",
+    name: (t("gestionsucursales.table.column1")),
     selector: (row) => row.codigo,
     sortable: true,
   },
   {
-    name: "Descripcion",
+    name: (t("gestionsucursales.table.column2")),
     selector: (row) => row.descripcion,
     sortable: true,
   },
   {
-    name: "Estado",
+    name: (t("gestionsucursales.table.column3")),
     selector: (row) => row.estado,
     sortable: true,
   },
@@ -103,11 +109,12 @@ const columnsGestionSucursales = [
 		button: true,
 		cell: row => (
 			<Link to={`/parametrosPrincipales/gestionDeSucursales/editarSucursal=${row.codigo}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
-				Editar
+				{t("gestionsucursales.table.column4")}
 			</Link>
 		),
   },
-];
+])
+}
 
 const dataGestionSucursales = [
   {
@@ -142,4 +149,4 @@ const dataGestionSucursales = [
   },
 ];
 
-export { dataGestionSucursales, columnsGestionSucursales,GestionSucursalesSearchMock };
+export { dataGestionSucursales, ColumnsGestionSucursales,GestionSucursalesSearchMock };
