@@ -170,8 +170,7 @@ function NuevaSucursal() {
 
   return <Edit 
           component={FormularioNueva}
-          textBtnSave={t("gestionsucursales.new.edit.save")}
-          textBtnModalConfirm="¿Crear esta sucursal?" 
+          textBtnSave={t("gestionsucursales.new.edit.save")} 
           textBtnModalConfirm={t("gestionsucursales.new.edit.confirm")}/>;
 }
 
