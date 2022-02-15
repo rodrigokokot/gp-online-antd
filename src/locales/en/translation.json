@@ -15,9 +15,70 @@
       "description": "If you forgot your password, please contact our computer security team to help you."
     }
   },
-    "title": "Welcome to react using react-i18next",
-    "description": {
-      "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
-      "part2": "Switch language between english and german using buttons above."
+
+
+
+
+    "searchform":{
+      "searchbutton":"Search",
+      "resetbutton": "Reset",
+      "searchcollapse":"Collapse search",
+      "searchdeploy": "Refine search"
+    },
+
+
+  "gestionaprobaciones":{
+    
+    "tab1":{
+      "tab1": "Novelties to confirm",
+      "search": {
+        "searchtitle": "Approval Search",
+        "input1": "Emitter",
+        "input2": "Brand",
+        "input3": "Transaction",
+        "input4": "Branch",
+        "input5": "Product",
+        "input6": "Novelties"
     }
+  },
+
+    "tab2":{
+      "tab2": "Adjustments to confirm",
+      "card1":{
+        "title": "Account Information",
+        "subtitle1": "Account number",
+        "subtitle2": "Brand",
+        "subtitle3": "Transaction state",
+        "subtitle4": "Original account number",
+        "subtitle5": "Start date",
+        "subtitle6": "Comment",
+        "subtitle7": "Discharge date",
+        "subtitle8": "End date",
+
+        "search":{
+          "searchtitle":"Adjustments Search",
+          "input1":"Currency",
+          "input2":"Adjustment Concept",
+          "input3":"Receipt",
+          "input4":"Urgent novelties"
+        }
+        
+      }
+    }
+  
+  },
+
+  "gestionsucursales": {
+    "button": "New Branch",
+    "search":{
+      "searchtitle":"Branch Search",
+      "input1":"Description",
+      "input2":"Code",
+      "input3":"Zip code",
+      "input4":"Province",
+      "input5":"Status"
+    }
+  }
+
+
 }
