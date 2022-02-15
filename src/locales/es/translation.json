@@ -192,11 +192,54 @@
         },
         "edit":{
           "save":"Crear sucursal",
-          "confirm":"Si, crear"
+          "confirm":"¿Crear esta sucursal?",
+          "btnconfirm":"Si, crear"
         } 
     }, 
     "edit":{
-      
-    } 
+      "title1":"Datos Principales",
+      "title2":"Domicilio",
+      "outline":{ 
+        "descripcion": {
+          "label": "Descripción"
+        },
+        "calle": {
+          "label": "Calle*",
+          "error": "Ingrese calle"
+        },
+        "numero": {
+          "label": "Número*",
+          "error": "Ingrese número"
+        },
+        "piso": {
+          "label": "Piso"
+        },
+        "depto": {
+          "label": "Depto"
+        }, 
+        "localidad": {
+          "label": "Localidad*",
+          "error": "Ingrese localidad"
+        },
+        "provincia": {
+          "label": "Provincia*",
+          "error": "Ingrese provincia"
+        }, 
+        "telefono": {
+          "label": "Teléfono*",
+          "error": "Ingrese teléfono"
+        }
+      },
+      "estado":{
+        "error":"Ingrese un estado",
+        "value1":"Activo",
+        "value2":"Inactivo"
+      },
+      "edit":{
+        "save":"Guardar Cambios",
+        "confirm":"¿Estás seguro que deseas generar estos cambios a esta sucursal?",
+        "btnconfirm":"Si, guardar cambios"
+      } 
+    }
   }
 }
