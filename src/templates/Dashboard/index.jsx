@@ -20,7 +20,9 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
   const icons = require(`@ant-design/icons`);
   const key = localStorage.getItem("option");
   // console.log(key);
-  const [itemSelected, setItemSelected] = useState(key? JSON.parse(key) : routes[0]);
+  const [itemSelected, setItemSelected] = useState(
+    key ? JSON.parse(key) : routes[0]
+  );
 
   return (
     <>
@@ -114,7 +116,11 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                   })}
                 </Menu.SubMenu>
               ) : (
-                <Menu.Item icon={<Component />} key={`${index}`}>
+                <Menu.Item
+                  icon={<Component />}
+                  key={`${index}`}
+                  className={route.page ? "menu-help" : null}
+                >
                   <Link
                     to={route.path}
                     onClick={() => {
@@ -126,28 +132,12 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                       setCollapsed(true);
                     }}
                   >
+                    {console.log(index)}
                     <Typography.Text>{route.name}</Typography.Text>
                   </Link>
                 </Menu.Item>
               );
             })}
-          </Menu>
-          <Menu mode="inline" className="menu-help">
-            <Menu.Item icon={<QuestionCircleOutlined />} key={"ayuda"}>
-              <Link
-                to="/ayuda"
-                onClick={() => {
-                  setItemSelected("/ayuda");
-                  localStorage.setItem(
-                    "option",
-                    JSON.stringify({ name: "ayuda", path: "/ayuda" })
-                  );
-                  setCollapsed(true);
-                }}
-              >
-                Ayuda
-              </Link>
-            </Menu.Item>
           </Menu>
         </Sider>
         <Layout className="site-layout" style={{ marginLeft: "80px" }}>
