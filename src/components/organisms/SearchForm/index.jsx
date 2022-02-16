@@ -8,11 +8,7 @@ import {
 } from "../../../assets/svg/icons/collapse";
 import useRangePicker from "../../../hooks/useRangePicker";
 import { useBetween } from "use-between";
-<<<<<<< HEAD
-import {useTranslation} from "react-i18next"
-=======
 import { useTranslation } from "react-i18next";
->>>>>>> 628e7e7061dadd9faea6bbbd314ee69e69ea7c93
 
 const SearchForm = ({ array, parentCallback, title, span }) => {
   const { t } = useTranslation();
@@ -20,7 +16,6 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
   const { Panel } = Collapse;
   const [open, setOpen] = useState(["1"]);
   const { state, hours, searchType } = useBetween(useRangePicker)
-  const {t} = useTranslation();
 
   const onFinish = (values) => {
     console.log({...values, ...state[0], ...hours, searchType});

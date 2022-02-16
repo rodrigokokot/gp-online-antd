@@ -37,6 +37,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           style={{
             backgroundColor: "#fff",
             overflow: "auto",
+            overflowX: "hidden",
             position: "fixed",
             left: 0,
             top: "48px",
@@ -52,7 +53,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               },
             })}
           </div>
-          <Menu mode="inline" selectedKeys={itemSelected.key}>
+          <Menu mode="inline" selectedKeys={itemSelected.key} className="menu-scroll">
             {routes.map((route, index) => {
               const Component = icons[route.icon];
               return route.subItems !== undefined ? (

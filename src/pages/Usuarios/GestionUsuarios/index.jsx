@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 import {
   GestionUsuariosSearch,
   dataGestionUsuarios,
-  columnsGestionUsuarios,
+  ColumnsGestionUsuarios,
 } from "./mock";
 import { Col, Button } from "antd";
+import { useTranslation } from "react-i18next";
 
 function GestionUsuario() {
+    const { t } = useTranslation();
   const [data, setData] = useState("");
 
    
@@ -23,19 +25,19 @@ function GestionUsuario() {
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/usuarios/gestionDeUsuarios/crearUsuario">
-          <Button type="primary" size="small">
-            Nuevo Usuario
+          <Button type="primary" size="small"> 
+          {t("gestionusuarios.button")}
           </Button>
         </Link>
       </Col>
       <SearchForm
         span={6}
-        array={GestionUsuariosSearch}
+        array={GestionUsuariosSearch()}
         parentCallback={handleCallback}
-        title="Busqueda de usuarios"
+        title={t("gestionusuarios.search.searchtitle")}
       />
       <br />
-      <Table data={data} columns={columnsGestionUsuarios} />
+      <Table data={data} columns={ColumnsGestionUsuarios()} />
     </>
   );
 }

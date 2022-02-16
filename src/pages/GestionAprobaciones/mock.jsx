@@ -1,11 +1,6 @@
 import { DownOutlined } from "@ant-design/icons";
 import FloatSelected from "../../components/molecules/FloatSelected";
-<<<<<<< HEAD
-import {useTranslation} from 'react-i18next';
-
-=======
 import { useTranslation } from 'react-i18next';
->>>>>>> 628e7e7061dadd9faea6bbbd314ee69e69ea7c93
 
 const ColumnsNovedades =()=> {
   const { t} = useTranslation();
@@ -335,13 +330,8 @@ const AjustesSearch=()=> {
     index: "moneda",
     input: (
       <FloatSelected
-<<<<<<< HEAD
-
-        label="Moneda"
-=======
         placeholder={t("gestionaprobaciones.tab1.search.input1")}
         label={t("gestionaprobaciones.tab1.search.input1")}
->>>>>>> 628e7e7061dadd9faea6bbbd314ee69e69ea7c93
         options={[
           { title: "mon 1", value: "1", disabled: false },
           { title: "mon 2", value: "2", disabled: false },
@@ -354,13 +344,8 @@ const AjustesSearch=()=> {
     index: "conceptoAjuste",
     input: (
       <FloatSelected
-<<<<<<< HEAD
-
-        label="Concepto de ajuste"
-=======
         placeholder={t("gestionaprobaciones.tab1.search.input2")}
         label={t("gestionaprobaciones.tab1.search.input2")}
->>>>>>> 628e7e7061dadd9faea6bbbd314ee69e69ea7c93
         options={[
           { title: "marca 1", value: 1, disabled: false },
           { title: "marca 2", value: 2, disabled: false },
@@ -373,13 +358,8 @@ const AjustesSearch=()=> {
     index: "comprobante",
     input: (
       <FloatSelected
-<<<<<<< HEAD
-
-        label="Comprobante"
-=======
         placeholder={t("gestionaprobaciones.tab1.search.input3")}
         label={t("gestionaprobaciones.tab1.search.input3")}
->>>>>>> 628e7e7061dadd9faea6bbbd314ee69e69ea7c93
         options={[
           { title: "transaccion 1", value: 1, disabled: false },
           { title: "transaccion 2", value: 2, disabled: false },
@@ -392,13 +372,8 @@ const AjustesSearch=()=> {
     index: "novedadesUrgente",
     input: (
       <FloatSelected
-<<<<<<< HEAD
-
-        label="Novedades urgente"
-=======
         placeholder={t("gestionaprobaciones.tab1.search.input4")}
         label={t("gestionaprobaciones.tab1.search.input4")}
->>>>>>> 628e7e7061dadd9faea6bbbd314ee69e69ea7c93
         options={[
           { title: "sucu 1", value: 1, disabled: false },
           { title: "sucu 2", value: 2, disabled: false },
@@ -413,15 +388,8 @@ const AjustesSearch=()=> {
 export {
   dataAjustes,
   dataNovedades,
-<<<<<<< HEAD
-  columnsAjustes,
-  columnsNovedades,
-  NovedadesSearch,
-  ajustesSearch,
-=======
   ColumnsAjustes,
   ColumnsNovedades,
   NovedadesSearch,
   AjustesSearch,
->>>>>>> 628e7e7061dadd9faea6bbbd314ee69e69ea7c93
 };

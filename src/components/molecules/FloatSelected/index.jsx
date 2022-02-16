@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import "./index.less";
 
-const FloatSelected = ({options,showSearch, outline, width, mode, ...props}) => {
+const FloatSelected = ({options,showSearch, outline, secondaryColor, width, mode, ...props}) => {
   const [focus, setFocus] = useState(false);
   let { label, value, placeholder, type,disabled, required} = props;
 
@@ -18,12 +18,16 @@ const FloatSelected = ({options,showSearch, outline, width, mode, ...props}) => 
 
   const selectOutline = outline? 'select-outline' : 'select-bottom'
 
+  const secondary = secondaryColor? 'secondary' : ''
+
+  const [borderColor, setBorderColor] = useState("")
+
   return (
     <div
-      className={`float-label ${selectOutline}`}
+      className={`float-label ${selectOutline} ${secondary}`}
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
-    > 
+    >
                               {/* Modos disponibles : "tags" */}
       <Select suffixIcon={props.suffix} mode={mode} maxTagCount='responsive' style={{width: width }} onChange={props.onChange} disabled={disabled} showSearch={props.showSearch}
       // className={ !outline? "select-bottom" : '' }
