@@ -146,7 +146,7 @@
         "column4":"Edit"
       },
     "new":{ 
-        "title1":"Principal data",
+        "title1":"Main data",
         "title2":"Home",
         "outline":{
           "codigo": {
@@ -157,7 +157,7 @@
             "label": "Description"
           },
           "calle": {
-            "label": "street*",
+            "label": "Street*",
             "error": "Submit street"
           },
           "numero": {
@@ -204,11 +204,11 @@
           "label": "Description"
         },
         "calle": {
-          "label": "street*",
+          "label": "Street*",
           "error": "Submit street"
         },
         "numero": {
-          "label": "number*",
+          "label": "Number*",
           "error": "Submit number"
         },
         "piso": {
@@ -218,8 +218,8 @@
           "label": "Depto"
         }, 
         "localidad": {
-          "label": "Localidad*",
-          "error": "Submit localidad"
+          "label": "Location*",
+          "error": "Submit location"
         },
         "provincia": {
           "label": "Province*",
