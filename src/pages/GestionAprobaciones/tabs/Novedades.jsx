@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import Meta from "antd/lib/card/Meta";
 import { AutoComplete, Card } from "antd";
+<<<<<<< HEAD
+import { dataNovedades, columnsNovedades, NovedadesSearch } from "../mock";
+=======
 import { dataNovedades, ColumnsNovedades, NovedadesSearch } from "../mock";
+>>>>>>> 628e7e7061dadd9faea6bbbd314ee69e69ea7c93
 import Icon from "@ant-design/icons";
 import { Notification } from "../../../assets/svg/icons/notification";
 import Table from "../../../components/organisms/Table";

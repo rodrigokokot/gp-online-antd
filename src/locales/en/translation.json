@@ -8,16 +8,238 @@
       "label": "password",
       "error": "You must enter a password"
     },
-    "rememberme": "Remember me",
+    "rememberme": "Rembember me",
     "btnLogin": "Login",
     "errorLogin": {
-      "title": "Incorrect data entered, please try again.",
-      "description": "If you forgot your password, please contact our computer security team to help you."
+      "title": "Credentials are wrong. Try again",
+      "description": "If your forgor your credentials, communicate with the security team to proceed"
     }
+  }, 
+  "searchform":{
+    "searchbutton":"Search",
+    "resetbutton":"Reset",
+    "searchcollapse":"Collapse search",
+    "searchdeploy":"Refine search"
   },
-    "title": "Welcome to react using react-i18next",
-    "description": {
-      "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
-      "part2": "Switch language between english and german using buttons above."
+  "table":{
+    "rowspage":"Rows per page",
+    "rowseparator":"of",
+    "selectall":"All"
+  },
+  "gestionaprobaciones": {
+    "tab1":{
+      "tab1":"Novelties to confirm",
+      "search":{
+        "searchtitle":"Approval search",
+        "input1":"Emmiter",
+        "input2":"Brand",
+        "input3":"Transaction",
+        "input4":"Branch",
+        "input5":"Product",
+        "input6":"Novelties"
+      },
+      "table":{
+        "column1":"ID",
+        "column2":"Novelty tipe",
+        "column3":"Date",
+        "column4":"User",
+        "column5":"Commentary",
+        "column6":"Account",
+        "column7":"Brand",
+        "column8":"Product",
+        "column9":"Branch",
+        "column10":"Client"
+      },
+      "deploymentconfirmation":{
+        "title1":"Información de la novedad",
+        "text1":{
+          "greytext1":"Transaction ID",
+          "greytext2":"Start User",
+          "greytext3":"End User",
+          "greytext4":"Transaction type",
+          "greytext5":"Start date",
+          "greytext6":"End date",
+          "greytext7":"Transaction date",
+          "greytext8": "Commentary"
+        },
+        "title2":"Operation date",
+        "text2":{
+          "greytext1":"Emmiter",
+          "greytext2":"Document",
+          "greytext3":"Brand",
+          "greytext4":"Transaction data",
+          "greytext5":"Brand",
+          "greytext6":"Client",
+          "greytext7":"Account",
+          "greytext8":"Product"  
+        },
+        "meta":{
+          "title":"Tenés 25 pedidos de aprobación",
+          "description":"Deploy every row to confirm"
+        },
+        "button":{
+          "confirm":"Apply confirm",
+          "cancel":"Cancel confirmation",
+          "modal":{
+            "title":"Are you sure you want to apply this confirmation?",
+            "confirm":"Apply confirmation",
+            "cancel":"Cancel"
+          }
+        }
+      }
+    }, 
+    "tab2":{
+      "tab2":"Adjustments to confirm",
+      "search":{
+        "searchtitle":"Adjustments search",
+        "input1":"Currency",
+        "input2":"Adjustment concept",
+        "input3":"Receipt",
+        "input4":"Urgent novelties" 
+      },
+      "table":{
+        "column1":"Brand",
+        "column2":"Emmiter",
+        "column3":"Receipt",
+        "column4":"Account",
+        "column5":"Concept",
+        "column6":"Import",
+        "column7":"Fees",
+        "column8":"Status",
+        "column9":"Confirmation",
+        "column10":"Proccess Date"
+      },
+      "ajustes":{
+        "title1":"Account Information",
+        "text1":{
+          "greytext1":"Account Number",
+          "greytext2":"Org. Account Number",
+          "greytext3":"Discharge Date",
+          "greytext4":"Brand",
+          "greytext5":"Emmiter",
+          "greytext6":"Branch" 
+        },
+        "title2":"Headline Information",
+        "text2":{
+          "greytext1":"Document",
+          "greytext2":"Last name",
+          "greytext3":"First name" 
+        }
+      },
+      "button":"Apply Confirmation"
+    } 
+  },
+  "gestionsucursales": {
+    "button":"New Branch",
+     "search":{
+        "searchtitle":"Branch Search",
+        "input1":"Description",
+        "input2":"Code",
+        "input3":"Zip code",
+        "input4":"Province",
+        "input5":"Status" 
+      },
+      "table":{
+        "column1":"Code",
+        "column2":"Description",
+        "column3":"Status",
+        "column4":"Edit"
+      },
+    "new":{ 
+        "title1":"Principal data",
+        "title2":"Home",
+        "outline":{
+          "codigo": {
+            "label": "Code*",
+            "error": "Submit Code"
+          },
+          "descripcion": {
+            "label": "Description"
+          },
+          "calle": {
+            "label": "street*",
+            "error": "Submit street"
+          },
+          "numero": {
+            "label": "number*",
+            "error": "Submit number"
+          },
+          "piso": {
+            "label": "Floor"
+          },
+          "depto": {
+            "label": "Department"
+          },
+          "cp": {
+            "label": "Cp*",
+            "error": "Submit Zip code"
+          },
+          "localidad": {
+            "label": "Localidad*",
+            "error": "Submit locality"
+          },
+          "provincia": {
+            "label": "Province*",
+            "error": "Submit Province"
+          },
+          "barrio": {
+            "label": "Neighboor" 
+          } ,
+          "telefono": {
+            "label": "Phone number",
+            "error": "Submit phone number"
+          }
+        },
+        "edit":{
+          "save":"Create branch",
+          "confirm":"Create this branch?",
+          "btnconfirm":"Yes, create"
+        } 
+    }, 
+    "edit":{
+      "title1":"Principal data",
+      "title2":"Home",
+      "outline":{ 
+        "descripcion": {
+          "label": "Description"
+        },
+        "calle": {
+          "label": "street*",
+          "error": "Submit street"
+        },
+        "numero": {
+          "label": "number*",
+          "error": "Submit number"
+        },
+        "piso": {
+          "label": "Piso"
+        },
+        "depto": {
+          "label": "Depto"
+        }, 
+        "localidad": {
+          "label": "Localidad*",
+          "error": "Submit localidad"
+        },
+        "provincia": {
+          "label": "Province*",
+          "error": "Submit Province"
+        }, 
+        "telefono": {
+          "label": "Phone number",
+          "error": "Submit phone number"
+        }
+      },
+      "estado":{
+        "error":"Submit a state",
+        "value1":"Active",
+        "value2":"Inactive"
+      },
+      "edit":{
+        "save":"Save Changes",
+        "confirm":"Are you sure you want to apply this changes to this branch?",
+        "btnconfirm":"Yes, save changes"
+      } 
     }
+  }
 }
