@@ -397,5 +397,82 @@
         } 
       } 
       
+    },
+  "gestionperfiles":{ 
+    "button":"Nuevo Perfil",
+    "search":{
+      "searchtitle":"Búsqueda de Perfiles",
+      "input1":"Tipo de Perfil",
+      "input2":"Nombre",
+      "input3":"Apellido",
+      "input4":"N° de documento"  
+    },
+    "table":{
+      "column1":"Tipo de Perfil",
+      "column2":"Editar"
+    }, 
+    "new":{ 
+      "title1":"Datos Principales",
+      "title2":"Tipos de operaciones",
+      "outline":{
+        "perfil": {
+          "label": "Nombre del Nuevo perfil*",
+          "error": "Ingrese nombre"
+        },
+        "descripcion": {
+          "label": "Descripción del perfil*",
+          "error": "Ingrese descripción"
+        } 
+      },
+      "table":{
+        "column1":"Nombre",
+        "column2":"Descripción"
+      },
+      "edit":{
+        "save":"Crear sucursal",
+        "confirm":"¿Crear esta sucursal?",
+        "btnconfirm":"Si, crear"
+      } 
+    },
+    "edit":{ 
+      "tab1":{
+        "title1":"Perfil",
+        "title2":"Tipos de operaciones",
+        "outline":{
+          "perfil": {
+            "label": "Nombre del Nuevo perfil*",
+            "error": "Ingrese nombre"
+          },
+          "descripcion": {
+            "label": "Descripción del perfil*",
+            "error": "Ingrese descripción"
+          } 
+        },
+        "table":{
+          "column1":"Nombre",
+          "column2":"Descripción"
+        }
+      },
+      "tab2":{
+        "tab2":"Contraseña",
+        "password":{
+          "title":"Contraseña",
+          "error1":"Ingrese contraseña para generar cambios",
+          "label":"Ingrese Contraseña*",
+          "error2":"Debe ingresar al menos 8 caracteres",
+          "error3":"Debe ingresar al menos un número"
+        }   
+      },
+      "edit1":{
+          "save":"Editar Perfil",
+          "confirm":"¿Estas seguro de editar este perfil?" ,
+          "btnconfirm":"Si, editar"
+      },
+      "edit2":{
+          "save":"Blanquear contraseña" ,
+          "confirm":"¿Estas seguro de blanquear la contraseña?" ,
+          "btnconfirm":"Si, guardar"
+      } 
     }
+  }
 }

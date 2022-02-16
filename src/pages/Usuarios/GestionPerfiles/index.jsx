@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 import {
   GestionPerfilesSearchMock,
   dataGestionPerfiles,
-  columnsGestionPerfiles,
+  ColumnsGestionPerfiles,
 } from "./mock";
+import { useTranslation } from 'react-i18next';
 
 function GestionPerfiles() {
+  const { t} = useTranslation();
   const [data, setData] = useState("");
 
   function handleCallback(values) {
@@ -23,18 +25,18 @@ function GestionPerfiles() {
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/usuarios/gestionDePerfiles/crearPerfil">
           <Button type="primary" size="small">
-            Nuevo Perfil
+             {t("gestionperfiles.button")}
           </Button>
         </Link>
       </Col>
       <SearchForm
-        array={GestionPerfilesSearchMock}
+        array={GestionPerfilesSearchMock()}
         parentCallback={handleCallback}
-        title="Busqueda de Perfiles"
+        title={t("gestionperfiles.search.searchtitle")}
         span={6}
       />
       <br />
-      <Table data={data} columns={columnsGestionPerfiles} />
+      <Table data={data} columns={ColumnsGestionPerfiles()} />
     </>
   );
 }

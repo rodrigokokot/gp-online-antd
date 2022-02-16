@@ -1,35 +1,42 @@
 import FloatInput from '../../../components/molecules/FloatInput/index'
 import {Link} from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
 
 
 /////////MOCK PARA LOS INPUTS DEL SEARCH////////
-const GestionPerfilesSearchMock = [
+const GestionPerfilesSearchMock =()=>{
+    const { t} = useTranslation();
+    return( [
     {
         name: 'Tipo de Perfil',
         index: 'tipo',
-        input: <FloatInput placeholder='Tipo de Perfil' label='Tipo de Perfil' />
+        input: <FloatInput placeholder={t("gestionperfiles.search.input1")} label={t("gestionperfiles.search.input1")} />
     },
     {
-        name: 'Nombre',
         index: 'nombre',
-        input: <FloatInput placeholder='Nombre' label='Nombre' />
-    },
-    {
-        name: 'Apellido',
+        name: 'Nombre',
+        input: <FloatInput placeholder={t("gestionperfiles.search.input2")} label={t("gestionperfiles.search.input2")} />,
+      },
+   
+      {
         index: 'apellido',
-        input: <FloatInput placeholder='Apellido' label='Apellido' />
-    },
-    {
-        name: 'N° de documento',
-        index: 'doc',
-        input: <FloatInput placeholder='N° de documento' label='N° de documento' />
-    }
-];
+        name: 'Apellido',
+        input: <FloatInput placeholder={t("gestionperfiles.search.input3")} label={t("gestionperfiles.search.input3")}/>,
+      },
+      {
+        index: 'ndocumento',
+        name: 'N de documento',
+        input: <FloatInput placeholder={t("gestionperfiles.search.input4")} label={t("gestionperfiles.search.input4")} />,
+      },
+])
+}
 
 ////////MOCK PARA LAS COLUMNAS DE LA TABLA/////
-const columnsGestionPerfiles =[
+const ColumnsGestionPerfiles =()=>{
+    const { t} = useTranslation();
+    return([
     {
-        name: 'Tipo de Perfil',
+        name: (t("gestionperfiles.table.column1")),
         selector: (row) => row.tipo,
         sortable: true
     },
@@ -37,10 +44,13 @@ const columnsGestionPerfiles =[
         name: '',
         button: true,
         cell: row =>(
-            <Link to={`/usuarios/gestionDePerfiles/editarPerfil=${row.id}`} style={{textDecoration:"underline"}} rel="noopener noreferrer" > Editar </Link>
+            <Link to={`/usuarios/gestionDePerfiles/editarPerfil=${row.id}`} style={{textDecoration:"underline"}} rel="noopener noreferrer" >
+                {t("gestionperfiles.table.column2")}
+            </Link>
         )
     }
-]
+])
+}
 
 ////////MOCK PARA LA DATA DE LA TABLA
 const dataGestionPerfiles = [
@@ -61,4 +71,4 @@ const dataGestionPerfiles = [
 ]
 
 
-export {GestionPerfilesSearchMock, columnsGestionPerfiles, dataGestionPerfiles}
+export {GestionPerfilesSearchMock, ColumnsGestionPerfiles, dataGestionPerfiles}
