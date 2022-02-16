@@ -451,5 +451,48 @@
       }
 
     }
+  },
+
+  "ctf":{
+    "search":{
+      "searchtitle":"CTF files search",
+      "input1":"File ID",
+      "input2":"ICA Number",
+      "input3":"Last Name",
+      "input4":"First Name",
+      "input5":"Document Number",
+      "input6":"By dates"
+    },
+    "table":{
+        "column1":"File ID",
+        "column2":"CTF NUMBER",
+        "column3":"Intake ID",
+        "column4":"Autorization ID",
+        "column5":"CTF Origin ID",
+        "column6":"Processed",
+        "column7":"See details"
+    },
+    "view":{
+      "table":{
+        "column1":"Transaction Code",
+        "column2":"Transaction Code Qualifier",
+        "column3":"Transaction component Sequence number",
+        "column4":"Account Number",
+        "column5":"Account Number Extension",
+        "column6":"Floor Limit indicator",
+        "column7":"CRB/Exception File Indicator",
+        "column8":"See Details"
+      },
+      "details":{
+        "title1":"001102",
+        "table":{
+          "column1":"Content",
+          "column2":"Start",
+          "column3":"Length",
+          "column4":"End",
+          "column5":"Field Alias"
+        }
+      }
+    }
   }
 }
