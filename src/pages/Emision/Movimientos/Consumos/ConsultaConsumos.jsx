@@ -1,4 +1,4 @@
-import { Card, Tabs } from "antd";
+import { Tabs } from "antd";
 import React from "react";
 import Export from "../../../../components/organisms/Export";
 import ConsultasAutorizacion from "../../../../components/tabs/EmisionConsumos/ConsultasAutorizacion";

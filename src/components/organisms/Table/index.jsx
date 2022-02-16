@@ -3,8 +3,10 @@ import DataTable from "react-data-table-component";
 import "./index.less";
 import PropTypes from 'prop-types'
 import ResultSearch from "../../molecules/ResultSearch";
+import { useTranslation } from "react-i18next";
 
-const Table = ({
+const Table = (
+  {
   className,
   component: Component,
   columns,
@@ -12,11 +14,12 @@ const Table = ({
   parentCallback,
   ...props
 }) => {
+  const { t } = useTranslation();
   const paginationComponentOptions = {
-    rowsPerPageText: "Filas por página",
-    rangeSeparatorText: "de",
+    rowsPerPageText: (t("table.rowspage")),
+    rangeSeparatorText: (t("table.rowseparator")),
     selectAllRowsItem: true,
-    selectAllRowsItemText: "Todos",
+    selectAllRowsItemText: (t("table.selectall")),
   };
 
   const handleChange = (state) => {

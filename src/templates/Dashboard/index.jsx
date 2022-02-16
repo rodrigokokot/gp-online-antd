@@ -18,7 +18,11 @@ const { Sider, Content } = Layout;
 export default function DashboardTemplate({ component: Component, ...rest }) {
   const [collapsed, setCollapsed] = useState(true);
   const icons = require(`@ant-design/icons`);
-  const [itemSelected, setItemSelected] = useState(routes[0]);
+  const key = localStorage.getItem("option");
+  // console.log(key);
+  const [itemSelected, setItemSelected] = useState(
+    key ? JSON.parse(key) : routes[0]
+  );
 
   return (
     <>
@@ -48,7 +52,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               },
             })}
           </div>
-          <Menu mode="inline" className="menu-scroll">
+          <Menu mode="inline" selectedKeys={itemSelected.key}>
             {routes.map((route, index) => {
               const Component = icons[route.icon];
               return route.subItems !== undefined ? (
@@ -71,6 +75,13 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                                 to={subItem.path}
                                 onClick={() => {
                                   setItemSelected(subItem);
+                                  localStorage.setItem(
+                                    "option",
+                                    JSON.stringify({
+                                      ...subItem,
+                                      key: `${index}.${index2}.${index3}`,
+                                    })
+                                  );
                                   setCollapsed(true);
                                 }}
                               >
@@ -88,6 +99,13 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                           to={item.path}
                           onClick={() => {
                             setItemSelected(item);
+                            localStorage.setItem(
+                              "option",
+                              JSON.stringify({
+                                ...item,
+                                key: `${index}.${index2}`,
+                              })
+                            );
                             setCollapsed(true);
                           }}
                         >
@@ -98,32 +116,28 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                   })}
                 </Menu.SubMenu>
               ) : (
-                <Menu.Item icon={<Component />} key={`${index}`}>
+                <Menu.Item
+                  icon={<Component />}
+                  key={`${index}`}
+                  className={route.page ? "menu-help" : null}
+                >
                   <Link
                     to={route.path}
                     onClick={() => {
                       setItemSelected(route);
+                      localStorage.setItem(
+                        "option",
+                        JSON.stringify({ ...route, key: `${index}` })
+                      );
                       setCollapsed(true);
                     }}
                   >
+                    {console.log(index)}
                     <Typography.Text>{route.name}</Typography.Text>
                   </Link>
                 </Menu.Item>
               );
             })}
-          </Menu>
-          <Menu mode="inline" className="menu-help">
-            <Menu.Item icon={<QuestionCircleOutlined />} key={"ayuda"}>
-              <Link
-                to="/ayuda"
-                onClick={() => {
-                  setItemSelected("/ayuda");
-                  setCollapsed(true);
-                }}
-              >
-                Ayuda
-              </Link>
-            </Menu.Item>
           </Menu>
         </Sider>
         <Layout className="site-layout" style={{ marginLeft: "80px" }}>
@@ -136,7 +150,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
             className=""
             style={{
               margin: "0px 16px 24px 16px",
-              padding:  "0px 24px 24px 24px",
+              padding: "0px 24px 24px 24px",
               minHeight: 280,
               backgroundColor: "#E5E5E5",
             }}

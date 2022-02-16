@@ -44,7 +44,7 @@ const columnsTiposDeCargos = [
     button: true,
     cell: (row) => (
       <Link
-        to={`/emision/cargosAjustes/tiposDeCargos/editar/${row.codigo}`}
+        to={`/emision/cargosAjustes/tiposDeCargos/editarTipoDeCargo=${row.codigo}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >

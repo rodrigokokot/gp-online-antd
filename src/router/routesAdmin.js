@@ -148,12 +148,12 @@ const routes = [
         path: "/adquirencia",
         icon: "PieChartOutlined",
     },
-    // {
-    //     path: "/ayuda",
-    //     name: "Ayuda",
-    //     icon: 'QuestionCircleOutlined',
-    //     page: 'Ayuda'
-    // },
+    {
+        path: "/ayuda",
+        name: "Ayuda",
+        icon: 'QuestionCircleOutlined',
+        page: 'Ayuda'
+    },
 
 ];
 

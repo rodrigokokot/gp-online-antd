@@ -22,6 +22,7 @@ function MovimientosCTF() {
         title="Búsqueda de archivos CTF"
         parentCallback={handleCallback}
         array={MovimientosCTFSearch}
+        span={6}
       />
       <br></br>
       <Table data={data} columns={columnsMovimientosCTF}></Table>

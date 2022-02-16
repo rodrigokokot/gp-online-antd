@@ -8,7 +8,7 @@ import {
   columnsGestionAdicionales,
   GestionAdicionalesSearchArray,
 } from "./mock";
-export default function GestionAdicionalesSearch() {
+const GestionAdicionalesSearch = () => {
   const [data, setData] = useState("");
 
   function handleCallback(values) {
@@ -18,9 +18,9 @@ export default function GestionAdicionalesSearch() {
   }
 
   return (
-    <div>
+    <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
-        <Link to="/emision/socios/adicionales/nueva/new">
+        <Link to="/emision/socios/adicionales/crearSocioAdicional">
           <Button type="primary" size="small">
             Nuevo Adicional
           </Button>
@@ -36,6 +36,7 @@ export default function GestionAdicionalesSearch() {
         columns={dataGestionAdicionales}
         data={columnsGestionAdicionales}
       />
-    </div>
+    </>
   );
-}
+};
+export default GestionAdicionalesSearch

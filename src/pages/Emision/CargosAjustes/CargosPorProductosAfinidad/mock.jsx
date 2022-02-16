@@ -148,7 +148,7 @@ export const columnsCargosProductosAfinidad = [
         name: "",
         button: true,
         cell: (row) =>(<Link
-            to={`/emision/cargosAjustes/cargosPorProductosAfinidad/editar/${row.producto}`}
+            to={`/emision/cargosAjustes/cargosPorProductosAfinidad/editarCargoPorProductoYAfinidad=${row.producto}`}
             style={{ textDecoration: "underline" }}
             rel="noopener noreferrer"
           >

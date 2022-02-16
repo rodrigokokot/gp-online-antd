@@ -21,7 +21,7 @@ export default function CargosPorProductosAfinidadSearch() {
     <div>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         {/* width ver tamaño en Mocks*/}
-        <Link to="/emision/cargosAjustes/cargosPorProductosAfinidad/nueva">
+        <Link to="/emision/cargosAjustes/cargosPorProductosAfinidad/crearCargoPorProductoYAfinidad">
           <Button type="primary" size="small">
             Nuevo Cargo
           </Button>

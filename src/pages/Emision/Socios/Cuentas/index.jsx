@@ -1,12 +1,16 @@
-import React,{useState} from 'react';
-import SearchForm from '../../../../components/organisms/SearchForm/index'
-import Table from '../../../../components/organisms/Table/index'
-import {Link} from 'react-router-dom'
-import {GestionCuentaSearch, dataGestionCuenta, columnsGestionCuenta} from './mock'
-import {Col, Button} from 'antd'
+import React, { useState } from "react";
+import SearchForm from "../../../../components/organisms/SearchForm/index";
+import Table from "../../../../components/organisms/Table/index";
+import { Link } from "react-router-dom";
+import {
+  GestionCuentaSearch,
+  dataGestionCuenta,
+  columnsGestionCuenta,
+} from "./mock";
+import { Col, Button } from "antd";
 
 /* hacer que router tengo la dir de app.js  */
-const GestionCuentas=()=> {    
+const GestionCuentas = () => {
   const [data, setData] = useState("");
 
   const handleCallback = (values) => {
@@ -38,15 +42,13 @@ const GestionCuentas=()=> {
   
   return(
   <>
-          <Col style={{ textAlign: "right", marginBottom: "25px"}}>
-            {/* width ver tamaño en Mocks*/}
+          <Col style={{ textAlign: "right", marginBottom: "25px"}}> 
             <Link to="/emision/socios/cuentas/gestionDeCuentas/nueva"> 
             <Button type="primary" size="small">
               Nueva Cuenta
             </Button>
             </Link>
-          </Col >
-          {/* width del searchfrom ver tamaño en Mocks*/}
+          </Col > 
           <SearchForm span={4} array={GestionCuentaSearch} parentCallback={handleCallback} title="Busqueda de gestión de cuentas" />
           <br></br>
           <Table data={data} columns={columnsGestionCuenta} expandible={false} editable={true}/>

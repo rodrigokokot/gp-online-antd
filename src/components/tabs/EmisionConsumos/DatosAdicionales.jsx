@@ -1,37 +1,29 @@
-import { Card } from "antd";
+import { Card,Row,Col } from "antd";
 import React from "react";
 
 const DatosAdicionales = () => {
   return (
-    <Card> 
-      <div
-        style={{
-          flexWrap: "wrap",
-          display: "flex",
-          justifyContent: "left",
-          gap: "10% 10%",
-          flexDirection: "row",
-        }}
-      >
-        <h3>
-          Fecha IPM:<h5>Consumo</h5>
-        </h3>
-        <h3>
-          Producto:<h5>826178</h5>
-        </h3>
-        <h3>
-          MCC:<h5>-</h5>
-        </h3>
-        <h3>
-          ICA Emisor <h5>%</h5>
-        </h3>
-        <h3>
-          ICA Adquiriente:<h5>826178</h5>
-        </h3>
-        <h3>
-          Tasa conversión:<h5>-</h5>
-        </h3>
-      </div> 
+    <Card>  
+      <Row gutter={[24, 24]}>
+        <Col span={6}>
+            <h4 className="grey-text">Fecha IPM </h4><h1 className="bold-text">{'22/07/21 11:57:29'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h4 className="grey-text"> Producto</h4><h1 className="bold-text">{'MCC'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h4 className="grey-text"> MCC</h4><h1 className="bold-text">{'-'}</h1> 
+	      </Col> 
+        <Col span={6}>
+            <h4 className="grey-text"> ICA Emisor</h4><h1 className="bold-text">{'-'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h4 className="grey-text">ICA Adquiriente </h4><h1 className="bold-text">{'-'}</h1> 
+	      </Col>
+        <Col span={6}>
+            <h4 className="grey-text"> Tasa conversión</h4><h1 className="bold-text">{'-'}</h1> 
+	      </Col>   
+      </Row>
     </Card>
   );
 };

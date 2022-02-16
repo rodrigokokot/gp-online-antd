@@ -1,5 +1,5 @@
-import React from "react";
-import { Card, Row, Col, Space } from "antd";
+import React, { useState } from "react";
+import { Card, Row, Col } from "antd";
 import Table from "../../../../components/organisms/Table";
 import {
   columnsConsultaLiquidaciones,
@@ -9,9 +9,13 @@ import {
 import SearchForm from "../../../../components/organisms/SearchForm";
 
 export default function ConsultaLiquidacionesSearch() {
-  const handleCallback = (values) => {
-    console.log(values);
-  };
+  const [data, setData] = useState("");
+
+  function handleCallback(values) {
+    //lamada al servicio axios.post(values)
+    //setData(axios.response)
+    setData(dataConsultaLiquidaciones);
+  }
 
   const SearchCards = () => {
     return (
@@ -146,7 +150,7 @@ export default function ConsultaLiquidacionesSearch() {
       <br />
       <Table
         columns={columnsConsultaLiquidaciones}
-        data={dataConsultaLiquidaciones}
+        data={data}
         expandible={false}
         editable={false}
       />

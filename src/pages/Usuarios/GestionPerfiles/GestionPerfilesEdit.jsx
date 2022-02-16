@@ -2,7 +2,7 @@ import React from "react";
 import Edit from "../../../components/organisms/Edit/index";
 import Table from "../../../components/organisms/Table/index";
 import FloatInput from "../../../components/molecules/FloatInput";
-import { Card, Row, Tabs, Col, Form, Typography } from "antd";
+import { Card, Row, Tabs, Col, Form, Typography,Input } from "antd";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 
 function GestionPerfilesEdit() {
@@ -76,49 +76,32 @@ function GestionPerfilesEdit() {
   const FormularioContraseña = () => {
     return (
       <>
-        <Card style={{ borderRadius: "16px", marginBottom: "12px" }}>
-          <Row>
-            <Col>
-              <Typography.Title level={3}  style={{ color: '#ab218e' }}>Contraseña</Typography.Title>
-            </Col>
-          </Row>
-
-          <Row>
-            <Col span={8}>
-              <Form.Item
-                name="password"
-                rules={[
-                  { required: true, message: "Ingresá tu contraseña para generar cambios" },
-                  {
-                    validator: (_, value1) =>
-                      value1 && value1.length >= 8
-                        ? Promise.resolve()
-                        : Promise.reject(
-                            new Error("Debe ingresar al menos 8 caracteres")
-                          ),
-                  },
-                  {
-                    validator: (_, value2) =>
-                      value2 && value2.match(/\d+/g)
-                        ? Promise.resolve()
-                        : Promise.reject(
-                            new Error("Debe ingresar al menos un número")
-                          ),
-                  },
-                ]}
-              >
-                <FloatInput
-                  outline
-                  label="Contraseña nueva*"
-                  placeholder="Ingrese Contraseña*"
-                  iconRender={(visible) =>
-                    visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
-                  }
-                />
-              </Form.Item>
-            </Col>
-          </Row>
-        </Card>
+        <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
+        <Typography.Title level={3}  style={{ color: '#ab218e' }}>Contraseña</Typography.Title> 
+        <Col span={6}>
+          <Form.Item name="password" rules = {[
+              { required: true, message: 'Ingrese contraseña para generar cambios' },
+              {
+                validator: (_, value1) =>
+                  value1 && value1.length >= 8
+                    ? Promise.resolve()
+                    : value1.length === 0 ? Promise.reject(new Error('')) : Promise.reject(new Error('Debe ingresar al menos 8 caracteres')),
+              },
+              {
+                validator: (_, value2) =>
+                  value2 && value2.match(/\d+/g)
+                    ? Promise.resolve()
+                    : value2.length === 0 ? Promise.reject(new Error('')) : Promise.reject(new Error('Debe ingresar al menos un número')),
+              },
+            ]}
+          >
+             <Input.Password 
+             style={ { borderRadius: '0.5em', boxShadow: '#ab218e'} }   
+              placeholder="Ingrese Contraseña" iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+            ></Input.Password>  
+          </Form.Item>
+        </Col>
+      </Card>
       </>
     );
   };
