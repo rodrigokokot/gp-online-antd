@@ -474,5 +474,101 @@
           "btnconfirm":"Si, guardar"
       } 
     }
+  },
+  "ipm":{
+    "search":{
+      "searchtitle":"Búsqueda de archivos IPM",
+      "input1":"ID File",
+      "input2":"N° de ICA",
+      "input3":"Apellido",
+      "input4":"Nombre",
+      "input5":"N° de Documento",
+      "input6":"Por Fechas"
+    },
+    "table":{
+        "column1":"ID File ",
+        "column2":"N° ICA",
+        "column3":"Tipo",
+        "column4":"Fecha",
+        "column5":"Registros",
+        "column6":"Reg OK",
+        "column7":"Reg Error ",
+        "column8":"ID Proceso ",
+        "column9":"Nombre Arch",
+        "column10":"ver detalle"
+    },
+    "view":{
+      "title1":"File ID",
+      "subtitle1":"Fecha de proceso",
+      "subtitle2":"Tipo de archivo",
+      "card1":{
+        "subtitle1":"Estado del registro",
+        "enabled":"Urgente",
+        "disabled":"Normal"
+      },
+      "table":{
+        "column1":"ID Registro",
+        "column2":"Estado",
+        "column3":"Movimiento",
+        "column4":"Processing code",
+        "column5":"Primary account number",
+        "column6":"Account Transaction",
+        "column7":"Currency code transaction",
+        "column8":"Observaciones",
+        "column9":"ver detalle Elements"
+      },
+      "details":{
+        "title1":"File ID ",
+        "title2":"IPM Detalle de registro ",
+        "subtitle1":"Fechas del proceso",
+        "table":{
+          "column1":"Campo / PDS",
+          "column2":"Valor"
+        }
+      }
+
+    }
+  },
+
+  "ctf":{
+    "search":{
+      "searchtitle":"Búsqueda de archivos CTF",
+      "input1":"ID File",
+      "input2":"N° de ICA",
+      "input3":"Apellido",
+      "input4":"Nombre",
+      "input5":"N° de Documento",
+      "input6":"Por Fechas"
+    },
+    "table":{
+        "column1":"ID Identidad",
+        "column2":"N° CTF",
+        "column3":"ID Consumo",
+        "column4":"ID Autorización ",
+        "column5":"ID CTF Origen ",
+        "column6":"Procesado",
+        "column7":"ver detalle"
+    },
+    "view":{
+      "table":{
+        "column1":"Transaction Code",
+        "column2":"Transaction Code Qualifier",
+        "column3":"Transaction component Sequence number",
+        "column4":"Account Number",
+        "column5":"Account Number Extension",
+        "column6":"Floor Limit indicator",
+        "column7":"CRB/Exception File Indicator",
+        "column8":"ver detalle"
+      },
+      "details":{ 
+        "table":{
+          "column1":"Contenido",
+          "column2":"Start",
+          "column3":"Length",
+          "column4":"End",
+          "column5":"Alias_Campo"
+        }
+      }
+    }
   }
 }
