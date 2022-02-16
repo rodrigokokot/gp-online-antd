@@ -1,3 +1,11 @@
+@import '~antd/lib/style/themes/default.less';
+
+// >>> SECONDARY COLOR
+@secondary-color: #ab218e;
+@secondary-color-hover: color(~`colorPalette('@{secondary-color}', 5) `);
+@secondary-color-active: color(~`colorPalette('@{secondary-color}', 7) `);
+@secondary-color-outline: fade(@secondary-color, @outline-fade);
+
 #sidebar .trigger {
     padding: 0 24px;
     font-size: 18px;
@@ -80,7 +88,7 @@ background: #E5E5E5;
 }
 
 .purple-color {
-  color: #ab218e;
+  color: @secondary-color;
 }
 
 .purple-title {
@@ -92,7 +100,7 @@ background: #E5E5E5;
   display: flex;
   align-items: center;
   letter-spacing: -0.02em;
-  color: #ab218e;
+  color: @secondary-color;
 }
 
 .bold-text {
@@ -121,15 +129,15 @@ background: #E5E5E5;
 
 // TABS
 .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
-  color: #ab218e;
+  color: @secondary-color;
 }
 
 .ant-tabs-tab:hover {
-  color: #ab218e;
+  color: @secondary-color;
 }
 
 .ant-tabs-ink-bar {
-  background: #ab218e;
+  background: @secondary-color;
 }
 
 // MODAL
@@ -156,7 +164,7 @@ background: #E5E5E5;
 
 ::-webkit-scrollbar-thumb {
   width: 10px;
-  background-color: #69E2B7;
+  background-color: @primary-color;
   border-radius: 10px;
   z-index: 12;
   border: 4px solid rgba(0, 0, 0, 0);

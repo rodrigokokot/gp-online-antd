@@ -11,38 +11,39 @@ const { RangePicker } = DatePicker;
 const AutorizacionesSearchArray = [
   {
     index: "numeroTarjeta",
-    input: <FloatInput label="N° de tarjeta" placeholder="N° de tarjeta" />,
+    input: <FloatInput secondaryColor label="N° de tarjeta" placeholder="N° de tarjeta" />,
   },
   {
     index: "documento",
-    input: <FloatInput label="N° de documento" placeholder="N° de documento" />,
+    input: <FloatInput secondaryColor label="N° de documento" placeholder="N° de documento" />,
   },
   {
     index: "producto",
-    input: <FloatInput label="Producto" placeholder="Producto" />,
+    input: <FloatInput secondaryColor label="Producto" placeholder="Producto" />,
   },
   {
     index: "cuenta",
-    input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
+    input: <FloatInput secondaryColor label="N° de cuenta" placeholder="N° de cuenta" />,
   },
   {
     index: "adicional",
     input: (
-      <FloatInput label="Cuenta Adicional" placeholder="Cuenta Adicional" />
+      <FloatInput secondaryColor label="Cuenta Adicional" placeholder="Cuenta Adicional" />
     ),
   },
   {
     index: "comercio",
-    input: <FloatInput label="N° de comercio" placeholder="N° de comercio" />,
+    input: <FloatInput secondaryColor label="N° de comercio" placeholder="N° de comercio" />,
   },
   {
     index: "ingreso",
-    input: <FloatInput label="Modo Ingreso" placeholder="Modo Ingreso" />,
+    input: <FloatInput secondaryColor label="Modo Ingreso" placeholder="Modo Ingreso" />,
   },
   {
     index: "ubicacion",
     input: (
       <FloatSelected
+        secondaryColor
         label="Ubicación"
         placeholder="Ubicación"
         options={[
@@ -64,6 +65,7 @@ const AutorizacionesSearchArray = [
     index: "origen",
     input: (
       <FloatSelected
+        secondaryColor
         label="Origen"
         placeholder="Origen"
         options={[
@@ -80,6 +82,7 @@ const AutorizacionesSearchArray = [
     index: "relacionada",
     input: (
       <FloatSelected
+        secondaryColor
         label="Relacionada"
         placeholder="Relacionada"
         options={[
@@ -96,6 +99,7 @@ const AutorizacionesSearchArray = [
     index: "rechazo",
     input: (
       <FloatSelected
+        secondaryColor
         label="Motivo de rechazo"
         placeholder="Motivo de rechazo"
         options={[
@@ -112,6 +116,7 @@ const AutorizacionesSearchArray = [
     index: "estado",
     input: (
       <FloatSelected
+        secondaryColor
         label="Estado"
         placeholder="Estado"
         mode="tags"
@@ -150,6 +155,7 @@ const AutorizacionesSearchArray = [
     index: "cuotas",
     input: (
       <FloatSelected
+        secondaryColor
         placeholder="Cuotas"
         label="Cuotas"
         options={[

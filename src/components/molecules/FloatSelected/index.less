@@ -23,14 +23,31 @@
     margin-left: -4px;
   }
 
-  .select-bottom .ant-select-selector, .select-bottom .ant-select-selector:focus, .select-bottom .ant-select-selector:hover {
+  .select-bottom .ant-select-selector {
     outline: 0!important;
     border-width: 0 0 2px!important;
-    border-color: primary;
+    // border-color: @secondary-color;
     box-shadow: none;
 
   }
 
+  .secondary .ant-select-selector {
+    outline: 0!important;
+    border-width: 0 0 2px!important;
+    border-color: @secondary-color;
+    box-shadow: none;
+
+  }
+
+  .secondary .ant-select-selector:focus, .secondary .ant-select-selector:hover {
+    border-color: @secondary-color!important;
+  }
+
+  .secondary .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    box-shadow: none!important;
+    border-right-width: 0px!important;
+    border-color: @secondary-color;
+  }
   .select-outline .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     border-radius: 6px;
   }

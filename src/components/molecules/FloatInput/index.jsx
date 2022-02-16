@@ -16,6 +16,8 @@ const FloatInput = ({ outline, secondaryColor, disabled, ...props }) => {
 
   const requiredMark = required ? <span className="text-danger">*</span> : null;
 
+  const [borderColor, setBorderColor] = useState("")
+
   const genericClass = {
     outline: 0,
     borderWidth: "0 0 2px",
@@ -28,15 +30,17 @@ const FloatInput = ({ outline, secondaryColor, disabled, ...props }) => {
   };
 
   const secondaryClass = {
-    borderColor: "#ab218e",
+    borderColor: borderColor,
     ...genericClass,
   };
 
   return (
     <div
       className="float-label"
-      onBlur={() => setFocus(false)}
-      onFocus={() => setFocus(true)}
+      onBlur={() => {setFocus(false);  setBorderColor(secondaryColor && !focus? "#ab218e" : "") }}
+      onFocus={() => {setFocus(true); setBorderColor(secondaryColor && !focus? "#ab218e" : "") }}
+      onMouseEnter={() => secondaryColor? setBorderColor("#ab218e") : null }
+      onMouseLeave={() => secondaryColor && !focus? setBorderColor("") : null }
     >
       <Input
         disabled={disabled}
