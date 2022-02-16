@@ -113,7 +113,7 @@ function App() {
           
           {/* Parametria */}
           <DashboardTemplate exact path="/parametria/modificarLimite" component={lazy(() => import('./pages/Parametria/ModificarLimite'))} />
-          <DashboardTemplate exact path="/parametria/modificarLimite/editar:cuenta" component={lazy(() => import('./pages/Parametria/ModificarLimite/ModificarLimite'))} />
+          <DashboardTemplate exact path="/parametria/modificarLimite/editarLimiteDeTarjetaAdicional=:cuenta" component={lazy(() => import('./pages/Parametria/ModificarLimite/ModificarLimite'))} />
           
           <DashboardTemplate exact path="/parametria/tarjetaInstantanea" component={lazy(() => import('./pages/Parametria/TarjetaInstantanea'))} />
           <DashboardTemplate exact path="/parametria/tarjetaInstantanea/nueva" component={lazy(() => import('./pages/Parametria/TarjetaInstantanea/TarjetaInstantaneaNew'))} />

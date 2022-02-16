@@ -14,11 +14,232 @@
       "title": "Los datos ingresados son incorrectos, intenta nuevamente.",
       "description": "Si olvidoste tu contraseña comunicae con el eqiupo de seguridad informaticapara ayudarte."
     }
+  }, 
+  "searchform":{
+    "searchbutton":"Buscar",
+    "resetbutton":"Restablecer",
+    "searchcollapse":"Colapsar búsqueda",
+    "searchdeploy":"Refinar búsqueda"
   },
-    "title": "Bienvenido a react usando react-i18next",
-    "description": {
-      "part1": "Para empezar, edit <1>src/App.js</1> and save to reload.",
-      "part2": "Switch language between english and german using buttons above."
+  "table":{
+    "rowspage":"Filas por página",
+    "rowseparator":"de",
+    "selectall":"Todos"
+  },
+  "gestionaprobaciones": {
+    "tab1":{
+      "tab1":"Novedades por confirmar",
+      "search":{
+        "searchtitle":"Búsqueda de aprobaciones",
+        "input1":"Emisor",
+        "input2":"Marca",
+        "input3":"Transacción",
+        "input4":"Sucursal",
+        "input5":"Producto",
+        "input6":"Novedades"
+      },
+      "table":{
+        "column1":"ID",
+        "column2":"Tipo de novedad",
+        "column3":"Fecha",
+        "column4":"Usuario",
+        "column5":"Comentario",
+        "column6":"Cuenta",
+        "column7":"Marca",
+        "column8":"Producto",
+        "column9":"Sucursal",
+        "column10":"Cliente"
+      },
+      "deploymentconfirmation":{
+        "title1":"Información de la novedad",
+        "text1":{
+          "greytext1":"ID de la transacción",
+          "greytext2":"Usuario de inició",
+          "greytext3":"Usuario de finalizó",
+          "greytext4":"Tipo de transacción",
+          "greytext5":"Fecha de inicio",
+          "greytext6":"Fecha de finalización",
+          "greytext7":"Estado de transacción",
+          "greytext8": "Comentario"
+        },
+        "title2":"Datos de la operación",
+        "text2":{
+          "greytext1":"Emisor",
+          "greytext2":"Documento",
+          "greytext3":"Marca",
+          "greytext4":"Datos de transacción",
+          "greytext5":"Sucursal",
+          "greytext6":"Cliente",
+          "greytext7":"Cuenta",
+          "greytext8":"Producto"  
+        },
+        "meta":{
+          "title":"Tenés 25 pedidos de aprobación",
+          "description":"Desplegá cada fila para poder operar las confirmaciones."
+        },
+        "button":{
+          "confirm":"Aplicar confirmación",
+          "cancel":"Cancelar confirmación",
+          "modal":{
+            "title":"¿Estás seguro que deseas aplicar esta confimación?",
+            "confirm":"Aplicar Confirmación",
+            "cancel":"Cancelar"
+          }
+        }
+      }
+    }, 
+    "tab2":{
+      "tab2":"Ajustes por confirmar",
+      "search":{
+        "searchtitle":"Búsqueda de ajustes",
+        "input1":"Moneda",
+        "input2":"Concepto de ajuste",
+        "input3":"Comprobante",
+        "input4":"Novedades urgente" 
+      },
+      "table":{
+        "column1":"Marca",
+        "column2":"Emisor",
+        "column3":"Comprobante",
+        "column4":"Cuenta",
+        "column5":"Concepto",
+        "column6":"Importe",
+        "column7":"Cuotas",
+        "column8":"Estado",
+        "column9":"Confirmación",
+        "column10":"Fecha de proceso"
+      },
+      "ajustes":{
+        "title1":"Información de la cuenta",
+        "text1":{
+          "greytext1":"N° de cuenta",
+          "greytext2":"Nº de CTA. Original",
+          "greytext3":"Fecha de alta",
+          "greytext4":"Marca",
+          "greytext5":"Emisor",
+          "greytext6":"Sucursal" 
+        },
+        "title2":"Información del titular",
+        "text2":{
+          "greytext1":"Documento",
+          "greytext2":"Apellidos",
+          "greytext3":"Nombres" 
+        }
+      },
+      "button":"Aplicar Confirmación"
+    } 
+  },
+  "gestionsucursales": {
+    "button":"Nueva Sucursal",
+     "search":{
+        "searchtitle":"Búsqueda de Sucursales",
+        "input1":"Descripción",
+        "input2":"Código",
+        "input3":"Código postal",
+        "input4":"Provincia",
+        "input5":"Estado" 
+      },
+      "table":{
+        "column1":"Código",
+        "column2":"Descripción",
+        "column3":"Estado",
+        "column4":"Editar"
+      },
+    "new":{ 
+        "title1":"Datos Principales",
+        "title2":"Domicilio",
+        "outline":{
+          "codigo": {
+            "label": "Codigo*",
+            "error": "Ingrese código"
+          },
+          "descripcion": {
+            "label": "Descripción"
+          },
+          "calle": {
+            "label": "Calle*",
+            "error": "Ingrese calle"
+          },
+          "numero": {
+            "label": "Número*",
+            "error": "Ingrese número"
+          },
+          "piso": {
+            "label": "Piso"
+          },
+          "depto": {
+            "label": "Depto"
+          },
+          "cp": {
+            "label": "Cp*",
+            "error": "Ingrese código postal"
+          },
+          "localidad": {
+            "label": "Localidad*",
+            "error": "Ingrese localidad"
+          },
+          "provincia": {
+            "label": "Provincia*",
+            "error": "Ingrese provincia"
+          },
+          "barrio": {
+            "label": "Barrio" 
+          } ,
+          "telefono": {
+            "label": "Teléfono*",
+            "error": "Ingrese teléfono"
+          }
+        },
+        "edit":{
+          "save":"Crear sucursal",
+          "confirm":"¿Crear esta sucursal?",
+          "btnconfirm":"Si, crear"
+        } 
+    }, 
+    "edit":{
+      "title1":"Datos Principales",
+      "title2":"Domicilio",
+      "outline":{ 
+        "descripcion": {
+          "label": "Descripción"
+        },
+        "calle": {
+          "label": "Calle*",
+          "error": "Ingrese calle"
+        },
+        "numero": {
+          "label": "Número*",
+          "error": "Ingrese número"
+        },
+        "piso": {
+          "label": "Piso"
+        },
+        "depto": {
+          "label": "Depto"
+        }, 
+        "localidad": {
+          "label": "Localidad*",
+          "error": "Ingrese localidad"
+        },
+        "provincia": {
+          "label": "Provincia*",
+          "error": "Ingrese provincia"
+        }, 
+        "telefono": {
+          "label": "Teléfono*",
+          "error": "Ingrese teléfono"
+        }
+      },
+      "estado":{
+        "error":"Ingrese un estado",
+        "value1":"Activo",
+        "value2":"Inactivo"
+      },
+      "edit":{
+        "save":"Guardar Cambios",
+        "confirm":"¿Estás seguro que deseas generar estos cambios a esta sucursal?",
+        "btnconfirm":"Si, guardar cambios"
+      } 
     }
-    
+  }
 }

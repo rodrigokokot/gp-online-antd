@@ -1,64 +1,69 @@
 import { DownOutlined } from "@ant-design/icons";
 import FloatSelected from "../../components/molecules/FloatSelected";
+import { useTranslation } from 'react-i18next';
 
-const columnsNovedades = [
-  {
-    name: "ID",
-    selector: (row) => row.id,
-    sortable: true,
-  },
-  {
-    name: "Tipo de novedad",
-    selector: (row) => row.novedad,
-    sortable: true,
-  },
-  {
-    name: "Fecha",
-    selector: (row) => row.fecha,
-    sortable: true,
-  },
-  {
-    name: "Usuario",
-    selector: (row) => row.usuario,
-    sortable: true,
-  },
-  {
-    name: "Comentario",
-    selector: (row) => row.comentario,
-    sortable: true,
-  },
-  {
-    name: "Cuenta",
-    selector: (row) => row.cuenta,
-    sortable: true,
-  },
-  {
-    name: "Marca",
-    selector: (row) => row.marca,
-    sortable: true,
-  },
-  {
-    name: "Producto",
-    selector: (row) => row.producto,
-    sortable: true,
-  },
-  {
-    name: "Sucursal",
-    selector: (row) => row.sucursal,
-    sortable: true,
-  },
-  {
-    name: "Cliente",
-    selector: (row) => row.cliente,
-    sortable: true,
-  },
+const ColumnsNovedades =()=> {
+  const { t} = useTranslation();
+  
+  return ([
+    {
+      name: (t("gestionaprobaciones.tab1.table.column1")),
+      selector: (row) => row.id,
+      sortable: true,
+    },
+    {
+      name: (t("gestionaprobaciones.tab1.table.column2")),
+      selector: (row) => row.novedad,
+      sortable: true,
+    },
+    {
+      name: (t("gestionaprobaciones.tab1.table.column3")),
+      selector: (row) => row.fecha,
+      sortable: true,
+    },
+    {
+      name: (t("gestionaprobaciones.tab1.table.column4")),
+      selector: (row) => row.usuario,
+      sortable: true,
+    },
+    {
+      name: (t("gestionaprobaciones.tab1.table.column5")),
+      selector: (row) => row.comentario,
+      sortable: true,
+    },
+    {
+      name: (t("gestionaprobaciones.tab1.table.column6")),
+      selector: (row) => row.cuenta,
+      sortable: true,
+    },
+    {
+      name: (t("gestionaprobaciones.tab1.table.column7")),
+      selector: (row) => row.marca,
+      sortable: true,
+    },
+    {
+      name: (t("gestionaprobaciones.tab1.table.column8")),
+      selector: (row) => row.producto,
+      sortable: true,
+    },
+    {
+      name: (t("gestionaprobaciones.tab1.table.column9")),
+      selector: (row) => row.sucursal,
+      sortable: true,
+    },
+    {
+      name: (t("gestionaprobaciones.tab1.table.column10")),
+      selector: (row) => row.cliente,
+      sortable: true,
+    },
   {
     cell: (row) => <DownOutlined />,
     allowOverflow: true,
     button: true,
     width: "56px",
   },
-];
+])
+}
 
 const dataNovedades = [
   {
@@ -122,59 +127,151 @@ const dataNovedades = [
     cliente: "Candela, Olga Miriam del Valle",
   },
 ];
-
-const columnsAjustes = [
+const NovedadesSearch=() =>{ 
+  const { t } = useTranslation();
+  return ([
   {
-    name: "Marca",
+    index: "emisor",
+    input: (
+      <FloatSelected
+        placeholder={t("gestionaprobaciones.tab1.search.input1")}
+        label={t("gestionaprobaciones.tab1.search.input1")}
+        options={[
+          { title: "emisor 1", value: "1", disabled: false },
+          { title: "emisor 2", value: "2", disabled: false },
+          { title: "emisor 3", value: 3, disabled: false },
+        ]}
+      ></FloatSelected>
+    ),
+  },
+  {
+    index: "marca",
+    input: (
+      <FloatSelected
+        placeholder={t("gestionaprobaciones.tab1.search.input2")}
+        label={t("gestionaprobaciones.tab1.search.input2")}
+        options={[
+          { title: "marca 1", value: 1, disabled: false },
+          { title: "marca 2", value: 2, disabled: false },
+          { title: "marca 3", value: 3, disabled: false },
+        ]}
+      ></FloatSelected>
+    ),
+  },
+  {
+    index: "transaccion",
+    input: (
+      <FloatSelected
+        placeholder={t("gestionaprobaciones.tab1.search.input3")}
+        label={t("gestionaprobaciones.tab1.search.input3")}
+        options={[
+          { title: "transaccion 1", value: 1, disabled: false },
+          { title: "transaccion 2", value: 2, disabled: false },
+          { title: "trs 3", value: 3, disabled: false },
+        ]}
+      ></FloatSelected>
+    ),
+  },
+  {
+    index: "sucursal",
+    input: (
+      <FloatSelected
+        placeholder={t("gestionaprobaciones.tab1.search.input4")}
+        label={t("gestionaprobaciones.tab1.search.input4")}
+        options={[
+          { title: "sucu 1", value: 1, disabled: false },
+          { title: "sucu 2", value: 2, disabled: false },
+          { title: "sucu 3", value: 3, disabled: false },
+        ]}
+      ></FloatSelected>
+    ),
+  },
+  {
+    index: "producto",
+    input: (
+      <FloatSelected
+        placeholder={t("gestionaprobaciones.tab1.search.input5")}
+        label={t("gestionaprobaciones.tab1.search.input5")}
+        options={[
+          { title: "prod 1", value: 1, disabled: false },
+          { title: "prod 2", value: 2, disabled: false },
+          { title: "prod 3", value: 3, disabled: false },
+        ]}
+      ></FloatSelected>
+    ),
+  },
+  {
+    index: "novedades",
+    input: (
+      <FloatSelected
+        placeholder={t("gestionaprobaciones.tab1.search.input6")}
+        label={t("gestionaprobaciones.tab1.search.input6")}
+        options={[
+          { title: "nov 1", value: 1, disabled: false },
+          { title: "nov 2", value: 2, disabled: false },
+          { title: "nov 3", value: 3, disabled: false },
+        ]}
+      ></FloatSelected>
+    ),
+  },
+])
+}
+
+const ColumnsAjustes =()=>{
+  const { t} = useTranslation();
+return( [
+  {
+    name: (t("gestionaprobaciones.tab2.table.column1")),
     selector: (row) => row.marca,
     sortable: true,
   },
   {
-    name: "Emisor",
+    name: (t("gestionaprobaciones.tab2.table.column2")),
     selector: (row) => row.emisor,
     sortable: true,
   },
   {
-    name: "Comprobante",
+    name: (t("gestionaprobaciones.tab2.table.column3")),
     selector: (row) => row.comprobante,
     sortable: true,
   },
   {
-    name: "Cuenta",
+    name: (t("gestionaprobaciones.tab2.table.column4")),
     selector: (row) => row.cuenta,
     sortable: true,
   },
   {
-    name: "Concepto",
+    name:(t("gestionaprobaciones.tab2.table.column5")),
     selector: (row) => row.concepto,
     sortable: true,
   },
   {
-    name: "Importe",
+    name: (t("gestionaprobaciones.tab2.table.column6")),
     selector: (row) => row.importe,
     sortable: true,
   },
   {
-    name: "Cuotas",
+    name: (t("gestionaprobaciones.tab2.table.column7")),
     selector: (row) => row.cuotas,
     sortable: true,
   },
   {
-    name: "Estado",
+    name: (t("gestionaprobaciones.tab2.table.column8")),
     selector: (row) => row.estado,
     sortable: true,
   },
   {
-    name: "Confirmación",
+    name: (t("gestionaprobaciones.tab2.table.column9")),
     selector: (row) => row.confirmacion,
     sortable: true,
   },
   {
-    name: "Fecha de proceso",
+    name: (t("gestionaprobaciones.tab2.table.column10")),
     selector: (row) => row.fproceso,
     sortable: true,
   },
-];
+])
+}
 
 const dataAjustes = [
   {
@@ -225,101 +322,16 @@ const dataAjustes = [
     confirmacion: "Si",
     fproceso: "20/04/25",
   },
-];
-
-const novedadesSearch = [
-  {
-    index: "emisor",
-    input: (
-      <FloatSelected
-        placeholder="Emisor"
-        label="Emisor"
-        options={[
-          { title: "emisor 1", value: "1", disabled: false },
-          { title: "emisor 2", value: "2", disabled: false },
-          { title: "emisor 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
-  {
-    index: "marca",
-    input: (
-      <FloatSelected
-        placeholder="Marca"
-        label="Marca"
-        options={[
-          { title: "marca 1", value: 1, disabled: false },
-          { title: "marca 2", value: 2, disabled: false },
-          { title: "marca 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
-  {
-    index: "transaccion",
-    input: (
-      <FloatSelected
-        placeholder="Transaccion"
-        label="Transaccion"
-        options={[
-          { title: "transaccion 1", value: 1, disabled: false },
-          { title: "transaccion 2", value: 2, disabled: false },
-          { title: "trs 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
-  {
-    index: "sucursal",
-    input: (
-      <FloatSelected
-        placeholder="Sucursal"
-        label="Sucursal"
-        options={[
-          { title: "sucu 1", value: 1, disabled: false },
-          { title: "sucu 2", value: 2, disabled: false },
-          { title: "sucu 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
-  {
-    index: "producto",
-    input: (
-      <FloatSelected
-        placeholder="Producto"
-        label="Producto"
-        options={[
-          { title: "prod 1", value: 1, disabled: false },
-          { title: "prod 2", value: 2, disabled: false },
-          { title: "prod 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
-  {
-    index: "novedades",
-    input: (
-      <FloatSelected
-        placeholder="Novedades"
-        label="Novedades"
-        options={[
-          { title: "nov 1", value: 1, disabled: false },
-          { title: "nov 2", value: 2, disabled: false },
-          { title: "nov 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
-];
-const ajustesSearch = [
+]; 
+const AjustesSearch=()=> { 
+  const { t} = useTranslation();
+  return ([
   {
     index: "moneda",
     input: (
       <FloatSelected
-        placeholder="Moneda"
-        label="Moneda"
+        placeholder={t("gestionaprobaciones.tab1.search.input1")}
+        label={t("gestionaprobaciones.tab1.search.input1")}
         options={[
           { title: "mon 1", value: "1", disabled: false },
           { title: "mon 2", value: "2", disabled: false },
@@ -332,8 +344,8 @@ const ajustesSearch = [
     index: "conceptoAjuste",
     input: (
       <FloatSelected
-        placeholder="Concepto de ajuste"
-        label="Concepto de ajuste"
+        placeholder={t("gestionaprobaciones.tab1.search.input2")}
+        label={t("gestionaprobaciones.tab1.search.input2")}
         options={[
           { title: "marca 1", value: 1, disabled: false },
           { title: "marca 2", value: 2, disabled: false },
@@ -346,8 +358,8 @@ const ajustesSearch = [
     index: "comprobante",
     input: (
       <FloatSelected
-        placeholder="Comprobante"
-        label="Comprobante"
+        placeholder={t("gestionaprobaciones.tab1.search.input3")}
+        label={t("gestionaprobaciones.tab1.search.input3")}
         options={[
           { title: "transaccion 1", value: 1, disabled: false },
           { title: "transaccion 2", value: 2, disabled: false },
@@ -360,8 +372,8 @@ const ajustesSearch = [
     index: "novedadesUrgente",
     input: (
       <FloatSelected
-        placeholder="Novedades urgente"
-        label="Novedades urgente"
+        placeholder={t("gestionaprobaciones.tab1.search.input4")}
+        label={t("gestionaprobaciones.tab1.search.input4")}
         options={[
           { title: "sucu 1", value: 1, disabled: false },
           { title: "sucu 2", value: 2, disabled: false },
@@ -370,13 +382,14 @@ const ajustesSearch = [
       ></FloatSelected>
     ),
   },
-];
+])
+}
 
 export {
   dataAjustes,
   dataNovedades,
-  columnsAjustes,
-  columnsNovedades,
-  novedadesSearch,
-  ajustesSearch,
+  ColumnsAjustes,
+  ColumnsNovedades,
+  NovedadesSearch,
+  AjustesSearch,
 };
