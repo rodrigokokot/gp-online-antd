@@ -146,7 +146,7 @@
         "column4":"Edit"
       },
     "new":{ 
-        "title1":"Principal data",
+        "title1":"Main data",
         "title2":"Home",
         "outline":{
           "codigo": {
@@ -157,7 +157,7 @@
             "label": "Description"
           },
           "calle": {
-            "label": "street*",
+            "label": "Street*",
             "error": "Submit street"
           },
           "numero": {
@@ -204,11 +204,11 @@
           "label": "Description"
         },
         "calle": {
-          "label": "street*",
+          "label": "Street*",
           "error": "Submit street"
         },
         "numero": {
-          "label": "number*",
+          "label": "Number*",
           "error": "Submit number"
         },
         "piso": {
@@ -218,8 +218,8 @@
           "label": "Depto"
         }, 
         "localidad": {
-          "label": "Localidad*",
-          "error": "Submit localidad"
+          "label": "Location*",
+          "error": "Submit location"
         },
         "provincia": {
           "label": "Province*",
@@ -230,7 +230,7 @@
           "error": "Submit phone number"
         }
       },
-      "estado":{
+      "Status":{
         "error":"Submit a state",
         "value1":"Active",
         "value2":"Inactive"
@@ -240,6 +240,259 @@
         "confirm":"Are you sure you want to apply this changes to this branch?",
         "btnconfirm":"Yes, save changes"
       } 
+    }
+  },
+
+  "gestionUsers": {
+    "button":"New user",
+     "search":{
+        "searchtitle":"User Search",
+        "input1":"User",
+        "input2":"Name",
+        "input3":"Last Name",
+        "input4":"Document number"  
+      },
+      "table":{
+        "column1":"User",
+        "column2":"Name",
+        "column3":"Last Name",
+        "column4":"Document",
+        "column5":"Profile",
+        "column6":"Edit"
+      },
+      "new":{ 
+          "title1":"Main data",
+          "title2":"Profile",
+          "outline":{
+            "nombre": {
+              "label": "Name*",
+              "error": "Enter Name"
+            },
+            "apellido": {
+              "label": "Last Name*",
+              "error": "Enter Last Name"
+            },
+            "documento": {
+              "label": "Document number*",
+              "error": "Enter document"
+            },
+            "email": {
+              "label": "E-mail*",
+              "error": "Enter email"
+            }, 
+            "usuario": {
+              "label": "Username*",
+              "error": "Enter Username"
+            } 
+          },
+          "typedoc":{
+            "label":"Document type",
+            "error":"Enter tipo de documento",
+            "value1":"DNI",
+            "value2":"CUIT",
+            "value3":"CIVIC NOTEBOOK",
+            "value4":"ENLISTMENT NOTEBOOK",
+            "value5":"CUIL",
+            "value6":"PASSPORT",
+            "value7":"CI"
+          },
+          "estado":{
+            "label":"Status", 
+            "value1":"Enabled",
+            "value2":"Disabled",
+            "value3":"Discharged"
+          },
+          "perfil":{
+            "label":"Profile",
+            "error":"Enter profile",
+            "value1":"QA Test ",
+            "value2":"New Profile QA Test",
+            "value3":"Test",
+            "value4":"Test profile Admin",
+            "value5":"TotalCoin - Consultas",
+            "value6":"Fraud Test",
+            "value7":"Profile CX",
+            "value8":"TotalCoin - Admin"
+          },
+          "edit":{
+            "save":"Create user",
+            "confirm":"Confirm create user?",
+            "btnconfirm":"Yes, create"
+          } 
+      }, 
+      "edit":{
+        "tab1":{
+          "tab1":"General Data",  
+          "title1":"Profile",
+          "title2":"Main data",
+          "outline":{ 
+            "usuario": {
+              "label": "User" 
+            },
+            "nombre": {
+              "label": "Name*",
+              "error": "Enter Name"
+            },
+            "apellido": {
+              "label": "Last Name*",
+              "error": "Enter Last Name"
+            },
+            "documento": {
+              "label": "Document number*",
+              "error": "Enter document"
+            },
+            "email": {
+              "label": "E-mail*",
+              "error": "Enter email"
+            }
+          },
+          "typedoc":{
+            "label":"Document type",
+            "error":"Enter document type",
+            "value1":"DNI",
+            "value2":"CUIT",
+            "value3":"CIVIC NOTEBOOK",
+            "value4":"ENLISTMENT NOTEBOOK",
+            "value5":"CUIL",
+            "value6":"PASSPORT",
+            "value7":"CI"
+          },
+          "estado":{
+            "label":"Status", 
+            "value1":"Enabled",
+            "value2":"Disabled",
+            "value3":"Discharged"
+          },
+          "perfil":{
+            "label":"Profile",
+            "error":"Enter profile",
+            "value1":"Test QA",
+            "value2":"New Test profile QA",
+            "value3":"Test",
+            "value4":"Test profile Admin",
+            "value5":"TotalCoin - query",
+            "value6":"Fraud test",
+            "value7":"Profile CX",
+            "value8":"TotalCoin - Admin"
+          }   
+        }, 
+        "tab2":{
+          "tab2":"Password",
+          "password":{
+            "title":"Password",
+            "error1":"Enter password to confirm changes",
+            "label":"Enter password*",
+            "error2":"Must be at least 8 characters long",
+            "error3":"Must have at least one number"
+          }   
+        },
+        "edit1":{
+          "save":"Edit User",
+          "confirm":"Are you sure you want to edit this user?" ,
+          "btnconfirm":"Yes, edit"
+        },
+        "edit2":{
+          "save":"Reset password" ,
+          "confirm":"Are you sure you want to reset this password?" ,
+          "btnconfirm":"Yes, save"
+        } 
+      } 
+      
+    },
+
+  "ipm":{
+    "search":{
+      "searchtitle":"IPM files search",
+      "input1":"File ID",
+      "input2":"ICA Number",
+      "input3":"Last Name",
+      "input4":"First Name",
+      "input5":"Document Number",
+      "input6":"By dates"
+    },
+    "table":{
+        "column1":"File ID",
+        "column2":"ICA Num",
+        "column3":"Type",
+        "column4":"Date",
+        "column5":"Registry",
+        "column6":"OK Reg",
+        "column7":"Error Reg",
+        "column8":"Process ID",
+        "column9":"Archive Name",
+        "column10":"See details"
+    },
+    "view":{
+      "title1":"File ID 190238",
+      "subtitle1":"Process Date",
+      "subtitle2":"Archive Type",
+      "card1":{
+        "subtitle1":"Registry State",
+        "enabled":"Urgent",
+        "disabled":"Normal"
+      },
+      "table":{
+        "column1":"Registry ID",
+        "column2":"State",
+        "column3":"Movement",
+        "column4":"Processing code",
+        "column5":"Primary account number",
+        "column6":"Account Transaction",
+        "column7":"Currency code transaction",
+        "column10":"See deatils"
+      },
+      "details":{
+        "title1":"File ID 12903812 - IPM registry dedatil 133",
+        "subtitle1":"Process Date",
+        "table":{
+          "column1":"Field/PDS",
+          "column2":"Value"
+        }
+      }
+
+    }
+  },
+
+  "ctf":{
+    "search":{
+      "searchtitle":"CTF files search",
+      "input1":"File ID",
+      "input2":"ICA Number",
+      "input3":"Last Name",
+      "input4":"First Name",
+      "input5":"Document Number",
+      "input6":"By dates"
+    },
+    "table":{
+        "column1":"File ID",
+        "column2":"CTF NUMBER",
+        "column3":"Intake ID",
+        "column4":"Autorization ID",
+        "column5":"CTF Origin ID",
+        "column6":"Processed",
+        "column7":"See details"
+    },
+    "view":{
+      "table":{
+        "column1":"Transaction Code",
+        "column2":"Transaction Code Qualifier",
+        "column3":"Transaction component Sequence number",
+        "column4":"Account Number",
+        "column5":"Account Number Extension",
+        "column6":"Floor Limit indicator",
+        "column7":"CRB/Exception File Indicator",
+        "column8":"See Details"
+      },
+      "details":{
+        "title1":"001102",
+        "table":{
+          "column1":"Content",
+          "column2":"Start",
+          "column3":"Length",
+          "column4":"End",
+          "column5":"Field Alias"
+        }
+      }
     }
   }
 }
