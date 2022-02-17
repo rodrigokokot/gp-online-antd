@@ -133,7 +133,6 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                       setCollapsed(true);
                     }}
                   >
-                    {console.log(index)}
                     <Typography.Text>{route.name}</Typography.Text>
                   </Link>
                 </Menu.Item>
