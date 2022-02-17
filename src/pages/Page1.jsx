@@ -16,11 +16,11 @@ import { useTranslation } from 'react-i18next';
 import { test } from '../services'
 
 const validator = {
-    require: {
-      required: true,
-      message: "Required"
-    }
-  };
+  require: {
+    required: true,
+    message: "Required",
+  },
+};
 
 function Page1() {
 
@@ -333,10 +333,10 @@ function Page1() {
                 searchable={true}
                 searchPlaceholder="Search for a country" /> */}
 
-            {/* <div  style={{ marginBottom: '25px' }}>
+      {/* <div  style={{ marginBottom: '25px' }}>
                 <DateRangePicker />
             </div> */}
-            {/* <Card style={{marginTop:'50px', marginBottom: '50px'}}>
+      {/* <Card style={{marginTop:'50px', marginBottom: '50px'}}>
                 <Form
                     size="large"
                     name="user_login"
@@ -424,8 +424,8 @@ function Page1() {
             <Table component={DeploymentConfirmation} columns={columns} data={ noResult? data : [] } />
 
             <InlineSVG src={LoginImg} /> */}
-        </>
-    )
+    </>
+  );
 }
 
-export default Page1
+export default Page1;

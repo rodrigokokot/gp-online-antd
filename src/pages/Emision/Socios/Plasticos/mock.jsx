@@ -130,7 +130,7 @@ const columnsPlasticos = [
     button: true,
     cell: (row) => (
       <Link
-        to={`/emision/socios/plasticos/editar/${row.codigo}`}
+        to={`/emision/socios/plasticos/editarPlastico=${row.codigo}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >
