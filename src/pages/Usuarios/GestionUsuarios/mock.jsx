@@ -1,29 +1,31 @@
 import { Link } from "react-router-dom";
-
+import { useTranslation } from 'react-i18next'; 
 import FloatInput from "../../../components/molecules/FloatInput/index";
-const columnsGestionUsuarios = [
+const ColumnsGestionUsuarios =()=>{
+  const { t} = useTranslation();
+  return( [
   {
-    name: 'Usuario',
+    name: (t("gestionusuarios.table.column1")),
     selector: (row) => row.usuario,
     sortable: true
   },
   {
-    name: 'Nombre',
+    name: (t("gestionusuarios.table.column2")),
     selector: (row) => row.nombre,
     sortable: true
   },
   {
-    name: 'Apellido',
+    name: (t("gestionusuarios.table.column3")),
     selector: (row) => row.apellido,
     sortable: true
   },
   {
-    name: 'Documento',
+    name: (t("gestionusuarios.table.column4")),
     selector: (row) => row.documento,
     sortable: true
   },
   {
-    name: 'Perfil',
+    name: (t("gestionusuarios.table.column5")),
     selector: (row) => row.perfil,
     sortable: true
   },
@@ -32,11 +34,12 @@ const columnsGestionUsuarios = [
 		button: true,
 		cell: row => ( 
             <Link to={`/usuarios/gestionDeUsuarios/editarUsuario=${row.usuario}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
-              Editar
+              {t("gestionusuarios.table.column6")}
             </Link>
 		),
   },
-];
+])
+}
 
 const dataGestionUsuarios = [
   {
@@ -85,30 +88,33 @@ const dataGestionUsuarios = [
     option:<Link>Editar</Link>
   },
 ];
-const GestionUsuariosSearch = [
+const GestionUsuariosSearch=()=>{
+  const { t} = useTranslation();
+  return([
   {
      index: 'usuario',
      name: 'Usuario',
-     input: <FloatInput placeholder="Usuario" label="Usuario" />,
+     input: <FloatInput placeholder={t("gestionusuarios.search.input1")} label={t("gestionusuarios.search.input1")} />,
    },
 
 
    {
      index: 'nombre',
      name: 'Nombre',
-     input: <FloatInput placeholder="Nombre" label="Nombre" />,
+     input: <FloatInput placeholder={t("gestionusuarios.search.input2")} label={t("gestionusuarios.search.input2")} />,
    },
 
    {
      index: 'apellido',
      name: 'Apellido',
-     input: <FloatInput placeholder="Apellido" label="Apellido" />,
+     input: <FloatInput placeholder={t("gestionusuarios.search.input3")} label={t("gestionusuarios.search.input3")}/>,
    },
    {
      index: 'ndocumento',
      name: 'N de documento',
-     input: <FloatInput placeholder='N° de documento' label='N° de documento' />,
+     input: <FloatInput placeholder={t("gestionusuarios.search.input4")} label={t("gestionusuarios.search.input4")} />,
    },
 
- ];
-export { dataGestionUsuarios, columnsGestionUsuarios,GestionUsuariosSearch };
+ ])
+}
+export { dataGestionUsuarios, ColumnsGestionUsuarios,GestionUsuariosSearch };

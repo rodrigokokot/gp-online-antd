@@ -241,5 +241,334 @@
         "btnconfirm":"Si, guardar cambios"
       } 
     }
+  },
+  "gestionusuarios": {
+    "button":"Nuevo usuario",
+     "search":{
+        "searchtitle":"Búsqueda de usuarios",
+        "input1":"Usuario",
+        "input2":"Nombre",
+        "input3":"Apellido",
+        "input4":"N° de documento"  
+      },
+      "table":{
+        "column1":"Usuario",
+        "column2":"Nombre",
+        "column3":"Apellido",
+        "column4":"Documento",
+        "column5":"Perfil",
+        "column6":"Editar"
+      },
+      "new":{ 
+          "title1":"Datos Principales",
+          "title2":"Perfil",
+          "outline":{
+            "nombre": {
+              "label": "Nombre*",
+              "error": "Ingrese nombre"
+            },
+            "apellido": {
+              "label": "Apellido*",
+              "error": "Ingrese apellido"
+            },
+            "documento": {
+              "label": "N° De Documento*",
+              "error": "Ingrese documento"
+            },
+            "email": {
+              "label": "E-mail*",
+              "error": "Ingrese email"
+            }, 
+            "usuario": {
+              "label": "Nombre De Usuario*",
+              "error": "Ingrese usuario"
+            } 
+          },
+          "typedoc":{
+            "label":"Tipo de Documento",
+            "error":"Ingrese tipo de documento",
+            "value1":"DNI",
+            "value2":"CUIT",
+            "value3":"LIBRETA CIVICA",
+            "value4":"LIBRETA DE ENROLAMIENTO",
+            "value5":"CUIL",
+            "value6":"PASAPORTE",
+            "value7":"CI"
+          },
+          "estado":{
+            "label":"Estado", 
+            "value1":"Habilitado",
+            "value2":"Deshabilitado",
+            "value3":"Baja"
+          },
+          "perfil":{
+            "label":"Perfil",
+            "error":"Ingrese perfil",
+            "value1":"Prueba QA",
+            "value2":"Nueva prueba perfil QA",
+            "value3":"Prueba",
+            "value4":"Prueba perfil Admin",
+            "value5":"TotalCoin - Consultas",
+            "value6":"Pruebas Fraude",
+            "value7":"Perfil CX",
+            "value8":"TotalCoin - Admin"
+          },
+          "edit":{
+            "save":"Crear usuario",
+            "confirm":"¿Confirmar crear usuario?",
+            "btnconfirm":"Si, crear"
+          } 
+      }, 
+      "edit":{
+        "tab1":{
+          "tab1":"Datos Generales",  
+          "title1":"Perfil",
+          "title2":"Datos Principales",
+          "outline":{ 
+            "usuario": {
+              "label": "Usuario" 
+            },
+            "nombre": {
+              "label": "Nombre*",
+              "error": "Ingrese nombre"
+            },
+            "apellido": {
+              "label": "Apellido*",
+              "error": "Ingrese apellido"
+            },
+            "documento": {
+              "label": "N° De Documento*",
+              "error": "Ingrese documento"
+            },
+            "email": {
+              "label": "E-mail*",
+              "error": "Ingrese email"
+            }
+          },
+          "typedoc":{
+            "label":"Tipo de Documento",
+            "error":"Ingrese tipo de documento",
+            "value1":"DNI",
+            "value2":"CUIT",
+            "value3":"LIBRETA CIVICA",
+            "value4":"LIBRETA DE ENROLAMIENTO",
+            "value5":"CUIL",
+            "value6":"PASAPORTE",
+            "value7":"CI"
+          },
+          "estado":{
+            "label":"Estado", 
+            "value1":"Habilitado",
+            "value2":"Deshabilitado",
+            "value3":"Baja"
+          },
+          "perfil":{
+            "label":"Perfil",
+            "error":"Ingrese perfil",
+            "value1":"Prueba QA",
+            "value2":"Nueva prueba perfil QA",
+            "value3":"Prueba",
+            "value4":"Prueba perfil Admin",
+            "value5":"TotalCoin - Consultas",
+            "value6":"Pruebas Fraude",
+            "value7":"Perfil CX",
+            "value8":"TotalCoin - Admin"
+          }   
+        }, 
+        "tab2":{
+          "tab2":"Contraseña",
+          "password":{
+            "title":"Contraseña",
+            "error1":"Ingrese contraseña para generar cambios",
+            "label":"Ingrese Contraseña*",
+            "error2":"Debe ingresar al menos 8 caracteres",
+            "error3":"Debe ingresar al menos un número"
+          }   
+        },
+        "edit1":{
+          "save":"Editar usuario",
+          "confirm":"¿Estas seguro de editar este usuario?" ,
+          "btnconfirm":"Si, editar"
+        },
+        "edit2":{
+          "save":"Blanquear contraseña" ,
+          "confirm":"¿Estas seguro de blanquear la contraseña?" ,
+          "btnconfirm":"Si, guardar"
+        } 
+      } 
+      
+    },
+  "gestionperfiles":{ 
+    "button":"Nuevo Perfil",
+    "search":{
+      "searchtitle":"Búsqueda de Perfiles",
+      "input1":"Tipo de Perfil",
+      "input2":"Nombre",
+      "input3":"Apellido",
+      "input4":"N° de documento"  
+    },
+    "table":{
+      "column1":"Tipo de Perfil",
+      "column2":"Editar"
+    }, 
+    "new":{ 
+      "title1":"Datos Principales",
+      "title2":"Tipos de operaciones",
+      "outline":{
+        "perfil": {
+          "label": "Nombre del Nuevo perfil*",
+          "error": "Ingrese nombre"
+        },
+        "descripcion": {
+          "label": "Descripción del perfil*",
+          "error": "Ingrese descripción"
+        } 
+      },
+      "table":{
+        "column1":"Nombre",
+        "column2":"Descripción"
+      },
+      "edit":{
+        "save":"Crear sucursal",
+        "confirm":"¿Crear esta sucursal?",
+        "btnconfirm":"Si, crear"
+      } 
+    },
+    "edit":{ 
+      "tab1":{
+        "title1":"Perfil",
+        "title2":"Tipos de operaciones",
+        "outline":{
+          "perfil": {
+            "label": "Nombre del Nuevo perfil*",
+            "error": "Ingrese nombre"
+          },
+          "descripcion": {
+            "label": "Descripción del perfil*",
+            "error": "Ingrese descripción"
+          } 
+        },
+        "table":{
+          "column1":"Nombre",
+          "column2":"Descripción"
+        }
+      },
+      "tab2":{
+        "tab2":"Contraseña",
+        "password":{
+          "title":"Contraseña",
+          "error1":"Ingrese contraseña para generar cambios",
+          "label":"Ingrese Contraseña*",
+          "error2":"Debe ingresar al menos 8 caracteres",
+          "error3":"Debe ingresar al menos un número"
+        }   
+      },
+      "edit1":{
+          "save":"Editar Perfil",
+          "confirm":"¿Estas seguro de editar este perfil?" ,
+          "btnconfirm":"Si, editar"
+      },
+      "edit2":{
+          "save":"Blanquear contraseña" ,
+          "confirm":"¿Estas seguro de blanquear la contraseña?" ,
+          "btnconfirm":"Si, guardar"
+      } 
+    }
+  },
+  "ipm":{
+    "search":{
+      "searchtitle":"Búsqueda de archivos IPM",
+      "input1":"ID File",
+      "input2":"N° de ICA",
+      "input3":"Apellido",
+      "input4":"Nombre",
+      "input5":"N° de Documento",
+      "input6":"Por Fechas"
+    },
+    "table":{
+        "column1":"ID File ",
+        "column2":"N° ICA",
+        "column3":"Tipo",
+        "column4":"Fecha",
+        "column5":"Registros",
+        "column6":"Reg OK",
+        "column7":"Reg Error ",
+        "column8":"ID Proceso ",
+        "column9":"Nombre Arch",
+        "column10":"ver detalle"
+    },
+    "view":{
+      "title1":"File ID",
+      "subtitle1":"Fecha de proceso",
+      "subtitle2":"Tipo de archivo",
+      "card1":{
+        "subtitle1":"Estado del registro",
+        "enabled":"Urgente",
+        "disabled":"Normal"
+      },
+      "table":{
+        "column1":"ID Registro",
+        "column2":"Estado",
+        "column3":"Movimiento",
+        "column4":"Processing code",
+        "column5":"Primary account number",
+        "column6":"Account Transaction",
+        "column7":"Currency code transaction",
+        "column8":"Observaciones",
+        "column9":"ver detalle Elements"
+      },
+      "details":{
+        "title1":"File ID ",
+        "title2":"IPM Detalle de registro ",
+        "subtitle1":"Fechas del proceso",
+        "table":{
+          "column1":"Campo / PDS",
+          "column2":"Valor"
+        }
+      }
+
+    }
+  },
+
+  "ctf":{
+    "search":{
+      "searchtitle":"Búsqueda de archivos CTF",
+      "input1":"ID File",
+      "input2":"N° de ICA",
+      "input3":"Apellido",
+      "input4":"Nombre",
+      "input5":"N° de Documento",
+      "input6":"Por Fechas"
+    },
+    "table":{
+        "column1":"ID Identidad",
+        "column2":"N° CTF",
+        "column3":"ID Consumo",
+        "column4":"ID Autorización ",
+        "column5":"ID CTF Origen ",
+        "column6":"Procesado",
+        "column7":"ver detalle"
+    },
+    "view":{
+      "table":{
+        "column1":"Transaction Code",
+        "column2":"Transaction Code Qualifier",
+        "column3":"Transaction component Sequence number",
+        "column4":"Account Number",
+        "column5":"Account Number Extension",
+        "column6":"Floor Limit indicator",
+        "column7":"CRB/Exception File Indicator",
+        "column8":"ver detalle"
+      },
+      "details":{ 
+        "table":{
+          "column1":"Contenido",
+          "column2":"Start",
+          "column3":"Length",
+          "column4":"End",
+          "column5":"Alias_Campo"
+        }
+      }
+    }
   }
 }

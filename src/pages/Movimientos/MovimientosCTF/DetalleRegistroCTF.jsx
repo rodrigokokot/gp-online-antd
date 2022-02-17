@@ -2,7 +2,7 @@ import React from "react";
 import Table from "../../../components/organisms/Table";
 import { useParams } from "react-router-dom";
 import {
-  columnsRegistroCTF,
+  ColumnsRegistroCTF,
   dataRegistroCTF,
 } from "./mock";
 import Export from "../../../components/organisms/Export";
@@ -13,7 +13,7 @@ function DetalleRegistroCTF() {
     <>
       <h2> {id}</h2>
       <Export dataExport={dataRegistroCTF} />
-      <Table data={dataRegistroCTF} columns={columnsRegistroCTF}></Table>
+      <Table data={dataRegistroCTF} columns={ColumnsRegistroCTF()}></Table>
     </>
   );
 }
