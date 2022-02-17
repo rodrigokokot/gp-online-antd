@@ -1,63 +1,65 @@
 import { Card,Row,Col } from "antd";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const ConsultasAutorizacion = () => {
+  const { t} = useTranslation();
   return (
     <Card>
       <Row gutter={[24, 24]}>
         <Col span={6}>
-            <h4 className="grey-text"> ID Autorización</h4><h1 className="bold-text">{'-'}</h1> 
+            <h4 className="grey-text">{t("consumos.tab4.text.greytext1")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Fecha Autorización</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext2")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Autorización Emisor</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext3")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Movimiento </h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext4")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Estado</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext5")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Moneda</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext6")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Importe</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext7")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Fecha de presentación</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext8")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Moneda</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext9")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Importe Origen </h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext10")} </h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Cuotas</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext11")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Respuesta</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext12")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Origen</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext13")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">País Comercio</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext14")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">País Emisor</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext15")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Cotización</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext16")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Fecha de Anulación</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext17")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">Usuario Anulación</h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab4.text.greytext18")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
       </Row>
     </Card>

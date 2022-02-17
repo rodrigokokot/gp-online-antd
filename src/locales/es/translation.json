@@ -570,5 +570,127 @@
         }
       }
     }
+  },
+  "consumos":{
+    "search":{
+      "searchtitle":"Búsqueda de consumos",
+      "input1":"ID de Consumo",
+      "input2":"Nombre de Comercio",
+      "input3":"N° de Documento",
+      "input4":"N° de Tarjeta",
+      "input5":"Grupo Transacción",
+      "input6":"Comprobante",
+      "input7":"N° de Cuenta",
+      "input8":"Adic",
+      "input9":"Liq. Socio",
+      "input10":"Cuotas", 
+      "input11":"Por Fecha"
+    },
+    "table":{
+        "column1":"ID Consumo",
+        "column2":"Fecha/Hora",
+        "column3":"Nombre Comercio",
+        "column4":"Movimiento ",
+        "column5":"DNI",
+        "column6":"N° de Cuenta",
+        "column7":"Cuota",
+        "column8":"Importe",
+        "column9":"ver detalle"
+    },
+    "tab1":{
+      "tab1":"Datos Consumo",
+      "text":{
+        "greytext1":"Movimientos",
+        "greytext2":"Grupo de Transacción",
+        "greytext3":"N° de Tarjeta",
+        "greytext4":"Id Consumo",
+        "greytext5":"Autorización Emisor",
+        "greytext6":"Comprobante",
+        "greytext7":"Fecha/Hora" ,
+        "greytext8":"Cuotas" ,
+        "greytext9":"Moneda Origen" ,
+        "greytext10":"Importe Sin Descuento" ,
+        "greytext11":"Terminal",
+        "greytext12":"Lote",
+        "greytext13":"Cauida Cuotas",
+        "greytext14":"Importe Total",
+        "greytext15":"Arancel",
+        "greytext16":"Importe Arancel",
+        "greytext17":"Fecha Cierre",
+        "greytext18":"Fecha Pago",
+        "greytext19":"Fecha Presentación",
+        "greytext20":"Comercio"            
+      },
+      "subtitle":"Detalle de Cuotas",
+      "div":{
+        "h1":"Cuota",
+        "h2":"Importe",
+        "h3":"Arancel",
+        "h4":"Importe Arancel",
+        "h5":"Fecha Cierre",
+        "h6":"Fecha Pago",
+        "h7":"Liq. Comercios"
+      }
+
+    },
+    "tab2":{
+      "tab2":"Datos Socio",
+      "text":{
+        "greytext1":"Nombre",
+        "greytext2":"Apellido",
+        "greytext3":"N° de Documento",
+        "greytext4":"N° de Cuenta",
+        "greytext5":"Adicional",
+        "greytext6":"N° de Tarjeta",
+        "greytext7":"Producto"         
+      }
+    },
+    "tab3":{
+      "tab3":"Datos Adicionales",
+      "text":{
+        "greytext1":"Fecha IPM",
+        "greytext2":"Producto",
+        "greytext3":"MCC",
+        "greytext4":"ICA Emisor",
+        "greytext5":"ICA Adquiriente",
+        "greytext6":"Tasa Conversión"           
+      }
+    },
+    "tab4":{
+      "tab4":"Datos Autorización",
+      "text":{
+        "greytext1":"ID Autorización",
+        "greytext2":"Fecha Autorización",
+        "greytext3":"Autorización Emisor",
+        "greytext4":"Movimiento",
+        "greytext5":"Estado",
+        "greytext6":"Moneda",
+        "greytext7":"Importe" ,
+        "greytext8":"Fecha de Presentación" ,
+        "greytext9":"Moneda" ,
+        "greytext10":"Importe Origen" ,
+        "greytext11":"Cuotas",
+        "greytext12":"Respuesta",
+        "greytext13":"Origen",
+        "greytext14":"País Comercio",
+        "greytext15":"País Emisor",
+        "greytext16":"Cotización",
+        "greytext17":"Fecha de Anulación",
+        "greytext18":"Usuario Anulación"           
+      }
+    },
+    "tab5":{
+      "tab5":"Datos Comercio",
+      "text":{
+        "greytext1":"Movimientos",
+        "greytext2":"Grupo de Comercio",
+        "greytext3":"Modo Ingreso",
+        "greytext4":"Fecha Informada",
+        "greytext5":"MCC",
+        "greytext6":"TCC",
+        "greytext7":"Cupon" ,
+        "greytext8":"Terminal"          
+      }
+    } 
   }
 }

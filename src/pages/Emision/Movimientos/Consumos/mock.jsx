@@ -1,47 +1,50 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import SelectImg from "../../../../components/organisms/SelectImg.jsx/index.jsx";
 
-const columnsEmisionConsumos = [
+const ColumnsEmisionConsumos =()=>{
+  const { t} = useTranslation();
+  return( [
   {
-    name: "ID consumo",
+    name: (t("consumos.table.column1")),
     selector: (row) => row.usuario,
     sortable: true,
   },
   {
-    name: "Fecha/Hora",
+    name: (t("consumos.table.column2")),
     selector: (row) => row.nombre,
     sortable: true,
   },
   {
-    name: "Nombre comercio",
+    name: (t("consumos.table.column3")),
     selector: (row) => row.apellido,
     sortable: true,
   },
   {
-    name: "Movimiento",
+    name: (t("consumos.table.column4")),
     selector: (row) => row.documento,
     sortable: true,
   },
   {
-    name: "DNI",
+    name: (t("consumos.table.column5")),
     selector: (row) => row.perfil,
     sortable: true,
   },
   {
-    name: "Nº de cuenta",
+    name: (t("consumos.table.column6")),
     selector: (row) => row.apellido,
     sortable: true,
   },
   {
-    name: "Cuota",
+    name: (t("consumos.table.column7")),
     selector: (row) => row.documento,
     sortable: true,
   },
   {
-    name: "Importe",
+    name: (t("consumos.table.column8")),
     selector: (row) => row.perfil,
     sortable: true,
   },
@@ -54,11 +57,12 @@ const columnsEmisionConsumos = [
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >
-        Ver detalle
+        {t("consumos.table.column9")}
       </Link>
     ),
   },
-];
+])
+}
 
 const dataEmisionConsumos = [
   {
@@ -108,34 +112,36 @@ const dataEmisionConsumos = [
   },
 ];
 
-const EmisionConsumosSearch = [
+const EmisionConsumosSearch =()=>{
+  const { t} = useTranslation();
+  return(  [
   {
     index: "id",
-    input: <FloatInput placeholder="ID de Consumo" label="ID de Consumo" />,
+    input: <FloatInput placeholder={t("consumos.search.input1")} label={t("consumos.search.input1")} />,
   },
   {
     index: "nombreComercio",
     input: (
-      <FloatInput placeholder="Nombre de Comercio" label="Nombre de Comercio" />
+      <FloatInput placeholder={t("consumos.search.input2")} label={t("consumos.search.input2")} />
     ),
   },
 
   {
     index: "numeroDocumento",
-    input: <FloatInput placeholder="Nº de Documento" label="Nº de Documento" />,
+    input: <FloatInput placeholder={t("consumos.search.input3")} label={t("consumos.search.input3")}/>,
   },
 
   {
     index: "numeroTarjeta",
-    input: <FloatInput placeholder="Nº de Tarjeta" label="Nº de Tarjeta" />,
+    input: <FloatInput placeholder={t("consumos.search.input4")} label={t("consumos.search.input4")} />,
   },
 
   {
     index: "grupoTransaccion",
     input: (
       <FloatSelected
-        placeholder="Grupo Transacción"
-        label="Grupo transacción"
+        placeholder={t("consumos.search.input5")}
+        label={t("consumos.search.input5")}
         options={[
           { title: "grupo 1", value: 1, disabled: false },
           { title: "grupo 2", value: 2, disabled: false },
@@ -147,25 +153,25 @@ const EmisionConsumosSearch = [
 
   {
     index: "comprobante",
-    input: <FloatInput placeholder="Comprobante" label="Comprobante" />,
+    input: <FloatInput placeholder={t("consumos.search.input6")} label={t("consumos.search.input6")} />,
   },
 
   {
     index: "numeroCuenta",
-    input: <FloatInput placeholder="Nº de Cuenta" label="Nº de Cuenta" />,
+    input: <FloatInput placeholder={t("consumos.search.input7")} label={t("consumos.search.input7")} />,
   },
 
   {
     index: "adic",
-    input: <FloatInput placeholder="Adic" label="Adic" />,
+    input: <FloatInput placeholder={t("consumos.search.input8")} label={t("consumos.search.input8")} />,
   },
 
   {
     index: "liquidacionSocio",
     input: (
       <FloatSelected
-        placeholder="Liq. Socios (LS)"
-        label="Liq. Socios (LS)"
+        placeholder={t("consumos.search.input9")}
+        label={t("consumos.search.input9")}
         options={[
           { title: "socio 1", value: 1, disabled: false },
           { title: "socio 2", value: 2, disabled: false },
@@ -177,7 +183,7 @@ const EmisionConsumosSearch = [
 
   {
     index: "cuotas",
-    input: <FloatInput placeholder="Cuotas" label="Cuotas" />,
+    input: <FloatInput placeholder={t("consumos.search.input10")} label={t("consumos.search.input10")} />,
   },
 
   {
@@ -189,6 +195,7 @@ const EmisionConsumosSearch = [
     index: "Por fecha",
     input: <DateRangeFilter></DateRangeFilter>,
   },
-];
+])
+}
 
-export { dataEmisionConsumos, columnsEmisionConsumos, EmisionConsumosSearch };
+export { dataEmisionConsumos, ColumnsEmisionConsumos, EmisionConsumosSearch };
