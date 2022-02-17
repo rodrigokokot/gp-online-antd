@@ -423,7 +423,7 @@
         "column10":"See details"
     },
     "view":{
-      "title1":"File ID 190238",
+      "title1":"File ID",
       "subtitle1":"Process Date",
       "subtitle2":"Archive Type",
       "card1":{
@@ -442,7 +442,8 @@
         "column10":"See deatils"
       },
       "details":{
-        "title1":"File ID 12903812 - IPM registry dedatil 133",
+        "title1":"File ID",
+        "title2":"IPM registry dedatil",
         "subtitle1":"Process Date",
         "table":{
           "column1":"Field/PDS",
@@ -483,8 +484,7 @@
         "column7":"CRB/Exception File Indicator",
         "column8":"See Details"
       },
-      "details":{
-        "title1":"001102",
+      "details":{ 
         "table":{
           "column1":"Content",
           "column2":"Start",

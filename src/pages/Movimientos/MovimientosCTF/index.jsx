@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Searchform from "../../../components/organisms/SearchForm";
 import Table from "../../../components/organisms/Table";
 import {
-  columnsMovimientosCTF,
+  ColumnsMovimientosCTF,
   dataMovimientosCTF,
   MovimientosCTFSearch,
 } from "./mock";
 
 function MovimientosCTF() {
+  const { t} = useTranslation();
   const [data, setData] = useState("");
 
   function handleCallback(values) {
@@ -19,13 +21,13 @@ function MovimientosCTF() {
   return (
     <>
       <Searchform
-        title="Búsqueda de archivos CTF"
+        title={t("ctf.search.searchtitle")}
         parentCallback={handleCallback}
-        array={MovimientosCTFSearch}
+        array={MovimientosCTFSearch()}
         span={6}
       />
       <br></br>
-      <Table data={data} columns={columnsMovimientosCTF}></Table>
+      <Table data={data} columns={ColumnsMovimientosCTF()}></Table>
     </>
   );
 }

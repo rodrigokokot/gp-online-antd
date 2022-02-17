@@ -1,39 +1,42 @@
 import { Link } from "react-router-dom";
 import FloatInput from "../../../components/molecules/FloatInput/index";
 import DateRangeFilter from "../../../components/organisms/DateRangeFilter";
-const columnsDetallesCTF = [
+import { useTranslation } from "react-i18next";
+const ColumnsDetallesCTF=()=>{
+  const { t} = useTranslation();
+  return( [
   {
-    name: "Transaction Code",
+    name: (t("ctf.view.table.column1")),
     selector: (row) => row.ididentidad,
     sortable: true,
   },
   {
-    name: "Transaction Code Qualifer",
+    name: (t("ctf.view.table.column2")),
     selector: (row) => row.numeroCTF,
     sortable: true,
   },
   {
-    name: "Transaction Component Sequence Number",
+    name: (t("ctf.view.table.column3")),
     selector: (row) => row.idconsumo,
     sortable: true,
   },
   {
-    name: "Account Number",
+    name: (t("ctf.view.table.column4")),
     selector: (row) => row.idautorizacion,
     sortable: true,
   },
   {
-    name: "Account Number Extension",
+    name: (t("ctf.view.table.column5")),
     selector: (row) => row.idorigen,
     sortable: true,
   },
   {
-    name: "Floor Limit Indicator",
+    name: (t("ctf.view.table.column6")),
     selector: (row) => row.procesado,
     sortable: true,
   },
   {
-    name: "CRB/Exception File Indicator",
+    name: (t("ctf.view.table.column7")),
     selector: (row) => row.procesado,
     sortable: true,
   },
@@ -42,11 +45,12 @@ const columnsDetallesCTF = [
 		button: true,
 		cell: row => (
 			<Link to={`/movimientos/CTF/detalle=${row.ididentidad}/registro=${row.idorigen}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
-				ver detalle otro
+				{t("ctf.view.table.column8")}
 			</Link>
 		),
   },
-];
+])
+}
 
 const dataDetallesCTF = [
   {
@@ -82,34 +86,36 @@ const dataDetallesCTF = [
     procesado:'0',
   },
 ];
-const columnsMovimientosCTF = [
+const ColumnsMovimientosCTF =()=>{
+  const { t} = useTranslation();
+  return( [
   {
-    name: "ID Identidad",
+    name: (t("ctf.table.column1")),
     selector: (row) => row.ididentidad,
     sortable: true,
   },
   {
-    name: "Nº CTF",
+    name: (t("ctf.table.column2")),
     selector: (row) => row.numeroCTF,
     sortable: true,
   },
   {
-    name: "ID Consumo",
+    name: (t("ctf.table.column3")),
     selector: (row) => row.idconsumo,
     sortable: true,
   },
   {
-    name: "ID Autorización",
+    name: (t("ctf.table.column4")),
     selector: (row) => row.idautorizacion,
     sortable: true,
   },
   {
-    name: "ID CTF Origen",
+    name: (t("ctf.table.column5")),
     selector: (row) => row.idorigen,
     sortable: true,
   },
   {
-    name: "Procesado",
+    name: (t("ctf.table.column6")),
     selector: (row) => row.procesado,
     sortable: true,
   },
@@ -118,11 +124,12 @@ const columnsMovimientosCTF = [
 		button: true,
 		cell: row => (
 			<Link to={`/movimientos/CTF/detalle=${row.ididentidad}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
-				ver detalle
+				{t("ctf.table.column7")}
 			</Link>
 		),
   },
-];
+])
+}
 
 const dataMovimientosCTF = [
   {
@@ -158,63 +165,70 @@ const dataMovimientosCTF = [
     procesado:'0',
   },
 ];
-const MovimientosCTFSearch = [
+const MovimientosCTFSearch =()=>{
+  const { t} = useTranslation();
+  return( [
     {
-      index: 'id',
-      input: <FloatInput placeholder="ID File" label="ID File" />,
+      index: "id",
+      input: <FloatInput placeholder={t("ctf.search.input1")} label={t("ipm.search.input1")} />,
     },
     {
-      index: 'numeroIca',
-      input: <FloatInput placeholder="Nº de ICA" label="Nº de ICA" />,
+      index: "numeroIca",
+      input: <FloatInput placeholder={t("ctf.search.input2")} label={t("ipm.search.input2")} />,
+    },
+  
+    {
+      index: "apellido",
+      input: <FloatInput placeholder={t("ctf.search.input3")}label={t("ipm.search.input3")} />,
+    },
+  
+    {
+      index: "nombre",
+      input: <FloatInput placeholder={t("ctf.search.input4")} label={t("ipm.search.input4")} />,
+    },
+  
+    {
+      index: "numeroDocumento",
+      input: <FloatInput placeholder={t("ctf.search.input5")} label={t("ipm.search.input5")} />,
+    },
+  
+    {
+      index: "fecha",
+      input: <DateRangeFilter></DateRangeFilter> ,
     },
 
+  ])
+}
+const ColumnsRegistroCTF=()=>{
+  const { t} = useTranslation();
+  return([
     {
-      index: 'apellido',
-      input: <FloatInput placeholder="Apellido" label="Apellido" />,
-    },
-
-    {
-      index: 'nombre',
-      input: <FloatInput placeholder="Nombre" label="Nombre" />,
-    },
-
-    {
-        index: 'numeroDocumento',
-        input: <FloatInput placeholder="Nº de Documento" label="Nº de Documento" />,
-    },
-    {
-        index: 'fecha',
-        input: <DateRangeFilter></DateRangeFilter>,
-    },
-
-  ];
-  const columnsRegistroCTF = [
-    {
-      name: "Contenido",
+      name: (t("ctf.view.details.table.column1")),
       selector: (row) => row.contenido,
       sortable: true,
     },
     {
-      name: "Start",
+      name: (t("ctf.view.details.table.column2")),
       selector: (row) => row.start,
       sortable: true,
     },
     {
-      name: "Length",
+      name: (t("ctf.view.details.table.column3")),
       selector: (row) => row.length,
       sortable: true,
     },
     {
-      name: "end",
+      name: (t("ctf.view.details.table.column4")),
       selector: (row) => row.end,
       sortable: true,
     },
     {
-      name: "Alias_Campo",
+      name: (t("ctf.view.details.table.column5")),
       selector: (row) => row.alias,
       sortable: true,
     }
-  ];
+  ])
+}
   
   const dataRegistroCTF = [
     {
@@ -237,4 +251,4 @@ const MovimientosCTFSearch = [
       alias:'287'
     },
   ];
-export { dataRegistroCTF, columnsRegistroCTF,dataDetallesCTF, columnsDetallesCTF,dataMovimientosCTF, columnsMovimientosCTF, MovimientosCTFSearch };
+export { dataRegistroCTF, ColumnsRegistroCTF,dataDetallesCTF, ColumnsDetallesCTF,dataMovimientosCTF, ColumnsMovimientosCTF, MovimientosCTFSearch };

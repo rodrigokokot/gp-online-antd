@@ -1,44 +1,48 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import FloatInput from "../../../components/molecules/FloatInput/index"; 
 import DateRangeFilter from "../../../components/organisms/DateRangeFilter";
-const columnsDetalleMovimientosIPM = [
+
+const ColumnsDetalleMovimientosIPM =()=>{
+  const { t} = useTranslation();
+  return( [
   {
-    name: "ID registro",
+    name: (t("ipm.view.table.column1")),
     selector: (row) => row.idFile,
     sortable: true,
   },
   {
-    name: "Estado",
+    name: (t("ipm.view.table.column2")),
     selector: (row) => row.numeroIca,
     sortable: true,
   },
   {
-    name: "Movimiento",
+    name: (t("ipm.view.table.column3")),
     selector: (row) => row.tipo,
     sortable: true,
   },
   {
-    name: "Processing code",
+    name: (t("ipm.view.table.column4")),
     selector: (row) => row.fecha,
     sortable: true,
   },
   {
-    name: "Primary acount number",
+    name: (t("ipm.view.table.column5")),
     selector: (row) => row.registros,
     sortable: true,
   },
   {
-    name: "Acount transaction",
+    name: (t("ipm.view.table.column6")),
     selector: (row) => row.regOk,
     sortable: true,
   },
   {
-    name: "Currency code transaction",
+    name: (t("ipm.view.table.column7")),
     selector: (row) => row.regError,
     sortable: true,
   },
   {
-    name: "Observaciones",
+    name: (t("ipm.view.table.column8")),
     selector: (row) => row.idProceso,
     sortable: true,
   },
@@ -47,11 +51,12 @@ const columnsDetalleMovimientosIPM = [
 		button: true,
 		cell: row => (
 			<Link to={`/movimientos/IPM/detalle=${row.idFile}/registro=${row.registros}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
-				ver detalle Elements
+				{t("ipm.view.table.column9")}
 			</Link>
 		),
   },
-];
+])
+}
 
 const dataDetalleMovimientosIPM = [
   {
@@ -99,80 +104,85 @@ const dataDetalleMovimientosIPM = [
     nombreArch:'356',
   },
 ];
-const MovimientosIPMSearch = [
+const MovimientosIPMSearch =()=>{
+  const { t} = useTranslation();
+  return( [
   {
     index: "id",
-    input: <FloatInput placeholder="ID File" label="ID File" />,
+    input: <FloatInput placeholder={t("ipm.search.input1")} label={t("ipm.search.input1")} />,
   },
   {
     index: "numeroIca",
-    input: <FloatInput placeholder="Nº de ICA" label="Nº de ICA" />,
+    input: <FloatInput placeholder={t("ipm.search.input2")} label={t("ipm.search.input2")} />,
   },
 
   {
     index: "apellido",
-    input: <FloatInput placeholder="Apellido" label="Apellido" />,
+    input: <FloatInput placeholder={t("ipm.search.input3")}label={t("ipm.search.input3")} />,
   },
 
   {
     index: "nombre",
-    input: <FloatInput placeholder="Nombre" label="Nombre" />,
+    input: <FloatInput placeholder={t("ipm.search.input4")} label={t("ipm.search.input4")} />,
   },
 
   {
     index: "numeroDocumento",
-    input: <FloatInput placeholder="Nº de Documento" label="Nº de Documento" />,
+    input: <FloatInput placeholder={t("ipm.search.input5")} label={t("ipm.search.input5")} />,
   },
 
   {
     index: "fecha",
     input: <DateRangeFilter></DateRangeFilter> ,
   },
-];
+])
+}
 
-const columnsMovimientosIPM = [
+const ColumnsMovimientosIPM =()=>{
+  const { t} = useTranslation();
+  return( [
   {
-    name: "ID File",
+    name: (t("ipm.table.column1")),
     selector: (row) => row.idFile,
     sortable: true,
   },
   {
-    name: "Nº ICA",
+    name: (t("ipm.table.column2")),
     selector: (row) => row.numeroIca,
     sortable: true,
   },
   {
-    name: "Tipo",
+    name: (t("ipm.table.column3")),
     selector: (row) => row.tipo,
     sortable: true,
   },
   {
-    name: "Fecha",
+    name: (t("ipm.table.column4")),
     selector: (row) => row.fecha,
     sortable: true,
   },
   {
-    name: "Registros",
+    name: (t("ipm.table.column5")),
     selector: (row) => row.registros,
     sortable: true,
   },
   {
-    name: "Reg OK",
+    name: (t("ipm.table.column6")),
     selector: (row) => row.regOk,
     sortable: true,
   },
   {
-    name: "Reg Error",
+    name: (t("ipm.table.column7")),
     selector: (row) => row.regError,
     sortable: true,
   },
   {
-    name: "ID proceso",
+    name: (t("ipm.table.column8")),
     selector: (row) => row.idProceso,
     sortable: true,
   },
   {
-    name: "Nombre Arch",
+    name: (t("ipm.table.column9")),
     selector: (row) => row.nombreArch,
     sortable: true,
   },
@@ -181,11 +191,12 @@ const columnsMovimientosIPM = [
 		button: true,
 		cell: row => (
 			<Link to={`/movimientos/IPM/detalle=${row.idFile}`} style={{textDecoration:"underline"}} rel="noopener noreferrer">
-				ver detalle
+				{t("ipm.table.column10")}
 			</Link>
 		),
   },
-];
+])
+}
 
 const dataMovimientosIPM = [
   {
@@ -233,18 +244,21 @@ const dataMovimientosIPM = [
     nombreArch:'356',
   },
 ];
-const columnsDetalleRegistroIPM = [
+const ColumnsDetalleRegistroIPM =()=>{
+  const { t} = useTranslation();
+  return( [
   {
-    name: "Campo / PDS",
+    name: (t("ipm.view.details.table.column1")),
     selector: (row) => row.campo,
     sortable: true,
   },
   {
-    name: "Valor",
+    name: (t("ipm.view.details.table.column2")),
     selector: (row) => row.valor,
     sortable: true,
   },
-];
+])
+}
 
 const dataDetalleRegistroIPM = [
   {
@@ -273,4 +287,4 @@ const dataDetalleRegistroIPM = [
   },
 ];
 
-export { dataDetalleRegistroIPM, columnsDetalleRegistroIPM,dataMovimientosIPM, columnsMovimientosIPM, MovimientosIPMSearch, dataDetalleMovimientosIPM, columnsDetalleMovimientosIPM  };
+export { dataDetalleRegistroIPM, ColumnsDetalleRegistroIPM,dataMovimientosIPM, ColumnsMovimientosIPM, MovimientosIPMSearch, dataDetalleMovimientosIPM, ColumnsDetalleMovimientosIPM  };

@@ -3,18 +3,20 @@ import Edit from "../../../components/organisms/Edit/index";
 import Table from "../../../components/organisms/Table/index";
 import FloatInput from "../../../components/molecules/FloatInput";
 import { Card, Row, Col, Form, Typography } from "antd";
+import { useTranslation } from "react-i18next";
 
 
 export default function GestionPerfilesNew() {
+    const { t} = useTranslation();
 
   const columnsFormulario = [
     {
-      name:"Nombre",
+      name:(t("gestionperfiles.new.table.column1")),
       selector: (row) => row.nombre,
       sortable: true,
     },
     {
-      name:"Descripcion",
+      name:(t("gestionperfiles.new.table.column2")),
       selector: (row) => row.descripcion,
       sortable: false,
     },
@@ -28,19 +30,21 @@ export default function GestionPerfilesNew() {
     }
   ]
 
-  const FormularioPerfil = () => {
+  const FormularioPerfil = () => { 
     return (
       <>
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-          <Typography.Title level={3} style={{ color: '#ab218e' }}>Datos Principales</Typography.Title>
+          <Typography.Title level={3} style={{ color: '#ab218e' }}>
+          {t("gestionperfiles.new.title1")}
+          </Typography.Title>
 
           <Row>
             <Col span={8}>
-              <Form.Item name="nombre" rules={[{required: true, message: "Ingrese nombre"}]}>
+              <Form.Item name="nombre" rules={[{required: true, message: (t("gestionperfiles.new.outline.perfil.error"))}]}>
                 <FloatInput
                   outline
-                  placeholder="Nombre del Nuevo perfil*"
-                  label="Nombre del Nuevo perfil*"
+                  placeholder={t("gestionperfiles.new.outline.perfil.label")}
+                  label={t("gestionperfiles.new.outline.perfil.label")}
                 />
               </Form.Item>
             </Col>
@@ -48,11 +52,11 @@ export default function GestionPerfilesNew() {
 
           <Row>
             <Col span={8}>
-              <Form.Item name="descripcion" rules={[{required: true, message:"Ingrese descripción"}]}>
+              <Form.Item name="descripcion" rules={[{required: true, message:(t("gestionperfiles.new.outline.descripcion.error"))}]}>
                 <FloatInput
                   outline
-                  placeholder="Descripción del perfil*"
-                  label="Descripción del perfil*"
+                  placeholder={t("gestionperfiles.new.outline.descripcion.label")}
+                  label={t("gestionperfiles.new.outline.descripcion.label")}
                 />
               </Form.Item>
             </Col>
@@ -60,7 +64,9 @@ export default function GestionPerfilesNew() {
         </Card>
 
         <Card style={{ borderRadius: '16px', marginBottom: '12px' }}>
-          <Typography.Title level={3} style={{ color: '#ab218e' }}>Tipos de operaciones</Typography.Title>
+          <Typography.Title level={3} style={{ color: '#ab218e' }}>
+          {t("gestionperfiles.new.title2")}
+          </Typography.Title>
         </Card>
         <Table selectable={true} data={dataFormulario} columns={columnsFormulario}/>
       </>
@@ -69,6 +75,9 @@ export default function GestionPerfilesNew() {
 
   return(
   <>
-    <Edit component={FormularioPerfil}  textBtnSave="Crear perfil" textModalConfirm="¿Estas seguro de crear este perfil?" textBtnModalConfirm="Si, crear"/>
+    <Edit component={FormularioPerfil}  
+    textBtnSave="Crear perfil" 
+    textModalConfirm="¿Estas seguro de crear este perfil?" 
+    textBtnModalConfirm="Si, crear"/>
   </>);
 }

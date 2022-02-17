@@ -174,15 +174,15 @@ const DatosGenerales = () => {
           </Col>
           <Text>{t("gestionusuarios.edit.tab1.estado.label")}</Text>
           <Form.Item name="estado">
-            <Radio.Group onChange={onChange3} value={value3}>
-              <Radio value={t("gestionusuarios.edit.tab1.typedoc.value1")}>
-                {t("gestionusuarios.edit.tab1.typedoc.value1")}
+          <Radio.Group onChange={onChange3} value={value3}>
+              <Radio value={t("gestionusuarios.edit.tab1.estado.value1")}>
+                {t("gestionusuarios.edit.tab1.estado.value1")}
               </Radio> <br />
-              <Radio value={t("gestionusuarios.edit.tab1.typedoc.value2")} style={{ marginTop: 14 }}>
-                {t("gestionusuarios.edit.tab1.typedoc.value2")}
+              <Radio value={t("gestionusuarios.edit.tab1.estado.value2")} style={{ marginTop: 14 }}>
+                {t("gestionusuarios.edit.tab1.estado.value2")}
               </Radio><br />
-              <Radio value={t("gestionusuarios.edit.tab1.typedoc.value3")} style={{ marginTop: 14 }}>
-                {t("gestionusuarios.edit.tab1.typedoc.value3")}
+              <Radio value={t("gestionusuarios.edit.tab1.estado.value3")} style={{ marginTop: 14 }}>
+                {t("gestionusuarios.edit.tab1.estado.value3")}
               </Radio><br />
             </Radio.Group>
           </Form.Item>

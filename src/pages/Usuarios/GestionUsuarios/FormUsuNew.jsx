@@ -119,14 +119,14 @@ const FormUsuNew = () => {
           <Text>{t("gestionusuarios.new.estado.label")}</Text>
           <Form.Item name="estado">
             <Radio.Group onChange={onChange3} value={value3}>
-              <Radio value={t("gestionusuarios.new.typedoc.value1")}>
-                {t("gestionusuarios.new.typedoc.value1")}
+              <Radio value={t("gestionusuarios.new.estado.value1")}>
+                {t("gestionusuarios.new.estado.value1")}
               </Radio> <br />
-              <Radio value={t("gestionusuarios.new.typedoc.value2")} style={{ marginTop: 14 }}>
-                {t("gestionusuarios.new.typedoc.value2")}
+              <Radio value={t("gestionusuarios.new.estado.value2")} style={{ marginTop: 14 }}>
+                {t("gestionusuarios.new.estado.value2")}
               </Radio><br />
-              <Radio value={t("gestionusuarios.new.typedoc.value3")} style={{ marginTop: 14 }}>
-                {t("gestionusuarios.new.typedoc.value3")}
+              <Radio value={t("gestionusuarios.new.estado.value3")} style={{ marginTop: 14 }}>
+                {t("gestionusuarios.new.estado.value3")}
               </Radio><br />
             </Radio.Group>
           </Form.Item>
