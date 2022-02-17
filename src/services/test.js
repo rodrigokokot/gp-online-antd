@@ -1,7 +1,14 @@
-import api from './config/axios'
+import { api, jsonPlaceHolder} from './config/axios'
 
 export default {
-    getAll = () => {
-        return api.get()
+    async getAll() {
+        const response = await jsonPlaceHolder.get('/posts')
+        return response.data
+    },
+
+    async apiGPgetAll() {
+        const response = await api.get('/posts')
+        return response.data
     }
+
 }

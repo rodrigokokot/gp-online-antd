@@ -30,7 +30,15 @@ api.interceptors.response.use(
   }
 );
 
-export default  api;
+//////////////////////////////////
+const jsonPlaceHolder = axios.create({
+  baseURL: `${rootApi}`,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+export {api, jsonPlaceHolder};
 
 
 

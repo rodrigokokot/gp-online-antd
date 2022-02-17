@@ -4,7 +4,7 @@ import DeploymentConfirmation from '../components/molecules/DeploymentConfirmati
 import Icon, {DownOutlined} from '@ant-design/icons'
 import FloatInput from '../components/molecules/FloatInput'
 import FloatSelected from '../components/molecules/FloatSelected'
-import { Form, Card, Switch, Typography, Button } from "antd";
+import { Form, Card, Switch, Typography, Button, List } from "antd";
 import DateRangeFilter from '../components/organisms/DateRangeFilter'
 import {HelpImg, LoginImg} from '../assets/svg/img'
 import InlineSVG from 'svg-inline-react';
@@ -12,6 +12,8 @@ import ResultSearch from '../components/molecules/ResultSearch'
 import BreadComponent from '../components/molecules/Breadcrum'
 import { useAuth } from '../context/authContext'
 import { useTranslation } from 'react-i18next';
+
+import { test } from '../services'
 
 const validator = {
     require: {
@@ -23,287 +25,308 @@ const validator = {
 function Page1() {
 
     const { t, i18n } = useTranslation();
+    const [data, setdata] = useState([])
+
+    useEffect(async () => {
+        const response = await test.getAll()
+        setdata(response)
+        // console.log(response);
+    }, [])
 
     const authContext = useAuth()
-    console.log(authContext);
+    // console.log(authContext);
 
     const columns = [
         {
-            name: 'Title',
-            // selector: row => row.title,
-            cell: row => <div><div style={{ fontWeight: 700 }}>{row.title}</div>{row.summary}</div>,
+            name: 'ID',
+            selector: row => row.id,
+            // cell: row => <div><div style={{ fontWeight: 700 }}>{row.title}</div>{row.summary}</div>,
             sortable: true,
         },
         {
-            name: 'Year',
-            selector: row => row.year,
+            name: 'UserId',
+            selector: row => row.userId,
+            // cell: row => <div><div style={{ fontWeight: 700 }}>{row.title}</div>{row.summary}</div>,
             sortable: true,
         },
-         {
-            cell: row => <DownOutlined />,
-            allowOverflow: true,
-            button: true,
-            width: '56px',
+        {
+            name: 'Title',
+            selector: row => row.title,
+            // cell: row => <div><div style={{ fontWeight: 700 }}>{row.title}</div>{row.summary}</div>,
+            sortable: true,
         },
+        {
+            name: 'Description',
+            selector: row => row.body,
+            sortable: true,
+        },
+        //  {
+        //     cell: row => <DownOutlined />,
+        //     allowOverflow: true,
+        //     button: true,
+        //     width: '56px',
+        // },
     ];
 
-    const data = [
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
+    // const data = [
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
 
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
 
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
 
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
 
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
-            year: '1988',
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-    ]
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    //     {
+    //         id: 1,
+    //         title: 'Beetlejuice',
+    //         summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',
+    //         year: '1988',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Ghostbusters',
+    //         year: '1984',
+    //     },
+    // ]
 
-    const [noResult, setNoResult] = useState(false);
+    const [noResult, setNoResult] = useState(true);
 
     return (
         <>
-            <Typography>{t('title')}</Typography>
+        {/* {console.log(first)} */}
+        <Table component={DeploymentConfirmation} columns={columns} data={ noResult && data.length > 0? data : [] } />
+            {/* <Typography>{t('title')}</Typography>
             <Typography>{t('description.part1')}</Typography>
             <BreadComponent />
-            <ResultSearch />
+            <ResultSearch /> */}
             {/* <DateRangeFilter /> */}
 
             {/* <ReactCountryFlagsCurrencySelect
