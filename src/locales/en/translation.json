@@ -400,6 +400,84 @@
       
     },
 
+    "gestionperfiles":{ 
+      "button":"New Profile",
+      "search":{
+        "searchtitle":"Profile Search",
+        "input1":"Profile Type",
+        "input2":"First name",
+        "input3":"Last name",
+        "input4":"Document Number"  
+      },
+      "table":{
+        "column1":"Profile Type",
+        "column2":"Edit"
+      }, 
+      "new":{ 
+        "title1":"Main Data",
+        "title2":"Operation types",
+        "outline":{
+          "perfil": {
+            "label": "New profile name",
+            "error": "Enter name"
+          },
+          "descripcion": {
+            "label": "Profile Description*",
+            "error": "Enter description"
+          } 
+        },
+        "table":{
+          "column1":"Name",
+          "column2":"Description"
+        },
+        "edit":{
+          "save":"Create branch",
+          "confirm":"Create this branch?",
+          "btnconfirm":"Yes, create"
+        } 
+      },
+      "edit":{ 
+        "tab1":{
+          "title1":"Profile",
+          "title2":"operation types",
+          "outline":{
+            "perfil": {
+              "label": "New profile name*",
+              "error": "Enter name"
+            },
+            "descripcion": {
+              "label": "Profile description*",
+              "error": "Enter description"
+            } 
+          },
+          "table":{
+            "column1":"Name",
+            "column2":"Description"
+          }
+        },
+        "tab2":{
+          "tab2":"Password",
+          "password":{
+            "title":"Password",
+            "error1":"Enter password to submit changes",
+            "label":"Enter password*",
+            "error2":"Password must be at least 8 characters long",
+            "error3":"Password must contain at least one number"
+          }   
+        },
+        "edit1":{
+            "save":"Edit profile",
+            "confirm":"Edit this profile?" ,
+            "btnconfirm":"Yes, edit"
+        },
+        "edit2":{
+            "save":"Reset password" ,
+            "confirm":"Reset this password?" ,
+            "btnconfirm":"Yes, save"
+        } 
+      }
+    },
+
   "ipm":{
     "search":{
       "searchtitle":"IPM files search",
@@ -680,5 +758,35 @@
 
     
 
+  },
+
+  "estados":{
+    "search":{
+      "searchtitle":"Product search",
+      "input1":"Emitter",
+      "input2":"Brand",
+      "input3":"Product",
+      "input4":"Card number",
+      "input5":"Related account number",
+      "input6":"Last name",
+      "input7":"Names",
+      "input8":"Document type",
+      "input9":"Document number",
+      "input10":"Business name",
+      "input11":"Company number"
+    },
+    "table":{
+      "column1":"Emitter - Branch",
+      "column2":"ID",
+      "column3":"Client",
+      "column4":"Document",
+      "column5":"Brand",
+      "column6":"Account",
+      "column7":"Product",
+      "column8":"Additional",
+      "column9":"Card",
+      "column10":"See details"
+    }
+    
   }
 }
