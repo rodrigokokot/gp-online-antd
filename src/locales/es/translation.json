@@ -822,5 +822,79 @@
         "btnconfirm":"Si, guardar"
       } 
     }
+  },
+  "afinidad":{
+    "button":"Nuevo Cargo",
+    "search":{
+      "searchtitle":"Búsqueda de tipos de Cargos a Socios por producto y grupo de afinidad",
+      "input1":"Código",
+      "input2":"Descripción",
+      "input3":"Todos",
+      "input4":"Débito",
+      "input5":"Grupo Transacción",
+      "input6":"Comprobante",
+      "input7":"N° de Cuenta",
+      "input8":"Adic",
+      "input9":"Liq. Socio",
+      "input10":"Cuotas",
+      "input11":"Producto",
+      "input12":"Grupo Afinidad",  
+      "input13":"Busca Tipo de Moneda",
+      "input14":"Fecha desde" ,
+      "input15":"Hora desde" ,
+      "input16":"Fecha hasta" ,
+      "input17":"Hora hasta",
+      "input18":"Por Fecha"  
+    },
+    "table":{
+        "column1":"Producto",
+        "column2":"Grupo de Afinidad",
+        "column3":"Concepto",
+        "column4":"Precio",
+        "column5":"Aplica IVA",
+        "column6":"Porcentaje Cargo",
+        "column7":"Vigencia Desde", 
+        "column8":"Vigencia Hasta", 
+        "column9":"Editar"
+    },
+    "new":{
+      "title":"",
+      "h":{
+        "h1":""
+      },
+      "outline":{
+       
+      },
+      "edit":{
+        "save":"Crear cargo",
+        "confirm":"¿Estás seguro de crear el cargo?",
+        "btnconfirm":"Si, crear"
+      } 
+    },
+    "edit":{
+      "title":"Datos Principales",
+      "h":{
+        "h1":"Concepto por Cargo",
+        "h2":"Cargo por Renovación",
+        "h3":"Precio",
+        "h4":"Porcentaje Cargo",
+        "h5":"Fecha desde"
+      },
+      "outline":{
+        "precio": { 
+          "error": "Ingrese precio"
+        },  
+        "fecha": {
+          "label": "Elija Fecha*",
+          "error": "Ingrese fecha desde"
+        } 
+      },
+      "edit":{
+        "save":"Guardar cambios",
+        "confirm":"¿Realizar cambios en el cargo?",
+        "btnconfirm":"Si, Guardar"
+      } 
+    }
   }
+
 }
