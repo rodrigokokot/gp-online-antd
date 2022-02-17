@@ -9,9 +9,7 @@ const Edit = ({
   textModalConfirm,
   textBtnModalConfirm,
 }) => {
-  // const [isModalVisible, setIsModalVisible] = useState(false);
   const showModal = () => {
-    // setIsModalVisible(true);
     Modal.confirm({
       icon: null,
       content: (
@@ -21,7 +19,7 @@ const Edit = ({
       ),
       okText: textBtnModalConfirm,
       okButtonProps: {
-        form: id ? id : "myForm",
+        // form: id ? id : "myForm",
         type: "primary",
         htmlType: "submit",
       },
@@ -38,6 +36,7 @@ const Edit = ({
   };
 
   const onFinish = (values) => {
+    // showModal();
     console.log("Success:", values);
   };
 
@@ -48,10 +47,10 @@ const Edit = ({
   return (
     <>
       <Form
-        id={id ? id : "myForm"}
+        // id={id ? id : "myForm"}
         name="basic"
         initialValues={{ remember: true }}
-        onFinish={onFinish}
+        onFinish={showModal}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
         size="large"
@@ -59,7 +58,7 @@ const Edit = ({
         {<Component></Component>}
         <Form.Item>
           <div style={{ marginTop: "36px", display: "flex", gap: "12px" }}>
-            <Button type="primary" onClick={showModal}>
+            <Button type="primary" htmlType="submit">
               {textBtnSave}
             </Button>
             <Button style={{ border: "2px solid #0DD8B0" }}>Cancelar</Button>

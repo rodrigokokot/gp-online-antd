@@ -11,33 +11,69 @@ const { RangePicker } = DatePicker;
 const AutorizacionesSearchArray = [
   {
     index: "numeroTarjeta",
-    input: <FloatInput label="N° de tarjeta" placeholder="N° de tarjeta" />,
+    input: (
+      <FloatInput
+        
+        label="N° de tarjeta"
+        placeholder="N° de tarjeta"
+      />
+    ),
   },
   {
     index: "documento",
-    input: <FloatInput label="N° de documento" placeholder="N° de documento" />,
+    input: (
+      <FloatInput
+        
+        label="N° de documento"
+        placeholder="N° de documento"
+      />
+    ),
   },
   {
     index: "producto",
-    input: <FloatInput label="Producto" placeholder="Producto" />,
+    input: (
+      <FloatInput  label="Producto" placeholder="Producto" />
+    ),
   },
   {
     index: "cuenta",
-    input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
+    input: (
+      <FloatInput
+        
+        label="N° de cuenta"
+        placeholder="N° de cuenta"
+      />
+    ),
   },
   {
     index: "adicional",
     input: (
-      <FloatInput label="Cuenta Adicional" placeholder="Cuenta Adicional" />
+      <FloatInput
+        
+        label="Cuenta Adicional"
+        placeholder="Cuenta Adicional"
+      />
     ),
   },
   {
     index: "comercio",
-    input: <FloatInput label="N° de comercio" placeholder="N° de comercio" />,
+    input: (
+      <FloatInput
+        
+        label="N° de comercio"
+        placeholder="N° de comercio"
+      />
+    ),
   },
   {
     index: "ingreso",
-    input: <FloatInput label="Modo Ingreso" placeholder="Modo Ingreso" />,
+    input: (
+      <FloatInput
+        
+        label="Modo Ingreso"
+        placeholder="Modo Ingreso"
+      />
+    ),
   },
   {
     index: "ubicacion",
@@ -146,12 +182,6 @@ const AutorizacionesSearchArray = [
     ),
   },
   {
-    index: "rangefecharel",
-    input: (
-      <RangePicker placeholder={["Fecha Rel. Desde", "Fecha Rel. Hasta"]} />
-    ),
-  },
-  {
     index: "cuotas",
     input: (
       <FloatSelected
@@ -170,6 +200,48 @@ const AutorizacionesSearchArray = [
             disabled: false,
           },
         ]}
+      />
+    ),
+  },
+  {
+    index: "Fecha Desde",
+    input: (
+      <FloatInput
+        
+        label="Fecha desde"
+        placeholder="Fecha desde"
+      />
+    ),
+  },
+  {
+    index: "Hora Desde",
+    input: (
+      <FloatInput
+        
+        type="time"
+        label="Hora desde"
+        placeholder="Hora desde"
+      />
+    ),
+  },
+  {
+    index: "Fecha Hasta",
+    input: (
+      <FloatInput
+        
+        label="Fecha hasta"
+        placeholder="Fecha hasta"
+      />
+    ),
+  },
+  {
+    index: "Hora Hasta",
+    input: (
+      <FloatInput
+        
+        type="time"
+        label="Hora hasta"
+        placeholder="Hora hasta"
       />
     ),
   },

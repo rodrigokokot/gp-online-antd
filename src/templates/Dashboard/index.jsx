@@ -4,7 +4,6 @@ import { Layout, Menu, Skeleton, Typography } from "antd";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-  QuestionCircleOutlined,
 } from "@ant-design/icons";
 import "./index.less";
 import routes from "../../router/routesAdmin";
@@ -35,7 +34,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           collapsedWidth={80}
           width={400}
           style={{
-            backgroundColor: "#fff",
+            backgroundColor: "#FFFFFF",
             overflow: "auto",
             overflowX: "hidden",
             position: "fixed",
@@ -119,6 +118,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
               ) : (
                 <Menu.Item
                   icon={<Component />}
+                  title={route.name}
                   key={`${index}`}
                   className={route.page ? "menu-help" : null}
                 >
