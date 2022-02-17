@@ -12,7 +12,8 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
+  // const token = localStorage.getItem("token");
+  const token = process.env.REACT_TOKEN
   if (token) {
     config.headers["Authorization"] = "Bearer " + token;
   }
@@ -29,32 +30,7 @@ api.interceptors.response.use(
   }
 );
 
-const faker = axios.create({
-  baseURL: `${rootApi}`,
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
-
-faker.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    config.headers["Authorization"] = "Bearer " + token;
-  }
-
-  return config;
-});
-
-faker.interceptors.response.use(
-  function (response) {
-    return response;
-  },
-  async function (error) {
-    return Promise.reject(error.response.data);
-  }
-);
-
-export default { api, faker };
+export default  api;
 
 
 

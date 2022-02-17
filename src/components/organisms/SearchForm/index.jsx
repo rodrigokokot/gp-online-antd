@@ -37,6 +37,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
           <Icon component={isActive ? CollapseClose : CollapseOpen} />
         </div>
       )}
+      className="secondary-inputs"
     >
       <Panel
         key="1"
