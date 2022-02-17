@@ -1,4 +1,4 @@
-import { Card, Form, Radio, Row, Col, DatePicker,Typography } from "antd";
+import { Card, Form, Radio, Row, Col, DatePicker, Typography } from "antd";
 import React from "react";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
@@ -9,15 +9,28 @@ export default function AutorizacionesNew() {
     return (
       <>
         <Card>
-          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Datos de Tarjeta</Typography.Title>
+          <Typography.Title level={3} style={{ color: "#ab218e" }}>
+            Datos de Tarjeta
+          </Typography.Title>
           <br></br>
           <Col span={6}>
             <Form.Item
               name="tarjeta"
-              rules={[{ required: true, message: "Ingrese tarjeta" }]}
+              rules={[
+                {
+                  required:true,
+                  validator: (_, value) =>
+                    value && value.match(/^[0-9]+$/)
+                      ? Promise.resolve()
+                      : value.length === 0
+                      ? Promise.reject(new Error(""))
+                      : Promise.reject(new Error("Ingrese solo numeros")),
+                },
+              ]}
             >
               <FloatInput
                 outline
+                type="number"
                 placeholder="N° de Tarjeta*"
                 label="N° de tarjeta*"
               />
@@ -39,13 +52,11 @@ export default function AutorizacionesNew() {
           </Col>
 
           <Col span={12}>
-            <Form.Item name="tipodoc"
-              rules={[{ required: true }]}>
-              <Row>
-                <p>Tipo de documento</p>
-              </Row>
-
-              <Radio.Group name="radiogroup" defaultValue={1}>
+            <Row>
+              <p>Tipo de documento</p>
+            </Row>
+            <Form.Item name="tipodoc" rules={[{ required: true }]}>
+              <Radio.Group name="radiogroup">
                 <Row justify="space-between">
                   <Col span={4}>
                     <Radio value={1}>DNI</Radio>
@@ -73,9 +84,7 @@ export default function AutorizacionesNew() {
           <Col span={6}>
             <Form.Item
               name="doc"
-              rules={[
-                { required: true, message: "Ingrese documento" },
-              ]}
+              rules={[{ required: true, message: "Ingrese documento" }]}
             >
               <FloatInput
                 placeholder="N° de Documento*"
@@ -110,21 +119,25 @@ export default function AutorizacionesNew() {
             </Form.Item>
           </Col>
         </Card>
-              <br></br>
+        <br></br>
         <Card>
-          <Typography.Title level={3}  style={{ color: '#ab218e' }}>Autorización</Typography.Title> <br></br>
-
+          <Typography.Title level={3} style={{ color: "#ab218e" }}>
+            Autorización
+          </Typography.Title>{" "}
+          <br></br>
           <Row gutter={48}>
             <Col span={6}>
               <Form.Item
                 name="fecha-origen"
                 rules={[{ required: true, message: "Ingrese fecha de origen" }]}
               >
-                <DatePicker style={{width: '100%'}} placeholder="Fecha de Origen*" />
+                <DatePicker
+                  style={{ width: "100%" }}
+                  placeholder="Fecha de Origen*"
+                />
               </Form.Item>
             </Col>
           </Row>
-
           <Row gutter={48}>
             <Col span={6}>
               <Form.Item
@@ -135,7 +148,6 @@ export default function AutorizacionesNew() {
               </Form.Item>
             </Col>
           </Row>
-
           <Row gutter={48}>
             <Col span={6}>
               <Form.Item
@@ -169,11 +181,13 @@ export default function AutorizacionesNew() {
                   { required: true, message: "Ingrese fecha de proceso" },
                 ]}
               >
-                <DatePicker style={{width: '100%'}} placeholder="Fecha de Proceso*" />
+                <DatePicker
+                  style={{ width: "100%" }}
+                  placeholder="Fecha de Proceso*"
+                />
               </Form.Item>
             </Col>
           </Row>
-
           <Row gutter={48}>
             <Col span={6}>
               <Form.Item
@@ -193,7 +207,6 @@ export default function AutorizacionesNew() {
               </Form.Item>
             </Col>
           </Row>
-
           <Row gutter={48}>
             <Col span={6}>
               <Form.Item
@@ -239,7 +252,6 @@ export default function AutorizacionesNew() {
               </Form.Item>
             </Col>
           </Row>
-
           <Row gutter={48}>
             <Col span={6}>
               <Form.Item
@@ -269,7 +281,6 @@ export default function AutorizacionesNew() {
               </Form.Item>
             </Col>
           </Row>
-
           <Row gutter={48}>
             <Col span={6}>
               <Form.Item
@@ -289,15 +300,15 @@ export default function AutorizacionesNew() {
               </Form.Item>
             </Col>
           </Row>
-
           <Col span={24}>
-            <Form.Item name="estado"
-              rules={[{ required: true }]}>
-              <Row>
-                <p>Estado</p>
-              </Row>
-
-              <Radio.Group name="radiogroup" defaultValue={1}>
+            <Row>
+              <p>Estado</p>
+            </Row>
+            <Form.Item
+              name="estado"
+              rules={[{ required: true, message: "Ingrese un estado" }]}
+            >
+              <Radio.Group name="radiogroup">
                 <Row justify="space-between">
                   <Col span={6}>
                     <Radio value={1}>Aprobada</Radio>
@@ -323,12 +334,13 @@ export default function AutorizacionesNew() {
   };
 
   return (
-    <div> 
-      <Edit 
+    <>
+      <Edit
         component={FormularioNuevo}
-        textBtnModalConfirm="¿Realizar cambios en la autorización?"
+        textBtnModalConfirm="Si, guardar"
         textBtnSave="Guardar cambios"
-        textModalConfirm="Si, guardar" />
-    </div>
+        textModalConfirm="¿Realizar cambios en la autorización?"
+      />
+    </>
   );
 }

@@ -21,7 +21,7 @@ const GestionAdicionalesSearch = () => {
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/emision/socios/adicionales/crearSocioAdicional">
-          <Button type="primary" size="small">
+          <Button type="primary" size="large">
             Nuevo Adicional
           </Button>
         </Link>

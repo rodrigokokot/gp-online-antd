@@ -18,19 +18,19 @@ function TarjetaInstantanea() {
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/parametria/tarjetaInstantanea/nueva">
-          <Button type="primary" size="small">
+          <Button type="primary" size="large">
             Nuevo tarjeta instantanea
           </Button>
         </Link>
 
         <Link to="/parametria/tarjetaInstantanea/nueva2">
-          <Button type="primary" size="small">
+          <Button type="primary" size="large">
             Nuevo tarjeta instantanea 2
           </Button>
         </Link>
 
         <Link to="/parametria/tarjetaInstantanea/nueva3">
-          <Button type="primary" size="small">
+          <Button type="primary" size="large">
             Nuevo tarjeta instantanea 3
           </Button>
         </Link>
