@@ -35,10 +35,10 @@ const Edit = ({
     });
   };
 
-  const onFinish = (values) => {
-    // showModal();
-    console.log("Success:", values);
-  };
+  // const onFinish = (values) => {
+  //   showModal();
+  //   console.log("Success:", values);
+  // };
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);

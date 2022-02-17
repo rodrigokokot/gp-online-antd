@@ -21,7 +21,6 @@ function DateRangeComponent({ className, dateSelected, range, ...props }) {
       editableDateInputs={false}
       showDateDisplay={false}
       onChange={(item) => {
-        // console.log(state)
         dateSelected([item.selection]);
         setState([item.selection]);
       }}
