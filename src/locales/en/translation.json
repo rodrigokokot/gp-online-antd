@@ -827,5 +827,63 @@
       }
     }
     
+  },
+
+  "cargosproductos":{
+    "search":{
+      "searchtitle":"Charge to members by product search",
+      "input1":"Code",
+      "input2":"Description",
+      "input3":"All",
+      "input4":"Debit",
+      "input5":"Transaction group",
+      "input6":"Roucher",
+      "input7":"Account number",
+      "input8":"Additional",
+      "input9":"Member liquidation",
+      "input10":"Fees",
+      "input11":"Product",
+      "input12":"Currency search"
+    },
+    "table":{
+      "column1":"Code",
+      "column2":"Description",
+      "column3":"Charge type",
+      "column4":"IVA",
+      "column5":"Debit/Credit",
+      "column6":"Currency",
+      "column7":"Status",
+      "column8":"Edit"
+    },
+    "new":{
+      "title1":"Main Data",
+      "codigo":{
+        "label":"Code*",
+        "error":"Enter code"
+      },
+      "descripcion":{
+        "label":"Description*",
+        "error":"Enter description"
+      },
+      "todos":{
+        "label":"All",
+        "error":"Enter all"
+      }
+    },
+    "edit":{
+      "title1":"Main Data",
+      "codigo":{
+        "label":"Code*",
+        "error":"Enter code"
+      },
+      "descripcion":{
+        "label":"Description*",
+        "error":"Enter description"
+      },
+      "todos":{
+        "label":"All",
+        "error":"Enter all"
+      }
+    }
   }
 }
