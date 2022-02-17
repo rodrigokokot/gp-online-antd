@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import FloatInput from "../../../../components/molecules/FloatInput"; 
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import SelectImg from "../../../../components/organisms/SelectImg.jsx";
 
-const columnsTiposDeCargos = [
+const ColumnsTiposDeCargos =()=>{
+  const { t} = useTranslation();
+  return([
   {
     name: "Código",
     selector: (row) => row.codigo,
@@ -52,7 +55,8 @@ const columnsTiposDeCargos = [
       </Link>
     ),
   },
-];
+])
+}
 
 const dataTiposDeCargos = [
   {
@@ -101,7 +105,9 @@ const dataTiposDeCargos = [
     estado: "habilitado",
   },
 ];
-const tiposDeCargosSearch = [
+const TiposDeCargosSearch=()=>{
+  const { t} = useTranslation();
+  return( [
   {
     name: "Codigo",
     index: "tarjeta",
@@ -161,5 +167,6 @@ const tiposDeCargosSearch = [
     index: "fecha",
     input: <DateRangeFilter placeholder="fecha" label="Por fecha" />,
   },
-];
-export { dataTiposDeCargos, columnsTiposDeCargos, tiposDeCargosSearch };
+])
+}
+export { dataTiposDeCargos, ColumnsTiposDeCargos, TiposDeCargosSearch };

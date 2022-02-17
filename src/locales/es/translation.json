@@ -692,5 +692,135 @@
         "greytext8":"Terminal"          
       }
     } 
+  },
+  "tiposcargos":{
+    "button":"Nuevo Tipo de Cargo",
+    "search":{
+      "searchtitle":"Búsqueda de tipos de Cargos",
+      "input1":"Código",
+      "input2":"Descripción",
+      "input3":"Todos",
+      "input4":"Débito",
+      "input5":"Grupo Transacción",
+      "input6":"Comprobante",
+      "input7":"N° de Cuenta",
+      "input8":"Adic",
+      "input9":"Liq. Socio",
+      "input10":"Cuotas", 
+      "input11":"Busca Tipo de Moneda", 
+      "input12":"Por Fecha"
+    },
+    "table":{
+        "column1":"Código",
+        "column2":"Déscripción",
+        "column3":"Tipos Cargo",
+        "column4":"Aplica IVA",
+        "column5":"Débito/Crédito",
+        "column6":"Moneda",
+        "column7":"Estado", 
+        "column8":"Editar"
+    },
+    "new":{ 
+      "title1":"Datos Principales", 
+      "outline":{
+        "codigo": {
+          "label": "Código*",
+          "error": "Ingrese código"
+        },
+        "tipocargo": {
+          "label": "Tipo Cargo*",
+          "error": "Ingrese tipo cargo"
+        },
+        "descripcion": {
+          "label": "Descripción" 
+        },
+        "moneda": {
+          "label": "Busca tipo de moneda*",
+          "error": "Ingrese tipo"
+        } 
+      },
+      "aplicaiva":{
+        "label":"Aplica IVA*",
+        "error":"Ingrese como aplica",
+        "value1":"IVA General",
+        "value2":"IVA Reducido",
+        "value3":"No Aplica" 
+      },
+      "typetarjeta":{
+        "error":"Ingrese tipo de tarjeta", 
+        "value1":"Débito",
+        "value2":"Crédito" 
+      },
+      "moneda":{
+        "label":"Estado", 
+        "value1":"Dolar", 
+        "value2":"Moneda Local" 
+      },
+      "edit":{
+        "save":"Confirmar",
+        "confirm":"¿Confirma creación de nuevo tipo de cargo?",
+        "btnconfirm":"Si, crear"
+      } 
+    },
+    "edit":{ 
+      "title1":"Datos Principales", 
+      "outline":{
+        "codigo": {
+          "label": "Código*",
+          "error": "Ingrese código"
+        },
+        "descripcion": {
+          "label": "Descripción" 
+        },
+        "tipocargo": {
+          "label": "Tipo Cargo*",
+          "error": "Ingrese tipo cargo"
+        }, 
+        "anulacion": {
+          "label": "Anulación de Cargo*",
+          "error": "Ingrese anulación"
+        },
+        "moneda": {
+          "label": "Busca tipo de moneda*",
+          "error": "Ingrese tipo"
+        },
+        "cuota": {
+          "label": "Máx. Cuotas*",
+          "error": "Ingrese cantidad de cuotas"
+        }  
+      },
+      "aplicaiva":{
+        "label":"Aplica IVA*",
+        "error":"Ingrese como aplica",
+        "value1":"IVA General",
+        "value2":"IVA Reducido",
+        "value3":"No Aplica" 
+      },
+      "typetarjeta":{
+        "label":"Débito/Crédito",
+        "error":"Ingrese tipo de tarjeta", 
+        "value1":"Débito",
+        "value2":"Crédito" 
+      },
+      "moneda":{
+        "label":"Moneda", 
+        "value1":"Dolar", 
+        "value2":"Moneda Local" 
+      },
+      "estado":{
+        "label":"Estado*", 
+        "error":"Ingrese estado",
+        "value1":"Habilitado", 
+        "value2":"Inhabilitado" 
+      },
+      "cargo":{ 
+        "label":"¿Afecta Cargos?" 
+      },
+      "edit":{
+        "save":"Guardar cambios",
+        "confirm":"¿Realizar cambios en el tipo de cargo?",
+        "btnconfirm":"Si, guardar"
+      } 
+    }
   }
 }

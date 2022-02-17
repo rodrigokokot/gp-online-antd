@@ -31,16 +31,16 @@ const TipoDeCargoCrear = () => {
               <FloatInput
                 outline
                 type="text"
-                label="Codigo"
-                placeholder="Codigo"
+                label="Codigo*"
+                placeholder="Codigo*"
               ></FloatInput>
             </Form.Item>
-            <Form.Item name="tipoCargo">
+            <Form.Item name="tipoCargo" rules={[{ required: true, message: "Ingrese tipo cargo" }]}>
               <FloatInput
                 outline
                 type="text"
-                label="Tipo Cargo"
-                placeholder="Tipo Cargo"
+                label="Tipo Cargo*"
+                placeholder="Tipo Cargo*"
               ></FloatInput>
             </Form.Item>
             </Col>
@@ -84,14 +84,14 @@ const TipoDeCargoCrear = () => {
             </Radio.Group>
           </Form.Item>
           <Title level={5}>Moneda</Title>
-          <Form.Item name="estado">
+          <Form.Item name="moneda">
             <Radio.Group onChange={onChange3} value={value3}>
               <Radio value={"Dolar"}>Dolar U$S</Radio>
               <Radio value={"Local"}>Moneda Local</Radio>
             </Radio.Group>
           </Form.Item>
           <Col span={6}><Form.Item
-                name="tipomoneda" 
+                name="tipomoneda" rules={[{ required: true, message: "Ingrese tipo" }]}
             > 
                 <SelectImg suffix={<SearchOutlined />} 
                 bordered showSearch={true} placeholder="Busca tipo de moneda" 

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import {
-  columnsTiposDeCargos,
+  ColumnsTiposDeCargos,
   dataTiposDeCargos,
-  tiposDeCargosSearch,
+  TiposDeCargosSearch,
 } from "./mock";
 import { Button, Col } from "antd";
 import { Link } from "react-router-dom";
@@ -27,13 +27,13 @@ function TiposDeCargos() {
         </Link>
       </Col>
       <SearchForm
-        array={tiposDeCargosSearch}
+        array={TiposDeCargosSearch()}
         title="Búsqueda de tipos de Cargos"
         parentCallback={handleCallback}
         span={6}
       ></SearchForm>
       <br />
-      <Table data={data} columns={columnsTiposDeCargos}></Table>
+      <Table data={data} columns={ColumnsTiposDeCargos()}></Table>
     </>
   );
 }
