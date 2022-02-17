@@ -24,7 +24,7 @@ function GestionPerfiles() {
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/usuarios/gestionDePerfiles/crearPerfil">
-          <Button type="primary" size="small">
+          <Button type="primary" size="large">
              {t("gestionperfiles.button")}
           </Button>
         </Link>

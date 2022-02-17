@@ -22,7 +22,7 @@ export default function CargosPorProductosAfinidadSearch() {
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         {/* width ver tamaño en Mocks*/}
         <Link to="/emision/cargosAjustes/cargosPorProductosAfinidad/crearCargoPorProductoYAfinidad">
-          <Button type="primary" size="small">
+          <Button type="primary" size="large">
             Nuevo Cargo
           </Button>
         </Link>

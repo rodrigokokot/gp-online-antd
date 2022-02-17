@@ -434,7 +434,7 @@ export default function TarjetaInstantaneaNew() {
                         </Col>
 
                         <Col span={6} style={{ textAlign: "right" }}>
-                            <Button type="primary" size="small">
+                            <Button type="primary" size="large">
                                 Calcular
                             </Button>
                         </Col>

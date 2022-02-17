@@ -21,7 +21,7 @@ function TiposDeCargos() {
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/emision/cargosAjustes/tiposDeCargos/crearTipoDeCargo">
-          <Button type="primary" size="small">
+          <Button type="primary" size="large">
             Nuevo Tipo de Cargo
           </Button>
         </Link>
