@@ -592,7 +592,7 @@
       "input12":"Rel. Date From",
       "input13":"Rel. Date To",
       "input14":"Fees",
-      "input15":"By dates"
+      "input16":"dd/mm/yyyy"
     },
     "table":{
       "column1":"Account",
@@ -786,7 +786,104 @@
       "column8":"Additional",
       "column9":"Card",
       "column10":"See details"
+    },
+    "view":{
+      "tab1":{
+        "tab1":"Account Information",
+        "greytext1":"Account Number",
+        "greytext2":"Orig. Account Number",
+        "greytext3":"Discharge Date",
+        "greytext4":"Account type",
+        "greytext5":"Brand",
+        "greytext6":"Emitter",
+        "greytext7":"Branch"
+      },
+      "tab2":{
+        "tab2":"Product Information",
+        "greytext1":"Product",
+        "greytext2":"Card",
+        "greytext3":"Discharge Date",
+        "greytext4":"Status"
+      },
+      "tab3":{
+        "tab3":"Owner Information",
+        "greytext1":"Document",
+        "greytext2":"Last Name",
+        "greytext3":"First Name"
+      },
+      "tab4":{
+        "tab4":"Change on card status",
+        "greytext1":"Original card status",
+        "tarjeta":{
+          "label":"New card status",
+          "error":"Enter new card status"
+        },
+        "switch":{
+          "enabled":"Reprint",
+          "disabled":"No Reprint"
+        },
+        "comentarios":"Comments"
+        
+      }
     }
     
+  },
+
+  "cargosproductos":{
+    "search":{
+      "searchtitle":"Charge to members by product search",
+      "input1":"Code",
+      "input2":"Description",
+      "input3":"All",
+      "input4":"Debit",
+      "input5":"Transaction group",
+      "input6":"Roucher",
+      "input7":"Account number",
+      "input8":"Additional",
+      "input9":"Member liquidation",
+      "input10":"Fees",
+      "input11":"Product",
+      "input12":"Currency search"
+    },
+    "table":{
+      "column1":"Code",
+      "column2":"Description",
+      "column3":"Charge type",
+      "column4":"IVA",
+      "column5":"Debit/Credit",
+      "column6":"Currency",
+      "column7":"Status",
+      "column8":"Edit"
+    },
+    "new":{
+      "title1":"Main Data",
+      "codigo":{
+        "label":"Code*",
+        "error":"Enter code"
+      },
+      "descripcion":{
+        "label":"Description*",
+        "error":"Enter description"
+      },
+      "todos":{
+        "label":"All",
+        "error":"Enter all"
+      }
+    },
+    "edit":{
+      "title1":"Main Data",
+      "codigo":{
+        "label":"Code*",
+        "error":"Enter code"
+      },
+      "descripcion":{
+        "label":"Description*",
+        "error":"Enter description"
+      },
+      "todos":{
+        "label":"All",
+        "error":"Enter all"
+      }
+    }
   }
 }

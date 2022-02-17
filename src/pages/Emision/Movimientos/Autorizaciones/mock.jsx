@@ -4,6 +4,7 @@ import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import { Link } from "react-router-dom";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
+import { format } from "date-fns";
 
 const { RangePicker } = DatePicker;
 
@@ -11,75 +12,38 @@ const { RangePicker } = DatePicker;
 const AutorizacionesSearchArray = [
   {
     index: "numeroTarjeta",
-    input: (
-      <FloatInput
-        
-        label="N° de tarjeta"
-        placeholder="N° de tarjeta"
-      />
-    ),
+    input: <FloatInput label="N° de tarjeta" placeholder="N° de tarjeta" />,
   },
   {
     index: "documento",
-    input: (
-      <FloatInput
-        
-        label="N° de documento"
-        placeholder="N° de documento"
-      />
-    ),
+    input: <FloatInput label="N° de documento" placeholder="N° de documento" />,
   },
   {
     index: "producto",
-    input: (
-      <FloatInput  label="Producto" placeholder="Producto" />
-    ),
+    input: <FloatInput label="Producto" placeholder="Producto" />,
   },
   {
     index: "cuenta",
-    input: (
-      <FloatInput
-        
-        label="N° de cuenta"
-        placeholder="N° de cuenta"
-      />
-    ),
+    input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
   },
   {
     index: "adicional",
     input: (
-      <FloatInput
-        
-        label="Cuenta Adicional"
-        placeholder="Cuenta Adicional"
-      />
+      <FloatInput label="Cuenta Adicional" placeholder="Cuenta Adicional" />
     ),
   },
   {
     index: "comercio",
-    input: (
-      <FloatInput
-        
-        label="N° de comercio"
-        placeholder="N° de comercio"
-      />
-    ),
+    input: <FloatInput label="N° de comercio" placeholder="N° de comercio" />,
   },
   {
     index: "ingreso",
-    input: (
-      <FloatInput
-        
-        label="Modo Ingreso"
-        placeholder="Modo Ingreso"
-      />
-    ),
+    input: <FloatInput label="Modo Ingreso" placeholder="Modo Ingreso" />,
   },
   {
     index: "ubicacion",
     input: (
       <FloatSelected
-      
         label="Ubicación"
         placeholder="Ubicación"
         options={[
@@ -101,7 +65,6 @@ const AutorizacionesSearchArray = [
     index: "origen",
     input: (
       <FloatSelected
-      
         label="Origen"
         placeholder="Origen"
         options={[
@@ -118,7 +81,6 @@ const AutorizacionesSearchArray = [
     index: "relacionada",
     input: (
       <FloatSelected
-      
         label="Relacionada"
         placeholder="Relacionada"
         options={[
@@ -135,7 +97,6 @@ const AutorizacionesSearchArray = [
     index: "rechazo",
     input: (
       <FloatSelected
-      
         label="Motivo de rechazo"
         placeholder="Motivo de rechazo"
         options={[
@@ -152,7 +113,6 @@ const AutorizacionesSearchArray = [
     index: "estado",
     input: (
       <FloatSelected
-      
         label="Estado"
         placeholder="Estado"
         mode="tags"
@@ -185,7 +145,6 @@ const AutorizacionesSearchArray = [
     index: "cuotas",
     input: (
       <FloatSelected
-      
         placeholder="Cuotas"
         label="Cuotas"
         options={[
@@ -204,45 +163,40 @@ const AutorizacionesSearchArray = [
     ),
   },
   {
-    index: "Fecha Desde",
+    index: "Fecha Rel. Desde",
     input: (
       <FloatInput
-        
-        label="Fecha desde"
-        placeholder="Fecha desde"
+        type="date"
+        label="Fecha Rel. Desde"
+        value="2018-07-22"
+        defaultValue={format(new Date(), "dd-mm-yyyy")}
       />
     ),
   },
   {
+    index: "Fecha Rel. Hasta",
+    input: <FloatInput type="date" label="Fecha Rel. Hasta" defaultValue=" " />,
+  },
+  {
+    index: "Fecha Desde",
+    input: <FloatInput type="date" label="Fecha desde" defaultValue=" " />,
+  },
+  {
     index: "Hora Desde",
     input: (
-      <FloatInput
-        
-        type="time"
-        label="Hora desde"
-        placeholder="Hora desde"
-      />
+      <FloatInput type="time" label="Hora desde" defaultValue=" " />
     ),
   },
   {
     index: "Fecha Hasta",
     input: (
-      <FloatInput
-        
-        label="Fecha hasta"
-        placeholder="Fecha hasta"
-      />
+      <FloatInput type="date" label="Fecha hasta" defaultValue=" " />
     ),
   },
   {
     index: "Hora Hasta",
     input: (
-      <FloatInput
-        
-        type="time"
-        label="Hora hasta"
-        placeholder="Hora hasta"
-      />
+      <FloatInput type="time" label="Hora hasta" defaultValue=" " />
     ),
   },
   {
