@@ -19,10 +19,29 @@
  }
 
 
-    .ant-collapse-header{
+  .ant-collapse-header{
    font-size: large;
  }
 
 
- 
+.secondary-inputs .ant-select-selector {
+  outline: 0!important;
+  border-width: 0 0 2px!important;
+  border-color: @secondary-color;
+  box-shadow: none;
 
+}
+
+.secondary-inputs .ant-select-selector:focus, .secondary-inputs .ant-select-selector:hover {
+  border-color: @secondary-color!important;
+}
+
+.secondary-inputs .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  box-shadow: none!important;
+  border-right-width: 0px!important;
+  border-color: @secondary-color;
+}
+
+.secondary-inputs .ant-input:focus, .secondary-inputs .ant-input:hover {
+  border-color: @secondary-color!important;
+}

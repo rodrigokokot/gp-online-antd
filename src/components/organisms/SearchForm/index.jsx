@@ -37,6 +37,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
           <Icon component={isActive ? CollapseClose : CollapseOpen} />
         </div>
       )}
+      className="secondary-inputs"
     >
       <Panel
         key="1"
@@ -57,7 +58,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
           <Row gutter={24} style={{ marginTop: 20 }}>
             {array.map((item) => {
               return (
-                <Col key={item.index} span={span}>
+                <Col key={item.index} span={span} xs={24} sm={12} md={4}>
                   <Form.Item name={item.index}>{item.input}</Form.Item>
                 </Col>
               );
@@ -65,10 +66,12 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
           </Row>
 
           <Row style={{ marginTop: 40 }}>
-            <Col span={24} style={{ textAlign: "left" }}>
-              <Button type="primary" htmlType="submit" onClick={()=>setOpen([""])}>
+            <Col span={2} style={{ textAlign: "left" }} xs={24} sm={6} md={4}>
+              <Button type="primary" htmlType="submit" onClick={()=>setOpen([""])} block>
               {t("searchform.searchbutton")}
               </Button>
+            </Col>
+            <Col span={2} style={{ textAlign: "left" }} xs={24} sm={6} md={4}>
               <Button
                 type="text"
                 style={{ margin: "0 8px" }}

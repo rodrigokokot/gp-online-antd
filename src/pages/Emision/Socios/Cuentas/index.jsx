@@ -43,8 +43,8 @@ const GestionCuentas = () => {
   return(
   <>
           <Col style={{ textAlign: "right", marginBottom: "25px"}}> 
-            <Link to="/emision/socios/cuentas/gestionDeCuentas/nueva"> 
-            <Button type="primary" size="small">
+            <Link to="/emision/socios/cuentas/crearCuenta"> 
+            <Button type="primary" size="large">
               Nueva Cuenta
             </Button>
             </Link>

@@ -21,7 +21,7 @@ export default function AutorizacionesSearch() {
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/emision/movimientos/autorizaciones/crearAutorizacion">
-          <Button type="primary" size="small">
+          <Button type="primary" size="large">
             Nueva Autorización
           </Button>
         </Link>
@@ -31,7 +31,7 @@ export default function AutorizacionesSearch() {
         array={AutorizacionesSearchArray}
         title="Busqueda de autorizaciones"
         parentCallback={handleCallback}
-        span={6}
+        span={4}
       />
       <br />
       <Table data={data} columns={columnsAutorizaciones} />

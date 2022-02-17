@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { Select } from "antd";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 import "./index.less";
 
-const FloatSelected = ({options,showSearch, outline, secondaryColor, width, mode, ...props}) => {
+const FloatSelected = ({
+  options,
+  showSearch,
+  outline,
+  secondaryColor,
+  width,
+  mode,
+  ...props
+}) => {
   const [focus, setFocus] = useState(false);
-  let { label, value, placeholder, type,disabled, required} = props;
+  let { label, value, placeholder, type, disabled, required } = props;
 
   if (!placeholder) placeholder = label;
 
@@ -16,11 +24,11 @@ const FloatSelected = ({options,showSearch, outline, secondaryColor, width, mode
 
   const requiredMark = required ? <span className="text-danger">*</span> : null;
 
-  const selectOutline = outline? 'select-outline' : 'select-bottom'
+  const selectOutline = outline ? "select-outline" : "select-bottom";
 
-  const secondary = secondaryColor? 'secondary' : ''
+  const secondary = secondaryColor ? "secondary" : "";
 
-  const [borderColor, setBorderColor] = useState("")
+  const [borderColor, setBorderColor] = useState("");
 
   return (
     <div
@@ -28,13 +36,28 @@ const FloatSelected = ({options,showSearch, outline, secondaryColor, width, mode
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
     >
-                              {/* Modos disponibles : "tags" */}
-      <Select suffixIcon={props.suffix} mode={mode} maxTagCount='responsive' style={{width: width }} onChange={props.onChange} disabled={disabled} showSearch={props.showSearch}
-      // className={ !outline? "select-bottom" : '' }
-       >
-        {
-          options && options.map((opt, index) => <Select.Option value={opt.value} disabled={opt.disabled} key={index}>{opt.icon}{opt.title}</Select.Option>)
-        }
+      {/* Modos disponibles : "tags" */}
+      <Select
+        suffixIcon={props.suffix}
+        mode={mode}
+        maxTagCount="responsive"
+        style={{ width: width }}
+        onChange={props.onChange}
+        disabled={disabled}
+        showSearch={props.showSearch}
+        // className={ !outline? "select-bottom" : '' }
+      >
+        {options &&
+          options.map((opt, index) => (
+            <Select.Option
+              value={opt.value}
+              disabled={opt.disabled}
+              key={index}
+            >
+              {opt.icon}
+              {opt.title}
+            </Select.Option>
+          ))}
       </Select>
       <label className={labelClass}>
         {isOccupied ? label : placeholder} {requiredMark}
@@ -45,12 +68,12 @@ const FloatSelected = ({options,showSearch, outline, secondaryColor, width, mode
 
 FloatSelected.propTypes = {
   options: PropTypes.array,
-  outline: PropTypes.bool
-}
+  outline: PropTypes.bool,
+};
 
 FloatSelected.defaultProps = {
   options: [],
-  outline: false
-}
+  outline: false,
+};
 
 export default FloatSelected;

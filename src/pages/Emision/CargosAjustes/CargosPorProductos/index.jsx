@@ -21,7 +21,7 @@ const CargosPorProductos = () => {
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/emision/cargosAjustes/cargosPorProductos/crearCargoPorProducto">
-          <Button type="primary" size="small">
+          <Button type="primary" size="large">
             Nuevo Cargo
           </Button>
         </Link>

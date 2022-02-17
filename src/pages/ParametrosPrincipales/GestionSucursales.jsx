@@ -24,7 +24,7 @@ function GestionSucursales() {
     <>
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/parametrosPrincipales/gestionDeSucursales/crearSucursal">
-          <Button type="primary" size="small">
+          <Button type="primary" size="large">
             {t("gestionsucursales.button")}
           </Button>
         </Link>
