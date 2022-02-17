@@ -592,7 +592,7 @@
       "input12":"Rel. Date From",
       "input13":"Rel. Date To",
       "input14":"Fees",
-      "input15":"By dates"
+      "input16":"dd/mm/yyyy"
     },
     "table":{
       "column1":"Account",
