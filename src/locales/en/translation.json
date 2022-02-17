@@ -31,7 +31,7 @@
       "tab1":"Novelties to confirm",
       "search":{
         "searchtitle":"Approval search",
-        "input1":"Emmiter",
+        "input1":"emitter",
         "input2":"Brand",
         "input3":"Transaction",
         "input4":"Branch",
@@ -64,7 +64,7 @@
         },
         "title2":"Operation date",
         "text2":{
-          "greytext1":"Emmiter",
+          "greytext1":"emitter",
           "greytext2":"Document",
           "greytext3":"Brand",
           "greytext4":"Transaction data",
@@ -99,7 +99,7 @@
       },
       "table":{
         "column1":"Brand",
-        "column2":"Emmiter",
+        "column2":"emitter",
         "column3":"Receipt",
         "column4":"Account",
         "column5":"Concept",
@@ -116,7 +116,7 @@
           "greytext2":"Org. Account Number",
           "greytext3":"Discharge Date",
           "greytext4":"Brand",
-          "greytext5":"Emmiter",
+          "greytext5":"emitter",
           "greytext6":"Branch" 
         },
         "title2":"Headline Information",
@@ -400,6 +400,84 @@
       
     },
 
+    "gestionperfiles":{ 
+      "button":"New Profile",
+      "search":{
+        "searchtitle":"Profile Search",
+        "input1":"Profile Type",
+        "input2":"First name",
+        "input3":"Last name",
+        "input4":"Document Number"  
+      },
+      "table":{
+        "column1":"Profile Type",
+        "column2":"Edit"
+      }, 
+      "new":{ 
+        "title1":"Main Data",
+        "title2":"Operation types",
+        "outline":{
+          "perfil": {
+            "label": "New profile name",
+            "error": "Enter name"
+          },
+          "descripcion": {
+            "label": "Profile Description*",
+            "error": "Enter description"
+          } 
+        },
+        "table":{
+          "column1":"Name",
+          "column2":"Description"
+        },
+        "edit":{
+          "save":"Create branch",
+          "confirm":"Create this branch?",
+          "btnconfirm":"Yes, create"
+        } 
+      },
+      "edit":{ 
+        "tab1":{
+          "title1":"Profile",
+          "title2":"operation types",
+          "outline":{
+            "perfil": {
+              "label": "New profile name*",
+              "error": "Enter name"
+            },
+            "descripcion": {
+              "label": "Profile description*",
+              "error": "Enter description"
+            } 
+          },
+          "table":{
+            "column1":"Name",
+            "column2":"Description"
+          }
+        },
+        "tab2":{
+          "tab2":"Password",
+          "password":{
+            "title":"Password",
+            "error1":"Enter password to submit changes",
+            "label":"Enter password*",
+            "error2":"Password must be at least 8 characters long",
+            "error3":"Password must contain at least one number"
+          }   
+        },
+        "edit1":{
+            "save":"Edit profile",
+            "confirm":"Edit this profile?" ,
+            "btnconfirm":"Yes, edit"
+        },
+        "edit2":{
+            "save":"Reset password" ,
+            "confirm":"Reset this password?" ,
+            "btnconfirm":"Yes, save"
+        } 
+      }
+    },
+
   "ipm":{
     "search":{
       "searchtitle":"IPM files search",
@@ -492,6 +570,319 @@
           "column4":"End",
           "column5":"Field Alias"
         }
+      }
+    }
+  },
+
+  "autorizaciones":{
+    "button":"New Autorization",
+    "search":{
+      "searchtitle":"Autorization Search",
+      "input1":"Card Number",
+      "input2":"Document Number",
+      "input3":"Product",
+      "input4":"Account Number",
+      "input5":"Additional Account",
+      "input6":"Commerce Number",
+      "input7":"Input mode",
+      "input8":"Location",
+      "input9":"Origin",
+      "input10":"Related",
+      "input11":"Reason for rejection",
+      "input12":"Rel. Date From",
+      "input13":"Rel. Date To",
+      "input14":"Fees",
+      "input16":"dd/mm/yyyy"
+    },
+    "table":{
+      "column1":"Account",
+      "column2":"Additional",
+      "column3":"Card",
+      "column4":"Date",
+      "column5":"Amount",
+      "column6":"Currency",
+      "column7":"Arrangement",
+      "column8":"Fees",
+      "column9":"Auth/Code",
+      "column10":"Commerce",
+      "column11":"Status",
+      "column12":"See details"
+    },
+    "new":{
+      "title1":"Card Information",
+      "title2":"Authorization",      
+      "outline":{
+        "tarjeta":{
+          "label":"Card Number*",
+          "error":"Enter Card Number"
+        },
+        "nombre": {
+          "label": "Name*",
+          "error": "Enter Name"
+        },
+        "apellido": {
+          "label": "Last Name*",
+          "error": "Enter Last Name"
+        },
+        "documento": {
+          "label": "Document number*",
+          "error": "Enter document"
+        },
+        "marca":{
+          "label": "Brand*",
+          "error": "Enter Brand"
+        },
+        "emisor":{
+          "label":"emitter*",
+          "error":"Enter emitter"
+        },
+        "producto":{
+          "label":"Product Type*",
+          "error":"Enter Product Type"
+        },
+        "forigen":{
+          "label":"Origin date",
+          "error":"Enter Origin date"
+        },
+        "importe":{
+          "label":"Amount",
+          "error":"Enter Amount"
+        },
+        "moneda":{
+          "label":"Currency",
+          "error":"Enter currency"
+        },
+        "proceso":{
+          "label":"Process date",
+          "error":"Enter process date"
+        },
+        "plan":{
+          "label":"Arrangement",
+          "error":"Enter Arrangement"
+        },
+        "relacion":{
+          "label":"Relation",
+          "error":"Enter Relation"
+        },
+        "cuotas":{
+          "label":"Fees",
+          "error":"Enter Fees"
+        },
+        "origen":{
+          "label":"Origin",
+          "error":"Enter Origin"
+        },
+        "autorizacion":{
+          "label":"Authorization",
+          "error":"Enter Authorization"
+        },
+        "entrada":{
+          "label":"Entry mode",
+          "error":"Enter entry mode"
+        },
+        "comercio":{
+          "label":"Commerce",
+          "error":"Enter commerce"
+        },
+        "terminal":{
+          "label":"Terminal",
+          "error":"Enter terminal"
+        }
+      },
+      "typedoc":{
+        "label":"Document type",
+        "error":"Enter tipo de documento",
+        "value1":"DNI",
+        "value2":"CUIT",
+        "value3":"CIVIC NOTEBOOK",
+        "value4":"ENLISTMENT NOTEBOOK",
+        "value5":"CUIL",
+        "value6":"PASSPORT",
+        "value7":"CI"
+      },
+      "radiogroup":{
+        "title":"State",
+        "radio1":"Approved",
+        "radio2":"Rejected",
+        "radio3":"Canceled",
+        "radio4":"No emitter auth",
+        "radio5":"Rejected by emitter",
+        "radio6":"Canceled due to lack of presentation"
+      }
+    },
+    "view":{
+      "tab1":{
+        "tab1":"Authorization Data",
+        "greytext1":"Authorization ID",
+        "greytext2":"Authorization date",
+        "greytext3":"Emitter Authorization",
+        "greytext4":"Movement",
+        "greytext5":"Status",
+        "greytext6":"Emitter",
+        "greytext7":"Currency",
+        "greytext8":"Amount",
+        "greytext9":"Presentation date",
+        "greytext10":"Currency",
+        "greytext11":"Origin Amount",
+        "greytext12":"Fees",
+        "greytext13":"Response",
+        "greytext14":"Origin",
+        "greytext15":"Commerce country",
+        "greytext16":"Emitter country",
+        "greytext17":"Price",
+        "greytext18":"Cancellation date",
+        "greytext19":"Cancellation user"
+      },
+      "tab2":{
+        "tab2":"Member Data",
+        "greytext1":"First Name",
+        "greytext2":"Last Name",
+        "greytext3":"Document Number",
+        "greytext4":"Account Number",
+        "greytext5":"Additionals",
+        "greytext6":"Product",
+        "greytext7":"Card Number"
+      },
+      "tab3":{
+        "tab3":"Commerce data",
+        "greytext1":"Commerce description",
+        "greytext2":"Commerce number",
+        "greytext3":"Entry mode",
+        "greytext4":"Informed Date",
+        "greytext5":"MCC",
+        "greytext6":"TCC",
+        "greytext7":"Coupon",
+        "greytext8":"Terminal"
+      }
+    }
+
+    
+
+  },
+
+  "estados":{
+    "search":{
+      "searchtitle":"Product search",
+      "input1":"Emitter",
+      "input2":"Brand",
+      "input3":"Product",
+      "input4":"Card number",
+      "input5":"Related account number",
+      "input6":"Last name",
+      "input7":"Names",
+      "input8":"Document type",
+      "input9":"Document number",
+      "input10":"Business name",
+      "input11":"Company number"
+    },
+    "table":{
+      "column1":"Emitter - Branch",
+      "column2":"ID",
+      "column3":"Client",
+      "column4":"Document",
+      "column5":"Brand",
+      "column6":"Account",
+      "column7":"Product",
+      "column8":"Additional",
+      "column9":"Card",
+      "column10":"See details"
+    },
+    "view":{
+      "tab1":{
+        "tab1":"Account Information",
+        "greytext1":"Account Number",
+        "greytext2":"Orig. Account Number",
+        "greytext3":"Discharge Date",
+        "greytext4":"Account type",
+        "greytext5":"Brand",
+        "greytext6":"Emitter",
+        "greytext7":"Branch"
+      },
+      "tab2":{
+        "tab2":"Product Information",
+        "greytext1":"Product",
+        "greytext2":"Card",
+        "greytext3":"Discharge Date",
+        "greytext4":"Status"
+      },
+      "tab3":{
+        "tab3":"Owner Information",
+        "greytext1":"Document",
+        "greytext2":"Last Name",
+        "greytext3":"First Name"
+      },
+      "tab4":{
+        "tab4":"Change on card status",
+        "greytext1":"Original card status",
+        "tarjeta":{
+          "label":"New card status",
+          "error":"Enter new card status"
+        },
+        "switch":{
+          "enabled":"Reprint",
+          "disabled":"No Reprint"
+        },
+        "comentarios":"Comments"
+        
+      }
+    }
+    
+  },
+
+  "cargosproductos":{
+    "search":{
+      "searchtitle":"Charge to members by product search",
+      "input1":"Code",
+      "input2":"Description",
+      "input3":"All",
+      "input4":"Debit",
+      "input5":"Transaction group",
+      "input6":"Roucher",
+      "input7":"Account number",
+      "input8":"Additional",
+      "input9":"Member liquidation",
+      "input10":"Fees",
+      "input11":"Product",
+      "input12":"Currency search"
+    },
+    "table":{
+      "column1":"Code",
+      "column2":"Description",
+      "column3":"Charge type",
+      "column4":"IVA",
+      "column5":"Debit/Credit",
+      "column6":"Currency",
+      "column7":"Status",
+      "column8":"Edit"
+    },
+    "new":{
+      "title1":"Main Data",
+      "codigo":{
+        "label":"Code*",
+        "error":"Enter code"
+      },
+      "descripcion":{
+        "label":"Description*",
+        "error":"Enter description"
+      },
+      "todos":{
+        "label":"All",
+        "error":"Enter all"
+      }
+    },
+    "edit":{
+      "title1":"Main Data",
+      "codigo":{
+        "label":"Code*",
+        "error":"Enter code"
+      },
+      "descripcion":{
+        "label":"Description*",
+        "error":"Enter description"
+      },
+      "todos":{
+        "label":"All",
+        "error":"Enter all"
       }
     }
   }
