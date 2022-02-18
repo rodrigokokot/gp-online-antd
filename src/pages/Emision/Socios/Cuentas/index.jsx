@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchForm from "../../../../components/organisms/SearchForm/index";
 import Table from "../../../../components/organisms/Table/index";
 import { Link } from "react-router-dom";
@@ -8,15 +8,16 @@ import {
   columnsGestionCuenta,
 } from "./mock";
 import { Col, Button } from "antd";
+import test from "../../../../services/test";
 
 /* hacer que router tengo la dir de app.js  */
 const GestionCuentas = () => {
   const [data, setData] = useState("");
 
-  function handleCallback(values) {
-    //lamada al servicio axios.post(values)
-    //setData(axios.response)
-    setData(dataGestionCuenta);
+  async function handleCallback(values) {
+    const response  =  await test.getProductos()
+    console.log(response.data.lista)
+    setData(response.data.lista);
   }
 
   return (
