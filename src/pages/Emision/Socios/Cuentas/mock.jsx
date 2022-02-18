@@ -128,11 +128,6 @@ const GestionCuentaSearch = [
     input: <FloatInput label="N° de documento" placeholder="N° de documento" />,
   },
   {
-    name: "Producto",
-    index: "producto",
-    input: <FloatInput label="Producto" placeholder="Producto" />,
-  },
-  {
     name: "N° de cuenta",
     index: "cuenta",
     input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
