@@ -1,3 +1,5 @@
 export default {
-    posts: '/posts'
+    posts: '/posts',
+    accesToken: '/AccessToken/AllData,',
+    getProducts: '/Productos?IsActive=true'
 }
