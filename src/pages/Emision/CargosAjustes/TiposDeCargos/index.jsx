@@ -8,8 +8,10 @@ import { Button, Col } from "antd";
 import { Link } from "react-router-dom";
 import SearchForm from "../../../../components/organisms/SearchForm";
 import Table from "../../../../components/organisms/Table";
+import { useTranslation } from "react-i18next";
 
 function TiposDeCargos() {
+  const { t} = useTranslation();
   const [data, setData] = useState("");
 
   function handleCallback(values) {
@@ -22,13 +24,13 @@ function TiposDeCargos() {
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/emision/cargosAjustes/tiposDeCargos/crearTipoDeCargo">
           <Button type="primary" size="large">
-            Nuevo Tipo de Cargo
+          {t("tiposcargos.button")}
           </Button>
         </Link>
       </Col>
       <SearchForm
         array={TiposDeCargosSearch()}
-        title="Búsqueda de tipos de Cargos"
+        title={t("tiposcargos.search.searchtitle")}
         parentCallback={handleCallback}
         span={6}
       ></SearchForm>

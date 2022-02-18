@@ -270,9 +270,8 @@ const columnsAutorizaciones = [
         to={`/emision/movimientos/autorizaciones/detalle=${row.auto}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
-      >
-        {" "}
-        ver detalle{" "}
+      > 
+        ver detalle 
       </Link>
     ),
   },

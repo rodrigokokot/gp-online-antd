@@ -589,10 +589,15 @@
       "input9":"Origin",
       "input10":"Related",
       "input11":"Reason for rejection",
-      "input12":"Rel. Date From",
-      "input13":"Rel. Date To",
-      "input14":"Fees",
-      "input16":"dd/mm/yyyy"
+      "input12":"State",
+      "input13":"Fees",
+      "input14":"Rel. Date From",
+      "input15":"Rel. Date To",
+      "input16":"Date From",
+      "input17":"Time From",
+      "input18":"Date To",
+      "input19":"Time To",   
+      "input20":"dd/mm/yyyy"
     },
     "table":{
       "column1":"Account",
@@ -708,7 +713,12 @@
         "radio4":"No emitter auth",
         "radio5":"Rejected by emitter",
         "radio6":"Canceled due to lack of presentation"
-      }
+      },
+      "edit":{
+        "save":"Save changes",
+        "confirm":"Make changes to authorization?",
+        "btnconfirm":"Yes, save"
+      } 
     },
     "view":{
       "tab1":{
