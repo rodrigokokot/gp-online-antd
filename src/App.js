@@ -71,8 +71,8 @@ function App() {
 
 
           <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos'))} />
-          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos/editarCargo=:id" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos/TiposDeCargosEdit'))} />
-          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos/crearCargo" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos/TiposDeCargoCrear'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos/editarTipoDeCargo=:id" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos/TiposDeCargosEdit'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/tiposDeCargos/crearTipoDeCargo" component={lazy(() => import('./pages/Emision/CargosAjustes/TiposDeCargos/TiposDeCargoCrear'))} />
 
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos/editarCargoPorProducto=:id" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos/CargosPorProductosEditar'))} />
@@ -86,8 +86,8 @@ function App() {
           <DashboardTemplate exact path="/emision/cargosAjustes/publicacionEnBoletin/detalle=:id" component={lazy(() => import('./pages/Emision/CargosAjustes/PublicacionEnBoletin/ConsultaBoletin'))} />
 
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad'))} />
-          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad/editarCargoPorProductosAfinidad=:id" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad/CargosPorProdutosAfinidadEdit'))} />
-          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad/crearCargoPorProductosAfinidad" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad/CargosPorProductosAfinidadNew'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad/editarCargoPorProductoYAfinidad=:id" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad/CargosPorProdutosAfinidadEdit'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosAfinidad/crearCargoPorProductoYAfinidad" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosAfinidad/CargosPorProductosAfinidadNew'))} />
          
 
           <DashboardTemplate exact path="/emision/cargosAjustes/consultaDeLiquidaciones" component={lazy(() => import('./pages/Emision/CargosAjustes/ConsultaDeLiquidaciones'))} />

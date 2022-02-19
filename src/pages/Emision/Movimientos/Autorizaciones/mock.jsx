@@ -5,47 +5,50 @@ import FloatSelected from "../../../../components/molecules/FloatSelected";
 import { Link } from "react-router-dom";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import { format } from "date-fns";
+import { useTranslation } from "react-i18next";
 
 const { RangePicker } = DatePicker;
 
 ///////// MOCK INPUTS DE FORMULARIO /////////
-const AutorizacionesSearchArray = [
+const AutorizacionesSearchArray =()=>{
+  const { t} = useTranslation();
+  return([
   {
     index: "numeroTarjeta",
-    input: <FloatInput label="N° de tarjeta" placeholder="N° de tarjeta" />,
+    input: <FloatInput label={t("autorizaciones.search.input1")} placeholder={t("autorizaciones.search.input1")} />,
   },
   {
     index: "documento",
-    input: <FloatInput label="N° de documento" placeholder="N° de documento" />,
+    input: <FloatInput label={t("autorizaciones.search.input2")} placeholder={t("autorizaciones.search.input2")} />,
   },
   {
     index: "producto",
-    input: <FloatInput label="Producto" placeholder="Producto" />,
+    input: <FloatInput label={t("autorizaciones.search.input3")}placeholder={t("autorizaciones.search.input3")} />,
   },
   {
     index: "cuenta",
-    input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
+    input: <FloatInput label={t("autorizaciones.search.input4")} placeholder={t("autorizaciones.search.input4")} />,
   },
   {
     index: "adicional",
     input: (
-      <FloatInput label="Cuenta Adicional" placeholder="Cuenta Adicional" />
+      <FloatInput label={t("autorizaciones.search.input5")} placeholder={t("autorizaciones.search.input5")} />
     ),
   },
   {
     index: "comercio",
-    input: <FloatInput label="N° de comercio" placeholder="N° de comercio" />,
-  },
+    input: <FloatInput label={t("autorizaciones.search.input6")} placeholder={t("autorizaciones.search.input6")}  />,
+  }, 
   {
     index: "ingreso",
-    input: <FloatInput label="Modo Ingreso" placeholder="Modo Ingreso" />,
+    input: <FloatInput label={t("autorizaciones.search.input7")} placeholder={t("autorizaciones.search.input7")} />,
   },
   {
     index: "ubicacion",
     input: (
       <FloatSelected
-        label="Ubicación"
-        placeholder="Ubicación"
+        label={t("autorizaciones.search.input8")}
+        placeholder={t("autorizaciones.search.input8")}
         options={[
           {
             title: "Local",
@@ -65,8 +68,8 @@ const AutorizacionesSearchArray = [
     index: "origen",
     input: (
       <FloatSelected
-        label="Origen"
-        placeholder="Origen"
+        label={t("autorizaciones.search.input9")}
+        placeholder={t("autorizaciones.search.input9")}
         options={[
           {
             title: "ArchivoMar",
@@ -81,8 +84,8 @@ const AutorizacionesSearchArray = [
     index: "relacionada",
     input: (
       <FloatSelected
-        label="Relacionada"
-        placeholder="Relacionada"
+        label={t("autorizaciones.search.input10")}
+        placeholder={t("autorizaciones.search.input10")}
         options={[
           {
             title: "Parcial",
@@ -97,8 +100,8 @@ const AutorizacionesSearchArray = [
     index: "rechazo",
     input: (
       <FloatSelected
-        label="Motivo de rechazo"
-        placeholder="Motivo de rechazo"
+        label={t("autorizaciones.search.input11")}
+        placeholder={t("autorizaciones.search.input11")}
         options={[
           {
             title: "Emisor inválido",
@@ -113,8 +116,8 @@ const AutorizacionesSearchArray = [
     index: "estado",
     input: (
       <FloatSelected
-        label="Estado"
-        placeholder="Estado"
+        label={t("autorizaciones.search.input12")}
+        placeholder={t("autorizaciones.search.input12")}
         mode="tags"
         options={[
           {
@@ -145,8 +148,8 @@ const AutorizacionesSearchArray = [
     index: "cuotas",
     input: (
       <FloatSelected
-        placeholder="Cuotas"
-        label="Cuotas"
+        placeholder={t("autorizaciones.search.input13")}
+        label={t("autorizaciones.search.input13")}
         options={[
           {
             title: "1",
@@ -167,7 +170,7 @@ const AutorizacionesSearchArray = [
     input: (
       <FloatInput
         type="date"
-        label="Fecha Rel. Desde"
+        label={t("autorizaciones.search.input14")}
         value="2018-07-22"
         defaultValue={format(new Date(), "dd-mm-yyyy")}
       />
@@ -175,90 +178,93 @@ const AutorizacionesSearchArray = [
   },
   {
     index: "Fecha Rel. Hasta",
-    input: <FloatInput type="date" label="Fecha Rel. Hasta" defaultValue=" " />,
+    input: <FloatInput type="date" label={t("autorizaciones.search.input15")} defaultValue=" " />,
   },
   {
     index: "Fecha Desde",
-    input: <FloatInput type="date" label="Fecha desde" defaultValue=" " />,
+    input: <FloatInput type="date" label={t("autorizaciones.search.input16")} defaultValue=" " />,
   },
   {
     index: "Hora Desde",
     input: (
-      <FloatInput type="time" label="Hora desde" defaultValue=" " />
+      <FloatInput type="time" label={t("autorizaciones.search.input17")} defaultValue=" " />
     ),
   },
   {
     index: "Fecha Hasta",
     input: (
-      <FloatInput type="date" label="Fecha hasta" defaultValue=" " />
+      <FloatInput type="date" label={t("autorizaciones.search.input18")} defaultValue=" " />
     ),
   },
   {
     index: "Hora Hasta",
     input: (
-      <FloatInput type="time" label="Hora hasta" defaultValue=" " />
+      <FloatInput type="time" label={t("autorizaciones.search.input19")} defaultValue=" " />
     ),
   },
   {
     index: "dateragne",
     input: <DateRangeFilter></DateRangeFilter>,
   },
-];
+])
+}
 
 ////////// MOCK COLUMNAS DE LA TABLA //////////
-const columnsAutorizaciones = [
+const ColumnsAutorizaciones =()=>{
+  const { t} = useTranslation();
+  return([
   {
-    name: "Cuenta",
+    name: (t("autorizaciones.table.column1")),
     selector: (row) => row.cuenta,
     sortable: true,
   },
   {
-    name: "Adi",
+    name: (t("autorizaciones.table.column2")),
     selector: (row) => row.adi,
     sortable: false,
   },
   {
-    name: "Tarjeta",
+    name: (t("autorizaciones.table.column3")),
     selector: (row) => row.tarjeta,
     sortable: false,
   },
   {
-    name: "Fecha",
+    name: (t("autorizaciones.table.column4")),
     selector: (row) => row.fecha,
     sortable: true,
   },
   {
-    name: "Importe",
+    name:(t("autorizaciones.table.column5")),
     selector: (row) => row.importe,
     sortable: false,
   },
   {
-    name: "Moneda",
+    name:(t("autorizaciones.table.column6")),
     selector: (row) => row.moneda,
     sortable: false,
   },
   {
-    name: "Plan",
+    name: (t("autorizaciones.table.column7")),
     selector: (row) => row.plan,
     sortable: false,
   },
   {
-    name: "Cuotas",
+    name: (t("autorizaciones.table.column8")),
     selector: (row) => row.cuotas,
     sortable: true,
   },
   {
-    name: "Cod/Auto",
+    name: (t("autorizaciones.table.column9")),
     selector: (row) => row.auto,
     sortable: false,
   },
   {
-    name: "Comercio",
+    name: (t("autorizaciones.table.column10")),
     selector: (row) => row.comercio,
     sortable: true,
   },
   {
-    name: "Estado",
+    name: (t("autorizaciones.table.column11")),
     selector: (row) => row.estado,
     sortable: true,
   },
@@ -271,11 +277,12 @@ const columnsAutorizaciones = [
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       > 
-        ver detalle 
+        {t("autorizaciones.table.column12")}
       </Link>
     ),
   },
-];
+])
+}
 
 const dataAutorizaciones = [
   {
@@ -292,4 +299,4 @@ const dataAutorizaciones = [
     estado: "Aprobada",
   },
 ];
-export { AutorizacionesSearchArray, columnsAutorizaciones, dataAutorizaciones };
+export { AutorizacionesSearchArray, ColumnsAutorizaciones, dataAutorizaciones }; 

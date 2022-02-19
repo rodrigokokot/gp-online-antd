@@ -111,61 +111,61 @@ const TiposDeCargosSearch=()=>{
   {
     name: "Codigo",
     index: "tarjeta",
-    input: <FloatInput label={t("tiposcargos.search.searchtitle.input1")} placeholder={t("tiposcargos.search.searchtitle.input1")}/>,
+    input: <FloatInput label={t("tiposcargos.search.input1")} placeholder={t("tiposcargos.search.input1")}/>,
   },
   {
     name: "Descripcion",
     index: "documento",
-    input: <FloatInput label={t("tiposcargos.search.searchtitle.input2")} placeholder={t("tiposcargos.search.searchtitle.input2")} />,
+    input: <FloatInput label={t("tiposcargos.search.input2")} placeholder={t("tiposcargos.search.input2")} />,
   },
   {
     name: "Todos",
     index: "producto",
-    input: <FloatInput label={t("tiposcargos.search.searchtitle.input3")} placeholder={t("tiposcargos.search.searchtitle.input3")} />,
+    input: <FloatInput label={t("tiposcargos.search.input3")} placeholder={t("tiposcargos.search.input3")} />,
   },
   {
     name: "Debito",
     index: "cuenta",
-    input: <FloatInput label={t("tiposcargos.search.searchtitle.input4")} placeholder={t("tiposcargos.search.searchtitle.input4")}/>,
+    input: <FloatInput label={t("tiposcargos.search.input4")} placeholder={t("tiposcargos.search.input4")}/>,
   },
   {
     name: "Grupo Transaccion",
     index: "cuentaexterna",
-    input: <FloatInput label={t("tiposcargos.search.searchtitle.input5")}placeholder={t("tiposcargos.search.searchtitle.input5")}/>,
+    input: <FloatInput label={t("tiposcargos.search.input5")}placeholder={t("tiposcargos.search.input5")}/>,
   },
   {
     name: "Comprobante",
     index: "producto",
-    input: <FloatInput label={t("tiposcargos.search.searchtitle.input6")} placeholder={t("tiposcargos.search.searchtitle.input6")} />,
+    input: <FloatInput label={t("tiposcargos.search.input6")} placeholder={t("tiposcargos.search.input6")} />,
   },
   {
     name: "Numero de cuenta",
     index: "cuenta",
-    input: <FloatInput label={t("tiposcargos.search.searchtitle.input7")} placeholder={t("tiposcargos.search.searchtitle.input7")} />,
+    input: <FloatInput label={t("tiposcargos.search.input7")} placeholder={t("tiposcargos.search.input7")} />,
   },
   {
     name: "Adic",
     index: "producto",
-    input: <FloatInput label={t("tiposcargos.search.searchtitle.input8")} placeholder={t("tiposcargos.search.searchtitle.input8")} />,
+    input: <FloatInput label={t("tiposcargos.search.input8")} placeholder={t("tiposcargos.search.input8")} />,
   },
   {
     name: "Liq. Socios (LS)",
     index: "cuenta",
-    input: <FloatInput label={t("tiposcargos.search.searchtitle.input9")} placeholder={t("tiposcargos.search.searchtitle.input9")} />,
+    input: <FloatInput label={t("tiposcargos.search.input9")} placeholder={t("tiposcargos.search.input9")} />,
   },
   {
     name: "Cuotas",
     index: "cuenta",
-    input: <FloatInput label={t("tiposcargos.search.searchtitle.input10")} placeholder={t("tiposcargos.search.searchtitle.input10")} />,
+    input: <FloatInput label={t("tiposcargos.search.input10")} placeholder={t("tiposcargos.search.input10")} />,
   },
   {
     index: "moneda",
-    input: <SelectImg showSearch={true} placeholder={t("tiposcargos.search.searchtitle.input11")} style={{width: 250}}/>
+    input: <SelectImg showSearch={true} placeholder={t("tiposcargos.search.input11")} style={{width: 250}}/>
   }, 
 
   {
     index: "fecha",
-    input: <DateRangeFilter placeholder={t("tiposcargos.search.searchtitle.input12")} label={t("tiposcargos.search.searchtitle.input12")} />,
+    input: <DateRangeFilter placeholder={t("tiposcargos.search.input12")} label={t("tiposcargos.search.input12")} />,
   },
 ])
 }

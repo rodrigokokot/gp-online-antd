@@ -1,16 +1,18 @@
 import { Card, Form, Radio, Row, Col, DatePicker, Typography } from "antd";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import Edit from "../../../../components/organisms/Edit";
 
 export default function AutorizacionesNew() {
+  const { t} = useTranslation();
   const FormularioNuevo = () => {
     return (
       <>
         <Card>
           <Typography.Title level={3} style={{ color: "#ab218e" }}>
-            Datos de Tarjeta
+          {t("autorizaciones.new.title1")}
           </Typography.Title>
           <br></br>
           <Col span={6}>
@@ -24,96 +26,106 @@ export default function AutorizacionesNew() {
                       ? Promise.resolve()
                       : value.length === 0
                       ? Promise.reject(new Error(""))
-                      : Promise.reject(new Error("Ingrese solo numeros")),
+                      : Promise.reject(new Error((t("autorizaciones.new.outline.tarjeta.error")))),
                 },
               ]}
             >
               <FloatInput
                 outline
                 type="number"
-                placeholder="N° de Tarjeta*"
-                label="N° de tarjeta*"
+                placeholder={t("autorizaciones.new.outline.tarjeta.label")}
+                label={t("autorizaciones.new.outline.tarjeta.label")}
               />
             </Form.Item>
 
             <Form.Item
               name="nombre"
-              rules={[{ required: true, message: "Ingrese nombre" }]}
+              rules={[{ required: true, message: (t("autorizaciones.new.outline.nombre.error")) }]}
             >
-              <FloatInput outline placeholder="Nombre*" label="Nombre*" />
+              <FloatInput outline placeholder={t("autorizaciones.new.outline.nombre.label")} label={t("autorizaciones.new.outline.nombre.label")} />
             </Form.Item>
 
             <Form.Item
               name="apellido"
-              rules={[{ required: true, message: "Ingrese apellido" }]}
+              rules={[{ required: true, message: (t("autorizaciones.new.outline.apellido.error")) }]}
             >
-              <FloatInput outline placeholder="Apellido*" label="Apellido*" />
+              <FloatInput outline placeholder={t("autorizaciones.new.outline.apellido.label")} label={t("autorizaciones.new.outline.apellido.label")} />
             </Form.Item>
           </Col>
 
-          <Col span={12}>
-            <Row>
-              <p>Tipo de documento</p>
-            </Row>
-            <Form.Item name="tipodoc" rules={[{ required: true }]}>
-              <Radio.Group name="radiogroup">
-                <Row justify="space-between">
-                  <Col span={4}>
-                    <Radio value={1}>DNI</Radio>
-                    <Radio value={5}>CUIT</Radio>
-                  </Col>
-
-                  <Col span={9}>
-                    <Radio value={2}>LIBRETA CIVICA</Radio>
-                    <Radio value={6}>LIBRETA DE ENROLAMIENTO</Radio>
-                  </Col>
-
-                  <Col span={5}>
-                    <Radio value={3}>CUIL</Radio>
-                    <Radio value={7}>PASAPORTE</Radio>
-                  </Col>
-
-                  <Col span={4}>
-                    <Radio value={4}>CI</Radio>
-                  </Col>
-                </Row>
-              </Radio.Group>
-            </Form.Item>
-          </Col>
+          <p>{t("autorizaciones.new.typedoc.label")}</p>
+          <Form.Item name="tipodocumento" rules={[{ required: true,message: (t("autorizaciones.new.typedoc.error")) }]}>
+            <Radio.Group name="radiogroup">
+              <Row justify="space-between">
+                <Col span={4}>
+                  <Radio style={{ marginTop: 10 }} value={t("autorizaciones.new.typedoc.value1")}>
+                  {t("autorizaciones.new.typedoc.value1")}
+                  </Radio>
+                  <Radio style={{ marginTop: 10 }} value={t("autorizaciones.new.typedoc.value2")}>
+                  {t("autorizaciones.new.typedoc.value2")}
+                  </Radio>
+                </Col>
+                <Col span={8}>
+                  <Radio style={{ marginTop: 10 }} value={t("autorizaciones.new.typedoc.value3")}>
+                  {t("autorizaciones.new.typedoc.value3")}
+                  </Radio>
+                  <Radio
+                    style={{ marginTop: 10 }}
+                    value={t("autorizaciones.new.typedoc.value4")}
+                  >
+                    {t("autorizaciones.new.typedoc.value4")}
+                  </Radio>
+                </Col>
+                <Col span={4}>
+                  <Radio style={{ marginTop: 10 }} value={t("autorizaciones.new.typedoc.value5")}>
+                  {t("autorizaciones.new.typedoc.value5")}
+                  </Radio>
+                  <Radio style={{ marginTop: 10 }} value={t("autorizaciones.new.typedoc.value6")}>
+                  {t("autorizaciones.new.typedoc.value6")}
+                  </Radio>
+                </Col>
+                <Col span={4}>
+                  <Radio style={{ marginTop: 10 }} value={t("autorizaciones.new.typedoc.value7")}>
+                    {t("autorizaciones.new.typedoc.value7")}
+                  </Radio>
+                </Col>
+              </Row>
+            </Radio.Group>
+          </Form.Item>
 
           <Col span={6}>
             <Form.Item
               name="doc"
-              rules={[{ required: true, message: "Ingrese documento" }]}
+              rules={[{ required: true, message:(t("autorizaciones.new.outline.documento.error") )}]}
             >
               <FloatInput
-                placeholder="N° de Documento*"
-                label="N° de Documento*"
+                placeholder={t("autorizaciones.new.outline.documento.label")}
+                label={t("autorizaciones.new.outline.documento.label")}
                 outline
               />
             </Form.Item>
 
             <Form.Item
               name="marca"
-              rules={[{ required: true, message: "Ingrese marca" }]}
+              rules={[{ required: true, message:(t("autorizaciones.new.outline.marca.error") ) }]}
             >
-              <FloatInput outline placeholder="Marca*" label="Marca*" />
+              <FloatInput outline placeholder={t("autorizaciones.new.outline.marca.label")} label={t("autorizaciones.new.outline.marca.label")}/>
             </Form.Item>
 
             <Form.Item
               name="emisor"
-              rules={[{ required: true, message: "Ingrese número de emisor" }]}
+              rules={[{ required: true, message: (t("autorizaciones.new.outline.emisor.error") ) }]}
             >
-              <FloatInput outline placeholder="Emisor*" label="Emisor*" />
+              <FloatInput outline placeholder={t("autorizaciones.new.outline.emisor.label")} label={t("autorizaciones.new.outline.emisor.label")} />
             </Form.Item>
 
             <Form.Item
               name="producto"
-              rules={[{ required: true, message: "Ingrese tipo de producto" }]}
+              rules={[{ required: true, message: (t("autorizaciones.new.outline.producto.error") ) }]}
             >
               <FloatInput
-                placeholder="Tipo de Producto*"
-                label="Tipo de Producto*"
+                placeholder={t("autorizaciones.new.outline.producto.label")}
+                label={t("autorizaciones.new.outline.producto.label")}
                 outline
               />
             </Form.Item>
@@ -122,18 +134,18 @@ export default function AutorizacionesNew() {
         <br></br>
         <Card>
           <Typography.Title level={3} style={{ color: "#ab218e" }}>
-            Autorización
+          {t("autorizaciones.new.title2")}
           </Typography.Title>{" "}
           <br></br>
           <Row gutter={48}>
             <Col span={6}>
               <Form.Item
                 name="fecha-origen"
-                rules={[{ required: true, message: "Ingrese fecha de origen" }]}
+                rules={[{ required: true, message: (t("autorizaciones.new.outline.forigen.error") )}]}
               >
                 <DatePicker
                   style={{ width: "100%" }}
-                  placeholder="Fecha de Origen*"
+                  placeholder={t("autorizaciones.new.outline.forigen.label")}
                 />
               </Form.Item>
             </Col>
@@ -142,9 +154,9 @@ export default function AutorizacionesNew() {
             <Col span={6}>
               <Form.Item
                 name="importe"
-                rules={[{ required: true, message: "Ingrese importe" }]}
+                rules={[{ required: true, message:(t("autorizaciones.new.outline.importe.error") ) }]}
               >
-                <FloatInput outline placeholder="Importe*" label="Importe*" />
+                <FloatInput outline placeholder={t("autorizaciones.new.outline.importe.label")} label={t("autorizaciones.new.outline.importe.label")} />
               </Form.Item>
             </Col>
           </Row>
@@ -152,12 +164,12 @@ export default function AutorizacionesNew() {
             <Col span={6}>
               <Form.Item
                 name="moneda"
-                rules={[{ required: true, message: "Ingrese moneda" }]}
+                rules={[{ required: true, message:(t("autorizaciones.new.outline.moneda.error") ) }]}
               >
                 <FloatSelected
                   outline
-                  label="Moneda*"
-                  placeholder="Moneda*"
+                  label={t("autorizaciones.new.outline.moneda.label")}
+                  placeholder={t("autorizaciones.new.outline.moneda.label")}
                   options={[
                     {
                       title: "Euro",
@@ -178,12 +190,12 @@ export default function AutorizacionesNew() {
               <Form.Item
                 name="proceso"
                 rules={[
-                  { required: true, message: "Ingrese fecha de proceso" },
+                  { required: true, message:(t("autorizaciones.new.outline.proceso.error") ) },
                 ]}
               >
                 <DatePicker
                   style={{ width: "100%" }}
-                  placeholder="Fecha de Proceso*"
+                  placeholder={t("autorizaciones.new.outline.proceso.label")}
                 />
               </Form.Item>
             </Col>
@@ -192,18 +204,18 @@ export default function AutorizacionesNew() {
             <Col span={6}>
               <Form.Item
                 name="plan"
-                rules={[{ required: true, message: "Ingrese plan" }]}
+                rules={[{ required: true, message:(t("autorizaciones.new.outline.plan.error") )}]}
               >
-                <FloatInput outline placeholder="Plan*" label="Plan*" />
+                <FloatInput outline placeholder={t("autorizaciones.new.outline.plan.label")} label={t("autorizaciones.new.outline.plan.label")} />
               </Form.Item>
             </Col>
 
             <Col span={6}>
               <Form.Item
                 name="relacion"
-                rules={[{ required: true, message: "Ingrese relación" }]}
+                rules={[{ required: true, message: (t("autorizaciones.new.outline.relacion.error") ) }]}
               >
-                <FloatInput outline placeholder="Relación*" label="Relación*" />
+                <FloatInput outline placeholder={t("autorizaciones.new.outline.relacion.label")} label={t("autorizaciones.new.outline.relacion.label")} />
               </Form.Item>
             </Col>
           </Row>
@@ -211,12 +223,12 @@ export default function AutorizacionesNew() {
             <Col span={6}>
               <Form.Item
                 name="cuotas"
-                rules={[{ required: true, message: "Ingrese cuotas" }]}
+                rules={[{ required: true, message:(t("autorizaciones.new.outline.cuotas.error") )}]}
               >
                 <FloatSelected
                   outline
-                  placeholder="Cuotas*"
-                  label="Cuotas*"
+                  placeholder={t("autorizaciones.new.outline.cuotas.label")}
+                  label={t("autorizaciones.new.outline.cuotas.label")}
                   options={[
                     {
                       title: 3,
@@ -246,9 +258,9 @@ export default function AutorizacionesNew() {
             <Col span={6}>
               <Form.Item
                 name="origen"
-                rules={[{ required: true, message: "Ingrese origen" }]}
+                rules={[{ required: true, message:(t("autorizaciones.new.outline.origen.error") ) }]}
               >
-                <FloatInput outline placeholder="Origen*" label="Origen*" />
+                <FloatInput outline placeholder={t("autorizaciones.new.outline.origen.label")}label={t("autorizaciones.new.origen.label")}/>
               </Form.Item>
             </Col>
           </Row>
@@ -257,12 +269,12 @@ export default function AutorizacionesNew() {
               <Form.Item
                 name="autorizacion"
                 rules={[
-                  { required: true, message: "Ingrese código de autorización" },
+                  { required: true, message:(t("autorizaciones.new.outline.autorizacion.error") )},
                 ]}
               >
                 <FloatInput
-                  placeholder="Código de autorización*"
-                  label="Código de autorización*"
+                  placeholder={t("autorizaciones.new.outline.autorizacion.label")}
+                  label={t("autorizaciones.new.outline.autorizacion.label")}
                   outline
                 />
               </Form.Item>
@@ -271,11 +283,11 @@ export default function AutorizacionesNew() {
             <Col span={6}>
               <Form.Item
                 name="modo"
-                rules={[{ required: true, message: "Ingrese modo de entrada" }]}
+                rules={[{ required: true, message: (t("autorizaciones.new.outline.entrada.error") ) }]}
               >
                 <FloatInput
-                  placeholder="Modo de entrada*"
-                  label="Modo de entrada*"
+                  placeholder={t("autorizaciones.new.outline.entrada.label")}
+                  label={t("autorizaciones.new.outline.entrada.label")}
                   outline
                 />
               </Form.Item>
@@ -285,44 +297,42 @@ export default function AutorizacionesNew() {
             <Col span={6}>
               <Form.Item
                 name="comercio"
-                rules={[{ required: true, message: "Ingrese comercio" }]}
+                rules={[{ required: true, message: (t("autorizaciones.new.outline.comercio.error") ) }]}
               >
-                <FloatInput outline placeholder="Comercio*" label="Comercio*" />
+                <FloatInput outline placeholder={t("autorizaciones.new.outline.comercio.label")} label={t("autorizaciones.new.outline.comercio.label")} />
               </Form.Item>
             </Col>
 
             <Col span={6}>
               <Form.Item
                 name="terminal"
-                rules={[{ required: true, message: "Ingrese terminal" }]}
+                rules={[{ required: true, message: (t("autorizaciones.new.outline.terminal.error") )}]}
               >
-                <FloatInput outline placeholder="Terminal*" label="Terminal*" />
+                <FloatInput outline placeholder={t("autorizaciones.new.outline.terminal.label")} label={t("autorizaciones.new.outline.terminal.label")} />
               </Form.Item>
             </Col>
           </Row>
-          <Col span={24}>
-            <Row>
-              <p>Estado</p>
-            </Row>
+          <Col span={24}> 
+              <p>{t("autorizaciones.new.estado.label")}</p> 
             <Form.Item
               name="estado"
-              rules={[{ required: true, message: "Ingrese un estado" }]}
+              rules={[{ required: true, message: (t("autorizaciones.new.estado.error") ) }]}
             >
               <Radio.Group name="radiogroup">
-                <Row justify="space-between">
-                  <Col span={6}>
-                    <Radio value={1}>Aprobada</Radio>
-                    <Radio value={2}>Sin autorización Emisor</Radio>
+                <Row >
+                  <Col span={5}>
+                    <Radio value={t("autorizaciones.new.estado.radio1")}>{t("autorizaciones.new.estado.radio1")}</Radio>
+                    <Radio value={t("autorizaciones.new.estado.radio2")}>{t("autorizaciones.new.estado.radio2")}</Radio>
                   </Col>
 
-                  <Col span={6}>
-                    <Radio value={3}>Rechazada</Radio>
-                    <Radio value={4}>Rechazada por Emisor</Radio>
+                  <Col span={7}>
+                    <Radio value={t("autorizaciones.new.estado.radio3")}>{t("autorizaciones.new.estado.radio3")}</Radio>
+                    <Radio value={t("autorizaciones.new.estado.radio4")}>{t("autorizaciones.new.estado.radio4")}</Radio>
                   </Col>
 
                   <Col span={8}>
-                    <Radio value={5}>Anulada</Radio>
-                    <Radio value={6}>Anulada por falta de presentación</Radio>
+                    <Radio value={t("autorizaciones.new.estado.radio5")}>{t("autorizaciones.new.estado.radio5")}</Radio>
+                    <Radio value={t("autorizaciones.new.estado.radio6")}>{t("autorizaciones.new.estado.radio6")}</Radio>
                   </Col>
                 </Row>
               </Radio.Group>
@@ -337,9 +347,9 @@ export default function AutorizacionesNew() {
     <>
       <Edit
         component={FormularioNuevo}
-        textBtnModalConfirm="Si, guardar"
-        textBtnSave="Guardar cambios"
-        textModalConfirm="¿Realizar cambios en la autorización?"
+        textBtnModalConfirm={t("autorizaciones.new.edit.btnconfirm")}
+        textBtnSave={t("autorizaciones.new.edit.save")}
+        textModalConfirm={t("autorizaciones.new.edit.confirm")}
       />
     </>
   );

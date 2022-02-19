@@ -59,7 +59,7 @@ function TipoDeCargoEdit() {
                 outline
                 type="text"
                 label={t("tiposcargos.edit.outline.anulacion.label")}
-                placeholder={t("tiposcargos.edit.outlineanulacion.label")}
+                placeholder={t("tiposcargos.edit.outline.anulacion.label")}
               ></FloatInput>
             </Form.Item></Col>
           </Row>

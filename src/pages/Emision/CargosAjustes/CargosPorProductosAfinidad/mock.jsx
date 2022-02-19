@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
@@ -7,22 +8,24 @@ import SelectImg from "../../../../components/organisms/SelectImg.jsx";
 
 
 ///////// MOCK SEARCH ARRAY //////////
-export const CargoPorProductosAfinidadSearchArray = [
+export const CargoPorProductosAfinidadSearchArray =()=>{
+    const { t} = useTranslation();
+    return([
     {
         index: "codigo",
-        input: <FloatInput label="Código" />,
+        input: <FloatInput label={t("afinidad.search.input1")} />,
     },
     {
         index: "descripcion",
-        input: <FloatInput label="Descripción" />,
+        input: <FloatInput label={t("afinidad.search.input2")} />,
     },
     {
         index: "todos",
-        input: <FloatInput label="Todos" />,
+        input: <FloatInput label={t("afinidad.search.input3")}/>,
     },
     {
         index: "debito",
-        input: <FloatSelected label="Débito" options={[
+        input: <FloatSelected label={t("afinidad.search.input4")} options={[
             {
                 title:"Visa",
                 value:"Visa",
@@ -32,7 +35,7 @@ export const CargoPorProductosAfinidadSearchArray = [
     },
     {
         index: "transaccion",
-        input: <FloatSelected label="Grupo Transacción" options={[
+        input: <FloatSelected label={t("afinidad.search.input5")} options={[
             {
                 title:"Juridico",
                 value:"Juridico",
@@ -42,19 +45,19 @@ export const CargoPorProductosAfinidadSearchArray = [
     },
     {
         index: "comprobante",
-        input: <FloatInput label="Comprobante" />,
+        input: <FloatInput label={t("afinidad.search.input6")} />,
     },
     {
         index: "cuenta",
-        input: <FloatInput label="N° de Cuenta" />,
+        input: <FloatInput label={t("afinidad.search.input7")} />,
     },
     {
         index: "adic",
-        input: <FloatInput label="Adic" />,
+        input: <FloatInput label={t("afinidad.search.input8")} />,
     },
     {
         index: "socios",
-        input: <FloatSelected label="Liq. Socios (LS)" options={[
+        input: <FloatSelected label={t("afinidad.search.input9")} options={[
             {
                 title:"Liquidado",
                 value:"Liquidado",
@@ -64,7 +67,7 @@ export const CargoPorProductosAfinidadSearchArray = [
     },
     {
         index: "cuotas",
-        input: <FloatSelected label="Cuotas" options={[
+        input: <FloatSelected label={t("afinidad.search.input10")} options={[
             {
                 title:"3",
                 value:"3",
@@ -74,7 +77,7 @@ export const CargoPorProductosAfinidadSearchArray = [
     },
     {
         index: "producto",
-        input: <FloatSelected label="Producto" options={[
+        input: <FloatSelected label={t("afinidad.search.input11")}options={[
             {
                 title:"producto A",
                 value:"producto A",
@@ -84,7 +87,7 @@ export const CargoPorProductosAfinidadSearchArray = [
     },
     {
         index: "afinidad",
-        input: <FloatSelected label="Grupo de afinidad" options={[
+        input: <FloatSelected label={t("afinidad.search.input12")} options={[
             {
                 title:"Grupo A",
                 value:"Grupo A",
@@ -94,53 +97,56 @@ export const CargoPorProductosAfinidadSearchArray = [
     }, 
     {
       index: "moneda",
-      input: <SelectImg showSearch={true} placeholder="Busca tipo de moneda" style={{width: 250}}/>
+      input: <SelectImg showSearch={true} placeholder={t("afinidad.search.input13")}style={{width: 250}}/>
     }, 
     {
         index: "fecha",
         input: <DateRangeFilter />
     }
-]
+])
+}
 
 ///////// MOCK COLUMNA TABLA //////////
-export const columnsCargosProductosAfinidad = [
+export const ColumnsCargosProductosAfinidad=()=>{
+    const { t} = useTranslation();
+    return([
     {
-        name: "Producto",
+        name: (t("afinidad.table.column1")),
         selector: (row) => row.producto,
         sortable: true,
     },
     {
-        name: "Grupo de Afinidad",
+        name: (t("afinidad.table.column2")),
         selector: (row) => row.afinidad,
         sortable: true,
     },
     {
-        name: "Concepto",
+        name: (t("afinidad.table.column3")),
         selector: (row) => row.concepto,
         sortable: true,
     },
     {
-        name: "Precio",
+        name: (t("afinidad.table.column4")),
         selector: (row) => row.precio,
         sortable: true,
     },
     {
-        name: "Aplica IVA",
+        name: (t("afinidad.table.column5")),
         selector: (row) => row.iva,
         sortable: true,
     },
     {
-        name: "Porcentaje Cargo",
+        name: (t("afinidad.table.column6")),
         selector: (row) => row.cargo,
         sortable: false,
     },
     {
-        name: "Vigencia Desde",
+        name: (t("afinidad.table.column7")),
         selector: (row) => row.fechadesde,
         sortable: true,
     },
     {
-        name: "Vigencia Hasta",
+        name: (t("afinidad.table.column8")),
         selector: (row) => row.fechahasta,
         sortable: true,
     },
@@ -152,11 +158,12 @@ export const columnsCargosProductosAfinidad = [
             style={{ textDecoration: "underline" }}
             rel="noopener noreferrer"
           >
-            Editar
+            {t("afinidad.table.column9")}
           </Link>
         ),
     },
-];
+])
+}
 
 ////////// MOCK DATA TABLA /////////
 
