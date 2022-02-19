@@ -79,8 +79,8 @@ function App() {
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductos/crearCargoPorProducto" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductos/CargosPorProductosCrear'))} />
 
           <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos'))} />
-          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos/editarCargoPorProductosMovimientos=:producto" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos/CPMovimientoEdit'))} />
-          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos/crearCargoPorProductosMovimientos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos/CPMovimientoNew'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos/editarCargoPorProductoYMovimiento=:producto" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos/CPMovimientoEdit'))} />
+          <DashboardTemplate exact path="/emision/cargosAjustes/cargosPorProductosMovimientos/crearCargoPorProductosYMovimientos" component={lazy(() => import('./pages/Emision/CargosAjustes/CargosPorProductosMovimientos/CPMovimientoNew'))} />
 
           <DashboardTemplate exact path="/emision/cargosAjustes/publicacionEnBoletin" component={lazy(() => import('./pages/Emision/CargosAjustes/PublicacionEnBoletin'))} />
           <DashboardTemplate exact path="/emision/cargosAjustes/publicacionEnBoletin/detalle=:id" component={lazy(() => import('./pages/Emision/CargosAjustes/PublicacionEnBoletin/ConsultaBoletin'))} />

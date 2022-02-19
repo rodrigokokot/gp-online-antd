@@ -3,54 +3,57 @@ import FloatSelected from "../../../../components/molecules/FloatSelected";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import SelectImg from "../../../../components/organisms/SelectImg.jsx";
-const columnsCPMovimiento = [
+import { useTranslation } from "react-i18next";
+const ColumnsCPMovimiento =()=>{
+  const { t} = useTranslation();
+  return([
   {
-    name: "Producto",
+    name: (t("movimiento.table.column1")),
     selector: (row) => row.producto,
     sortable: true,
   },
   {
-    name: "Movimiento",
+    name: (t("movimiento.table.column2")),
     selector: (row) => row.movimiento,
     sortable: true,
   },
   {
-    name: "Locación",
+    name: (t("movimiento.table.column3")),
     selector: (row) => row.locacion,
     sortable: true,
   },
   {
-    name: "Evento",
+    name: (t("movimiento.table.column4")),
     selector: (row) => row.evento,
     sortable: true,
   },
   {
-    name: "Precio",
+    name: (t("movimiento.table.column5")),
     selector: (row) => row.precio,
     sortable: true,
   },
   {
-    name: "Aplica IVA",
+    name: (t("movimiento.table.column6")),
     selector: (row) => row.iva,
     sortable: true,
   },
   {
-    name: "%",
+    name: (t("movimiento.table.column7")),
     selector: (row) => row.porcentaje,
     sortable: true,
   },
   {
-    name: "Concepto",
+    name: (t("movimiento.table.column8")),
     selector: (row) => row.concepto,
     sortable: true,
   },
   {
-    name: "Fecha desde",
+    name: (t("movimiento.table.column9")),
     selector: (row) => row.fdesde,
     sortable: true,
   },
   {
-    name: "Fecha hasta",
+    name: (t("movimiento.table.column10")),
     selector: (row) => row.fhasta,
     sortable: true,
   },
@@ -63,11 +66,12 @@ const columnsCPMovimiento = [
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >
-        Editar
+       {t("movimiento.table.column11")}
       </Link>
     ),
   },
-];
+])
+}
 
 const dataCPMovimiento = [
   {
@@ -97,118 +101,99 @@ const dataCPMovimiento = [
     option: <Link>Editar</Link>,
   },
 ];
-const CPMovimientoSearch = [
+const CPMovimientoSearch =()=>{
+  const { t} = useTranslation();
+  return([
   {
-    index: "Codigo",
-    name: "codigo",
-    input: <FloatInput placeholder="Código" label="Código" />,
+      index: "codigo",
+      input: <FloatInput label={t("movimiento.search.input1")} />,
   },
   {
-    index: "Descripcion",
-    name: "descripcion",
-    input: <FloatInput placeholder="Descripción" label="Descripción" />,
+      index: "descripcion",
+      input: <FloatInput label={t("movimiento.search.input2")} />,
   },
   {
-    index: "Todos",
-    name: "todos",
-    input: <FloatInput placeholder="Todos" label="Todos" />,
+      index: "todos",
+      input: <FloatInput label={t("movimiento.search.input3")}/>,
   },
   {
-    index: "Debito",
-    input: (
-      <FloatSelected
-        placeholder="Débito"
-        label="Débito"
-        options={[
-          { title: "dev 1", value: 1, disabled: false },
-          { title: "dev 2", value: 2, disabled: false },
-          { title: "dev 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
+      index: "debito",
+      input: <FloatSelected label={t("movimiento.search.input4")} options={[
+          {
+              title:"Visa",
+              value:"Visa",
+              disabled:false,
+          }
+      ]} />,
   },
   {
-    index: "Grupo Transaccion",
-    input: (
-      <FloatSelected
-        placeholder="Grupo Transacción"
-        label="Grupo Transacción"
-        options={[
-          { title: "Transacción 1", value: 1, disabled: false },
-          { title: "Transacción 2", value: 2, disabled: false },
-          { title: "Transacción 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
+      index: "transaccion",
+      input: <FloatSelected label={t("movimiento.search.input5")} options={[
+          {
+              title:"Juridico",
+              value:"Juridico",
+              disabled:false,
+          }
+      ]} />
   },
   {
-    index: "Comprobante",
-    name: "comprobante",
-    input: <FloatInput placeholder="Comprobante" label="Comprobante" />,
+      index: "comprobante",
+      input: <FloatInput label={t("movimiento.search.input6")} />,
   },
   {
-    index: "N° de cuenta",
-    name: "cuenta",
-    input: <FloatInput placeholder="N° de cuenta" label="N° de cuenta" />,
+      index: "cuenta",
+      input: <FloatInput label={t("movimiento.search.input7")} />,
   },
   {
-    index: "Adic",
-    name: "adic",
-    input: <FloatInput placeholder="Adic" label="Adic" />,
+      index: "adic",
+      input: <FloatInput label={t("movimiento.search.input8")} />,
   },
   {
-    index: "Liq. Socio (LS)",
-    input: (
-      <FloatSelected
-        placeholder="Liq. Socio (LS)"
-        label="Liq. Socio (LS)"
-        options={[
-          { title: "LS 1", value: 1, disabled: false },
-          { title: "LS 2", value: 2, disabled: false },
-          { title: "LS 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
+      index: "socios",
+      input: <FloatSelected label={t("movimiento.search.input9")} options={[
+          {
+              title:"Liquidado",
+              value:"Liquidado",
+              disabled:false,
+          }
+      ]} />
   },
   {
-    index: "Cuotas",
-    name: "cuotas",
-    input: <FloatInput placeholder="Cuotas" label="Cuotas" />,
+      index: "cuotas",
+      input: <FloatSelected label={t("movimiento.search.input10")} options={[
+          {
+              title:"3",
+              value:"3",
+              disabled:false,
+          }
+      ]} />
   },
   {
-    index: "Producto",
-    input: (
-      <FloatSelected
-        placeholder="Producto"
-        label="Producto"
-        options={[
-          { title: "producto 1", value: 1, disabled: false },
-          { title: "producto 2", value: 2, disabled: false },
-          { title: "producto 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
+      index: "producto",
+      input: <FloatSelected label={t("movimiento.search.input11")}options={[
+          {
+              title:"producto A",
+              value:"producto A",
+              disabled:false,
+          }
+      ]} />
   },
   {
-    index: "Grupo de afinidad",
-    input: (
-      <FloatSelected
-        placeholder="Grupo de afinidad"
-        label="Grupo de afinidad"
-        options={[
-          { title: "Grupo de afinidad 1", value: 1, disabled: false },
-          { title: "Grupo de afinidad 2", value: 2, disabled: false },
-          { title: "Grupo de afinidad 3", value: 3, disabled: false },
-        ]}
-      ></FloatSelected>
-    ),
-  },
+      index: "afinidad",
+      input: <FloatSelected label={t("movimiento.search.input12")} options={[
+          {
+              title:"Grupo A",
+              value:"Grupo A",
+              disabled: false,
+          }
+      ]} />
+  }, 
   {
     index: "Movimiento",
     input: (
       <FloatSelected
-        placeholder="Movimiento"
-        label="Movimiento"
+        placeholder={t("movimiento.search.input13")}
+        label={t("movimiento.search.input13")}
         options={[
           { title: "Movimiento 1", value: 1, disabled: false },
           { title: "Movimiento 2", value: 2, disabled: false },
@@ -218,18 +203,13 @@ const CPMovimientoSearch = [
     ),
   },
   {
-    index: "fecha",
-    input: <DateRangeFilter placeholder="fecha" label="Por fecha" />,
+      index: "fecha",
+      input: <DateRangeFilter />
   },
   {
     index: "moneda",
-    input: (
-      <SelectImg
-        showSearch={true}
-        placeholder="Busca tipo de moneda"
-        style={{ width: 250 }}
-      />
-    ),
-  },
-];
-export { dataCPMovimiento, columnsCPMovimiento, CPMovimientoSearch };
+    input: <SelectImg showSearch={true} placeholder={t("movimiento.search.input14")}style={{width: 250}}/>
+  }
+])
+} 
+export { dataCPMovimiento, ColumnsCPMovimiento, CPMovimientoSearch };
