@@ -26,6 +26,7 @@
     "rowseparator":"de",
     "selectall":"Todos"
   },
+  "exportar":"Exportar",
   "gestionaprobaciones": {
     "tab1":{
       "tab1":"Novedades por confirmar",
@@ -1350,6 +1351,138 @@
         "btnconfirm":"Si, Guardar"
       } 
     }
+  },
+  "liquidacion":{
+    "search":{
+      "searchtitle":"Consulta de movimientos históricos",
+      "input1":"Marca",
+      "input2":"Emisor",
+      "input3":"Apellido/Raz. Social",
+      "input4":"2do Apellido",
+      "input5":"Tipo de Producto",
+      "input6":"Tipo de Documento",
+      "input7":"N° de Documento",
+      "input8":"Cuentas",
+      "input9":"Periodo",
+      "input10":"Mensual"
+    },
+    "table":{
+        "column1":"Fecha",
+        "column2":"Tarjeta",
+        "column3":"Descripción",
+        "column4":"Moneda ",
+        "column5":"Importe",
+        "column6":"Comprobante",
+        "column7":"Producto"
+    },
+      "title1":"Pesos",
+      "text1":{
+        "greytext1":"Salario Anterior",
+        "greytext2":"Total Débitos",
+        "greytext3":"Total Créditos",
+        "greytext4":"Saldo Actual",
+        "greytext5":"Pago Min. Ant.",
+        "greytext6":"Pago Min. Impago",
+        "greytext7":"Pago Min. Actual",
+        "greytext8":"Saldo Plan Flexible"            
+      }, 
+    "title2":"Dolares",
+      "text2":{
+        "greytext1":"Salario Anterior",
+        "greytext2":"Total Débitos",
+        "greytext3":"Total Créditos",
+        "greytext4":"Saldo Actual",
+        "greytext5":"Pago Min. Ant.",
+        "greytext6":"Pago Min. Impago",
+        "greytext7":"Pago Min. Actual"        
+      },
+      "title3":"Periodo no liquidado",
+      "text3":{
+        "greytext1":"Fecha de Liquidación",
+        "greytext2":"Puntos del Periodo",
+        "greytext3":"Fecha de Vencimiento",
+        "greytext4":"Puntos Acumulados"           
+      } 
+  },
+  "boletin":{
+    "search":{
+      "searchtitle":"Búsqueda de Productos",
+      "input1":"Emisor",
+      "input2":"Marca",
+      "input3":"Producto",
+      "input4":"N° de Cuenta",
+      "input5":"N° de Cuenta Original",
+      "input6":"N° Cuenta Relacionada",
+      "input7":"Apellidos",
+      "input8":"Nombres",
+      "input9":"Tipo de Documento",
+      "input10":"N° de Documento",
+      "input11":"Razón social",
+      "input12":"N° Empresa"
+    },
+    "table":{
+      "column1":"Emisor-Sucursal",
+      "column2":"ID",
+      "column3":"Cliente",
+      "column4":"Documento",
+      "column5":"Marca",
+      "column6":"Cuenta",
+      "column7":"Producto",
+      "column8":"Adic.",
+      "column9":"Tarjeta",
+      "column10":"ver detalle"
+    },
+    "view":{
+      "tab1":{
+        "tab1":"Información de la Cuenta",
+        "greytext1":"N° de Cuenta",
+        "greytext2":"N° de Cta. Original",
+        "greytext3":"Fecha de Alta",
+        "greytext4":"Tipo de Cuenta",
+        "greytext5":"Marca",
+        "greytext6":"Emisor",
+        "greytext7":"Sucursal"
+      },
+      "tab2":{
+        "tab2":"Información del Producto",
+        "greytext1":"Producto",
+        "greytext2":"Tarjeta",
+        "greytext3":"Fecha de Alta",
+        "greytext4":"Estado"
+      },
+      "tab3":{
+        "tab3":"Información del Titular",
+        "greytext1":"Documento",
+        "greytext2":"Apellidos",
+        "greytext3":"Nombres",
+        "greytext4":"Datos de la Publicación",
+        "input":"Motivo de la Publicación"
+      },
+      "tab4":{
+        "tab4":"Datos Stand- In",
+        "greytext1":"Fecha Vigencia S.I.",
+        "greytext2":"Datos de EWBF",
+        "regiones":{
+          "r1":"Región 0",
+          "r2":"Región 1",
+          "r3":"Región A",
+          "r4":"Región B",
+          "r5":"Región C",
+          "r6":"Región D",
+          "r7":"Región E" 
+        },
+        "fechas":{
+          "f1":"Fecha Vigencia",
+          "f2":"Fecha Vigencia",
+          "f3":"Fecha Vigencia",
+          "f4":"Fecha Vigencia",
+          "f5":"Fecha Vigencia",
+          "f6":"Fecha Vigencia",
+          "f7":"Fecha Vigencia"
+        }  
+      }
+    }
+    
   }
  
 }

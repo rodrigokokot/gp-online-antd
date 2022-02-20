@@ -1,12 +1,15 @@
+import { useTranslation } from "react-i18next";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 
 
 ///////// MOCK SEARCH ARRAY ///////////
-export const ConsultaLiquidacionesSearchArray = [
+export const ConsultaLiquidacionesSearchArray =()=>{
+    const { t} = useTranslation();
+    return([
     {
         index:"marca",
-        input:<FloatSelected label="Marca" options={[
+        input:<FloatSelected label={t("liquidacion.search.input1")} options={[
             {
                 title:"EUR",
                 value:"EUR",
@@ -16,7 +19,7 @@ export const ConsultaLiquidacionesSearchArray = [
     },
     {
         index:"emisor",
-        input:<FloatSelected label="Emisor" options={[
+        input:<FloatSelected label={t("liquidacion.search.input2")} options={[
             {
                 title:"Emisor A",
                 value:"Emisor A",
@@ -26,15 +29,15 @@ export const ConsultaLiquidacionesSearchArray = [
     },
     {
         index:"ap-razonsocial",
-        input:<FloatInput label="Apellido/Raz. Social" />
+        input:<FloatInput label={t("liquidacion.search.input3")} />
     },
     {
         index:"2apellido",
-        input:<FloatInput label="2do apellido" />
+        input:<FloatInput label={t("liquidacion.search.input4")} />
     },
     {
         index:"producto",
-        input:<FloatSelected label="Tipo de producto" options={[
+        input:<FloatSelected label={t("liquidacion.search.input5")} options={[
             {
                 title:"ProductoA",
                 value:"ProductoA",
@@ -44,7 +47,7 @@ export const ConsultaLiquidacionesSearchArray = [
     },
     {
         index:"tipo-documento",
-        input:<FloatSelected label="Tipo de Documento" options={[
+        input:<FloatSelected label={t("liquidacion.search.input6")} options={[
             {
                 title:"DNI",
                 value:"DNI",
@@ -54,11 +57,11 @@ export const ConsultaLiquidacionesSearchArray = [
     },
     {
         index:"documento",
-        input:<FloatInput label="N° de Documento" />
+        input:<FloatInput label={t("liquidacion.search.input7")} />
     },
     {
         index:"cuenta",
-        input:<FloatSelected label="Cuentas" options={[
+        input:<FloatSelected label={t("liquidacion.search.input8")} options={[
             {
                 title:"CuentaA",
                 value:"CuentaA",
@@ -68,7 +71,7 @@ export const ConsultaLiquidacionesSearchArray = [
     },
     {
         index:"periodo",
-        input:<FloatSelected label="Periodo (AAAAMM)" options={[
+        input:<FloatSelected label={t("liquidacion.search.input9")} options={[
             {
                 title: new Date().toISOString().split('T')[0],
                 value: new Date().toISOString().split('T')[0],
@@ -78,7 +81,7 @@ export const ConsultaLiquidacionesSearchArray = [
     },
     {
         index: "mensual",
-        input: <FloatSelected label="Mensual" options={[
+        input: <FloatSelected label={t("liquidacion.search.input10")}options={[
             {
                 title:"Trimestre",
                 value:"Trimestre",
@@ -96,52 +99,51 @@ export const ConsultaLiquidacionesSearchArray = [
             }
         ]} />
     }
-]
+])
+}
 
 ////////// MOCK COLUMNAS TABLA ///////////
 
-export const columnsConsultaLiquidaciones = [
+export const ColumnsConsultaLiquidaciones=()=>{
+    const { t} = useTranslation();
+    return([
     {
-        name:"Fecha",
+        name:(t("liquidacion.table.column1")),
         selector: (row) => row.fecha,
         sortable: true,
     },
     {
-        name:"Tarjeta",
+        name:(t("liquidacion.table.column2")),
         selector: (row) => row.tarjeta,
         sortable: true,
     },
     {
-        name:"Descripcion",
+        name:(t("liquidacion.table.column3")),
         selector: (row) => row.descripcion,
         sortable: true,
     },
     {
-        name:"Moneda",
+        name:(t("liquidacion.table.column4")),
         selector: (row) => row.moneda,
         sortable: true,
     },
     {
-        name:"Importe",
+        name:(t("liquidacion.table.column5")),
         selector: (row) => row.importe,
         sortable: true,
-    },
+    }, 
     {
-        name:"Importe",
-        selector: (row) => row.importe,
-        sortable: true,
-    },
-    {
-        name:"Comprobante",
+        name:(t("liquidacion.table.column6")),
         selector: (row) => row.comprobante,
         sortable: true,
     },
     {
-        name:"Producto",
+        name:(t("liquidacion.table.column7")),
         selector: (row) => row.producto,
         sortable: true,
     }
-];
+])
+}
 
 ///////// MOCK DATA TABLA /////////
 

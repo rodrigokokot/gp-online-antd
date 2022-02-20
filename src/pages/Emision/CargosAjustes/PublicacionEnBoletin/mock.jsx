@@ -1,49 +1,52 @@
 import { Link } from 'react-router-dom';
 import FloatSelected from '../../../../components/molecules/FloatSelected';
 import FloatInput from "../../../../components/molecules/FloatInput/index";  
-const columnsPBoletin= [
+import { useTranslation } from 'react-i18next';
+const ColumnsPBoletin=()=>{
+  const { t} = useTranslation();
+  return( [
     {
-        name: 'Emisor-Sucursal',
+        name: (t("boletin.table.column1")),
         selector: (row) => row.esucursal,
         sortable: true
       },
       {
-        name: 'ID',
+        name: (t("boletin.table.column2")),
         selector: (row) => row.id,
         sortable: true
       },
       {
-        name: 'Cliente',
+        name: (t("boletin.table.column3")),
         selector: (row) => row.cliente,
         sortable: true
       },
       {
-        name: 'Documento',
+        name: (t("boletin.table.column4")),
         selector: (row) => row.documento,
         sortable: true
       },
       {
-        name: 'Marca',
+        name: (t("boletin.table.column5")),
         selector: (row) => row.marca,
         sortable: true
       },
       {
-        name: 'Cuenta',
+        name: (t("boletin.table.column6")),
         selector: (row) => row.cuenta,
         sortable: true
       },
       {
-        name: 'Producto',
+        name: (t("boletin.table.column7")),
         selector: (row) => row.producto,
         sortable: true
       },
       {
-        name: 'Adic.',
+        name: (t("boletin.table.column8")),
         selector: (row) => row.adicional,
         sortable: true
       },
       {
-        name: 'Tarjeta',
+        name: (t("boletin.table.column9")),
         selector: (row) => row.tarjeta,
         sortable: true
       },
@@ -56,11 +59,12 @@ const columnsPBoletin= [
             style={{ textDecoration: "underline" }}
             rel="noopener noreferrer"
           >
-            Ver detalle
+            {t("boletin.table.column10")}
           </Link>
         ),
       },
-  ];
+  ])
+}
   
   const dataPBoletin = [
     {
@@ -88,102 +92,69 @@ const columnsPBoletin= [
           option:<Link>Ver detalle</Link>
         }, 
   ];
-  const PBoletinSearch = [
-    {
-        index: 'Emisor', 
-        input: (
-         <FloatSelected
-           placeholder="Emisor"
-           label="Emisor"
-           options={[
-             { title: "emisor 1", value: 1,disabled: false, },
-             { title: "emisor 2", value: 2,disabled: false, },
-             { title: "emisor 3", value: 3,disabled: false, },
-           ]} 
-         ></FloatSelected>
-       ),
+  const PBoletinSearch=()=>{
+    const { t} = useTranslation();
+    return( [
+      {
+        name: "Emisor",
+        index: "emisor",
+        input: <FloatSelected label={t("boletin.search.input1")} placeholder={t("boletin.search.input1")} />,
       },
       {
-          index: 'Marca', 
-          input: (
-           <FloatSelected
-             placeholder="Marca"
-             label="Marca"
-             options={[
-               { title: "Marca 1", value: 1,disabled: false, },
-               { title: "Marca 2", value: 2,disabled: false, },
-               { title: "Marca 3", value: 3,disabled: false, },
-             ]} 
-           ></FloatSelected>
-         ),
+        name: "Marca",
+        index: "marca",
+        input: <FloatSelected label={t("boletin.search.input2")}  placeholder={t("boletin.search.input2")}  />,
       },
-     {
-         index: 'Producto', 
-         input: (
-          <FloatSelected
-            placeholder="Producto"
-            label="Producto"
-            options={[
-              { title: "producto 1", value: 1,disabled: false, },
-              { title: "producto 2", value: 2,disabled: false, },
-              { title: "producto 3", value: 3,disabled: false, },
-            ]} 
-          ></FloatSelected>
-        ),
-       },
+      {
+        name: "Producto",
+        index: "producto",
+        input: <FloatSelected label={t("boletin.search.input3")}  placeholder={t("boletin.search.input3")} />,
+      },
        {
          index: 'N° de cuenta',
          name: 'cuenta',
-         input: <FloatInput placeholder="N° de cuenta" label="N° de cuenta" />,
+         input: <FloatInput placeholder={t("boletin.search.input4")} label={t("boletin.search.input4")} />,
        },
        {
          index: 'N° de cuenta orginal',
          name: 'cuenta',
-         input: <FloatInput placeholder="N° de cuenta original" label="N° de cuenta original" />,
+         input: <FloatInput placeholder={t("boletin.search.input5")} label={t("boletin.search.input5")}/>,
        },
        {
-         index: 'N° de cuenta relacionada',
-         name: 'cuenta',
-         input: <FloatInput placeholder="N° de cuenta relacionada" label="N° de cuenta relacionada" />,
+         name: "Nº Cuenta relacionada",
+         index: "cuentaexterna",
+         input: <FloatSelected label={t("boletin.search.input6")}  placeholder={t("boletin.search.input6")} />,
        },
        {
-         index: 'Apellidos',
-         name: 'apellidos',
-         input: <FloatInput placeholder="Apellidos" label="Apellidos" />,
+         name: "Apellidos",
+         index: "producto",
+         input: <FloatInput label={t("boletin.search.input7")}  placeholder={t("boletin.search.input7")}  />,
        },
        {
-         index: 'Nombres',
-         name: 'nombres',
-         input: <FloatInput placeholder="Nombres" label="Nombres" />,
+         name: "Nombres",
+         index: "cuenta",
+         input: <FloatInput label={t("boletin.search.input8")}  placeholder={t("boletin.search.input8")}  />,
        },
-         {
-             index: 'Tipo de documento', 
-             input: (
-              <FloatSelected
-                placeholder="Tipo de documento"
-                label="Tipo de documento"
-                options={[
-                  { title: "T de documento 1", value: 1,disabled: false, },
-                  { title: "T de documento 2", value: 2,disabled: false, },
-                  { title: "T de documento 3", value: 3,disabled: false, },
-                ]} 
-              ></FloatSelected>
-            ),
-         },
-         {
-           index: 'N° de documento',
-           name: 'ndocumento',
-           input: <FloatInput placeholder="N° de documento" label="N° de documento" />,
-         },
-         {
-           index: 'Razón social',
-           name: 'razonsocial',
-           input: <FloatInput placeholder="Razón social" label="Razón social" />,
-         },
-         {
-           index: 'N° Empresa',
-           name: 'empresa',
-           input: <FloatInput placeholder="N° Empresa" label="N° Empresa" />,
-         },
-   ];
-export { dataPBoletin, columnsPBoletin,PBoletinSearch};
+       {
+         name: "Tipo de Documento",
+         index: "producto",
+         input: <FloatSelected label={t("boletin.search.input9")}  placeholder={t("boletin.search.input9")} />,
+       },
+       {
+         name: "Nº de Documento",
+         index: "cuenta",
+         input: <FloatSelected label={t("boletin.search.input10")}  placeholder={t("boletin.search.input10")}  />,
+       },
+       {
+         name: "Razón Social",
+         index: "cuenta",
+         input: <FloatInput label={t("boletin.search.input11")}  placeholder={t("boletin.search.input11")}  />,
+       },
+       {
+         name: "Nº Empresa",
+         index: "cuenta",
+         input: <FloatInput label={t("boletin.search.input12")}  placeholder={t("boletin.search.input12")}  />,
+       },
+   ])
+  }
+export { dataPBoletin, ColumnsPBoletin,PBoletinSearch};

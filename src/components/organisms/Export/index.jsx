@@ -4,8 +4,10 @@ import FloatInput from "../../molecules/FloatInput";
 
 import * as FileSaver from "file-saver";
 import * as XLSX from "xlsx";
+import { useTranslation } from "react-i18next";
 
 const Export = ({dataExport, disabled}) => {
+  const { t} = useTranslation();
   const [visible, setVisible] = useState(false);
 
   const fileType =
@@ -49,7 +51,7 @@ const Export = ({dataExport, disabled}) => {
           }}
           disabled={disabled}
         >
-          Exportar
+          {t("exportar")}
         </Button>
       </Col>
       <Modal
