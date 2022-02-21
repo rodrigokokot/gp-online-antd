@@ -12,12 +12,12 @@ import test from "../../../../services/test";
 
 /* hacer que router tengo la dir de app.js  */
 const GestionCuentas = () => {
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
 
-  async function handleCallback(values) {
-    const response  =  await test.getCuentas(values)
-    console.log(response.data.lista)
-    setData(response.data.lista);
+  async function handleCallback() {
+    const response  =  await test.getCuentas()
+    console.log(response)
+    setData(response);
   }
 
   return (
