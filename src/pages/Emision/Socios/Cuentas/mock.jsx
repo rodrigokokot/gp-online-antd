@@ -2,46 +2,62 @@ import { Link } from "react-router-dom";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
+import { test } from "../../../../services";
+
+let productos = [];
+
+async function handleCallback(values) {
+  productos = await test.getProductos();
+  productos = productos.map((producto) => {
+    return {
+      title: producto.descripcion,
+      value: producto.idProducto,
+      disabled: false,
+    };
+  });
+  // console.log(productos);
+}
+handleCallback();
 
 const columnsGestionCuenta = [
   {
     name: "N° de cuenta",
-    selector: (row) => row.idcuenta,
+    selector: (row) => row.idCuenta,
     sortable: true,
   },
   {
     name: "Producto",
-    selector: (row) => row.producto,
+    selector: (row) => row.producto.descripcion,
     sortable: true,
   },
   {
     name: "Grupo de afinidad",
-    selector: (row) => row.gpafinidad,
+    selector: (row) => row.grupoAfinidad.descripcion,
     sortable: true,
   },
   {
     name: "Cuenta externa",
-    selector: (row) => row.cexterna,
+    selector: (row) => row.idCuentaExterna,
     sortable: true,
   },
   {
     name: "Nombre",
-    selector: (row) => row.nombre,
+    selector: (row) => row.socio.persona.nombre,
     sortable: true,
   },
   {
     name: "Documento",
-    selector: (row) => row.dni,
+    selector: (row) => row.socio.persona.numeroDocumento,
     sortable: true,
   },
   {
     name: "N° tarjeta",
-    selector: (row) => row.tarjeta,
+    selector: (row) => row.socio.tarjeta.numeroTarjeta,
     sortable: true,
   },
   {
     name: "Estado",
-    selector: (row) => row.estado,
+    selector: (row) => row.idEstado,
     sortable: true,
   },
   {
@@ -69,7 +85,6 @@ const dataGestionCuenta = [
     dni: "DNI 24801003",
     tarjeta: "552268XXXX",
     estado: "activo",
-    option: <Link>Editar</Link>,
   },
   {
     idcuenta: "001471107",
@@ -80,7 +95,6 @@ const dataGestionCuenta = [
     dni: "DNI 24801003",
     tarjeta: "552268XXXX",
     estado: "activo",
-    option: <Link>Editar</Link>,
   },
   {
     idcuenta: "001471107",
@@ -91,7 +105,6 @@ const dataGestionCuenta = [
     dni: "DNI 24801003",
     tarjeta: "552268XXXX",
     estado: "activo",
-    option: <Link>Editar</Link>,
   },
   {
     idcuenta: "001471107",
@@ -102,7 +115,6 @@ const dataGestionCuenta = [
     dni: "DNI 24801003",
     tarjeta: "552268XXXX",
     estado: "activo",
-    option: <Link>Editar</Link>,
   },
   {
     idcuenta: "001471107",
@@ -113,7 +125,6 @@ const dataGestionCuenta = [
     dni: "DNI 24801003",
     tarjeta: "552268XXXX",
     estado: "activo",
-    option: <Link>Editar</Link>,
   },
 ];
 const GestionCuentaSearch = [
@@ -149,18 +160,7 @@ const GestionCuentaSearch = [
       <FloatSelected
         label="Producto"
         placeholder="Producto"
-        options={[
-          {
-            title: "Producto 1",
-            value: "Producto 1",
-            disabled: false,
-          },
-          {
-            title: "Producto 2",
-            value: "Producto 2",
-            disabled: false,
-          },
-        ]}
+        options={productos}
       />
     ),
   },
