@@ -15,7 +15,7 @@ const GestionCuentas = () => {
   const [data, setData] = useState("");
 
   async function handleCallback(values) {
-    const response  =  await test.getProductos()
+    const response  =  await test.getCuentas(values)
     console.log(response.data.lista)
     setData(response.data.lista);
   }

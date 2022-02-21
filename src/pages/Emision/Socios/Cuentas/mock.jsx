@@ -2,6 +2,13 @@ import { Link } from "react-router-dom";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
+import { test } from "../../../../services";
+
+async function handleCallback(values) {
+  const response  =  await test.getProductos()
+  console.log(response.data.lista)
+}
+handleCallback()
 
 const columnsGestionCuenta = [
   {

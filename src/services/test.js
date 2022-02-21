@@ -7,18 +7,28 @@ export default {
     },
 
     async getToken() {
-        const response = await login.post('/AccessToken/AllData', {
-            "username": "admin9999",
-            "password": "GlobalProc#1",
-            "grant_type": "password",
-            "client_id": "GlobalOnline",
-            "client_secret": "aa8a0dee-e723-494d-98bd-90bab9ab8dee"
-        })
-        return response
+        try {
+            const response = await login.post('/AccessToken/AllData', {
+                "username": "admin9999",
+                "password": "GlobalProc#1",
+                "grant_type": "password",
+                "client_id": "GlobalOnline",
+                "client_secret": "aa8a0dee-e723-494d-98bd-90bab9ab8dee"
+            })
+            return response
+        } catch (error) {
+            console.log(error)
+        }
+
     },
 
     async getProductos() {
-        const response = await api.get('/Productos?IsActive=true')
-        return response
+        try {
+            const response = await api.get('/Productos?IsActive=true')
+            return response.data.lista
+        } catch (error) {
+            console.log(error)
+        }
+
     },
 }
