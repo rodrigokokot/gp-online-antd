@@ -243,7 +243,6 @@
       } 
     }
   },
-
   "gestionusuarios": {
     "button":"New user",
      "search":{
@@ -400,8 +399,7 @@
       } 
       
     },
-
-    "gestionperfiles":{ 
+  "gestionperfiles":{ 
       "button":"New Profile",
       "search":{
         "searchtitle":"Profile Search",
@@ -478,7 +476,6 @@
         } 
       }
     },
-
   "ipm":{
     "search":{
       "searchtitle":"IPM files search",
@@ -533,7 +530,6 @@
 
     }
   },
-
   "ctf":{
     "search":{
       "searchtitle":"CTF files search",
@@ -575,7 +571,6 @@
       }
     }
   },
-
   "autorizaciones":{
     "button":"New Autorization",
     "search":{
@@ -772,7 +767,6 @@
     
 
   },
-
   "estado":{
     "search":{
       "searchtitle":"Product search",
@@ -845,8 +839,7 @@
     
   }
 },
-
-"tiposcargos":{
+  "tiposcargos":{
   "button":"New charge type",
   "search":{
     "searchtitle":"Charge types search",
@@ -976,7 +969,6 @@
     } 
   }
 },
-
   "cargosproductos":{
     "button":"New Charge",
     "search":{
@@ -1035,7 +1027,6 @@
       }
     }
   },
-
   "afinidad":{
     "button":"New Charge",
     "search":{
@@ -1370,4 +1361,5 @@
     }
     
   }
+
 }
