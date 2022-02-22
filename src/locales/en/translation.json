@@ -26,7 +26,7 @@
     "rowseparator":"of",
     "selectall":"All"
   },
-  "exportar":"to export",
+  "exportar":"export",
   "gestionaprobaciones": {
     "tab1":{
       "tab1":"Novelties to confirm",
@@ -845,6 +845,138 @@
     
   }
 },
+
+"tiposcargos":{
+  "button":"New charge type",
+  "search":{
+    "searchtitle":"Charge types search",
+    "input1":"Code",
+    "input2":"Description",
+    "input3":"All",
+    "input4":"Debit",
+    "input5":"Transaction group",
+    "input6":"Receipt",
+    "input7":"Account Number",
+    "input8":"Additional",
+    "input9":"Member liquidation",
+    "input10":"Fees", 
+    "input11":"Currency search", 
+    "input12":"By dates"
+  },
+  "table":{
+      "column1":"Code",
+      "column2":"Description",
+      "column3":"Charge types",
+      "column4":"Iva Applies",
+      "column5":"Debit/Credit",
+      "column6":"Currency",
+      "column7":"Status", 
+      "column8":"Edit"
+  },
+  "new":{ 
+    "title1":"Main Data", 
+    "outline":{
+      "codigo": {
+        "label": "Code*",
+        "error": "Enter code"
+      },
+      "tipocargo": {
+        "label": "Charge type*",
+        "error": "Enter charge type"
+      },
+      "descripcion": {
+        "label": "Description" 
+      },
+      "moneda": {
+        "label": "Currency search*",
+        "error": "Enter currency"
+      } 
+    },
+    "aplicaiva":{
+      "label":"IVA applies*",
+      "error":"Enter IVA condition",
+      "value1":"General IVA",
+      "value2":"Reduced IVA",
+      "value3":"Not appliable" 
+    },
+    "typetarjeta":{
+      "error":"Enter card type", 
+      "value1":"Debit",
+      "value2":"Credit" 
+    },
+    "moneda":{
+      "label":"Satus", 
+      "value1":"Dolar", 
+      "value2":"Moneda Local" 
+    },
+    "edit":{
+      "save":"Confirm",
+      "confirm":"Create this new charge type?",
+      "btnconfirm":"Yes, create"
+    } 
+  },
+  "edit":{ 
+    "title1":"Main data", 
+    "outline":{
+      "codigo": {
+        "label": "Code*",
+        "error": "Enter code"
+      },
+      "descripcion": {
+        "label": "Description" 
+      },
+      "tipocargo": {
+        "label": "Charge type*",
+        "error": "Enter charge type"
+      }, 
+      "anulacion": {
+        "label": "Charge nullification*",
+        "error": "Enter nullification"
+      },
+      "moneda": {
+        "label": "Currency search*",
+        "error": "Enter currency"
+      },
+      "cuota": {
+        "label": "Max Fees*",
+        "error": "Enter max number of fees"
+      }  
+    },
+    "aplicaiva":{
+      "label":"IVA applies*",
+      "error":"Enter IVA condition",
+      "value1":"IVA General",
+      "value2":"IVA Reducido",
+      "value3":"No Aplica" 
+    },
+    "typetarjeta":{
+      "label":"Debit/Credit",
+      "error":"Enter card type", 
+      "value1":"Debit",
+      "value2":"Crédito" 
+    },
+    "moneda":{
+      "label":"Currency", 
+      "value1":"Dolar", 
+      "value2":"Moneda Local" 
+    },
+    "estado":{
+      "label":"Status*", 
+      "error":"Enter Status",
+      "value1":"Habilitado", 
+      "value2":"Inhabilitado" 
+    },
+    "cargo":{ 
+      "label":"Affect Charges?" 
+    },
+    "edit":{
+      "save":"Save changes",
+      "confirm":"Apply changes to this type of charge?",
+      "btnconfirm":"Yes, save"
+    } 
+  }
+},
+
   "cargosproductos":{
     "button":"New Charge",
     "search":{
@@ -854,7 +986,7 @@
       "input3":"All",
       "input4":"Debit",
       "input5":"Transaction group",
-      "input6":"Roucher",
+      "input6":"Receipt",
       "input7":"Account number",
       "input8":"Additional",
       "input9":"Member liquidation",
@@ -902,5 +1034,340 @@
         "error":"Enter all"
       }
     }
+  },
+
+  "afinidad":{
+    "button":"New Charge",
+    "search":{
+      "searchtitle":"Members charge types by products and affinity groups search",
+      "input1":"Code",
+      "input2":"Description",
+      "input3":"All",
+      "input4":"Debit",
+      "input5":"Transaction group",
+      "input6":"Receipt",
+      "input7":"Account number",
+      "input8":"Additional",
+      "input9":"Member liquidation",
+      "input10":"Fees",
+      "input11":"Product",
+      "input12":"Affinity group",  
+      "input13":"Currency",
+      "input14":"Since date" ,
+      "input15":"To date" ,
+      "input16":"Since hour" ,
+      "input17":"To hour",
+      "input18":"By date"  
+    },
+    "table":{
+        "column1":"Product",
+        "column2":"Affinity group",
+        "column3":"Concept",
+        "column4":"Price",
+        "column5":"IVA applies",
+        "column6":"Charge percentage",
+        "column7":"Valid since", 
+        "column8":"Valid to", 
+        "column9":"Edit"
+    },
+    "new":{
+      "title":"",
+      "h":{
+        "h1":""
+      },
+      "outline":{
+       
+      },
+      "edit":{
+        "save":"Create charge",
+        "confirm":"Create this charge?",
+        "btnconfirm":"Yes, create"
+      } 
+    },
+    "edit":{
+      "title":"Main Data",
+      "h":{
+        "h1":"Charge concept",
+        "h2":"Charge Renovation",
+        "h3":"Price*",
+        "h4":"Charge percentaje",
+        "h5":"Date since*"
+      },
+      "outline":{
+        "precio": { 
+          "error": "Enter price"
+        },  
+        "fecha": {
+          "label": "Pick Date*",
+          "error": "Enter since date"
+        } 
+      },
+      "edit":{
+        "save":"Save changes",
+        "confirm":"Apply changes to this charge?",
+        "btnconfirm":"Yes, apply"
+      } 
+    }
+  },
+  "movimiento":{
+    "button":"New charge",
+    "search":{
+      "searchtitle":"Members charge types by products and movement groups searcho",
+      "input1":"Code",
+      "input2":"Description",
+      "input3":"All",
+      "input4":"Debit",
+      "input5":"Transaction group",
+      "input6":"Receipt",
+      "input7":"Account number",
+      "input8":"Additional",
+      "input9":"Member liquidation",
+      "input10":"Fees",
+      "input11":"Product",
+      "input12":"Affinity group",
+      "input13":"Movement",   
+      "input14":"Currency search",
+      "input15":"Since date" ,
+      "input16":"Since hour" ,
+      "input17":"To date" ,
+      "input18":"To hour",
+      "input19":"By date"  
+    },
+    "table":{
+        "column1":"Product",
+        "column2":"Movement",
+        "column3":"Location",
+        "column4":"Event",
+        "column5":"Price",
+        "column6":"IVA applies",
+        "column7":"%", 
+        "column8":"Concept", 
+        "column9":"Since date", 
+        "column10":"To date", 
+        "column11":"Edit"
+    },
+    "new":{
+      "title":"",
+      "h":{
+        "h1":""
+      },
+      "outline":{
+       
+      },
+      "edit":{
+        "save":"Create charge",
+        "confirm":"Create this charge?",
+        "btnconfirm":"Yes, create"
+      } 
+    },
+    "edit":{
+      "title":"Main Data",
+      "h":{
+        "h1":"Charge concept",
+        "h2":"Charge Renovation",
+        "h3":"Price*",
+        "h4":"Charge percentaje",
+        "h5":"Date since*"
+      },
+      "outline":{
+        "producto": { 
+          "placeh":"Search by product type*",
+          "label":"Product*",
+          "error": "Enter product"
+        },   
+        "codigomov": { 
+          "placeh":"Enter movement code*",
+          "label":"Movement code*",
+          "error": "Enter code"
+        },   
+        "typered": { 
+          "placeh":"Web type search*",
+          "label":"Web type*",
+          "error": "Enter web type"
+        },   
+        "fecha": {  
+          "label":"Date since*",
+          "error": "Enter date since"
+        },   
+        "porcentaje": { 
+          "placeh":"Enter charge percentage*",
+          "label":"Enter charge percentage*",
+          "error": "Enter percentage" 
+        },   
+        "precio": { 
+          "placeh":"Enter price*",
+          "label":"Enter price*",
+          "error": "Enter price"
+        },   
+        "moneda": { 
+          "placeh":"Currency search*" 
+        },   
+        "minimo": { 
+          "placeh":"Minimum",
+          "label":"Minimum"
+        },   
+        "maximo": { 
+          "placeh":"Maximum",
+          "label":"Maximum" 
+        },   
+        "cargo": { 
+          "placeh":"Charge concept search",
+          "label":"Charge concept" 
+        }
+      },   
+      "locacion": {  "label":"Location",
+        "value1":"Local",
+        "value2":"Foreing",
+        "error": "Enter location"
+      },     
+      "evento": {  "label":"Event",
+        "value1":"Autorización",
+        "value2":"Presentación",
+        "value3":"No Aplica",
+        "error": "Enter location"
+      },      
+      "moneda": {  "label":"Currency",
+        "value1":"DOLAR U$S",
+        "value2":"EUROS",
+        "value3":"Pesos AR" 
+      }, 
+      "edit":{
+        "save":"Confirm",
+        "confirm":"Apply changes to this charge?",
+        "btnconfirm":"Yes, apply"
+      } 
+    }
+  },
+  "liquidacion":{
+    "search":{
+      "searchtitle":"Historic movements search",
+      "input1":"Brand",
+      "input2":"Emitter",
+      "input3":"Last name/Business name",
+      "input4":"Second surname",
+      "input5":"Product type",
+      "input6":"Document type",
+      "input7":"Document number",
+      "input8":"Accounts",
+      "input9":"Period",
+      "input10":"Monthly"
+    },
+    "table":{
+        "column1":"Date",
+        "column2":"Card",
+        "column3":"Description",
+        "column4":"Currency",
+        "column5":"Amount",
+        "column6":"Receipt",
+        "column7":"Product"
+    },
+      "title1":"ARS",
+      "text1":{
+        "greytext1":"Previous Salary",
+        "greytext2":"Debits Total",
+        "greytext3":"Credits Total",
+        "greytext4":"Actual salary",
+        "greytext5":"Previous minimum payment",
+        "greytext6":"Previous unpayed payment",
+        "greytext7":"Actual minimum payment",
+        "greytext8":"Flexible plan salary"            
+      }, 
+    "title2":"Dolares",
+      "text2":{
+        "greytext1":"Previous Salary",
+        "greytext2":"Total Débitos",
+        "greytext3":"Total Créditos",
+        "greytext4":"Saldo Actual",
+        "greytext5":"Previous minimum payment",
+        "greytext6":"Previous unpayed payment",
+        "greytext7":"Actual minimum payment"        
+      },
+      "title3":"Unsettled period",
+      "text3":{
+        "greytext1":"Settlement date",
+        "greytext2":"Period points",
+        "greytext3":"Due date",
+        "greytext4":"Accumulated points"           
+      } 
+  },
+  "boletin":{
+    "search":{
+      "searchtitle":"Product search",
+      "input1":"Emitter",
+      "input2":"Brand",
+      "input3":"Product",
+      "input4":"Account number",
+      "input5":"Original account nomber",
+      "input6":"Related account number",
+      "input7":"Last name",
+      "input8":"First name",
+      "input9":"Document type",
+      "input10":"Document number",
+      "input11":"Business name",
+      "input12":"Company name"
+    },
+    "table":{
+      "column1":"Emitter-Branch",
+      "column2":"ID",
+      "column3":"Client",
+      "column4":"Document",
+      "column5":"Brand",
+      "column6":"Account",
+      "column7":"Product",
+      "column8":"Additional.",
+      "column9":"Card",
+      "column10":"See details"
+    },
+    "view":{
+      "tab1":{
+        "tab1":"Account information",
+        "greytext1":"Account number",
+        "greytext2":"Original account number",
+        "greytext3":"Discharge date",
+        "greytext4":"Account type",
+        "greytext5":"Brand",
+        "greytext6":"Emitter",
+        "greytext7":"Branch"
+      },
+      "tab2":{
+        "tab2":"Product information",
+        "greytext1":"Product",
+        "greytext2":"Card",
+        "greytext3":"Discharge date",
+        "greytext4":"Status"
+      },
+      "tab3":{
+        "tab3":"Holder information",
+        "greytext1":"Document",
+        "greytext2":"Last name",
+        "greytext3":"Names",
+        "greytext4":"Post data",
+        "input":"Post reason"
+      },
+      "tab4":{
+        "tab4":"Stand- In Data",
+        "greytext1":"Fecha Vigencia S.I.",
+        "greytext2":"Datos de EWBF",
+        "regiones":{
+          "r1":"Región 0",
+          "r2":"Región 1",
+          "r3":"Región A",
+          "r4":"Región B",
+          "r5":"Región C",
+          "r6":"Región D",
+          "r7":"Región E" 
+        },
+        "fechas":{
+          "f1":"Fecha Vigencia",
+          "f2":"Fecha Vigencia",
+          "f3":"Fecha Vigencia",
+          "f4":"Fecha Vigencia",
+          "f5":"Fecha Vigencia",
+          "f6":"Fecha Vigencia",
+          "f7":"Fecha Vigencia"
+        }  
+      }
+    }
+    
   }
 }
