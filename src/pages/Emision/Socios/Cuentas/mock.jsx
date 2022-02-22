@@ -2,22 +2,35 @@ import { Link } from "react-router-dom";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
-import { test } from "../../../../services";
+import {cuentas} from "../../../../services";
 
 let productos = [];
+let gruposAfinidad = [];
 
-async function handleCallback(values) {
-  productos = await test.getProductos();
-  productos = productos.map((producto) => {
-    return {
-      title: producto.descripcion,
+async function getListaProductos() {
+  const response = await cuentas.getProductos();
+  response.map((producto) => {
+    productos.push({
       value: producto.idProducto,
-      disabled: false,
-    };
+      title: producto.descripcion,
+    });
   });
-  // console.log(productos);
+  console.log(productos);
 }
-handleCallback();
+
+async function getListaGruposAfinidad() {
+  const response = await cuentas.getGruposAfinidad();
+  response.map((grupo) => {
+    gruposAfinidad.push({
+      value: grupo.idGrupoAfinidad,
+      title: grupo.descripcion,
+    });
+  });
+  console.log(gruposAfinidad);
+}
+
+getListaProductos();
+getListaGruposAfinidad();
 
 const columnsGestionCuenta = [
   {
@@ -130,22 +143,21 @@ const dataGestionCuenta = [
 const GestionCuentaSearch = [
   {
     name: "N° de tarjeta",
-    index: "tarjeta",
+    index: "Tarjeta",
     input: <FloatInput label="N° de tarjeta" placeholder="N° de tarjeta" />,
   },
   {
     name: "N° de documento",
-    index: "documento",
+    index: "NroDocumento",
     input: <FloatInput label="N° de documento" placeholder="N° de documento" />,
   },
   {
     name: "N° de cuenta",
-    index: "cuenta",
+    index: "IdCuenta",
     input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
   },
   {
-    name: "N° de cuenta externa",
-    index: "cuentaexterna",
+    index: "IdCuentaExterna",
     input: (
       <FloatInput
         label="N° de cuenta externa"
@@ -154,41 +166,29 @@ const GestionCuentaSearch = [
     ),
   },
   {
-    name: "Producto",
-    index: "producto",
-    input: (
-      <FloatSelected
-        label="Producto"
-        placeholder="Producto"
-        options={productos}
-      />
-    ),
+    index: "IdProducto",
+    input:
+      (
+        <FloatSelected
+          label="Producto"
+          placeholder="Producto"
+          options={productos}
+        />
+      ),
   },
   {
-    name: "Grupo de afinidad",
-    index: "gpafinidad",
+    index: "IdGrupoAfinidad",
     input: (
       <FloatSelected
         label="Grupo de afinidad"
         placeholder="Grupo de afinidad"
-        options={[
-          {
-            title: "Grupo 1",
-            value: "Grupo 1",
-            disabled: false,
-          },
-          {
-            title: "Grupo 2",
-            value: "Grupo 2",
-            disabled: false,
-          },
-        ]}
+        options={gruposAfinidad}
       />
     ),
   },
   {
     name: "Nombre",
-    index: "nombre",
+    index: "Nombre",
     input: <FloatInput label="Nombre" placeholder="Nombre" />,
   },
   {

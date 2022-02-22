@@ -1,4 +1,4 @@
-import { api, jsonPlaceHolder, login } from './config/axios'
+import { api, login } from './config/axios'
 import endPoints from './config/endPoints'
 
 export default {
@@ -26,9 +26,18 @@ export default {
         }
     },
 
-    async getCuentas() {
+    async getGruposAfinidad() {
         try {
-            const response = await api.get(endPoints.getCuentas)
+            const response = await api.get(endPoints.getGruposAfinidad)
+            return response.data.lista
+        } catch (error) {
+            console.error(error)
+        }
+    },
+
+    async getCuentas(values) {
+        try {
+            const response = await api.get(`${endPoints.getCuentas}${values}`)
             return response.data.lista
         } catch (error) {
             console.log(error)

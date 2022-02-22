@@ -1,5 +1,7 @@
-import test from './test'
+import cuentas from './cuentas'
+import auth from './auth'
 
 export {
-    test
+    cuentas,
+    auth,
 }
