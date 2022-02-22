@@ -1360,6 +1360,76 @@
       }
     }
     
+  },
+  "movimientocuenta":{
+    "search":{
+      "searchtitle":"Account movements search",
+      "input1":"Card Number",
+      "input2":"Account Number",
+      "input3":"AR$",
+      "input4":"By dates"
+    },
+    "table":{
+      "column1":"Card",
+      "column2":"Account number",
+      "column3":"Currency",
+      "column4":"Date"
+    }
+  },
+  "adicionales":{
+    "button":"New Additional",
+    "search":{
+      "searchtitle":"Account management search",
+      "input1":"Account number",
+      "input2":"Account/Additional",
+      "input3":"Document number",
+      "input4":"Card number",
+      "input5":"Full Name"
+    },
+    "table":{
+      "column1":"Account/Additional",
+      "column2":"Full name",
+      "column3":"Document",
+      "column4":"Product",
+      "column5":"Status",
+      "column6":"New Additional"
+    },
+    "nuevo":{
+      "title1":"Main Data",
+      "title2":"Domicilio",
+      "checkbox1":"Reports address",
+      "radiogroup":{
+        "title":"Document type",
+        "radio1":"DNI",
+        "radio2":"CUIT",
+        "radio3":"CIVIC NOTEBOOK",
+        "radio4":"ENLISTMENT NOTEBOOK",
+        "radio5":"CUIL",
+        "radio6":"PASSPORT",
+        "radio7":"CI"
+      },
+      "search":"Document number",
+      "input1":"First name",
+      "input2":"Last name",
+      "input3":"Gender",
+      "input4":"Civil status",
+      "input5":"Birth date",
+      "input6":"Birth country",
+      "input7":"E-mail",
+      "input8":"Tributary code",
+      "input9":"Embossed name",
+      "input10":"Street*",
+      "input11":"Number",
+      "input12":"Floor",
+      "input13":"Department",
+      "input14":"ZIP code*",
+      "input15":"Between streets",
+      "input16":"Neighborhood",
+      "input17":"Location*",
+      "input18":"Province*",
+      "input19":"Phone number*",   
+      "input20":"Reference"
+    }
   }
 
 }
