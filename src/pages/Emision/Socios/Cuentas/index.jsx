@@ -5,19 +5,21 @@ import { Link } from "react-router-dom";
 import {
   GestionCuentaSearch,
   dataGestionCuenta,
-  columnsGestionCuenta,
+  ColumnsGestionCuenta,
 } from "./mock";
 import { Col, Button } from "antd";
 import test from "../../../../services/test";
+import { useTranslation } from "react-i18next";
 
 /* hacer que router tengo la dir de app.js  */
 const GestionCuentas = () => {
-  const [data, setData] = useState("");
+  const { t} = useTranslation();
+  const [data, setData] = useState([]);
 
-  async function handleCallback(values) {
-    const response  =  await test.getProductos()
-    console.log(response.data.lista)
-    setData(response.data.lista);
+  async function handleCallback() {
+    const response  =  await test.getCuentas()
+    console.log(response)
+    setData(response);
   }
 
   return (
@@ -25,18 +27,18 @@ const GestionCuentas = () => {
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/emision/socios/cuentas/crearCuenta">
           <Button type="primary" size="small">
-            Nueva Cuenta
+            {t("gestioncuenta.button")}
           </Button>
         </Link>
       </Col>
       <SearchForm
         span={4}
-        array={GestionCuentaSearch}
+        array={GestionCuentaSearch()}
         parentCallback={handleCallback}
-        title="Busqueda de gestión de cuentas"
+        title={t("gestioncuenta.search.searchtitle")}
       />
       <br></br>
-      <Table data={data} columns={columnsGestionCuenta} />
+      <Table data={data} columns={ColumnsGestionCuenta()} />
     </>
   );
 };

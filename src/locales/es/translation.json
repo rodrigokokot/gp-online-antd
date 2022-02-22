@@ -1483,6 +1483,305 @@
       }
     }
     
-  }
+  },
+  "gestioncuenta": {
+    "button":"Nuevo Cuenta",
+     "search":{
+        "searchtitle":"Búsqueda de gestión de cuentas",
+        "input1":"N° de Tarjeta",
+        "input2":"N° de Documento",
+        "input3":"N° de Cuenta",
+        "input4":"N° de Cuenta Externa",
+        "input5":"Producto" ,
+        "input6":"Grupo de Afinidad" ,
+        "input7":"Nombre" ,
+        "input8":"Fecha Rel. Hasta" ,
+        "input9":"Cuotas"   
+      },
+      "table":{
+        "column1":"N° de cuenta",
+        "column2":"Producto",
+        "column3":"Grupo de afinidad",
+        "column4":"Cuenta externa",
+        "column5":"Nombre",
+        "column6":"Documento",
+        "column7":"N° tarjeta",
+        "column8":"Estado",
+        "column9":"Editar" 
+      },
+      "new":{ 
+          "title1":"Datos Principales",
+          "title2":"Titular",
+          "title3":"Domicilio Legal",
+          "title4":"Domicilio Correspondencia",
+          "title5":"Domicilio Laboral",
+          "outline":{
+            "sucursal": {
+              "label": "Sucursal*",
+              "error": "Ingrese sucursal"
+            },
+            "gafinidad": {
+              "label": "Grupo de Afinidad" 
+            },
+            "typeproducto": {
+              "label": "Tipo de Producto*",
+              "error": "Ingrese tipo de producto"
+            },
+            "producto": {
+              "label": "Producto*",
+              "error": "Ingrese producto"
+            }, 
+            "posicion": {
+              "label": "Posición Impositiva*",
+              "error": "Ingrese posición"
+            }, 
+            "cuentaext": {
+              "label": "Cuenta Externa"
+            }, 
+            "entregat": {
+              "label": "Entrega de Tarjeta*",
+              "error": "Ingrese entrega" 
+            }, 
+            "estado": {
+              "label": "Estado*",
+              "error": "Ingrese estado"
+            }, 
+            "documento": {
+              "label": "N° de Documento*",
+              "error": "Ingrese documento"
+            }  , 
+            "nombre": {
+              "label": "Nombre*",
+              "error": "Ingrese nombre"
+            }  , 
+            "apellido": {
+              "label": "Apellido*",
+              "error": "Ingrese apellido"
+            }  , 
+            "sexo": {
+              "label": "Sexo" 
+            }  , 
+            "estadocivil": {
+              "label": "Estado Civil" 
+            }  , 
+            "fnacimiento": {
+              "label": "Fecha de Nacimiento*",
+              "error": "Ingrese fecha de nacimiento"
+            } , 
+            "pais": {
+              "label": "País de Nacimiento*",
+              "error": "Ingrese país"
+            } , 
+            "email": {
+              "label": "E-Mail*",
+              "error": "Ingrese email"
+            } , 
+            "codigotrib": {
+              "label": "Código Tribtario*",
+              "error": "Ingrese código"
+            } , 
+            "nombremb": {
+              "label": "Nombre Embozado*",
+              "error": "Ingrese nombre embozado"
+            } , 
+            "calle": {
+              "label": "Calle*",
+              "error": "Ingrese calle"
+            } , 
+            "numero": {
+              "label": "Número*",
+              "error": "Ingrese numero"
+            } , 
+            "piso": {
+              "label": "Piso" 
+            } , 
+            "dpto": {
+              "label": "Dpto" 
+            } , 
+            "cdpostal": {
+              "label": "Código Postal*",
+              "error": "Ingrese código postal"
+            } , 
+            "entrecalles": {
+              "label": "Entre Calles"
+            } , 
+            "barrio": {
+              "label": "Barrio"
+            } , 
+            "localidad": {
+              "label": "Localidad*",
+              "error": "Ingrese localidad"
+            } , 
+            "provincia": {
+              "label": "Provincia*",
+              "error": "Ingrese provincia"
+            } , 
+            "telefono": {
+              "label": "Teléfono*",
+              "error": "Ingrese teléfono"
+            } , 
+            "referencia": {
+              "label": "Referencia"
+            } 
+          },
+          "check1":{
+            "title1":"Por defecto, el domicilio de correspondencia es el mismo que el domicilio legal",
+            "title2":"Ingresar un domicilio de correspondencia diferente"
+          },
+          "typedoc":{
+            "label":"Tipo de Documento",
+            "error":"Ingrese tipo de documento",
+            "value1":"DNI",
+            "value2":"CUIT",
+            "value3":"LIBRETA CIVICA",
+            "value4":"LIBRETA DE ENROLAMIENTO",
+            "value5":"CUIL",
+            "value6":"PASAPORTE",
+            "value7":"CI"
+          },
+          "edit":{
+            "save":"Crear cuenta",
+            "confirm":"¿Confirmar la creación de la cuenta?",
+            "btnconfirm":"Si, crear"
+          } 
+      }, 
+      "edit":{ 
+        "title1":"Datos Principales",
+        "title2":"Titular",
+        "title3":"Domicilio Legal",
+        "title4":"Domicilio Correspondencia",
+        "title5":"Domicilio Laboral",
+        "outline":{
+          "sucursal": {
+            "label": "Sucursal*",
+            "error": "Ingrese sucursal"
+          },
+          "gafinidad": {
+            "label": "Grupo de Afinidad" 
+          },
+          "typeproducto": {
+            "label": "Tipo de Producto*",
+            "error": "Ingrese tipo de producto"
+          },
+          "producto": {
+            "label": "Producto*",
+            "error": "Ingrese producto"
+          }, 
+          "posicion": {
+            "label": "Posición Impositiva*",
+            "error": "Ingrese posición"
+          }, 
+          "cuentaext": {
+            "label": "Cuenta Externa"
+          }, 
+          "entregat": {
+            "label": "Entrega de Tarjeta*",
+            "error": "Ingrese entrega" 
+          }, 
+          "estado": {
+            "label": "Estado*",
+            "error": "Ingrese estado"
+          }, 
+          "documento": {
+            "label": "N° de Documento*",
+            "error": "Ingrese documento"
+          }  , 
+          "nombre": {
+            "label": "Nombre*",
+            "error": "Ingrese nombre"
+          }  , 
+          "apellido": {
+            "label": "Apellido*",
+            "error": "Ingrese apellido"
+          }  , 
+          "sexo": {
+            "label": "Sexo" 
+          }  , 
+          "estadocivil": {
+            "label": "Estado Civil" 
+          }  , 
+          "fnacimiento": {
+            "label": "Fecha de Nacimiento*",
+            "error": "Ingrese fecha de nacimiento"
+          } , 
+          "pais": {
+            "label": "País de Nacimiento*",
+            "error": "Ingrese país"
+          } , 
+          "email": {
+            "label": "E-Mail*",
+            "error": "Ingrese email"
+          } , 
+          "codigotrib": {
+            "label": "Código Tribtario*",
+            "error": "Ingrese código"
+          } , 
+          "nombremb": {
+            "label": "Nombre Embozado*",
+            "error": "Ingrese nombre embozado"
+          } , 
+          "calle": {
+            "label": "Calle*",
+            "error": "Ingrese calle"
+          } , 
+          "numero": {
+            "label": "Número*",
+            "error": "Ingrese numero"
+          } , 
+          "piso": {
+            "label": "Piso" 
+          } , 
+          "dpto": {
+            "label": "Dpto" 
+          } , 
+          "cdpostal": {
+            "label": "Código Postal*",
+            "error": "Ingrese código postal"
+          } , 
+          "entrecalles": {
+            "label": "Entre Calles"
+          } , 
+          "barrio": {
+            "label": "Barrio"
+          } , 
+          "localidad": {
+            "label": "Localidad*",
+            "error": "Ingrese localidad"
+          } , 
+          "provincia": {
+            "label": "Provincia*",
+            "error": "Ingrese provincia"
+          } , 
+          "telefono": {
+            "label": "Teléfono*",
+            "error": "Ingrese teléfono"
+          } , 
+          "referencia": {
+            "label": "Referencia"
+          } 
+        },
+        "check1":{
+          "title1":"Por defecto, el domicilio de correspondencia es el mismo que el domicilio legal",
+          "title2":"Ingresar un domicilio de correspondencia diferente"
+        },
+        "typedoc":{
+          "label":"Tipo de Documento",
+          "error":"Ingrese tipo de documento",
+          "value1":"DNI",
+          "value2":"CUIT",
+          "value3":"LIBRETA CIVICA",
+          "value4":"LIBRETA DE ENROLAMIENTO",
+          "value5":"CUIL",
+          "value6":"PASAPORTE",
+          "value7":"CI"
+        },
+        "edit":{
+          "save":"Crear cuenta",
+          "confirm":"¿Confirmar la creación de la cuenta?",
+          "btnconfirm":"Si, crear"
+        } 
+    }
+      
+    }
  
 }

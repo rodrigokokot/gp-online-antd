@@ -2,46 +2,65 @@ import { Link } from "react-router-dom";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
+import { test } from "../../../../services";
+import { useTranslation } from "react-i18next";
 
-const columnsGestionCuenta = [
+let productos = [];
+
+async function handleCallback(values) {
+  productos = await test.getProductos();
+  productos = productos.map((producto) => {
+    return {
+      title: producto.descripcion,
+      value: producto.idProducto,
+      disabled: false,
+    };
+  });
+  // console.log(productos);
+}
+handleCallback();
+
+const ColumnsGestionCuenta =()=>{
+  const { t} = useTranslation();
+  return([
   {
-    name: "N° de cuenta",
-    selector: (row) => row.idcuenta,
+    name: (t("gestioncuenta.table.column1")),//"N° de cuenta",
+    selector: (row) => row.idCuenta,
     sortable: true,
   },
   {
-    name: "Producto",
-    selector: (row) => row.producto,
+    name: (t("gestioncuenta.table.column2")),//"Producto",
+    selector: (row) => row.producto.descripcion,
     sortable: true,
   },
   {
-    name: "Grupo de afinidad",
-    selector: (row) => row.gpafinidad,
+    name: (t("gestioncuenta.table.column3")),//"Grupo de afinidad",
+    selector: (row) => row.grupoAfinidad.descripcion,
     sortable: true,
   },
   {
-    name: "Cuenta externa",
-    selector: (row) => row.cexterna,
+    name: (t("gestioncuenta.table.column4")),//"Cuenta externa",
+    selector: (row) => row.idCuentaExterna,
     sortable: true,
   },
   {
-    name: "Nombre",
-    selector: (row) => row.nombre,
+    name: (t("gestioncuenta.table.column5")),//"Nombre",
+    selector: (row) => row.socio.persona.nombre,
     sortable: true,
   },
   {
-    name: "Documento",
-    selector: (row) => row.dni,
+    name: (t("gestioncuenta.table.column6")),//"Documento",
+    selector: (row) => row.socio.persona.numeroDocumento,
     sortable: true,
   },
   {
-    name: "N° tarjeta",
-    selector: (row) => row.tarjeta,
+    name:(t("gestioncuenta.table.column7")),// "N° tarjeta",
+    selector: (row) => row.socio.tarjeta.numeroTarjeta,
     sortable: true,
   },
   {
-    name: "Estado",
-    selector: (row) => row.estado,
+    name: (t("gestioncuenta.table.column8")),//"Estado",
+    selector: (row) => row.idEstado,
     sortable: true,
   },
   {
@@ -53,11 +72,12 @@ const columnsGestionCuenta = [
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >
-        Editar
+        {t("gestioncuenta.table.column9")}
       </Link>
     ),
   },
-];
+])
+}
 
 const dataGestionCuenta = [
   {
@@ -69,7 +89,6 @@ const dataGestionCuenta = [
     dni: "DNI 24801003",
     tarjeta: "552268XXXX",
     estado: "activo",
-    option: <Link>Editar</Link>,
   },
   {
     idcuenta: "001471107",
@@ -80,7 +99,6 @@ const dataGestionCuenta = [
     dni: "DNI 24801003",
     tarjeta: "552268XXXX",
     estado: "activo",
-    option: <Link>Editar</Link>,
   },
   {
     idcuenta: "001471107",
@@ -91,7 +109,6 @@ const dataGestionCuenta = [
     dni: "DNI 24801003",
     tarjeta: "552268XXXX",
     estado: "activo",
-    option: <Link>Editar</Link>,
   },
   {
     idcuenta: "001471107",
@@ -102,7 +119,6 @@ const dataGestionCuenta = [
     dni: "DNI 24801003",
     tarjeta: "552268XXXX",
     estado: "activo",
-    option: <Link>Editar</Link>,
   },
   {
     idcuenta: "001471107",
@@ -113,32 +129,33 @@ const dataGestionCuenta = [
     dni: "DNI 24801003",
     tarjeta: "552268XXXX",
     estado: "activo",
-    option: <Link>Editar</Link>,
   },
 ];
-const GestionCuentaSearch = [
+const GestionCuentaSearch =()=>{
+  const { t} = useTranslation();
+  return( [
   {
     name: "N° de tarjeta",
     index: "tarjeta",
-    input: <FloatInput label="N° de tarjeta" placeholder="N° de tarjeta" />,
+    input: <FloatInput label={t("gestioncuenta.search.input1")} placeholder={t("gestioncuenta.search.input1")} />,
   },
   {
     name: "N° de documento",
     index: "documento",
-    input: <FloatInput label="N° de documento" placeholder="N° de documento" />,
+    input: <FloatInput label={t("gestioncuenta.search.input2")} placeholder={t("gestioncuenta.search.input2")} />,
   },
   {
     name: "N° de cuenta",
     index: "cuenta",
-    input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
+    input: <FloatInput label={t("gestioncuenta.search.input3")} placeholder={t("gestioncuenta.search.input3")} />,
   },
   {
     name: "N° de cuenta externa",
     index: "cuentaexterna",
     input: (
       <FloatInput
-        label="N° de cuenta externa"
-        placeholder="N° de cuenta externa"
+        label={t("gestioncuenta.search.input4")}
+        placeholder={t("gestioncuenta.search.input4")}
       />
     ),
   },
@@ -147,20 +164,9 @@ const GestionCuentaSearch = [
     index: "producto",
     input: (
       <FloatSelected
-        label="Producto"
-        placeholder="Producto"
-        options={[
-          {
-            title: "Producto 1",
-            value: "Producto 1",
-            disabled: false,
-          },
-          {
-            title: "Producto 2",
-            value: "Producto 2",
-            disabled: false,
-          },
-        ]}
+        label={t("gestioncuenta.search.input5")}
+        placeholder={t("gestioncuenta.search.input5")}
+        options={productos}
       />
     ),
   },
@@ -169,8 +175,8 @@ const GestionCuentaSearch = [
     index: "gpafinidad",
     input: (
       <FloatSelected
-        label="Grupo de afinidad"
-        placeholder="Grupo de afinidad"
+        label={t("gestioncuenta.search.input6")}
+        placeholder={t("gestioncuenta.search.input6")}
         options={[
           {
             title: "Grupo 1",
@@ -189,13 +195,13 @@ const GestionCuentaSearch = [
   {
     name: "Nombre",
     index: "nombre",
-    input: <FloatInput label="Nombre" placeholder="Nombre" />,
+    input: <FloatInput label={t("gestioncuenta.search.input7")} placeholder={t("gestioncuenta.search.input7")}/>,
   },
   {
     name: "Fecha Rel. Hasta",
     index: "fechahasta",
     input: (
-      <FloatInput label="Fecha Rel. Hasta" placeholder="Fecha Rel. Hasta" />
+      <FloatInput label={t("gestioncuenta.search.input8")} placeholder={t("gestioncuenta.search.input8")} />
     ),
   },
   {
@@ -203,8 +209,8 @@ const GestionCuentaSearch = [
     index: "cuotas",
     input: (
       <FloatSelected
-        placeholder="Cuotas"
-        label="Cuotas"
+        placeholder={t("gestioncuenta.search.input9")}
+        label={t("gestioncuenta.search.input9")}
         options={[
           {
             title: "1",
@@ -225,5 +231,6 @@ const GestionCuentaSearch = [
     index: "fecha",
     input: <DateRangeFilter placeholder="fecha" label="Por fecha" />,
   },
-];
-export { dataGestionCuenta, columnsGestionCuenta, GestionCuentaSearch };
+])
+}
+export { dataGestionCuenta, ColumnsGestionCuenta, GestionCuentaSearch };

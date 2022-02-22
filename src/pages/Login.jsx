@@ -34,12 +34,8 @@ const Login = () => {
   };
 
   const Login = async () => {
-    try {
-      const response = await test.getToken();
-      sessionStorage.setItem("token", response.data.accessToken);
-    } catch (error) {
-      console.error(error);
-    }
+    const response = await test.getToken();
+    sessionStorage.setItem("token", response.data.accessToken);
   };
 
   return (
