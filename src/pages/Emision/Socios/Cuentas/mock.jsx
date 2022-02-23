@@ -4,21 +4,35 @@ import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
 import { test } from "../../../../services";
 import { useTranslation } from "react-i18next";
+import {cuentas} from "../../../../services";
 
 let productos = [];
+let gruposAfinidad = [];
 
-async function handleCallback(values) {
-  productos = await test.getProductos();
-  productos = productos.map((producto) => {
-    return {
-      title: producto.descripcion,
+async function getListaProductos() {
+  const response = await cuentas.getProductos();
+  response.map((producto) => {
+    productos.push({
       value: producto.idProducto,
-      disabled: false,
-    };
+      title: producto.descripcion,
+    });
   });
-  // console.log(productos);
+  console.log(productos);
 }
-handleCallback();
+
+async function getListaGruposAfinidad() {
+  const response = await cuentas.getGruposAfinidad();
+  response.map((grupo) => {
+    gruposAfinidad.push({
+      value: grupo.idGrupoAfinidad,
+      title: grupo.descripcion,
+    });
+  });
+  console.log(gruposAfinidad);
+}
+
+getListaProductos();
+getListaGruposAfinidad();
 
 const ColumnsGestionCuenta =()=>{
   const { t} = useTranslation();
@@ -150,8 +164,7 @@ const GestionCuentaSearch =()=>{
     input: <FloatInput label={t("gestioncuenta.search.input3")} placeholder={t("gestioncuenta.search.input3")} />,
   },
   {
-    name: "N° de cuenta externa",
-    index: "cuentaexterna",
+    index: "IdCuentaExterna",
     input: (
       <FloatInput
         label={t("gestioncuenta.search.input4")}
@@ -171,8 +184,7 @@ const GestionCuentaSearch =()=>{
     ),
   },
   {
-    name: "Grupo de afinidad",
-    index: "gpafinidad",
+    index: "IdGrupoAfinidad",
     input: (
       <FloatSelected
         label={t("gestioncuenta.search.input6")}

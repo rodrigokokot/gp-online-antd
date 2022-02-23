@@ -10,15 +10,26 @@ import {
 import { Col, Button } from "antd";
 import test from "../../../../services/test";
 import { useTranslation } from "react-i18next";
+import {cuentas} from "../../../../services";
 
 /* hacer que router tengo la dir de app.js  */
 const GestionCuentas = () => {
   const { t} = useTranslation();
   const [data, setData] = useState([]);
 
-  async function handleCallback() {
-    const response  =  await test.getCuentas()
-    console.log(response)
+  async function handleCallback(values) {
+    let request="";
+    for (const key in values) {
+      if (Object.hasOwnProperty.call(values, key)) {
+        const element = values[key];
+        if(element){
+          request = `${request}${key}=${element}&`
+        }
+      }
+    }
+    console.log('request:',request)
+    const response = await cuentas.getCuentas(request);
+    console.log('response:',response);
     setData(response);
   }
 

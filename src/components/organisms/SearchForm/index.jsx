@@ -18,7 +18,7 @@ const SearchForm = ({ array, parentCallback, title, span }) => {
   const { state, hours, searchType } = useBetween(useRangePicker)
 
   const onFinish = (values) => {
-    console.log({...values, ...state[0], ...hours, searchType});
+    // console.log({...values, ...state[0], ...hours, searchType});
     parentCallback(values);
   };
 

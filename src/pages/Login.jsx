@@ -21,7 +21,7 @@ import Icon from "@ant-design/icons";
 import InlineSVG from "svg-inline-react";
 import { NotificationError } from "../assets/svg/icons";
 import { useTranslation } from "react-i18next";
-import test from "../services/test";
+import { auth } from "../services";
 
 const Login = () => {
   const { t, i18n } = useTranslation();
@@ -34,7 +34,7 @@ const Login = () => {
   };
 
   const Login = async () => {
-    const response = await test.getToken();
+    const response = await auth.getToken();
     sessionStorage.setItem("token", response.data.accessToken);
   };
 

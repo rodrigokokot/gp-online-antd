@@ -47,17 +47,12 @@ const FloatSelected = ({
         showSearch={props.showSearch}
         // className={ !outline? "select-bottom" : '' }
       >
-        {options &&
-          options.map((opt, index) => (
-            <Select.Option
-              value={opt.value}
-              disabled={opt.disabled}
-              key={index}
-            >
-              {opt.icon}
-              {opt.title}
-            </Select.Option>
-          ))}
+        {options.map((opt, index) => (
+          <Select.Option value={opt.value} disabled={opt.disabled} key={index}>
+            {opt.icon}
+            {opt.title}
+          </Select.Option>
+        ))}
       </Select>
       <label className={labelClass}>
         {isOccupied ? label : placeholder} {requiredMark}
