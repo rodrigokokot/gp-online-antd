@@ -19,32 +19,33 @@ const { Title } = Typography;
 const GestionCuentaEdit = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
-  let response = null;
+  const [value, setValue] = useState(""); //radioGroud tipo documento
+  const [valuedate, setValuedate] = useState("Fecha de Nacimiento*"); //para calendario
+  const [disabled, setDisabled] = useState(false); //para habilitar form.item
+  const [response, setResponse] = useState(null)
 
-  useEffect(async () => {
-    response = await cuentas.getCuentasId(id);
-    console.log("response:", response);
-  });
+  useEffect(() => {
+    const getDataCuenta = async () => {
+      await cuentas.getCuentasId(id).finally(res=>setResponse(res));
+      console.log("response:", response);
+    };
+    getDataCuenta();
+  }, []);
+
+  const changeValue = (e) => {
+    setValue(e.target.event);
+  };
+
+  const changeValueDate = (dateString) => {
+    setValue(dateString);
+  };
+
+  const toogleFormItem = (e) => {
+    setDisabled(!disabled);
+  };
 
   const FormularioCuenta = () => {
-    const [value, setValue] = useState("");
-    const onChange = (e) => {
-      setValue(e.target.value);
-    };
-
-    //para calendario
-    const [valuedate, setValuedate] = useState("Fecha de Nacimiento*");
-    function onChangedate(date, dateString) {
-      setValuedate(dateString);
-      console.log("date ", dateString);
-    }
-
-    //para habilitar form.item
-    const [disabled, setDisabled] = useState(false);
-    function onChangeActivar() {
-      setDisabled(!disabled);
-    }
-    return (
+    return response !== null ? (
       <>
         <Card>
           <Typography.Title level={3} style={{ color: "#ab218e" }}>
@@ -223,7 +224,7 @@ const GestionCuentaEdit = () => {
 
           <Title level={5}>Tipo de documento</Title>
           <Form.Item name="tipodocumento">
-            <Radio.Group onChange={onChange} value={value}>
+            <Radio.Group onChange={changeValue} value={value}>
               <Row justify="space-between">
                 <Col span={4}>
                   <Radio style={{ marginTop: 10 }} value={"DNI"}>
@@ -320,7 +321,7 @@ const GestionCuentaEdit = () => {
               >
                 <DatePicker
                   style={{ width: "100%", borderRadius: 6 }}
-                  onChange={onChangedate}
+                  onChange={changeValueDate}
                   placeholder={valuedate}
                   format={"DD/MM/YYYY"}
                 />
@@ -436,7 +437,7 @@ const GestionCuentaEdit = () => {
             Por defecto, el domicilio de correspondencia es el mismo que el
             domicilio legal
           </Title>
-          <Checkbox onChange={onChangeActivar}>
+          <Checkbox onChange={toogleFormItem}>
             <Title level={5}>
               Ingresar un domicilio de correspondencia diferente
             </Title>
@@ -612,18 +613,16 @@ const GestionCuentaEdit = () => {
         </Card>
         <br></br>
       </>
-    );
+    ) : null;
   };
 
   return (
-    <>
-      <Edit
-        component={FormularioCuenta}
-        textBtnModalConfirm="Si, guardar"
-        textBtnSave="Guardar Cambios"
-        textBtnModalConfirm="¿Realizar cambios en la cuenta?"
-      />
-    </>
+    <Edit
+      component={FormularioCuenta}
+      textBtnModalConfirm="Si, guardar"
+      textBtnSave="Guardar Cambios"
+      textBtnModalConfirm="¿Realizar cambios en la cuenta?"
+    />
   );
 };
 export default GestionCuentaEdit;
