@@ -94,7 +94,7 @@ function App() {
 
           {/* Socios */}
           <DashboardTemplate exact path="/emision/socios/cuentas" component={lazy(() => import('./pages/Emision/Socios/Cuentas'))} />
-          <DashboardTemplate exact path="/emision/socios/cuentas/editarCuenta=:idcuenta" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
+          <DashboardTemplate exact path="/emision/socios/cuentas/editarCuenta=:id" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
           <DashboardTemplate exact path="/emision/socios/cuentas/crearCuenta" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaNew'))} />
 
           <DashboardTemplate exact path="/emision/socios/avisosDeViajes" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes'))} />

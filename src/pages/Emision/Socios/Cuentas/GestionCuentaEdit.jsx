@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Radio,
   Form,
@@ -12,9 +12,20 @@ import {
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelect from "../../../../components/molecules/FloatSelected/index";
 import Edit from "../../../../components/organisms/Edit";
+import { cuentas } from "../../../../services";
+import { useParams } from "react-router-dom";
 const { Title } = Typography;
 
-const GestionCuentaNew = () => {
+const GestionCuentaEdit = () => {
+  const { id } = useParams();
+  const [loading, setLoading] = useState(true);
+  let response = null;
+
+  useEffect(async () => {
+    response = await cuentas.getCuentasId(id);
+    console.log("response:", response);
+  });
+
   const FormularioCuenta = () => {
     const [value, setValue] = useState("");
     const onChange = (e) => {
@@ -79,7 +90,7 @@ const GestionCuentaNew = () => {
                 <FloatInput
                   outline
                   label="Tipo de Producto*"
-                  placeholder="Tipo de Producto*"
+                  placeholder={response?.idProducto}
                 ></FloatInput>
               </Form.Item>
               <Form.Item
@@ -615,4 +626,4 @@ const GestionCuentaNew = () => {
     </>
   );
 };
-export default GestionCuentaNew;
+export default GestionCuentaEdit;

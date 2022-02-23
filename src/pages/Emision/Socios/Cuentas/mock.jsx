@@ -78,7 +78,7 @@ const columnsGestionCuenta = [
     button: true,
     cell: (row) => (
       <Link
-        to={`/emision/socios/cuentas/editarCuenta=${row.idcuenta}`}
+        to={`/emision/socios/cuentas/editarCuenta=${row.idCuenta}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >

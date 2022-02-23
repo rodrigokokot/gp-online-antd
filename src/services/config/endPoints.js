@@ -4,4 +4,7 @@ export default {
     getProducts: '/Productos?IsActive=true',
     getCuentas: '/Cuentas?',
     getGruposAfinidad: 'GruposAfinidad',
+    getCuentaId: '/Cuentas',
+
+    postCuenta: '/Cuentas',
 }
