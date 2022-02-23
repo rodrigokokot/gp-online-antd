@@ -1780,8 +1780,53 @@
           "confirm":"¿Confirmar la creación de la cuenta?",
           "btnconfirm":"Si, crear"
         } 
-    }
-      
-    }
+    } 
+  },
+  "tarjeta":{
+    "search":{
+      "searchtitle":"Búsqueda de Tarjetas",
+      "input1":"N° de Tarjeta",
+      "input2":"N° de Cuenta",
+      "input3":"Adicionales",
+      "input4":"N° de Documento",
+      "input5":"Nombre" 
+    },
+    "table":{
+        "column1":"N° Tarjeta",
+        "column2":"N° Cuenta",
+        "column3":"Producto",
+        "column4":"Grupo de Afinidad",
+        "column5":"Cuenta Externa",
+        "column6":"Nombre",
+        "column7":"N° Documento",
+        "column8":"Estado",
+        "column9":"ver detalle"
+    },
+    "history":{
+        "column1":"Fecha de Cambio",
+        "column2":"Usuario",
+        "column3":"Estado",
+        "button":"Volver"
+    },
+    "view":{
+        "title":"Datos Principales",
+        "link":"Ver History",
+        "text":{
+          "greytext1":"N° de Tarjeta",
+          "greytext2":"Nombre",
+          "greytext3":"Apellido",
+          "greytext4":"Vigencia desde",
+          "greytext5":"Vencimiento",
+          "greytext6":"Nombre Embozado",
+          "greytext7":"Cta/Adic.",
+          "greytext8":"Sucursal"            
+        },
+        "input":{
+          "label":"Estado*",
+          "error":"Ingrese estado"
+        },
+        "check":"Génera reimpresión" 
+    } 
+  }
  
 }

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import SearchForm from "../../../../components/organisms/SearchForm";
 import Table from "../../../../components/organisms/Table";
-import { TarjetasSearchArray, dataTarjetas, columnsTarjetas } from "./mock";
+import { TarjetasSearchArray, dataTarjetas, ColumnsTarjetas } from "./mock";
 
 const TarjetasSearch = () => {
+  const { t} = useTranslation();
   const [data, setData] = useState("");
 
   function handleCallback(values) {
@@ -14,13 +16,13 @@ const TarjetasSearch = () => {
   return (
     <>
       <SearchForm
-        array={TarjetasSearchArray}
-        title="Búsqueda de tarjetas"
+        array={TarjetasSearchArray()}
+        title={t("tarjeta.search.searchtitle")}
         parentCallback={handleCallback}
         span={6}
       />
       <br />
-      <Table columns={columnsTarjetas} data={data} />
+      <Table columns={ColumnsTarjetas()} data={data} />
     </>
   );
 };

@@ -8,7 +8,6 @@ import {
   ColumnsGestionCuenta,
 } from "./mock";
 import { Col, Button } from "antd";
-import test from "../../../../services/test";
 import { useTranslation } from "react-i18next";
 import {cuentas} from "../../../../services";
 
