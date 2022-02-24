@@ -22,15 +22,61 @@ const GestionCuentaEdit = () => {
   const [value, setValue] = useState(""); //radioGroud tipo documento
   const [valuedate, setValuedate] = useState("Fecha de Nacimiento*"); //para calendario
   const [disabled, setDisabled] = useState(false); //para habilitar form.item
-  const [response, setResponse] = useState(null)
+  const [response, setResponse] = useState(null);
+
+  let sucursales = [];
+  let gruposAfinidad = [];
+  let PosicionesImpositivas = [];
 
   useEffect(() => {
-    const getDataCuenta = async () => {
-      await cuentas.getCuentasId(id).finally(res=>setResponse(res));
-      console.log("response:", response);
-    };
     getDataCuenta();
+    getDataSucursales();
+    getDataGrupoAfinidad();
+    getPosicionesImpositivas();
   }, []);
+
+  const getDataCuenta = async () => {
+    await cuentas
+      .getCuentas(`IdCuenta=${id}`)
+      // .then((res) => console.log("cuenta:", res))
+      .finally((res) => setResponse(res));
+  };
+
+  const getPosicionesImpositivas = async () => {
+    await cuentas
+      .getPosicionesImpositivas()
+      .then((res) => console.log("impositiva:", res))
+      // .then((res) =>
+      //   res.map((item) => {
+      //     PosicionesImpositivas.push({
+      //       value: item.asd,
+      //       title: item.descripcion,
+      //     });
+      //   })
+      // );
+  };
+
+  const getDataSucursales = async () => {
+    await cuentas.getSucursales().then((res) =>
+      res.map((item) => {
+        sucursales.push({
+          value: item.idSucursal,
+          title: item.descripcion,
+        });
+      })
+    );
+  };
+
+  const getDataGrupoAfinidad = async () => {
+    await cuentas.getGruposAfinidad().then((res) =>
+      res.map((item) => {
+        gruposAfinidad.push({
+          value: item.idGrupoAfinidad,
+          title: item.descripcion,
+        });
+      })
+    );
+  };
 
   const changeValue = (e) => {
     setValue(e.target.event);
@@ -63,23 +109,7 @@ const GestionCuentaEdit = () => {
                   outline
                   label="Sucursal*"
                   placeholder="Sucursal*"
-                  options={[
-                    {
-                      title: "Sucursal CABA",
-                      value: "Sucursal CABA",
-                      disabled: false,
-                    },
-                    {
-                      title: "Sucursal Mendoza",
-                      value: "Sucursal Mendoza",
-                      disabled: false,
-                    },
-                    {
-                      title: "Sucursal San Luis",
-                      value: "Sucursal sSan Luis",
-                      disabled: false,
-                    },
-                  ]}
+                  options={sucursales}
                 ></FloatSelect>
               </Form.Item>
               <Form.Item
@@ -155,23 +185,7 @@ const GestionCuentaEdit = () => {
                   outline
                   label="Grupo de afinidad"
                   placeholder="Grupo de afinidad"
-                  options={[
-                    {
-                      title: "Grupo de afinidad prepaga",
-                      value: "Grupo de afinidad prepaga",
-                      disabled: false,
-                    },
-                    {
-                      title: "Grupo de afinidad prepaga",
-                      value: "Grupo de afinidad prepaga",
-                      disabled: false,
-                    },
-                    {
-                      title: "Grupo de afinidad prepaga",
-                      value: "Grupo de afinidad prepaga",
-                      disabled: false,
-                    },
-                  ]}
+                  options={gruposAfinidad}
                 ></FloatSelect>
               </Form.Item>
               <Form.Item
@@ -202,13 +216,11 @@ const GestionCuentaEdit = () => {
                   options={[
                     {
                       title: "Activa",
-                      value: "Activa",
-                      disabled: false,
+                      value: "activa",
                     },
                     {
-                      title: "Activa",
-                      value: "Activa",
-                      disabled: false,
+                      title: "Inactiva",
+                      value: "inactiva",
                     },
                   ]}
                 ></FloatSelect>

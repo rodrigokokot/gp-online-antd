@@ -1,10 +1,11 @@
 export default {
     posts: '/posts',
     accesToken: '/AccessToken/AllData',
-    getProducts: '/Productos?IsActive=true',
+    getProducts: '/Productos?',
     getCuentas: '/Cuentas?',
-    getGruposAfinidad: 'GruposAfinidad',
-    getCuentaId: '/Cuentas',
+    getGruposAfinidad: '/GruposAfinidad',
+    getSucursales: '/Sucursales',
+    getPosicionesImpositivas: '/PosicionesImpositivas',
 
     postCuenta: '/Cuentas',
 }

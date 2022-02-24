@@ -30,14 +30,34 @@ export default {
         }
     },
 
-    async getCuentasId(id) {
+    async getSucursales() {
         try {
-            const response = await api.get(`${endPoints.getCuentaId}/${id}`)
-            return response.data
+            const response = await api.get(`${endPoints.getSucursales}`)
+            return response.data.lista
         } catch (error) {
             console.log(error)
         }
     },
+
+    async getGruposAfinidad() {
+        try {
+            const response = await api.get(`${endPoints.getGruposAfinidad}`)
+            return response.data.lista
+        } catch (error) {
+            console.log(error)
+        }
+    },
+
+    async getPosicionesImpositivas() {
+        try {
+            const response = await api.get(`${endPoints.getPosicionesImpositivas}`)
+            return response
+        } catch (error) {
+            console.log(error)
+        }
+    },
+
+
 
     async postCuenta(data) {
         // console.log(data);
