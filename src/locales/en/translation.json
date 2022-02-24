@@ -219,8 +219,8 @@
           "label": "Depto"
         }, 
         "localidad": {
-          "label": "Location*",
-          "error": "Submit location"
+          "label": "Locality*",
+          "error": "Submit Locality"
         },
         "provincia": {
           "label": "Province*",
@@ -582,7 +582,7 @@
       "input5":"Additional Account",
       "input6":"Commerce Number",
       "input7":"Input mode",
-      "input8":"Location",
+      "input8":"Locality",
       "input9":"Origin",
       "input10":"Related",
       "input11":"Reason for rejection",
@@ -1127,7 +1127,7 @@
     "table":{
         "column1":"Product",
         "column2":"Movement",
-        "column3":"Location",
+        "column3":"Locality",
         "column4":"Event",
         "column5":"Price",
         "column6":"IVA applies",
@@ -1206,16 +1206,16 @@
           "label":"Charge concept" 
         }
       },   
-      "locacion": {  "label":"Location",
+      "locacion": {  "label":"Locality",
         "value1":"Local",
         "value2":"Foreing",
-        "error": "Enter location"
+        "error": "Enter Locality"
       },     
       "evento": {  "label":"Event",
         "value1":"Autorización",
         "value2":"Presentación",
         "value3":"No Aplica",
-        "error": "Enter location"
+        "error": "Enter Locality"
       },      
       "moneda": {  "label":"Currency",
         "value1":"DOLAR U$S",
@@ -1425,11 +1425,382 @@
       "input14":"ZIP code*",
       "input15":"Between streets",
       "input16":"Neighborhood",
-      "input17":"Location*",
+      "input17":"Locality*",
       "input18":"Province*",
       "input19":"Phone number*",   
       "input20":"Reference"
     }
+  },
+  "limitetarjetas":{
+    "search":{
+      "searchtitle":"Additional card search",
+      "input1":"Emitter",
+      "input2":"Card Number",
+      "input3":"Document number",
+      "input4":"Product",
+      "input5":"Account number",
+      "input6":"Original account number",
+      "input7":"Related account number",
+      "input8":"Brand",
+      "input9":"Document type",
+      "input10":"Document number",
+      "input11":"Business name",
+      "input12":"Company number",
+      "input13":"First name",
+      "input14":"Last name"
+    },
+    "table":{
+      "column1":"Emmiter/Branch",
+      "column2":"ID",
+      "column3":"Name",
+      "column4":"Document",
+      "column5":"Brand",
+      "column6":"Account",
+      "column7":"Product",
+      "column8":"Additional",
+      "column9":"Card",
+      "column10":"Edit"
+      
+    }
+  },
+  "altatarjeta":{
+    "search":{
+      "searchtitle":"Account search",
+      "input1":"Emitter",
+      "input2":"Brand",
+      "input3":"Card number",
+      "input4":"Account number",
+      "input5":"Original account number",
+      "input6":"Related account number",
+      "input7":"Last name",
+      "input8":"First name",
+      "input9":"Document type",
+      "input10":"Document number",
+      "input11":"Business name",
+      "input12":"Company number"
+    },
+    "table":{
+      "column1":"Emmiter/Branch",
+      "column2":"ID",
+      "column3":"Client",
+      "column4":"Document",
+      "column5":"Brand",
+      "column6":"Account",
+      "column7":"Product",
+      "column8":"Additional",
+      "column9":"Card"
+    },
+    "new1":{
+      "title1":"Client Discharge",
+      "title2":"Personal Information",
+      "title3":"Personal adress",
+      "title4":"Working information",
+      "title5":"Work adress",
+      "greytext1":"Client ID",
+      "greytext2":"Discharge date",
+      "greytext3":"Emitter",
+      "nacionalidad":{
+        "label":"Nationality",
+        "error":"Enter nationality"
+      },
+      "radio":{
+        "label":"Document type",
+        "value1":"DNI",
+        "value2":"CUIT",
+        "value3":"CIVIC NOTEBOOK",
+        "value4":"ENLISTMENT NOTEBOOK",
+        "value5":"CUIL",
+        "value6":"PASSPORT",
+        "value7":"CI"
+      },
+      "documento":{
+        "label":"Document number*",
+        "error":"Enter document number"
+      },
+      "nombre":{
+        "label":"First name*",
+        "error":"Enter names"
+      },
+      "apellido":{
+        "label":"Last name*",
+        "error":"Enter last name"
+      },
+      "nacimiento":{
+        "label":"Birth date",
+        "error":"Enter birth date"
+      },
+      "genero":{
+        "label":"Gender",
+        "value1":"Male",
+        "value2":"Female",
+        "value3":"Non binary"
+      },
+      "civil":{
+        "label":"Civil status",
+        "value1":"Single",
+        "value2":"Married",
+        "value3":"Widower"
+      },
+      "estado":{
+        "label":"Activity status*",
+        "error":"Enter activity status"
+      },
+      "ocupacion":{
+        "label":"Ocupation*",
+        "error":"Enter ocupation"
+      },
+      "actividad":{
+        "label":"Activity code*",
+        "error":"Enter activity code"
+      },
+      "email":{
+        "label":"Email*",
+        "error":"Enter email"
+      },
+      "cuit":{
+        "label":"Cuit/Cuil*",
+        "error":"Enter cuit/cuil"
+      },
+      "IBC":{
+        "label":"IBC",
+        "error":"Enter IBC"
+      },
+      "interno":{
+        "label":"Intern client number",
+        "error":"Enter intern client number"
+      },
+      "pais":{
+        "label":"Country*",
+        "error":"Enter country"
+      },
+      "provincia":{
+        "label":"Province",
+        "error":"Enter province"
+      },
+      "localidad":{
+        "label":"Locality*",
+        "error":"Enter locality"
+      },
+      "calle":{
+        "label":"Street*",
+        "error":"Enter street"
+      },
+      "numero":{
+        "label":"Number*",
+        "error":"Enter number"
+      },
+      "piso":{
+        "label":"Floor"
+      },
+      "depto":{
+        "label":"Department"
+      },
+      "cp":{
+        "label":"ZIP Code",
+        "error":"Enter ZIP code"
+      },
+      "barrio":{
+        "label":"Neighborhood",
+        "error":"Enter neighborhood"
+      },
+      "empresa":{
+        "label":"Company*",
+        "error":"Enter company"
+      },
+      "cargo":{
+        "label":"Position*",
+        "error":"Enter position"
+      },
+      "fechaingreso":{
+        "label":"Entry date",
+        "error":"Enter entry date"
+      },
+      "moneda":{
+        "label":"Currency",
+        "value1":"U$D",
+        "value2":"AR$"
+      },
+      "remuneracion":{
+        "label":"Remuneration*",
+        "error":"Enter remuneration"
+      },
+      "responablen":{
+        "label":"Person in charge name*",
+        "error":"Enter name"
+      },
+      "responsablea":{
+        "label":"Person in charge last name*",
+        "error":"Enter last name"
+      },
+      "telefono":{
+        "label":"Phone number",
+        "error":"Enter phone number"
+      },
+      "responsabledocumento":{
+        "label":"Person in charge's document type",
+        "value1":"DNI",
+        "value2":"CUIT",
+        "value3":"CIVIC NOTEBOOK",
+        "value4":"ENLISTMENT NOTEBOOK",
+        "value5":"CUIL",
+        "value6":"PASSPORT",
+        "value7":"CI"
+      },
+      "responsablenumero":{
+        "label":"Person in charge document number*",
+        "error":"Enter document number"
+      },
+
+      "laboralpais":{
+        "label":"Country*",
+        "error":"Enter country"
+      },
+      "laboralprovincia":{
+        "label":"Province",
+        "error":"Enter province"
+      },
+      "laborallocalidad":{
+        "label":"Locality*",
+        "error":"Enter locality"
+      },
+      "laboralcalle":{
+        "label":"Street*",
+        "error":"Enter street"
+      },
+      "laboralnumero":{
+        "label":"Number*",
+        "error":"Enter number"
+      },
+      "laboralpiso":{
+        "label":"Floor"
+      },
+      "laboraldepto":{
+        "label":"Department"
+      },
+      "laboralcp":{
+        "label":"ZIP Code",
+        "error":"Enter ZIP code"
+      },
+      "laboralbarrio":{
+        "label":"Neighborhood",
+        "error":"Enter neighborhood"
+      },
+      "laboraltelefono":{
+        "label":"Phone number",
+        "error":"Enter phone number"
+      }
+    },
+    "new2":{
+      "title1":"Holder information",
+      "title2":"Account information",
+      "title3":"Additional data",
+      "title4":"Limits information",
+      "title5":"AR$ Payment methods",
+      "title6":"U$D Payment methods",
+      "text1":"Branch",
+      "greytext1":"Document",
+      "greytext2":"Last name",
+      "greytext3":"First Name",
+      "greytext4":"Emitter",
+      "greytext5":"Branch",
+      "greytext6":"Account",
+      "greytext7":"Discharge date",
+      
+      "marca":{
+        "label":"Brand*",
+        "error":"Enter brand"
+      },
+      "cartera":{
+        "label":"Wallet*",
+        "error":"Enter wallet"
+      },
+      "producto":{
+        "label":"Product*",
+        "error":"Enter product"
+      },
+      "cierre":{
+        "label":"Closure group*",
+        "error":"Enter closure group"
+      },
+      "afinidad":{
+        "label":"Afinity group*",
+        "error":"Enter affinity group"
+      },
+      "codigo":{
+        "label":"Shipping code*",
+        "error":"Enter shipping code"
+      },
+      "cuenta":{
+        "label":"Shipping account*",
+        "error":"Enter account "
+      },
+      "plastico":{
+        "label":"Plastic shipping*",
+        "error":"Enter plastic"
+      },
+      "pin":{
+        "label":"PIN shipping*",
+        "error":"Enter pin shipping"
+      },
+      "resumen":{
+        "label":"Emmition type summary*",
+        "error":"Enter emittion type summary"
+      },
+      "vida":{
+        "label":"Life insurance model*",
+        "error":"Enter life insurance model"
+      },
+      "desempleo":{
+        "label":"Unemployment insurance model*",
+        "error":"Enter unemployment insurance model"
+      },
+      "promotor":{
+        "label":"Promoter*",
+        "error":"Enter promoter"
+      },
+      "accion":{
+        "label":"Commercial Action*",
+        "error":"Enter commercial action"
+      },
+      "origen":{
+        "label":"Origin product type",
+        "error":"Enter origin product type"
+      },
+      "recalificado":{
+        "label":"Requalified product",
+        "error":"Enter requalified product"
+      },
+      "moneda":{
+        "label":"Currency",
+        "value1":"U$D",
+        "value2":"AR$"
+      },
+      "monto":{
+        "label":"Amount",
+        "error":"Enter Amount"
+      },
+      "calcular":"Calculate",
+      "financiacion":{
+        "label":"Financing limit",
+        "error":"Enter financing limit"
+      },
+      "contado":"Cash purchase",
+      "cuotas":"Fees purchase",
+      "adelantos":"Advancements",
+      "adelantosc":"Fees advancements",
+
+      "efectivo":"Cash",
+      "debito":{
+        "label":"Debit type",
+        "error":"Enter debit type"
+      },
+      "tipocuenta":{
+        "label":"Account type",
+        "error":"Enter account type"
+      },
+      "numerocuenta":"Account number"
+    }
   }
+  
 
 }
