@@ -115,6 +115,12 @@ const GestionCuentaNew = () => {
     setProductos(arr);
   };
 
+  const getCuenta = async () =>{
+    const res = await cuentas.getCuentas(`NroDocumento=96038525`);
+    console.log("cuenta:", res[0]);
+    // setCuenta(res[0]);
+  }
+
   const FormularioCuenta = () => {
     return (
       <>
@@ -299,14 +305,13 @@ const GestionCuentaNew = () => {
               >
                 <FloatInput
                   outline
-                  onChange={onChangeDoc}
                   type="number"
                   label="N° de Documento*"
                   placeholder="N° de Documento*"
                 ></FloatInput>
               </Form.Item>
             </Col>
-            <Button type="primary" onClick={handleOk}>
+            <Button type="primary" onClick={getCuenta}>
               Buscar
             </Button>
           </Row>

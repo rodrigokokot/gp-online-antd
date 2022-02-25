@@ -16,4 +16,19 @@ export default {
             console.log(error)
         }
     },
+
+    async postToken2() {
+        try {
+            const response = await login.post(endPoints.accesToken, {
+                "username": "prepagas",
+                "password": "GlobalProc",
+                "grant_type": "password",
+                "client_id": "APREPAID",
+                "client_secret": "45ae46c0-1792-4830-a564-7f09f17edc6a"
+            })
+            return response
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }

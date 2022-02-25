@@ -1,4 +1,6 @@
 export default {
+    postaccesToken2: '/AccessToken', //Temporaneo
+
     posts: '/posts',
     accesToken: '/AccessToken/AllData',
     getProducts: '/Productos?',

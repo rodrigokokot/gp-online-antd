@@ -67,17 +67,72 @@ export default {
     },
 
     async postCuenta(data) {
-        // console.log(JSON.parse(data));
+        const jdata = JSON.parse(data);
+        console.log(jdata)
+        // const body = {
+        //     "cuenta": {
+        //         "Nombre": jdata.nombre,
+        //         "Apellido": jdata.apellido,
+        //         "Email": jdata.email,
+        //         "Sexo": "F",
+        //         "IdProducto": 101,
+        //         "FechaNacimiento": "1980-04-20",
+        //         "IdCuentaExterna": "",
+        //         "SucursalEmisora": jdata.sucursal,
+        //         "GrupoAfinidad": 1,
+        //         "Nacionalidad": 32,
+        //         "TrackingId": "4564233",
+        //         "TipoTarjeta": 1,
+        //         "DocumentoOtro": "20254733017",
+        //         "Documento": {
+        //             "Tipo": 1,
+        //             "Numero": "25473301"
+        //         },
+        //         "Embozado": {
+        //             "Nombre": "Gabriela Gomez",
+        //             "CuartaLinea": ""
+        //         },
+        //         "Telefono": {
+        //             "Particular": "1141615646",
+        //             "Celular": "1145874512",
+        //             "Correspondencia": "1145874512",
+        //             "Laboral": "1147964519",
+        //             "Otro": "1147094800"
+        //         },
+        //         "DomicilioParticular": {
+        //             "Pais": 32,
+        //             "Provincia": 1,
+        //             "CodigoPostal": "1004",
+        //             "Calle": "SMartin",
+        //             "Piso": "",
+        //             "Departamento": "",
+        //             "Altura": "536",
+        //             "Localidad": "CABA",
+        //             "Comentario": ""
+        //         },
+        //         "DomicilioCorrespondencia": {
+        //             "Pais": 32,
+        //             "Provincia": 1,
+        //             "CodigoPostal": "1004",
+        //             "Calle": "SMartin",
+        //             "Piso": "",
+        //             "Departamento": "",
+        //             "Altura": "536",
+        //             "Localidad": "CABA",
+        //             "Comentario": ""
+        //         }
+        //     }
+        // }
         const body = {
             "cuenta": {
-                "Nombre": data.nombre,
-                "Apellido": data.apellido,
-                "Email": data.email,
+                "Nombre": "Gabriela Gomez",
+                "Apellido": "Aprepaga",
+                "Email": "gg@gmail.com",
                 "Sexo": "F",
-                "IdProducto": 23,
+                "IdProducto": 101,
                 "FechaNacimiento": "1980-04-20",
                 "IdCuentaExterna": "",
-                "SucursalEmisora": data.sucursal,
+                "SucursalEmisora": 1,
                 "GrupoAfinidad": 1,
                 "Nacionalidad": 32,
                 "TrackingId": "4564233",
@@ -85,7 +140,7 @@ export default {
                 "DocumentoOtro": "20254733017",
                 "Documento": {
                     "Tipo": 1,
-                    "Numero": data.documento
+                    "Numero": "25473301"
                 },
                 "Embozado": {
                     "Nombre": "Gabriela Gomez",
@@ -122,6 +177,7 @@ export default {
                 }
             }
         }
+        console.log(body);
         try {
             const response = await api.post(endPoints.postCuenta, JSON.stringify(body))
             return response
