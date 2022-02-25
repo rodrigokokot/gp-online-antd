@@ -1799,6 +1799,74 @@
         "error":"Enter account type"
       },
       "numerocuenta":"Account number"
+    },
+    "new3":{
+      "title1":"Holder information",
+      "title2":"Product information",
+      "title3":"Card parameters",
+      "greytext1":"Account number",
+      "greytext2":"Original account number",
+      "greytext3":"Discharge Date",
+      "greytext4":"Brand",
+      "greytext5":"Emitter",
+      "greytext6":"Branch",
+      "greytext7":"Closure group",
+      "greytext8":"Afinity group",
+      "greytext9":"Wallet",
+      "greytext10":"Account type",
+      "greytext11":"Status",
+      "greytext12":"Document",
+      "greytext13":"Last name",
+      "greytext14":"First name",
+      "greytext15":"Product",
+      "greytext16":"See product clients",
+      "greytext17":"Card type",
+      "greytext18":"Client card",
+      "greytext19":"Currency",
+      "greytext20":"Price",
+      "greytext21":"Issue price",
+      "greytext22":"Renovation price",
+      "greytext23":"Replacement price",
+      "greytext24":"Issue bonification %",
+      "greytext25":"Renovation bonification %",
+      "greytext26":"Replacement bonification %",
+      "greytext27":"Issue charge",
+      "greytext28":"Renovation charge",
+      "greytext29":"Replacement charge",
+      "greytext30":"Assignment %",
+      "greytext31":"Assignment Limit",
+
+      "checkbox1":"Issues card",
+
+      "radio1":{
+        "label":"Automated renovation",
+        "value1":"Yes",
+        "value2":"No"
+      },
+
+      "radio2":{
+        "label":"Urgent",
+        "value1":"Yes",
+        "value2":"No"
+      },
+
+      "embozado":{
+        "label":"Printed name*",
+        "error":"Enter printed name"
+      },
+      "segunda":{
+        "label":"Second printed line*",
+        "error":"Enter printed line"
+      },
+      "modelo":{
+        "label":"Bonification model*",
+        "error":"Enter bonification model"
+      },
+      "periodos":{
+        "label":"Bonificated periods*",
+        "error":"Enter periods"
+      }
+
     }
   }
   
