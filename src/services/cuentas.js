@@ -51,7 +51,16 @@ export default {
     async getPosicionesImpositivas() {
         try {
             const response = await api.get(`${endPoints.getPosicionesImpositivas}`)
-            return response
+            return response.data.lista
+        } catch (error) {
+            console.log(error)
+        }
+    },
+
+    async getTipoProducto() {
+        try {
+            const response = await api.get(`${endPoints.getTipoProducto}`)
+            return response.data.lista
         } catch (error) {
             console.log(error)
         }

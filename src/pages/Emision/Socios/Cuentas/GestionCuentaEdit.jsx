@@ -23,16 +23,19 @@ const GestionCuentaEdit = () => {
   const [valuedate, setValuedate] = useState("Fecha de Nacimiento*"); //para calendario
   const [disabled, setDisabled] = useState(false); //para habilitar form.item
   const [response, setResponse] = useState(null);
-
-  let sucursales = [];
-  let gruposAfinidad = [];
-  let PosicionesImpositivas = [];
+  const [sucursales, setSucursales] = useState([]);
+  const [gruposAfinidad, setGruposAfinidad] = useState([]);
+  const [posicionesImpositivas, setPosicionesImpositivas] = useState([]);
+  const [tipoProducto, setTipoProducto] = useState([]);
+  const [productos, setProductos] = useState([]);
 
   useEffect(() => {
     getDataCuenta();
     getDataSucursales();
     getDataGrupoAfinidad();
     getPosicionesImpositivas();
+    getDataTipoProducto();
+    getDataProductos();
   }, []);
 
   const getDataCuenta = async () => {
@@ -43,39 +46,63 @@ const GestionCuentaEdit = () => {
   };
 
   const getPosicionesImpositivas = async () => {
-    await cuentas
-      .getPosicionesImpositivas()
-      .then((res) => console.log("impositiva:", res))
-      // .then((res) =>
-      //   res.map((item) => {
-      //     PosicionesImpositivas.push({
-      //       value: item.asd,
-      //       title: item.descripcion,
-      //     });
-      //   })
-      // );
+    let arr = [];
+    const res = await cuentas.getPosicionesImpositivas();
+    // res.map((item) => {
+    //   arr.push({
+    //     value: item.asd,
+    //     title: item.descripcion,
+    //   });
+    // });
+    // setPosicionesImpositivas(arr);
+  };
+
+  const getDataTipoProducto = async () => {
+    let arr = [];
+    const res = await cuentas.getTipoProducto();
+    res.map((item) => {
+      arr.push({
+        value: item.idTipoProducto,
+        title: item.descripcion,
+      });
+    });
+    setTipoProducto(arr);
+  };
+
+  const getDataProductos = async () => {
+    let arr = [];
+    const response = await cuentas.getProductos();
+    response.map((producto) => {
+      arr.push({
+        value: producto.idProducto,
+        title: producto.descripcion,
+      });
+    });
+    setProductos(arr);
   };
 
   const getDataSucursales = async () => {
-    await cuentas.getSucursales().then((res) =>
-      res.map((item) => {
-        sucursales.push({
-          value: item.idSucursal,
-          title: item.descripcion,
-        });
-      })
-    );
+    let arr = [];
+    const res = await cuentas.getSucursales();
+    res.map((item) => {
+      arr.push({
+        value: item.idSucursal,
+        title: item.descripcion,
+      });
+    });
+    setSucursales(arr);
   };
 
   const getDataGrupoAfinidad = async () => {
-    await cuentas.getGruposAfinidad().then((res) =>
-      res.map((item) => {
-        gruposAfinidad.push({
-          value: item.idGrupoAfinidad,
-          title: item.descripcion,
-        });
-      })
-    );
+    let arr = [];
+    const res = await cuentas.getGruposAfinidad();
+    res.map((item) => {
+      arr.push({
+        value: item.idGrupoAfinidad,
+        title: item.descripcion,
+      });
+    });
+    setGruposAfinidad(arr);
   };
 
   const changeValue = (e) => {
@@ -91,7 +118,7 @@ const GestionCuentaEdit = () => {
   };
 
   const FormularioCuenta = () => {
-    return response !== null ? (
+    return (
       <>
         <Card>
           <Typography.Title level={3} style={{ color: "#ab218e" }}>
@@ -107,6 +134,7 @@ const GestionCuentaEdit = () => {
               >
                 <FloatSelect
                   outline
+                  disabled={sucursales.length === 0}
                   label="Sucursal*"
                   placeholder="Sucursal*"
                   options={sucursales}
@@ -118,11 +146,13 @@ const GestionCuentaEdit = () => {
                   { required: true, message: "Ingrese Tipo de Producto" },
                 ]}
               >
-                <FloatInput
+                <FloatSelect
                   outline
+                  disabled={tipoProducto.length === 0}
                   label="Tipo de Producto*"
-                  placeholder={response?.idProducto}
-                ></FloatInput>
+                  placeholder="Tipo de producto*"
+                  options={tipoProducto}
+                ></FloatSelect>
               </Form.Item>
               <Form.Item
                 name="posicion"
@@ -130,25 +160,10 @@ const GestionCuentaEdit = () => {
               >
                 <FloatSelect
                   outline
+                  disabled={posicionesImpositivas.length === 0}
                   label="Posición impositiva*"
                   placeholder="Posición impositiva*"
-                  options={[
-                    {
-                      title: "Excento",
-                      value: "Excento",
-                      disabled: false,
-                    },
-                    {
-                      title: "Excento",
-                      value: "Excento",
-                      disabled: false,
-                    },
-                    {
-                      title: "Excento",
-                      value: "Excento",
-                      disabled: false,
-                    },
-                  ]}
+                  options={posicionesImpositivas}
                 ></FloatSelect>
               </Form.Item>
               <Form.Item
@@ -163,17 +178,10 @@ const GestionCuentaEdit = () => {
                     {
                       title: "Domicilio legal",
                       value: "Domicilio legal",
-                      disabled: false,
                     },
                     {
-                      title: "Domicilio legal",
-                      value: "Domicilio legal",
-                      disabled: false,
-                    },
-                    {
-                      title: "Domicilio legal",
-                      value: "Domicilio legal",
-                      disabled: false,
+                      title: "Domicilio",
+                      value: "Domicilio",
                     },
                   ]}
                 ></FloatSelect>
@@ -183,6 +191,7 @@ const GestionCuentaEdit = () => {
               <Form.Item name="gpafinidad">
                 <FloatSelect
                   outline
+                  disabled={gruposAfinidad.length === 0}
                   label="Grupo de afinidad"
                   placeholder="Grupo de afinidad"
                   options={gruposAfinidad}
@@ -192,11 +201,13 @@ const GestionCuentaEdit = () => {
                 name="producto"
                 rules={[{ required: true, message: "Ingrese Producto" }]}
               >
-                <FloatInput
+                <FloatSelect
                   outline
+                  disabled={productos.length === 0}
                   label="Producto*"
                   placeholder="Producto*"
-                ></FloatInput>
+                  options={productos}
+                ></FloatSelect>
               </Form.Item>
               <Form.Item name="cuentaexterna">
                 <FloatInput
@@ -625,7 +636,7 @@ const GestionCuentaEdit = () => {
         </Card>
         <br></br>
       </>
-    ) : null;
+    );
   };
 
   return (

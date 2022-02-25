@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
-import {cuentas} from "../../../../services";
+import { cuentas } from "../../../../services";
 
 let productos = [];
 let gruposAfinidad = [];
 
-async function getListaProductos() {
+const getListaProductos = async () => {
   const response = await cuentas.getProductos();
   response.map((producto) => {
     productos.push({
@@ -15,10 +15,9 @@ async function getListaProductos() {
       title: producto.descripcion,
     });
   });
-  console.log(productos);
-}
+};
 
-async function getListaGruposAfinidad() {
+const getListaGruposAfinidad = async () => {
   const response = await cuentas.getGruposAfinidad();
   response.map((grupo) => {
     gruposAfinidad.push({
@@ -26,8 +25,7 @@ async function getListaGruposAfinidad() {
       title: grupo.descripcion,
     });
   });
-  console.log(gruposAfinidad);
-}
+};
 
 getListaProductos();
 getListaGruposAfinidad();
@@ -167,14 +165,13 @@ const GestionCuentaSearch = [
   },
   {
     index: "IdProducto",
-    input:
-      (
-        <FloatSelected
-          label="Producto"
-          placeholder="Producto"
-          options={productos}
-        />
-      ),
+    input: (
+      <FloatSelected
+        label="Producto"
+        placeholder="Producto"
+        options={productos}
+      />
+    ),
   },
   {
     index: "IdGrupoAfinidad",

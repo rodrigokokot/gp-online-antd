@@ -6,6 +6,7 @@ export default {
     getGruposAfinidad: '/GruposAfinidad',
     getSucursales: '/Sucursales',
     getPosicionesImpositivas: '/PosicionesImpositivas',
+    getTipoProducto: '/TipoProducto',
 
     postCuenta: '/Cuentas',
 }
