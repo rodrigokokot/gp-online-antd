@@ -7,6 +7,7 @@ const FloatInput = ({ outline, secondaryColor, disabled, ...props }) => {
   const [focus, setFocus] = useState(false);
   let { label, value, placeholder, type, required, defaultValue } = props;
 
+  value = defaultValue;
 
   if (!placeholder) placeholder = defaultValue? undefined : label;
 

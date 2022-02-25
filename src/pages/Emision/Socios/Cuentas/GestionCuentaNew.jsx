@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Radio,
   Form,
@@ -17,34 +17,105 @@ import cuentas from "../../../../services/cuentas";
 const { Title } = Typography;
 
 const GestionCuentaNew = () => {
+  const [value, setValue] = useState("");
+  const [valuedate, setValuedate] = useState("Fecha de Nacimiento*");
+  const [checked, setChecked] = useState(false);
+  const [buscar, setBuscar] = useState(undefined);
+  const [sucursales, setSucursales] = useState([]);
+  const [gruposAfinidad, setGruposAfinidad] = useState([]);
+  const [posicionesImpositivas, setPosicionesImpositivas] = useState([]);
+  const [tipoProducto, setTipoProducto] = useState([]);
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    getDataSucursales();
+    getDataGrupoAfinidad();
+    getPosicionesImpositivas();
+    getDataTipoProducto();
+    getDataProductos();
+  }, []);
+
+  const onChange = (e) => {
+    setValue(e.target.value); //para Radio
+  };
+
+  function onChangedate(date, dateString) {
+    setValuedate(dateString); //para calendario
+  }
+
+  const onChangeCheck = (e) => {
+    setChecked(e.target.checked); //para deshabilitar input
+  };
+
+  function handleOk(e) {
+    console.log("buscar press", buscar); //Button buscar documento
+  }
+
+  function onChangeDoc(e) {
+    setBuscar(e.target.value); //valor del documento a buscar
+  }
+
+  const getDataGrupoAfinidad = async () => {
+    let arr = [];
+    const res = await cuentas.getGruposAfinidad();
+    res.map((item) => {
+      arr.push({
+        value: item.idGrupoAfinidad,
+        title: item.descripcion,
+      });
+    });
+    setGruposAfinidad(arr);
+  };
+
+  const getPosicionesImpositivas = async () => {
+    let arr = [{ value: 2, title: "option 1" }];
+    const res = await cuentas.getPosicionesImpositivas();
+    // res.map((item) => {
+    //   arr.push({
+    //     value: item.asd,
+    //     title: item.descripcion,
+    //   });
+    // });
+    setPosicionesImpositivas(arr);
+  };
+
+  const getDataSucursales = async () => {
+    let arr = [];
+    const res = await cuentas.getSucursales();
+    res.map((item) => {
+      arr.push({
+        value: item.idSucursal,
+        title: item.descripcion,
+      });
+    });
+    setSucursales(arr);
+  };
+
+  const getDataTipoProducto = async () => {
+    let arr = [];
+    const res = await cuentas.getTipoProducto();
+    res.map((item) => {
+      arr.push({
+        value: item.idTipoProducto,
+        title: item.descripcion,
+      });
+    });
+    setTipoProducto(arr);
+  };
+
+  const getDataProductos = async () => {
+    let arr = [];
+    const response = await cuentas.getProductos();
+    response.map((producto) => {
+      arr.push({
+        value: producto.idProducto,
+        title: producto.descripcion,
+      });
+    });
+    setProductos(arr);
+  };
+
   const FormularioCuenta = () => {
-    //para Radio
-    const [value, setValue] = useState("");
-    const onChange = (e) => {
-      setValue(e.target.value);
-    };
-
-    //para calendario
-    const [valuedate, setValuedate] = useState("Fecha de Nacimiento*");
-    function onChangedate(date, dateString) {
-      setValuedate(dateString);
-      //   console.log("date ", dateString);
-    }
-    //para deshabilitar input
-    const [checked, setChecked] = useState(false);
-    const onChangeCheck = (e) => {
-      setChecked(e.target.checked);
-    };
-
-    //Button buscar documento
-    function handleOk(e) {
-      console.log("buscar press", buscar);
-    }
-    //valor del documento a buscar
-    const [buscar, setBuscar] = useState(undefined);
-    function onChangeDoc(e) {
-      setBuscar(e.target.value);
-    }
     return (
       <>
         <Card>
@@ -61,25 +132,10 @@ const GestionCuentaNew = () => {
               >
                 <FloatSelect
                   outline
+                  disabled={sucursales.length === 0}
                   label="Sucursal*"
                   placeholder="Sucursal*"
-                  options={[
-                    {
-                      title: "Sucursal CABA",
-                      value: "Sucursal CABA",
-                      disabled: false,
-                    },
-                    {
-                      title: "Sucursal Mendoza",
-                      value: "Sucursal Mendoza",
-                      disabled: false,
-                    },
-                    {
-                      title: "Sucursal San Luis",
-                      value: "Sucursal sSan Luis",
-                      disabled: false,
-                    },
-                  ]}
+                  options={sucursales}
                 ></FloatSelect>
               </Form.Item>
               <Form.Item
@@ -88,11 +144,13 @@ const GestionCuentaNew = () => {
                   { required: true, message: "Ingrese Tipo de Producto" },
                 ]}
               >
-                <FloatInput
+                <FloatSelect
                   outline
+                  disabled={tipoProducto.length === 0}
                   label="Tipo de Producto*"
                   placeholder="Tipo de Producto*"
-                ></FloatInput>
+                  options={tipoProducto}
+                ></FloatSelect>
               </Form.Item>
               <Form.Item
                 name="posicion"
@@ -102,23 +160,7 @@ const GestionCuentaNew = () => {
                   outline
                   label="Posición impositiva*"
                   placeholder="Posición impositiva*"
-                  options={[
-                    {
-                      title: "Excento",
-                      value: "Excento",
-                      disabled: false,
-                    },
-                    {
-                      title: "Excento",
-                      value: "Excento",
-                      disabled: false,
-                    },
-                    {
-                      title: "Excento",
-                      value: "Excento",
-                      disabled: false,
-                    },
-                  ]}
+                  options={posicionesImpositivas}
                 ></FloatSelect>
               </Form.Item>
               <Form.Item
@@ -153,36 +195,23 @@ const GestionCuentaNew = () => {
               <Form.Item name="gpafinidad">
                 <FloatSelect
                   outline
+                  disabled={gruposAfinidad.length === 0}
                   label="Grupo de afinidad"
                   placeholder="Grupo de afinidad"
-                  options={[
-                    {
-                      title: "Grupo de afinidad prepaga",
-                      value: "Grupo de afinidad prepaga",
-                      disabled: false,
-                    },
-                    {
-                      title: "Grupo de afinidad prepaga",
-                      value: "Grupo de afinidad prepaga",
-                      disabled: false,
-                    },
-                    {
-                      title: "Grupo de afinidad prepaga",
-                      value: "Grupo de afinidad prepaga",
-                      disabled: false,
-                    },
-                  ]}
+                  options={gruposAfinidad}
                 ></FloatSelect>
               </Form.Item>
               <Form.Item
                 name="producto"
                 rules={[{ required: true, message: "Ingrese Producto" }]}
               >
-                <FloatInput
+                <FloatSelect
                   outline
+                  disabled={productos.length === 0}
                   label="Producto*"
                   placeholder="Producto*"
-                ></FloatInput>
+                  options={productos}
+                ></FloatSelect>
               </Form.Item>
               <Form.Item name="cuentaexterna">
                 <FloatInput

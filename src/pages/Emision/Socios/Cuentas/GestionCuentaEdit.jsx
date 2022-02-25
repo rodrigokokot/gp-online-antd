@@ -18,11 +18,10 @@ const { Title } = Typography;
 
 const GestionCuentaEdit = () => {
   const { id } = useParams();
-  const [loading, setLoading] = useState(true);
   const [value, setValue] = useState(""); //radioGroud tipo documento
   const [valuedate, setValuedate] = useState("Fecha de Nacimiento*"); //para calendario
   const [disabled, setDisabled] = useState(false); //para habilitar form.item
-  const [response, setResponse] = useState(null);
+  const [cuenta, setCuenta] = useState();
   const [sucursales, setSucursales] = useState([]);
   const [gruposAfinidad, setGruposAfinidad] = useState([]);
   const [posicionesImpositivas, setPosicionesImpositivas] = useState([]);
@@ -39,14 +38,13 @@ const GestionCuentaEdit = () => {
   }, []);
 
   const getDataCuenta = async () => {
-    await cuentas
-      .getCuentas(`IdCuenta=${id}`)
-      // .then((res) => console.log("cuenta:", res))
-      .finally((res) => setResponse(res));
+    const res = await cuentas.getCuentas(`IdCuenta=${id}`);
+    // console.log("cuenta:", res[0]);
+    setCuenta(res[0]);
   };
 
   const getPosicionesImpositivas = async () => {
-    let arr = [];
+    let arr = [{ value: 2, title: "option 1" }];
     const res = await cuentas.getPosicionesImpositivas();
     // res.map((item) => {
     //   arr.push({
@@ -54,7 +52,7 @@ const GestionCuentaEdit = () => {
     //     title: item.descripcion,
     //   });
     // });
-    // setPosicionesImpositivas(arr);
+    setPosicionesImpositivas(arr);
   };
 
   const getDataTipoProducto = async () => {
@@ -136,7 +134,8 @@ const GestionCuentaEdit = () => {
                   outline
                   disabled={sucursales.length === 0}
                   label="Sucursal*"
-                  placeholder="Sucursal*"
+                  // placeholder="Sucursal*"
+                  defaultValue={cuenta?.sucursal.descripcion}
                   options={sucursales}
                 ></FloatSelect>
               </Form.Item>
@@ -160,7 +159,7 @@ const GestionCuentaEdit = () => {
               >
                 <FloatSelect
                   outline
-                  disabled={posicionesImpositivas.length === 0}
+                  // disabled={posicionesImpositivas.length === 0}
                   label="Posición impositiva*"
                   placeholder="Posición impositiva*"
                   options={posicionesImpositivas}
@@ -173,7 +172,7 @@ const GestionCuentaEdit = () => {
                 <FloatSelect
                   outline
                   label="Entrega de tarjeta*"
-                  placeholder="Entrega de tarjeta*"
+                  defaultValue={cuenta?.socio.persona.idDomicilioLegal}
                   options={[
                     {
                       title: "Domicilio legal",
@@ -212,8 +211,9 @@ const GestionCuentaEdit = () => {
               <Form.Item name="cuentaexterna">
                 <FloatInput
                   outline
+                  disabled={cuenta === []}
                   label="Cuenta externa"
-                  placeholder="Cuenta externa"
+                  defaultValue={cuenta?.idCuentaExterna}
                 ></FloatInput>
               </Form.Item>
               <Form.Item
@@ -223,15 +223,16 @@ const GestionCuentaEdit = () => {
                 <FloatSelect
                   outline
                   label="Estado*"
-                  placeholder="Estado*"
+                  value={cuenta?.idEstado}
+                  placeholder={cuenta?.idEstado}
                   options={[
                     {
-                      title: "Activa",
-                      value: "activa",
+                      title: "Activo",
+                      value: "activo",
                     },
                     {
-                      title: "Inactiva",
-                      value: "inactiva",
+                      title: "Inactivo",
+                      value: "inactivo",
                     },
                   ]}
                 ></FloatSelect>
@@ -295,7 +296,7 @@ const GestionCuentaEdit = () => {
                   outline
                   type="number"
                   label="N° de Documento*"
-                  placeholder="N° de Documento*"
+                  defaultValue={cuenta?.socio.persona.numeroDocumento}
                 ></FloatInput>
               </Form.Item>
             </Col>
@@ -309,29 +310,26 @@ const GestionCuentaEdit = () => {
                 <FloatInput
                   outline
                   label="Nombre*"
-                  placeholder="Nombre*"
+                  defaultValue={cuenta?.socio.persona.nombre}
                 ></FloatInput>
               </Form.Item>
               <Form.Item name="sexo">
                 <FloatSelect
                   outline
                   label="Sexo"
-                  placeholder="Sexo"
+                  defaultValue={cuenta?.socio.persona.sexo}
                   options={[
                     {
                       title: "Masculino",
                       value: "Masculino",
-                      disabled: false,
                     },
                     {
                       title: "Femenino",
                       value: "Femenino",
-                      disabled: false,
                     },
                     {
                       title: "Otro",
                       value: "Otro",
-                      disabled: false,
                     },
                   ]}
                 ></FloatSelect>
@@ -357,7 +355,8 @@ const GestionCuentaEdit = () => {
                   outline
                   type="email"
                   label="E-mail*"
-                  placeholder="E-mail*"
+                  defaultValue={cuenta?.socio.persona.mail}
+                  // placeholder={cuenta.socio.persona.mail}
                 ></FloatInput>
               </Form.Item>
             </Col>
@@ -369,29 +368,26 @@ const GestionCuentaEdit = () => {
                 <FloatInput
                   outline
                   label="Apellido*"
-                  placeholder="Apellido*"
+                  defaultValue={cuenta?.socio.persona.apellido}
                 ></FloatInput>
               </Form.Item>
               <Form.Item name="estadocivil">
                 <FloatSelect
                   outline
                   label="Estado civil"
-                  placeholder="Estado civil"
+                  defaultValue={cuenta?.socio.persona.estadoCivil}
                   options={[
                     {
                       title: "Soltero/a",
-                      value: "Soltero/a",
-                      disabled: false,
+                      value: 0,
                     },
                     {
                       title: "Casado/a",
-                      value: "Casado/a",
-                      disabled: false,
+                      value: 1,
                     },
                     {
-                      title: "Separado/a",
-                      value: "Separado/a",
-                      disabled: false,
+                      title: "Viudo/a",
+                      value: 2,
                     },
                   ]}
                 ></FloatSelect>
@@ -408,17 +404,14 @@ const GestionCuentaEdit = () => {
                     {
                       title: "Argentina",
                       value: "Argentina",
-                      disabled: false,
                     },
                     {
                       title: "Argentina",
                       value: "Argentina",
-                      disabled: false,
                     },
                     {
                       title: "Argentina",
                       value: "Argentina",
-                      disabled: false,
                     },
                   ]}
                 >
@@ -426,14 +419,14 @@ const GestionCuentaEdit = () => {
                 </FloatSelect>
               </Form.Item>
               <Form.Item
-                name="codigotribtario"
+                name="codigotributario"
                 rules={[{ required: true, message: "Ingrese Código" }]}
               >
                 <FloatInput
                   outline
                   type="number"
-                  label="Código tribtario*"
-                  placeholder="Código tribtario*"
+                  label="Código tributario*"
+                  defaultValue={cuenta?.socio.persona.codTributario}
                 ></FloatInput>
               </Form.Item>
             </Col>
@@ -444,7 +437,7 @@ const GestionCuentaEdit = () => {
                 <FloatInput
                   outline
                   label="Nombre embozado"
-                  placeholder="Nombre embozado"
+                  defaultValue={cuenta?.socio.nombreEmbozado}
                 ></FloatInput>
               </Form.Item>
             </Col>{" "}
@@ -645,6 +638,7 @@ const GestionCuentaEdit = () => {
       textBtnModalConfirm="Si, guardar"
       textBtnSave="Guardar Cambios"
       textBtnModalConfirm="¿Realizar cambios en la cuenta?"
+      service={cuentas.putCuenta}
     />
   );
 };
