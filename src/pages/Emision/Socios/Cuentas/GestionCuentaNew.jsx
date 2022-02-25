@@ -26,6 +26,7 @@ const GestionCuentaNew = () => {
   const [posicionesImpositivas, setPosicionesImpositivas] = useState([]);
   const [tipoProducto, setTipoProducto] = useState([]);
   const [productos, setProductos] = useState([]);
+  const [cuenta, setCuenta] = useState()
 
   useEffect(() => {
     getDataSucursales();
@@ -46,14 +47,6 @@ const GestionCuentaNew = () => {
   const onChangeCheck = (e) => {
     setChecked(e.target.checked); //para deshabilitar input
   };
-
-  function handleOk(e) {
-    console.log("buscar press", buscar); //Button buscar documento
-  }
-
-  function onChangeDoc(e) {
-    setBuscar(e.target.value); //valor del documento a buscar
-  }
 
   const getDataGrupoAfinidad = async () => {
     let arr = [];
@@ -118,7 +111,7 @@ const GestionCuentaNew = () => {
   const getCuenta = async () =>{
     const res = await cuentas.getCuentas(`NroDocumento=96038525`);
     console.log("cuenta:", res[0]);
-    // setCuenta(res[0]);
+    setCuenta(res[0]);
   }
 
   const FormularioCuenta = () => {
@@ -325,6 +318,7 @@ const GestionCuentaNew = () => {
                   outline
                   label="Nombre*"
                   placeholder="Nombre*"
+                  defaultValue={cuenta?.socio.persona.nombre}
                 ></FloatInput>
               </Form.Item>
               <Form.Item name="sexo">
@@ -332,21 +326,15 @@ const GestionCuentaNew = () => {
                   outline
                   label="Sexo"
                   placeholder="Sexo"
+                  defaultValue={cuenta?.socio.persona.sexo}
                   options={[
                     {
                       title: "Masculino",
-                      value: "Masculino",
-                      disabled: false,
+                      value: "M",
                     },
                     {
                       title: "Femenino",
-                      value: "Femenino",
-                      disabled: false,
-                    },
-                    {
-                      title: "Otro",
-                      value: "Otro",
-                      disabled: false,
+                      value: "F",
                     },
                   ]}
                 ></FloatSelect>
@@ -373,6 +361,7 @@ const GestionCuentaNew = () => {
                   type="email"
                   label="E-mail*"
                   placeholder="E-mail*"
+                  defaultValue={cuenta?.socio.persona.mail}
                 ></FloatInput>
               </Form.Item>
             </Col>
@@ -385,6 +374,7 @@ const GestionCuentaNew = () => {
                   outline
                   label="Apellido*"
                   placeholder="Apellido*"
+                  defaultValue={cuenta?.socio.persona.apellido}
                 ></FloatInput>
               </Form.Item>
               <Form.Item name="estadocivil">
@@ -392,21 +382,19 @@ const GestionCuentaNew = () => {
                   outline
                   label="Estado civil"
                   placeholder="Estado civil"
+                  defaultValue={cuenta?.socio.persona.estadoCivil}
                   options={[
                     {
                       title: "Soltero/a",
-                      value: "Soltero/a",
-                      disabled: false,
+                      value: 0,
                     },
                     {
                       title: "Casado/a",
-                      value: "Casado/a",
-                      disabled: false,
+                      value: 1,
                     },
                     {
                       title: "Separado/a",
-                      value: "Separado/a",
-                      disabled: false,
+                      value: 2,
                     },
                   ]}
                 ></FloatSelect>
@@ -422,18 +410,15 @@ const GestionCuentaNew = () => {
                   options={[
                     {
                       title: "Argentina",
-                      value: "Argentina",
-                      disabled: false,
+                      value: 0,
                     },
                     {
                       title: "Argentina",
-                      value: "Argentina",
-                      disabled: false,
+                      value: 1,
                     },
                     {
                       title: "Argentina",
-                      value: "Argentina",
-                      disabled: false,
+                      value: 2,
                     },
                   ]}
                 >
@@ -449,6 +434,7 @@ const GestionCuentaNew = () => {
                   type="number"
                   label="Código tribtario*"
                   placeholder="Código tribtario*"
+                  defaultValue={cuenta?.socio.persona.codTributario}
                 ></FloatInput>
               </Form.Item>
             </Col>
@@ -463,6 +449,7 @@ const GestionCuentaNew = () => {
                   outline
                   label="Nombre embozado*"
                   placeholder="Nombre embozado*"
+                  defaultValue={cuenta?.socio.nombreEmbozado}
                 ></FloatInput>
               </Form.Item>
             </Col>{" "}

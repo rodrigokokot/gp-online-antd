@@ -71,15 +71,15 @@ export default {
         console.log(jdata)
         // const body = {
         //     "cuenta": {
-        //         "Nombre": jdata.nombre,
-        //         "Apellido": jdata.apellido,
-        //         "Email": jdata.email,
+        //         "Nombre": "Gabriela Gomez",
+        //         "Apellido": "Aprepaga",
+        //         "Email": "gg@gmail.com",
         //         "Sexo": "F",
-        //         "IdProducto": 101,
+        //         "IdProducto": jdata.producto,
         //         "FechaNacimiento": "1980-04-20",
         //         "IdCuentaExterna": "",
         //         "SucursalEmisora": jdata.sucursal,
-        //         "GrupoAfinidad": 1,
+        //         "GrupoAfinidad": jdata.gpafinidad,
         //         "Nacionalidad": 32,
         //         "TrackingId": "4564233",
         //         "TipoTarjeta": 1,
@@ -89,7 +89,7 @@ export default {
         //             "Numero": "25473301"
         //         },
         //         "Embozado": {
-        //             "Nombre": "Gabriela Gomez",
+        //             "Nombre": jdata.nombreembozado,
         //             "CuartaLinea": ""
         //         },
         //         "Telefono": {
@@ -129,7 +129,7 @@ export default {
                 "Apellido": "Aprepaga",
                 "Email": "gg@gmail.com",
                 "Sexo": "F",
-                "IdProducto": 101,
+                "IdProducto": 7,
                 "FechaNacimiento": "1980-04-20",
                 "IdCuentaExterna": "",
                 "SucursalEmisora": 1,
@@ -177,7 +177,7 @@ export default {
                 }
             }
         }
-        console.log(body);
+        // console.log(body);
         try {
             const response = await api.post(endPoints.postCuenta, JSON.stringify(body))
             return response
