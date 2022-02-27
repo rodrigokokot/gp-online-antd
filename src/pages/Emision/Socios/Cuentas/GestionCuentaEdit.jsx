@@ -18,7 +18,7 @@ import { useParams } from "react-router-dom";
 
 const { Title } = Typography;
 
-const GestionCuentaNew = () => {
+const GestionCuentaEdit = () => {
   const { t} = useTranslation();
   const { id } = useParams();
   const [value, setValue] = useState(""); //radioGroud tipo documento

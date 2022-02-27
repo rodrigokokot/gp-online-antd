@@ -499,6 +499,7 @@ const GestionCuentaNew = () => {
                       label={t("gestioncuenta.new.outline.piso.label")}
                       placeholder={t("gestioncuenta.new.outline.piso.label")}
                     ></FloatInput>
+                    </Form.Item> 
                 </Col>
                 <Col span={3}>
                     <Form.Item name='depto'  
