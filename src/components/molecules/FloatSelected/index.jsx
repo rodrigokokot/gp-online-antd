@@ -14,7 +14,9 @@ const FloatSelected = ({
   ...props
 }) => {
   const [focus, setFocus] = useState(false);
-  let { label, value, placeholder, type, disabled, required } = props;
+  let { label, value, placeholder, type, disabled, required, defaultValue } = props;
+
+  value = defaultValue;
 
   if (!placeholder) placeholder = label;
 
@@ -45,6 +47,7 @@ const FloatSelected = ({
         onChange={props.onChange}
         disabled={disabled}
         showSearch={props.showSearch}
+        defaultValue={defaultValue}
         // className={ !outline? "select-bottom" : '' }
       >
         {options.map((opt, index) => (

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SearchForm from "../../../../components/organisms/SearchForm/index";
 import Table from "../../../../components/organisms/Table/index";
 import { Link } from "react-router-dom";
 import {
   GestionCuentaSearch,
-  dataGestionCuenta,
   ColumnsGestionCuenta,
 } from "./mock";
 import { Col, Button } from "antd";

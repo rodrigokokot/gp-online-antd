@@ -2,14 +2,13 @@ import { Link } from "react-router-dom";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
-import { test } from "../../../../services";
 import { useTranslation } from "react-i18next";
 import {cuentas} from "../../../../services";
 
 let productos = [];
 let gruposAfinidad = [];
 
-async function getListaProductos() {
+const getListaProductos = async () => {
   const response = await cuentas.getProductos();
   response.map((producto) => {
     productos.push({
@@ -17,10 +16,9 @@ async function getListaProductos() {
       title: producto.descripcion,
     });
   });
-  console.log(productos);
-}
+};
 
-async function getListaGruposAfinidad() {
+const getListaGruposAfinidad = async () => {
   const response = await cuentas.getGruposAfinidad();
   response.map((grupo) => {
     gruposAfinidad.push({
@@ -28,8 +26,7 @@ async function getListaGruposAfinidad() {
       title: grupo.descripcion,
     });
   });
-  console.log(gruposAfinidad);
-}
+};
 
 getListaProductos();
 getListaGruposAfinidad();
@@ -82,7 +79,7 @@ const ColumnsGestionCuenta =()=>{
     button: true,
     cell: (row) => (
       <Link
-        to={`/emision/socios/cuentas/editarCuenta=${row.idcuenta}`}
+        to={`/emision/socios/cuentas/editarCuenta=${row.idCuenta}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >
@@ -173,8 +170,7 @@ const GestionCuentaSearch =()=>{
     ),
   },
   {
-    name: "Producto",
-    index: "producto",
+    index: "IdProducto",
     input: (
       <FloatSelected
         label={t("gestioncuenta.search.input5")}
