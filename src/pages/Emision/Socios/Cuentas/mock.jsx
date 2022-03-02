@@ -2,13 +2,9 @@ import { Link } from "react-router-dom";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
-<<<<<<< HEAD
-import { test } from "../../../../services";
-import { useTranslation } from "react-i18next";
-import {cuentas} from "../../../../services";
-=======
 import { cuentas } from "../../../../services";
->>>>>>> b78177f7230f1685672da1d658cf1108aea068bd
+import { useTranslation } from "react-i18next";
+
 
 let productos = [];
 let gruposAfinidad = [];
@@ -175,20 +171,11 @@ const GestionCuentaSearch =()=>{
     ),
   },
   {
-<<<<<<< HEAD
-    name: "Producto",
-    index: "producto",
-    input: (
-      <FloatSelected
-        label={t("gestioncuenta.search.input5")}
-        placeholder={t("gestioncuenta.search.input5")}
-=======
     index: "IdProducto",
     input: (
       <FloatSelected
         label="Producto"
         placeholder="Producto"
->>>>>>> b78177f7230f1685672da1d658cf1108aea068bd
         options={productos}
       />
     ),

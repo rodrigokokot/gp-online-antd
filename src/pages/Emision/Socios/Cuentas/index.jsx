@@ -4,12 +4,7 @@ import Table from "../../../../components/organisms/Table/index";
 import { Link } from "react-router-dom";
 import {
   GestionCuentaSearch,
-<<<<<<< HEAD
-  dataGestionCuenta,
   ColumnsGestionCuenta,
-=======
-  columnsGestionCuenta,
->>>>>>> b78177f7230f1685672da1d658cf1108aea068bd
 } from "./mock";
 import { Col, Button } from "antd";
 import { useTranslation } from "react-i18next";
