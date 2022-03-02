@@ -109,7 +109,7 @@ const GestionCuentaNew = () => {
   };
 
   const getCuenta = async () =>{
-    const res = await cuentas.getCuentas(`NroDocumento=96038525`);
+    const res = await cuentas.getCuentas(`NroDocumento=54135892`);
     console.log("cuenta:", res[0]);
     setCuenta(res[0]);
   }
@@ -131,9 +131,9 @@ const GestionCuentaNew = () => {
               >
                 <FloatSelect
                   outline
-                  disabled={sucursales.length === 0}
+                  disabled={sucursales === []}
                   label="Sucursal*"
-                  placeholder="Sucursal*"
+                  // placeholder="Sucursal*"
                   options={sucursales}
                 ></FloatSelect>
               </Form.Item>
@@ -145,7 +145,7 @@ const GestionCuentaNew = () => {
               >
                 <FloatSelect
                   outline
-                  disabled={tipoProducto.length === 0}
+                  disabled={tipoProducto === []}
                   label="Tipo de Producto*"
                   placeholder="Tipo de Producto*"
                   options={tipoProducto}
@@ -194,7 +194,7 @@ const GestionCuentaNew = () => {
               <Form.Item name="gpafinidad">
                 <FloatSelect
                   outline
-                  disabled={gruposAfinidad.length === 0}
+                  disabled={gruposAfinidad === []}
                   label="Grupo de afinidad"
                   placeholder="Grupo de afinidad"
                   options={gruposAfinidad}
@@ -206,7 +206,7 @@ const GestionCuentaNew = () => {
               >
                 <FloatSelect
                   outline
-                  disabled={productos.length === 0}
+                  disabled={productos === []}
                   label="Producto*"
                   placeholder="Producto*"
                   options={productos}
@@ -318,7 +318,7 @@ const GestionCuentaNew = () => {
                   outline
                   label="Nombre*"
                   placeholder="Nombre*"
-                  defaultValue={cuenta?.socio.persona.nombre}
+                  value={cuenta?.socio.persona.nombre}
                 ></FloatInput>
               </Form.Item>
               <Form.Item name="sexo">

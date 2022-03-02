@@ -22,9 +22,9 @@ const api = axios.create({
 api.interceptors.request.use((config) => {
   // console.log(config);
   let method = "";
-  method = config.method !== "post" ? "token" : "postToken2"
+  method = config.method !== "post" ? "token" : "postToken2"  //token temporal
   const token = sessionStorage.getItem(method); 
-  console.log(method)
+  // console.log(method)
   // const token = process.env.REACT_APP_TOKEN
   if (token) {
     config.headers["Authorization"] = "Bearer " + token;
