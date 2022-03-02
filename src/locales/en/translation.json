@@ -1875,26 +1875,81 @@
         "radio7":"CI"
       },
       "search":"Document number",
-      "input1":"First name",
-      "input2":"Last name",
-      "input3":"Gender",
-      "input4":"Civil status",
-      "input5":"Birth date",
-      "input6":"Birth country",
-      "input7":"E-mail",
-      "input8":"Tributary code",
-      "input9":"Embossed name",
-      "input10":"Street*",
-      "input11":"Number",
-      "input12":"Floor",
-      "input13":"Department",
-      "input14":"ZIP code*",
-      "input15":"Between streets",
-      "input16":"Neighborhood",
-      "input17":"Locality*",
-      "input18":"Province*",
-      "input19":"Phone number*",   
-      "input20":"Reference"
+      "documento":{
+        "label":"Document number*",
+        "error":"Enter document number"
+      },
+      "apellido": {
+        "label": "Last name*",
+        "error": "Enter last name"
+      }  , 
+      "sexo": {
+        "label": "Gender*" ,
+        "error": "Enter gender"
+      }  , 
+      "estadocivil": {
+        "label": "Civil status*", 
+        "error":"Enter status"
+      }  ,
+      "fnacimiento": {
+        "label": "Birthdate*",
+        "error": "Enter birthdate"
+      } ,
+      "pais": {
+        "label": "Birth country*",
+        "error": "Ingrese country"
+      },
+      "email": {
+        "label": "E-Mail*",
+        "error": "Enter email"
+      } ,
+      "codigotrib": {
+        "label": "Tax code*",
+        "error": "Enter code"
+      } , 
+      "nombremb": {
+        "label": "Printed name*",
+        "error": "Enter printed name"
+      } , 
+      "calle": {
+        "label": "Street*",
+        "error": "Enter street"
+      } , 
+      "numero": {
+        "label": "Number*",
+        "error": "Enter number"
+      } , 
+      "piso": {
+        "label": "Floor" 
+      } , 
+      "dpto": {
+        "label": "Department" 
+      } , 
+      "cdpostal": {
+        "label": "ZIP code*",
+        "error": "Enter ZIP code"
+      } , 
+      "entrecalles": {
+        "label": "Streets between"
+      } , 
+      "barrio": {
+        "label": "Neighborhood"
+      } , 
+      "localidad": {
+        "label": "Locality*",
+        "error": "Enter locality"
+      } , 
+      "provincia": {
+        "label": "Province*",
+        "error": "Enter province"
+      } , 
+      "telefono": {
+        "label": "Phone number*",
+        "error": "Ingrese number"
+      } , 
+      "referencia": {
+        "label": "Reference"
+      } 
     }
   },
   "limitetarjetas":{
