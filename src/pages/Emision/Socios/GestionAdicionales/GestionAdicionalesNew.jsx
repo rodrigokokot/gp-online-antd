@@ -94,9 +94,9 @@ import { useTranslation } from "react-i18next";
               <Col span={6}>
                 <Form.Item
                   name="numero"
-                  rules={[{ required: true, message: (t("adicionales.nuevo.radiogroup.value7"))}]}
+                  rules={[{ required: true, message: "Ingrese documento" }]}
                 >
-                  <FloatInput label={t("adicionales.nuevo.radiogroup.value7")} />
+                  <FloatInput label="N° de Documento*" />
                 </Form.Item>
               </Col>
 

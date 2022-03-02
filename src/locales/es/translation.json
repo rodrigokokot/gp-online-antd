@@ -1828,7 +1828,10 @@
             "value6":"PASAPORTE",
             "value7":"CI" 
       },
-      "search":"N° de Documento*",
+      "documento":{
+        "label":"N° de Documento*",
+        "error":"Ingrese documento"
+      },
       "nombre":{
         "label":"Nombre*",
         "error":"Ingrese nombre"
