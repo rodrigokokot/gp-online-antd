@@ -1399,7 +1399,7 @@
       "title2":"Domicilio",
       "checkbox1":"Reports address",
       "radiogroup":{
-        "title":"Document type",
+        "label":"Document type",
         "radio1":"DNI",
         "radio2":"CUIT",
         "radio3":"CIVIC NOTEBOOK",

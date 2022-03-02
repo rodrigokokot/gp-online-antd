@@ -1783,6 +1783,76 @@
         } 
     } 
   },
+  "movimientocuenta":{
+    "search":{
+      "searchtitle":"Búsqueda de movimientos de cuentas",
+      "input1":"N° de Tarjeta",
+      "input2":"N° de Cuenta",
+      "input3":"Pesos",
+      "input4":"Por Fechas"
+    },
+    "table":{
+      "column1":"Tarjeta",
+      "column2":"N° Cuenta",
+      "column3":"Currency",
+      "column4":"Fecha"
+    }
+  },
+  "adicionales":{
+    "button":"Nueva Adicional",
+    "search":{
+      "searchtitle":"Búsqueda de gestión de cuentas",
+      "input1":"N° de Cuenta",
+      "input2":"Cuenta/Adicional",
+      "input3":"N° de Documento",
+      "input4":"N° de Tarjeta",
+      "input5":"Nombre completo"
+    },
+    "table":{
+      "column1":"Cuenta/Adicional",
+      "column2":"Nombre completo",
+      "column3":"Documento",
+      "column4":"Producto",
+      "column5":"Estado",
+      "column6":"Nueva Adicional"
+    },
+    "nuevo":{
+      "title1":"Datos Principales",
+      "title2":"Domicilio",
+      "checkbox1":"Informa Domicilio",
+      "radiogroup":{ 
+        "label":"Tipo de Documento", 
+            "value1":"DNI",
+            "value2":"CUIT",
+            "value3":"LIBRETA CIVICA",
+            "value4":"LIBRETA DE ENROLAMIENTO",
+            "value5":"CUIL",
+            "value6":"PASAPORTE",
+            "value7":"CI"
+      },
+      "search":"N° de Documento*",
+      "input1":"Nombre*",
+      "input2":"Apellido*",
+      "input3":"Sexo",
+      "input4":"Estado Civil",
+      "input5":"Fecha de Nacimiento*",
+      "input6":"País de Nacimiento*",
+      "input7":"E-mail*",
+      "input8":"Código Tributario*",
+      "input9":"Nombre Embozado*",
+      "input10":"Calle*",
+      "input11":"Numero*",
+      "input12":"Piso",
+      "input13":"Depto.",
+      "input14":"Código Postal*",
+      "input15":"Entre Calles",
+      "input16":"Barrio",
+      "input17":"Localidad*",
+      "input18":"Provincia*",
+      "input19":"Teléfono*",   
+      "input20":"Referencia"
+    }
+  },
   "tarjeta":{
     "search":{
       "searchtitle":"Búsqueda de Tarjetas",
@@ -1828,6 +1898,508 @@
         },
         "check":"Génera reimpresión" 
     } 
+  },
+  "avisoviajes":{
+    "search":{
+      "searchtitle":"Búsqueda de avisos de viajes",
+      "input1":"N° de ID de Viaje",
+      "input2":"N° de Tarjeta",
+      "input3":"N° de Documento",
+      "input4":"Estado" 
+    },
+    "table":{
+        "column1":"ID Aviso de Viaje",
+        "column2":"N° de Cuenta",
+        "column3":"Tipo de Documento",
+        "column4":"N° de Documento",
+        "column5":"Fecha Desde",
+        "column6":"Fecha Hasta", 
+        "column7":"Estado",
+        "column8":"Editar"
+    },
+    "editar":{
+      "numcuenta":"Número de Cuenta",
+      "fechas":{
+        "desde":"Fecha Desde*",
+        "hasta":"Fecha Hasta*",
+        "error":"Ingrese fechas"
+      },
+      "pais":{
+        "label":"País","error":"Ingrese País"
+      },
+      "estado":{
+        "label":"Estado*","error":"Ingrese Estado"
+      }
+    }
+  },
+  "plasticos":{
+    "search":{
+      "searchtitle":"Búsqueda de plásticos", 
+      "input1":"N° de Cuenta",
+      "input2":"N° de Cuenta Original", 
+      "input3":"Apellidos",
+      "input4":"Nombres",
+      "input5":"Tipo de Documento",
+      "input6":"N° de Documento",
+      "input7":"Razón social",
+      "input8":"N° Empresa",
+      "input9":"Emisor", 
+      "input10":"Producto"
+    },
+    "table":{
+        "column1":"Código",
+        "column2":"Descripción",
+        "column3":"Tipo Cargo",
+        "column4":"Aplica IVA",
+        "column5":"Débito/Crédito",
+        "column6":"Moneda", 
+        "column7":"Estado",
+        "column8":"Editar"
+    }
+    
+  }, 
+  "limitetarjetas":{
+    "search":{
+      "searchtitle":"Búsqueda de tarjeta adicional",
+      "input1":"Emisor",
+      "input2":"N° de Tarjeta",
+      "input3":"N° de Documento",
+      "input4":"Producto",
+      "input5":"N° de Cuenta",
+      "input6":"N° de Cuenta Original",
+      "input7":"N° de Cuenta Relacionada",
+      "input8":"Marca",
+      "input9":"Tipo de Documento",
+      "input10":"N° de Documento",
+      "input11":"Razón Social",
+      "input12":"N° de Empresa",
+      "input13":"Nombre",
+      "input14":"Apellido"
+    },
+    "table":{
+      "column1":"Emisor/Sucursal",
+      "column2":"ID",
+      "column3":"Nombre",
+      "column4":"Documento",
+      "column5":"Marca",
+      "column6":"Cuenta",
+      "column7":"Producto",
+      "column8":"Adicional",
+      "column9":"Tarjeta",
+      "column10":"Editar" 
+    }
+  },
+  "altatarjeta":{
+    "search":{
+      "searchtitle":"Búsqueda de cuentas",
+      "input1":"Emisor",
+      "input2":"Marca",
+      "input3":"N° de Tarjeta",
+      "input4":"N° de Cuenta",
+      "input5":"N° de Cuenta Original",
+      "input6":"N° de Cuenta Relativa",
+      "input7":"Apellidos",
+      "input8":"Nombres",
+      "input9":"Tipo de Documento",
+      "input10":"N° de Documento",
+      "input11":"Razón Social",
+      "input12":"N° de Empresa"
+    },
+    "table":{
+      "column1":"Emisor/Sucursal",
+      "column2":"ID",
+      "column3":"Cliente",
+      "column4":"Documento",
+      "column5":"Marca",
+      "column6":"Cuenta",
+      "column7":"Producto",
+      "column8":"Adicional",
+      "column9":"Tarjeta"
+    },
+    "new1":{
+      "title1":"Alta Cliente",
+      "title2":"Informacion personal",
+      "title3":"Domicilio particular",
+      "title4":"Información Laboral",
+      "title5":"Domicilio Laboral",
+      "greytext1":"ID de Cliente",
+      "greytext2":"Fecha de Alta",
+      "greytext3":"Emisor",
+      "nacionalidad":{
+        "label":"Nacionalidad",
+        "error":"Seleccione nacionalidad"
+      },
+      "radio":{
+        "label":"Tipo de Documento", 
+        "value1":"DNI",
+        "value2":"CUIT",
+        "value3":"LIBRETA CIVICA",
+        "value4":"LIBRETA DE ENROLAMIENTO",
+        "value5":"CUIL",
+        "value6":"PASAPORTE",
+        "value7":"CI"
+      },
+      "documento":{
+        "label":"N° de Documento*",
+        "error":"Ingrese número de documento"
+      },
+      "nombre":{
+        "label":"Nombre*",
+        "error":"Ingrese nombre"
+      },
+      "apellido":{
+        "label":"Apellido*",
+        "error":"Ingrese apellido"
+      },
+      "nacimiento":{
+        "label":"Fecha de Nacimiento*",
+        "error":"Ingrese fecha de nacimiento"
+      },
+      "genero":{
+        "label":"Sexo",
+        "value1":"Masculino",
+        "value2":"Femenino",
+        "value3":"No Binario"
+      },
+      "civil":{
+        "label":"Estado Civil",
+        "value1":"Soltero",
+        "value2":"Casado",
+        "value3":"Viudo"
+      },
+      "estado":{
+        "label":"Estado Atividad*",
+        "error":"Seleccione Estado Actividad"
+      },
+      "ocupacion":{
+        "label":"Ocupación*",
+        "error":"Ingrese ocupación"
+      },
+      "actividad":{
+        "label":"Código de Actividad*",
+        "error":"Seleccione Código de Actividad"
+      },
+      "email":{
+        "label":"Email*",
+        "error":"Ingrese E-Mail"
+      },
+      "cuit":{
+        "label":"Cuit/Cuil*",
+        "error":"Ingrese cuit/cuil"
+      },
+      "IBC":{
+        "label":"IBC",
+        "error":"Ingrese IBC"
+      },
+      "interno":{
+        "label":"N° de Cliente Interno",
+        "error":"Ingrese número de cliente"
+      },
+      "pais":{
+        "label":"País*",
+        "error":"Ingrese país"
+      },
+      "provincia":{
+        "label":"Provincia*",
+        "error":"Ingrese provincia"
+      },
+      "localidad":{
+        "label":"Localidad*",
+        "error":"Ingrese localidad"
+      },
+      "calle":{
+        "label":"Calle*",
+        "error":"Ingrese calle"
+      },
+      "numero":{
+        "label":"Número*",
+        "error":"Ingrese número"
+      },
+      "piso":{
+        "label":"piso"
+      },
+      "depto":{
+        "label":"Departamento"
+      },
+      "cp":{
+        "label":"Código Postal*",
+        "error":"Ingrese código postal"
+      },
+      "barrio":{
+        "label":"Barrio*",
+        "error":"Ingrese barrio"
+      },
+      "empresa":{
+        "label":"Empresa*",
+        "error":"Ingrese empresa"
+      },
+      "cargo":{
+        "label":"Posición*",
+        "error":"Ingrese posición"
+      },
+      "fechaingreso":{
+        "label":"Fecha Ingreso*",
+        "error":"Ingrese fecha ingreso"
+      },
+      "moneda":{
+        "label":"Moneda",
+        "value1":"U$D",
+        "value2":"AR$"
+      },
+      "remuneracion":{
+        "label":"Remuneración*",
+        "error":"Ingrese remuneración "
+      },
+      "responablen":{
+        "label":"Responsable Nombre*",
+        "error":"Ingrese nombre del responsable"
+      },
+      "responsablea":{
+        "label":"Responsable Apellido*",
+        "error":"Ingrese apellido del responsable"
+      },
+      "telefono":{
+        "label":"Teléfono",
+        "error":"Ingrese número de teléfono"
+      },
+      "responsabledocumento":{
+        "label":"Responsable Documento", 
+        "value1":"DNI",
+        "value2":"CUIT",
+        "value3":"LIBRETA CIVICA",
+        "value4":"LIBRETA DE ENROLAMIENTO",
+        "value5":"CUIL",
+        "value6":"PASAPORTE",
+        "value7":"CI"
+      },
+      "responsablenumero":{
+        "label":"Responsable Número de Documento*",
+        "error":"Ingrese número de documento"
+      },
+
+      "laboralpais":{
+        "label":"País*",
+        "error":"Ingrese pais"
+      },
+      "laboralprovincia":{
+        "label":"Provincia",
+        "error":"Ingrese provincia"
+      },
+      "laborallocalidad":{
+        "label":"Localidad*",
+        "error":"Ingrese localidad"
+      },
+      "laboralcalle":{
+        "label":"Calle*",
+        "error":"Ingrese calle"
+      },
+      "laboralnumero":{
+        "label":"Número*",
+        "error":"Ingrese número"
+      },
+      "laboralpiso":{
+        "label":"Piso"
+      },
+      "laboraldepto":{
+        "label":"Departamento"
+      },
+      "laboralcp":{
+        "label":"Código Postal",
+        "error":"Ingrese código postal"
+      },
+      "laboralbarrio":{
+        "label":"Barrio*",
+        "error":"Ingrese barrio"
+      },
+      "laboraltelefono":{
+        "label":"Teléfono",
+        "error":"Ingrese Teléfono"
+      }
+    },
+    "new2":{
+      "title1":"Información del titular",
+      "title2":"Información de la cuenta",
+      "title3":"Datos Adicionales",
+      "title4":"Información de límites",
+      "title5":"Forma de pago en Pesos",
+      "title6":"Forma de pago en Dólares",
+      "text1":"Branch",
+      "greytext1":"Documento",
+      "greytext2":"Apellidos",
+      "greytext3":"Nombres",
+      "greytext4":"Emisor",
+      "greytext5":"Sucursal",
+      "greytext6":"Cuenta",
+      "greytext7":"Fecha de alta",
+      
+      "marca":{
+        "label":"Marca*",
+        "error":"Seleccione marca"
+      },
+      "cartera":{
+        "label":"Cartera*",
+        "error":"Ingrese cartera"
+      },
+      "producto":{
+        "label":"Producto*",
+        "error":"Seleccione producto"
+      },
+      "cierre":{
+        "label":"Grupo de Cierre*",
+        "error":"Seleccione grupo de cierre"
+      },
+      "afinidad":{
+        "label":"Grupo de Afinidad*",
+        "error":"Seleccione grupo de afinidad"
+      },
+      "codigo":{
+        "label":"Código de envio*",
+        "error":"Seleccione código de envio"
+      },
+      "cuenta":{
+        "label":"Envio de Cuenta*",
+        "error":"Ingrese cuenta "
+      },
+      "plastico":{
+        "label":"Envio de plástico*",
+        "error":"Ingrese plástico"
+      },
+      "pin":{
+        "label":"Envio de PIN*",
+        "error":"Seleccione envio de PIN"
+      },
+      "resumen":{
+        "label":"Tipo de Emisión de Resumen*",
+        "error":"Ingrese tipo de emisión de resumen"
+      },
+      "vida":{
+        "label":"Modelo de Seguro de Vida*",
+        "error":"Seleccione Modelo de seguro de vida" 
+      },
+      "desempleo":{
+        "label":"Modelo de Seguro de Desempleo*",
+        "error":"Seleccione Modelo de seguro de desempleo"
+      },
+      "promotor":{
+        "label":"Promotor*",
+        "error":"Seleccione promotor"
+      },
+      "accion":{
+        "label":"Acción Comercial*",
+        "error":"Ingrese la accción comercial"
+      },
+      "origen":{
+        "label":"Tipo de Producto Origen*",
+        "error":"Ingrese tipo de producto origen"
+      },
+      "recalificado":{
+        "label":"Producto Recalificado*",
+        "error":"Ingrese producto recalificado"
+      },
+      "moneda":{
+        "label":"Moneda*",
+        "value1":"U$D",
+        "value2":"AR$"
+      },
+      "monto":{
+        "label":"Monto*",
+        "error":"Ingrese monto"
+      },
+      "calcular":"Calcular",
+      "financiacion":{
+        "label":"Límite financiación",
+        "error":"Ingrese límite de financiación" 
+      },
+      "contado":"Compra Contado",
+      "cuotas":"Compra Cuotas",
+      "adelantos":"Adelantos",
+      "adelantosc":"Adelantos Cuotas",
+
+      "efectivo":"Efectivo",
+      "debito":{
+        "label":"Tipo de Débito",
+        "error":"Seleccione tipo de débito"
+      },
+      "tipocuenta":{
+        "label":"Tipo de Cuenta ",
+        "error":"Seleccione tipo de cuenta"
+      },
+      "numerocuenta":"N° de Cuenta"
+    },
+    "new3":{
+      "title1":"Información del Titular",
+      "title2":"Información del Producto",
+      "title3":"Información de la Cuenta",
+      "greytext1":"N° de Cuenta",
+      "greytext2":"N° de Cuenta Original",
+      "greytext3":"Fecha Alta",
+      "greytext4":"Marca",
+      "greytext5":"Emisor",
+      "greytext6":"Sucursal",
+      "greytext7":"Grupo Cierre",
+      "greytext8":"Grupo Afinidad",
+      "greytext9":"Cartera",
+      "greytext10":"Tipo Cuenta",
+      "greytext11":"Estado",
+      "greytext12":"Documento",
+      "greytext13":"Apellidos",
+      "greytext14":"Nombres",
+      "greytext15":"Producto",
+      "greytext16":"Ver Clientes de producto",
+      "greytext17":"Tipo de tarjeta",
+      "greytext18":"Cliente de tarjeta",
+      "greytext19":"Moneda",
+      "greytext20":"Precio",
+      "greytext21":"Precio Emisión",
+      "greytext22":"Precio Renovación",
+      "greytext23":"Precio Reemplazo",
+      "greytext24":"Porcent Bonif Emisión",
+      "greytext25":"Porcent Bonif Renovación",
+      "greytext26":"Porcent Bonif Reemplazo",
+      "greytext27":"Cargo Emisión",
+      "greytext28":"Cargo Renovacón",
+      "greytext29":"Cargo Reemplazo",
+      "greytext30":"% Asignación",
+      "greytext31":"Límite Asignado",
+
+      "checkbox1":"Emite tarjeta",
+
+      "radio1":{
+        "label":"Renovación Automatica",
+        "value1":"Si",
+        "value2":"No"
+      },
+
+      "radio2":{
+        "label":"Urgente",
+        "value1":"Si",
+        "value2":"No"
+      },
+
+      "embozado":{
+        "label":"Nombre Embozado*",
+        "error":"Seleccione nombre embozado"
+      },
+      "segunda":{
+        "label":"Segunda Linea de Embozado*",
+        "error":"Ingrese segunda linea de embozado"
+      },
+      "modelo":{
+        "label":"Modelo Bonificación*",
+        "error":"Ingrese modelo bonificación"
+      },
+      "periodos":{
+        "label":"Periodos Bonificados*",
+        "error":"Ingrese Periodos Bonificados"
+      }
+
+    }
+  },
+  "ayuda":{
+    "item1":"Preguntas Frecuentes",
+    "item2":"Configuraciones",
+    "item3":"Crear una cuenta",
+    "search":"Buscar por palabra clave"
   }
- 
+
 }
