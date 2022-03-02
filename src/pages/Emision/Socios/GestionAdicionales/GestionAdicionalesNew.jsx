@@ -17,8 +17,10 @@ import { SearchOutlined } from "@ant-design/icons";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import Title from "antd/lib/typography/Title";
+import { useTranslation } from "react-i18next";
 
-export default function GestionAdicionalesNew() {
+  export default function GestionAdicionalesNew() {
+  const { t} = useTranslation();
   const [value, setValue] = useState("");
   const onChange = (e) => {
     setValue(e.target.value);
@@ -37,7 +39,7 @@ export default function GestionAdicionalesNew() {
           <Row>
             <Space direction="vertical" size="small">
               <Typography.Title level={3} style={{ color: "#ab218e" }}>
-                Datos principales
+              {t("adicionales.nuevo.title1")}
               </Typography.Title>
             </Space>
           </Row>
@@ -48,45 +50,45 @@ export default function GestionAdicionalesNew() {
             onFinish={onFinish}
             size="large"
           >
-            <Typography.Title level={5}>Tipo de documento</Typography.Title>
-            <Form.Item name="tipodocumento" rules={[{ required: true }]}>
-              <Radio.Group onChange={onChange} value={value}>
-                <Row justify="space-between">
-                  <Col span={4}>
-                    <Radio style={{ marginTop: 10 }} value={"DNI"}>
-                      DNI
-                    </Radio>
-                    <Radio style={{ marginTop: 10 }} value={"CUIT"}>
-                      CUIT
-                    </Radio>
-                  </Col>
-                  <Col span={8}>
-                    <Radio style={{ marginTop: 10 }} value={"LIBRETA CIVICA"}>
-                      LIBRETA CIVICA
-                    </Radio>
-                    <Radio
-                      style={{ marginTop: 10 }}
-                      value={"LIBRETA DE ENROLAMIENTO"}
-                    >
-                      LIBRETA DE ENROLAMIENTO
-                    </Radio>
-                  </Col>
-                  <Col span={4}>
-                    <Radio style={{ marginTop: 10 }} value={"CUIL"}>
-                      CUIL
-                    </Radio>
-                    <Radio style={{ marginTop: 10 }} value={"PASAPORTE"}>
-                      PASAPORTE
-                    </Radio>
-                  </Col>
-                  <Col span={4}>
-                    <Radio style={{ marginTop: 10 }} value={"CI"}>
-                      CI
-                    </Radio>
-                  </Col>
-                </Row>
-              </Radio.Group>
-            </Form.Item>
+            <Typography.Title level={5}>{t("adicionales.nuevo.radiogroup.label")}</Typography.Title>
+            <Form.Item name="tipodocumento" rules={[{ required: true,message: (t("adicionales.nuevo.radiogroup.error")) }]}>
+            <Radio.Group>
+              <Row justify="space-between">
+                <Col span={4}>
+                  <Radio style={{ marginTop: 10 }} value={t("adicionales.nuevo.radiogroup.value1")}>
+                  {t("adicionales.nuevo.radiogroup.value1")}
+                  </Radio>
+                  <Radio style={{ marginTop: 10 }} value={t("adicionales.nuevo.radiogroup.value2")}>
+                  {t("adicionales.nuevo.radiogroup.value2")}
+                  </Radio>
+                </Col>
+                <Col span={8}>
+                  <Radio style={{ marginTop: 10 }} value={t("adicionales.nuevo.radiogroup.value3")}>
+                  {t("adicionales.nuevo.radiogroup.value3")}
+                  </Radio>
+                  <Radio
+                    style={{ marginTop: 10 }}
+                    value={t("adicionales.nuevo.radiogroup.value4")}
+                  >
+                    {t("adicionales.nuevo.radiogroup.value4")}
+                  </Radio>
+                </Col>
+                <Col span={4}>
+                  <Radio style={{ marginTop: 10 }} value={t("adicionales.nuevo.radiogroup.value5")}>
+                  {t("geadicionales.nuevo.radiogroup.value5")}
+                  </Radio>
+                  <Radio style={{ marginTop: 10 }} value={t("adicionales.nuevo.radiogroup.value6")}>
+                  {t("adicionales.nuevo.radiogroup.value6")}
+                  </Radio>
+                </Col>
+                <Col span={4}>
+                  <Radio style={{ marginTop: 10 }} value={t("adicionales.nuevo.radiogroup.value7")}>
+                    {t("adicionales.nuevo.radiogroup.value7")}
+                  </Radio>
+                </Col>
+              </Row>
+</Radio.Group>
+          </Form.Item>
 
             <Row gutter={48}>
               <Col span={6}>
@@ -340,8 +342,7 @@ export default function GestionAdicionalesNew() {
         <Card>
           <Space direction="vertical" size="middle">
             <Typography.Title level={3} style={{ color: "#ab218e" }}>
-              {" "}
-              Domicilio
+            {t("adicionales.nuevo.title2")}
             </Typography.Title>
             <Checkbox onChange={onChange} checked={checked}>
               Informa domicilio

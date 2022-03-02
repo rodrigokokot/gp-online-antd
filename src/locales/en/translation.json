@@ -1865,7 +1865,8 @@
       "title2":"Domicilio",
       "checkbox1":"Reports address",
       "radiogroup":{
-        "title":"Document type",
+        "label":"Document type",
+        "error":"Enter type",
         "radio1":"DNI",
         "radio2":"CUIT",
         "radio3":"CIVIC NOTEBOOK",
@@ -1874,10 +1875,13 @@
         "radio6":"PASSPORT",
         "radio7":"CI"
       },
-      "search":"Document number",
       "documento":{
-        "label":"Document number*",
-        "error":"Enter document number"
+        "label":"Document Number",
+        "error":"Enter document"
+      },
+      "nombre":{
+        "label":"First Name*",
+        "error":"Enter first name"
       },
       "apellido": {
         "label": "Last name*",
@@ -1897,7 +1901,7 @@
       } ,
       "pais": {
         "label": "Birth country*",
-        "error": "Ingrese country"
+        "error": "Enter country"
       },
       "email": {
         "label": "E-Mail*",
@@ -1945,7 +1949,7 @@
       } , 
       "telefono": {
         "label": "Phone number*",
-        "error": "Ingrese number"
+        "error": "Enter number"
       } , 
       "referencia": {
         "label": "Reference"

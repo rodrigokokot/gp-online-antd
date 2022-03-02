@@ -13,12 +13,16 @@ import {
 import FloatInput from "../../../../components/molecules/FloatInput";
 import FloatSelect from "../../../../components/molecules/FloatSelected/index";
 import Edit from "../../../../components/organisms/Edit";
+import { useTranslation } from "react-i18next";
 import cuentas from "../../../../services/cuentas";
 const { Title } = Typography;
 
 const GestionCuentaNew = () => {
+  const { t } = useTranslation();
   const [value, setValue] = useState("");
-  const [valuedate, setValuedate] = useState("Fecha de Nacimiento*");
+  const [valuedate, setValuedate] = useState(
+    t("gestioncuenta.new.outline.fnacimiento.label")
+  );
   const [checked, setChecked] = useState(false);
   const [buscar, setBuscar] = useState(undefined);
   const [sucursales, setSucursales] = useState([]);
@@ -26,8 +30,7 @@ const GestionCuentaNew = () => {
   const [posicionesImpositivas, setPosicionesImpositivas] = useState([]);
   const [tipoProducto, setTipoProducto] = useState([]);
   const [productos, setProductos] = useState([]);
-  const [cuenta, setCuenta] = useState()
-
+  const [cuenta, setCuenta] = useState();
   useEffect(() => {
     getDataSucursales();
     getDataGrupoAfinidad();
@@ -35,11 +38,9 @@ const GestionCuentaNew = () => {
     getDataTipoProducto();
     getDataProductos();
   }, []);
-
   const onChange = (e) => {
     setValue(e.target.value); //para Radio
   };
-
   function onChangedate(date, dateString) {
     setValuedate(dateString); //para calendario
   }
@@ -108,10 +109,18 @@ const GestionCuentaNew = () => {
     setProductos(arr);
   };
 
-  const getCuenta = async () =>{
-    const res = await cuentas.getCuentas(`NroDocumento=54135892`);
+  const getCuenta = async () => {
+    const res = await cuentas.getCuentas(`NroDocumento=96038525`);
     console.log("cuenta:", res[0]);
     setCuenta(res[0]);
+  };
+
+  function handleOk(e) {
+    console.log("buscar press", buscar); //Button buscar documento
+  }
+
+  function onChangeDoc(e) {
+    setBuscar(e.target.value); //valor del documento a buscar
   }
 
   const FormularioCuenta = () => {
@@ -119,57 +128,76 @@ const GestionCuentaNew = () => {
       <>
         <Card>
           <Typography.Title level={3} style={{ color: "#ab218e" }}>
-            {" "}
-            Datos Principales
+            {t("gestioncuenta.new.title1")}
           </Typography.Title>{" "}
           <br></br>
           <Row gutter={48}>
             <Col span={6}>
               <Form.Item
                 name="sucursal"
-                rules={[{ required: true, message: "Ingrese sucursal" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.sucursal.error"),
+                  },
+                ]}
               >
                 <FloatSelect
                   outline
-                  disabled={sucursales === []}
-                  label="Sucursal*"
-                  // placeholder="Sucursal*"
+                  disabled={sucursales.length === 0}
+                  label={t("gestioncuenta.new.outline.sucursal.label")}
+                  placeholder={t("gestioncuenta.new.outline.sucursal.label")}
                   options={sucursales}
                 ></FloatSelect>
               </Form.Item>
               <Form.Item
                 name="tipoproducto"
                 rules={[
-                  { required: true, message: "Ingrese Tipo de Producto" },
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.typeproducto.error"),
+                  },
                 ]}
               >
                 <FloatSelect
                   outline
-                  disabled={tipoProducto === []}
-                  label="Tipo de Producto*"
-                  placeholder="Tipo de Producto*"
+                  disabled={tipoProducto.length === 0}
+                  label={t("gestioncuenta.new.outline.typeproducto.label")}
+                  placeholder={t(
+                    "gestioncuenta.new.outline.typeproducto.label"
+                  )}
                   options={tipoProducto}
                 ></FloatSelect>
               </Form.Item>
               <Form.Item
                 name="posicion"
-                rules={[{ required: true, message: "Ingrese posición" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.posicion.error"),
+                  },
+                ]}
               >
                 <FloatSelect
                   outline
-                  label="Posición impositiva*"
-                  placeholder="Posición impositiva*"
+                  label={t("gestioncuenta.new.outline.posicion.label")}
+                  placeholder={t("gestioncuenta.new.outline.posicion.label")}
                   options={posicionesImpositivas}
                 ></FloatSelect>
               </Form.Item>
               <Form.Item
                 name="entregatarjeta"
-                rules={[{ required: true, message: "Ingrese Entrega" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.entregat.error"),
+                  },
+                ]}
               >
                 <FloatSelect
                   outline
-                  label="Entrega de tarjeta*"
-                  placeholder="Entrega de tarjeta*"
+                  label={t("gestioncuenta.new.outline.entregat.label")}
+                  placeholder={t("gestioncuenta.new.outline.entregat.label")}
                   options={[
                     {
                       title: "Domicilio legal",
@@ -194,39 +222,49 @@ const GestionCuentaNew = () => {
               <Form.Item name="gpafinidad">
                 <FloatSelect
                   outline
-                  disabled={gruposAfinidad === []}
-                  label="Grupo de afinidad"
-                  placeholder="Grupo de afinidad"
+                  disabled={gruposAfinidad.length === 0}
+                  label={t("gestioncuenta.new.outline.gafinidad.label")}
+                  placeholder={t("gestioncuenta.new.outline.gafinidad.label")}
                   options={gruposAfinidad}
                 ></FloatSelect>
               </Form.Item>
               <Form.Item
                 name="producto"
-                rules={[{ required: true, message: "Ingrese Producto" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.producto.error"),
+                  },
+                ]}
               >
                 <FloatSelect
                   outline
-                  disabled={productos === []}
-                  label="Producto*"
-                  placeholder="Producto*"
+                  disabled={productos.length === 0}
+                  label={t("gestioncuenta.new.outline.producto.label")}
+                  placeholder={t("gestioncuenta.new.outline.producto.label")}
                   options={productos}
                 ></FloatSelect>
               </Form.Item>
               <Form.Item name="cuentaexterna">
                 <FloatInput
                   outline
-                  label="Cuenta externa"
-                  placeholder="Cuenta externa"
+                  label={t("gestioncuenta.new.outline.cuentaext.label")}
+                  placeholder={t("gestioncuenta.new.outline.cuentaext.label")}
                 ></FloatInput>
               </Form.Item>
               <Form.Item
                 name="estado"
-                rules={[{ required: true, message: "Ingrese estado" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.estado.error"),
+                  },
+                ]}
               >
                 <FloatSelect
                   outline
-                  label="Estado*"
-                  placeholder="Estado*"
+                  label={t("gestioncuenta.new.outline.estado.label")}
+                  placeholder={t("gestioncuenta.new.outline.estado.label")}
                   options={[
                     {
                       title: "Activa",
@@ -247,43 +285,66 @@ const GestionCuentaNew = () => {
         <br></br>
         <Card>
           <Typography.Title level={3} style={{ color: "#ab218e" }}>
-            Titular{" "}
+            {t("gestioncuenta.new.title2")}
           </Typography.Title>
 
-          <Title level={5}>Tipo de documento</Title>
-          <Form.Item name="tipodocumento">
-            <Radio.Group onChange={onChange} value={value}>
+          <Title level={5}>{t("gestioncuenta.new.typedoc.label")}</Title>
+          <Form.Item
+            name="tipodocumento"
+            rules={[
+              { required: true, message: t("gestioncuenta.new.typedoc.error") },
+            ]}
+          >
+            <Radio.Group>
               <Row justify="space-between">
                 <Col span={4}>
-                  <Radio style={{ marginTop: 10 }} value={"DNI"}>
-                    DNI
-                  </Radio>
-                  <Radio style={{ marginTop: 10 }} value={"CUIT"}>
-                    CUIT
-                  </Radio>
-                </Col>
-                <Col span={8}>
-                  <Radio style={{ marginTop: 10 }} value={"LIBRETA CIVICA"}>
-                    LIBRETA CIVICA
+                  <Radio
+                    style={{ marginTop: 10 }}
+                    value={t("gestioncuenta.new.typedoc.value1")}
+                  >
+                    {t("gestioncuenta.new.typedoc.value1")}
                   </Radio>
                   <Radio
                     style={{ marginTop: 10 }}
-                    value={"LIBRETA DE ENROLAMIENTO"}
+                    value={t("gestioncuenta.new.typedoc.value2")}
                   >
-                    LIBRETA DE ENROLAMIENTO
+                    {t("gestioncuenta.new.typedoc.value2")}
+                  </Radio>
+                </Col>
+                <Col span={8}>
+                  <Radio
+                    style={{ marginTop: 10 }}
+                    value={t("gestioncuenta.new.typedoc.value3")}
+                  >
+                    {t("gestioncuenta.new.typedoc.value3")}
+                  </Radio>
+                  <Radio
+                    style={{ marginTop: 10 }}
+                    value={t("gestioncuenta.new.typedoc.value4")}
+                  >
+                    {t("gestioncuenta.new.typedoc.value4")}
                   </Radio>
                 </Col>
                 <Col span={4}>
-                  <Radio style={{ marginTop: 10 }} value={"CUIL"}>
-                    CUIL
+                  <Radio
+                    style={{ marginTop: 10 }}
+                    value={t("gestioncuenta.new.typedoc.value5")}
+                  >
+                    {t("gestionusuarios.new.typedoc.value5")}
                   </Radio>
-                  <Radio style={{ marginTop: 10 }} value={"PASAPORTE"}>
-                    PASAPORTE
+                  <Radio
+                    style={{ marginTop: 10 }}
+                    value={t("gestioncuenta.new.typedoc.value6")}
+                  >
+                    {t("gestioncuenta.new.typedoc.value6")}
                   </Radio>
                 </Col>
                 <Col span={4}>
-                  <Radio style={{ marginTop: 10 }} value={"CI"}>
-                    CI
+                  <Radio
+                    style={{ marginTop: 10 }}
+                    value={t("gestioncuenta.new.typedoc.value7")}
+                  >
+                    {t("gestioncuenta.new.typedoc.value7")}
                   </Radio>
                 </Col>
               </Row>
@@ -294,13 +355,19 @@ const GestionCuentaNew = () => {
             <Col span={6}>
               <Form.Item
                 name="documento"
-                rules={[{ required: true, message: "Ingrese Documento" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.documento.error"),
+                  },
+                ]}
               >
                 <FloatInput
                   outline
                   type="number"
-                  label="N° de Documento*"
-                  placeholder="N° de Documento*"
+                  label={t("gestioncuenta.new.outline.documento.label")}
+                  placeholder={t("gestioncuenta.new.outline.documento.label")}
+                  onChange={onChangeDoc}
                 ></FloatInput>
               </Form.Item>
             </Col>
@@ -312,20 +379,25 @@ const GestionCuentaNew = () => {
             <Col span={6}>
               <Form.Item
                 name="nombre"
-                rules={[{ required: true, message: "Ingrese Nombre" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.nombre.error"),
+                  },
+                ]}
               >
                 <FloatInput
                   outline
-                  label="Nombre*"
-                  placeholder="Nombre*"
+                  label={t("gestioncuenta.new.outline.nombre.label")}
+                  placeholder={t("gestioncuenta.new.outline.nombre.label")}
                   value={cuenta?.socio.persona.nombre}
                 ></FloatInput>
               </Form.Item>
               <Form.Item name="sexo">
                 <FloatSelect
                   outline
-                  label="Sexo"
-                  placeholder="Sexo"
+                  label={t("gestioncuenta.new.outline.sexo.label")}
+                  placeholder={t("gestioncuenta.new.outline.sexo.label")}
                   defaultValue={cuenta?.socio.persona.sexo}
                   options={[
                     {
@@ -342,7 +414,10 @@ const GestionCuentaNew = () => {
               <Form.Item
                 name="fechanacimiento"
                 rules={[
-                  { required: true, message: "Ingrese Fecha de Nacimiento" },
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.fnacimiento.error"),
+                  },
                 ]}
               >
                 <DatePicker
@@ -354,13 +429,18 @@ const GestionCuentaNew = () => {
               </Form.Item>
               <Form.Item
                 name="email"
-                rules={[{ required: true, message: "Ingrese E-Mail" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.email.error"),
+                  },
+                ]}
               >
                 <FloatInput
                   outline
                   type="email"
-                  label="E-mail*"
-                  placeholder="E-mail*"
+                  label={t("gestioncuenta.new.outline.email.label")}
+                  placeholder={t("gestioncuenta.new.outline.email.label")}
                   defaultValue={cuenta?.socio.persona.mail}
                 ></FloatInput>
               </Form.Item>
@@ -368,20 +448,25 @@ const GestionCuentaNew = () => {
             <Col span={6}>
               <Form.Item
                 name="apellido"
-                rules={[{ required: true, message: "Ingrese Apellido" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.apellido.error"),
+                  },
+                ]}
               >
                 <FloatInput
                   outline
-                  label="Apellido*"
-                  placeholder="Apellido*"
+                  label={t("gestioncuenta.new.outline.apellido.label")}
+                  placeholder={t("gestioncuenta.new.outline.apellido.label")}
                   defaultValue={cuenta?.socio.persona.apellido}
                 ></FloatInput>
               </Form.Item>
               <Form.Item name="estadocivil">
                 <FloatSelect
                   outline
-                  label="Estado civil"
-                  placeholder="Estado civil"
+                  label={t("gestioncuenta.new.outline.estadocivil.label")}
+                  placeholder={t("gestioncuenta.new.outline.estadocivil.label")}
                   defaultValue={cuenta?.socio.persona.estadoCivil}
                   options={[
                     {
@@ -401,12 +486,17 @@ const GestionCuentaNew = () => {
               </Form.Item>
               <Form.Item
                 name="paisnacimiento"
-                rules={[{ required: true, message: "Ingrese País" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.pais.error"),
+                  },
+                ]}
               >
                 <FloatSelect
                   outline
-                  label="País de Nacimiento*"
-                  placeholder="País de Nacimiento*"
+                  label={t("gestioncuenta.new.outline.pais.label")}
+                  placeholder={t("gestioncuenta.new.outline.pais.label")}
                   options={[
                     {
                       title: "Argentina",
@@ -421,19 +511,22 @@ const GestionCuentaNew = () => {
                       value: 2,
                     },
                   ]}
-                >
-                  {" "}
-                </FloatSelect>
+                ></FloatSelect>
               </Form.Item>
               <Form.Item
                 name="codigotribtario"
-                rules={[{ required: true, message: "Ingrese Código" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.codigotrib.error"),
+                  },
+                ]}
               >
                 <FloatInput
                   outline
                   type="number"
-                  label="Código tribtario*"
-                  placeholder="Código tribtario*"
+                  label={t("gestioncuenta.new.outline.codigotrib.label")}
+                  placeholder={t("gestioncuenta.new.outline.codigotrib.label")}
                   defaultValue={cuenta?.socio.persona.codTributario}
                 ></FloatInput>
               </Form.Item>
@@ -443,12 +536,17 @@ const GestionCuentaNew = () => {
             <Col span={12}>
               <Form.Item
                 name="nombreembozado"
-                rules={[{ required: true, message: "Ingrese nombre embozado" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t("gestioncuenta.new.outline.nombremb.error"),
+                  },
+                ]}
               >
                 <FloatInput
                   outline
-                  label="Nombre embozado*"
-                  placeholder="Nombre embozado*"
+                  label={t("gestioncuenta.new.outline.nombremb.label")}
+                  placeholder={t("gestioncuenta.new.outline.nombremb.label")}
                   defaultValue={cuenta?.socio.nombreEmbozado}
                 ></FloatInput>
               </Form.Item>
@@ -458,29 +556,29 @@ const GestionCuentaNew = () => {
         <br></br>
         <Card>
           <Typography.Title level={3} style={{ color: "#ab218e" }}>
-            Domicilio Legal{" "}
+            {t("gestioncuenta.new.title3")}
           </Typography.Title>
 
-          <Title level={5}>
-            Por defecto, el domicilio de correspondencia es el mismo que el
-            domicilio legal
-          </Title>
+          <Title level={5}>{t("gestioncuenta.new.check1.title1")}</Title>
           <Checkbox onChange={onChangeCheck} checked={checked}>
-            <Title level={5}>
-              Ingresar un domicilio de correspondencia diferente
-            </Title>
+            <Title level={5}>{t("gestioncuenta.new.check1.title2")}</Title>
           </Checkbox>
           {checked && (
             <>
               <Col span={6}>
                 <Form.Item
                   name="calle"
-                  rules={[{ required: true, message: "Ingrese Calle" }]}
+                  rules={[
+                    {
+                      required: true,
+                      message: t("gestioncuenta.new.outline.calle.label"),
+                    },
+                  ]}
                 >
                   <FloatInput
                     outline
-                    label="Calle*"
-                    placeholder="Calle*"
+                    label={t("gestioncuenta.new.outline.calle.label")}
+                    placeholder={t("gestioncuenta.new.outline.calle.label")}
                   ></FloatInput>
                 </Form.Item>
               </Col>
@@ -488,13 +586,18 @@ const GestionCuentaNew = () => {
                 <Col span={3}>
                   <Form.Item
                     name="numero"
-                    rules={[{ required: true, message: "Ingrese número" }]}
+                    rules={[
+                      {
+                        required: true,
+                        message: t("gestioncuenta.new.outline.numero.label"),
+                      },
+                    ]}
                   >
                     <FloatInput
                       outline
                       type="number"
-                      label="Numero*"
-                      placeholder="Numero*"
+                      label={t("gestioncuenta.new.outline.numero.label")}
+                      placeholder={t("gestioncuenta.new.outline.numero.label")}
                     ></FloatInput>
                   </Form.Item>
                 </Col>
@@ -503,8 +606,8 @@ const GestionCuentaNew = () => {
                     <FloatInput
                       outline
                       type="number"
-                      label="Piso"
-                      placeholder="Piso"
+                      label={t("gestioncuenta.new.outline.piso.label")}
+                      placeholder={t("gestioncuenta.new.outline.piso.label")}
                     ></FloatInput>
                   </Form.Item>
                 </Col>
@@ -512,8 +615,8 @@ const GestionCuentaNew = () => {
                   <Form.Item name="depto">
                     <FloatInput
                       outline
-                      label="Depto"
-                      placeholder="Depto"
+                      label={t("gestioncuenta.new.outline.dpto.label")}
+                      placeholder={t("gestioncuenta.new.outline.dpto.label")}
                     ></FloatInput>
                   </Form.Item>
                 </Col>
@@ -521,14 +624,19 @@ const GestionCuentaNew = () => {
                   <Form.Item
                     name="codpostal"
                     rules={[
-                      { required: true, message: "Ingrese Codigo postal" },
+                      {
+                        required: true,
+                        message: t("gestioncuenta.new.outline.cdpostal.label"),
+                      },
                     ]}
                   >
                     <FloatInput
                       outline
                       type="number"
-                      label="Codigo postal*"
-                      placeholder="Codigo postal*"
+                      label={t("gestioncuenta.new.outline.cdpostal.label")}
+                      placeholder={t(
+                        "gestioncuenta.new.outline.cdpostal.label"
+                      )}
                     ></FloatInput>
                   </Form.Item>
                 </Col>
@@ -537,35 +645,47 @@ const GestionCuentaNew = () => {
                 <Form.Item name="entrecalle">
                   <FloatInput
                     outline
-                    label="Entre Calles"
-                    placeholder="Entre Calles"
+                    label={t("gestioncuenta.new.outline.entrecalles.label")}
+                    placeholder={t(
+                      "gestioncuenta.new.outline.entrecalles.label"
+                    )}
                   ></FloatInput>
                 </Form.Item>
                 <Form.Item name="barrio">
                   <FloatInput
                     outline
-                    label="Barrio"
-                    placeholder="Barrio"
+                    label={t("gestioncuenta.new.outline.barrio.label")}
+                    placeholder={t("gestioncuenta.new.outline.barrio.label")}
                   ></FloatInput>
                 </Form.Item>
                 <Form.Item
                   name="localidad"
-                  rules={[{ required: true, message: "Ingrese Localidad" }]}
+                  rules={[
+                    {
+                      required: true,
+                      message: t("gestioncuenta.new.outline.localidad.label"),
+                    },
+                  ]}
                 >
                   <FloatInput
                     outline
-                    label="Localidad*"
-                    placeholder="Localidad*"
+                    label={t("gestioncuenta.new.outline.localidad.label")}
+                    placeholder={t("gestioncuenta.new.outline.localidad.label")}
                   ></FloatInput>
                 </Form.Item>
                 <Form.Item
                   name="provincia"
-                  rules={[{ required: true, message: "Ingrese provincia" }]}
+                  rules={[
+                    {
+                      required: true,
+                      message: t("gestioncuenta.new.outline.provincia.label"),
+                    },
+                  ]}
                 >
                   <FloatSelect
                     outline
-                    label="Provincia*"
-                    placeholder="Provincia*"
+                    label={t("gestioncuenta.new.outline.provincia.label")}
+                    placeholder={t("gestioncuenta.new.outline.provincia.label")}
                     options={[
                       {
                         title: "San Juan",
@@ -587,20 +707,27 @@ const GestionCuentaNew = () => {
                 </Form.Item>
                 <Form.Item
                   name="telefono"
-                  rules={[{ required: true, message: "Ingrese Télefono" }]}
+                  rules={[
+                    {
+                      required: true,
+                      message: t("gestioncuenta.new.outline.telefono.label"),
+                    },
+                  ]}
                 >
                   <FloatInput
                     outline
                     type="number"
-                    label="Télefono*"
-                    placeholder="Télefono*"
+                    label={t("gestioncuenta.new.outline.telefono.label")}
+                    placeholder={t("gestioncuenta.new.outline.telefono.label")}
                   ></FloatInput>
                 </Form.Item>
                 <Form.Item name="referencia">
                   <FloatInput
                     outline
-                    label="Referencia"
-                    placeholder="Referencia"
+                    label={t("gestioncuenta.new.outline.referencia.label")}
+                    placeholder={t(
+                      "gestioncuenta.new.outline.referencia.label"
+                    )}
                   ></FloatInput>
                 </Form.Item>
               </Col>{" "}
@@ -610,33 +737,22 @@ const GestionCuentaNew = () => {
         <br></br>
         <Card>
           <Typography.Title level={3} style={{ color: "#ab218e" }}>
-            Domicilio Correspondencia{" "}
+            {t("gestioncuenta.new.title4")}
           </Typography.Title>
 
-          <Title level={5}>
-            Por defecto, el domicilio de correspondencia es el mismo que el
-            domicilio legal
-          </Title>
+          <Title level={5}>{t("gestioncuenta.new.check1.title1")}</Title>
           <Checkbox>
-            <Title level={5}>
-              Ingresar un domicilio de correspondencia diferente
-            </Title>
+            <Title level={5}>{t("gestioncuenta.new.check1.title2")}</Title>
           </Checkbox>
         </Card>
         <br></br>
         <Card>
           <Typography.Title level={3} style={{ color: "#ab218e" }}>
-            Domicilio Laboral{" "}
+            {t("gestioncuenta.new.title5")}
           </Typography.Title>
-
-          <Title level={5}>
-            Por defecto, el domicilio de correspondencia es el mismo que el
-            domicilio legal
-          </Title>
+          <Title level={5}>{t("gestioncuenta.new.check1.title1")}</Title>
           <Checkbox>
-            <Title level={5}>
-              Ingresar un domicilio de correspondencia diferente
-            </Title>
+            <Title level={5}>{t("gestioncuenta.new.check1.title2")}</Title>
           </Checkbox>
         </Card>
         <br></br>
@@ -648,9 +764,9 @@ const GestionCuentaNew = () => {
     <>
       <Edit
         component={FormularioCuenta}
-        textBtnModalConfirm="Si, crear"
-        textBtnSave="Crear cuenta"
-        textModalConfirm="¿Confirma creación de cuenta?"
+        textBtnModalConfirm={t("gestioncuenta.new.edit.btnconfirm")}
+        textBtnSave={t("gestioncuenta.new.edit.save")}
+        textModalConfirm={t("gestioncuenta.new.edit.confirm")}
         service={cuentas.postCuenta}
       />
     </>
