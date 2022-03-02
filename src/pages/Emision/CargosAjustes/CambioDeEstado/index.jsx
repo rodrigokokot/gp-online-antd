@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import SearchForm from "../../../../components/organisms/SearchForm";
 import Table from "../../../../components/organisms/Table";
 import {
-  cambioDeEstadoSearch,
-  columnsCambioDeEstado,
+  CambioDeEstadoSearch,
+  ColumnsCambioDeEstado,
   dataCambioDeEstado,
 } from "./mock";
 
 const CambioDeEstado = () => {
+  const { t} = useTranslation();
   const [data, setData] = useState("");
 
   function handleCallback(values) {
@@ -18,13 +20,13 @@ const CambioDeEstado = () => {
   return (
     <>
       <SearchForm
-        array={cambioDeEstadoSearch}
-        title="Búsqueda de Productos"
+        array={CambioDeEstadoSearch()}
+        title={t("estado.search.searchtitle")}
         parentCallback={handleCallback}
         span={6}
       />
       <br />
-      <Table data={data} columns={columnsCambioDeEstado} />
+      <Table data={data} columns={ColumnsCambioDeEstado()} />
     </>
   );
 };

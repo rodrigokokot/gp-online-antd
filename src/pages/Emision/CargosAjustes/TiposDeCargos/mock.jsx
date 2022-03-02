@@ -1,41 +1,44 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import FloatInput from "../../../../components/molecules/FloatInput"; 
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import SelectImg from "../../../../components/organisms/SelectImg.jsx";
 
-const columnsTiposDeCargos = [
+const ColumnsTiposDeCargos =()=>{
+  const { t} = useTranslation();
+  return([
   {
-    name: "Código",
+    name: (t("tiposcargos.table.column1")),
     selector: (row) => row.codigo,
     sortable: true,
   },
   {
-    name: "Descripción",
+    name: (t("tiposcargos.table.column2")),
     selector: (row) => row.descripcion,
     sortable: true,
   },
   {
-    name: "Tipos Cargo",
+    name: (t("tiposcargos.table.column3")),
     selector: (row) => row.tipoCargo,
     sortable: true,
   },
   {
-    name: "Aplica IVA",
+    name: (t("tiposcargos.table.column4")),
     selector: (row) => row.iva,
     sortable: true,
   },
   {
-    name: "Débito/Crédito",
+    name: (t("tiposcargos.table.column5")),
     selector: (row) => row.tipoTarjeta,
     sortable: true,
   },
   {
-    name: "Moneda",
+    name:(t("tiposcargos.table.column6")),
     selector: (row) => row.moneda,
     sortable: true,
   },
   {
-    name: "Estado",
+    name: (t("tiposcargos.table.column7")),
     selector: (row) => row.estado,
     sortable: true,
   },
@@ -48,11 +51,12 @@ const columnsTiposDeCargos = [
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >
-        Editar
+        {t("tiposcargos.table.column8")}
       </Link>
     ),
   },
-];
+])
+}
 
 const dataTiposDeCargos = [
   {
@@ -101,65 +105,68 @@ const dataTiposDeCargos = [
     estado: "habilitado",
   },
 ];
-const tiposDeCargosSearch = [
+const TiposDeCargosSearch=()=>{
+  const { t} = useTranslation();
+  return( [
   {
     name: "Codigo",
     index: "tarjeta",
-    input: <FloatInput label="Código" placeholder="Código" />,
+    input: <FloatInput label={t("tiposcargos.search.input1")} placeholder={t("tiposcargos.search.input1")}/>,
   },
   {
     name: "Descripcion",
     index: "documento",
-    input: <FloatInput label="Descripción" placeholder="Descripción" />,
+    input: <FloatInput label={t("tiposcargos.search.input2")} placeholder={t("tiposcargos.search.input2")} />,
   },
   {
     name: "Todos",
     index: "producto",
-    input: <FloatInput label="Todos" placeholder="Todos" />,
+    input: <FloatInput label={t("tiposcargos.search.input3")} placeholder={t("tiposcargos.search.input3")} />,
   },
   {
     name: "Debito",
     index: "cuenta",
-    input: <FloatInput label="Débito" placeholder="Débito" />,
+    input: <FloatInput label={t("tiposcargos.search.input4")} placeholder={t("tiposcargos.search.input4")}/>,
   },
   {
     name: "Grupo Transaccion",
     index: "cuentaexterna",
-    input: <FloatInput label="Grupo Transacción" placeholder="Grupo Transacción"/>,
+    input: <FloatInput label={t("tiposcargos.search.input5")}placeholder={t("tiposcargos.search.input5")}/>,
   },
   {
     name: "Comprobante",
     index: "producto",
-    input: <FloatInput label="Comprobante" placeholder="Comprobante" />,
+    input: <FloatInput label={t("tiposcargos.search.input6")} placeholder={t("tiposcargos.search.input6")} />,
   },
   {
     name: "Numero de cuenta",
     index: "cuenta",
-    input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
+    input: <FloatInput label={t("tiposcargos.search.input7")} placeholder={t("tiposcargos.search.input7")} />,
   },
   {
     name: "Adic",
     index: "producto",
-    input: <FloatInput label="Adic" placeholder="Adic" />,
+    input: <FloatInput label={t("tiposcargos.search.input8")} placeholder={t("tiposcargos.search.input8")} />,
   },
   {
     name: "Liq. Socios (LS)",
     index: "cuenta",
-    input: <FloatInput label="Liq. Socios (LS)" placeholder="Liq. Socios (LS)" />,
+    input: <FloatInput label={t("tiposcargos.search.input9")} placeholder={t("tiposcargos.search.input9")} />,
   },
   {
     name: "Cuotas",
     index: "cuenta",
-    input: <FloatInput label="Cuotas" placeholder="Cuotas" />,
+    input: <FloatInput label={t("tiposcargos.search.input10")} placeholder={t("tiposcargos.search.input10")} />,
   },
   {
     index: "moneda",
-    input: <SelectImg showSearch={true} placeholder="Busca tipo de moneda" style={{width: 250}}/>
+    input: <SelectImg showSearch={true} placeholder={t("tiposcargos.search.input11")} style={{width: 250}}/>
   }, 
 
   {
     index: "fecha",
-    input: <DateRangeFilter placeholder="fecha" label="Por fecha" />,
+    input: <DateRangeFilter placeholder={t("tiposcargos.search.input12")} label={t("tiposcargos.search.input12")} />,
   },
-];
-export { dataTiposDeCargos, columnsTiposDeCargos, tiposDeCargosSearch };
+])
+}
+export { dataTiposDeCargos, ColumnsTiposDeCargos, TiposDeCargosSearch };

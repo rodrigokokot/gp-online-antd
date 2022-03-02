@@ -26,6 +26,7 @@
     "rowseparator":"de",
     "selectall":"Todos"
   },
+  "exportar":"Exportar",
   "gestionaprobaciones": {
     "tab1":{
       "tab1":"Novedades por confirmar",
@@ -529,7 +530,6 @@
 
     }
   },
-
   "ctf":{
     "search":{
       "searchtitle":"Búsqueda de archivos CTF",
@@ -570,5 +570,1261 @@
         }
       }
     }
+  },
+  "autorizaciones":{
+    "button":"Nueva Autorización",
+    "search":{
+      "searchtitle":"Búsqueda de autorizaciones",
+      "input1":"N° de Tarjeta",
+      "input2":"N° de Documento",
+      "input3":"Producto",
+      "input4":"N° de Cuenta",
+      "input5":"Cuenta Adicional",
+      "input6":"N° de Comercio",
+      "input7":"Modo Ingreso",
+      "input8":"Ubicación",
+      "input9":"Origen",
+      "input10":"Relacionada",
+      "input11":"Motivo de Rechazo",
+      "input12":"Estado",
+      "input13":"Cuotas",
+      "input14":"Fecha Rel. Desde",
+      "input15":"Fecha Rel. Hasta",
+      "input16":"Fecha Desde",
+      "input17":"Hora Desde",
+      "input18":"Fecha Hasta",
+      "input19":"Hora Hasta",   
+      "input20":"dd/mm/yyyy"
+    },
+    "table":{
+      "column1":"Cuenta",
+      "column2":"Adic.",
+      "column3":"Tarjeta",
+      "column4":"Fecha",
+      "column5":"Importe",
+      "column6":"Moneda",
+      "column7":"Plan",
+      "column8":"Cuotas",
+      "column9":"Cod/Auto",
+      "column10":"Comercio",
+      "column11":"Estado",
+      "column12":"ver detalle"
+    },
+    "new":{
+      "title1":"Datos de Tarjeta",
+      "title2":"Autorización",      
+      "outline":{
+        "tarjeta":{
+          "label":"N° de Tarjeta*",
+          "error":"Ingrese solo numeros"
+        },
+        "nombre": {
+          "label": "Nombre*",
+          "error": "Ingrese nombre"
+        },
+        "apellido": {
+          "label": "Apellido*",
+          "error": "Ingrese apellido"
+        },
+        "documento": {
+          "label": "N° de Documento*",
+          "error": "Ingrese documento"
+        },
+        "marca":{
+          "label": "Marca*",
+          "error": "Ingrese marca"
+        },
+        "emisor":{
+          "label":"Emisor*",
+          "error":"Ingrese número de emisor"
+        },
+        "producto":{
+          "label":"Tipo de Producto*",
+          "error":"Ingrese tipo de producto"
+        },
+        "forigen":{
+          "label":"Fecha de Origen*",
+          "error":"Ingrese fecha de origen"
+        },
+        "importe":{
+          "label":"Importe*",
+          "error":"Ingrese importe"
+        },
+        "moneda":{
+          "label":"Moneda*",
+          "error":"Ingrese moneda"
+        },
+        "proceso":{
+          "label":"Fecha de Proceso*",
+          "error":"Ingrese fecha de proceso"
+        },
+        "plan":{
+          "label":"Plan*",
+          "error":"Ingrese plan"
+        },
+        "relacion":{
+          "label":"Relación*",
+          "error":"Ingrese relacion"
+        },
+        "cuotas":{
+          "label":"Cuotas*",
+          "error":"Ingrese cuotas"
+        },
+        "origen":{
+          "label":"Origen",
+          "error":"Enter origen"
+        },
+        "autorizacion":{
+          "label":"Authorización",
+          "error": "Ingrese código de autorización" 
+        },
+        "entrada":{
+          "label":"Modo de entrada*",
+          "error":"Ingrese modo de entrada"
+        },
+        "comercio":{
+          "label":"Comercio",
+          "error":"Ingrese comercio"
+        },
+        "terminal":{
+          "label":"Terminal*",
+          "error":"Ingrese terminal"
+        }
+      },
+      "typedoc":{
+        "label":"Tipo de Documento*",
+        "error":"Ingrese tipo de documento",
+        "value1":"DNI",
+        "value2":"CUIT",
+        "value3":"LIBRETA CIVICA",
+        "value4":"LIBRETA DE ENROLAMIENTO",
+        "value5":"CUIL",
+        "value6":"PASAPORTE",
+        "value7":"CI"
+      }, 
+      "estado":{
+        "label":"Estado",
+        "error":"Ingrese un estado",
+        "radio1":"Aprobada",
+        "radio2":"Rechazada",
+        "radio3":"Anulada",
+        "radio4":"Sin Autorización Emisor",
+        "radio5":"Rechazada por Emisor",
+        "radio6":"Anulada por Falta de Presentación"
+      },
+      "edit":{
+        "save":"Guardar cambios",
+        "confirm":"¿Realizar cambios en la autorización?",
+        "btnconfirm":"Si, guardar"
+      } 
+
+    },
+    "view":{
+      "tab1":{
+        "tab1":"Datos Autorización",
+        "greytext1":"ID Autorización",
+        "greytext2":"Fecha Autorización",
+        "greytext3":"Autorización Emisor",
+        "greytext4":"Movimiento",
+        "greytext5":"Estado",
+        "greytext6":"Moneda",
+        "greytext7":"Importe",
+        "greytext8":"Fecha de presentación",
+        "greytext9":"Moneda",
+        "greytext10":"Importe origen",
+        "greytext11":"Cuotas",
+        "greytext12":"Respuesta",
+        "greytext13":"Origen",
+        "greytext14":"País Comercio",
+        "greytext15":"País Emisor",
+        "greytext16":"Cotizacion",
+        "greytext17":"Fecha de anulación",
+        "greytext18":"Usuario anulación" 
+      },
+      "tab2":{
+        "tab2":"Datos Socio",
+        "greytext1":"Nombre",
+        "greytext2":"Apellido",
+        "greytext3":"N° de documento",
+        "greytext4":"N° de cuenta",
+        "greytext5":"Adicionales",
+        "greytext6":"Producto",
+        "greytext7":"N° de tarjeta"
+      },
+      "tab3":{
+        "tab3":"Datos Comercio",
+        "greytext1":"Comercio descripción",
+        "greytext2":"N° Comercio",
+        "greytext3":"Modo ingreso",
+        "greytext4":"Fecha informada",
+        "greytext5":"MCC",
+        "greytext6":"TCC",
+        "greytext7":"Cupon",
+        "greytext8":"Terminal"
+      }
+    } 
+
+  },
+  "consumos":{
+    "search":{
+      "searchtitle":"Búsqueda de consumos",
+      "input1":"ID de Consumo",
+      "input2":"Nombre de Comercio",
+      "input3":"N° de Documento",
+      "input4":"N° de Tarjeta",
+      "input5":"Grupo Transacción",
+      "input6":"Comprobante",
+      "input7":"N° de Cuenta",
+      "input8":"Adic",
+      "input9":"Liq. Socio",
+      "input10":"Cuotas", 
+      "input11":"Por Fecha"
+    },
+    "table":{
+        "column1":"ID Consumo",
+        "column2":"Fecha/Hora",
+        "column3":"Nombre Comercio",
+        "column4":"Movimiento ",
+        "column5":"DNI",
+        "column6":"N° de Cuenta",
+        "column7":"Cuota",
+        "column8":"Importe",
+        "column9":"ver detalle"
+    },
+    "tab1":{
+      "tab1":"Datos Consumo",
+      "text":{
+        "greytext1":"Movimientos",
+        "greytext2":"Grupo de Transacción",
+        "greytext3":"N° de Tarjeta",
+        "greytext4":"Id Consumo",
+        "greytext5":"Autorización Emisor",
+        "greytext6":"Comprobante",
+        "greytext7":"Fecha/Hora" ,
+        "greytext8":"Cuotas" ,
+        "greytext9":"Moneda Origen" ,
+        "greytext10":"Importe Sin Descuento" ,
+        "greytext11":"Terminal",
+        "greytext12":"Lote",
+        "greytext13":"Cauida Cuotas",
+        "greytext14":"Importe Total",
+        "greytext15":"Arancel",
+        "greytext16":"Importe Arancel",
+        "greytext17":"Fecha Cierre",
+        "greytext18":"Fecha Pago",
+        "greytext19":"Fecha Presentación",
+        "greytext20":"Comercio"            
+      },
+      "subtitle":"Detalle de Cuotas",
+      "div":{
+        "h1":"Cuota",
+        "h2":"Importe",
+        "h3":"Arancel",
+        "h4":"Importe Arancel",
+        "h5":"Fecha Cierre",
+        "h6":"Fecha Pago",
+        "h7":"Liq. Comercios"
+      }
+
+    },
+    "tab2":{
+      "tab2":"Datos Socio",
+      "text":{
+        "greytext1":"Nombre",
+        "greytext2":"Apellido",
+        "greytext3":"N° de Documento",
+        "greytext4":"N° de Cuenta",
+        "greytext5":"Adicional",
+        "greytext6":"N° de Tarjeta",
+        "greytext7":"Producto"         
+      }
+    },
+    "tab3":{
+      "tab3":"Datos Adicionales",
+      "text":{
+        "greytext1":"Fecha IPM",
+        "greytext2":"Producto",
+        "greytext3":"MCC",
+        "greytext4":"ICA Emisor",
+        "greytext5":"ICA Adquiriente",
+        "greytext6":"Tasa Conversión"           
+      }
+    },
+    "tab4":{
+      "tab4":"Datos Autorización",
+      "text":{
+        "greytext1":"ID Autorización",
+        "greytext2":"Fecha Autorización",
+        "greytext3":"Autorización Emisor",
+        "greytext4":"Movimiento",
+        "greytext5":"Estado",
+        "greytext6":"Moneda",
+        "greytext7":"Importe" ,
+        "greytext8":"Fecha de Presentación" ,
+        "greytext9":"Moneda" ,
+        "greytext10":"Importe Origen" ,
+        "greytext11":"Cuotas",
+        "greytext12":"Respuesta",
+        "greytext13":"Origen",
+        "greytext14":"País Comercio",
+        "greytext15":"País Emisor",
+        "greytext16":"Cotización",
+        "greytext17":"Fecha de Anulación",
+        "greytext18":"Usuario Anulación"           
+      }
+    },
+    "tab5":{
+      "tab5":"Datos Comercio",
+      "text":{
+        "greytext1":"Movimientos",
+        "greytext2":"Grupo de Comercio",
+        "greytext3":"Modo Ingreso",
+        "greytext4":"Fecha Informada",
+        "greytext5":"MCC",
+        "greytext6":"TCC",
+        "greytext7":"Cupon" ,
+        "greytext8":"Terminal"          
+      }
+    } 
+  },
+  "estado":{
+    "search":{
+      "searchtitle":"Búsqueda de Productos",
+      "input1":"Emisor",
+      "input2":"Marca",
+      "input3":"Producto",
+      "input4":"N° de Tarjeta",
+      "input5":"N° Cuenta Relacionada",
+      "input6":"Apellidos",
+      "input7":"Nombres",
+      "input8":"Tipo de Documento",
+      "input9":"N° de Documento",
+      "input10":"Razón social",
+      "input11":"N° Empresa"
+    },
+    "table":{
+      "column1":"Emisor-Sucursal",
+      "column2":"ID",
+      "column3":"Cliente",
+      "column4":"Documento",
+      "column5":"Marca",
+      "column6":"Cuenta",
+      "column7":"Producto",
+      "column8":"Adic.",
+      "column9":"Tarjeta",
+      "column10":"ver detalle"
+    },
+    "view":{
+      "tab1":{
+        "tab1":"Información de la Cuenta",
+        "greytext1":"N° de Cuenta",
+        "greytext2":"N° de Cta. Original",
+        "greytext3":"Fecha de Alta",
+        "greytext4":"Tipo de Cuenta",
+        "greytext5":"Marca",
+        "greytext6":"Emisor",
+        "greytext7":"Sucursal"
+      },
+      "tab2":{
+        "tab2":"Información del Producto",
+        "greytext1":"Producto",
+        "greytext2":"Tarjeta",
+        "greytext3":"Fecha de Alta",
+        "greytext4":"Estado"
+      },
+      "tab3":{
+        "tab3":"Información del Titular",
+        "greytext1":"Documento",
+        "greytext2":"Apellidos",
+        "greytext3":"Nombres"
+      },
+      "tab4":{
+        "tab4":"Cambio de Estado de Tarjeta",
+        "greytext1":"Estado Tarjeta Original",
+        "tarjeta":{
+          "label":"Nuevo Estado de Tarjeta*",
+          "error":"Ingrese nuevo estado de tarjeta"
+        },
+        "switch":{
+          "enabled":"Reimprimir",
+          "disabled":"No Reimprimir"
+        },
+        "comentarios":"Comentarios",
+        "edit":{
+          "save":"Guardar cambios",
+          "confirm":"¿Realizar cambios en el estado de la tarjeta?",
+          "btnconfirm":"Si, guardar"
+        } 
+        
+      }
+    }
+    
+  },
+  "tiposcargos":{
+    "button":"Nuevo Tipo de Cargo",
+    "search":{
+      "searchtitle":"Búsqueda de tipos de Cargos",
+      "input1":"Código",
+      "input2":"Descripción",
+      "input3":"Todos",
+      "input4":"Débito",
+      "input5":"Grupo Transacción",
+      "input6":"Comprobante",
+      "input7":"N° de Cuenta",
+      "input8":"Adic",
+      "input9":"Liq. Socio",
+      "input10":"Cuotas", 
+      "input11":"Busca Tipo de Moneda", 
+      "input12":"Por Fecha"
+    },
+    "table":{
+        "column1":"Código",
+        "column2":"Déscripción",
+        "column3":"Tipos Cargo",
+        "column4":"Aplica IVA",
+        "column5":"Débito/Crédito",
+        "column6":"Moneda",
+        "column7":"Estado", 
+        "column8":"Editar"
+    },
+    "new":{ 
+      "title1":"Datos Principales", 
+      "outline":{
+        "codigo": {
+          "label": "Código*",
+          "error": "Ingrese código"
+        },
+        "tipocargo": {
+          "label": "Tipo Cargo*",
+          "error": "Ingrese tipo cargo"
+        },
+        "descripcion": {
+          "label": "Descripción" 
+        },
+        "moneda": {
+          "label": "Busca tipo de moneda*",
+          "error": "Ingrese tipo"
+        } 
+      },
+      "aplicaiva":{
+        "label":"Aplica IVA*",
+        "error":"Ingrese como aplica",
+        "value1":"IVA General",
+        "value2":"IVA Reducido",
+        "value3":"No Aplica" 
+      },
+      "typetarjeta":{
+        "error":"Ingrese tipo de tarjeta", 
+        "value1":"Débito",
+        "value2":"Crédito" 
+      },
+      "moneda":{
+        "label":"Estado", 
+        "value1":"Dolar", 
+        "value2":"Moneda Local" 
+      },
+      "edit":{
+        "save":"Confirmar",
+        "confirm":"¿Confirma creación de nuevo tipo de cargo?",
+        "btnconfirm":"Si, crear"
+      } 
+    },
+    "edit":{ 
+      "title1":"Datos Principales", 
+      "outline":{
+        "codigo": {
+          "label": "Código*",
+          "error": "Ingrese código"
+        },
+        "descripcion": {
+          "label": "Descripción" 
+        },
+        "tipocargo": {
+          "label": "Tipo Cargo*",
+          "error": "Ingrese tipo cargo"
+        }, 
+        "anulacion": {
+          "label": "Anulación de Cargo*",
+          "error": "Ingrese anulación"
+        },
+        "moneda": {
+          "label": "Busca tipo de moneda*",
+          "error": "Ingrese tipo"
+        },
+        "cuota": {
+          "label": "Máx. Cuotas*",
+          "error": "Ingrese cantidad de cuotas"
+        }  
+      },
+      "aplicaiva":{
+        "label":"Aplica IVA*",
+        "error":"Ingrese como aplica",
+        "value1":"IVA General",
+        "value2":"IVA Reducido",
+        "value3":"No Aplica" 
+      },
+      "typetarjeta":{
+        "label":"Débito/Crédito",
+        "error":"Ingrese tipo de tarjeta", 
+        "value1":"Débito",
+        "value2":"Crédito" 
+      },
+      "moneda":{
+        "label":"Moneda", 
+        "value1":"Dolar", 
+        "value2":"Moneda Local" 
+      },
+      "estado":{
+        "label":"Estado*", 
+        "error":"Ingrese estado",
+        "value1":"Habilitado", 
+        "value2":"Inhabilitado" 
+      },
+      "cargo":{ 
+        "label":"¿Afecta Cargos?" 
+      },
+      "edit":{
+        "save":"Guardar cambios",
+        "confirm":"¿Realizar cambios en el tipo de cargo?",
+        "btnconfirm":"Si, guardar"
+      } 
+    }
+  },
+  "cargosproductos":{
+    "button":"Nuevo Cargo",
+    "search":{
+      "searchtitle":"Búsqueda de tipos de Cargos a Socios por producto",
+      "input1":"Código",
+      "input2":"Descripción",
+      "input3":"Todos",
+      "input4":"Débito",
+      "input5":"Grupo Transacción",
+      "input6":"Comprobante",
+      "input7":"N° de Cuenta",
+      "input8":"Adic.",
+      "input9":"Liq. Socios (LS)",
+      "input10":"Cuotas",
+      "input11":"Producto",
+      "input12":"Busca Tipo de Moneda"
+    },
+    "table":{
+      "column1":"Código",
+      "column2":"Descripción",
+      "column3":"Tipos Cargo",
+      "column4":"Aplica IVA",
+      "column5":"Débito/Crédito",
+      "column6":"Moneda",
+      "column7":"Estado",
+      "column8":"Editar"
+    },
+    "new":{
+      "title1":"Main Data",
+      "codigo":{
+        "label":"Code*",
+        "error":"Enter code"
+      },
+      "descripcion":{
+        "label":"Description*",
+        "error":"Enter description"
+      },
+      "todos":{
+        "label":"All",
+        "error":"Enter all"
+      }
+    },
+    "edit":{
+      "title1":"Main Data",
+      "codigo":{
+        "label":"Code*",
+        "error":"Enter code"
+      },
+      "descripcion":{
+        "label":"Description*",
+        "error":"Enter description"
+      },
+      "todos":{
+        "label":"All",
+        "error":"Enter all"
+      }
+    }
+  },
+  "afinidad":{
+    "button":"Nuevo Cargo",
+    "search":{
+      "searchtitle":"Búsqueda de tipos de Cargos a Socios por producto y grupo de afinidad",
+      "input1":"Código",
+      "input2":"Descripción",
+      "input3":"Todos",
+      "input4":"Débito",
+      "input5":"Grupo Transacción",
+      "input6":"Comprobante",
+      "input7":"N° de Cuenta",
+      "input8":"Adic",
+      "input9":"Liq. Socio",
+      "input10":"Cuotas",
+      "input11":"Producto",
+      "input12":"Grupo Afinidad",  
+      "input13":"Busca Tipo de Moneda",
+      "input14":"Fecha desde" ,
+      "input15":"Hora desde" ,
+      "input16":"Fecha hasta" ,
+      "input17":"Hora hasta",
+      "input18":"Por Fecha"  
+    },
+    "table":{
+        "column1":"Producto",
+        "column2":"Grupo de Afinidad",
+        "column3":"Concepto",
+        "column4":"Precio",
+        "column5":"Aplica IVA",
+        "column6":"Porcentaje Cargo",
+        "column7":"Vigencia Desde", 
+        "column8":"Vigencia Hasta", 
+        "column9":"Editar"
+    },
+    "new":{
+      "title":"",
+      "h":{
+        "h1":""
+      },
+      "outline":{
+       
+      },
+      "edit":{
+        "save":"Crear cargo",
+        "confirm":"¿Estás seguro de crear el cargo?",
+        "btnconfirm":"Si, crear"
+      } 
+    },
+    "edit":{
+      "title":"Datos Principales",
+      "h":{
+        "h1":"Concepto por Cargo",
+        "h2":"Cargo por Renovación",
+        "h3":"Precio*",
+        "h4":"Porcentaje Cargo",
+        "h5":"Fecha desde*"
+      },
+      "outline":{
+        "precio": { 
+          "error": "Ingrese precio"
+        },  
+        "fecha": {
+          "label": "Elija Fecha*",
+          "error": "Ingrese fecha desde"
+        } 
+      },
+      "edit":{
+        "save":"Guardar cambios",
+        "confirm":"¿Realizar cambios en el cargo?",
+        "btnconfirm":"Si, Guardar"
+      } 
+    }
+  },
+  "movimiento":{
+    "button":"Nuevo Cargo",
+    "search":{
+      "searchtitle":"Búsqueda de tipos de Cargos a Socios por producto y grupo de movimiento",
+      "input1":"Código",
+      "input2":"Descripción",
+      "input3":"Todos",
+      "input4":"Débito",
+      "input5":"Grupo Transacción",
+      "input6":"Comprobante",
+      "input7":"N° de Cuenta",
+      "input8":"Adic",
+      "input9":"Liq. Socio",
+      "input10":"Cuotas",
+      "input11":"Producto",
+      "input12":"Grupo Afinidad",
+      "input13":"Movimiento",   
+      "input14":"Busca Tipo de Moneda",
+      "input15":"Fecha desde" ,
+      "input16":"Hora desde" ,
+      "input17":"Fecha hasta" ,
+      "input18":"Hora hasta",
+      "input19":"Por Fecha"  
+    },
+    "table":{
+        "column1":"Producto",
+        "column2":"Movimiento",
+        "column3":"Locación",
+        "column4":"Evento",
+        "column5":"Precio",
+        "column6":"Aplica IVA",
+        "column7":"%", 
+        "column8":"Concepto", 
+        "column9":"Fecha desde", 
+        "column10":"Fecha hasta", 
+        "column11":"Editar"
+    },
+    "new":{
+      "title":"",
+      "h":{
+        "h1":""
+      },
+      "outline":{
+       
+      },
+      "edit":{
+        "save":"Crear cargo",
+        "confirm":"¿Estás seguro de crear el cargo?",
+        "btnconfirm":"Si, crear"
+      } 
+    },
+    "edit":{
+      "title":"Datos Principales",
+      "h":{
+        "h1":"Concepto por Cargo",
+        "h2":"Cargo por Renovación",
+        "h3":"Precio*",
+        "h4":"Porcentaje Cargo",
+        "h5":"Fecha desde*"
+      },
+      "outline":{
+        "producto": { 
+          "placeh":"Busca por tipo de producto*",
+          "label":"Producto*",
+          "error": "Ingrese producto"
+        },   
+        "codigomov": { 
+          "placeh":"Ingrese Código de movimiento*",
+          "label":"Código de movimiento*",
+          "error": "Ingrese codigo"
+        },   
+        "typered": { 
+          "placeh":"Busca Tipo de Red*",
+          "label":"Tipo de Red*",
+          "error": "Ingrese tipo de red"
+        },   
+        "fecha": {  
+          "label":"Fecha Desde*",
+          "error": "Ingrese fecha desde"
+        },   
+        "porcentaje": { 
+          "placeh":"Ingresa Porcentaje Cargo*",
+          "label":"Ingresa Porcentaje Cargo*",
+          "error": "Ingrese porcentaje" 
+        },   
+        "precio": { 
+          "placeh":"Ingresá precio*",
+          "label":"Ingresá precio*",
+          "error": "Ingrese precio"
+        },   
+        "moneda": { 
+          "placeh":"Busca Tipo de Moneda*" 
+        },   
+        "minimo": { 
+          "placeh":"Mínimo",
+          "label":"Mínimo"
+        },   
+        "maximo": { 
+          "placeh":"Máximo",
+          "label":"Máximo" 
+        },   
+        "cargo": { 
+          "placeh":"Busca concepto por cargo",
+          "label":"Concepto por cargo" 
+        }
+      },   
+      "locacion": {  "label":"Locación",
+        "value1":"Local",
+        "value2":"Exterior",
+        "error": "Ingrese locación"
+      },     
+      "evento": {  "label":"Evento",
+        "value1":"Autorización",
+        "value2":"Presentación",
+        "value3":"No Aplica",
+        "error": "Ingrese locación"
+      },      
+      "moneda": {  "label":"Moneda",
+        "value1":"DOLAR U$S",
+        "value2":"EUROS",
+        "value3":"Pesos AR" 
+      }, 
+      "edit":{
+        "save":"Confirmar",
+        "confirm":"¿Realizar cambios en el cargo?",
+        "btnconfirm":"Si, Guardar"
+      } 
+    }
+  },
+  "liquidacion":{
+    "search":{
+      "searchtitle":"Consulta de movimientos históricos",
+      "input1":"Marca",
+      "input2":"Emisor",
+      "input3":"Apellido/Raz. Social",
+      "input4":"2do Apellido",
+      "input5":"Tipo de Producto",
+      "input6":"Tipo de Documento",
+      "input7":"N° de Documento",
+      "input8":"Cuentas",
+      "input9":"Periodo",
+      "input10":"Mensual"
+    },
+    "table":{
+        "column1":"Fecha",
+        "column2":"Tarjeta",
+        "column3":"Descripción",
+        "column4":"Moneda ",
+        "column5":"Importe",
+        "column6":"Comprobante",
+        "column7":"Producto"
+    },
+      "title1":"Pesos",
+      "text1":{
+        "greytext1":"Salario Anterior",
+        "greytext2":"Total Débitos",
+        "greytext3":"Total Créditos",
+        "greytext4":"Saldo Actual",
+        "greytext5":"Pago Min. Ant.",
+        "greytext6":"Pago Min. Impago",
+        "greytext7":"Pago Min. Actual",
+        "greytext8":"Saldo Plan Flexible"            
+      }, 
+    "title2":"Dolares",
+      "text2":{
+        "greytext1":"Salario Anterior",
+        "greytext2":"Total Débitos",
+        "greytext3":"Total Créditos",
+        "greytext4":"Saldo Actual",
+        "greytext5":"Pago Min. Ant.",
+        "greytext6":"Pago Min. Impago",
+        "greytext7":"Pago Min. Actual"        
+      },
+      "title3":"Periodo no liquidado",
+      "text3":{
+        "greytext1":"Fecha de Liquidación",
+        "greytext2":"Puntos del Periodo",
+        "greytext3":"Fecha de Vencimiento",
+        "greytext4":"Puntos Acumulados"           
+      } 
+  },
+  "boletin":{
+    "search":{
+      "searchtitle":"Búsqueda de Productos",
+      "input1":"Emisor",
+      "input2":"Marca",
+      "input3":"Producto",
+      "input4":"N° de Cuenta",
+      "input5":"N° de Cuenta Original",
+      "input6":"N° Cuenta Relacionada",
+      "input7":"Apellidos",
+      "input8":"Nombres",
+      "input9":"Tipo de Documento",
+      "input10":"N° de Documento",
+      "input11":"Razón social",
+      "input12":"N° Empresa"
+    },
+    "table":{
+      "column1":"Emisor-Sucursal",
+      "column2":"ID",
+      "column3":"Cliente",
+      "column4":"Documento",
+      "column5":"Marca",
+      "column6":"Cuenta",
+      "column7":"Producto",
+      "column8":"Adic.",
+      "column9":"Tarjeta",
+      "column10":"ver detalle"
+    },
+    "view":{
+      "tab1":{
+        "tab1":"Información de la Cuenta",
+        "greytext1":"N° de Cuenta",
+        "greytext2":"N° de Cta. Original",
+        "greytext3":"Fecha de Alta",
+        "greytext4":"Tipo de Cuenta",
+        "greytext5":"Marca",
+        "greytext6":"Emisor",
+        "greytext7":"Sucursal"
+      },
+      "tab2":{
+        "tab2":"Información del Producto",
+        "greytext1":"Producto",
+        "greytext2":"Tarjeta",
+        "greytext3":"Fecha de Alta",
+        "greytext4":"Estado"
+      },
+      "tab3":{
+        "tab3":"Información del Titular",
+        "greytext1":"Documento",
+        "greytext2":"Apellidos",
+        "greytext3":"Nombres",
+        "greytext4":"Datos de la Publicación",
+        "input":"Motivo de la Publicación"
+      },
+      "tab4":{
+        "tab4":"Datos Stand- In",
+        "greytext1":"Fecha Vigencia S.I.",
+        "greytext2":"Datos de EWBF",
+        "regiones":{
+          "r1":"Región 0",
+          "r2":"Región 1",
+          "r3":"Región A",
+          "r4":"Región B",
+          "r5":"Región C",
+          "r6":"Región D",
+          "r7":"Región E" 
+        },
+        "fechas":{
+          "f1":"Fecha Vigencia",
+          "f2":"Fecha Vigencia",
+          "f3":"Fecha Vigencia",
+          "f4":"Fecha Vigencia",
+          "f5":"Fecha Vigencia",
+          "f6":"Fecha Vigencia",
+          "f7":"Fecha Vigencia"
+        }  
+      }
+    }
+    
+  },
+  "gestioncuenta": {
+    "button":"Nuevo Cuenta",
+     "search":{
+        "searchtitle":"Búsqueda de gestión de cuentas",
+        "input1":"N° de Tarjeta",
+        "input2":"N° de Documento",
+        "input3":"N° de Cuenta",
+        "input4":"N° de Cuenta Externa",
+        "input5":"Producto" ,
+        "input6":"Grupo de Afinidad" ,
+        "input7":"Nombre" ,
+        "input8":"Fecha Rel. Hasta" ,
+        "input9":"Cuotas"   
+      },
+      "table":{
+        "column1":"N° de cuenta",
+        "column2":"Producto",
+        "column3":"Grupo de afinidad",
+        "column4":"Cuenta externa",
+        "column5":"Nombre",
+        "column6":"Documento",
+        "column7":"N° tarjeta",
+        "column8":"Estado",
+        "column9":"Editar" 
+      },
+      "new":{ 
+          "title1":"Datos Principales",
+          "title2":"Titular",
+          "title3":"Domicilio Legal",
+          "title4":"Domicilio Correspondencia",
+          "title5":"Domicilio Laboral",
+          "outline":{
+            "sucursal": {
+              "label": "Sucursal*",
+              "error": "Ingrese sucursal"
+            },
+            "gafinidad": {
+              "label": "Grupo de Afinidad" 
+            },
+            "typeproducto": {
+              "label": "Tipo de Producto*",
+              "error": "Ingrese tipo de producto"
+            },
+            "producto": {
+              "label": "Producto*",
+              "error": "Ingrese producto"
+            }, 
+            "posicion": {
+              "label": "Posición Impositiva*",
+              "error": "Ingrese posición"
+            }, 
+            "cuentaext": {
+              "label": "Cuenta Externa"
+            }, 
+            "entregat": {
+              "label": "Entrega de Tarjeta*",
+              "error": "Ingrese entrega" 
+            }, 
+            "estado": {
+              "label": "Estado*",
+              "error": "Ingrese estado"
+            }, 
+            "documento": {
+              "label": "N° de Documento*",
+              "error": "Ingrese documento"
+            }  , 
+            "nombre": {
+              "label": "Nombre*",
+              "error": "Ingrese nombre"
+            }  , 
+            "apellido": {
+              "label": "Apellido*",
+              "error": "Ingrese apellido"
+            }  , 
+            "sexo": {
+              "label": "Sexo" 
+            }  , 
+            "estadocivil": {
+              "label": "Estado Civil" 
+            }  , 
+            "fnacimiento": {
+              "label": "Fecha de Nacimiento*",
+              "error": "Ingrese fecha de nacimiento"
+            } , 
+            "pais": {
+              "label": "País de Nacimiento*",
+              "error": "Ingrese país"
+            } , 
+            "email": {
+              "label": "E-Mail*",
+              "error": "Ingrese email"
+            } , 
+            "codigotrib": {
+              "label": "Código Tribtario*",
+              "error": "Ingrese código"
+            } , 
+            "nombremb": {
+              "label": "Nombre Embozado*",
+              "error": "Ingrese nombre embozado"
+            } , 
+            "calle": {
+              "label": "Calle*",
+              "error": "Ingrese calle"
+            } , 
+            "numero": {
+              "label": "Número*",
+              "error": "Ingrese numero"
+            } , 
+            "piso": {
+              "label": "Piso" 
+            } , 
+            "dpto": {
+              "label": "Dpto" 
+            } , 
+            "cdpostal": {
+              "label": "Código Postal*",
+              "error": "Ingrese código postal"
+            } , 
+            "entrecalles": {
+              "label": "Entre Calles"
+            } , 
+            "barrio": {
+              "label": "Barrio"
+            } , 
+            "localidad": {
+              "label": "Localidad*",
+              "error": "Ingrese localidad"
+            } , 
+            "provincia": {
+              "label": "Provincia*",
+              "error": "Ingrese provincia"
+            } , 
+            "telefono": {
+              "label": "Teléfono*",
+              "error": "Ingrese teléfono"
+            } , 
+            "referencia": {
+              "label": "Referencia"
+            } 
+          },
+          "check1":{
+            "title1":"Por defecto, el domicilio de correspondencia es el mismo que el domicilio legal",
+            "title2":"Ingresar un domicilio de correspondencia diferente"
+          },
+          "typedoc":{
+            "label":"Tipo de Documento",
+            "error":"Ingrese tipo de documento",
+            "value1":"DNI",
+            "value2":"CUIT",
+            "value3":"LIBRETA CIVICA",
+            "value4":"LIBRETA DE ENROLAMIENTO",
+            "value5":"CUIL",
+            "value6":"PASAPORTE",
+            "value7":"CI"
+          },
+          "edit":{
+            "save":"Crear cuenta",
+            "confirm":"¿Confirmar la creación de la cuenta?",
+            "btnconfirm":"Si, crear"
+          } 
+      }, 
+      "edit":{ 
+        "title1":"Datos Principales",
+        "title2":"Titular",
+        "title3":"Domicilio Legal",
+        "title4":"Domicilio Correspondencia",
+        "title5":"Domicilio Laboral",
+        "outline":{
+          "sucursal": {
+            "label": "Sucursal*",
+            "error": "Ingrese sucursal"
+          },
+          "gafinidad": {
+            "label": "Grupo de Afinidad" 
+          },
+          "typeproducto": {
+            "label": "Tipo de Producto*",
+            "error": "Ingrese tipo de producto"
+          },
+          "producto": {
+            "label": "Producto*",
+            "error": "Ingrese producto"
+          }, 
+          "posicion": {
+            "label": "Posición Impositiva*",
+            "error": "Ingrese posición"
+          }, 
+          "cuentaext": {
+            "label": "Cuenta Externa"
+          }, 
+          "entregat": {
+            "label": "Entrega de Tarjeta*",
+            "error": "Ingrese entrega" 
+          }, 
+          "estado": {
+            "label": "Estado*",
+            "error": "Ingrese estado"
+          }, 
+          "documento": {
+            "label": "N° de Documento*",
+            "error": "Ingrese documento"
+          }  , 
+          "nombre": {
+            "label": "Nombre*",
+            "error": "Ingrese nombre"
+          }  , 
+          "apellido": {
+            "label": "Apellido*",
+            "error": "Ingrese apellido"
+          }  , 
+          "sexo": {
+            "label": "Sexo" 
+          }  , 
+          "estadocivil": {
+            "label": "Estado Civil" 
+          }  , 
+          "fnacimiento": {
+            "label": "Fecha de Nacimiento*",
+            "error": "Ingrese fecha de nacimiento"
+          } , 
+          "pais": {
+            "label": "País de Nacimiento*",
+            "error": "Ingrese país"
+          } , 
+          "email": {
+            "label": "E-Mail*",
+            "error": "Ingrese email"
+          } , 
+          "codigotrib": {
+            "label": "Código Tribtario*",
+            "error": "Ingrese código"
+          } , 
+          "nombremb": {
+            "label": "Nombre Embozado*",
+            "error": "Ingrese nombre embozado"
+          } , 
+          "calle": {
+            "label": "Calle*",
+            "error": "Ingrese calle"
+          } , 
+          "numero": {
+            "label": "Número*",
+            "error": "Ingrese numero"
+          } , 
+          "piso": {
+            "label": "Piso" 
+          } , 
+          "dpto": {
+            "label": "Dpto" 
+          } , 
+          "cdpostal": {
+            "label": "Código Postal*",
+            "error": "Ingrese código postal"
+          } , 
+          "entrecalles": {
+            "label": "Entre Calles"
+          } , 
+          "barrio": {
+            "label": "Barrio"
+          } , 
+          "localidad": {
+            "label": "Localidad*",
+            "error": "Ingrese localidad"
+          } , 
+          "provincia": {
+            "label": "Provincia*",
+            "error": "Ingrese provincia"
+          } , 
+          "telefono": {
+            "label": "Teléfono*",
+            "error": "Ingrese teléfono"
+          } , 
+          "referencia": {
+            "label": "Referencia"
+          } 
+        },
+        "check1":{
+          "title1":"Por defecto, el domicilio de correspondencia es el mismo que el domicilio legal",
+          "title2":"Ingresar un domicilio de correspondencia diferente"
+        },
+        "typedoc":{
+          "label":"Tipo de Documento",
+          "error":"Ingrese tipo de documento",
+          "value1":"DNI",
+          "value2":"CUIT",
+          "value3":"LIBRETA CIVICA",
+          "value4":"LIBRETA DE ENROLAMIENTO",
+          "value5":"CUIL",
+          "value6":"PASAPORTE",
+          "value7":"CI"
+        },
+        "edit":{
+          "save":"Crear cuenta",
+          "confirm":"¿Confirmar la creación de la cuenta?",
+          "btnconfirm":"Si, crear"
+        } 
+    } 
+  },
+  "tarjeta":{
+    "search":{
+      "searchtitle":"Búsqueda de Tarjetas",
+      "input1":"N° de Tarjeta",
+      "input2":"N° de Cuenta",
+      "input3":"Adicionales",
+      "input4":"N° de Documento",
+      "input5":"Nombre" 
+    },
+    "table":{
+        "column1":"N° Tarjeta",
+        "column2":"N° Cuenta",
+        "column3":"Producto",
+        "column4":"Grupo de Afinidad",
+        "column5":"Cuenta Externa",
+        "column6":"Nombre",
+        "column7":"N° Documento",
+        "column8":"Estado",
+        "column9":"ver detalle"
+    },
+    "history":{
+        "column1":"Fecha de Cambio",
+        "column2":"Usuario",
+        "column3":"Estado",
+        "button":"Volver"
+    },
+    "view":{
+        "title":"Datos Principales",
+        "link":"Ver History",
+        "text":{
+          "greytext1":"N° de Tarjeta",
+          "greytext2":"Nombre",
+          "greytext3":"Apellido",
+          "greytext4":"Vigencia desde",
+          "greytext5":"Vencimiento",
+          "greytext6":"Nombre Embozado",
+          "greytext7":"Cta/Adic.",
+          "greytext8":"Sucursal"            
+        },
+        "input":{
+          "label":"Estado*",
+          "error":"Ingrese estado"
+        },
+        "check":"Génera reimpresión" 
+    } 
   }
+ 
 }

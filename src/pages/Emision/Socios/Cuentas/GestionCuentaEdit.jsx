@@ -14,6 +14,7 @@ import FloatSelect from "../../../../components/molecules/FloatSelected/index";
 import Edit from "../../../../components/organisms/Edit";
 import { cuentas } from "../../../../services";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const { Title } = Typography;
 
 const GestionCuentaEdit = () => {
@@ -27,6 +28,7 @@ const GestionCuentaEdit = () => {
   const [posicionesImpositivas, setPosicionesImpositivas] = useState([]);
   const [tipoProducto, setTipoProducto] = useState([]);
   const [productos, setProductos] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     getDataCuenta();
@@ -42,7 +44,7 @@ const GestionCuentaEdit = () => {
     // console.log("cuenta:", res[0]);
     setCuenta(res[0]);
   };
-
+ 
   const getPosicionesImpositivas = async () => {
     let arr = [{ value: 2, title: "option 1" }];
     const res = await cuentas.getPosicionesImpositivas();
@@ -251,46 +253,45 @@ const GestionCuentaEdit = () => {
             <Radio.Group onChange={changeValue} value={value}>
               <Row justify="space-between">
                 <Col span={4}>
-                  <Radio style={{ marginTop: 10 }} value={"DNI"}>
-                    DNI
+                  <Radio style={{ marginTop: 10 }} value={t("gestioncuenta.edit.typedoc.value1")}>
+                  {t("gestioncuenta.edit.typedoc.value1")}
                   </Radio>
-                  <Radio style={{ marginTop: 10 }} value={"CUIT"}>
-                    CUIT
+                  <Radio style={{ marginTop: 10 }} value={t("gestioncuenta.edit.typedoc.value2")}>
+                  {t("gestioncuenta.edit.typedoc.value2")}
                   </Radio>
                 </Col>
                 <Col span={8}>
-                  <Radio style={{ marginTop: 10 }} value={"LIBRETA CIVICA"}>
-                    LIBRETA CIVICA
+                  <Radio style={{ marginTop: 10 }} value={t("gestioncuenta.edit.typedoc.value3")}>
+                  {t("gestioncuenta.edit.typedoc.value3")}
                   </Radio>
                   <Radio
                     style={{ marginTop: 10 }}
-                    value={"LIBRETA DE ENROLAMIENTO"}
+                    value={t("gestioncuenta.edit.typedoc.value4")}
                   >
-                    LIBRETA DE ENROLAMIENTO
+                    {t("gestioncuenta.edit.typedoc.value4")}
                   </Radio>
                 </Col>
                 <Col span={4}>
-                  <Radio style={{ marginTop: 10 }} value={"CUIL"}>
-                    CUIL
+                  <Radio style={{ marginTop: 10 }} value={t("gestioncuenta.edit.typedoc.value5")}>
+                  {t("gestionusuarios.edit.typedoc.value5")}
                   </Radio>
-                  <Radio style={{ marginTop: 10 }} value={"PASAPORTE"}>
-                    PASAPORTE
+                  <Radio style={{ marginTop: 10 }} value={t("gestioncuenta.edit.typedoc.value6")}>
+                  {t("gestioncuenta.edit.typedoc.value6")}
                   </Radio>
                 </Col>
                 <Col span={4}>
-                  <Radio style={{ marginTop: 10 }} value={"CI"}>
-                    CI
+                  <Radio style={{ marginTop: 10 }} value={t("gestioncuenta.edit.typedoc.value7")}>
+                    {t("gestioncuenta.edit.typedoc.value7")}
                   </Radio>
                 </Col>
               </Row>
-            </Radio.Group>
+</Radio.Group>
           </Form.Item>
-
-          <Row gutter={48}>
-            <Col span={6}>
-              <Form.Item
-                name="documento"
-                rules={[{ required: true, message: "Ingrese Documento" }]}
+       
+        <Row gutter={48}>
+          <Col span={6}>                           
+              <Form.Item name='documento' 
+                  rules={[{ required: true, message: (t("gestioncuenta.edit.outline.documento.error")) }]}
               >
                 <FloatInput
                   outline
@@ -299,9 +300,9 @@ const GestionCuentaEdit = () => {
                   defaultValue={cuenta?.socio.persona.numeroDocumento}
                 ></FloatInput>
               </Form.Item>
-            </Col>
-          </Row>
-          <Row gutter={48}>
+          </Col>        
+        </Row>
+        <Row gutter={48}>
             <Col span={6}>
               <Form.Item
                 name="nombre"
@@ -597,36 +598,12 @@ const GestionCuentaEdit = () => {
         </Card>
         <br></br>
         <Card>
-          <Typography.Title level={3} style={{ color: "#ab218e" }}>
-            Domicilio Correspondencia{" "}
-          </Typography.Title>
-
-          <Title level={5}>
-            Por defecto, el domicilio de correspondencia es el mismo que el
-            domicilio legal
-          </Title>
-          <Checkbox>
-            <Title level={5}>
-              Ingresar un domicilio de correspondencia diferente
-            </Title>
-          </Checkbox>
-        </Card>
-        <br></br>
-        <Card>
-          <Typography.Title level={3} style={{ color: "#ab218e" }}>
-            Domicilio Laboral{" "}
-          </Typography.Title>
-
-          <Title level={5}>
-            Por defecto, el domicilio de correspondencia es el mismo que el
-            domicilio legal
-          </Title>
-          <Checkbox>
-            <Title level={5}>
-              Ingresar un domicilio de correspondencia diferente
-            </Title>
-          </Checkbox>
-        </Card>
+          <Typography.Title level={3}  style={{ color: '#ab218e' }}>
+              {t("gestioncuenta.edit.title5")}</Typography.Title> 
+              <Title level={5}>{t("gestioncuenta.edit.check1.title1")}</Title>
+            <Checkbox> 
+            <Title level={5}>{t("gestioncuenta.edit.check1.title2")}</Title></Checkbox>
+        </Card>   
         <br></br>
       </>
     );

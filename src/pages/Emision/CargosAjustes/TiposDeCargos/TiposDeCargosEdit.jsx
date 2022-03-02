@@ -4,9 +4,11 @@ import { Form, Typography, Card, Row, Col, Radio, Checkbox } from "antd";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import SelectImg from "../../../../components/organisms/SelectImg.jsx";
 import { SearchOutlined } from '@ant-design/icons';
+import { useTranslation } from "react-i18next";
 const { Title } = Typography;
 
 function TipoDeCargoEdit() {
+  const { t} = useTranslation();
   const [value1, setValue1] = useState("");
   const onChange1 = (e) => {
     setValue1(e.target.value);
@@ -24,113 +26,113 @@ function TipoDeCargoEdit() {
     return (
       <>
         <Card>
-          <Title style={{ color: "#AB218E" }} level={3}>Datos Principales</Title><br></br>
+          <Title style={{ color: "#AB218E" }} level={3}>{t("tiposcargos.edit.title1")}</Title><br></br>
           <Row gutter={24}>
           <Col span={5}>
-            <Form.Item name="codigo" rules={[{ required: true, message: "Ingrese código" }]}>
+            <Form.Item name="codigo" rules={[{ required: true, message: (t("tiposcargos.edit.outline.codigo.error"))}]}>
               <FloatInput
                 outline
                 type="text"
-                label="Código"
-                placeholder="Código"
+                label={t("tiposcargos.edit.outline.codigo.label")}
+                placeholder={t("tiposcargos.edit.outline.codigo.label")}
               ></FloatInput>
             </Form.Item> 
             <Form.Item name="descripcion" >
               <FloatInput
                 outline
                 type="text"
-                label="Descripción"
-                placeholder="Descripción"
+                label={t("tiposcargos.edit.outline.descripcion.label")}
+                placeholder={t("tiposcargos.edit.outline.descripcion.label")}
               ></FloatInput>
             </Form.Item>
-            <Form.Item name="tipoCargo" rules={[{ required: true, message: "Ingrese tipo de cargo" }]}>
+            <Form.Item name="tipoCargo" rules={[{ required: true, message: (t("tiposcargos.edit.outline.tipocargo.error")) }]}>
               <FloatInput
                 outline
                 type="text"
-                label="Tipo de cargo"
-                placeholder="Tipo de cargo"
+                label={t("tiposcargos.edit.outline.tipocargo.label")}
+                placeholder={t("tiposcargos.edit.outline.tipocargo.label")}
               ></FloatInput>
             </Form.Item>
           </Col>
-            <Col span={4}><Form.Item name="anulacion" rules={[{ required: true, message: "Ingrese anulacion" }]}>
+            <Col span={4}><Form.Item name="anulacion" rules={[{ required: true, message: (t("tiposcargos.edit.outline.anulacion.error"))  }]}>
               <FloatInput
                 outline
                 type="text"
-                label="Anulacion de cargo"
-                placeholder="Anulacion de cargo"
+                label={t("tiposcargos.edit.outline.anulacion.label")}
+                placeholder={t("tiposcargos.edit.outline.anulacion.label")}
               ></FloatInput>
             </Form.Item></Col>
           </Row>
           
-          <Title level={5}>Aplica IVA</Title>
-          <Form.Item name="aplicaIva" rules={[{ required: true, message: "Ingrese como aplica" }]}>
+          <Title level={5}>{t("tiposcargos.edit.aplicaiba.label")}</Title>
+          <Form.Item name="aplicaIva" rules={[{ required: true, message: (t("tiposcargos.edit.aplicaiva.error")) }]}>
             <Radio.Group onChange={onChange1} value={value1}>
               <Row justify="space-between">
-                <Radio style={{ marginTop: 10 }} value={"IVA General"}>
-                  IVA General
+                <Radio style={{ marginTop: 10 }} value={t("tiposcargos.edit.aplicaiva.value1")}>
+                  {t("tiposcargos.edit.aplicaiva.value1")}
                 </Radio>
-                <Radio style={{ marginTop: 10 }} value={"IVA Reducido"}>
-                  IVA Reducido
+                <Radio style={{ marginTop: 10 }} value={t("tiposcargos.edit.aplicaiva.value2")}>
+                  {t("tiposcargos.edit.aplicaiva.value2")}
                 </Radio>
-                <Radio style={{ marginTop: 10 }} value={"No aplica"}>
-                  No aplica
+                <Radio style={{ marginTop: 10 }} value={t("tiposcargos.edit.aplicaiva.value3")}>
+                {t("tiposcargos.edit.aplicaiva.value3")}
                 </Radio>
               </Row>
             </Radio.Group>
           </Form.Item>
-          <Title level={5}>Debito/Credito</Title>
-          <Form.Item name="tipoTarjeta" rules={[{ required: true, message: "Ingrese tipo de tarjeta" }]}>
+          <Title level={5}>{t("tiposcargos.edit.typetarjeta.label")}</Title>
+          <Form.Item name="tipoTarjeta" rules={[{ required: true, message: (t("tiposcargos.edit.typetarjeta.error")) }]}>
             <Radio.Group onChange={onChange2} value={value2}>
               <Row justify="space-between">
-                <Radio style={{ marginTop: 10 }} value={"IVA General"}>
-                  Debito
+                <Radio style={{ marginTop: 10 }} value={t("tiposcargos.edit.typetarjeta.value1")}>
+                  {t("tiposcargos.edit.typetarjeta.value1")}
                 </Radio>
-                <Radio style={{ marginTop: 10 }} value={"IVA Reducido"}>
-                  Credito
+                <Radio style={{ marginTop: 10 }} value={t("tiposcargos.edit.typetarjeta.value2")}>
+                 {t("tiposcargos.edit.typetarjeta.value2")}
                 </Radio>
               </Row>
             </Radio.Group>
           </Form.Item>
-          <Title level={5}>Moneda</Title>
+          <Title level={5}>{t("tiposcargos.edit.moneda.label")}</Title>
           <Form.Item name="moneda">
             <Radio.Group onChange={onChange3} value={value3}>
               <Row justify="space-between">
-                <Radio style={{ marginTop: 10 }} value={"IVA General"}>
-                  Dolar U$S
+                <Radio style={{ marginTop: 10 }} value={t("tiposcargos.edit.moneda.value1")}>
+                  {t("tiposcargos.edit.moneda.value1")}
                 </Radio>
-                <Radio style={{ marginTop: 10 }} value={"IVA Reducido"}>
-                  Peso
+                <Radio style={{ marginTop: 10 }} value={t("tiposcargos.edit.moneda.value2")}>
+                  {t("tiposcargos.edit.moneda.value2")}
                 </Radio>
               </Row>
             </Radio.Group>
           </Form.Item>
           <Col span={6}><Form.Item
-                name="tipomoneda" 
+                name="tipomoneda" rules={[{ required: true, message: (t("tiposcargos.edit.outline.moneda.error")) }]}
             > 
                 <SelectImg suffix={<SearchOutlined />} 
-                bordered showSearch={true} placeholder="Busca tipo de moneda" 
+                bordered showSearch={true} placeholder={t("tiposcargos.edit.outline.moneda.label")}
                 style={{width: '100%'}}
                 />            
             </Form.Item> 
-          <Title level={5}>Max. Cuotas*</Title>
-          <Form.Item name="cuotas" rules={[{ required: true, message: "Ingrese cantidad de cuotas" }]}>
+          <Title level={5}>{t("tiposcargos.edit.outline.cuota.label")}</Title>
+          <Form.Item name="cuotas" rules={[{ required: true, message: (t("tiposcargos.edit.outline.cuota.error"))}]}>
             <FloatInput outline type="number"></FloatInput>
           </Form.Item></Col>
-          <Title level={5}>Estado</Title>
-          <Form.Item name="estado" rules={[{ required: true, message: "Ingrese estado" }]}>
+          <Title level={5}>{t("tiposcargos.edit.estado.label")}</Title>
+          <Form.Item name="estado" rules={[{ required: true, message: (t("tiposcargos.edit.estado.error"))}]}>
             <Radio.Group onChange={onChange3} value={value3}>
               <Row justify="space-between">
-                <Radio style={{ marginTop: 10 }} value={"IVA General"}>
-                  Habilitado
+                <Radio style={{ marginTop: 10 }} value={t("tiposcargos.edit.estado.value1")}>
+                  {t("tiposcargos.edit.estado.value1")}
                 </Radio>
-                <Radio style={{ marginTop: 10 }} value={"IVA Reducido"}>
-                  Inhabilitado
+                <Radio style={{ marginTop: 10 }} value={t("tiposcargos.edit.estado.value2")}>
+                  {t("tiposcargos.edit.estado.value2")}
                 </Radio>
               </Row>
             </Radio.Group>
           </Form.Item>
           <Form.Item name="cargos">
-            <Checkbox>Afecta Cargos?</Checkbox>
+            <Checkbox>{t("tiposcargos.edit.cargo.label")}</Checkbox>
           </Form.Item>
         </Card>
       </>
@@ -141,9 +143,9 @@ function TipoDeCargoEdit() {
     <>
       <Edit 
         component={FormularioTipoDeCargo}
-        textBtnSave="Guardar cambios "
-        textModalConfirm="¿Realizar cambios en el tipo de cargo?"
-        textBtnModalConfirm="Si, guardar"
+        textBtnSave={t("tiposcargos.edit.edit.save")}
+        textModalConfirm={t("tiposcargos.edit.edit.confirm")}
+        textBtnModalConfirm={t("tiposcargos.edit.edit.btnconfirm")}
       ></Edit>
     </>
   );

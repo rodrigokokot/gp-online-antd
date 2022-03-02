@@ -1,23 +1,25 @@
 import { Card,Row,Col } from "antd";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const InformacionDelProducto = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Card>
-        <Row gutter={[24, 24]}>
-          <Col span={6}>
-              <h4 className="grey-text"> Producto</h4><h1 className="bold-text">{'Tarjeta Grupar'}</h1> 
+        <Row gutter={[6, 24]}>
+          <Col span={5}>
+              <h1 className="grey-text">{t("estado.view.tab2.greytext1")}</h1><h1 className="bold-text">{'213432'}</h1> 
           </Col>
-          <Col span={6}>
-              <h4 className="grey-text"> Tarjeta</h4><h1 className="bold-text">{'6063010022211304'}</h1> 
+          <Col span={5}>
+              <h1 className="grey-text">{t("estado.view.tab2.greytext2")}</h1><h1 className="bold-text">{'Emilia'}</h1> 
           </Col>
-          <Col span={6}>
-              <h4 className="grey-text">Fecha de Alta </h4><h1 className="bold-text">{'14/11/2011'}</h1> 
-          </Col>  
-          <Col span={6}>
-              <h4 className="grey-text"> Estado</h4><h1 className="bold-text">{'Normal'}</h1> 
-          </Col>  
+          <Col span={5}>
+              <h1 className="grey-text">{t("estado.view.tab2.greytext3")}</h1><h1 className="bold-text">{'18/05/2021'}</h1>
+          </Col>
+          <Col span={5}> 
+              <h1 className="grey-text">{t("estado.view.tab2.greytext4")}</h1><h1 className="bold-text">{'MasterCard'}</h1>
+          </Col>
         </Row>    
       </Card>
     </>

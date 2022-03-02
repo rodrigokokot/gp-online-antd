@@ -14,9 +14,11 @@ import FloatSelect from "../../../../components/molecules/FloatSelected/index";
 import Edit from "../../../../components/organisms/Edit";
 import { SearchOutlined } from "@ant-design/icons";
 import SelectImg from "../../../../components/organisms/SelectImg.jsx";
+import { useTranslation } from "react-i18next";
 const { Title } = Typography;
 
 function CPMovimientoEdit() {
+  const { t} = useTranslation();
   const FormularioCuenta = () => {
     const [value, setValue] = useState("");
     const onChange = (e) => {
@@ -24,7 +26,7 @@ function CPMovimientoEdit() {
     };
 
     //para calendario
-    const [valuedate, setValuedate] = useState("Fecha desde*");
+    const [valuedate, setValuedate] = useState((t("movimiento.edit.outline.fecha.label")));
     function onChangedate(date, dateString) {
       setValuedate(dateString);
       console.log("date ", dateString);
@@ -38,20 +40,20 @@ function CPMovimientoEdit() {
       <>
         <Card>
           <Title level={3} style={{ color: "#ab218e" }}>
-            Datos Principales
+          {t("movimiento.edit.title")}
           </Title>
           <br></br>
           <Col span={8}>
             <Form.Item
               name="producto"
-              rules={[{ required: true, message: "Ingrese producto" }]}
+              rules={[{ required: true, message: (t("movimiento.edit.outline.producto.error")) }]}
             >
               <FloatSelect
                 outline
                 showSearch={true}
                 suffix={<SearchOutlined />}
-                label="Producto*"
-                placeholder="Busca por tipo de producto*"
+                label={t("movimiento.edit.outline.producto.label")}
+                placeholder={t("movimiento.edit.outline.producto.placeh")}
                 options={[
                   {
                     title: "P 1",
@@ -73,14 +75,14 @@ function CPMovimientoEdit() {
             </Form.Item>
             <Form.Item
               name="codigomov"
-              rules={[{ required: true, message: "Ingrese codigo" }]}
+              rules={[{ required: true, message:(t("movimiento.edit.outline.codigomov.error")) }]}
             >
               <FloatSelect
                 outline
                 showSearch={true}
                 suffix={<SearchOutlined />}
-                label="Código de movimiento*"
-                placeholder="Ingrese Código de movimiento*"
+                label={t("movimiento.edit.outline.codigomov.label")}
+                placeholder={t("movimiento.edit.outline.codigomov.placeh")}
                 options={[
                   {
                     title: "CM 1",
@@ -102,14 +104,14 @@ function CPMovimientoEdit() {
             </Form.Item>
             <Form.Item
               name="tipored"
-              rules={[{ required: true, message: "Ingrese tipo de red" }]}
+              rules={[{ required: true, message:(t("movimiento.edit.outline.typered.error")) }]}
             >
               <FloatSelect
                 outline
                 showSearch={true}
                 suffix={<SearchOutlined />}
-                label="Tipo de Red*"
-                placeholder="Busca tipo de Red*"
+                label={t("movimiento.edit.outline.typered.label")}
+                placeholder={t("movimiento.edit.outline.typered.placeh")}
                 options={[
                   {
                     title: "Red 1",
@@ -129,35 +131,35 @@ function CPMovimientoEdit() {
                 ]}
               ></FloatSelect>
             </Form.Item>
-            <Title level={5}>Locación</Title>
+            <Title level={5}>{t("movimiento.edit.locacion.label")}</Title>
             <Form.Item
               name="locacion"
-              rules={[{ required: true, message: "Ingrese locación" }]}
+              rules={[{ required: true, message: (t("movimiento.edit.locacion.error")) }]}
             >
               <Checkbox.Group onChange={onChangeCheck}>
-                <Checkbox value="Local">Local</Checkbox>
-                <Checkbox value="Exterior">Exterior</Checkbox>
+                <Checkbox value={t("movimiento.edit.locacion.value1")}>{t("movimiento.edit.locacion.value1")}</Checkbox>
+                <Checkbox value={t("movimiento.edit.locacion.value2")}>{t("movimiento.edit.locacion.value2")}</Checkbox>
               </Checkbox.Group>
             </Form.Item>
-            <Title level={5}>Tipo de documento</Title>
+            <Title level={5}>{t("movimiento.edit.evento.label")}</Title>
             <Form.Item name="evento" rules={[{ required: true }]}>
               <Radio.Group onChange={onChange} value={value}>
                 <Row gutter={55}>
                   <Col span={7}>
-                    <Radio value={"Autorización"}>Autorización</Radio>
+                    <Radio value={t("movimiento.edit.evento.value1")}>{t("movimiento.edit.evento.value1")}</Radio>
                   </Col>
                   <Col span={7}>
-                    <Radio value={"Presentación"}>Presentación</Radio>
+                    <Radio value={t("movimiento.edit.evento.value2")}>{t("movimiento.edit.evento.value2")}</Radio>
                   </Col>
                   <Col span={10}>
-                    <Radio value={"No aplica"}>No aplica</Radio>
+                    <Radio value={t("movimiento.edit.evento.value3")}>{t("movimiento.edit.evento.value3")}</Radio>
                   </Col>
                 </Row>
               </Radio.Group>
             </Form.Item>
             <Form.Item
               name="fechadesde"
-              rules={[{ required: true, message: "Ingrese fecha desde" }]}
+              rules={[{ required: true, message: (t("movimiento.edit.outline.fecha.error")) }]}
             >
               <DatePicker
                 style={{ width: "50%", borderRadius: 6 }}
@@ -169,34 +171,37 @@ function CPMovimientoEdit() {
           </Col>
           <Row gutter={48}>
             <Col span={6}>
-              <Form.Item name="porcentajecargo">
+              <Form.Item name="porcentajecargo"
+                rules={[{ required: true, message: (t("movimiento.edit.outline.porcentaje.error")) }]}
+             >
                 <FloatInput
                   outline
                   type="number"
-                  label="Ingresá porcentaje cargo"
-                  placeholder="Ingresá porcentaje cargo"
+                  label={t("movimiento.edit.outline.porcentaje.label")}
+                  placeholder={t("movimiento.edit.outline.porcentaje.placeh")}
                 ></FloatInput>
               </Form.Item>
             </Col>
             <Col span={4}>
               <Form.Item
                 name="precio"
-                rules={[{ required: true, message: "Ingrese precio" }]}
+                rules={[{ required: true, message: (t("movimiento.edit.outline.precio.error")) }]}
               >
                 <FloatInput
                   outline
                   type="number"
-                  label="Ingresá precio*"
-                  placeholder="Ingresá precio*"
+                  label={t("movimiento.edit.outline.precio.label")}
+                  placeholder={t("movimiento.edit.outline.precio.placeh")}
                 ></FloatInput>
               </Form.Item>
             </Col>
           </Row>
+            <Title level={5}>{t("movimiento.edit.moneda.label")}</Title>
           <Form.Item name="moneda">
             <Checkbox.Group onChange={onChangeCheck}>
-              <Checkbox value="DOLAR U$S">DOLAR U$S</Checkbox>
-              <Checkbox value="EUROS">EUROS</Checkbox>
-              <Checkbox value="Pesos AR">Pesos AR</Checkbox>
+              <Checkbox value={t("movimiento.edit.moneda.value1")}>{t("movimiento.edit.moneda.value1")}</Checkbox>
+              <Checkbox value={t("movimiento.edit.moneda.value2")}>{t("movimiento.edit.moneda.value2")}</Checkbox>
+              <Checkbox value={t("movimiento.edit.moneda.value3")}>{t("movimiento.edit.moneda.value3")}</Checkbox>
             </Checkbox.Group>
           </Form.Item>
           <Col span={8}>
@@ -205,7 +210,7 @@ function CPMovimientoEdit() {
                 suffix={<SearchOutlined />}
                 bordered
                 showSearch={true}
-                placeholder="Busca tipo de moneda"
+                placeholder={t("movimiento.edit.outline.moneda.placeh")}
                 style={{ width: "100%" }}
               />
             </Form.Item>
@@ -215,8 +220,8 @@ function CPMovimientoEdit() {
                   <FloatInput
                     outline
                     type="number"
-                    label="Mínimo"
-                    placeholder="Mínimo"
+                    label={t("movimiento.edit.outline.minimo.label")}
+                    placeholder={t("movimiento.edit.outline.minimo.placeh")}
                   ></FloatInput>
                 </Form.Item>
               </Col>
@@ -225,8 +230,8 @@ function CPMovimientoEdit() {
                   <FloatInput
                     outline
                     type="number"
-                    label="Máximo"
-                    placeholder="Máximo"
+                    label={t("movimiento.edit.outline.maximo.label")}
+                    placeholder={t("movimiento.edit.outline.maximo.placeh")}
                   ></FloatInput>
                 </Form.Item>
               </Col>
@@ -236,8 +241,8 @@ function CPMovimientoEdit() {
                 outline
                 showSearch={true}
                 suffix={<SearchOutlined />}
-                placeholder="Busca concepto por cargo"
-                label="Concepto por cargo"
+                placeholder={t("movimiento.edit.outline.cargo.placeh")}
+                label={t("movimiento.edit.outline.cargo.label")}
                 options={[
                   { title: "C 1", value: "C 1", disabled: false },
                   { title: "C 2", value: "C 2", disabled: false },
@@ -256,9 +261,9 @@ function CPMovimientoEdit() {
     <>
       <Edit
         component={FormularioCuenta}
-        textBtnSave="Confirmar"
-        textModalConfirm="¿Realizar cambios en el cargo?"
-        textBtnModalConfirm="Si, guardar"
+        textBtnSave={t("movimiento.edit.edit.save")}
+        textModalConfirm={t("movimiento.edit.edit.confirm")}
+        textBtnModalConfirm={t("movimiento.edit.edit.btnconfirm")}
       />
     </>
   );

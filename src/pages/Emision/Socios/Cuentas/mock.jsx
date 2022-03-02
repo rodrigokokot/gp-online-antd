@@ -3,6 +3,8 @@ import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
 import { cuentas } from "../../../../services";
+import { useTranslation } from "react-i18next";
+
 
 let productos = [];
 let gruposAfinidad = [];
@@ -30,44 +32,46 @@ const getListaGruposAfinidad = async () => {
 getListaProductos();
 getListaGruposAfinidad();
 
-const columnsGestionCuenta = [
+const ColumnsGestionCuenta =()=>{
+  const { t} = useTranslation();
+  return([
   {
-    name: "N° de cuenta",
+    name: (t("gestioncuenta.table.column1")),//"N° de cuenta",
     selector: (row) => row.idCuenta,
     sortable: true,
   },
   {
-    name: "Producto",
+    name: (t("gestioncuenta.table.column2")),//"Producto",
     selector: (row) => row.producto.descripcion,
     sortable: true,
   },
   {
-    name: "Grupo de afinidad",
+    name: (t("gestioncuenta.table.column3")),//"Grupo de afinidad",
     selector: (row) => row.grupoAfinidad.descripcion,
     sortable: true,
   },
   {
-    name: "Cuenta externa",
+    name: (t("gestioncuenta.table.column4")),//"Cuenta externa",
     selector: (row) => row.idCuentaExterna,
     sortable: true,
   },
   {
-    name: "Nombre",
+    name: (t("gestioncuenta.table.column5")),//"Nombre",
     selector: (row) => row.socio.persona.nombre,
     sortable: true,
   },
   {
-    name: "Documento",
+    name: (t("gestioncuenta.table.column6")),//"Documento",
     selector: (row) => row.socio.persona.numeroDocumento,
     sortable: true,
   },
   {
-    name: "N° tarjeta",
+    name:(t("gestioncuenta.table.column7")),// "N° tarjeta",
     selector: (row) => row.socio.tarjeta.numeroTarjeta,
     sortable: true,
   },
   {
-    name: "Estado",
+    name: (t("gestioncuenta.table.column8")),//"Estado",
     selector: (row) => row.idEstado,
     sortable: true,
   },
@@ -80,11 +84,12 @@ const columnsGestionCuenta = [
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >
-        Editar
+        {t("gestioncuenta.table.column9")}
       </Link>
     ),
   },
-];
+])
+}
 
 const dataGestionCuenta = [
   {
@@ -138,28 +143,30 @@ const dataGestionCuenta = [
     estado: "activo",
   },
 ];
-const GestionCuentaSearch = [
+const GestionCuentaSearch =()=>{
+  const { t} = useTranslation();
+  return( [
   {
     name: "N° de tarjeta",
-    index: "Tarjeta",
-    input: <FloatInput label="N° de tarjeta" placeholder="N° de tarjeta" />,
+    index: "tarjeta",
+    input: <FloatInput label={t("gestioncuenta.search.input1")} placeholder={t("gestioncuenta.search.input1")} />,
   },
   {
     name: "N° de documento",
-    index: "NroDocumento",
-    input: <FloatInput label="N° de documento" placeholder="N° de documento" />,
+    index: "documento",
+    input: <FloatInput label={t("gestioncuenta.search.input2")} placeholder={t("gestioncuenta.search.input2")} />,
   },
   {
     name: "N° de cuenta",
-    index: "IdCuenta",
-    input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
+    index: "cuenta",
+    input: <FloatInput label={t("gestioncuenta.search.input3")} placeholder={t("gestioncuenta.search.input3")} />,
   },
   {
     index: "IdCuentaExterna",
     input: (
       <FloatInput
-        label="N° de cuenta externa"
-        placeholder="N° de cuenta externa"
+        label={t("gestioncuenta.search.input4")}
+        placeholder={t("gestioncuenta.search.input4")}
       />
     ),
   },
@@ -177,22 +184,33 @@ const GestionCuentaSearch = [
     index: "IdGrupoAfinidad",
     input: (
       <FloatSelected
-        label="Grupo de afinidad"
-        placeholder="Grupo de afinidad"
-        options={gruposAfinidad}
+        label={t("gestioncuenta.search.input6")}
+        placeholder={t("gestioncuenta.search.input6")}
+        options={[
+          {
+            title: "Grupo 1",
+            value: "Grupo 1",
+            disabled: false,
+          },
+          {
+            title: "Grupo 2",
+            value: "Grupo 2",
+            disabled: false,
+          },
+        ]}
       />
     ),
   },
   {
     name: "Nombre",
-    index: "Nombre",
-    input: <FloatInput label="Nombre" placeholder="Nombre" />,
+    index: "nombre",
+    input: <FloatInput label={t("gestioncuenta.search.input7")} placeholder={t("gestioncuenta.search.input7")}/>,
   },
   {
     name: "Fecha Rel. Hasta",
     index: "fechahasta",
     input: (
-      <FloatInput label="Fecha Rel. Hasta" placeholder="Fecha Rel. Hasta" />
+      <FloatInput label={t("gestioncuenta.search.input8")} placeholder={t("gestioncuenta.search.input8")} />
     ),
   },
   {
@@ -200,8 +218,8 @@ const GestionCuentaSearch = [
     index: "cuotas",
     input: (
       <FloatSelected
-        placeholder="Cuotas"
-        label="Cuotas"
+        placeholder={t("gestioncuenta.search.input9")}
+        label={t("gestioncuenta.search.input9")}
         options={[
           {
             title: "1",
@@ -222,5 +240,6 @@ const GestionCuentaSearch = [
     index: "fecha",
     input: <DateRangeFilter placeholder="fecha" label="Por fecha" />,
   },
-];
-export { dataGestionCuenta, columnsGestionCuenta, GestionCuentaSearch };
+])
+}
+export { dataGestionCuenta, ColumnsGestionCuenta, GestionCuentaSearch };

@@ -1,33 +1,35 @@
 import { Card,Row,Col } from "antd";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const DatosComercio = () => {
+  const { t} = useTranslation();
   return (
     <Card> 
       <Row gutter={[24, 24]}>
         <Col span={6}>
-            <h4 className="grey-text"> Comercio descripcion</h4><h1 className="bold-text">{'-'}</h1> 
+            <h4 className="grey-text">{t("consumos.tab5.text.greytext1")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                <h4 className="grey-text">N° de comercio </h4><h1 className="bold-text">{'-'}</h1> 
+                <h4 className="grey-text">{t("consumos.tab5.text.greytext2")} </h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                  <h4 className="grey-text">Modo ingreso </h4><h1 className="bold-text">{'-'}</h1> 
+                  <h4 className="grey-text">{t("consumos.tab5.text.greytext3")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>
         <Col span={6}>
-                  <h4 className="grey-text">Fecha informada </h4><h1 className="bold-text">{'-'}</h1> 
+                  <h4 className="grey-text">{t("consumos.tab5.text.greytext4")} </h4><h1 className="bold-text">{'-'}</h1> 
         </Col>  
         <Col span={6}>
-                  <h4 className="grey-text">MCC </h4><h1 className="bold-text">{'-'}</h1> 
+                  <h4 className="grey-text">{t("consumos.tab5.text.greytext5")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col> 
         <Col span={6}>
-                  <h4 className="grey-text"> TCC</h4><h1 className="bold-text">{'-'}</h1> 
+                  <h4 className="grey-text">{t("consumos.tab5.text.greytext6")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col> 
         <Col span={6}>
-                  <h4 className="grey-text">Cupon </h4><h1 className="bold-text">{'-'}</h1> 
+                  <h4 className="grey-text">{t("consumos.tab5.text.greytext7")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col>    
         <Col span={6}>
-                  <h4 className="grey-text"> Terminal</h4><h1 className="bold-text">{'-'}</h1> 
+                  <h4 className="grey-text">{t("consumos.tab5.text.greytext8")}</h4><h1 className="bold-text">{'-'}</h1> 
         </Col> 
       </Row> 
     </Card>

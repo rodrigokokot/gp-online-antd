@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { Card, Row, Col } from "antd";
 import Table from "../../../../components/organisms/Table";
 import {
-  columnsConsultaLiquidaciones,
+  ColumnsConsultaLiquidaciones,
   ConsultaLiquidacionesSearchArray,
   dataConsultaLiquidaciones,
 } from "./mock";
 import SearchForm from "../../../../components/organisms/SearchForm";
+import { useTranslation } from "react-i18next";
 
 export default function ConsultaLiquidacionesSearch() {
+  const { t} = useTranslation();
   const [data, setData] = useState("");
 
   function handleCallback(values) {
@@ -22,118 +24,118 @@ export default function ConsultaLiquidacionesSearch() {
       <>
         <Card>
           <h1 className="purple-title" style={{ marginBottom: "24px" }}>
-            Pesos
+          {t("liquidacion.title1")}
           </h1>
           <Row gutter={[36, 36]}>
             <Col span={6}>
-              <b className="grey-text">Saldo anterior</b>
+              <b className="grey-text">{t("liquidacion.text1.greytext1")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Total Débitos</b>
+              <b className="grey-text">{t("liquidacion.text1.greytext2")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Total Créditos</b>
+              <b className="grey-text">{t("liquidacion.text1.greytext3")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Saldo Actual</b>
+              <b className="grey-text">{t("liquidacion.text1.greytext4")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Pago min. Ant.</b>
+              <b className="grey-text">{t("liquidacion.text1.greytext5")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Pago Min. Impago</b>
+              <b className="grey-text">{t("liquidacion.text1.greytext6")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Pago Min. Actual</b>
+              <b className="grey-text">{t("liquidacion.text1.greytext7")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Saldo plan flexible</b>
+              <b className="grey-text">{t("liquidacion.text1.greytext8")}</b>
               <b className="bold-text">0.00</b>
             </Col>
           </Row>
         </Card>
-
+        <br></br>
         <Card>
           <h1 className="purple-title" style={{ marginBottom: "24px" }}>
-            Dolares
+            {t("liquidacion.title2")}
           </h1>
 
           <Row gutter={[36, 36]}>
             <Col span={6}>
-              <b className="grey-text">Saldo anterior</b>
+              <b className="grey-text">{t("liquidacion.text2.greytext1")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Total Débitos</b>
+              <b className="grey-text">{t("liquidacion.text2.greytext2")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Total Créditos</b>
+              <b className="grey-text">{t("liquidacion.text2.greytext3")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Saldo Actual</b>
+              <b className="grey-text">{t("liquidacion.text2.greytext4")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Pago min. Ant.</b>
+              <b className="grey-text">{t("liquidacion.text2.greytext5")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Pago Min. Impago</b>
+              <b className="grey-text">{t("liquidacion.text2.greytext6")}</b>
               <b className="bold-text">0.00</b>
             </Col>
 
             <Col span={6}>
-              <b className="grey-text">Pago Min. Actual</b>
+              <b className="grey-text">{t("liquidacion.text2.greytext7")}</b>
               <b className="bold-text">0.00</b>
             </Col>
           </Row>
         </Card>
-
+        <br></br>
         <Card style={{ marginBottom: "4px" }}>
           <h1 className="purple-title" style={{ marginBottom: "24px" }}>
-            Período no liquidado
+            {t("liquidacion.title3")}
           </h1>
           <Col span={8}>
             <Row gutter={[36, 36]}>
               <Col span={12}>
-                <b className="grey-text">Fecha de Liquidación</b>
+                <b className="grey-text">{t("liquidacion.text3.greytext1")}</b>
               </Col>
 
               <Col span={12}>
-                <b className="grey-text">Fecha de Vencimiento</b>
+                <b className="grey-text">{t("liquidacion.text3.greytext2")}</b>
               </Col>
 
               <Col span={12}>
-                <b className="grey-text">Puntos del periodo</b>
+                <b className="grey-text">{t("liquidacion.text3.greytext3")}</b>
               </Col>
 
               <Col span={12}>
-                <b className="grey-text">Puntos acumulados</b>
+                <b className="grey-text">{t("liquidacion.text3.greytext4")}</b>
               </Col>
             </Row>
           </Col>
-        </Card>
+        </Card><br></br>
       </>
     );
   };
@@ -142,14 +144,14 @@ export default function ConsultaLiquidacionesSearch() {
     <>
       <SearchCards />
       <SearchForm
-        array={ConsultaLiquidacionesSearchArray}
-        title="Consulta de movimientos historicos"
+        array={ConsultaLiquidacionesSearchArray()}
+        title={t("liquidacion.search.searchtitle")}
         parentCallback={handleCallback}
         span={6}
       />
       <br />
       <Table
-        columns={columnsConsultaLiquidaciones}
+        columns={ColumnsConsultaLiquidaciones()}
         data={data}
         expandible={false}
         editable={false}

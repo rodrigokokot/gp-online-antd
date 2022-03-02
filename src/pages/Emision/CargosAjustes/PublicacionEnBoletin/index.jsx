@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import SearchForm from "../../../../components/organisms/SearchForm";
 import Table from "../../../../components/organisms/Table";
-import { columnsPBoletin, dataPBoletin, PBoletinSearch } from "./mock";
+import { ColumnsPBoletin, dataPBoletin, PBoletinSearch } from "./mock";
 
 const PBoletin = () => {
+  const { t} = useTranslation();
   const [data, setData] = useState("");
 
   function handleCallback(values) {
@@ -14,13 +16,13 @@ const PBoletin = () => {
   return (
     <>
       <SearchForm
-        title="Busqueda de consumos"
-        array={PBoletinSearch}
+        title={t("boletin.search.searchtitle")}
+        array={PBoletinSearch()}
         span={6}
         parentCallback={handleCallback}
       ></SearchForm>
       <br />
-      <Table data={data} columns={columnsPBoletin}></Table>
+      <Table data={data} columns={ColumnsPBoletin()}></Table>
     </>
   );
 };

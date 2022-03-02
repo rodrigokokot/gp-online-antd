@@ -5,11 +5,13 @@ import SearchForm from "../../../../components/organisms/SearchForm/index";
 import Table from "../../../../components/organisms/Table/index";
 import {
   AutorizacionesSearchArray,
-  columnsAutorizaciones,
+  ColumnsAutorizaciones,
   dataAutorizaciones,
 } from "./mock";
+import { useTranslation } from "react-i18next";
 
 export default function AutorizacionesSearch() {
+  const { t} = useTranslation();
   const [data, setData] = useState("");
 
   function handleCallback(values) {
@@ -22,19 +24,19 @@ export default function AutorizacionesSearch() {
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/emision/movimientos/autorizaciones/crearAutorizacion">
           <Button type="primary" size="large">
-            Nueva Autorización
+          {t("autorizaciones.button")}
           </Button>
         </Link>
       </Col>
 
       <SearchForm
-        array={AutorizacionesSearchArray}
-        title="Busqueda de autorizaciones"
+        array={AutorizacionesSearchArray()}
+        title={t("autorizaciones.search.searchtitle")}
         parentCallback={handleCallback}
         span={4}
       />
       <br />
-      <Table data={data} columns={columnsAutorizaciones} />
+      <Table data={data} columns={ColumnsAutorizaciones()} />
     </>
   );
 }
