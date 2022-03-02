@@ -1959,7 +1959,9 @@
         "greytext3":"Current card limit",
         "greytext4":"Assingment %",
         "greytext5":"Current additional global ammount",
-        "greytext6":"Current card limit"
+        "greytext6":"Current card limit",
+        "input1":"Additional global amount",
+        "input2":"Comments"
       }
     }
   },
