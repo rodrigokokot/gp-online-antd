@@ -1,28 +1,32 @@
+import { useTranslation } from "react-i18next";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 
-const columnsMovimientoDeCuenta = [
+const ColumnsMovimientoDeCuenta =()=>{
+  const { t} = useTranslation();
+  return([
   {
-    name: "Tarjeta",
+    name: (t("movimientocuenta.table.column1")),
     selector: (row) => row.tarjeta,
     sortable: true,
   },
   {
-    name: "Nº cuenta",
+    name: (t("movimientocuenta.table.column2")),
     selector: (row) => row.cuenta,
     sortable: true,
   },
   {
-    name: "Moneda",
+    name: (t("movimientocuenta.table.column3")),
     selector: (row) => row.moneda,
     sortable: true,
   },
   {
-    name: "Fecha",
+    name: (t("movimientocuenta.table.column4")),
     selector: (row) => row.fecha,
     sortable: true,
   },
-];
+])
+}
 
 const dataMovimientoDeCuenta = [
   {
@@ -62,30 +66,33 @@ const dataMovimientoDeCuenta = [
     fecha: "26/07/2021",
   },
 ];
-const MovimientoDeCuentaSearch = [
+const MovimientoDeCuentaSearch =()=>{
+  const { t} = useTranslation();
+  return([
   {
     name: "N° de tarjeta",
     index: "tarjeta",
-    input: <FloatInput label="N° de tarjeta" placeholder="N° de tarjeta" />,
+    input: <FloatInput label={t("movimientocuenta.search.input1")} placeholder={t("movimientocuenta.search.input1")} />,
   },
   {
     name: "N° de cuenta",
     index: "cuenta",
-    input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
+    input: <FloatInput label={t("movimientocuenta.search.input2")} placeholder={t("movimientocuenta.search.input2")} />,
   },
   {
     name: "Pesos",
     index: "pesos",
-    input: <FloatInput label="Pesos" placeholder="Pesos" />,
+    input: <FloatInput label={t("movimientocuenta.search.input3")} placeholder={t("movimientocuenta.search.input3")} />,
   },
 
   {
     index: "fecha",
-    input: <DateRangeFilter placeholder="fecha" label="Por fecha" />,
+    input: <DateRangeFilter placeholder={t("movimientocuenta.search.input4")} label={t("movimientocuenta.search.input4")} />,
   },
-];
+])
+}
 export {
   dataMovimientoDeCuenta,
-  columnsMovimientoDeCuenta,
+  ColumnsMovimientoDeCuenta,
   MovimientoDeCuentaSearch,
 };

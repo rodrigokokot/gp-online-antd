@@ -1400,6 +1400,7 @@
       "checkbox1":"Reports address",
       "radiogroup":{
         "label":"Document type",
+        "error":"Enter type",
         "radio1":"DNI",
         "radio2":"CUIT",
         "radio3":"CIVIC NOTEBOOK",

@@ -1803,7 +1803,7 @@
     "search":{
       "searchtitle":"Búsqueda de gestión de cuentas",
       "input1":"N° de Cuenta",
-      "input2":"Cuenta/Adicional",
+      "input2":"Cta./Adicional",
       "input3":"N° de Documento",
       "input4":"N° de Tarjeta",
       "input5":"Nombre completo"
@@ -1821,14 +1821,15 @@
       "title2":"Domicilio",
       "checkbox1":"Informa Domicilio",
       "radiogroup":{ 
-        "label":"Tipo de Documento", 
+        "label":"Tipo de Documento",
+        "error":"Ingrese Tipo", 
             "value1":"DNI",
             "value2":"CUIT",
             "value3":"LIBRETA CIVICA",
             "value4":"LIBRETA DE ENROLAMIENTO",
             "value5":"CUIL",
             "value6":"PASAPORTE",
-            "value7":"CI"
+            "value7":"CI" 
       },
       "search":"N° de Documento*",
       "input1":"Nombre*",

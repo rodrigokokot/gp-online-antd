@@ -1,53 +1,59 @@
 import FloatInput from "../../../../components/molecules/FloatInput";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
   ///////// MOCK DE LA BÚSQUEDA ////////
-  const GestionAdicionalesSearchArray = [
+  const GestionAdicionalesSearchArray=()=>{
+  const { t} = useTranslation();
+  return([
     {
       index: "cuenta",
-      input: <FloatInput label="N° de cuenta" />,
+      input: <FloatInput label={t("adicionales.search.input1")} />,
     },
     {
       index: "cuenta-adicional",
-      input: <FloatInput label="Cta./Adicional" />,
+      input: <FloatInput label={t("adicionales.search.input2")} />,
     },
     {
       index: "documento",
-      input: <FloatInput label="N° de documento" />,
+      input: <FloatInput label={t("adicionales.search.input3")} />,
     },
     {
       index: "tarjeta",
-      input: <FloatInput label="N° de tarjeta" />,
+      input: <FloatInput label={t("adicionales.search.input4")} />,
     },
     {
       index: "nombre",
-      input: <FloatInput label="Nombre" />,
+      input: <FloatInput label={t("adicionales.search.input5")} />,
     },
-  ];
+  ])
+}
 
   //////// COLUMNAS DE LA TABLA /////////
-  const columnsGestionAdicionales = [
+  const ColumnsGestionAdicionales=()=>{
+  const { t} = useTranslation();
+  return([
     {
-      name: "Cta/Adic.",
+      name: (t("adicionales.table.column1")),
       selector: (row) => row.adicional,
       sortable: true,
     },
     {
-      name: "Nombre",
+      name: (t("adicionales.table.column2")),
       selector: (row) => row.nombre,
       sortable: true,
     },
     {
-      name: "Documento",
+      name: (t("adicionales.table.column3")),
       selector: (row) => row.documento,
       sortable: false,
     },
     {
-      name: "Producto",
+      name: (t("adicionales.table.column4")),
       selector: (row) => row.producto,
       sortable: true,
     },
     {
-      name: "Estado",
+      name: (t("adicionales.table.column5")),
       selector: (row) => row.estado,
       sortable: true,
     },
@@ -60,11 +66,12 @@ import { Link } from "react-router-dom";
           style={{ textDecoration: "underline" }}
           rel="noopener noreferrer"
         >
-          Nuevo Adicional
+          {t("adicionales.table.column6")}
         </Link>
       ),
     },
-  ];
+  ])
+}
 
   ////////// MOCK DATOS TABLA //////////
   const dataGestionAdicionales = [
@@ -79,7 +86,7 @@ import { Link } from "react-router-dom";
   
 export {
     dataGestionAdicionales,
-    columnsGestionAdicionales,
+    ColumnsGestionAdicionales,
     GestionAdicionalesSearchArray,
   };
   
