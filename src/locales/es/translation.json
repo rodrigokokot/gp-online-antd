@@ -27,7 +27,6 @@
     "selectall":"Todos"
   },
   "exportar":"Exportar",
-  
   "gestionaprobaciones": {
     "tab1":{
       "tab1":"Novedades por confirmar",
@@ -531,7 +530,6 @@
 
     }
   },
-
   "ctf":{
     "search":{
       "searchtitle":"Búsqueda de archivos CTF",
@@ -889,7 +887,6 @@
       }
     } 
   },
-
   "estado":{
     "search":{
       "searchtitle":"Búsqueda de Productos",
