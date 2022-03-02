@@ -29,6 +29,7 @@ const Edit = ({
       closable: true,
       async onOk() {
         console.log("OK");
+        values.idSucursal = parseInt(id);
         const data = JSON.stringify(values)
         const response = await service(data);
         console.log("response:", response);

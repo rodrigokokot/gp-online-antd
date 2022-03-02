@@ -120,6 +120,11 @@ const GestionCuentaNew = () => {
     function onChangeDoc(e){
         setBuscar(e.target.value);//valor del documento a buscar 
     }
+  const getCuenta = async () =>{
+    const res = await cuentas.getCuentas(`NroDocumento=54135892`);
+    console.log("cuenta:", res[0]);
+    setCuenta(res[0]);
+  }
 
     const FormularioCuenta = () => {
      
@@ -322,7 +327,7 @@ const GestionCuentaNew = () => {
                   outline
                   label={t("gestioncuenta.new.outline.nombre.label")}
                   placeholder={t("gestioncuenta.new.outline.nombre.label")}
-                  defaultValue={cuenta?.socio.persona.nombre}
+                  value={cuenta?.socio.persona.nombre}
                 ></FloatInput>
                 </Form.Item>
                 <Form.Item

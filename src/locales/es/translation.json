@@ -1829,26 +1829,81 @@
             "value7":"CI" 
       },
       "search":"N° de Documento*",
-      "input1":"Nombre*",
-      "input2":"Apellido*",
-      "input3":"Sexo",
-      "input4":"Estado Civil",
-      "input5":"Fecha de Nacimiento*",
-      "input6":"País de Nacimiento*",
-      "input7":"E-mail*",
-      "input8":"Código Tributario*",
-      "input9":"Nombre Embozado*",
-      "input10":"Calle*",
-      "input11":"Numero*",
-      "input12":"Piso",
-      "input13":"Depto.",
-      "input14":"Código Postal*",
-      "input15":"Entre Calles",
-      "input16":"Barrio",
-      "input17":"Localidad*",
-      "input18":"Provincia*",
-      "input19":"Teléfono*",   
-      "input20":"Referencia"
+      "nombre":{
+        "label":"Nombre*",
+        "error":"Ingrese nombre"
+      },
+      "apellido": {
+        "label": "Apellido*",
+        "error": "Ingrese apellido"
+      }  , 
+      "sexo": {
+        "label": "Sexo",
+        "error": "Ingrese sexo"
+      }  , 
+      "estadocivil": {
+        "label": "Estado Civil",
+        "error":"Ingrese estado"
+      }  ,
+      "fnacimiento": {
+        "label": "Fecha de Nacimiento*",
+        "error": "Ingrese fecha"
+      } ,
+      "pais": {
+        "label": "País de Nacimiento*",
+        "error": "Ingrese país"
+      },
+      "email": {
+        "label": "E-Mail*",
+        "error": "Ingrese email"
+      } ,
+      "codigotrib": {
+        "label": "Código Tributario*",
+        "error": "Ingrese código tributario"
+      } , 
+      "nombremb": {
+        "label": "Nombre Embozado*",
+        "error": "Ingrese nombre embozado"
+      } , 
+      "calle": {
+        "label": "Calle*",
+        "error": "Ingrese calle"
+      } , 
+      "numero": {
+        "label": "Número*",
+        "error": "Ingrese número"
+      } , 
+      "piso": {
+        "label": "Piso" 
+      } , 
+      "dpto": {
+        "label": "Depto" 
+      } , 
+      "cdpostal": {
+        "label": "Código Postal*",
+        "error": "Ingrese CP"
+      } , 
+      "entrecalles": {
+        "label": "Entre Calles"
+      } , 
+      "barrio": {
+        "label": "Barrio"
+      } , 
+      "localidad": {
+        "label": "Localidad*",
+        "error": "Ingrese localidad"
+      } , 
+      "provincia": {
+        "label": "Provincia*",
+        "error": "Ingrese provincia"
+      } , 
+      "telefono": {
+        "label": "Teléfono*",  
+        "error": "Ingrese teléfono"
+      } , 
+      "referencia": {
+        "label": "Referencia"
+      }  
     }
   },
   "tarjeta":{

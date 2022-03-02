@@ -4,21 +4,21 @@ import SearchForm from "../../components/organisms/SearchForm/index";
 import { Button, Col } from "antd";
 import {
   ColumnsGestionSucursales,
-  dataGestionSucursales,
   GestionSucursalesSearchMock,
 } from "./mock";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import sucursales from "../../services/sucursales";
 
 function GestionSucursales() {
   const { t } = useTranslation();
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
 
-  function handleCallback(values) {
-    //lamada al servicio axios.post(values)
-    //setData(axios.response)
-    setData(dataGestionSucursales);
-  }
+  const handleCallback = async (values) => {
+    const res = await sucursales.getSucursales();
+    // console.log("sucursales:", res);
+    setData(res);
+  };
 
   return (
     <>
@@ -36,12 +36,7 @@ function GestionSucursales() {
         span={4}
       />
       <br />
-      <Table
-        columns={ColumnsGestionSucursales()}
-        data={data} //datafiltered
-        expandible={false}
-        editable={true}
-      />
+      <Table columns={ColumnsGestionSucursales()} data={data} />
     </>
   );
 }

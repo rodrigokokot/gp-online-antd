@@ -1875,10 +1875,13 @@
         "radio6":"PASSPORT",
         "radio7":"CI"
       },
-      "search":"Document number",
       "documento":{
-        "label":"Document number*",
-        "error":"Enter document number"
+        "label":"Document Number",
+        "error":"Enter document"
+      },
+      "nombre":{
+        "label":"First Name*",
+        "error":"Enter first name"
       },
       "apellido": {
         "label": "Last name*",
@@ -1898,7 +1901,7 @@
       } ,
       "pais": {
         "label": "Birth country*",
-        "error": "Ingrese country"
+        "error": "Enter country"
       },
       "email": {
         "label": "E-Mail*",
@@ -1946,7 +1949,7 @@
       } , 
       "telefono": {
         "label": "Phone number*",
-        "error": "Ingrese number"
+        "error": "Enter number"
       } , 
       "referencia": {
         "label": "Reference"

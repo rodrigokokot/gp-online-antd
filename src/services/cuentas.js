@@ -1,4 +1,4 @@
-import { api, login } from './config/axios'
+import { api } from './config/axios'
 import endPoints from './config/endPoints'
 
 export default {
