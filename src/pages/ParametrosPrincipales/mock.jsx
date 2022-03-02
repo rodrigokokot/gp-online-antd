@@ -9,7 +9,7 @@ let estados = [];
 
 const getListaProvincias = async () => {
   const response = await sucursales.getProvincias();
-  console.log(response);
+  // console.log(response);
   response.map((item) => {
     provincias.push({
       value: item.idProvincia,

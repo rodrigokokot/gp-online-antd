@@ -19,13 +19,76 @@ export default {
     },
 
     async putSucursal(data) {
+        const jdata = JSON.parse(data);
+        console.log(jdata)
+        const body = {
+            "sucursal": {
+                "idSucursal": jdata.idSucursal,
+                "descripcion": jdata.descripcion,
+                "idDomicilio": 0,
+                "idEstado": jdata.estado,
+                "rowVersion": 0,
+                "domicilio": {
+                    "idDomicilio": 0,
+                    "idPais": 0,
+                    "idProvincia": jdata.provincia,
+                    "idCodigoPostal": "string",
+                    "direccion": "string",
+                    "numero": 0,
+                    "piso": "string",
+                    "depto": "string",
+                    "entreCalles": jdata.calle,
+                    "referencia": "string",
+                    "telefono": "string",
+                    "barrio": "string",
+                    "localidad": jdata.localidad,
+                    "replicaDomicilioLegal": true,
+                    "rowVersion": 0
+                }
+            }
+        }
+        try {
+            const response = await api.put(endPoints.getSucursales, body)
+            return response
+        } catch (error) {
+            console.error(error)
+        }
+    },
+
+    async postSucursal(data) {
         console.log(data)
-        // try {
-        //     const response = await api.put(endPoints.getSucursales,data)
-        //     return response
-        // } catch (error) {
-        //     console.error(error)
-        // }
+        const body = {
+            "sucursal": {
+                "idSucursal": 0,
+                "descripcion": "string",
+                "idDomicilio": 0,
+                "idEstado": 0,
+                "rowVersion": 0,
+                "domicilio": {
+                    "idDomicilio": 0,
+                    "idPais": 0,
+                    "idProvincia": "string",
+                    "idCodigoPostal": "string",
+                    "direccion": "string",
+                    "numero": 0,
+                    "piso": "string",
+                    "depto": "string",
+                    "entreCalles": "string",
+                    "referencia": "string",
+                    "telefono": "string",
+                    "barrio": "string",
+                    "localidad": "string",
+                    "replicaDomicilioLegal": true,
+                    "rowVersion": 0
+                }
+            }
+        }
+        try {
+            const response = await api.post(endPoints.getSucursales,body)
+            return response
+        } catch (error) {
+            console.error(error)
+        }
     },
 
     async getProvincias() {

@@ -16,7 +16,7 @@ function GestionSucursales() {
 
   const handleCallback = async (values) => {
     const res = await sucursales.getSucursales();
-    console.log("sucursales:", res);
+    // console.log("sucursales:", res);
     setData(res);
   };
 

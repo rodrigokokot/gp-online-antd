@@ -15,8 +15,9 @@ function EditarSucursal() {
 
   useEffect(async () => {
     const response = await sucursales.getSucursales(id);
-    console.log(response);
+    
     setSucursal(response);
+    console.log(response);
     setDisable(false);
   }, []);
 
@@ -29,7 +30,10 @@ function EditarSucursal() {
           </Typography.Title>
 
           <Col span={8}>
-            <Form.Item name="descripcion">
+            <Form.Item
+              name="descripcion"
+              initialValue={sucursal?.descripcion}
+            >
               <FloatInput
                 outline
                 disabled={disable}
@@ -252,6 +256,7 @@ function EditarSucursal() {
         textModalConfirm={t("gestionsucursales.edit.edit.confirm")}
         textBtnModalConfirm={t("gestionsucursales.edit.edit.btnconfirm")}
         service={sucursales.putSucursal}
+        id={id}
       />
     </>
   );
