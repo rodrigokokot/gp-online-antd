@@ -2,14 +2,18 @@ import { Link } from "react-router-dom";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
+<<<<<<< HEAD
 import { test } from "../../../../services";
 import { useTranslation } from "react-i18next";
 import {cuentas} from "../../../../services";
+=======
+import { cuentas } from "../../../../services";
+>>>>>>> b78177f7230f1685672da1d658cf1108aea068bd
 
 let productos = [];
 let gruposAfinidad = [];
 
-async function getListaProductos() {
+const getListaProductos = async () => {
   const response = await cuentas.getProductos();
   response.map((producto) => {
     productos.push({
@@ -17,10 +21,9 @@ async function getListaProductos() {
       title: producto.descripcion,
     });
   });
-  console.log(productos);
-}
+};
 
-async function getListaGruposAfinidad() {
+const getListaGruposAfinidad = async () => {
   const response = await cuentas.getGruposAfinidad();
   response.map((grupo) => {
     gruposAfinidad.push({
@@ -28,8 +31,7 @@ async function getListaGruposAfinidad() {
       title: grupo.descripcion,
     });
   });
-  console.log(gruposAfinidad);
-}
+};
 
 getListaProductos();
 getListaGruposAfinidad();
@@ -82,7 +84,7 @@ const ColumnsGestionCuenta =()=>{
     button: true,
     cell: (row) => (
       <Link
-        to={`/emision/socios/cuentas/editarCuenta=${row.idcuenta}`}
+        to={`/emision/socios/cuentas/editarCuenta=${row.idCuenta}`}
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >
@@ -173,12 +175,20 @@ const GestionCuentaSearch =()=>{
     ),
   },
   {
+<<<<<<< HEAD
     name: "Producto",
     index: "producto",
     input: (
       <FloatSelected
         label={t("gestioncuenta.search.input5")}
         placeholder={t("gestioncuenta.search.input5")}
+=======
+    index: "IdProducto",
+    input: (
+      <FloatSelected
+        label="Producto"
+        placeholder="Producto"
+>>>>>>> b78177f7230f1685672da1d658cf1108aea068bd
         options={productos}
       />
     ),

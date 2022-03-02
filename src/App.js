@@ -32,8 +32,8 @@ function App() {
         <Switch>
           <DashboardTemplate exact path="/gestionAprobaciones" component={lazy(() => import('./pages/GestionAprobaciones'))} />
           {/* Parametros principales */}
-          <DashboardTemplate exact path="/parametrosPrincipales/gestionDeSucursales" component={lazy(() => import('./pages/ParametrosPrincipales/GestionSucursales'))} />
-          <DashboardTemplate exact path="/parametrosPrincipales/gestionDeSucursales/editarSucursal=:codigo" component={lazy(() => import('./pages/ParametrosPrincipales/EditarSucursal'))} />
+          <DashboardTemplate exact path="/parametrosPrincipales/gestionDeSucursales" component={lazy(() => import('./pages/ParametrosPrincipales'))} />
+          <DashboardTemplate exact path="/parametrosPrincipales/gestionDeSucursales/editarSucursal=:id" component={lazy(() => import('./pages/ParametrosPrincipales/EditarSucursal'))} />
           <DashboardTemplate exact path="/parametrosPrincipales/gestionDeSucursales/crearSucursal" component={lazy(() => import('./pages/ParametrosPrincipales/NuevaSucursal'))} />
 
           {/* Usuarios */}
@@ -95,7 +95,7 @@ function App() {
 
           {/* Socios */}
           <DashboardTemplate exact path="/emision/socios/cuentas" component={lazy(() => import('./pages/Emision/Socios/Cuentas'))} />
-          <DashboardTemplate exact path="/emision/socios/cuentas/editarCuenta=:idcuenta" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
+          <DashboardTemplate exact path="/emision/socios/cuentas/editarCuenta=:id" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaEdit'))} />
           <DashboardTemplate exact path="/emision/socios/cuentas/crearCuenta" component={lazy(() => import('./pages/Emision/Socios/Cuentas/GestionCuentaNew'))} />
 
           <DashboardTemplate exact path="/emision/socios/avisosDeViajes" component={lazy(() => import('./pages/Emision/Socios/AvisosViajes'))} />

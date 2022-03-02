@@ -1,7 +1,18 @@
 export default {
-    posts: '/posts',
+    
     accesToken: '/AccessToken/AllData',
-    getProducts: '/Productos?IsActive=true',
+    getProducts: '/Productos?',
     getCuentas: '/Cuentas?',
-    getGruposAfinidad: 'GruposAfinidad',
+    getGruposAfinidad: '/GruposAfinidad',
+    getSucursales: '/Sucursales',
+    getPosicionesImpositivas: '/PosicionesImpositivas',
+    getTipoProducto: '/TipoProducto',
+    getProvincias: '/Provincias',
+    getSucursales: '/Sucursales',
+    getEstados: '/Sucursales/GetEstados',
+
+    postCuenta: '/Cuentas',
+    postaccesToken2: '/AccessToken', //Temporaneo
+
+    posts: '/posts',
 }

@@ -8,8 +8,9 @@ const Edit = ({
   textBtnSave,
   textModalConfirm,
   textBtnModalConfirm,
+  service,
 }) => {
-  const showModal = () => {
+  const showModal = (values) => {
     Modal.confirm({
       icon: null,
       content: (
@@ -26,8 +27,11 @@ const Edit = ({
       width: 800,
       cancelText: "Cancelar",
       closable: true,
-      onOk() {
+      async onOk() {
         console.log("OK");
+        const data = JSON.stringify(values)
+        const response = await service(data);
+        console.log("response:", response);
       },
       onCancel() {
         console.log("Cancel");

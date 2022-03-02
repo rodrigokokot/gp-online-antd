@@ -36,6 +36,9 @@ const Login = () => {
   const Login = async () => {
     const response = await auth.getToken();
     sessionStorage.setItem("token", response.data.accessToken);
+
+    const postResponse = await auth.postToken2();
+    sessionStorage.setItem("postToken2", postResponse.data.accessToken);
   };
 
   return (
