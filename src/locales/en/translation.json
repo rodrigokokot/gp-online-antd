@@ -767,6 +767,128 @@
     
 
   },
+  "consumos":{
+    "search":{
+      "searchtitle":"Consumption sarch",
+      "input1":"Consumption ID",
+      "input2":"Commerce ID",
+      "input3":"Document number",
+      "input4":"Card number",
+      "input5":"Transaction group",
+      "input6":"Receipt",
+      "input7":"Account number",
+      "input8":"Additional",
+      "input9":"Member Liq.",
+      "input10":"Fees", 
+      "input11":"By dates"
+    },
+    "table":{
+        "column1":"Consumption ID",
+        "column2":"Date/Hour",
+        "column3":"Commerce name",
+        "column4":"Movement",
+        "column5":"DNI",
+        "column6":"Account number",
+        "column7":"Fees",
+        "column8":"Amount",
+        "column9":"see detail"
+    },
+    "tab1":{
+      "tab1":"Consumption data",
+      "text":{
+        "greytext1":"Movements",
+        "greytext2":"Transaction group",
+        "greytext3":"Card number",
+        "greytext4":"Consumption ID",
+        "greytext5":"Emitter authorization",
+        "greytext6":"Receipt",
+        "greytext7":"Date/Hour" ,
+        "greytext8":"Fees" ,
+        "greytext9":"Origin currency" ,
+        "greytext10":"No discount amount" ,
+        "greytext11":"Terminal",
+        "greytext12":"Batch",
+        "greytext13":"Cauida Cuotas",
+        "greytext14":"Total amount",
+        "greytext15":"Tariff",
+        "greytext16":"Tariff amount",
+        "greytext17":"Closure date",
+        "greytext18":"Payment date",
+        "greytext19":"Presentation date",
+        "greytext20":"Commerce"            
+      },
+      "subtitle":"Fees data",
+      "div":{
+        "h1":"Fee",
+        "h2":"Amount",
+        "h3":"Tariff",
+        "h4":"Tariff amount",
+        "h5":"Closure date",
+        "h6":"Payment date",
+        "h7":"Commerce Liquidation"
+      }
+
+    },
+    "tab2":{
+      "tab2":"Member data",
+      "text":{
+        "greytext1":"Name",
+        "greytext2":"Last name",
+        "greytext3":"Document number",
+        "greytext4":"Account number",
+        "greytext5":"Aditional",
+        "greytext6":"Card number",
+        "greytext7":"Product"         
+      }
+    },
+    "tab3":{
+      "tab3":"Aditional Data",
+      "text":{
+        "greytext1":"IPM Date",
+        "greytext2":"Product",
+        "greytext3":"MCC",
+        "greytext4":"ICA Issuing",
+        "greytext5":"ICA Acquirer",
+        "greytext6":"Conversion rate"           
+      }
+    },
+    "tab4":{
+      "tab4":"Authorization data",
+      "text":{
+        "greytext1":"Authorization ID",
+        "greytext2":"Authrorization Date",
+        "greytext3":"Authorization emitter",
+        "greytext4":"Movement",
+        "greytext5":"Status",
+        "greytext6":"Currency",
+        "greytext7":"Amount" ,
+        "greytext8":"Presentation date" ,
+        "greytext9":"Currency" ,
+        "greytext10":"Source amount" ,
+        "greytext11":"Fees",
+        "greytext12":"Answer",
+        "greytext13":"Source",
+        "greytext14":"Commerce country",
+        "greytext15":"Issuing country",
+        "greytext16":"Price",
+        "greytext17":"Cancelation date",
+        "greytext18":"Cancelation user"           
+      }
+    },
+    "tab5":{
+      "tab5":"Commerce Data",
+      "text":{
+        "greytext1":"Movement",
+        "greytext2":"Commerce group",
+        "greytext3":"Entry mode",
+        "greytext4":"Informed date",
+        "greytext5":"MCC",
+        "greytext6":"TCC",
+        "greytext7":"Coupon" ,
+        "greytext8":"Terminal"          
+      }
+    } 
+  },
   "estado":{
     "search":{
       "searchtitle":"Product search",
@@ -1361,6 +1483,350 @@
     }
     
   },
+  "gestioncuenta": {
+    "button":"New account",
+     "search":{
+        "searchtitle":"Account management search",
+        "input1":"Card number",
+        "input2":"Document number",
+        "input3":"Account number",
+        "input4":"External account number",
+        "input5":"Product" ,
+        "input6":"Afinity group" ,
+        "input7":"Name" ,
+        "input8":"Rel. Date to" ,
+        "input9":"Fees"   
+      },
+      "table":{
+        "column1":"Account number",
+        "column2":"Product",
+        "column3":"Afinity group",
+        "column4":"External account",
+        "column5":"Name",
+        "column6":"Document",
+        "column7":"Card number",
+        "column8":"Status",
+        "column9":"Edit" 
+      },
+      "new":{ 
+          "title1":"Main data",
+          "title2":"Holder",
+          "title3":"Legal address",
+          "title4":"Correspondense address",
+          "title5":"Job address",
+          "outline":{
+            "sucursal": {
+              "label": "Branch*",
+              "error": "Enter branch"
+            },
+            "gafinidad": {
+              "label": "Affinity group" 
+            },
+            "typeproducto": {
+              "label": "Product type*",
+              "error": "Enter product type"
+            },
+            "producto": {
+              "label": "Product*",
+              "error": "Enter product"
+            }, 
+            "posicion": {
+              "label": "Tax position*",
+              "error": "Enter position"
+            }, 
+            "cuentaext": {
+              "label": "External account"
+            }, 
+            "entregat": {
+              "label": "Card delivery*",
+              "error": "Enter delivery" 
+            }, 
+            "estado": {
+              "label": "Status*",
+              "error": "Enter status"
+            }, 
+            "documento": {
+              "label": "Document number*",
+              "error": "Enter document"
+            }  , 
+            "nombre": {
+              "label": "First name*",
+              "error": "Enter name"
+            }  , 
+            "apellido": {
+              "label": "Last name*",
+              "error": "Enter last name"
+            }  , 
+            "sexo": {
+              "label": "Gender" 
+            }  , 
+            "estadocivil": {
+              "label": "Civil status" 
+            }  , 
+            "fnacimiento": {
+              "label": "Birthdate*",
+              "error": "Enter birthdate"
+            } , 
+            "pais": {
+              "label": "Birth country*",
+              "error": "Ingrese country"
+            } , 
+            "email": {
+              "label": "E-Mail*",
+              "error": "Enter email"
+            } , 
+            "codigotrib": {
+              "label": "Tax code*",
+              "error": "Enter code"
+            } , 
+            "nombremb": {
+              "label": "Printed name*",
+              "error": "Enter printed name"
+            } , 
+            "calle": {
+              "label": "Street*",
+              "error": "Enter street"
+            } , 
+            "numero": {
+              "label": "Number*",
+              "error": "Enter number"
+            } , 
+            "piso": {
+              "label": "Floor" 
+            } , 
+            "dpto": {
+              "label": "Department" 
+            } , 
+            "cdpostal": {
+              "label": "Postal code*",
+              "error": "Enter postal code"
+            } , 
+            "entrecalles": {
+              "label": "Streets between"
+            } , 
+            "barrio": {
+              "label": "Neighborhood"
+            } , 
+            "localidad": {
+              "label": "Locality*",
+              "error": "Enter locality"
+            } , 
+            "provincia": {
+              "label": "Province*",
+              "error": "Enter province"
+            } , 
+            "telefono": {
+              "label": "Phone number*",
+              "error": "Ingrese number"
+            } , 
+            "referencia": {
+              "label": "Reference"
+            } 
+          },
+          "check1":{
+            "title1":"By default, correspondency address is the same as legal address",
+            "title2":"Enter a different correspondency address"
+          },
+          "typedoc":{
+            "label":"Document type",
+            "error":"Enter document type",
+            "value1":"DNI",
+            "value2":"CUIT",
+            "value3":"CIVIC NOTEBOOK",
+            "value4":"ENLISTMENT NOTEBOOK",
+            "value5":"CUIL",
+            "value6":"PASSPORT",
+            "value7":"CI"
+          },
+          "edit":{
+            "save":"Create account",
+            "confirm":"Confirm account creation?",
+            "btnconfirm":"Yes, create"
+          } 
+      }, 
+      "edit":{ 
+        "title1":"Main data",
+        "title2":"Holder",
+        "title3":"Legal address",
+        "title4":"Correspondense address",
+        "title5":"Job address",
+        "outline":{
+          "sucursal": {
+            "label": "Branch*",
+            "error": "Enter branch"
+          },
+          "gafinidad": {
+            "label": "Affinity group" 
+          },
+          "typeproducto": {
+            "label": "Product type*",
+            "error": "Enter product type"
+          },
+          "producto": {
+            "label": "Product*",
+            "error": "Enter product"
+          }, 
+          "posicion": {
+            "label": "Tax position*",
+            "error": "Enter position"
+          }, 
+          "cuentaext": {
+            "label": "External account"
+          }, 
+          "entregat": {
+            "label": "Card delivery*",
+            "error": "Enter delivery" 
+          }, 
+          "estado": {
+            "label": "Status*",
+            "error": "Enter status"
+          }, 
+          "documento": {
+            "label": "Document number*",
+            "error": "Enter document"
+          }  , 
+          "nombre": {
+            "label": "First name*",
+            "error": "Enter name"
+          }  , 
+          "apellido": {
+            "label": "Last name*",
+            "error": "Enter last name"
+          }  , 
+          "sexo": {
+            "label": "Gender" 
+          }  , 
+          "estadocivil": {
+            "label": "Civil status" 
+          }  , 
+          "fnacimiento": {
+            "label": "Birthdate*",
+            "error": "Enter birthdate"
+          } , 
+          "pais": {
+            "label": "Birth country*",
+            "error": "Ingrese country"
+          } , 
+          "email": {
+            "label": "E-Mail*",
+            "error": "Enter email"
+          } , 
+          "codigotrib": {
+            "label": "Tax code*",
+            "error": "Enter code"
+          } , 
+          "nombremb": {
+            "label": "Printed name*",
+            "error": "Enter printed name"
+          } , 
+          "calle": {
+            "label": "Street*",
+            "error": "Enter street"
+          } , 
+          "numero": {
+            "label": "Number*",
+            "error": "Enter number"
+          } , 
+          "piso": {
+            "label": "Floor" 
+          } , 
+          "dpto": {
+            "label": "Department" 
+          } , 
+          "cdpostal": {
+            "label": "Postal code*",
+            "error": "Enter postal code"
+          } , 
+          "entrecalles": {
+            "label": "Streets between"
+          } , 
+          "barrio": {
+            "label": "Neighborhood"
+          } , 
+          "localidad": {
+            "label": "Locality*",
+            "error": "Enter locality"
+          } , 
+          "provincia": {
+            "label": "Province*",
+            "error": "Enter province"
+          } , 
+          "telefono": {
+            "label": "Phone number*",
+            "error": "Ingrese number"
+          } , 
+          "referencia": {
+            "label": "Reference"
+          } 
+        },
+        "check1":{
+          "title1":"By default, correspondency address is the same as legal address",
+          "title2":"Enter a different correspondency address"
+        },
+        "typedoc":{
+          "label":"Document type",
+          "error":"Enter document type",
+          "value1":"DNI",
+          "value2":"CUIT",
+          "value3":"CIVIC NOTEBOOK",
+          "value4":"ENLISTMENT NOTEBOOK",
+          "value5":"CUIL",
+          "value6":"PASSPORT",
+          "value7":"CI"
+        },
+        "edit":{
+          "save":"Edit account",
+          "confirm":"Apply changes to this account?",
+          "btnconfirm":"Yes, apply"
+        } 
+    }
+  },
+  "tarjeta":{
+    "search":{
+      "searchtitle":"Card search",
+      "input1":"Card number",
+      "input2":"Account number",
+      "input3":"Additional",
+      "input4":"Document number",
+      "input5":"Name" 
+    },
+    "table":{
+        "column1":"Card number",
+        "column2":"Card number",
+        "column3":"Product",
+        "column4":"Affinity group",
+        "column5":"External account",
+        "column6":"Name",
+        "column7":"Document number",
+        "column8":"Status",
+        "column9":"see detail"
+    },
+    "history":{
+        "column1":"Switch date",
+        "column2":"Uswe",
+        "column3":"Status",
+        "button":"Back"
+    },
+    "view":{
+        "title":"Main data",
+        "link":"See history",
+        "text":{
+          "greytext1":"Card number",
+          "greytext2":"Name",
+          "greytext3":"Last name",
+          "greytext4":"Valid since",
+          "greytext5":"Expiration date",
+          "greytext6":"Printed name",
+          "greytext7":"Account/Add",
+          "greytext8":"Branch"            
+        },
+        "input":{
+          "label":"Status*",
+          "error":"Enter status"
+        },
+        "check":"Re-Print" 
+    } 
+  },
   "movimientocuenta":{
     "search":{
       "searchtitle":"Account movements search",
@@ -1461,6 +1927,40 @@
       "column9":"Card",
       "column10":"Edit"
       
+    },
+    "edit":{
+      "card1":{
+        "title":"Account Information",
+        "greytext1":"Account number",
+        "greytext2":"Original account number",
+        "greytext3":"Account type",
+        "greytext4":"Discharge date",
+        "greytext5":"Brand",
+        "greytext6":"Issuing",
+        "greytext7":"Branch"
+      },
+      "card2":{
+        "title":"Product information",
+        "greytext1":"Product",
+        "greytext2":"Card",
+        "greytext3":"Discharge date",
+        "greytext4":"Status"
+      },
+      "card3":{
+        "title":"Holder information",
+        "greytext1":"Document number",
+        "greytext2":"Last name",
+        "greytext3":"First name"
+      },
+      "card4":{
+        "title":"Card limit change",
+        "greytext1":"Global account limit",
+        "greytext2":"Loan assigned amount",
+        "greytext3":"Current card limit",
+        "greytext4":"Assingment %",
+        "greytext5":"Current additional global ammount",
+        "greytext6":"Current card limit"
+      }
     }
   },
   "altatarjeta":{
