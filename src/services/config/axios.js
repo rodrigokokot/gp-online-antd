@@ -20,12 +20,7 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
-  // console.log(config);
-  let method = "";
-  method = config.method !== "post" ? "token" : "postToken2"  //token temporal
-  const token = sessionStorage.getItem(method); 
-  // console.log(method)
-  // const token = process.env.REACT_APP_TOKEN
+  const token = sessionStorage.getItem("token");
   if (token) {
     config.headers["Authorization"] = "Bearer " + token;
   }
@@ -37,6 +32,11 @@ api.interceptors.response.use(
     return response;
   },
   async function (error) {
+    // const codeStatus = error.response.status
+    // if(codeStatus == 500) {
+    //   // sessionStorage.removeItem('token')
+    //   // window.location.href = '/login'
+    // }
     return Promise.reject(error.response);
   }
 );

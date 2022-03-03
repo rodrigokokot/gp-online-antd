@@ -1,34 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchForm from "../../../../components/organisms/SearchForm/index";
 import Table from "../../../../components/organisms/Table/index";
 import { Link } from "react-router-dom";
-import {
-  GestionCuentaSearch,
-  ColumnsGestionCuenta,
-} from "./mock";
+import useMock from "./mock";
 import { Col, Button } from "antd";
-import { useTranslation } from "react-i18next";
 import {cuentas} from "../../../../services";
+import { useTranslation } from "react-i18next";
+import { useRequestGetToSend, useDataTable } from "../../../../hooks";
 
 /* hacer que router tengo la dir de app.js  */
 const GestionCuentas = () => {
   const { t} = useTranslation();
-  const [data, setData] = useState([]);
+  const { requestGetToSend } = useRequestGetToSend()
+  const mock = useMock();
+  const { dataTable, setDataTable } = useDataTable()
 
   async function handleCallback(values) {
-    let request="";
-    for (const key in values) {
-      if (Object.hasOwnProperty.call(values, key)) {
-        const element = values[key];
-        if(element){
-          request = `${request}${key}=${element}&`
-        }
-      }
-    }
-    console.log('request:',request)
+    //console.log(values);
+    const request= requestGetToSend(values);
+    setDataTable({
+      initial: true,
+      data: [],
+      loading: true
+    });
     const response = await cuentas.getCuentas(request);
-    console.log('response:',response);
-    setData(response);
+    setDataTable({
+      initial: false,
+      data: response,
+      loading: false
+    });
   }
 
   return (
@@ -42,12 +42,12 @@ const GestionCuentas = () => {
       </Col>
       <SearchForm
         span={4}
-        array={GestionCuentaSearch()}
+        array={mock.GestionCuentaSearch}
         parentCallback={handleCallback}
         title={t("gestioncuenta.search.searchtitle")}
       />
       <br></br>
-      <Table data={data} columns={ColumnsGestionCuenta()} />
+      <Table data={dataTable} columns={mock.columnsGestionCuenta} />
     </>
   );
 };

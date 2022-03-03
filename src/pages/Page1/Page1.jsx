@@ -1,19 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Table from '../components/organisms/Table'
-import DeploymentConfirmation from '../components/molecules/DeploymentConfirmation'
+import Table from '../../components/organisms/Table'
+import DeploymentConfirmation from '../../components/molecules/DeploymentConfirmation'
 import Icon, {DownOutlined} from '@ant-design/icons'
-import FloatInput from '../components/molecules/FloatInput'
-import FloatSelected from '../components/molecules/FloatSelected'
-import { Form, Card, Switch, Typography, Button, List } from "antd";
-import DateRangeFilter from '../components/organisms/DateRangeFilter'
-import {HelpImg, LoginImg} from '../assets/svg/img'
+import FloatInput from '../../components/molecules/FloatInput'
+import FloatSelected from '../../components/molecules/FloatSelected'
+import { Form, Card, Switch, Typography, Button, List, Col } from "antd";
+import DateRangeFilter from '../../components/organisms/DateRangeFilter'
+import {HelpImg, LoginImg} from '../../assets/svg/img'
 import InlineSVG from 'svg-inline-react';
-import ResultSearch from '../components/molecules/ResultSearch'
-import BreadComponent from '../components/molecules/Breadcrum'
-import { useAuth } from '../context/authContext'
+import ResultSearch from '../../components/molecules/ResultSearch'
+import BreadComponent from '../../components/molecules/Breadcrum'
+import { useAuth } from '../../context/authContext'
 import { useTranslation } from 'react-i18next';
 
-import { cuentas,  } from '../services'
+import { cuentas,  } from '../../services'
 
 const validator = {
   require: {
@@ -25,13 +25,13 @@ const validator = {
 function Page1() {
 
     const { t, i18n } = useTranslation();
-    const [data, setdata] = useState([])
+    const [data, setData] = useState([])
 
-    // useEffect( async () => {
-    //     const response = await cuentas.getAll()
-    //     setdata(response)
-    //     console.log(response);
-    // }, [])
+    useEffect( async () => {
+        const response = await cuentas.getAll()
+        setData(response)
+        console.log(response);
+    }, [])
 
     const authContext = useAuth()
     // console.log(authContext);
@@ -68,14 +68,16 @@ function Page1() {
         // },
     ];
 
-
-    const [noResult, setNoResult] = useState(true);
-
+    async function handleCallback(values) {
+        const response  =  await test.getProductos()
+        console.log(response.data.lista)
+        setData(response.data.lista);
+    }
     return (
         <>
         <Button onClick={async () => {
             const response = await cuentas.getAll()
-            setdata(response)
+            setData(response)
         }}>
             FILTRAR
         </Button>

@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 import SearchForm from "../../../../components/organisms/SearchForm";
 import Table from "../../../../components/organisms/Table";
 import {
-  ColumnsMovimientoDeCuenta,
+  columnsMovimientoDeCuenta,
   dataMovimientoDeCuenta,
   MovimientoDeCuentaSearch,
 } from "./mock";
 
 const MovimientosDeCuenta = () => {
-  const { t} = useTranslation();
   const [data, setData] = useState("");
 
   function handleCallback(values) {
@@ -20,15 +18,15 @@ const MovimientosDeCuenta = () => {
   return (
     <>
       <SearchForm
-        title={t("movimientocuenta.search.searchtitle")}
-        array={MovimientoDeCuentaSearch()}
+        title="Búsqueda de movimientos de cuentas"
+        array={MovimientoDeCuentaSearch}
         parentCallback={handleCallback}
         span={6}
       />
       <br></br>
       <Table
         data={data}
-        columns={ColumnsMovimientoDeCuenta()}
+        columns={columnsMovimientoDeCuenta}
       ></Table>
     </>
   );

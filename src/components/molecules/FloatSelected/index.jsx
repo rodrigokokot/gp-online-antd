@@ -14,9 +14,7 @@ const FloatSelected = ({
   ...props
 }) => {
   const [focus, setFocus] = useState(false);
-  let { label, value, placeholder, type, disabled, required, defaultValue } = props;
-
-  value = defaultValue;
+  let { label, value, placeholder, type, disabled, required, loading } = props;
 
   if (!placeholder) placeholder = label;
 
@@ -31,6 +29,8 @@ const FloatSelected = ({
   const secondary = secondaryColor ? "secondary" : "";
 
   const [borderColor, setBorderColor] = useState("");
+
+  options = options?.length > 0? options : []
 
   return (
     <div
@@ -47,7 +47,7 @@ const FloatSelected = ({
         onChange={props.onChange}
         disabled={disabled}
         showSearch={props.showSearch}
-        defaultValue={defaultValue}
+        loading={loading}
         // className={ !outline? "select-bottom" : '' }
       >
         {options.map((opt, index) => (

@@ -1,80 +1,74 @@
 import { Link } from "react-router-dom";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput";
-import { useTranslation } from "react-i18next";
 
 ///////// MOCK INPUTS SEARCH ////////
-const TarjetasSearchArray=()=>{
-  const { t} = useTranslation();
-  return([
+const TarjetasSearchArray = [
   {
     index: "tarjeta",
-    input: <FloatInput label={t("tarjeta.search.input1")} />,
+    input: <FloatInput label="N° de tarjeta" />,
   },
   {
     index: "cuenta",
-    input: <FloatInput label={t("tarjeta.search.input2")}  />,
+    input: <FloatInput label="N° de cuenta" />,
   },
   {
     index: "adicional",
-    input: <FloatInput label={t("tarjeta.search.input3")} />,
+    input: <FloatInput label="Adicional" />,
   },
   {
     index: "documento",
-    input: <FloatInput label={t("tarjeta.search.input4")} />,
+    input: <FloatInput label="N° de documento" />,
   },
   {
     index: "nombre",
-    input: <FloatInput label={t("tarjeta.search.input5")} />,
+    input: <FloatInput label="Nombre" />,
   },
   {
     index: "fecha",
     input: <DateRangeFilter />,
   },
-])
-}
+];
 
 ///////// MOCK COLUMNAS TABLA ////////
-const ColumnsTarjetas =()=>{
-  const { t} = useTranslation();
-  return([
+const columnsTarjetas = [
   {
-    name: (t("tarjeta.table.column1")),
+    name: "N° Tarjeta",
     selector: (row) => row.tarjeta,
     sortable: false,
   },
   {
-    name: (t("tarjeta.table.column2")),
+    name: "N° Cuenta",
     selector: (row) => row.cuenta,
     sortable: true,
   },
   {
-    name: (t("tarjeta.table.column3")),
+    name: "Producto",
     selector: (row) => row.producto,
     sortable: true,
   },
   {
-    name: (t("tarjeta.table.column4")),
+    name: "Grupo de afinidad",
     selector: (row) => row.afinidad,
     sortable: true,
   },
   {
-    name: (t("tarjeta.table.column5")),
+    name: "Cuenta externa",
     selector: (row) => row.externa,
     sortable: true,
   },
   {
-    name: (t("tarjeta.table.column6")),
+    name: "Nombre",
     selector: (row) => row.nombre,
     sortable: true,
   },
   {
-    name: (t("tarjeta.table.column7")),
+    name: "N° documento",
     selector: (row) => row.documento,
     sortable: false,
   },
   {
-    name: (t("tarjeta.table.column8")),
+    name: "Estado",
     selector: (row) => row.estado,
     sortable: false,
   },
@@ -87,12 +81,11 @@ const ColumnsTarjetas =()=>{
         style={{ textDecoration: "underline" }}
         rel="noopener noreferrer"
       >
-        {t("tarjeta.table.column9")}
+        Ver detalle
       </Link>
     ),
   },
-])
-}
+];
 
 ////////// MOCK DATA TABLA /////////
 
@@ -113,26 +106,23 @@ const dataTarjetas = [
 
 ////////// MOCK TARJETAS HISTORIAL COLUMNAS //////////
 
-const ColumnsTarjetasHistorial =()=>{
-  const { t} = useTranslation();
-  return([
+const columnsTarjetasHistorial = [
   {
-    name: (t("tarjeta.history.column1")),
+    name: "Fecha de cambio",
     selector: (row) => row.fecha,
     sortable: true,
   },
   {
-    name: (t("tarjeta.history.column2")),
+    name: "Usuario",
     selector: (row) => row.usuario,
     sortable: true,
   },
   {
-    name: (t("tarjeta.history.column3")),
+    name: "Estado",
     selector: (row) => row.estado,
     sortable: true,
   },
-])
-}
+];
 
 ///////// MOCK DATA TARJETAS HISTORIAL //////////
 
@@ -147,7 +137,7 @@ const dataTarjetasHistorial = [
 export {
   TarjetasSearchArray,
   dataTarjetas,
-  ColumnsTarjetas,
-  ColumnsTarjetasHistorial,
+  columnsTarjetas,
+  columnsTarjetasHistorial,
   dataTarjetasHistorial,
 };

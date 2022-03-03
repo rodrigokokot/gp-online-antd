@@ -36,9 +36,7 @@ const Login = () => {
   const Login = async () => {
     const response = await auth.getToken();
     sessionStorage.setItem("token", response.data.accessToken);
-
-    const postResponse = await auth.postToken2();
-    sessionStorage.setItem("postToken2", postResponse.data.accessToken);
+    window.location.href = '/emision/socios/cuentas'
   };
 
   return (
@@ -83,7 +81,7 @@ const Login = () => {
               name="username"
               rules={[
                 {
-                  required: true,
+                  // required: true,
                   message: t("login.username.error"),
                 },
               ]}
@@ -96,7 +94,7 @@ const Login = () => {
               name="password"
               rules={[
                 {
-                  required: true,
+                  // required: true,
                   message: t("login.password.error"),
                 },
               ]}

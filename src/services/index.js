@@ -1,9 +1,9 @@
 import cuentas from './cuentas'
 import auth from './auth'
-import sucursales from './sucursales'
+import productosServices from './productosServices'
 
 export {
     cuentas,
-    sucursales,
     auth,
+    productosServices
 }

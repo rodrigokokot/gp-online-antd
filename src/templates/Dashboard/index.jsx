@@ -54,17 +54,17 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
           </div>
           <Menu mode="inline" selectedKeys={itemSelected.key} className="menu-scroll">
             {routes.map((route, index) => {
-              const Component = icons[route.icon];
+              const IconComponent = icons[route.icon];
               return route.subItems !== undefined ? (
                 <Menu.SubMenu
-                  icon={<Component />}
+                  icon={<IconComponent />}
                   key={`${index}`}
                   title={route.name}
                 >
                   {route.subItems.map((item, index2) => {
                     return item.subItems !== undefined ? (
                       <Menu.SubMenu
-                        icon={<Component />}
+                        icon={<IconComponent />}
                         key={`${index}.${index2}`}
                         title={item.name}
                       >
@@ -117,7 +117,7 @@ export default function DashboardTemplate({ component: Component, ...rest }) {
                 </Menu.SubMenu>
               ) : (
                 <Menu.Item
-                  icon={<Component />}
+                  icon={<IconComponent />}
                   title={route.name}
                   key={`${index}`}
                   className={route.page ? "menu-help" : null}

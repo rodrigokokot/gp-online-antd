@@ -5,12 +5,10 @@ import { Link } from "react-router-dom";
 import { Col, Button } from "antd";
 import {
   dataGestionAdicionales,
-  ColumnsGestionAdicionales,
+  columnsGestionAdicionales,
   GestionAdicionalesSearchArray,
 } from "./mock";
-import { useTranslation } from "react-i18next";
-  const GestionAdicionalesSearch = () => {
-  const { t} = useTranslation();
+const GestionAdicionalesSearch = () => {
   const [data, setData] = useState("");
 
   function handleCallback(values) {
@@ -24,18 +22,18 @@ import { useTranslation } from "react-i18next";
       <Col style={{ textAlign: "right", marginBottom: "25px" }}>
         <Link to="/emision/socios/adicionales/crearSocioAdicional">
           <Button type="primary" size="large">
-          {t("adicionales.button")}
+            Nuevo Adicional
           </Button>
         </Link>
       </Col>
       <SearchForm
-        array={GestionAdicionalesSearchArray()}
-        title={t("adicionales.search.searchtitle")}
+        array={GestionAdicionalesSearchArray}
+        title="Búsqueda de gestión de cuentas"
         span={4}
         parentCallback={handleCallback}
       />
       <Table
-        columns={ColumnsGestionAdicionales()}
+        columns={columnsGestionAdicionales}
         data={data}
       />
     </>

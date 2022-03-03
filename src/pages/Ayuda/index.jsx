@@ -5,10 +5,8 @@ import SelectSearch from '../../components/molecules/SelectSearch';
 import Ayuda2 from '../../components/molecules/TextoHelp';
 import { RightOutlined} from '@ant-design/icons';
 import  texto  from "./mock";
-import { useTranslation } from 'react-i18next';
 
 function Ayuda() {
-  const { t} = useTranslation();
     const [flag, setFlag] = useState(false);
     const [idtitulo, setTitulo] = useState('');
 
@@ -37,7 +35,7 @@ function Ayuda() {
              <Col span={22}>
                  <Menu.Item key="Preguntas frecuentes" style={{ marginTop:14}} >
                         <a href="https://ant.design" target="_blank" rel='noreferrer' style={{color: '#ab218e'}} >
-                            {t("ayuda.item1")}
+                            Preguntas frecuentes
                         </a></Menu.Item>
              </Col>
              <Col span={2} style={{ marginTop:14}}>
@@ -46,7 +44,7 @@ function Ayuda() {
              <Col span={22}>
                  <Menu.Item key="Configuraciones" >
                         <a href="/ayuda" style={{color: '#ab218e'}}>
-                              {t("ayuda.item2")}
+                              Configuraciones
                         </a> </Menu.Item> 
              </Col>
              <Col span={2}>
@@ -55,7 +53,7 @@ function Ayuda() {
              <Col span={22}>
                  <Menu.Item key="Crear una cuenta" >
                         <a href="/ayuda"  style={{color: '#ab218e'}}>
-                            {t("ayuda.item3")}
+                            Crear una cuenta
                         </a> </Menu.Item> 
              </Col>
              <Col span={2}>

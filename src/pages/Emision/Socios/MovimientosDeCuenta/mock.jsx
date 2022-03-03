@@ -1,32 +1,28 @@
-import { useTranslation } from "react-i18next";
 import FloatInput from "../../../../components/molecules/FloatInput";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 
-const ColumnsMovimientoDeCuenta =()=>{
-  const { t} = useTranslation();
-  return([
+const columnsMovimientoDeCuenta = [
   {
-    name: (t("movimientocuenta.table.column1")),
+    name: "Tarjeta",
     selector: (row) => row.tarjeta,
     sortable: true,
   },
   {
-    name: (t("movimientocuenta.table.column2")),
+    name: "Nº cuenta",
     selector: (row) => row.cuenta,
     sortable: true,
   },
   {
-    name: (t("movimientocuenta.table.column3")),
+    name: "Moneda",
     selector: (row) => row.moneda,
     sortable: true,
   },
   {
-    name: (t("movimientocuenta.table.column4")),
+    name: "Fecha",
     selector: (row) => row.fecha,
     sortable: true,
   },
-])
-}
+];
 
 const dataMovimientoDeCuenta = [
   {
@@ -66,33 +62,30 @@ const dataMovimientoDeCuenta = [
     fecha: "26/07/2021",
   },
 ];
-const MovimientoDeCuentaSearch =()=>{
-  const { t} = useTranslation();
-  return([
+const MovimientoDeCuentaSearch = [
   {
     name: "N° de tarjeta",
     index: "tarjeta",
-    input: <FloatInput label={t("movimientocuenta.search.input1")} placeholder={t("movimientocuenta.search.input1")} />,
+    input: <FloatInput label="N° de tarjeta" placeholder="N° de tarjeta" />,
   },
   {
     name: "N° de cuenta",
     index: "cuenta",
-    input: <FloatInput label={t("movimientocuenta.search.input2")} placeholder={t("movimientocuenta.search.input2")} />,
+    input: <FloatInput label="N° de cuenta" placeholder="N° de cuenta" />,
   },
   {
     name: "Pesos",
     index: "pesos",
-    input: <FloatInput label={t("movimientocuenta.search.input3")} placeholder={t("movimientocuenta.search.input3")} />,
+    input: <FloatInput label="Pesos" placeholder="Pesos" />,
   },
 
   {
     index: "fecha",
-    input: <DateRangeFilter placeholder={t("movimientocuenta.search.input4")} label={t("movimientocuenta.search.input4")} />,
+    input: <DateRangeFilter placeholder="fecha" label="Por fecha" />,
   },
-])
-}
+];
 export {
   dataMovimientoDeCuenta,
-  ColumnsMovimientoDeCuenta,
+  columnsMovimientoDeCuenta,
   MovimientoDeCuentaSearch,
 };

@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import DataTable from "react-data-table-component";
 import "./index.less";
 import PropTypes from 'prop-types'
 import ResultSearch from "../../molecules/ResultSearch";
 import { useTranslation } from "react-i18next";
+import SkeletonTable from "./Skeleton";
 
 const Table = (
   {
   className,
   component: Component,
   columns,
-  data,
   parentCallback,
   ...props
 }) => {
   const { t } = useTranslation();
+  const { initial, data, loading } = props.data
   const paginationComponentOptions = {
     rowsPerPageText: (t("table.rowspage")),
     rangeSeparatorText: (t("table.rowseparator")),
@@ -27,8 +28,16 @@ const Table = (
     // console.log("Selected Rows: ", state.selectedRows);
   };
 
+  // let secondComponent = <ResultSearch result={false} />
+  let secondComponent = initial && !loading? <ResultSearch result={true} /> : loading || data?.length === 0? <SkeletonTable style={{ marginTop: '20px' }} /> : <ResultSearch result={false} />
+
+
+  // const [secondComponent, setSecondComponent] = useState(<ResultSearch result={false} />)
+  // setSecondComponent(!initial && !loading? <ResultSearch result={false} /> : <SkeletonTable /> )
+  // setSecondComponent( <SkeletonTable /> )
+// console.log(initial, data, loading);
   return (
-      data.length === 0? <ResultSearch result={false} />
+    !loading || data?.length === 0? secondComponent
       :
       <DataTable
         title={props.title}
@@ -44,6 +53,8 @@ const Table = (
         expandableRowsHideExpander
         expandOnRowClicked
         actions={props.actions}     //export
+        // progressPending={true}
+			  // progressComponent={<SkeletonTable />}
       />
 
   );

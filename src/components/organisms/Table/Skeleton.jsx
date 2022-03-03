@@ -14,6 +14,7 @@ function SkeletonTable({rows}) {
           itemLayout="vertical"
           size="large"
           dataSource={data}
+          // style={{ background: "none" }}
           renderItem={(item, index) => (
             <List.Item
               key={index}
@@ -30,7 +31,7 @@ SkeletonTable.propTypes = {
 }
 
 SkeletonTable.defaultProps = {
-    rows: 10
+    rows: 5
 }
 
 export default SkeletonTable
