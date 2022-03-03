@@ -14,7 +14,7 @@ const FloatSelected = ({
   ...props
 }) => {
   const [focus, setFocus] = useState(false);
-  let { label, value, placeholder, type, disabled, required, loading } = props;
+  let { label, value, placeholder, disabled, required, loading } = props;
 
   if (!placeholder) placeholder = label;
 
@@ -27,8 +27,6 @@ const FloatSelected = ({
   const selectOutline = outline ? "select-outline" : "select-bottom";
 
   const secondary = secondaryColor ? "secondary" : "";
-
-  const [borderColor, setBorderColor] = useState("");
 
   options = options?.length > 0? options : []
 

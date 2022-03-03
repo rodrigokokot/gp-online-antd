@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
-import {cuentas, productosServices, grupoAfinidad} from "../../../../services";
+import { productosServices, grupoAfinidad} from "../../../../services";
 import { useEffect } from "react";
 import { CuentasGetRequest } from "../../../../classes/Request";
 import { ProductosResponse, GruposAfinidadResponse, CuentasResponse } from "../../../../classes/Response";
@@ -15,39 +15,37 @@ const useMock = () => {
   const gruposAfinidad = useSelectAsync()
   const { t } = useTranslation();
 
-  useEffect(async() => {
-    let [responseP, responseGA] = await Promise.all([
-      productosServices.getProductos(),
-      grupoAfinidad.getGruposAfinidad()
-    ])
-
-    let listP = responseP?.length > 0? responseP.map((element) => {
-      const producto = new ProductosResponse(element)
-      return {
-        value: producto.IdProducto,
-        title: producto.Descripcion,
-      }
-    }) : [];
-
-    productos.setDataSelect({
-      data: listP,
-      loading: false
-    })
-
-
-    let listGA = responseGA?.length > 0? responseGA.map((grupo) => {
-      const gAfinidad = new GruposAfinidadResponse(grupo)
-      return {
-        value: gAfinidad.IdGrupoAfinidad,
-        title: gAfinidad.Descripcion,
-      }
-    }) : [];
-    gruposAfinidad.setDataSelect({
-      data: listGA,
-      loading: false
-    })
-
-  }, [])
+  useEffect(() => {
+    const getData = async () => {
+      let [responseP, responseGA] = await Promise.all([
+        productosServices.getProductos(),
+        grupoAfinidad.getGruposAfinidad()
+      ])
+      let listP = responseP?.length > 0? responseP.map((element) => {
+        const producto = new ProductosResponse(element)
+        return {
+          value: producto.IdProducto,
+          title: producto.Descripcion,
+        }
+      }) : [];
+      productos.setDataSelect({
+        data: listP,
+        loading: false
+      })
+      let listGA = responseGA?.length > 0? responseGA.map((grupo) => {
+        const gAfinidad = new GruposAfinidadResponse(grupo)
+        return {
+          value: gAfinidad.IdGrupoAfinidad,
+          title: gAfinidad.Descripcion,
+        }
+      }) : [];
+      gruposAfinidad.setDataSelect({
+        data: listGA,
+        loading: false
+      })
+    }
+    getData()
+  })
 
   const columnsGestionCuenta = [
     {

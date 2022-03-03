@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import SearchForm from "../../../../components/organisms/SearchForm/index";
 import Table from "../../../../components/organisms/Table/index";
 import { Link } from "react-router-dom";
