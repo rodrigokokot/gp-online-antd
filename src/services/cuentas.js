@@ -9,6 +9,7 @@ export default {
             return response.data.lista
         } catch (error) {
             console.error(error)
+            notificationError({message: error})
         }
     },
 
@@ -17,7 +18,8 @@ export default {
             const response = await api.get(`${endPoints.getCuentas}${values}`)
             return response.data.lista
         } catch (error) {
-            console.log(error)
+            console.error(error)
+            notificationError({message: error})
         }
     },
 
@@ -26,17 +28,19 @@ export default {
             const response = await api.get(`${endPoints.getCuentaId}/${id}`)
             return response.data
         } catch (error) {
-            console.log(error)
+            console.error(error)
+            notificationError({message: error})
         }
     },
 
     async postCuenta(data) {
-        // console.log(data);
+        // console.error(data);
         try {
             const response = await login.post(endPoints.postCuenta, data)
             return response
         } catch (error) {
-            console.log(error)
+            console.error(error)
+            notificationError({message: error})
         }
     }
 }

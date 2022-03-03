@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import FloatSelected from "../../../../components/molecules/FloatSelected";
 import DateRangeFilter from "../../../../components/organisms/DateRangeFilter";
 import FloatInput from "../../../../components/molecules/FloatInput/index";
-import {cuentas, productosServices} from "../../../../services";
+import {cuentas, productosServices, grupoAfinidad} from "../../../../services";
 import { useEffect } from "react";
 import { CuentasGetRequest } from "../../../../classes/Request";
 import { ProductosResponse, GruposAfinidadResponse, CuentasResponse } from "../../../../classes/Response";
@@ -18,7 +18,7 @@ const useMock = () => {
   useEffect(async() => {
     let [responseP, responseGA] = await Promise.all([
       productosServices.getProductos(),
-      cuentas.getGruposAfinidad()
+      grupoAfinidad.getGruposAfinidad()
     ])
 
     let listP = responseP?.length > 0? responseP.map((element) => {
